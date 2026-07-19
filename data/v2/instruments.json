@@ -663,5 +663,145 @@
       "language": "en",
       "note": "The UN page links the final report in all six official UN languages."
     }
+  },
+  {
+    "id": "iso-iec-42001-2023",
+    "shortTitle": "ISO/IEC 42001",
+    "title": "ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system",
+    "jurisdictionId": "iso-iec",
+    "issuingBodies": ["International Organization for Standardization", "International Electrotechnical Commission"],
+    "category": "international-standard",
+    "hierarchyLevel": "international-management-system-standard",
+    "legalForce": "voluntary-standard",
+    "lifecycleStatus": "published-current",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": "2023-12-18",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Edition 1, 2023",
+    "parentInstrumentId": null,
+    "topicIds": ["ai-risk-management", "impact-assessment", "accountability-governance", "security-controls"],
+    "summary": "An international requirements standard for establishing, operating, maintaining, and continually improving an organization-wide AI management system that addresses AI risks and opportunities.",
+    "statusNote": "Published international standard. Its requirements are not automatically law; obligations can arise through adoption, certification, contracts, procurement, or another applicable legal regime.",
+    "source": {
+      "url": "https://www.iso.org/standard/42001",
+      "label": "ISO",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-paid-standard-access-linked",
+      "stored": false,
+      "language": "en",
+      "note": "ISO controls access to the copyrighted standard. This dataset stores only original editorial metadata and links the official access and preview page."
+    }
+  },
+  {
+    "id": "ieee-ethically-aligned-design-2019",
+    "shortTitle": "IEEE Ethically Aligned Design",
+    "title": "Ethically Aligned Design: A Vision for Prioritizing Human Well-being with Autonomous and Intelligent Systems",
+    "jurisdictionId": "ieee",
+    "issuingBodies": ["IEEE Standards Association"],
+    "category": "ethics-framework",
+    "hierarchyLevel": "international-industry-white-paper",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "published-guidance",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": "2019-03-31",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "First Edition, 2019",
+    "parentInstrumentId": null,
+    "topicIds": ["accountability-governance", "human-oversight", "transparency-explainability", "automated-decision-safeguards"],
+    "summary": "A human-centred design framework for surfacing ethical values, rights, well-being, accountability, and societal impacts when autonomous and intelligent systems are designed and governed.",
+    "statusNote": "Published IEEE white paper and voluntary ethical-design framework, not a binding law or an IEEE technical standard. Later IEEE standards and programs are separate instruments.",
+    "source": {
+      "url": "https://standards.ieee.org/ieee/White_Paper/10594/",
+      "label": "IEEE Standards Association",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-publication-access-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The copyrighted publication is not reproduced. This dataset provides original high-level summaries and links the official IEEE access page."
+    }
+  },
+  {
+    "id": "oecd-ai-principles",
+    "shortTitle": "OECD AI Principles",
+    "title": "Recommendation of the Council on Artificial Intelligence (OECD/LEGAL/0449)",
+    "jurisdictionId": "oecd",
+    "issuingBodies": ["OECD Council"],
+    "category": "intergovernmental-recommendation",
+    "hierarchyLevel": "oecd-council-recommendation",
+    "legalForce": "non-binding-recommendation",
+    "lifecycleStatus": "active-updated",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2019-05-22",
+      "publishedOn": "2019-05-22",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "OECD/LEGAL/0449, amended 3 May 2024",
+    "parentInstrumentId": null,
+    "topicIds": ["accountability-governance", "ai-risk-management", "human-oversight", "transparency-explainability", "security-controls", "global-coordination"],
+    "summary": "An intergovernmental recommendation combining five values-based principles for trustworthy AI with five policy recommendations for governments, updated for recent technological and policy developments.",
+    "statusNote": "Active OECD recommendation, amended on 3 May 2024. It is an influential non-binding legal instrument and does not itself create directly enforceable domestic duties.",
+    "source": {
+      "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449",
+      "label": "OECD Legal Instruments",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-publication-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The current recommendation is linked from the official OECD Legal Instruments service."
+    }
+  },
+  {
+    "id": "int-bletchley-declaration-2023",
+    "shortTitle": "Bletchley Declaration",
+    "title": "The Bletchley Declaration by Countries Attending the AI Safety Summit, 1–2 November 2023",
+    "jurisdictionId": "ai-safety-summit",
+    "issuingBodies": ["Countries and organizations attending the AI Safety Summit 2023"],
+    "category": "international-declaration",
+    "hierarchyLevel": "multilateral-political-declaration",
+    "legalForce": "non-binding",
+    "lifecycleStatus": "active-political-commitment",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2023-11-01",
+      "publishedOn": "2023-11-01",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Declaration published 1 November 2023; signatory list updated 13 February 2025",
+    "parentInstrumentId": null,
+    "topicIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "accountability-governance", "global-coordination"],
+    "summary": "A multilateral political declaration framing frontier-AI risks as a shared international concern and calling for scientific understanding, risk-based policy, safety evaluation, transparency, and sustained cooperation.",
+    "statusNote": "Non-binding political declaration rather than a treaty or domestic law. The official page was later updated to record an additional signatory without changing its legal force.",
+    "source": {
+      "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023",
+      "label": "UK Government",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-full-text-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official declaration is linked from GOV.UK; this seed stores an editorial summary rather than a duplicate of the text."
+    }
   }
 ]

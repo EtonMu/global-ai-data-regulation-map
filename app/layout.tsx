@@ -2,6 +2,20 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
+const themeBootstrap = `(() => {
+  try {
+    const stored = window.localStorage.getItem("gadrm-theme");
+    const theme = stored === "dark" || stored === "bright"
+      ? stored
+      : window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "bright"
+        : "dark";
+    document.documentElement.dataset.theme = theme;
+  } catch {
+    document.documentElement.dataset.theme = "dark";
+  }
+})();`;
+
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host =
@@ -12,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host.startsWith("localhost") ? "http" : "https");
   const baseUrl = new URL(`${protocol}://${host}`);
-  const socialImage = new URL("/og-regulation-atlas.png", baseUrl).toString();
+  const socialImage = new URL("/og-regulation-atlas-v2.png", baseUrl).toString();
 
   return {
     metadataBase: baseUrl,
@@ -34,9 +48,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: socialImage,
-          width: 1731,
-          height: 909,
-          alt: "Global AI Data Regulation Map knowledge graph preview",
+          width: 1734,
+          height: 907,
+          alt: "Global AI Data Regulation Map bridging a dark knowledge graph and a bright legal research workspace",
         },
       ],
     },
@@ -56,7 +70,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
       <body>{children}</body>
     </html>
   );

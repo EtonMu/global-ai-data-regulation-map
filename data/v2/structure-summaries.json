@@ -1,0 +1,750 @@
+[
+  {
+    "id": "eu-gdpr::cpt_III.sct_1",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_III.sct_1",
+    "level": "section",
+    "label": "Section 1",
+    "title": "Transparency and modalities",
+    "summary": "Sets the common conditions for clear communications and for facilitating the exercise of data-subject rights, including response timing, identity checks, fees, refusals, and standardized notices.",
+    "conceptIds": ["transparency-explainability", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Article 12",
+        "provisionIds": ["eu-gdpr-art-12"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_III.sct_2",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_III.sct_2",
+    "level": "section",
+    "label": "Section 2",
+    "title": "Information and access to personal data",
+    "summary": "Organizes the information controllers must provide when data are obtained directly or indirectly and the data subject's right to confirmation, access, and a copy of personal data.",
+    "conceptIds": ["transparency-explainability", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 13–15",
+        "provisionIds": ["eu-gdpr-art-13", "eu-gdpr-art-14", "eu-gdpr-art-15"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_III.sct_3",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_III.sct_3",
+    "level": "section",
+    "label": "Section 3",
+    "title": "Rectification and erasure",
+    "summary": "Groups rights to correct, erase, restrict, and port personal data with related recipient-notification duties, each subject to the conditions and limits stated in the individual articles.",
+    "conceptIds": ["accountability-governance", "transparency-explainability"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 16–20",
+        "provisionIds": ["eu-gdpr-art-16", "eu-gdpr-art-17", "eu-gdpr-art-18", "eu-gdpr-art-19", "eu-gdpr-art-20"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_III.sct_4",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_III.sct_4",
+    "level": "section",
+    "label": "Section 4",
+    "title": "Right to object and automated individual decision-making",
+    "summary": "Covers objections to specified processing and safeguards for certain decisions based solely on automated processing, including profiling, while preserving the articles' distinct triggers and exceptions.",
+    "conceptIds": ["automated-decision-safeguards", "human-oversight", "transparency-explainability"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 21–22",
+        "provisionIds": ["eu-gdpr-art-21", "eu-gdpr-art-22"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_III.sct_5",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_III.sct_5",
+    "level": "section",
+    "label": "Section 5",
+    "title": "Restrictions",
+    "summary": "Defines the conditions and safeguards under which Union or Member State law may restrict specified GDPR rights and obligations for listed public-interest objectives.",
+    "conceptIds": ["accountability-governance", "transparency-explainability"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Article 23",
+        "provisionIds": ["eu-gdpr-art-23"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_IV.sct_1",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_IV.sct_1",
+    "level": "section",
+    "label": "Section 1",
+    "title": "General obligations",
+    "summary": "Builds the core controller-and-processor accountability architecture through responsibility, data protection by design and default, role allocation, processor governance, records, and regulatory cooperation.",
+    "conceptIds": ["accountability-governance", "ai-risk-management"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 24–31",
+        "provisionIds": ["eu-gdpr-art-24", "eu-gdpr-art-25", "eu-gdpr-art-26", "eu-gdpr-art-27", "eu-gdpr-art-28", "eu-gdpr-art-29", "eu-gdpr-art-30", "eu-gdpr-art-31"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_IV.sct_2",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_IV.sct_2",
+    "level": "section",
+    "label": "Section 2",
+    "title": "Security of personal data",
+    "summary": "Links risk-appropriate security of processing with duties to document and notify qualifying personal-data breaches to supervisory authorities and, in specified cases, affected individuals.",
+    "conceptIds": ["security-controls", "incident-response", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 32–34",
+        "provisionIds": ["eu-gdpr-art-32", "eu-gdpr-art-33", "eu-gdpr-art-34"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_IV.sct_3",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_IV.sct_3",
+    "level": "section",
+    "label": "Section 3",
+    "title": "Data protection impact assessment and prior consultation",
+    "summary": "Structures prospective assessment of processing likely to create high risks and consultation with the supervisory authority when identified residual risks are not sufficiently mitigated.",
+    "conceptIds": ["impact-assessment", "ai-risk-management", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 35–36",
+        "provisionIds": ["eu-gdpr-art-35", "eu-gdpr-art-36"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_IV.sct_4",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_IV.sct_4",
+    "level": "section",
+    "label": "Section 4",
+    "title": "Data protection officer",
+    "summary": "Defines when a data protection officer is required and frames the officer's position, independence, resources, access, advisory work, monitoring, and supervisory-authority contact role.",
+    "conceptIds": ["accountability-governance", "human-oversight"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 37–39",
+        "provisionIds": ["eu-gdpr-art-37", "eu-gdpr-art-38", "eu-gdpr-art-39"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_IV.sct_5",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_IV.sct_5",
+    "level": "section",
+    "label": "Section 5",
+    "title": "Codes of conduct and certification",
+    "summary": "Creates voluntary accountability mechanisms through approved codes of conduct and data-protection certification, together with rules for monitoring and certification bodies.",
+    "conceptIds": ["accountability-governance", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 40–43",
+        "provisionIds": ["eu-gdpr-art-40", "eu-gdpr-art-41", "eu-gdpr-art-42", "eu-gdpr-art-43"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_VI.sct_1",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_VI.sct_1",
+    "level": "section",
+    "label": "Section 1",
+    "title": "Independent status",
+    "summary": "Establishes independent supervisory authorities and frames their institutional independence, member qualifications, appointment conditions, resources, and domestic legal foundations.",
+    "conceptIds": ["accountability-governance", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 51–54",
+        "provisionIds": ["eu-gdpr-art-51", "eu-gdpr-art-52", "eu-gdpr-art-53", "eu-gdpr-art-54"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_VI.sct_2",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_VI.sct_2",
+    "level": "section",
+    "label": "Section 2",
+    "title": "Competence, tasks and powers",
+    "summary": "Allocates supervisory competence, including lead-authority competence, and sets out authorities' public tasks, investigative and corrective powers, authorization roles, and reporting duties.",
+    "conceptIds": ["accountability-governance", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 55–59",
+        "provisionIds": ["eu-gdpr-art-55", "eu-gdpr-art-56", "eu-gdpr-art-57", "eu-gdpr-art-58", "eu-gdpr-art-59"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_VII.sct_1",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_VII.sct_1",
+    "level": "section",
+    "label": "Section 1",
+    "title": "Cooperation",
+    "summary": "Coordinates cross-border supervision through lead-authority cooperation, mutual assistance, and joint operations among supervisory authorities, with procedures and time-sensitive response duties.",
+    "conceptIds": ["global-coordination", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 60–62",
+        "provisionIds": ["eu-gdpr-art-60", "eu-gdpr-art-61", "eu-gdpr-art-62"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_VII.sct_2",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_VII.sct_2",
+    "level": "section",
+    "label": "Section 2",
+    "title": "Consistency",
+    "summary": "Provides Union-level consistency procedures for Board opinions, binding dispute resolution, urgent action, and information exchange when supervisory decisions may have wider effects.",
+    "conceptIds": ["global-coordination", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 63–67",
+        "provisionIds": ["eu-gdpr-art-63", "eu-gdpr-art-64", "eu-gdpr-art-65", "eu-gdpr-art-66", "eu-gdpr-art-67"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-gdpr::cpt_VII.sct_3",
+    "instrumentId": "eu-gdpr",
+    "structureId": "cpt_VII.sct_3",
+    "level": "section",
+    "label": "Section 3",
+    "title": "European data protection board",
+    "summary": "Defines the European Data Protection Board's composition, independence, tasks, procedures, leadership, secretariat support, reporting, and confidentiality arrangements.",
+    "conceptIds": ["global-coordination", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "label": "EUR-Lex — GDPR Articles 68–76",
+        "provisionIds": ["eu-gdpr-art-68", "eu-gdpr-art-69", "eu-gdpr-art-70", "eu-gdpr-art-71", "eu-gdpr-art-72", "eu-gdpr-art-73", "eu-gdpr-art-74", "eu-gdpr-art-75", "eu-gdpr-art-76"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, definitions, exceptions, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_III.sct_1",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_III.sct_1",
+    "level": "section",
+    "label": "SECTION 1",
+    "title": "Classification of AI systems as high-risk",
+    "summary": "Sets the routes for classifying AI systems as high-risk and the mechanism for updating Annex III use cases, including criteria relevant to additions and removals.",
+    "conceptIds": ["ai-risk-management", "impact-assessment", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 6–7",
+        "provisionIds": ["eu-ai-act-art-6", "eu-ai-act-art-7"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_III.sct_2",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_III.sct_2",
+    "level": "section",
+    "label": "SECTION 2",
+    "title": "Requirements for high-risk AI systems",
+    "summary": "Defines the main lifecycle requirements for high-risk AI systems: risk management, data governance, documentation, logs, deployer information, human oversight, accuracy, robustness, and cybersecurity.",
+    "conceptIds": ["ai-risk-management", "training-data-governance", "human-oversight", "security-controls"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 8–15",
+        "provisionIds": ["eu-ai-act-art-8", "eu-ai-act-art-9", "eu-ai-act-art-10", "eu-ai-act-art-11", "eu-ai-act-art-12", "eu-ai-act-art-13", "eu-ai-act-art-14", "eu-ai-act-art-15"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_III.sct_3",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_III.sct_3",
+    "level": "section",
+    "label": "SECTION 3",
+    "title": "Obligations of providers and deployers of high-risk AI systems and other parties",
+    "summary": "Allocates operational and documentation duties across providers, representatives, importers, distributors, deployers, and other value-chain actors, including corrective action and specified impact-assessment duties.",
+    "conceptIds": ["accountability-governance", "impact-assessment", "ai-risk-management", "human-oversight"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 16–27",
+        "provisionIds": ["eu-ai-act-art-16", "eu-ai-act-art-17", "eu-ai-act-art-18", "eu-ai-act-art-19", "eu-ai-act-art-20", "eu-ai-act-art-21", "eu-ai-act-art-22", "eu-ai-act-art-23", "eu-ai-act-art-24", "eu-ai-act-art-25", "eu-ai-act-art-26", "eu-ai-act-art-27"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_III.sct_4",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_III.sct_4",
+    "level": "section",
+    "label": "SECTION 4",
+    "title": "Notifying authorities and notified bodies",
+    "summary": "Creates the notification and oversight architecture for conformity-assessment bodies, covering authority duties, body competence and independence, notification procedures, subcontracting, coordination, and third-country arrangements.",
+    "conceptIds": ["accountability-governance", "global-coordination", "ai-risk-management"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 28–39",
+        "provisionIds": ["eu-ai-act-art-28", "eu-ai-act-art-29", "eu-ai-act-art-30", "eu-ai-act-art-31", "eu-ai-act-art-32", "eu-ai-act-art-33", "eu-ai-act-art-34", "eu-ai-act-art-35", "eu-ai-act-art-36", "eu-ai-act-art-37", "eu-ai-act-art-38", "eu-ai-act-art-39"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_III.sct_5",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_III.sct_5",
+    "level": "section",
+    "label": "SECTION 5",
+    "title": "Standards, conformity assessment, certificates, registration",
+    "summary": "Connects standards and common specifications to conformity presumptions and assessment routes, then addresses certificates, derogations, declarations, CE marking, and registration.",
+    "conceptIds": ["accountability-governance", "ai-risk-management", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 40–49",
+        "provisionIds": ["eu-ai-act-art-40", "eu-ai-act-art-41", "eu-ai-act-art-42", "eu-ai-act-art-43", "eu-ai-act-art-44", "eu-ai-act-art-45", "eu-ai-act-art-46", "eu-ai-act-art-47", "eu-ai-act-art-48", "eu-ai-act-art-49"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_V.sct_1",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_V.sct_1",
+    "level": "section",
+    "label": "SECTION 1",
+    "title": "Classification rules",
+    "summary": "Defines how a general-purpose AI model may be classified as presenting systemic risk through capability thresholds or Commission designation and provides the related procedural route.",
+    "conceptIds": ["frontier-model-safety", "ai-risk-management", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 51–52",
+        "provisionIds": ["eu-ai-act-art-51", "eu-ai-act-art-52"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_V.sct_2",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_V.sct_2",
+    "level": "section",
+    "label": "SECTION 2",
+    "title": "Obligations for providers of general-purpose AI models",
+    "summary": "Sets baseline provider duties for general-purpose AI models concerning technical documentation, information for downstream providers, copyright policy, training-content summaries, and representation for certain non-Union providers.",
+    "conceptIds": ["accountability-governance", "transparency-explainability", "training-data-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 53–54",
+        "provisionIds": ["eu-ai-act-art-53", "eu-ai-act-art-54"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_V.sct_3",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_V.sct_3",
+    "level": "section",
+    "label": "SECTION 3",
+    "title": "Obligations of providers of general-purpose AI models with systemic risk",
+    "summary": "Adds systemic-risk duties for model evaluation, adversarial testing, assessment and mitigation, serious-incident reporting, and cybersecurity protection for models meeting the section's classification conditions.",
+    "conceptIds": ["frontier-model-safety", "ai-risk-management", "incident-response", "security-controls"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Article 55",
+        "provisionIds": ["eu-ai-act-art-55"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_V.sct_4",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_V.sct_4",
+    "level": "section",
+    "label": "SECTION 4",
+    "title": "Codes of practice",
+    "summary": "Provides a process for developing, assessing, and approving codes of practice that support application of general-purpose AI model obligations without replacing the underlying legal requirements.",
+    "conceptIds": ["accountability-governance", "global-coordination", "frontier-model-safety"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Article 56",
+        "provisionIds": ["eu-ai-act-art-56"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_VII.sct_1",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_VII.sct_1",
+    "level": "section",
+    "label": "SECTION 1",
+    "title": "Governance at Union level",
+    "summary": "Establishes the Union-level governance network around the AI Office, AI Board, advisory forum, scientific panel, and expert pool, with distinct coordination and advisory functions.",
+    "conceptIds": ["accountability-governance", "global-coordination", "ai-risk-management"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 64–69",
+        "provisionIds": ["eu-ai-act-art-64", "eu-ai-act-art-65", "eu-ai-act-art-66", "eu-ai-act-art-67", "eu-ai-act-art-68", "eu-ai-act-art-69"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_VII.sct_2",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_VII.sct_2",
+    "level": "section",
+    "label": "SECTION 2",
+    "title": "National competent authorities",
+    "summary": "Requires Member States to designate national competent authorities and single points of contact and addresses their organization, resources, independence, coordination, and reporting.",
+    "conceptIds": ["accountability-governance", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Article 70",
+        "provisionIds": ["eu-ai-act-art-70"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_IX.sct_1",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_IX.sct_1",
+    "level": "section",
+    "label": "SECTION 1",
+    "title": "Post-market monitoring",
+    "summary": "Requires providers of high-risk AI systems to establish proportionate post-market monitoring and a documented plan for collecting and analyzing performance data throughout the system's lifetime.",
+    "conceptIds": ["ai-risk-management", "accountability-governance", "incident-response"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Article 72",
+        "provisionIds": ["eu-ai-act-art-72"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_IX.sct_2",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_IX.sct_2",
+    "level": "section",
+    "label": "SECTION 2",
+    "title": "Sharing of information on serious incidents",
+    "summary": "Frames provider reporting and follow-up for serious incidents involving high-risk AI systems, including timing, investigation, cooperation, and coordination with relevant authorities.",
+    "conceptIds": ["incident-response", "accountability-governance", "ai-risk-management"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Article 73",
+        "provisionIds": ["eu-ai-act-art-73"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_IX.sct_3",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_IX.sct_3",
+    "level": "section",
+    "label": "SECTION 3",
+    "title": "Enforcement",
+    "summary": "Sets the market-surveillance and enforcement framework for AI systems, including authority powers, mutual assistance, fundamental-rights oversight, risk procedures, safeguards, confidentiality, and Union support.",
+    "conceptIds": ["accountability-governance", "global-coordination", "ai-risk-management"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 74–84",
+        "provisionIds": ["eu-ai-act-art-74", "eu-ai-act-art-75", "eu-ai-act-art-76", "eu-ai-act-art-77", "eu-ai-act-art-78", "eu-ai-act-art-79", "eu-ai-act-art-80", "eu-ai-act-art-81", "eu-ai-act-art-82", "eu-ai-act-art-83", "eu-ai-act-art-84"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_IX.sct_4",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_IX.sct_4",
+    "level": "section",
+    "label": "SECTION 4",
+    "title": "Remedies",
+    "summary": "Provides channels for complaints to market-surveillance authorities, explanations for certain individual decisions based on high-risk AI outputs, and protected reporting of infringements.",
+    "conceptIds": ["automated-decision-safeguards", "transparency-explainability", "accountability-governance"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 85–87",
+        "provisionIds": ["eu-ai-act-art-85", "eu-ai-act-art-86", "eu-ai-act-art-87"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "eu-ai-act::cpt_IX.sct_5",
+    "instrumentId": "eu-ai-act",
+    "structureId": "cpt_IX.sct_5",
+    "level": "section",
+    "label": "SECTION 5",
+    "title": "Supervision, investigation, enforcement and monitoring in respect of providers of general-purpose AI models",
+    "summary": "Defines the AI Office's monitoring and enforcement toolkit for general-purpose AI model providers, including information requests, evaluations, corrective measures, scientific-panel alerts, and procedural rights.",
+    "conceptIds": ["frontier-model-safety", "accountability-governance", "ai-risk-management", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "label": "EUR-Lex — EU AI Act Articles 88–94",
+        "provisionIds": ["eu-ai-act-art-88", "eu-ai-act-art-89", "eu-ai-act-art-90", "eu-ai-act-art-91", "eu-ai-act-art-92", "eu-ai-act-art-93", "eu-ai-act-art-94"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+    }
+  },
+  {
+    "id": "us-nist-ai-rmf-1-0::us-nist-ai-rmf-map",
+    "instrumentId": "us-nist-ai-rmf-1-0",
+    "structureId": "us-nist-ai-rmf-map",
+    "level": "hierarchy-root",
+    "label": "MAP function",
+    "title": "Establish context and identify risks",
+    "summary": "The MAP function organizes voluntary outcomes for understanding an AI system's context, purposes, affected people, dependencies, knowledge limits, benefits, and potential harms before risks are measured and managed.",
+    "conceptIds": ["impact-assessment", "ai-risk-management", "human-oversight", "transparency-explainability"],
+    "sourceBasis": [
+      {
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+        "label": "NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+        "provisionIds": ["us-nist-ai-rmf-map", "us-nist-ai-rmf-map-2-2"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Voluntary-framework orientation only; this summary does not convert outcomes into legal duties or reproduce the complete framework."
+    }
+  },
+  {
+    "id": "g7-hiroshima-ai-process::g7-hiroshima-guiding-principles",
+    "instrumentId": "g7-hiroshima-ai-process",
+    "structureId": "g7-hiroshima-guiding-principles",
+    "level": "hierarchy-root",
+    "label": "International Guiding Principles",
+    "title": "Guiding principles for advanced AI systems and AI actors",
+    "summary": "The Guiding Principles present a non-binding lifecycle agenda for advanced AI risk identification, testing, reporting, incident information, security, transparency, content authentication, standards, and responsible data practices.",
+    "conceptIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "transparency-explainability", "global-coordination"],
+    "sourceBasis": [
+      {
+        "url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html",
+        "label": "Ministry of Foreign Affairs of Japan — Hiroshima AI Process documents",
+        "provisionIds": ["g7-hiroshima-guiding-principles", "g7-hiroshima-code-action-1"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Soft-law orientation only; this summary does not imply legal force, equivalence to law, or completeness."
+    }
+  },
+  {
+    "id": "oecd-ai-principles::oecd-ai-principles-values",
+    "instrumentId": "oecd-ai-principles",
+    "structureId": "oecd-ai-principles-values",
+    "level": "hierarchy-root",
+    "label": "Values-based Principles 1.1–1.5",
+    "title": "Responsible stewardship of trustworthy AI",
+    "summary": "The values-based principles organize responsible stewardship around inclusive benefit, human rights and democratic values, transparency, lifecycle robustness and safety, and accountability by AI actors.",
+    "conceptIds": ["accountability-governance", "ai-risk-management", "human-oversight", "transparency-explainability", "security-controls"],
+    "sourceBasis": [
+      {
+        "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449",
+        "label": "OECD/LEGAL/0449 — Recommendation of the Council on Artificial Intelligence",
+        "provisionIds": ["oecd-ai-principles-values", "oecd-ai-principle-1-4"]
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-high-level-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Intergovernmental-principles orientation only; this summary does not imply legal equivalence or reproduce the complete recommendation."
+    }
+  }
+]

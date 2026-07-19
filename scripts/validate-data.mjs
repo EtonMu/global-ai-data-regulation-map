@@ -18,6 +18,7 @@ const [
   statusEvents,
   gdprArticles,
   euAiActArticles,
+  structureSummaries,
 ] = await Promise.all([
   loadJson("jurisdictions.json"),
   loadJson("instruments.json"),
@@ -27,6 +28,7 @@ const [
   loadJson("status-events.json"),
   loadJson("gdpr-articles.json"),
   loadJson("eu-ai-act-articles.json"),
+  loadJson("structure-summaries.json"),
 ]);
 
 const idPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -43,6 +45,7 @@ const endpointTypes = new Set(["instrument", "provision"]);
 const directionalityValues = new Set(["directed", "undirected"]);
 const relationStatuses = new Set(["candidate", "editorial-reviewed"]);
 const confidenceValues = new Set(["low", "medium", "high"]);
+const structureSummaryLevels = new Set(["section", "hierarchy-root"]);
 const instrumentDateFields = [
   "adoptedOn",
   "publishedOn",
@@ -363,6 +366,7 @@ function validateOfficialArticles({
     `${label} corpus must contain exactly ${expectedCount} Articles; found ${articles.length}`,
   );
   const chapterDefinitions = new Map();
+  const sectionDefinitions = new Map();
 
   articles.forEach((article, index) => {
     const expectedNumber = String(index + 1);
@@ -400,6 +404,18 @@ function validateOfficialArticles({
       assertString(article.section.id, `${article.id}.section.id`);
       assertString(article.section.label, `${article.id}.section.label`);
       assertString(article.section.title, `${article.id}.section.title`);
+
+      const sectionDefinition = JSON.stringify({
+        label: article.section.label,
+        title: article.section.title,
+      });
+      const previousSectionDefinition = sectionDefinitions.get(article.section.id);
+      assert(
+        previousSectionDefinition === undefined ||
+          previousSectionDefinition === sectionDefinition,
+        `${article.id} reuses section ${article.section.id} with different labels`,
+      );
+      sectionDefinitions.set(article.section.id, sectionDefinition);
     }
     assertStringArray(article.paragraphs, `${article.id}.paragraphs`, {
       allowDuplicates: true,
@@ -463,6 +479,19 @@ const combinedProvisionIds = new Set([
   ...gdprArticleIds,
   ...euAiActArticleIds,
 ]);
+const provisionInstrumentById = new Map();
+for (const provision of provisions) {
+  provisionInstrumentById.set(provision.id, provision.instrumentId);
+}
+for (const article of [...gdprArticles, ...euAiActArticles]) {
+  const existingInstrumentId = provisionInstrumentById.get(article.id);
+  assert(
+    existingInstrumentId === undefined ||
+      existingInstrumentId === article.instrumentId,
+    `${article.id} is assigned to conflicting instruments`,
+  );
+  provisionInstrumentById.set(article.id, article.instrumentId);
+}
 for (const provision of provisions) {
   if (gdprArticleIds.has(provision.id) || euAiActArticleIds.has(provision.id)) {
     const article = [...gdprArticles, ...euAiActArticles].find(
@@ -473,6 +502,145 @@ for (const provision of provisions) {
       `${provision.id} curated metadata conflicts with its official import`,
     );
   }
+}
+
+const structureSummaryKeys = new Set();
+for (const summary of structureSummaries) {
+  assertObject(summary, "structure summary");
+  assertString(summary.id, "structure summary id");
+  assert(
+    instrumentIds.has(summary.instrumentId),
+    `${summary.id} references missing instrument ${summary.instrumentId}`,
+  );
+  assertString(summary.structureId, `${summary.id}.structureId`);
+  assert(
+    structureSummaryLevels.has(summary.level),
+    `${summary.id}.level must be section or hierarchy-root`,
+  );
+
+  const compositeKey = `${summary.instrumentId}::${summary.structureId}`;
+  assert(
+    summary.id === compositeKey,
+    `${summary.id} must equal its instrumentId::structureId composite key`,
+  );
+  assert(
+    !structureSummaryKeys.has(compositeKey),
+    `Duplicate structure summary composite key: ${compositeKey}`,
+  );
+  structureSummaryKeys.add(compositeKey);
+
+  assertString(summary.label, `${summary.id}.label`);
+  assertString(summary.title, `${summary.id}.title`);
+  assertString(summary.summary, `${summary.id}.summary`, 60);
+  assertReferenceArray(
+    summary.conceptIds,
+    conceptIds,
+    `${summary.id}.conceptIds`,
+  );
+  assert(
+    Array.isArray(summary.sourceBasis) && summary.sourceBasis.length > 0,
+    `${summary.id}.sourceBasis must contain at least one source`,
+  );
+
+  const citedProvisionIds = new Set();
+  summary.sourceBasis.forEach((source, index) => {
+    const sourceLabel = `${summary.id}.sourceBasis[${index}]`;
+    assertSource(source, sourceLabel);
+    assertReferenceArray(
+      source.provisionIds,
+      combinedProvisionIds,
+      `${sourceLabel}.provisionIds`,
+    );
+    for (const provisionId of source.provisionIds) {
+      assert(
+        provisionInstrumentById.get(provisionId) === summary.instrumentId,
+        `${sourceLabel} cites ${provisionId} from a different instrument`,
+      );
+      citedProvisionIds.add(provisionId);
+    }
+  });
+
+  assertObject(summary.editorial, `${summary.id}.editorial`);
+  assert(
+    summary.editorial.reviewStatus === "editorial-high-level-summary",
+    `${summary.id}.editorial.reviewStatus must identify a high-level summary`,
+  );
+  assertIsoDate(
+    summary.editorial.reviewedOn,
+    `${summary.id}.editorial.reviewedOn`,
+  );
+  assertString(summary.editorial.note, `${summary.id}.editorial.note`, 40);
+
+  if (summary.level === "hierarchy-root") {
+    assert(
+      provisionIds.has(summary.structureId),
+      `${summary.id} hierarchy-root must reference a seeded provision`,
+    );
+    assert(
+      provisionInstrumentById.get(summary.structureId) === summary.instrumentId,
+      `${summary.id} hierarchy-root belongs to a different instrument`,
+    );
+    assert(
+      citedProvisionIds.has(summary.structureId),
+      `${summary.id}.sourceBasis must cite its seeded hierarchy root`,
+    );
+  }
+}
+
+function collectOfficialSections(articles, label) {
+  const sections = new Map();
+  for (const article of articles) {
+    if (article.section === null) continue;
+    const key = `${article.instrumentId}::${article.section.id}`;
+    const existing = sections.get(key) ?? {
+      instrumentId: article.instrumentId,
+      section: article.section,
+      articleIds: [],
+    };
+    assert(
+      existing.section.label === article.section.label &&
+        existing.section.title === article.section.title,
+      `${label} section ${article.section.id} has inconsistent metadata`,
+    );
+    existing.articleIds.push(article.id);
+    sections.set(key, existing);
+  }
+  return sections;
+}
+
+const officialSections = new Map([
+  ...collectOfficialSections(gdprArticles, "GDPR"),
+  ...collectOfficialSections(euAiActArticles, "EU AI Act"),
+]);
+for (const [key, officialSection] of officialSections) {
+  const summary = structureSummaries.find((item) => item.id === key);
+  assert(summary, `Official section is missing a high-level summary: ${key}`);
+  assert(summary.level === "section", `${key} summary must use level section`);
+  assert(summary.label === officialSection.section.label, `${key}.label does not match the official section`);
+  assert(summary.title === officialSection.section.title, `${key}.title does not match the official section`);
+  const citedIds = new Set(
+    summary.sourceBasis.flatMap((source) => source.provisionIds),
+  );
+  for (const articleId of officialSection.articleIds) {
+    assert(
+      citedIds.has(articleId),
+      `${key}.sourceBasis does not cite official provision ${articleId}`,
+    );
+  }
+}
+
+for (const instrumentId of ["eu-gdpr", "eu-ai-act"]) {
+  const officialCount = [...officialSections.values()].filter(
+    (section) => section.instrumentId === instrumentId,
+  ).length;
+  const summaryCount = structureSummaries.filter(
+    (summary) =>
+      summary.instrumentId === instrumentId && summary.level === "section",
+  ).length;
+  assert(
+    summaryCount === officialCount,
+    `${instrumentId} must have exactly one summary for each of its ${officialCount} official sections; found ${summaryCount}`,
+  );
 }
 
 const relationSignatures = new Set();
@@ -607,6 +775,10 @@ const requiredInstrumentIds = [
   "in-dpdp-rules-2025",
   "g7-hiroshima-ai-process",
   "un-ai-advisory-final-report-2024",
+  "iso-iec-42001-2023",
+  "ieee-ethically-aligned-design-2019",
+  "oecd-ai-principles",
+  "int-bletchley-declaration-2023",
 ];
 for (const id of requiredInstrumentIds) {
   assert(instrumentIds.has(id), `Required instrument is missing: ${id}`);
@@ -637,5 +809,6 @@ console.log(
     `${combinedProvisionIds.size} merged provisions`,
     `(${gdprArticles.length} GDPR + ${euAiActArticles.length} EU AI Act official Articles),`,
     `${relations.length} relations, and ${statusEvents.length} lifecycle events.`,
+    `${structureSummaries.length} reviewed structure summaries cover ${officialSections.size} official EU sections.`,
   ].join(" "),
 );

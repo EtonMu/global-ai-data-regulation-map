@@ -9,26 +9,27 @@ The project combines a visual regulatory atlas, complete article navigation for 
 ## What you can explore
 
 - **Global Atlas** — enter through a jurisdiction-neutral map instead of treating any one law as the center of the world.
-- **Instrument Genome** — browse an instrument chapter by chapter and open an individual article or provision.
-- **Provision Reader** — distinguish stored official text from an editorial summary or an official-source link.
-- **Connections** — inspect a provision's immediate relationships, including the rationale, limits, evidence basis, confidence, and review state for each edge.
+- **Instrument Genome** — browse an instrument chapter by chapter, use curated high-level section summaries for orientation, and open an individual article or provision.
+- **Provision Reader** — read the selected legal text or clearly labeled editorial summary in the center workspace.
+- **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
 - **Corpus search** — find instruments and provisions by title, locator, jurisdiction, or regulatory concept.
+- **Two visual modes** — switch between a near-black **Dark / Geek** workspace and a restrained, paper-like **Bright / Lawyer** workspace without changing the underlying data.
 
-The interface uses a dark regulatory-intelligence / terminal aesthetic while keeping the graph deliberately bounded: it shows useful one-hop context rather than an unreadable network hairball.
+The primary navigation uses a fixed legal-system order—**EU, US, China, UK, Canada, Japan, India**—with California nested under the US. **International / Frameworks / Soft law** is a parallel top-level lane, not a country and not a child of any one national system. Each national, regional, or subnational legal-system entry is paired with its flag; international and standards contexts use issuer or framework icons rather than fictional flags. Instrument-type icons, status symbols, and relation cues provide further orientation without replacing text labels. The bounded, animated graph emphasizes useful one-hop context instead of becoming an unreadable network hairball.
 
 ## V2 corpus snapshot
 
 The current dataset was reviewed through **2026-07-19** and contains:
 
-- 11 jurisdiction or institutional-context nodes;
-- 19 instruments across the EU, United States and California, China, the United Kingdom, Japan, Canada, India, the G7, and the UN;
-- 249 unified provision nodes after merging generated and curated records;
-- 38 qualified relations, 48 lifecycle events, and 12 controlled regulatory concepts;
+- 15 jurisdiction, subnational, or institutional-context nodes;
+- 23 instruments across the EU, United States and California, China, the United Kingdom, Canada, Japan, India, and international or standards contexts;
+- 254 unified provision nodes after merging generated and curated records;
+- 42 qualified relations, 54 lifecycle events, 12 controlled regulatory concepts, and 34 curated high-level structure summaries;
 - all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications.
 
-The 19-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, soft law, and an advisory report. Legal force and lifecycle status are first-class data—not styling trivia.
+The 23-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, standards, soft law, declarations, and an advisory report. Its framework and soft-law coverage includes **NIST AI RMF 1.0, ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process,** and the **UN Advisory Body's _Governing AI for Humanity_** report. Legal force and lifecycle status are first-class data—not styling trivia.
 
 Complete stored article corpora are currently limited to the GDPR and EU AI Act. For most other instruments, the repository provides structured metadata, editorial summaries, and official links rather than copying source text. The EU imports include enacted article text and structural hierarchy; recitals, signatures, and footnotes remain at EUR-Lex.
 
@@ -81,6 +82,7 @@ data/v2/
   gdpr-articles.json          generated official GDPR article corpus
   eu-ai-act-articles.json     generated official EU AI Act article corpus
   concepts.json              neutral regulatory vocabulary
+  structure-summaries.json   curated section/framework orientation summaries
   relations.json             qualified provision/instrument edges
   status-events.json         auditable lifecycle events
 scripts/
@@ -88,7 +90,7 @@ scripts/
   validate-data.mjs          dataset integrity checks
 ```
 
-At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
+At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
 
 The frontend is built with React, TypeScript, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
 
@@ -118,7 +120,7 @@ Every instrument and relation should point to an official primary source where o
 - Original classifications, summaries, mappings, rationales, and editorial metadata are licensed under [CC BY 4.0](DATA-LICENSE.md).
 - Official legislation, government publications, translations, standards, reports, names, and third-party material remain subject to their own laws, licenses, and terms.
 
-The project does not claim that the data license grants rights in incorporated official text. Do not copy commercial standards, paywalled database content, or restricted publications into the repository. Prefer metadata, structure, original summaries, short lawful excerpts where appropriate, and an official access or purchase link.
+The project does not claim that the data license grants rights in incorporated official text. Do not copy commercial standards, paywalled database content, or restricted publications into the repository. In particular, **ISO/IEC 42001 and IEEE Ethically Aligned Design are represented only by metadata, project-authored summaries, and official access links**—not copied publication text. Prefer metadata, structure, original summaries, short lawful excerpts where appropriate, and an official access or purchase link.
 
 ## Contributing
 
@@ -131,7 +133,8 @@ For a data contribution:
 3. Add a relation only after comparing actors, triggers, duties, exceptions, timing, territorial scope, and legal force.
 4. Write both a concise `rationale` and explicit `limits`; use `candidate` unless the mapping has completed the project's review process.
 5. Add status events needed to explain the instrument's current state, including scheduled future events.
-6. Run all quality checks and keep the pull request focused.
+6. Add or update a concise, source-grounded structure summary when introducing a rendered section or framework root.
+7. Run all quality checks and keep the pull request focused.
 
 Do not edit generated EU corpus files by hand. Fix or update the source import and regenerate them reproducibly. Read [CONTRIBUTING.md](CONTRIBUTING.md), the [dataset overview](data/README.md), and the detailed [V2 schema and review guide](data/v2/README.md) before submitting a change.
 

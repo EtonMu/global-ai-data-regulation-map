@@ -27,6 +27,42 @@
     "description": "United Nations institutional and advisory context."
   },
   {
+    "id": "iso-iec",
+    "name": "International Organization for Standardization and International Electrotechnical Commission",
+    "shortName": "ISO/IEC",
+    "type": "international-organization",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "Joint international standards context for ISO/IEC information-technology standards."
+  },
+  {
+    "id": "ieee",
+    "name": "Institute of Electrical and Electronics Engineers",
+    "shortName": "IEEE",
+    "type": "international-organization",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "International professional and standards-development context for IEEE publications and programs."
+  },
+  {
+    "id": "oecd",
+    "name": "Organisation for Economic Co-operation and Development",
+    "shortName": "OECD",
+    "type": "international-organization",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "Intergovernmental policy and legal-instrument context for the OECD and its adherents."
+  },
+  {
+    "id": "ai-safety-summit",
+    "name": "AI Safety Summit",
+    "shortName": "AI Safety Summit",
+    "type": "intergovernmental-context",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "Multilateral summit context for political declarations agreed by participating governments and organizations."
+  },
+  {
     "id": "eu",
     "name": "European Union",
     "shortName": "EU",

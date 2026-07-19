@@ -6,7 +6,31 @@ import {
   useMemo,
   useReducer,
   useRef,
+  useSyncExternalStore,
 } from "react";
+import {
+  Archive,
+  BookOpenText,
+  Clock3,
+  Columns2,
+  Database,
+  ExternalLink,
+  FileClock,
+  FileText,
+  GitFork,
+  Globe2,
+  Info,
+  Landmark,
+  Link2,
+  Map as MapIcon,
+  Moon,
+  Network,
+  Scale,
+  Search,
+  Sparkles,
+  Sun,
+  type LucideIcon,
+} from "lucide-react";
 import jurisdictionsJson from "@/data/v2/jurisdictions.json";
 import instrumentsJson from "@/data/v2/instruments.json";
 import seedProvisionsJson from "@/data/v2/provisions.json";
@@ -15,6 +39,7 @@ import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
+import structureSummariesJson from "@/data/v2/structure-summaries.json";
 
 type Source = {
   url: string;
@@ -123,6 +148,19 @@ type Provision = SeedProvision & {
   articleNumber?: string;
 };
 
+type StructureSummary = {
+  id: string;
+  instrumentId: string;
+  structureId: string;
+  level: string;
+  label: string;
+  title: string;
+  summary: string;
+  conceptIds: string[];
+  sourceBasis: Array<Source & { provisionIds: string[] }>;
+  editorial: Editorial;
+};
+
 type Concept = {
   id: string;
   label: string;
@@ -165,6 +203,22 @@ type StatusEvent = {
 
 type View = "atlas" | "instrument" | "connections" | "timeline" | "compare";
 type ReaderTab = "text" | "analysis" | "sources";
+type Theme = "dark" | "bright";
+
+const themeChangeEvent = "gadrm-theme-change";
+
+function themeSnapshot(): Theme {
+  return document.documentElement.dataset.theme === "bright" ? "bright" : "dark";
+}
+
+function subscribeTheme(onStoreChange: () => void) {
+  window.addEventListener(themeChangeEvent, onStoreChange);
+  window.addEventListener("storage", onStoreChange);
+  return () => {
+    window.removeEventListener(themeChangeEvent, onStoreChange);
+    window.removeEventListener("storage", onStoreChange);
+  };
+}
 
 type ExplorerState = {
   view: View;
@@ -202,6 +256,7 @@ const seedProvisions = seedProvisionsJson as SeedProvision[];
 const concepts = conceptsJson as Concept[];
 const relations = relationsJson as Relation[];
 const statusEvents = statusEventsJson as StatusEvent[];
+const structureSummaries = structureSummariesJson as StructureSummary[];
 const articleRecords = [
   ...(gdprArticlesJson as ArticleRecord[]),
   ...(euAiActArticlesJson as ArticleRecord[]),
@@ -218,6 +273,12 @@ const conceptById = new Map(
 );
 const seedProvisionById = new Map(
   seedProvisions.map((provision) => [provision.id, provision]),
+);
+const structureSummaryByKey = new Map(
+  structureSummaries.map((summary) => [
+    summary.instrumentId + "::" + summary.structureId,
+    summary,
+  ]),
 );
 
 function articleToProvision(article: ArticleRecord): Provision {
@@ -358,12 +419,12 @@ const relationLabels: Record<string, string> = {
   aligned_with: "Aligned outcome",
 };
 
-const viewLabels: Array<{ id: View; label: string }> = [
-  { id: "atlas", label: "Atlas" },
-  { id: "instrument", label: "Instrument" },
-  { id: "connections", label: "Connections" },
-  { id: "timeline", label: "Timeline" },
-  { id: "compare", label: "Compare" },
+const viewLabels: Array<{ id: View; label: string; icon: LucideIcon }> = [
+  { id: "atlas", label: "Atlas", icon: MapIcon },
+  { id: "instrument", label: "Instrument", icon: BookOpenText },
+  { id: "connections", label: "Connections", icon: Network },
+  { id: "timeline", label: "Timeline", icon: Clock3 },
+  { id: "compare", label: "Compare", icon: Columns2 },
 ];
 
 function explorerReducer(
@@ -552,8 +613,34 @@ type AtlasGroup = {
   id: string;
   label: string;
   description: string;
+  icon: string;
   instruments: Instrument[];
 };
+
+const atlasGroupOrder = ["eu", "us", "cn", "gb", "ca", "jp", "in", "frameworks"];
+
+const jurisdictionMarks: Record<string, string> = {
+  eu: "🇪🇺",
+  us: "🇺🇸",
+  "us-ca": "🇺🇸",
+  cn: "🇨🇳",
+  gb: "🇬🇧",
+  ca: "🇨🇦",
+  jp: "🇯🇵",
+  in: "🇮🇳",
+  int: "🌐",
+  g7: "G7",
+  un: "🇺🇳",
+  "iso-iec": "ISO",
+  ieee: "IEEE",
+  oecd: "OECD",
+  "ai-safety-summit": "AISS",
+};
+
+function jurisdictionMark(jurisdictionId: string) {
+  const root = rootJurisdiction(jurisdictionId);
+  return jurisdictionMarks[jurisdictionId] ?? jurisdictionMarks[root?.id ?? ""] ?? "🌐";
+}
 
 function buildAtlasGroups(): AtlasGroup[] {
   const groups = new Map<string, AtlasGroup>();
@@ -565,16 +652,18 @@ function buildAtlasGroups(): AtlasGroup[] {
       contextTypes.includes("international") ||
       contextTypes.includes("intergovernmental") ||
       contextTypes.includes("standards");
-    const key = international ? "international" : (root?.id ?? "other");
-    const label = international
-      ? "International & standards"
+    const framework = international || forceClass(instrument) === "soft";
+    const key = framework ? "frameworks" : (root?.id ?? "other");
+    const label = framework
+      ? "International / Frameworks / Soft law"
       : (root?.name ?? "Other");
     const group = groups.get(key) ?? {
       id: key,
       label,
+      icon: framework ? "🌐" : jurisdictionMark(root?.id ?? instrument.jurisdictionId),
       description:
-        international
-          ? "Multilateral principles, advisory reports and voluntary frameworks"
+        framework
+          ? "Standards, multilateral principles, policy declarations and voluntary governance frameworks"
           : (root?.description ?? ""),
       instruments: [],
     };
@@ -589,7 +678,11 @@ function buildAtlasGroups(): AtlasGroup[] {
         left.shortTitle.localeCompare(right.shortTitle),
       ),
     }))
-    .sort((left, right) => left.label.localeCompare(right.label));
+    .sort((left, right) => {
+      const leftIndex = atlasGroupOrder.indexOf(left.id);
+      const rightIndex = atlasGroupOrder.indexOf(right.id);
+      return (leftIndex < 0 ? 999 : leftIndex) - (rightIndex < 0 ? 999 : rightIndex);
+    });
 }
 
 const atlasGroups = buildAtlasGroups();
@@ -616,14 +709,18 @@ function groupInstrumentProvisions(instrumentId: string) {
   return Array.from(groups.values());
 }
 
+type ProvisionSectionGroup = {
+  id: string;
+  label: string;
+  title: string;
+  provisions: Provision[];
+};
+
 function groupProvisionSections(provisionList: Provision[]) {
   const hasOfficialSections = provisionList.some(
     (provision) => provision.section?.id,
   );
-  const groups = new Map<
-    string,
-    { id: string; label: string; title: string; provisions: Provision[] }
-  >();
+  const groups = new Map<string, ProvisionSectionGroup>();
 
   if (hasOfficialSections) {
     provisionList.forEach((provision) => {
@@ -669,6 +766,48 @@ function groupProvisionSections(provisionList: Provision[]) {
   });
 
   return Array.from(groups.values());
+}
+
+function sectionOverview(
+  instrumentId: string,
+  section: ProvisionSectionGroup,
+) {
+  const curated = structureSummaryByKey.get(instrumentId + "::" + section.id);
+  if (curated) {
+    return {
+      summary: curated.summary,
+      label: "EDITORIAL OVERVIEW",
+      reviewed: true,
+    };
+  }
+
+  const hierarchyRoot = provisionMap.get(section.id);
+  if (hierarchyRoot?.instrumentId === instrumentId) {
+    return {
+      summary: hierarchyRoot.summary,
+      label: "EDITORIAL OVERVIEW",
+      reviewed: true,
+    };
+  }
+
+  const topics = section.provisions
+    .map((provision) => provision.title)
+    .filter((title) => title && title !== section.title)
+    .slice(0, 3);
+  const topicText = topics.length
+    ? " Key indexed topics include " + topics.join("; ") + "."
+    : "";
+  return {
+    summary:
+      "This index group contains " +
+      section.provisions.length +
+      " provision" +
+      (section.provisions.length === 1 ? "" : "s") +
+      "." +
+      topicText,
+    label: "INDEX OVERVIEW",
+    reviewed: false,
+  };
 }
 
 function fallbackStatusEvents(instrument: Instrument): StatusEvent[] {
@@ -730,13 +869,27 @@ function instrumentEvents(instrument: Instrument) {
 function NodeLegend() {
   return (
     <div className="node-legend" aria-label="Instrument node legend">
-      <span><i className="legend-shape binding" />Binding law</span>
-      <span><i className="legend-shape executive" />Executive / agency</span>
-      <span><i className="legend-shape proposal" />Proposal / bill</span>
-      <span><i className="legend-shape soft" />Soft law / framework</span>
-      <span><i className="legend-shape historical" />Historical / revoked</span>
+      <span><Scale aria-hidden="true" />Binding law</span>
+      <span><Landmark aria-hidden="true" />Executive / agency</span>
+      <span><FileClock aria-hidden="true" />Proposal / bill</span>
+      <span><Globe2 aria-hidden="true" />Soft law / framework</span>
+      <span><Archive aria-hidden="true" />Historical / revoked</span>
     </div>
   );
+}
+
+function InstrumentKindIcon({ instrument }: { instrument: Instrument }) {
+  const Icon =
+    statusClass(instrument) === "historical"
+      ? Archive
+      : forceClass(instrument) === "binding"
+        ? Scale
+        : forceClass(instrument) === "executive"
+          ? Landmark
+          : forceClass(instrument) === "proposal"
+            ? FileClock
+            : Globe2;
+  return <Icon aria-hidden="true" />;
 }
 
 function CorpusNavigator({
@@ -811,7 +964,7 @@ function CorpusNavigator({
         className="atlas-home-button"
         onClick={onOpenAtlas}
       >
-        <span>◫</span>
+        <MapIcon aria-hidden="true" />
         GLOBAL ATLAS
       </button>
 
@@ -857,9 +1010,15 @@ function CorpusNavigator({
                   (instrument) => instrument.id === selectedInstrumentId,
                 ) || group.id === atlasGroups[0]?.id
               }
+              data-atlas-group={group.id}
             >
               <summary>
-                <span>{group.label}</span>
+                <span className="jurisdiction-label">
+                  <span className="jurisdiction-mark" aria-hidden="true">
+                    {group.icon}
+                  </span>
+                  {group.label}
+                </span>
                 <small>{group.instruments.length}</small>
               </summary>
               <div className="tree-instrument-list">
@@ -875,7 +1034,12 @@ function CorpusNavigator({
                     aria-pressed={instrument.id === selectedInstrumentId}
                     onClick={() => onOpenInstrument(instrument.id)}
                   >
-                    <span>{instrument.shortTitle}</span>
+                    <span className="instrument-tree-title">
+                      <span className="jurisdiction-mark is-small" aria-hidden="true">
+                        {jurisdictionMark(instrument.jurisdictionId)}
+                      </span>
+                      {instrument.shortTitle}
+                    </span>
                     <small>
                       {jurisdictionById.get(instrument.jurisdictionId)
                         ?.shortName ?? instrument.jurisdictionId}
@@ -938,6 +1102,8 @@ function GlobalAtlas({
 }: {
   onOpenInstrument: (instrumentId: string) => void;
 }) {
+  const frameworkCount =
+    atlasGroups.find((group) => group.id === "frameworks")?.instruments.length ?? 0;
   return (
     <section className="atlas-view" aria-labelledby="atlas-title">
       <div className="view-intro">
@@ -950,7 +1116,8 @@ function GlobalAtlas({
           </p>
         </div>
         <div className="corpus-readout" aria-label="Corpus status">
-          <span><strong>{jurisdictions.length}</strong> jurisdictions</span>
+          <span><strong>7</strong> legal systems</span>
+          <span><strong>{frameworkCount}</strong> frameworks</span>
           <span><strong>{instruments.length}</strong> instruments</span>
           <span><strong>{provisions.length}</strong> indexed provisions</span>
           <span><strong>{relations.length}</strong> qualified links</span>
@@ -963,13 +1130,18 @@ function GlobalAtlas({
           <span>INSTRUMENT NODES →</span>
         </div>
         {atlasGroups.map((group, groupIndex) => (
-          <section className="atlas-lane" key={group.id}>
+          <section className="atlas-lane" key={group.id} data-atlas-group={group.id}>
             <header>
               <span className="lane-index">
                 {String(groupIndex + 1).padStart(2, "0")}
               </span>
               <div>
-                <h2>{group.label}</h2>
+                <h2>
+                  <span className="jurisdiction-mark" aria-hidden="true">
+                    {group.icon}
+                  </span>
+                  {group.label}
+                </h2>
                 <p>{group.description}</p>
               </div>
             </header>
@@ -997,6 +1169,9 @@ function GlobalAtlas({
                     }
                   >
                     <span className="instrument-node-signal" aria-hidden="true" />
+                    <span className="instrument-kind-icon" aria-hidden="true">
+                      <InstrumentKindIcon instrument={instrument} />
+                    </span>
                     <strong>{instrument.shortTitle}</strong>
                     <span>{humanize(instrument.category)}</span>
                     <small>
@@ -1041,6 +1216,9 @@ function InstrumentGenome({
       <div className="instrument-masthead">
         <div>
           <p className="terminal-label">
+            <span className="jurisdiction-mark is-small" aria-hidden="true">
+              {jurisdictionMark(instrument.jurisdictionId)}
+            </span>
             INSTRUMENT_GENOME / {jurisdiction?.shortName ?? instrument.jurisdictionId}
           </p>
           <h1 id="instrument-title">{instrument.shortTitle}</h1>
@@ -1099,7 +1277,9 @@ function InstrumentGenome({
 
       {groups.length ? (
         <div className="genome">
-          {groups.map((group, groupIndex) => (
+          {groups.map((group, groupIndex) => {
+            const sections = groupProvisionSections(group.provisions);
+            return (
             <section className="genome-chapter" key={group.id}>
               <header>
                 <span>{String(groupIndex + 1).padStart(2, "0")}</span>
@@ -1110,9 +1290,11 @@ function InstrumentGenome({
                 <small>{group.provisions.length} nodes</small>
               </header>
               <div className="genome-sections">
-                {groupProvisionSections(group.provisions).map((section) => (
+                {sections.map((section) => {
+                  const overview = sectionOverview(instrument.id, section);
+                  return (
                   <section className="genome-section" key={section.id}>
-                    {(groupProvisionSections(group.provisions).length > 1 ||
+                    {(sections.length > 1 ||
                       !["chapter-root", "indexed-provisions"].includes(
                         section.id,
                       )) && (
@@ -1121,6 +1303,19 @@ function InstrumentGenome({
                         <strong>{section.title}</strong>
                       </header>
                     )}
+                    <div
+                      className={
+                        overview.reviewed
+                          ? "section-overview"
+                          : "section-overview is-generated"
+                      }
+                    >
+                      <span>
+                        <Info aria-hidden="true" />
+                        {overview.label}
+                      </span>
+                      <p>{overview.summary}</p>
+                    </div>
                     <div className="provision-grid">
                       {section.provisions.map((provision) => {
                         const mappingCount =
@@ -1155,10 +1350,12 @@ function InstrumentGenome({
                       })}
                     </div>
                   </section>
-                ))}
+                  );
+                })}
               </div>
             </section>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="empty-state">
@@ -1235,10 +1432,10 @@ function ConnectionCanvas({
   const positions = visible.map((_, index) => {
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visible.length;
     return {
-      x: 50 + Math.cos(angle) * 38,
-      y: 50 + Math.sin(angle) * 36,
-      svgX: 500 + Math.cos(angle) * 380,
-      svgY: 310 + Math.sin(angle) * 220,
+      x: 50 + Math.cos(angle) * 34,
+      y: 50 + Math.sin(angle) * 35,
+      svgX: 500 + Math.cos(angle) * 340,
+      svgY: 310 + Math.sin(angle) * 214,
     };
   });
 
@@ -1253,15 +1450,16 @@ function ConnectionCanvas({
           <p>{anchor.title}</p>
         </div>
         <div className="connection-readout">
-          <span>{connections.length} direct links</span>
+          <span><Link2 aria-hidden="true" />{connections.length} direct links</span>
           <span>
+            <Sparkles aria-hidden="true" />
             {connections.filter(({ relation }) => relation.status === "editorial-reviewed").length}{" "}
             reviewed ·{" "}
             {connections.filter(({ relation }) => relation.status === "candidate").length}{" "}
             candidate
           </span>
-          <span>{anchor.conceptIds.length} concepts</span>
-          <span>{humanize(anchor.legalEffectStatus)}</span>
+          <span><Database aria-hidden="true" />{anchor.conceptIds.length} concepts</span>
+          <span><Scale aria-hidden="true" />{humanize(anchor.legalEffectStatus)}</span>
         </div>
       </div>
 
@@ -1295,6 +1493,8 @@ function ConnectionCanvas({
                   <path className="relation-arrow-marker" d="M 0 0 L 8 4 L 0 8 z" />
                 </marker>
               </defs>
+              <circle className="graph-origin-ring ring-one" cx="500" cy="310" r="58" />
+              <circle className="graph-origin-ring ring-two" cx="500" cy="310" r="92" />
               {visible.map((item, index) => {
                 const position = positions[index];
                 const midX = 500 + (position.svgX - 500) * 0.52;
@@ -1309,31 +1509,48 @@ function ConnectionCanvas({
                   position.svgX +
                   " " +
                   position.svgY;
+                const selected = item.relation.id === selectedRelationId;
                 return (
-                  <path
-                    key={item.relation.id}
-                    d={path}
-                    className={[
-                      "relation-line",
-                      "relation-" + item.relation.type,
-                      "mapping-" + item.relation.status,
-                      item.relation.id === selectedRelationId
-                        ? "is-selected"
-                        : "",
-                    ].join(" ")}
-                    markerEnd={
-                      item.relation.directionality === "directed" &&
-                      item.relation.source.id === anchor.id
-                        ? "url(#relation-arrowhead)"
-                        : undefined
-                    }
-                    markerStart={
-                      item.relation.directionality === "directed" &&
-                      item.relation.target.id === anchor.id
-                        ? "url(#relation-arrowhead)"
-                        : undefined
-                    }
-                  />
+                  <g key={item.relation.id}>
+                    <path
+                      d={path}
+                      pathLength={100}
+                      style={{ animationDelay: String(index * 70) + "ms" }}
+                      className={[
+                        "relation-line",
+                        "relation-" + item.relation.type,
+                        "mapping-" + item.relation.status,
+                        selected ? "is-selected" : "",
+                      ].join(" ")}
+                      markerEnd={
+                        item.relation.directionality === "directed" &&
+                        item.relation.source.id === anchor.id
+                          ? "url(#relation-arrowhead)"
+                          : undefined
+                      }
+                      markerStart={
+                        item.relation.directionality === "directed" &&
+                        item.relation.target.id === anchor.id
+                          ? "url(#relation-arrowhead)"
+                          : undefined
+                      }
+                    />
+                    {selected && (
+                      <path
+                        d={path}
+                        pathLength={100}
+                        className="relation-flow"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <circle
+                      className="relation-terminal"
+                      cx={position.svgX}
+                      cy={position.svgY}
+                      r="4"
+                      style={{ animationDelay: String(480 + index * 70) + "ms" }}
+                    />
+                  </g>
                 );
               })}
             </svg>
@@ -1377,6 +1594,7 @@ function ConnectionCanvas({
                   style={{
                     left: String(position.x) + "%",
                     top: String(position.y) + "%",
+                    animationDelay: String(280 + index * 65) + "ms",
                   }}
                   onClick={() => {
                     if (item.relatedProvision) {
@@ -1555,7 +1773,12 @@ function CompareView({
                 <article key={provision.id} className="compare-column">
                   <header>
                     <div>
-                      <span>{jurisdiction?.shortName}</span>
+                      <span>
+                        <span className="jurisdiction-mark is-small" aria-hidden="true">
+                          {jurisdictionMark(instrument.jurisdictionId)}
+                        </span>
+                        {jurisdiction?.shortName}
+                      </span>
                       <h2>
                         {instrument.shortTitle} {provision.locator}
                       </h2>
@@ -1668,6 +1891,7 @@ function ProvisionReader({
       >
         <span className="terminal-label">PROVISION_READER / STANDBY</span>
         <div className="idle-reticle" aria-hidden="true">
+          <Database />
           <i />
           <i />
         </div>
@@ -1690,7 +1914,12 @@ function ProvisionReader({
       >
         <span className="terminal-label">INSTRUMENT_RECORD</span>
         <div className="reader-heading">
-          <small>{jurisdiction?.name}</small>
+          <small>
+            <span className="jurisdiction-mark is-small" aria-hidden="true">
+              {jurisdictionMark(instrument.jurisdictionId)}
+            </span>
+            {jurisdiction?.name}
+          </small>
           <h2>{instrument.shortTitle}</h2>
           <p>{instrument.title}</p>
         </div>
@@ -1725,7 +1954,8 @@ function ProvisionReader({
           target="_blank"
           rel="noreferrer"
         >
-          OPEN OFFICIAL RECORD ↗
+          <ExternalLink aria-hidden="true" />
+          OPEN OFFICIAL RECORD
         </a>
       </aside>
     );
@@ -1734,7 +1964,16 @@ function ProvisionReader({
   const activeInstrument = instrumentById.get(provision!.instrumentId)!;
   const jurisdiction = jurisdictionById.get(activeInstrument.jurisdictionId);
   const isCompared = compareIds.includes(provision!.id);
+  const activeStructureId = provision!.section?.id ?? provision!.parentId;
+  const activeStructureSummary = activeStructureId
+    ? structureSummaryByKey.get(activeInstrument.id + "::" + activeStructureId)
+    : undefined;
   const readerTabs: ReaderTab[] = ["text", "analysis", "sources"];
+  const readerTabIcons: Record<ReaderTab, LucideIcon> = {
+    text: BookOpenText,
+    analysis: Network,
+    sources: ExternalLink,
+  };
 
   function handleTabKeyDown(
     event: ReactKeyboardEvent<HTMLButtonElement>,
@@ -1754,6 +1993,9 @@ function ProvisionReader({
       <span className="terminal-label">PROVISION_READER / {readerTab.toUpperCase()}</span>
       <div className="reader-heading">
         <small>
+          <span className="jurisdiction-mark is-small" aria-hidden="true">
+            {jurisdictionMark(activeInstrument.jurisdictionId)}
+          </span>
           {jurisdiction?.shortName} / {humanize(activeInstrument.legalForce)}
         </small>
         <h2>
@@ -1780,27 +2022,33 @@ function ProvisionReader({
           onClick={() => onAddCompare(provision!.id)}
           disabled={isCompared}
         >
+          <Link2 aria-hidden="true" />
           {isCompared ? "PINNED" : "ADD TO COMPARE"}
         </button>
         <a href={provision!.source.url} target="_blank" rel="noreferrer">
-          OFFICIAL ↗
+          <ExternalLink aria-hidden="true" />
+          OFFICIAL
         </a>
       </div>
       <div className="reader-tabs" role="tablist" aria-label="Reader panels">
-        {readerTabs.map((tab, index) => (
-          <button
-            type="button"
-            role="tab"
-            id={"reader-tab-" + tab}
-            aria-controls={"reader-panel-" + tab}
-            aria-selected={readerTab === tab}
-            key={tab}
-            onClick={() => onSetTab(tab)}
-            onKeyDown={(event) => handleTabKeyDown(event, index)}
-          >
-            {tab.toUpperCase()}
-          </button>
-        ))}
+        {readerTabs.map((tab, index) => {
+          const TabIcon = readerTabIcons[tab];
+          return (
+            <button
+              type="button"
+              role="tab"
+              id={"reader-tab-" + tab}
+              aria-controls={"reader-panel-" + tab}
+              aria-selected={readerTab === tab}
+              key={tab}
+              onClick={() => onSetTab(tab)}
+              onKeyDown={(event) => handleTabKeyDown(event, index)}
+            >
+              <TabIcon aria-hidden="true" />
+              {tab.toUpperCase()}
+            </button>
+          );
+        })}
       </div>
 
       {readerTab === "text" && (
@@ -1810,8 +2058,19 @@ function ProvisionReader({
           role="tabpanel"
           aria-labelledby="reader-tab-text"
         >
+          {activeStructureSummary && (
+            <div className="reader-section-overview">
+              <span>
+                <Info aria-hidden="true" />
+                SECTION OVERVIEW
+              </span>
+              <strong>{activeStructureSummary.title}</strong>
+              <p>{activeStructureSummary.summary}</p>
+            </div>
+          )}
           <div className="document-provenance">
             <span>
+              <FileText aria-hidden="true" />
               {provision!.paragraphs?.length
                 ? "OFFICIAL TEXT"
                 : "EDITORIAL SUMMARY"}
@@ -2064,9 +2323,20 @@ export default function RegulationExplorer() {
     compareIds: [],
     query: "",
   });
+  const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const searchRef = useRef<HTMLInputElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
   const urlSyncReadyRef = useRef(false);
+
+  function chooseTheme(nextTheme: Theme) {
+    document.documentElement.dataset.theme = nextTheme;
+    try {
+      window.localStorage.setItem("gadrm-theme", nextTheme);
+    } catch {
+      // The selected theme still applies for this session when storage is blocked.
+    }
+    window.dispatchEvent(new Event(themeChangeEvent));
+  }
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.hash.replace(/^#/, ""));
@@ -2203,6 +2473,28 @@ export default function RegulationExplorer() {
   const canOpenInstrument = Boolean(selectedInstrument);
   const canOpenConnections = Boolean(selectedProvision);
   const canOpenCompare = state.compareIds.length === 2;
+  const readerPanel =
+    state.view !== "compare" && state.view !== "timeline" ? (
+      <ProvisionReader
+        instrument={selectedInstrument}
+        provision={selectedProvision}
+        selectedRelation={effectiveRelation}
+        relationsForProvision={selectedRelations}
+        readerTab={state.readerTab}
+        compareIds={state.compareIds}
+        onSetTab={(tab) => dispatch({ type: "SET_READER_TAB", tab })}
+        onSelectRelation={(relationId) =>
+          dispatch({ type: "SELECT_RELATION", relationId })
+        }
+        onOpenProvision={openProvision}
+        onOpenInstrument={(instrumentId) =>
+          dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
+        }
+        onAddCompare={(provisionId) =>
+          dispatch({ type: "ADD_COMPARE", provisionId })
+        }
+      />
+    ) : null;
 
   return (
     <main className="terminal-app">
@@ -2218,7 +2510,7 @@ export default function RegulationExplorer() {
         </button>
         <label className="global-search">
           <span className="sr-only">Search regulations and provisions</span>
-          <i aria-hidden="true">⌕</i>
+          <Search aria-hidden="true" />
           <input
             ref={searchRef}
             type="search"
@@ -2232,6 +2524,7 @@ export default function RegulationExplorer() {
         </label>
         <nav className="mode-switch" aria-label="Explorer mode">
           {viewLabels.map((view) => {
+            const ViewIcon = view.icon;
             const disabled =
               (view.id === "instrument" && !canOpenInstrument) ||
               (view.id === "connections" && !canOpenConnections) ||
@@ -2247,18 +2540,38 @@ export default function RegulationExplorer() {
                   dispatch({ type: "OPEN_VIEW", view: view.id })
                 }
               >
+                <ViewIcon aria-hidden="true" />
                 {view.label}
               </button>
             );
           })}
         </nav>
+        <div className="theme-switch" role="group" aria-label="Color theme">
+          <button
+            type="button"
+            aria-pressed={theme === "dark"}
+            onClick={() => chooseTheme("dark")}
+          >
+            <Moon aria-hidden="true" />
+            Dark
+          </button>
+          <button
+            type="button"
+            aria-pressed={theme === "bright"}
+            onClick={() => chooseTheme("bright")}
+          >
+            <Sun aria-hidden="true" />
+            Bright
+          </button>
+        </div>
         <a
           className="github-link"
           href={repositoryUrl}
           target="_blank"
           rel="noreferrer"
         >
-          GITHUB ↗
+          <GitFork aria-hidden="true" />
+          GITHUB
         </a>
       </header>
 
@@ -2279,6 +2592,8 @@ export default function RegulationExplorer() {
           }
           onOpenProvision={openProvision}
         />
+
+        {state.view === "connections" && readerPanel}
 
         <section
           ref={workspaceRef}
@@ -2338,27 +2653,7 @@ export default function RegulationExplorer() {
           )}
         </section>
 
-        {state.view !== "compare" && state.view !== "timeline" && (
-          <ProvisionReader
-            instrument={selectedInstrument}
-            provision={selectedProvision}
-            selectedRelation={effectiveRelation}
-            relationsForProvision={selectedRelations}
-            readerTab={state.readerTab}
-            compareIds={state.compareIds}
-            onSetTab={(tab) => dispatch({ type: "SET_READER_TAB", tab })}
-            onSelectRelation={(relationId) =>
-              dispatch({ type: "SELECT_RELATION", relationId })
-            }
-            onOpenProvision={openProvision}
-            onOpenInstrument={(instrumentId) =>
-              dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-            }
-            onAddCompare={(provisionId) =>
-              dispatch({ type: "ADD_COMPARE", provisionId })
-            }
-          />
-        )}
+        {state.view !== "connections" && readerPanel}
       </div>
 
       <CompareTray

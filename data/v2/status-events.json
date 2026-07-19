@@ -478,5 +478,65 @@
     "effect": "The Advisory Body released its final report with seven recommendations for global AI governance.",
     "resultingStatus": "report-published",
     "source": {"url": "https://www.un.org/en/ai-advisory-body", "label": "United Nations"}
+  },
+  {
+    "id": "evt-iso-iec-42001-published",
+    "instrumentId": "iso-iec-42001-2023",
+    "date": "2023-12-18",
+    "type": "standard-published",
+    "label": "ISO/IEC 42001:2023 published",
+    "effect": "ISO recorded Edition 1 of the international AI management-system standard as published.",
+    "resultingStatus": "published-current",
+    "source": {"url": "https://www.iso.org/standard/42001", "label": "ISO"}
+  },
+  {
+    "id": "evt-ieee-ead-first-edition",
+    "instrumentId": "ieee-ethically-aligned-design-2019",
+    "date": "2019-03-31",
+    "type": "white-paper-published",
+    "label": "Ethically Aligned Design First Edition published",
+    "effect": "IEEE Standards Association lists the First Edition as a published white paper.",
+    "resultingStatus": "published-guidance",
+    "source": {"url": "https://standards.ieee.org/ieee/White_Paper/10594/", "label": "IEEE Standards Association"}
+  },
+  {
+    "id": "evt-oecd-ai-principles-adopted",
+    "instrumentId": "oecd-ai-principles",
+    "date": "2019-05-22",
+    "type": "recommendation-adopted",
+    "label": "OECD Council adopted the AI Recommendation",
+    "effect": "The OECD Council adopted the Recommendation on Artificial Intelligence at ministerial level.",
+    "resultingStatus": "active-recommendation",
+    "source": {"url": "https://www.oecd.org/en/publications/scoping-the-oecd-ai-principles_d62f618a-en.html", "label": "OECD"}
+  },
+  {
+    "id": "evt-oecd-ai-principles-updated",
+    "instrumentId": "oecd-ai-principles",
+    "date": "2024-05-03",
+    "type": "recommendation-amended",
+    "label": "OECD AI Principles updated",
+    "effect": "The OECD Ministerial Council Meeting adopted revisions addressing newer AI developments and strengthening coverage of safety, information integrity, responsible conduct, transparency, sustainability, and policy interoperability.",
+    "resultingStatus": "active-updated",
+    "source": {"url": "https://www.oecd.org/en/about/news/press-releases/2024/05/oecd-updates-ai-principles-to-stay-abreast-of-rapid-technological-developments.html", "label": "OECD"}
+  },
+  {
+    "id": "evt-bletchley-declaration-agreed",
+    "instrumentId": "int-bletchley-declaration-2023",
+    "date": "2023-11-01",
+    "type": "declaration-agreed",
+    "label": "Bletchley Declaration agreed",
+    "effect": "Countries and organizations attending the 2023 AI Safety Summit agreed the non-binding declaration on frontier-AI safety and international cooperation.",
+    "resultingStatus": "active-political-commitment",
+    "source": {"url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration", "label": "UK Government"}
+  },
+  {
+    "id": "evt-bletchley-new-zealand-joined",
+    "instrumentId": "int-bletchley-declaration-2023",
+    "date": "2024-10-23",
+    "type": "participant-joined",
+    "label": "New Zealand joined the Bletchley commitment",
+    "effect": "The official declaration page records New Zealand as joining the commitment, with the published participant list updated in February 2025.",
+    "resultingStatus": "active-political-commitment",
+    "source": {"url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023", "label": "UK Government"}
   }
 ]

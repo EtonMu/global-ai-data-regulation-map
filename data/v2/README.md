@@ -1,24 +1,39 @@
 # V2 global regulation graph seed
 
-This directory is a time-aware, multi-jurisdiction seed for the next visualization. It models jurisdictions, instruments, provisions, regulatory concepts, analytical relations, and lifecycle events separately so the interface can answer both of these questions:
+This directory is the time-aware, multi-jurisdiction seed for the current visualization. It models jurisdictions, instruments, provisions, structure summaries, regulatory concepts, analytical relations, and lifecycle events separately so the interface can answer both of these questions:
 
 1. What does this instrument or provision say and what is its legal status on a given date?
 2. What other provisions address a similar regulatory function, and where does that comparison break down?
 
 The dataset snapshot is verified through **2026-07-19**. It is a research aid, not legal advice, a complete legal corpus, or a compliance determination.
 
+## Snapshot scope
+
+The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 254 merged provision nodes, 42 qualified relations, 54 lifecycle events, 12 controlled concepts, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
+
+Complete locally stored Article coverage remains limited to the GDPR (99 Articles) and EU AI Act (113 Articles). Other instruments generally provide selected provision metadata, original editorial summaries, and official links. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
+
 ## Files
 
 - `jurisdictions.json`: countries, supranational systems, subnational systems, and international institutional contexts.
-- `instruments.json`: laws, regulations, executive orders, bills, rules, mandatory internal directives, voluntary frameworks, soft law, and advisory reports.
+- `instruments.json`: laws, regulations, executive orders, bills, rules, mandatory internal directives, voluntary frameworks, standards, soft law, declarations, and advisory reports.
 - `provisions.json`: representative provision-level nodes outside the complete EU imports, plus curated metadata for high-value EU provisions.
 - `concepts.json`: a small controlled vocabulary used to connect differently worded legal duties.
+- `structure-summaries.json`: project-authored, high-level orientation summaries for rendered sections and framework roots, with source basis and editorial review metadata.
 - `relations.json`: qualified analytical edges between provision or instrument nodes.
 - `status-events.json`: dated lifecycle events such as adoption, entry into force, partial application, amendment, revocation, veto, and scheduled commencement.
 - `gdpr-articles.json`: generated complete GDPR Article corpus from EUR-Lex; produced by the EU-law import script.
 - `eu-ai-act-articles.json`: generated complete EU AI Act Article corpus from EUR-Lex; produced by the EU-law import script.
 
 The two generated EU Article files are intentionally separate from this hand-curated seed. An application should merge all provision sources by stable `id`, prefer the generated official full-text record for text, and preserve curated relation/status metadata from `provisions.json`.
+
+## Navigation and presentation contract
+
+The primary legal-system display order is fixed as **EU → US → China → UK → Canada → Japan → India**. California is a subnational record and is displayed under the US. **International / Frameworks / Soft law** is a parallel top-level browsing lane, not a fictional jurisdiction and not subordinate to any one national system.
+
+That presentation lane is intentionally orthogonal to issuer metadata. NIST AI RMF, for example, retains its US issuing context and voluntary force even when surfaced beside ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process, and the UN Advisory Body's _Governing AI for Humanity_ report. These materials have different issuers, audiences, update processes, and legal effects; co-location supports discovery and does not imply equivalence.
+
+The frontend offers **Dark / Geek** and **Bright / Lawyer** modes. On wide layouts, the selected legal text or clearly labeled editorial summary occupies the center workspace and the animated relationship graph occupies the right workspace. National, regional, and subnational legal-system entries use their corresponding flags; international and standards contexts use issuer or framework icons rather than fictional flags. These cues supplement—not replace—accessible text labels and explicit legal-force/status wording.
 
 ## Stable IDs
 
@@ -37,7 +52,7 @@ Each object contains:
 
 - `id`: stable jurisdiction or institutional-context ID.
 - `name` and `shortName`: display labels.
-- `type`: `country`, `subnational`, `supranational`, `international-context`, `intergovernmental-context`, or `international-organization` in this seed.
+- `type`: `country`, `subnational`, `supranational`, `international-context`, `intergovernmental-context`, or `international-organization` in this seed. ISO/IEC, IEEE, and OECD use the last type with descriptions that preserve their distinct institutional roles.
 - `parentId`: parent node where relevant, such as California → United States.
 - `isoCode`: ISO-like code when one is appropriate; otherwise `null`.
 - `description`: short editorial scope note.
@@ -101,6 +116,20 @@ Concept nodes are a neutral middle layer for comparing differently structured in
 
 Concept membership means “relevant to this regulatory idea,” not “legally equivalent.”
 
+## `structure-summaries.json`
+
+Each record provides editorial orientation at a structural level and contains:
+
+- `id`: stable composite ID for the instrument and structural node.
+- `instrumentId` and `structureId`: existing instrument and rendered hierarchy identifiers.
+- `level`: structural level, currently `section` or `hierarchy-root`.
+- `label`, `title`, and `summary`: concise, project-authored navigation text.
+- `conceptIds`: optional controlled concepts for orientation.
+- `sourceBasis`: official source links and the provision IDs used to ground the summary.
+- `editorial`: review state, review date, and an express orientation-only caveat.
+
+The 34-record seed covers 31 indexed GDPR or EU AI Act sections and three framework roots. A structure summary must not be quoted or styled as legal text, must not erase exceptions or definitions in the underlying provisions, and must never be used as a compliance conclusion.
+
 ## `relations.json`
 
 Relations may connect either provisions or instruments:
@@ -150,6 +179,7 @@ The seed currently uses these modes:
 - `separate-official-import`: complete official EU Article text lives in a generated corpus file.
 - `official-full-text-linked`, `official-current-text-linked`, `official-revised-text-linked`, or `official-consolidated-text-linked`: an official publisher provides text, but this seed stores only metadata and summaries.
 - `official-publication-linked`, `official-report-linked`, `official-documents-linked`, or `official-gazette-pdf-linked`: official documents are linked but not copied.
+- `official-paid-standard-access-linked` or `official-publication-access-linked`: an official standards publisher controls access or reuse; the seed stores original editorial metadata and links the authorized access page without copying the publication.
 - `government-reference-translation-linked`: a government-hosted translation is useful but is not the authoritative legal text.
 - `official-bill-text-linked`: official legislative text that did not necessarily become law.
 
@@ -164,8 +194,8 @@ The seed currently uses these modes:
 5. **Japan translation:** The linked APPI English text is a government reference translation whose displayed last version is Act No. 37 of 2021. Authoritative and later version-sensitive work requires Japanese sources and current Personal Information Protection Commission materials.
 6. **Canada scope:** PIPEDA interacts with provincial privacy laws. The Directive on Automated Decision-Making is mandatory policy for covered federal institutions and systems, not a generally applicable private-sector AI statute.
 7. **India commencement:** As of the snapshot date, many core DPDP duties and operational Rules are enacted/made but scheduled for 14 May 2027. The interface must distinguish “future commencement” from “in force.”
-8. **Soft law:** Hiroshima AI Process documents, NIST AI RMF, Japan's AI Guidelines for Business, and the UN Advisory Body report have different institutional roles and legal effects. Similar language does not erase those differences.
-9. **Official text and copyright:** This seed links official sources and avoids reproducing unverified or potentially restricted full text. Standards and other copyrighted frameworks added later should normally store metadata, structure, short lawful excerpts where appropriate, and official purchase/access links—not copied standards.
+8. **Soft law and standards:** Hiroshima AI Process documents, the Bletchley Declaration, OECD AI Principles, NIST AI RMF, IEEE Ethically Aligned Design, ISO/IEC 42001, Japan's AI Guidelines for Business, and the UN Advisory Body report have different issuers, audiences, revision processes, and legal effects. Similar language does not erase those differences.
+9. **Official text and copyright:** This seed links official sources and avoids reproducing unverified or potentially restricted full text. ISO/IEC 42001 and IEEE Ethically Aligned Design are represented only through project-authored summaries, metadata, and official access links—not copied publication text.
 
 ## Suggested UI merge order
 
@@ -175,13 +205,14 @@ The seed currently uses these modes:
    - preserve imported official text and structural hierarchy;
    - overlay curated summaries, tags, provision status, and editorial notes only where the fields are intentionally curated;
    - never replace official text with a summary.
-4. Resolve all relation endpoints against the combined instrument/provision graph.
-5. Apply `status-events.json` to the selected timeline date.
-6. Render legal force, lifecycle status, source, rationale, and limits as first-class visual information.
+4. Load `structure-summaries.json`, validate each `instrumentId`, `structureId`, concept, and source-basis provision reference, and attach it to the matching rendered structural node.
+5. Resolve all relation endpoints against the combined instrument/provision graph.
+6. Apply `status-events.json` to the selected timeline date.
+7. Render legal force, lifecycle status, source, rationale, and limits as first-class visual information.
 
 ## Contribution checks
 
-Before accepting a new instrument, provision, relation, or event:
+Before accepting a new instrument, provision, relation, structure summary, or event:
 
 1. Use an official primary source where one is available.
 2. Record the access/review date.
@@ -190,4 +221,6 @@ Before accepting a new instrument, provision, relation, or event:
 5. Identify actor, trigger, scope, legal force, exceptions, and version before creating a mapping.
 6. Write both a mapping rationale and its limits.
 7. Do not store purported full text unless its source, version, completeness, language, and reuse basis have been verified.
-8. Validate every ID reference and ISO date before merging.
+8. Ground each structure summary in official sources and existing provision IDs; label it as editorial orientation and keep it concise.
+9. For ISO/IEC 42001 and IEEE Ethically Aligned Design, store only metadata, original summaries, and official access links—not publication text.
+10. Validate every ID reference and ISO date before merging.

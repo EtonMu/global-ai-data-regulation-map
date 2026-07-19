@@ -683,5 +683,77 @@
       {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Canada ADM Directive"},
       {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
     ]
+  },
+  {
+    "id": "v2-rel-039",
+    "source": {"type": "provision", "id": "iso-iec-42001-aims-overview"},
+    "target": {"type": "provision", "id": "us-nist-ai-rmf-govern"},
+    "type": "operational-alignment",
+    "directionality": "undirected",
+    "conceptIds": ["ai-risk-management", "accountability-governance"],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "public-metadata-structural-comparison",
+    "rationale": "Both frame AI risk governance as an organization-wide activity involving leadership, roles, policies, oversight, and repeatable management processes.",
+    "limits": "ISO/IEC 42001 is a requirements standard whose authoritative clauses require licensed access; NIST GOVERN is one function in a voluntary outcomes framework. This edge is not a clause crosswalk, equivalence finding, certification statement, or proof that either instrument satisfies the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {"url": "https://www.iso.org/standard/42001", "label": "ISO/IEC 42001 — ISO"},
+      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+    ]
+  },
+  {
+    "id": "v2-rel-040",
+    "source": {"type": "provision", "id": "ieee-ead-general-principles-overview"},
+    "target": {"type": "provision", "id": "oecd-ai-principles-values"},
+    "type": "soft-law-alignment",
+    "directionality": "undirected",
+    "conceptIds": ["accountability-governance", "human-oversight", "transparency-explainability"],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "theme-level-comparison",
+    "rationale": "Both provide human-centred ethical reference points for AI design and stewardship, including rights, accountability, transparency, and responsible human agency.",
+    "limits": "IEEE EAD is an expert-developed white paper for ethical design; the OECD instrument is an intergovernmental recommendation with a separate structure, audience, and revision process. Shared themes do not make their principles interchangeable or legally binding.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {"url": "https://standards.ieee.org/ieee/White_Paper/10594/", "label": "IEEE Ethically Aligned Design — IEEE SA"},
+      {"url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449", "label": "OECD Recommendation on AI"}
+    ]
+  },
+  {
+    "id": "v2-rel-041",
+    "source": {"type": "provision", "id": "oecd-ai-principle-1-4"},
+    "target": {"type": "provision", "id": "us-nist-ai-rmf-manage"},
+    "type": "operational-alignment",
+    "directionality": "undirected",
+    "conceptIds": ["ai-risk-management", "security-controls", "incident-response"],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "principle-to-framework-comparison",
+    "rationale": "Both support lifecycle attention to AI safety and security risks, including ongoing response when risks or harmful behaviour are identified.",
+    "limits": "OECD Principle 1.4 states a high-level intergovernmental norm; NIST MANAGE organizes voluntary operational outcomes. Neither source formally incorporates the other, and this mapping is not a control-by-control implementation claim.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {"url": "https://www.oecd.org/en/topics/ai-principles.html", "label": "OECD AI Principles"},
+      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+    ]
+  },
+  {
+    "id": "v2-rel-042",
+    "source": {"type": "provision", "id": "int-bletchley-shared-risk-agenda"},
+    "target": {"type": "provision", "id": "g7-hiroshima-code-action-1"},
+    "type": "soft-law-alignment",
+    "directionality": "undirected",
+    "conceptIds": ["frontier-model-safety", "ai-risk-management", "impact-assessment", "global-coordination"],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-text-theme-comparison",
+    "rationale": "Both emphasize identifying and evaluating risks associated with highly capable AI and taking proportionate mitigation measures across the technology lifecycle.",
+    "limits": "The Bletchley Declaration is a government-level political commitment focused on shared understanding and policy cooperation; Hiroshima Action 1 is voluntary guidance directed toward organizations developing advanced AI systems. Neither formally implements the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {"url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023", "label": "Bletchley Declaration — UK Government"},
+      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+    ]
   }
 ]
