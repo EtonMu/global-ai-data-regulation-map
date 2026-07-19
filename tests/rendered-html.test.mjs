@@ -22,27 +22,86 @@ async function render() {
   );
 }
 
-test("renders the regulation crosswalk application", async () => {
+function normalizedText(html) {
+  return html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&middot;/g, "·")
+    .replace(/&#xB7;/gi, "·")
+    .replace(/&rarr;/g, "→")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+test("server renders a neutral global regulatory atlas", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Global AI · Data Regulation Map/i);
-  assert.match(html, /Trace one regulatory obligation across borders/i);
-  assert.match(html, /Regulatory crosswalk lattice/i);
-  assert.match(html, /Incident notification &amp; response/i);
-  assert.match(html, /Research and educational use only/i);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
+  const text = normalizedText(html);
+
+  assert.match(text, /GLOBAL AI · DATA REGULATION MAP/i);
+  assert.match(text, /GLOBAL_REGULATORY_ATLAS \/ LIVE CORPUS/i);
+  assert.match(text, /No single law is the center\./i);
+  assert.match(
+    text,
+    /Navigate binding law, executive action, proposed legislation, standards and soft law as a versioned global system\./i,
+  );
+  assert.match(text, /11 jurisdictions/i);
+  assert.match(text, /19 instruments/i);
+  assert.match(text, /249 indexed provisions/i);
+  assert.match(text, /38 qualified links/i);
+  assert.match(text, /PROVISION_READER \/ STANDBY/i);
+  assert.match(text, /Select an instrument node\./i);
+  assert.match(text, /VIEW::\s*ATLAS/i);
+  assert.match(text, /Global regulatory atlas open\./i);
+  assert.match(text, /RESEARCH PREVIEW \/ NOT LEGAL ADVICE/i);
+
+  assert.doesNotMatch(
+    text,
+    /Trace one regulatory obligation across borders|Regulatory crosswalk lattice/i,
+  );
+  assert.doesNotMatch(
+    html,
+    /codex-preview|react-loading-skeleton|Starter Project/i,
+  );
 });
 
-test("server output contains semantic explorer controls", async () => {
+test("server output exposes the semantic atlas controls and idle reader", async () => {
   const response = await render();
   const html = await response.text();
+  const text = normalizedText(html);
 
-  assert.match(html, /<table[^>]*class="crosswalk-table"/i);
-  assert.match(html, /<select/i);
+  assert.match(html, /<main[^>]*class="terminal-app"/i);
+  assert.match(
+    html,
+    /<aside[^>]*class="corpus-navigator"[^>]*aria-label="Global regulation corpus"/i,
+  );
+  assert.match(html, /<input[^>]*type="search"/i);
+  assert.match(html, /Search regulations and provisions/i);
+  assert.match(
+    html,
+    /<nav[^>]*class="mode-switch"[^>]*aria-label="Explorer mode"/i,
+  );
+  assert.match(html, /<section[^>]*class="workspace"[^>]*aria-label="Regulation visualization"/i);
+  assert.match(html, /<aside[^>]*aria-label="Provision reader"/i);
   assert.match(html, /aria-live="polite"/i);
-  assert.match(html, /Official source at/i);
-  assert.match(html, /EUR-Lex/i);
+  assert.match(
+    html,
+    /<button(?=[^>]*aria-pressed="true")[^>]*>\s*Atlas\s*<\/button>/i,
+  );
+  assert.match(text, /Atlas Instrument Connections Timeline Compare/i);
+  assert.match(text, /Binding law/i);
+  assert.match(text, /Soft law \/ framework/i);
+  assert.match(text, /Historical \/ revoked/i);
+  assert.match(text, /CORPUS_NAV/i);
+  assert.match(text, /GLOBAL ATLAS/i);
+  assert.match(text, /GITHUB ↗/i);
+
+  assert.doesNotMatch(html, /<table[^>]*class="crosswalk-table"/i);
+  assert.doesNotMatch(html, /<select\b/i);
+  assert.doesNotMatch(text, /ONE_HOP_PROVISION_NEIGHBORHOOD|COMPARE_LAB/i);
 });

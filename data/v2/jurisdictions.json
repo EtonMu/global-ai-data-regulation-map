@@ -1,0 +1,101 @@
+[
+  {
+    "id": "int",
+    "name": "International",
+    "shortName": "Global",
+    "type": "international-context",
+    "parentId": null,
+    "isoCode": null,
+    "description": "Cross-border instruments that are not issued as the domestic law of one jurisdiction."
+  },
+  {
+    "id": "g7",
+    "name": "Group of Seven",
+    "shortName": "G7",
+    "type": "intergovernmental-context",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "Intergovernmental policy context for G7 commitments and the Hiroshima AI Process."
+  },
+  {
+    "id": "un",
+    "name": "United Nations",
+    "shortName": "UN",
+    "type": "international-organization",
+    "parentId": "int",
+    "isoCode": null,
+    "description": "United Nations institutional and advisory context."
+  },
+  {
+    "id": "eu",
+    "name": "European Union",
+    "shortName": "EU",
+    "type": "supranational",
+    "parentId": null,
+    "isoCode": "EU",
+    "description": "Supranational legal order of the European Union."
+  },
+  {
+    "id": "us",
+    "name": "United States",
+    "shortName": "US",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "US",
+    "description": "Federal legal and policy context of the United States."
+  },
+  {
+    "id": "us-ca",
+    "name": "California",
+    "shortName": "CA",
+    "type": "subnational",
+    "parentId": "us",
+    "isoCode": "US-CA",
+    "description": "State-level legal and legislative context within the United States."
+  },
+  {
+    "id": "cn",
+    "name": "People's Republic of China",
+    "shortName": "China",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "CN",
+    "description": "National legal and regulatory context of the People's Republic of China."
+  },
+  {
+    "id": "gb",
+    "name": "United Kingdom",
+    "shortName": "UK",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "GB",
+    "description": "Legal and policy context of the United Kingdom."
+  },
+  {
+    "id": "jp",
+    "name": "Japan",
+    "shortName": "Japan",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "JP",
+    "description": "National legal and policy context of Japan."
+  },
+  {
+    "id": "ca",
+    "name": "Canada",
+    "shortName": "Canada",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "CA",
+    "description": "Federal legal and policy context of Canada."
+  },
+  {
+    "id": "in",
+    "name": "India",
+    "shortName": "India",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "IN",
+    "description": "Union-level legal and regulatory context of India."
+  }
+]

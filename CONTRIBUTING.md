@@ -37,11 +37,19 @@ Pull requests should remain focused. A data contribution should not bundle unrel
 ## Pull-request checklist
 
 - [ ] Provision and relation IDs are unique.
-- [ ] Every endpoint exists in `data/provisions.json`.
+- [ ] New records use the active `data/v2/` schema and stable ID conventions.
+- [ ] Every relation endpoint resolves to a provision or instrument in the unified V2 graph.
 - [ ] Official URLs use HTTPS and were checked recently.
+- [ ] Legal force, lifecycle status, version, and distinct effective/application dates are explicit.
 - [ ] The rationale states at least one meaningful scope difference.
+- [ ] Candidate mappings are not mislabeled as editorially reviewed.
 - [ ] No restricted source text was copied without permission.
 - [ ] AI-generated suggestions were independently verified.
 - [ ] Validation, type checking, linting, and tests pass.
+
+Do not edit `data/v2/gdpr-articles.json` or
+`data/v2/eu-ai-act-articles.json` by hand. Update the reproducible import and
+regenerate the corpus instead. See the [V2 dataset guide](data/v2/README.md)
+for field definitions, temporal caveats, and the merge contract.
 
 By contributing code, you agree that it is licensed under MIT. By contributing original mapping data or editorial metadata, you agree that it is licensed under CC BY 4.0.

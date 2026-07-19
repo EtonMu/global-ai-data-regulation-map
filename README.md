@@ -1,65 +1,107 @@
 # Global AI · Data Regulation Map
 
-An open, visual crosswalk of global AI governance, privacy, data security, and cybersecurity regulation.
+An open-source, provision-level knowledge graph for exploring how AI governance, privacy, data security, and cybersecurity rules connect across jurisdictions.
 
-The project makes relationships between provisions inspectable. It connects each mapping to an official source, a typed relationship, a short rationale, and a visible review status. It is designed for learners, researchers, in-house legal teams, privacy and security professionals, and anyone translating regulatory language into governance work.
+The project combines a visual regulatory atlas, complete article navigation for selected instruments, qualified crosswalks, legal-status timelines, and side-by-side comparison. It is built for learning and research—not for reducing different legal systems to a single similarity score.
 
-> **Research preview:** the current dataset is small and illustrative. Mappings are hypotheses for review, not statements of legal equivalence or legal advice.
+> **Research preview:** mappings are reviewable analytical hypotheses, not findings of legal equivalence, compliance determinations, or legal advice. Always check the current authoritative text and obtain qualified local advice for a real matter.
 
-## What the MVP includes
+## What you can explore
 
-- A responsive cross-jurisdiction comparison lattice
-- Five topics: automated decisions, risk assessment, incident response, cross-border transfers, and security safeguards
-- Seed coverage across the European Union, China, California / United States, OECD, and NIST
-- Typed relationships such as `partial-overlap`, `complements`, and `aligned-with`
-- Evidence panels linking both ends of a mapping to official sources
-- Machine-checked provision IDs, relation IDs, references, URLs, and relation types
+- **Global Atlas** — enter through a jurisdiction-neutral map instead of treating any one law as the center of the world.
+- **Instrument Genome** — browse an instrument chapter by chapter and open an individual article or provision.
+- **Provision Reader** — distinguish stored official text from an editorial summary or an official-source link.
+- **Connections** — inspect a provision's immediate relationships, including the rationale, limits, evidence basis, confidence, and review state for each edge.
+- **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
+- **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
+- **Corpus search** — find instruments and provisions by title, locator, jurisdiction, or regulatory concept.
 
-## Why a crosswalk, not a similarity score
+The interface uses a dark regulatory-intelligence / terminal aesthetic while keeping the graph deliberately bounded: it shows useful one-hop context rather than an unreadable network hairball.
 
-Two provisions can use similar language and still differ in regulated actors, triggers, exceptions, deadlines, territorial scope, legal effect, or enforcement. This project therefore avoids a universal “equivalent” label and does not assign compliance percentages.
+## V2 corpus snapshot
 
-Each edge is a reviewable argument:
+The current dataset was reviewed through **2026-07-19** and contains:
 
-| Relation | Meaning |
+- 11 jurisdiction or institutional-context nodes;
+- 19 instruments across the EU, United States and California, China, the United Kingdom, Japan, Canada, India, the G7, and the UN;
+- 249 unified provision nodes after merging generated and curated records;
+- 38 qualified relations, 48 lifecycle events, and 12 controlled regulatory concepts;
+- all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications.
+
+The 19-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, soft law, and an advisory report. Legal force and lifecycle status are first-class data—not styling trivia.
+
+Complete stored article corpora are currently limited to the GDPR and EU AI Act. For most other instruments, the repository provides structured metadata, editorial summaries, and official links rather than copying source text. The EU imports include enacted article text and structural hierarchy; recitals, signatures, and footnotes remain at EUR-Lex.
+
+## Why qualified mappings matter
+
+Two provisions can address the same governance problem while differing in regulated actors, triggers, definitions, exceptions, territorial reach, deadlines, enforcement, or legal force. A visual connection therefore does **not** mean that one rule satisfies another.
+
+Each relation records:
+
+| Field | Purpose |
 | --- | --- |
-| `functional-equivalent` | Close functional alignment, with material legal differences still possible |
-| `partial-overlap` | Some duties or outcomes overlap, but scope or mechanics differ |
-| `operationalizes` | A rule gives more concrete effect to a higher-level principle |
-| `aligned-with` | A framework outcome is relevant to a legal or policy objective |
-| `complements` | The provisions address different layers of the same governance problem |
-| `depends-on` | One provision must be read with another requirement |
+| `type` | Describes the relationship, such as partial overlap, implementation, shared origin, or soft-law alignment |
+| `rationale` | Explains the useful connection |
+| `limits` | States what the reader must not infer |
+| `status` | Separates candidate mappings from editorially reviewed mappings |
+| `confidence` | Qualitative confidence in the usefulness of the asserted relation—not a compliance percentage |
+| `sourceSupport` | Links the official materials used to assess the edge |
+| `verifiedOn` | Records when the comparison was last checked |
 
-## Current seed coverage
+## Intended uses
 
-| Region | Instruments |
-| --- | --- |
-| European Union | GDPR, EU AI Act, NIS2 Directive |
-| China | Personal Information Protection Law, amended Cybersecurity Law |
-| United States / California | California Civil Code breach-notification law, NIST AI RMF, NIST CSF 2.0 |
-| International | OECD AI Principles, OECD Privacy Guidelines |
+- Learn the structure of a major instrument and follow a concept across borders.
+- Scope cross-jurisdiction research before conducting instrument-specific legal analysis.
+- Discover potentially relevant obligations, standards, policies, and soft-law materials.
+- Compare how differently structured regimes address risk assessment, transparency, security, incident response, data rights, cross-border data, and related concepts.
+- Identify stale, future, revoked, vetoed, or non-binding materials before relying on them.
+- Build teaching demonstrations, research datasets, or specialist visualizations on top of an inspectable open schema.
 
-Last seed review: **2026-07-19**.
+The tool is not a substitute for applicability analysis, regulatory monitoring, an authoritative legal database, or professional advice.
 
-Important temporal notes:
+## Time and status are part of the graph
 
-- The EU AI Act is in force, but the high-risk-system provisions represented here generally start applying on 2 August 2026, subject to Article 113 and system classification.
-- NIS2 is a directive. Practical duties must be checked against the applicable member-state implementing law.
-- China’s Cybersecurity Law was amended in 2025, with the amended text effective 1 January 2026. Older materials may use superseded article numbering.
-- Chinese official-language texts are authoritative; the English titles and summaries in this project are editorial translations.
+The same title can have a different legal effect at different dates. V2 separates adoption, publication, entry into force, general application, cessation, and provision-specific application dates. It also preserves historically useful nodes.
+
+Examples in this snapshot include a partially applicable EU AI Act, a revoked EO 14110, a vetoed California SB 1047, phased Indian DPDP legislation, and voluntary or advisory frameworks. UK GDPR and EU GDPR share an origin but have separate amendment and interpretation histories. Translations and consolidated texts may also lag the legally authoritative version.
+
+Status fields are editorial conclusions as of a recorded date. The event stream explains those conclusions but is not a complete legislative history. See the [V2 dataset guide](data/v2/README.md) for instrument-specific caveats.
+
+## Architecture
+
+The application is intentionally simple to inspect and fork:
+
+```text
+app/
+  regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
+data/v2/
+  jurisdictions.json         jurisdiction and institutional contexts
+  instruments.json           legal force, lifecycle, dates, and official sources
+  provisions.json            curated provision metadata and summaries
+  gdpr-articles.json          generated official GDPR article corpus
+  eu-ai-act-articles.json     generated official EU AI Act article corpus
+  concepts.json              neutral regulatory vocabulary
+  relations.json             qualified provision/instrument edges
+  status-events.json         auditable lifecycle events
+scripts/
+  import-eu-law.py           EUR-Lex XHTML article importer
+  validate-data.mjs          dataset integrity checks
+```
+
+At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
+
+The frontend is built with React, TypeScript, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
 
 ## Run locally
 
-Requirements: Node.js 22.13 or newer and pnpm 11.
+Requirements: Node.js **22.13 or newer** and pnpm **11**.
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Then open the local URL shown in the terminal.
-
-Quality checks:
+Open the local URL shown in the terminal. Run the complete checks before opening a pull request:
 
 ```bash
 pnpm validate:data
@@ -68,42 +110,43 @@ pnpm lint
 pnpm test
 ```
 
-## Data model
+## Data provenance and reuse
 
-The seed data lives in [`data/provisions.json`](data/provisions.json) and [`data/relations.json`](data/relations.json). See [`data/README.md`](data/README.md) for field definitions, review rules, and source requirements.
+Every instrument and relation should point to an official primary source where one is available and record an access or review date. Stored text must state its language, version, completeness, and availability mode. Editorial summaries are labeled as summaries; a link is never presented as locally stored full text.
 
-A relation contains two provision IDs, a topic, a relationship type, a rationale, review status, and verification date. The validation script rejects duplicate IDs, dangling references, unsupported types, missing official sources, and malformed dates.
+- Source code is licensed under the [MIT License](LICENSE).
+- Original classifications, summaries, mappings, rationales, and editorial metadata are licensed under [CC BY 4.0](DATA-LICENSE.md).
+- Official legislation, government publications, translations, standards, reports, names, and third-party material remain subject to their own laws, licenses, and terms.
+
+The project does not claim that the data license grants rights in incorporated official text. Do not copy commercial standards, paywalled database content, or restricted publications into the repository. Prefer metadata, structure, original summaries, short lawful excerpts where appropriate, and an official access or purchase link.
 
 ## Contributing
 
-Corrections are as valuable as new coverage. You can:
+Corrections are as valuable as new coverage. Useful contributions include a current official source, a lifecycle correction, a better scope caveat, a challenged relation, a new provision-level mapping, an accessibility improvement, or a new visualization.
 
-- report an outdated or broken official source;
-- challenge a mapping rationale;
-- document a scope difference or exception;
-- propose a new provision or crosswalk;
-- improve accessibility, mobile behavior, or data validation.
+For a data contribution:
 
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request. Please do not paste paywalled standards, commercial database text, or unofficial translations without permission.
+1. Start with the jurisdiction and instrument record; record legal force, version, lifecycle status, and distinct legal dates.
+2. Add provision metadata using a stable ID and identify actors, scope, concepts, source, text availability, and provision-level effect.
+3. Add a relation only after comparing actors, triggers, duties, exceptions, timing, territorial scope, and legal force.
+4. Write both a concise `rationale` and explicit `limits`; use `candidate` unless the mapping has completed the project's review process.
+5. Add status events needed to explain the instrument's current state, including scheduled future events.
+6. Run all quality checks and keep the pull request focused.
+
+Do not edit generated EU corpus files by hand. Fix or update the source import and regenerate them reproducibly. Read [CONTRIBUTING.md](CONTRIBUTING.md), the [dataset overview](data/README.md), and the detailed [V2 schema and review guide](data/v2/README.md) before submitting a change.
 
 ## Roadmap
 
-- Expand incident-response crosswalks with EU member-state implementation details
-- Add rights, retention, children’s data, biometric data, and AI documentation topics
-- Separate editorial candidates from expert-reviewed mappings
-- Add version history and change alerts for amended provisions
-- Publish versioned datasets and a citable research release
+- Split and lazy-load complete instrument text as the corpus grows, while keeping the graph index fast.
+- Expand complete, versioned instrument coverage without weakening source and reuse controls.
+- Add date-selectable graph states and amendment lineage at provision level.
+- Separate candidate, editorially reviewed, and independently expert-reviewed mappings.
+- Add jurisdiction, actor, legal-force, lifecycle, and concept filters.
+- Publish citable dataset releases and machine-readable provenance.
+- Improve multilingual navigation while keeping the authoritative-language/version boundary visible.
 
 ## Legal and research disclaimer
 
-This project is provided for research and educational purposes only and does not constitute legal advice. Mappings describe possible functional or thematic relationships and do not establish legal equivalence. The dataset may be incomplete, outdated, or affected by jurisdiction-specific definitions, exceptions, guidance, implementation, and enforcement practice. Always consult authoritative texts and qualified local counsel.
-
-## Licenses
-
-- Source code: [MIT License](LICENSE)
-- Original mapping data and editorial metadata: [CC BY 4.0](DATA-LICENSE.md)
-- Official laws, standards, translations, and third-party sources remain subject to their own terms and rights.
-
-## Citation
+This project is provided for research and educational purposes only and does not constitute legal advice. It may be incomplete, outdated, mistranslated, or affected by jurisdiction-specific definitions, exceptions, guidance, implementation, enforcement, and later amendments. A graph edge describes a possible functional, historical, structural, or thematic relationship; it does not establish equivalence, interoperability, or compliance.
 
 Citation metadata is available in [`CITATION.cff`](CITATION.cff).

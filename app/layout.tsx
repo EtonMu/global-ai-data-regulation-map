@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host.startsWith("localhost") ? "http" : "https");
   const baseUrl = new URL(`${protocol}://${host}`);
-  const socialImage = new URL("/og.png", baseUrl).toString();
+  const socialImage = new URL("/og-regulation-atlas.png", baseUrl).toString();
 
   return {
     metadataBase: baseUrl,
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s · Global AI Data Regulation Map",
     },
     description:
-      "An open, evidence-linked crosswalk for global AI governance, privacy, data security and cybersecurity regulation.",
+      "A versioned, provision-level knowledge graph for global AI governance, privacy, data security and cybersecurity regulation.",
     icons: {
       icon: "/favicon.svg",
       shortcut: "/favicon.svg",
@@ -29,14 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "Global AI · Data Regulation Map",
       description:
-        "Trace one regulatory obligation across borders through an open, evidence-linked crosswalk.",
+        "Explore full legal corpora, provision-level mappings and time-aware regulatory status across jurisdictions.",
       type: "website",
       images: [
         {
           url: socialImage,
           width: 1731,
           height: 909,
-          alt: "Global AI Data Regulation Map crosswalk preview",
+          alt: "Global AI Data Regulation Map knowledge graph preview",
         },
       ],
     },
@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Global AI · Data Regulation Map",
       description:
-        "Trace one regulatory obligation across borders through an open, evidence-linked crosswalk.",
+        "Explore full legal corpora, provision-level mappings and time-aware regulatory status across jurisdictions.",
       images: [socialImage],
     },
   };

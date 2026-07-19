@@ -1,0 +1,482 @@
+[
+  {
+    "id": "evt-gdpr-adopted",
+    "instrumentId": "eu-gdpr",
+    "date": "2016-04-27",
+    "type": "adopted",
+    "label": "GDPR adopted",
+    "effect": "The European Parliament and Council adopted Regulation (EU) 2016/679.",
+    "resultingStatus": "adopted",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-gdpr-entry-force",
+    "instrumentId": "eu-gdpr",
+    "date": "2016-05-24",
+    "type": "entered-into-force",
+    "label": "GDPR entered into force",
+    "effect": "The Regulation entered into force twenty days after publication.",
+    "resultingStatus": "in-force-not-yet-applicable",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_99/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-gdpr-applicable",
+    "instrumentId": "eu-gdpr",
+    "date": "2018-05-25",
+    "type": "general-application",
+    "label": "GDPR became applicable",
+    "effect": "The Regulation became generally applicable across the EU.",
+    "resultingStatus": "applicable",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_99/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-signed",
+    "instrumentId": "eu-ai-act",
+    "date": "2024-06-13",
+    "type": "adopted",
+    "label": "EU AI Act signed",
+    "effect": "Regulation (EU) 2024/1689 was signed following the legislative process.",
+    "resultingStatus": "adopted",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-entry-force",
+    "instrumentId": "eu-ai-act",
+    "date": "2024-08-01",
+    "type": "entered-into-force",
+    "label": "EU AI Act entered into force",
+    "effect": "The Regulation entered into force twenty days after publication in the Official Journal.",
+    "resultingStatus": "in-force-phased-application",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-first-application",
+    "instrumentId": "eu-ai-act",
+    "date": "2025-02-02",
+    "type": "partial-application",
+    "label": "Chapters I and II began to apply",
+    "effect": "The general provisions and prohibited-AI-practices chapter began to apply under Article 113(a).",
+    "resultingStatus": "partially-applicable",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-second-application",
+    "instrumentId": "eu-ai-act",
+    "date": "2025-08-02",
+    "type": "partial-application",
+    "label": "Additional AI Act provisions began to apply",
+    "effect": "The provisions listed in Article 113(b), including the general-purpose AI chapter and specified governance and penalty provisions, began to apply, subject to the stated exception.",
+    "resultingStatus": "partially-applicable",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-general-application",
+    "instrumentId": "eu-ai-act",
+    "date": "2026-08-02",
+    "type": "scheduled-general-application",
+    "label": "General AI Act application date",
+    "effect": "Most remaining provisions are scheduled to apply, subject to Article 113 and transitional provisions.",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-ai-act-art6-1-later",
+    "instrumentId": "eu-ai-act",
+    "date": "2027-08-02",
+    "type": "scheduled-partial-application",
+    "label": "Article 6(1) and corresponding obligations scheduled",
+    "effect": "Article 6(1) and the corresponding obligations are scheduled to apply under Article 113(c).",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj", "label": "EUR-Lex"}
+  },
+  {
+    "id": "evt-eo14110-signed",
+    "instrumentId": "us-eo-14110",
+    "date": "2023-10-30",
+    "type": "signed",
+    "label": "EO 14110 signed",
+    "effect": "The President signed the executive order directing federal executive-branch action on AI.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence", "label": "Federal Register"}
+  },
+  {
+    "id": "evt-eo14110-revoked",
+    "instrumentId": "us-eo-14110",
+    "date": "2025-01-20",
+    "type": "revoked",
+    "label": "EO 14110 revoked",
+    "effect": "Executive Order 14148 expressly revoked EO 14110.",
+    "resultingStatus": "revoked",
+    "source": {"url": "https://www.federalregister.gov/documents/2025/01/28/2025-01901/initial-rescissions-of-harmful-executive-orders-and-actions", "label": "Federal Register"}
+  },
+  {
+    "id": "evt-eo14179-signed",
+    "instrumentId": "us-eo-14179",
+    "date": "2025-01-23",
+    "type": "signed",
+    "label": "EO 14179 signed",
+    "effect": "The order established a new executive-branch AI policy direction and required an AI Action Plan and review of actions taken under EO 14110.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence", "label": "Federal Register"}
+  },
+  {
+    "id": "evt-sb1047-introduced",
+    "instrumentId": "us-ca-sb-1047-2024",
+    "date": "2024-02-07",
+    "type": "introduced",
+    "label": "SB 1047 introduced",
+    "effect": "The bill entered the California legislative process.",
+    "resultingStatus": "pending-bill",
+    "source": {"url": "https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202320240SB1047", "label": "California Legislative Information"}
+  },
+  {
+    "id": "evt-sb1047-enrolled",
+    "instrumentId": "us-ca-sb-1047-2024",
+    "date": "2024-09-03",
+    "type": "enrolled",
+    "label": "SB 1047 enrolled",
+    "effect": "The Legislature sent the enrolled bill to the Governor.",
+    "resultingStatus": "awaiting-governor",
+    "source": {"url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047", "label": "California Legislative Information"}
+  },
+  {
+    "id": "evt-sb1047-vetoed",
+    "instrumentId": "us-ca-sb-1047-2024",
+    "date": "2024-09-29",
+    "type": "vetoed",
+    "label": "SB 1047 vetoed",
+    "effect": "The Governor returned the bill without signature; it did not become law.",
+    "resultingStatus": "vetoed",
+    "source": {"url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047", "label": "California Legislative Information"}
+  },
+  {
+    "id": "evt-nist-ai-rmf-released",
+    "instrumentId": "us-nist-ai-rmf-1-0",
+    "date": "2023-01-26",
+    "type": "released",
+    "label": "NIST AI RMF 1.0 released",
+    "effect": "NIST published the first full version as a voluntary framework.",
+    "resultingStatus": "active-voluntary",
+    "source": {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST"}
+  },
+  {
+    "id": "evt-pipl-adopted",
+    "instrumentId": "cn-pipl",
+    "date": "2021-08-20",
+    "type": "adopted",
+    "label": "PIPL adopted",
+    "effect": "The Standing Committee of the National People's Congress adopted the law.",
+    "resultingStatus": "enacted-not-yet-effective",
+    "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China"}
+  },
+  {
+    "id": "evt-pipl-effective",
+    "instrumentId": "cn-pipl",
+    "date": "2021-11-01",
+    "type": "entered-into-force",
+    "label": "PIPL took effect",
+    "effect": "The law became effective.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China"}
+  },
+  {
+    "id": "evt-csl-original-effective",
+    "instrumentId": "cn-cybersecurity-law",
+    "date": "2017-06-01",
+    "type": "entered-into-force",
+    "label": "Cybersecurity Law took effect",
+    "effect": "The original Cybersecurity Law became effective.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Cyberspace Administration of China / National People's Congress"}
+  },
+  {
+    "id": "evt-csl-amendment-adopted",
+    "instrumentId": "cn-cybersecurity-law",
+    "date": "2025-10-28",
+    "type": "amended",
+    "label": "Cybersecurity Law amendment adopted",
+    "effect": "The Standing Committee adopted amendments including new AI-related language, updated liability provisions, and renumbering.",
+    "resultingStatus": "amended-not-yet-effective",
+    "source": {"url": "https://www.cac.gov.cn/2025-10/29/c_1763461514706581.htm", "label": "Cyberspace Administration of China / Xinhua"}
+  },
+  {
+    "id": "evt-csl-amendment-effective",
+    "instrumentId": "cn-cybersecurity-law",
+    "date": "2026-01-01",
+    "type": "amendment-effective",
+    "label": "Amended Cybersecurity Law took effect",
+    "effect": "The 2025 amended text became the current law; provision numbering changed.",
+    "resultingStatus": "in-force-amended",
+    "source": {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Cyberspace Administration of China / National People's Congress"}
+  },
+  {
+    "id": "evt-network-data-reg-promulgated",
+    "instrumentId": "cn-network-data-regulations",
+    "date": "2024-09-24",
+    "type": "promulgated",
+    "label": "Network Data Regulations promulgated",
+    "effect": "State Council Order No. 790 promulgated the administrative regulation.",
+    "resultingStatus": "promulgated-not-yet-effective",
+    "source": {"url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html", "label": "State Council of the People's Republic of China"}
+  },
+  {
+    "id": "evt-network-data-reg-effective",
+    "instrumentId": "cn-network-data-regulations",
+    "date": "2025-01-01",
+    "type": "entered-into-force",
+    "label": "Network Data Regulations took effect",
+    "effect": "The administrative regulation became effective.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html", "label": "State Council of the People's Republic of China"}
+  },
+  {
+    "id": "evt-cn-genai-issued",
+    "instrumentId": "cn-generative-ai-measures",
+    "date": "2023-07-10",
+    "type": "issued",
+    "label": "Generative AI Measures issued",
+    "effect": "The seven issuing authorities adopted and issued the joint measures.",
+    "resultingStatus": "issued-not-yet-effective",
+    "source": {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "Cyberspace Administration of China"}
+  },
+  {
+    "id": "evt-cn-genai-effective",
+    "instrumentId": "cn-generative-ai-measures",
+    "date": "2023-08-15",
+    "type": "entered-into-force",
+    "label": "Generative AI Measures took effect",
+    "effect": "The joint departmental measures became effective.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "Cyberspace Administration of China"}
+  },
+  {
+    "id": "evt-uk-gdpr-domestic",
+    "instrumentId": "gb-uk-gdpr",
+    "date": "2021-01-01",
+    "type": "domesticated",
+    "label": "UK GDPR operated as domestic law",
+    "effect": "At the end of the EU transition period, the retained and modified regulation operated as the UK GDPR alongside the Data Protection Act 2018.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.legislation.gov.uk/ukpga/2025/18/notes/division/4/index.htm", "label": "UK Legislation, explanatory notes"}
+  },
+  {
+    "id": "evt-uk-duaa-assent",
+    "instrumentId": "gb-uk-gdpr",
+    "date": "2025-06-19",
+    "type": "amending-act-enacted",
+    "label": "Data (Use and Access) Act 2025 received Royal Assent",
+    "effect": "The Act enacted amendments to the UK GDPR and related data-protection legislation, subject to commencement provisions.",
+    "resultingStatus": "in-force-amendments-phased",
+    "source": {"url": "https://www.legislation.gov.uk/ukpga/2025/18/contents/enacted", "label": "UK Legislation"}
+  },
+  {
+    "id": "evt-uk-duaa-first-commencement",
+    "instrumentId": "gb-uk-gdpr",
+    "date": "2025-08-20",
+    "type": "amendment-wave-effective",
+    "label": "First DUAA commencement regulations took effect",
+    "effect": "The first commencement regulations brought specified UK GDPR and Data Protection Act amendments into force.",
+    "resultingStatus": "in-force-amended",
+    "source": {"url": "https://www.legislation.gov.uk/uksi/2025/904/made", "label": "UK Legislation"}
+  },
+  {
+    "id": "evt-jp-appi-enacted",
+    "instrumentId": "jp-appi",
+    "date": "2003-05-30",
+    "type": "enacted",
+    "label": "APPI enacted",
+    "effect": "Act No. 57 of 2003 was promulgated.",
+    "resultingStatus": "enacted-phased",
+    "source": {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japanese Law Translation"}
+  },
+  {
+    "id": "evt-jp-appi-general-effective",
+    "instrumentId": "jp-appi",
+    "date": "2005-04-01",
+    "type": "general-application",
+    "label": "APPI private-sector rules generally took effect",
+    "effect": "The original comprehensive private-sector framework became generally effective, later subject to substantial amendments.",
+    "resultingStatus": "in-force",
+    "source": {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japanese Law Translation"}
+  },
+  {
+    "id": "evt-jp-ai-guidelines-v1-2",
+    "instrumentId": "jp-ai-guidelines-business-1-2",
+    "date": "2026-03-31",
+    "type": "version-released",
+    "label": "AI Guidelines for Business Version 1.2 released",
+    "effect": "METI and the AI Safety Institute published the current Version 1.2 materials and tentative translations.",
+    "resultingStatus": "active-voluntary",
+    "source": {"url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html", "label": "Ministry of Economy, Trade and Industry"}
+  },
+  {
+    "id": "evt-pipeda-assent",
+    "instrumentId": "ca-pipeda",
+    "date": "2000-04-13",
+    "type": "royal-assent",
+    "label": "PIPEDA received Royal Assent",
+    "effect": "The federal statute was enacted, with phased commencement to follow.",
+    "resultingStatus": "enacted-phased",
+    "source": {"url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/page-1.html", "label": "Justice Laws Website, Government of Canada"}
+  },
+  {
+    "id": "evt-pipeda-part1-start",
+    "instrumentId": "ca-pipeda",
+    "date": "2001-01-01",
+    "type": "partial-commencement",
+    "label": "PIPEDA Part 1 began phased application",
+    "effect": "The federal private-sector privacy framework began operating, with application broadened through later phases.",
+    "resultingStatus": "in-force-phased",
+    "source": {"url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/", "label": "Justice Laws Website, Government of Canada"}
+  },
+  {
+    "id": "evt-pipeda-current-version",
+    "instrumentId": "ca-pipeda",
+    "date": "2025-03-04",
+    "type": "last-amended-in-consolidation",
+    "label": "Latest in-force amendment shown in current consolidation",
+    "effect": "The Justice Laws consolidation current to 26 May 2026 reports 4 March 2025 as the last amendment date.",
+    "resultingStatus": "in-force-amended",
+    "source": {"url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/", "label": "Justice Laws Website, Government of Canada"}
+  },
+  {
+    "id": "evt-ca-adm-effective",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "date": "2019-04-01",
+    "type": "effective",
+    "label": "Automated Decision-Making Directive took effect",
+    "effect": "The federal administrative policy took effect, with compliance required no later than 1 April 2020 for covered systems.",
+    "resultingStatus": "active-policy",
+    "source": {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Treasury Board of Canada Secretariat"}
+  },
+  {
+    "id": "evt-ca-adm-current-revision",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "date": "2025-06-24",
+    "type": "version-effective",
+    "label": "Current directive revision published",
+    "effect": "The current version added or updated requirements and provided transition periods for existing systems and Agents of Parliament.",
+    "resultingStatus": "active-transition",
+    "source": {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Treasury Board of Canada Secretariat"}
+  },
+  {
+    "id": "evt-ca-adm-transition-end",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "date": "2026-06-24",
+    "type": "transition-ended",
+    "label": "Transition to updated directive requirements ended",
+    "effect": "Existing systems covered by the transition and Agents of Parliament reached the stated compliance date for new or updated requirements.",
+    "resultingStatus": "active",
+    "source": {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Treasury Board of Canada Secretariat"}
+  },
+  {
+    "id": "evt-india-dpdp-assent",
+    "instrumentId": "in-dpdp-act-2023",
+    "date": "2023-08-11",
+    "type": "presidential-assent",
+    "label": "DPDP Act received assent",
+    "effect": "The Digital Personal Data Protection Act, 2023 was enacted subject to commencement by notification.",
+    "resultingStatus": "enacted-not-yet-effective",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf", "label": "Ministry of Electronics and Information Technology"}
+  },
+  {
+    "id": "evt-india-dpdp-first-commencement",
+    "instrumentId": "in-dpdp-act-2023",
+    "date": "2025-11-14",
+    "type": "partial-commencement",
+    "label": "First DPDP Act provisions commenced",
+    "effect": "Sections listed in paragraph (a) of G.S.R. 843(E), including institutional and rulemaking provisions, took effect on publication.",
+    "resultingStatus": "partially-in-force",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-india-dpdp-one-year",
+    "instrumentId": "in-dpdp-act-2023",
+    "date": "2026-11-14",
+    "type": "scheduled-partial-commencement",
+    "label": "One-year DPDP provisions scheduled",
+    "effect": "Section 6(9) and Section 27(1)(d) are scheduled to take effect one year after Gazette publication.",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-india-dpdp-core",
+    "instrumentId": "in-dpdp-act-2023",
+    "date": "2027-05-14",
+    "type": "scheduled-general-commencement",
+    "label": "Most substantive DPDP provisions scheduled",
+    "effect": "Most processing duties, rights, enforcement, and remaining listed provisions are scheduled to take effect eighteen months after Gazette publication.",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-india-rules-published",
+    "instrumentId": "in-dpdp-rules-2025",
+    "date": "2025-11-14",
+    "type": "published-partial-commencement",
+    "label": "DPDP Rules published; selected rules commenced",
+    "effect": "Rules 1, 2, and 17–21 took effect on publication under Rule 1(2).",
+    "resultingStatus": "partially-in-force",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-india-rules-one-year",
+    "instrumentId": "in-dpdp-rules-2025",
+    "date": "2026-11-14",
+    "type": "scheduled-partial-commencement",
+    "label": "DPDP Rule 4 scheduled",
+    "effect": "Rule 4 is scheduled to take effect one year after Gazette publication.",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-india-rules-eighteen-months",
+    "instrumentId": "in-dpdp-rules-2025",
+    "date": "2027-05-14",
+    "type": "scheduled-general-commencement",
+    "label": "Most operational DPDP Rules scheduled",
+    "effect": "Rules 3, 5–16, 22, and 23 are scheduled to take effect eighteen months after Gazette publication.",
+    "resultingStatus": "scheduled",
+    "source": {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "Ministry of Electronics and Information Technology / Gazette of India"}
+  },
+  {
+    "id": "evt-hiroshima-principles",
+    "instrumentId": "g7-hiroshima-ai-process",
+    "date": "2023-10-30",
+    "type": "principles-endorsed",
+    "label": "Hiroshima principles and code announced",
+    "effect": "G7 leaders issued a statement with international guiding principles and a code of conduct for organizations developing advanced AI systems.",
+    "resultingStatus": "active-soft-law",
+    "source": {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Ministry of Foreign Affairs of Japan"}
+  },
+  {
+    "id": "evt-hiroshima-framework",
+    "instrumentId": "g7-hiroshima-ai-process",
+    "date": "2023-12-06",
+    "type": "framework-endorsed",
+    "label": "Comprehensive Policy Framework endorsed",
+    "effect": "G7 leaders endorsed the Hiroshima AI Process Comprehensive Policy Framework.",
+    "resultingStatus": "active-soft-law",
+    "source": {"url": "https://www.mofa.go.jp/policy/other/bluebook/2024/en_html/feature/f0101.html", "label": "Ministry of Foreign Affairs of Japan"}
+  },
+  {
+    "id": "evt-un-advisory-body-formed",
+    "instrumentId": "un-ai-advisory-final-report-2024",
+    "date": "2023-10-26",
+    "type": "advisory-body-convened",
+    "label": "UN AI Advisory Body convened",
+    "effect": "The Secretary-General convened the multi-stakeholder High-level Advisory Body on AI for a twelve-month mandate.",
+    "resultingStatus": "report-in-development",
+    "source": {"url": "https://www.un.org/en/ai-advisory-body/about", "label": "United Nations"}
+  },
+  {
+    "id": "evt-un-final-report",
+    "instrumentId": "un-ai-advisory-final-report-2024",
+    "date": "2024-09-19",
+    "type": "report-published",
+    "label": "Governing AI for Humanity released",
+    "effect": "The Advisory Body released its final report with seven recommendations for global AI governance.",
+    "resultingStatus": "report-published",
+    "source": {"url": "https://www.un.org/en/ai-advisory-body", "label": "United Nations"}
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "automated-decision-safeguards",
+    "label": "Automated decision safeguards",
+    "family": "individual-rights",
+    "description": "Limits, procedural protections, explanations, contestability, or human involvement for consequential automated decisions.",
+    "aliases": ["ADM", "profiling safeguards", "contestability"]
+  },
+  {
+    "id": "ai-risk-management",
+    "label": "AI risk management",
+    "family": "governance-process",
+    "description": "Lifecycle identification, assessment, prioritization, treatment, and monitoring of AI risks.",
+    "aliases": ["lifecycle risk management", "AI safety management"]
+  },
+  {
+    "id": "impact-assessment",
+    "label": "Impact assessment",
+    "family": "governance-process",
+    "description": "A documented assessment conducted before or during a higher-risk data or AI activity.",
+    "aliases": ["DPIA", "PIPIA", "AIA", "algorithmic impact assessment"]
+  },
+  {
+    "id": "security-controls",
+    "label": "Security controls",
+    "family": "technical-organizational-control",
+    "description": "Technical and organizational measures used to protect data, systems, models, and services.",
+    "aliases": ["security safeguards", "cybersecurity", "security by design"]
+  },
+  {
+    "id": "incident-response",
+    "label": "Incident response",
+    "family": "technical-organizational-control",
+    "description": "Detection, remediation, documentation, and notification of security or personal-data incidents.",
+    "aliases": ["breach response", "incident notification"]
+  },
+  {
+    "id": "transparency-explainability",
+    "label": "Transparency and explainability",
+    "family": "information-duty",
+    "description": "Information that makes an AI or data practice visible, understandable, and open to scrutiny.",
+    "aliases": ["disclosure", "explainability", "notice"]
+  },
+  {
+    "id": "human-oversight",
+    "label": "Human oversight",
+    "family": "technical-organizational-control",
+    "description": "Meaningful human involvement, review, intervention, or accountability in automated systems.",
+    "aliases": ["human in the loop", "human review"]
+  },
+  {
+    "id": "training-data-governance",
+    "label": "Training-data governance",
+    "family": "data-governance",
+    "description": "Requirements or practices governing the provenance, quality, legality, representativeness, and stewardship of AI training data.",
+    "aliases": ["data quality", "dataset governance", "training data"]
+  },
+  {
+    "id": "frontier-model-safety",
+    "label": "Frontier-model safety",
+    "family": "ai-safety",
+    "description": "Evaluation, reporting, safeguards, and incident practices associated with highly capable or advanced AI models.",
+    "aliases": ["dual-use foundation model", "advanced AI system", "frontier AI"]
+  },
+  {
+    "id": "cross-border-transfer",
+    "label": "Cross-border data transfer",
+    "family": "data-governance",
+    "description": "Conditions and mechanisms governing disclosure or transfer of personal data across borders.",
+    "aliases": ["international transfer", "overseas provision"]
+  },
+  {
+    "id": "accountability-governance",
+    "label": "Accountability and governance",
+    "family": "governance-process",
+    "description": "Assigned responsibility, policies, documentation, reporting, and organizational structures for trustworthy data and AI practices.",
+    "aliases": ["governance", "organizational accountability"]
+  },
+  {
+    "id": "global-coordination",
+    "label": "Global AI coordination",
+    "family": "institutional-governance",
+    "description": "International cooperation, shared science, policy dialogue, standards coordination, and capacity building for AI governance.",
+    "aliases": ["international AI governance", "multilateral coordination"]
+  }
+]
