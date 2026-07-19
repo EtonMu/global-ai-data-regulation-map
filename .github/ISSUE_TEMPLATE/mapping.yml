@@ -1,0 +1,60 @@
+name: Propose a mapping
+description: Propose a reviewable relationship between two provisions.
+title: "[Mapping]: "
+labels: [mapping, needs-review]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. A mapping is an evidence-based argument, not a statement of legal equivalence.
+  - type: input
+    id: source
+    attributes:
+      label: Source provision
+      description: Instrument, jurisdiction, exact provision, and official URL.
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target provision
+      description: Instrument, jurisdiction, exact provision, and official URL.
+    validations:
+      required: true
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Proposed relation
+      options:
+        - Partial overlap
+        - Close functional alignment
+        - Operationalizes principle
+        - Aligned outcome
+        - Complementary duty
+        - Depends on
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Compare actors, triggers, scope, duties, timing, exceptions, and legal effect.
+    validations:
+      required: true
+  - type: textarea
+    id: differences
+    attributes:
+      label: Decisive differences and caveats
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Source and review checks
+      options:
+        - label: I checked the current official sources linked above.
+          required: true
+        - label: I did not copy restricted commercial standards or paywalled text.
+          required: true
+        - label: I manually verified any AI-assisted research.
+          required: true

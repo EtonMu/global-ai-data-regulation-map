@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite the repository and the version or commit you reviewed."
+title: "Global AI Data Regulation Map"
+type: software
+version: 0.1.0
+date-released: 2026-07-19
+license: MIT
+repository-code: "https://github.com/EtonMu/global-ai-data-regulation-map"
+abstract: "An open, evidence-linked visual crosswalk for global AI governance, privacy, data security, and cybersecurity regulation."
+keywords:
+  - AI governance
+  - privacy law
+  - data security
+  - cybersecurity law
+  - legal visualization
+  - regulatory crosswalk

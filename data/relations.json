@@ -1,0 +1,272 @@
+[
+  {
+    "id": "rel-001",
+    "topic": "automated-decisions",
+    "source": "eu-gdpr-22",
+    "target": "cn-pipl-24",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both establish individual-facing safeguards around consequential automated decisions, but their triggers, rights and exceptions are not equivalent."
+  },
+  {
+    "id": "rel-002",
+    "topic": "automated-decisions",
+    "source": "eu-ai-act-13",
+    "target": "oecd-ai-1-3",
+    "type": "operationalizes",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The AI Act turns transparency concepts into binding provider-facing requirements for high-risk systems within its scope."
+  },
+  {
+    "id": "rel-003",
+    "topic": "automated-decisions",
+    "source": "eu-ai-act-13",
+    "target": "nist-ai-rmf-map-2-2",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both emphasize usable information about system capabilities and limits, although the NIST outcome is voluntary and broader in method."
+  },
+  {
+    "id": "rel-004",
+    "topic": "automated-decisions",
+    "source": "eu-gdpr-22",
+    "target": "eu-ai-act-13",
+    "type": "complements",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The GDPR provision protects people from certain decisions; the AI Act provision governs system transparency for deployers."
+  },
+  {
+    "id": "rel-005",
+    "topic": "automated-decisions",
+    "source": "cn-pipl-24",
+    "target": "oecd-ai-1-3",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both address transparency and the ability to challenge or refuse certain AI-mediated outcomes, at different levels of legal force."
+  },
+  {
+    "id": "rel-006",
+    "topic": "risk-assessment",
+    "source": "eu-gdpr-35",
+    "target": "cn-pipl-55",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both require documented pre-assessment for higher-risk personal-information activities, while enumerated triggers and procedures differ."
+  },
+  {
+    "id": "rel-007",
+    "topic": "risk-assessment",
+    "source": "eu-ai-act-9",
+    "target": "nist-ai-rmf-manage",
+    "type": "aligned-with",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both treat AI risk management as a lifecycle process, though one is a scoped legal duty and the other a voluntary outcome framework."
+  },
+  {
+    "id": "rel-008",
+    "topic": "risk-assessment",
+    "source": "eu-ai-act-9",
+    "target": "oecd-ai-1-4",
+    "type": "operationalizes",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The binding risk-management system for high-risk AI implements many of the lifecycle risk concepts stated in the OECD principle."
+  },
+  {
+    "id": "rel-009",
+    "topic": "risk-assessment",
+    "source": "eu-gdpr-35",
+    "target": "eu-ai-act-9",
+    "type": "complements",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "A DPIA examines risks to people from personal-data processing; an AI Act risk system addresses the scoped high-risk AI system lifecycle."
+  },
+  {
+    "id": "rel-010",
+    "topic": "risk-assessment",
+    "source": "eu-nis2-21",
+    "target": "eu-ai-act-9",
+    "type": "partial-overlap",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both require risk management, but NIS2 focuses on network and information systems while the AI Act focuses on high-risk AI."
+  },
+  {
+    "id": "rel-011",
+    "topic": "risk-assessment",
+    "source": "cn-pipl-55",
+    "target": "nist-ai-rmf-manage",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both call for risk assessment and planned mitigation, although their scope and legal effect are materially different."
+  },
+  {
+    "id": "rel-012",
+    "topic": "incident-response",
+    "source": "eu-gdpr-33",
+    "target": "cn-pipl-57",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both require remedial action and regulator notice for personal-information incidents; deadlines, exceptions and notice recipients differ."
+  },
+  {
+    "id": "rel-013",
+    "topic": "incident-response",
+    "source": "eu-gdpr-33",
+    "target": "eu-nis2-23",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The provisions may apply to the same event but use different materiality tests, reporting sequences and competent authorities."
+  },
+  {
+    "id": "rel-014",
+    "topic": "incident-response",
+    "source": "eu-gdpr-33",
+    "target": "ca-civ-1798-82",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both concern breach notification, but the GDPR provision centers regulator notice while California’s section centers resident notice."
+  },
+  {
+    "id": "rel-015",
+    "topic": "incident-response",
+    "source": "cn-pipl-57",
+    "target": "cn-csl-44",
+    "type": "complements",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The PIPL supplies personal-information duties that overlap with the Cybersecurity Law’s network-operator incident obligations."
+  },
+  {
+    "id": "rel-016",
+    "topic": "incident-response",
+    "source": "eu-nis2-23",
+    "target": "nist-csf-rs",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "NIST’s response outcomes can help organize operational practices that support incident analysis, communication and reporting."
+  },
+  {
+    "id": "rel-017",
+    "topic": "incident-response",
+    "source": "ca-civ-1798-82",
+    "target": "nist-csf-rs",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The framework’s response and communication outcomes can support, but do not themselves satisfy, statutory breach-notice duties."
+  },
+  {
+    "id": "rel-018",
+    "topic": "cross-border",
+    "source": "eu-gdpr-44",
+    "target": "cn-pipl-38",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both condition overseas personal-data transfers on approved legal mechanisms, but the mechanisms and regulatory architecture differ."
+  },
+  {
+    "id": "rel-019",
+    "topic": "cross-border",
+    "source": "eu-gdpr-44",
+    "target": "oecd-privacy-17",
+    "type": "operationalizes",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "GDPR Chapter V gives binding legal form to cross-border protection concerns reflected at a higher level in the OECD Guidelines."
+  },
+  {
+    "id": "rel-020",
+    "topic": "cross-border",
+    "source": "cn-pipl-38",
+    "target": "oecd-privacy-17",
+    "type": "operationalizes",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "PIPL transfer mechanisms address cross-border accountability, while the OECD text states a broader policy principle."
+  },
+  {
+    "id": "rel-021",
+    "topic": "cross-border",
+    "source": "cn-pipl-38",
+    "target": "cn-pipl-39",
+    "type": "depends-on",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "A transfer mechanism under Article 38 does not replace the recipient notice and separate-consent requirements stated in Article 39."
+  },
+  {
+    "id": "rel-022",
+    "topic": "security-by-design",
+    "source": "eu-gdpr-32",
+    "target": "cn-pipl-51",
+    "type": "functional-equivalent",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both impose risk-proportionate organisational and technical safeguards for personal-data processing, subject to different statutory contexts."
+  },
+  {
+    "id": "rel-023",
+    "topic": "security-by-design",
+    "source": "eu-nis2-21",
+    "target": "cn-csl-23",
+    "type": "partial-overlap",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Both require organizational and technical cyber controls, but regulated entities, control baselines and enforcement structures differ."
+  },
+  {
+    "id": "rel-024",
+    "topic": "security-by-design",
+    "source": "eu-ai-act-15",
+    "target": "eu-nis2-21",
+    "type": "partial-overlap",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The AI Act addresses cybersecurity of high-risk AI systems; NIS2 addresses broader entity-level network and information-system risk."
+  },
+  {
+    "id": "rel-025",
+    "topic": "security-by-design",
+    "source": "eu-ai-act-15",
+    "target": "nist-csf-pr",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "NIST protective outcomes provide an operational vocabulary relevant to cybersecurity controls, without creating AI Act conformity."
+  },
+  {
+    "id": "rel-026",
+    "topic": "security-by-design",
+    "source": "eu-gdpr-32",
+    "target": "nist-csf-pr",
+    "type": "aligned-with",
+    "status": "Candidate mapping",
+    "verifiedOn": "2026-07-19",
+    "rationale": "The framework can support security practice design, but legal compliance still depends on GDPR context, risk and proportionality."
+  },
+  {
+    "id": "rel-027",
+    "topic": "security-by-design",
+    "source": "cn-pipl-51",
+    "target": "cn-csl-23",
+    "type": "complements",
+    "status": "Editorial review",
+    "verifiedOn": "2026-07-19",
+    "rationale": "Personal-information safeguards under PIPL operate alongside network-security duties under the Cybersecurity Law."
+  }
+]

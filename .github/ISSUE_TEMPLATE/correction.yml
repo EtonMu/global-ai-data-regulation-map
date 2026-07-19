@@ -1,0 +1,29 @@
+name: Report a correction
+description: Flag an outdated source, inaccurate summary, broken link, or problematic mapping.
+title: "[Correction]: "
+labels: [correction, needs-review]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Provision or relation ID
+      placeholder: rel-012 or eu-gdpr-33
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What should be corrected?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Current authoritative source
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Relevant amendment, implementation, or jurisdiction context
