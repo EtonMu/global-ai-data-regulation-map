@@ -519,6 +519,10 @@ button {
   grid-template-columns: 268px minmax(0, 1fr);
 }
 
+.app-shell.navigator-concepts-mode.concept-visualization-active {
+  grid-template-columns: 268px minmax(0, 1fr) 390px;
+}
+
 html[data-ui-transition="theme"] :is(
   body,
   .terminal-app,
@@ -529,6 +533,7 @@ html[data-ui-transition="theme"] :is(
   .workspace-status,
   .provision-reader,
   .atlas-globe-panel,
+  .concept-constellation-panel,
   .instrument-node,
   .concept-node,
   .concept-source-node,
@@ -554,7 +559,8 @@ html[data-ui-transition="view"] .provision-reader {
   view-transition-name: atlas-reader;
 }
 
-html[data-ui-transition="view"] .atlas-globe-panel {
+html[data-ui-transition="view"] .atlas-globe-panel,
+html[data-ui-transition="view"] .concept-constellation-panel {
   view-transition-name: atlas-reader;
 }
 
@@ -692,7 +698,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .corpus-navigator,
 .workspace,
 .provision-reader,
-.atlas-globe-panel {
+.atlas-globe-panel,
+.concept-constellation-panel {
   min-width: 0;
   height: calc(100vh - 84px);
   overflow-x: hidden;
@@ -711,6 +718,10 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .atlas-globe-panel {
+  border-left: 1px solid var(--line-strong);
+}
+
+.concept-constellation-panel {
   border-left: 1px solid var(--line-strong);
 }
 
@@ -1522,6 +1533,25 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   max-width: 760px;
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.bilingual-instrument-title,
+.bilingual-provision-title {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.bilingual-instrument-title > span,
+.bilingual-provision-title > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.bilingual-instrument-title > span[lang],
+.bilingual-provision-title > span[lang] {
+  color: var(--ink);
 }
 
 .corpus-readout,
@@ -2551,48 +2581,108 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--muted);
 }
 
-.provision-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
-  align-content: center;
-  gap: 6px;
-  padding: 16px;
-}
-
-.provision-cell {
-  position: relative;
+.provision-list {
   min-width: 0;
-  min-height: 42px;
   display: grid;
-  place-items: center;
-  padding: 4px;
-  border: 1px solid var(--line);
-  background: var(--node-surface);
-  color: var(--muted);
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  margin: 0;
+  padding: 8px 16px 16px;
+  list-style: none;
 }
 
-.provision-cell:hover,
-.provision-cell:focus-visible {
-  z-index: 2;
-  border-color: var(--cyan);
-  background: var(--cyan-soft);
-  color: var(--cyan);
+.provision-list > li {
+  min-width: 0;
 }
 
-.provision-cell.has-mappings {
-  border-color: rgba(86, 225, 255, 0.42);
+.provision-list-item {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(84px, 112px) minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
   color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    padding-inline 150ms ease;
 }
 
-.provision-cell small {
-  position: absolute;
-  top: 3px;
-  right: 4px;
+.provision-list > li:first-child .provision-list-item {
+  border-top: 1px solid var(--line);
+}
+
+.provision-list-item:hover,
+.provision-list-item:focus-visible {
+  padding-inline: 8px;
+  background: var(--cyan-soft);
+  color: var(--ink-strong);
+}
+
+.provision-list-locator {
   color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  line-height: 1.45;
+}
+
+.provision-list-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.provision-list-copy strong {
+  min-width: 0;
+  color: var(--ink-strong);
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.provision-list-copy > span[lang] {
+  color: var(--ink);
+  font-size: 0.73rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.provision-list-copy small {
+  min-width: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
   font-size: 0.7rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.provision-list-mappings {
+  min-width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  color: var(--muted-dark);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+}
+
+.provision-list-mappings svg {
+  width: 13px;
+  height: 13px;
+}
+
+.provision-list-item.has-mappings .provision-list-mappings {
+  color: var(--violet);
 }
 
 .connections-header {
@@ -3331,6 +3421,49 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   cursor: default;
 }
 
+.reader-language-switch {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(2, auto);
+  align-items: center;
+  gap: 6px;
+  padding: 0 0 10px;
+}
+
+.reader-language-switch > span {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  overflow-wrap: anywhere;
+}
+
+.reader-language-switch svg {
+  width: 14px;
+  height: 14px;
+  color: var(--cyan);
+}
+
+.reader-language-switch button {
+  min-height: 32px;
+  padding: 5px 9px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+}
+
+.reader-language-switch button[aria-pressed="true"] {
+  border-color: var(--cyan);
+  background: var(--cyan-soft);
+  color: var(--cyan);
+}
+
 .reader-tabs {
   position: sticky;
   z-index: 5;
@@ -3505,6 +3638,27 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 0.7rem;
+}
+
+.translation-status-note {
+  margin-top: 18px;
+  padding: 12px;
+  border-left: 2px solid var(--violet);
+  background: var(--violet-soft);
+}
+
+.translation-status-note strong {
+  color: var(--violet);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.translation-status-note p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.55;
 }
 
 .concept-list {
@@ -3789,6 +3943,10 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     grid-template-columns: 238px minmax(0, 1fr);
   }
 
+  .app-shell.navigator-concepts-mode.concept-visualization-active {
+    grid-template-columns: 238px minmax(0, 1fr) 350px;
+  }
+
   .atlas-view,
   .instrument-view,
   .concept-view,
@@ -3852,6 +4010,10 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     grid-template-columns: 210px minmax(0, 1fr);
   }
 
+  .app-shell.navigator-concepts-mode.concept-visualization-active {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+
   .app-shell.view-connections {
     grid-template-columns: 210px minmax(0, 1fr);
   }
@@ -3869,7 +4031,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   }
 
   .provision-reader,
-  .atlas-globe-panel {
+  .atlas-globe-panel,
+  .concept-constellation-panel {
     grid-column: 1 / -1;
     height: auto;
     min-height: 460px;
@@ -4019,7 +4182,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   .corpus-navigator,
   .workspace,
   .provision-reader,
-  .atlas-globe-panel {
+  .atlas-globe-panel,
+  .concept-constellation-panel {
     width: 100%;
     height: auto;
     overflow: visible;
@@ -4271,9 +4435,13 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     font-size: 0.64rem;
   }
 
-  .provision-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    padding: 12px 0;
+  .provision-list {
+    padding-inline: 0;
+  }
+
+  .provision-list-item {
+    grid-template-columns: minmax(62px, 78px) minmax(0, 1fr) auto;
+    gap: 8px;
   }
 
   .compare-dimensions {
@@ -4290,8 +4458,30 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 @media (max-width: 360px) {
-  .provision-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .provision-list-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .provision-list-locator {
+    grid-column: 1;
+  }
+
+  .provision-list-copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .provision-list-mappings {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .reader-language-switch {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reader-language-switch > span {
+    grid-column: 1 / -1;
   }
 
   .view-code {

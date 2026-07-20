@@ -71,6 +71,7 @@
 }
 
 .motionButton:focus-visible,
+.compassButton:focus-visible,
 .nodeButton:focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
@@ -128,6 +129,179 @@
 
 .isDragging .canvas {
   cursor: grabbing;
+}
+
+.mapLabels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mapLabel {
+  --map-x: 50%;
+  --map-y: 50%;
+  --map-offset-x: 0px;
+  --map-offset-y: 0px;
+  --map-scale: 1;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  max-inline-size: 82px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  box-shadow: 0 3px 12px var(--graph-glow);
+  color: var(--ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1;
+  opacity: 0;
+  transform:
+    translate3d(var(--map-x), var(--map-y), 0)
+    translate(var(--map-offset-x), var(--map-offset-y))
+    translate(-50%, calc(-100% - 7px))
+    scale(var(--map-scale));
+  transform-origin: 50% 100%;
+  transition: opacity 90ms linear;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.mapLabel b {
+  min-inline-size: 0;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.compassButton {
+  --compass-yaw: 0deg;
+  --compass-pitch: 0px;
+  position: absolute;
+  z-index: 30;
+  inset-block-start: 7px;
+  inset-inline-end: 7px;
+  inline-size: 58px;
+  min-block-size: 68px;
+  display: grid;
+  grid-template-rows: 50px auto;
+  justify-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.compassRose {
+  position: relative;
+  inline-size: 48px;
+  block-size: 48px;
+  display: block;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--line), var(--line)) 50% 5px / 1px 36px no-repeat,
+    linear-gradient(90deg, var(--line), var(--line)) 5px 50% / 36px 1px no-repeat,
+    color-mix(in srgb, var(--panel) 90%, transparent);
+  box-shadow: 0 0 18px var(--graph-glow);
+  transform: rotate(var(--compass-yaw));
+}
+
+.compassRose i {
+  position: absolute;
+  display: block;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.48rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.compassNorth {
+  inset-block-start: 3px;
+  inset-inline-start: 50%;
+  color: var(--cyan);
+  translate: -50% 0;
+}
+
+.compassEast {
+  inset-block-start: 50%;
+  inset-inline-end: 3px;
+  translate: 0 -50%;
+}
+
+.compassSouth {
+  inset-block-end: 3px;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+}
+
+.compassWest {
+  inset-block-start: 50%;
+  inset-inline-start: 3px;
+  translate: 0 -50%;
+}
+
+.compassNeedle {
+  inset-block-start: 12px;
+  inset-inline-start: 50%;
+  inline-size: 0;
+  block-size: 0;
+  border-inline: 3px solid transparent;
+  border-block-end: 12px solid var(--cyan);
+  filter: drop-shadow(0 0 4px var(--cyan-soft));
+  translate: -50% 0;
+}
+
+.compassTilt {
+  position: absolute;
+  inset-block-start: 23px;
+  inset-inline-start: 50%;
+  inline-size: 5px;
+  block-size: 17px;
+  display: block;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  background: var(--panel);
+  translate: -50% -50%;
+}
+
+.compassTilt i {
+  position: absolute;
+  inset-block-start: 5px;
+  inset-inline-start: 50%;
+  inline-size: 3px;
+  block-size: 3px;
+  border-radius: 50%;
+  background: var(--violet);
+  box-shadow: 0 0 4px var(--violet-soft);
+  transform: translate(-50%, var(--compass-pitch));
+}
+
+.compassLabel {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.compassButton:hover .compassRose {
+  border-color: var(--cyan);
+  background-color: var(--panel-hover);
+}
+
+.compassButton:hover .compassLabel {
+  color: var(--ink-strong);
 }
 
 .visualKey {
@@ -296,6 +470,17 @@
     min-block-size: 270px;
   }
 
+  .mapLabel {
+    max-inline-size: 66px;
+    padding: 2px 4px;
+    font-size: 0.55rem;
+  }
+
+  .compassButton {
+    scale: 0.9;
+    transform-origin: 100% 0;
+  }
+
   .jurisdictionGrid,
   .conceptGrid {
     grid-template-columns: minmax(0, 1fr);
@@ -304,6 +489,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .motionButton,
+  .compassRose,
+  .mapLabel,
   .nodeButton {
     transition: none;
   }

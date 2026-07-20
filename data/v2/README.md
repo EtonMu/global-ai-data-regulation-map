@@ -9,15 +9,15 @@ The dataset snapshot is verified through **2026-07-19**. It is a research aid, n
 
 ## Snapshot scope
 
-The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 254 merged provision nodes, 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
+The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 332 merged provision nodes, 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
 
-Complete locally stored Article coverage remains limited to the GDPR (99 Articles) and EU AI Act (113 Articles). Other instruments generally provide selected provision metadata, original editorial summaries, and official links. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
+Complete locally stored Article coverage currently includes the GDPR (99 Articles), EU AI Act (113 Articles), and the current consolidated Chinese text of China's Cybersecurity Law (81 Articles, amended on 28 October 2025 and effective from 1 January 2026). Other instruments generally provide selected provision metadata, original editorial summaries, and official links. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
 
 ## Files
 
 - `jurisdictions.json`: countries, supranational systems, subnational systems, and international institutional contexts.
 - `instruments.json`: laws, regulations, executive orders, bills, rules, mandatory internal directives, voluntary frameworks, standards, soft law, declarations, and advisory reports.
-- `provisions.json`: representative provision-level nodes outside the complete EU imports, plus curated metadata for high-value EU provisions.
+- `provisions.json`: the complete current Chinese Cybersecurity Law corpus, representative provision-level nodes for other instruments, and curated metadata for high-value EU provisions.
 - `concept-themes.json`: stable, ordered learning themes used to organize the core-concept browser.
 - `concepts.json`: a sourced controlled vocabulary used both for concept-led learning and to connect differently worded legal duties.
 - `structure-summaries.json`: project-authored, high-level orientation summaries for rendered sections and framework roots, with source basis and editorial review metadata.
@@ -67,6 +67,7 @@ International organizations and groups are modeled as issuing contexts, not fict
 Core fields:
 
 - `id`, `shortTitle`, `title`
+- `originalTitle`: official-language title where the instrument has one and it has been verified.
 - `jurisdictionId`: an existing jurisdiction ID.
 - `issuingBodies`: authoritative issuer names.
 - `category`: form of instrument, such as `law`, `regulation`, `executive-order`, `bill`, `risk-management-framework`, or `advisory-report`.
@@ -95,6 +96,8 @@ Core fields:
 Each provision contains:
 
 - `id`, `instrumentId`, `locator`, `title`, and `provisionType`
+- `originalTitle`: official-language locator or title where one has been verified.
+- `chapter` and `section`: optional stable structural metadata used to group complete Article corpora without inferring a hierarchy not present in the source.
 - `parentId`: optional parent provision or framework function.
 - `summary`: concise editorial summary, never silently presented as quoted law.
 - `conceptIds`: connections to the controlled concept vocabulary.
@@ -103,10 +106,11 @@ Each provision contains:
 - `appliesFrom`: provision-specific application date when known.
 - `textAvailability`: text mode, storage flag, language, and an explicit caveat.
 - `paragraphs` and `fullText`: present only when verified source text is stored. `fullText` is the paragraph sequence joined with blank lines. `official-original-text-stored` denotes a complete original-language provision; `official-original-excerpt-stored` denotes an expressly identified extract rather than a complete section.
+- `translations`: language-keyed renderings kept separate from the controlling source text. A `reference` translation is explicitly non-official, preserves one-to-one paragraph alignment, and may not be presented as authoritative law.
 - `source`: official provision or instrument source.
 - `editorial`: review status, review date, and a caveat.
 
-The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text and English editorial summaries remain separate fields. The Chinese provisions link only to official Chinese government publications; the Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, and should distinguish a stored extract from a complete provision.
+The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English editorial summaries, and English reference translations remain separate fields. All 81 Articles of the current consolidated Chinese Cybersecurity Law are stored from the official Chinese publication. The other indexed Chinese laws contain selected verified Articles rather than complete Acts. The Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, distinguish a stored extract from a complete provision, and mark every `reference` translation as non-official.
 
 ## `concepts.json`
 
@@ -185,6 +189,9 @@ The instrument's current status is a cached editorial conclusion. The event stre
 The seed currently uses these modes:
 
 - `separate-official-import`: complete official EU Article text lives in a generated corpus file.
+- `official-original-full-corpus-stored-by-article`: a complete, version-identified official-language Article corpus is stored locally as individual provision records.
+- `official-original-text-stored`: one complete official-language provision is stored locally; this does not claim that the entire parent instrument is stored.
+- `official-original-excerpt-stored`: a specifically identified official-language extract is stored locally and must not be presented as a complete provision or instrument.
 - `official-full-text-linked`, `official-current-text-linked`, `official-revised-text-linked`, or `official-consolidated-text-linked`: an official publisher provides text, but this seed stores only metadata and summaries.
 - `official-publication-linked`, `official-report-linked`, `official-documents-linked`, or `official-gazette-pdf-linked`: official documents are linked but not copied.
 - `official-paid-standard-access-linked` or `official-publication-access-linked`: an official standards publisher controls access or reuse; the seed stores original editorial metadata and links the authorized access page without copying the publication.
@@ -229,6 +236,7 @@ Before accepting a new instrument, provision, relation, structure summary, or ev
 5. Identify actor, trigger, scope, legal force, exceptions, and version before creating a mapping.
 6. Write both a mapping rationale and its limits.
 7. Do not store purported full text unless its source, version, completeness, language, and reuse basis have been verified.
-8. Ground each structure summary in official sources and existing provision IDs; label it as editorial orientation and keep it concise.
-9. For ISO/IEC 42001 and IEEE Ethically Aligned Design, store only metadata, original summaries, and official access links—not publication text.
-10. Validate every ID reference and ISO date before merging.
+8. Keep translations separate from source text, label non-official renderings as `reference`, and preserve one-to-one paragraph alignment when a language toggle is offered.
+9. Ground each structure summary in official sources and existing provision IDs; label it as editorial orientation and keep it concise.
+10. For ISO/IEC 42001 and IEEE Ethically Aligned Design, store only metadata, original summaries, and official access links—not publication text.
+11. Validate every ID reference and ISO date before merging.

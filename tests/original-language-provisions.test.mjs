@@ -11,14 +11,12 @@ const provisionsById = new Map(
 );
 
 const chineseProvisionIds = [
+  ...Array.from({ length: 81 }, (_, index) => `cn-csl-art-${index + 1}`),
   "cn-pipl-art-24",
   "cn-pipl-art-38",
   "cn-pipl-art-51",
   "cn-pipl-art-55",
   "cn-pipl-art-57",
-  "cn-csl-art-20",
-  "cn-csl-art-23",
-  "cn-csl-art-44",
   "cn-network-data-reg-art-44",
   "cn-genai-art-4",
   "cn-genai-art-7",
@@ -80,4 +78,30 @@ test("the Japanese AI Guidelines record labels its stored material as an extract
   assert.equal(provision.fullText, provision.paragraphs.join("\n\n"));
   assert.equal(new URL(provision.source.url).hostname, "www.meti.go.jp");
   assert.ok(provision.source.url.endsWith("/20260331_1.pdf"));
+});
+
+test("stored Chinese and Japanese records expose aligned non-official English reference translations", () => {
+  const sourceLanguageRecords = provisions.filter(
+    (provision) =>
+      provision.textAvailability?.stored === true &&
+      ["zh-CN", "ja"].includes(provision.textAvailability.language),
+  );
+
+  assert.equal(sourceLanguageRecords.length, 93);
+  for (const provision of sourceLanguageRecords) {
+    const translation = provision.translations?.en;
+    assert.ok(translation, `${provision.id} must include an English rendering`);
+    assert.equal(translation.status, "reference");
+    assert.match(
+      translation.note,
+      /reference|not an official|non-official/i,
+      `${provision.id} must identify its English rendering as non-official`,
+    );
+    assert.equal(
+      translation.paragraphs.length,
+      provision.paragraphs.length,
+      `${provision.id} must preserve one-to-one paragraph alignment`,
+    );
+    assert.equal(translation.fullText, translation.paragraphs.join("\n\n"));
+  }
 });

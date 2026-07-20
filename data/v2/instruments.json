@@ -213,6 +213,7 @@
     "id": "cn-pipl",
     "shortTitle": "PIPL",
     "title": "Personal Information Protection Law of the People's Republic of China",
+    "originalTitle": "中华人民共和国个人信息保护法",
     "jurisdictionId": "cn",
     "issuingBodies": ["Standing Committee of the National People's Congress"],
     "category": "law",
@@ -238,16 +239,17 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "official-full-text-linked",
+      "mode": "official-full-text-linked-selected-articles-stored",
       "stored": false,
       "language": "zh-CN",
-      "note": "Official Chinese text is linked; this seed stores editorial English summaries only."
+      "note": "The complete official Chinese law is linked. Five indexed Articles store verified Chinese text and separately labelled non-official English reference translations; the full Act is not stored."
     }
   },
   {
     "id": "cn-cybersecurity-law",
     "shortTitle": "China CSL",
     "title": "Cybersecurity Law of the People's Republic of China",
+    "originalTitle": "中华人民共和国网络安全法",
     "jurisdictionId": "cn",
     "issuingBodies": ["Standing Committee of the National People's Congress"],
     "category": "law",
@@ -260,29 +262,44 @@
       "publishedOn": "2016-11-07",
       "effectiveFrom": "2017-06-01",
       "generalApplicationFrom": "2017-06-01",
+      "lastAmendedOn": "2025-10-28",
+      "latestAmendmentEffectiveFrom": "2026-01-01",
       "ceasedOn": null
     },
-    "version": "Amended text effective 2026-01-01",
+    "version": "Consolidated Chinese text amended on 2025-10-28 and effective from 2026-01-01 (81 Articles)",
     "parentInstrumentId": null,
     "topicIds": ["security-controls", "incident-response", "ai-risk-management", "accountability-governance"],
     "summary": "China's foundational national cybersecurity law, including network-operation security, information protection, monitoring, and enforcement provisions.",
-    "statusNote": "The 2025 amendment took effect on 1 January 2026 and renumbered provisions; mappings based on the pre-amendment numbering require migration.",
+    "statusNote": "The first amendment was adopted on 28 October 2025 and took effect on 1 January 2026. It added Articles 3, 20, and 73, revised liability and related provisions, and produced the current 81-Article numbering; pre-amendment mappings require migration.",
     "source": {
       "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
-      "label": "Cyberspace Administration of China / National People's Congress",
+      "label": "Cyberspace Administration of China reproduction of NPC consolidated text",
       "accessedOn": "2026-07-19"
     },
+    "amendmentSource": {
+      "url": "https://www.npc.gov.cn/npc/c1773/c1848/c21114/wlaqfxz/wlaqfxz002/202511/t20251103_449242.html",
+      "label": "Standing Committee of the National People's Congress amendment decision",
+      "accessedOn": "2026-07-19"
+    },
+    "coverage": {
+      "unit": "article",
+      "first": 1,
+      "last": 81,
+      "count": 81,
+      "completeness": "complete-current-consolidated-text"
+    },
     "textAvailability": {
-      "mode": "official-full-text-linked",
-      "stored": false,
+      "mode": "official-original-full-corpus-stored-by-article",
+      "stored": true,
       "language": "zh-CN",
-      "note": "Official amended Chinese text is linked; the seed stores summaries only."
+      "note": "All 81 Articles of the current consolidated official Chinese text are stored as individual provision records. Each has a separately labelled non-official English reference translation; the Chinese text controls."
     }
   },
   {
     "id": "cn-network-data-regulations",
     "shortTitle": "Network Data Regulations",
     "title": "Regulations on Network Data Security Management",
+    "originalTitle": "网络数据安全管理条例",
     "jurisdictionId": "cn",
     "issuingBodies": ["State Council"],
     "category": "administrative-regulation",
@@ -308,16 +325,17 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "official-full-text-linked",
+      "mode": "official-full-text-linked-selected-articles-stored",
       "stored": false,
       "language": "zh-CN",
-      "note": "Official Chinese text is linked; this seed does not reproduce it."
+      "note": "The complete official Chinese regulation is linked. Indexed Article 44 stores verified Chinese text and a separately labelled non-official English reference translation; the full regulation is not stored."
     }
   },
   {
     "id": "cn-generative-ai-measures",
     "shortTitle": "China GenAI Measures",
     "title": "Interim Measures for the Management of Generative Artificial Intelligence Services",
+    "originalTitle": "生成式人工智能服务管理暂行办法",
     "jurisdictionId": "cn",
     "issuingBodies": ["Cyberspace Administration of China", "National Development and Reform Commission", "Ministry of Education", "Ministry of Science and Technology", "Ministry of Industry and Information Technology", "Ministry of Public Security", "National Radio and Television Administration"],
     "category": "departmental-measures",
@@ -343,10 +361,10 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "official-full-text-linked",
+      "mode": "official-full-text-linked-selected-articles-stored",
       "stored": false,
       "language": "zh-CN",
-      "note": "Official Chinese text is linked; English descriptions are editorial."
+      "note": "The complete official Chinese Measures are linked. Indexed Articles 4, 7, and 17 store verified Chinese text and separately labelled non-official English reference translations; the full Measures are not stored."
     }
   },
   {
@@ -388,6 +406,7 @@
     "id": "jp-appi",
     "shortTitle": "Japan APPI",
     "title": "Act on the Protection of Personal Information (Act No. 57 of 2003)",
+    "originalTitle": "個人情報の保護に関する法律",
     "jurisdictionId": "jp",
     "issuingBodies": ["National Diet of Japan"],
     "category": "law",
@@ -402,27 +421,33 @@
       "generalApplicationFrom": "2005-04-01",
       "ceasedOn": null
     },
-    "version": "Government English translation displays Act No. 37 of 2021 as its last version",
+    "version": "Current authoritative Japanese text on e-Gov; government English reference translation displays Act No. 37 of 2021 as its last version",
     "parentInstrumentId": null,
     "topicIds": ["security-controls", "incident-response", "cross-border-transfer", "accountability-governance"],
     "summary": "Japan's national personal-information law governing private and public-sector handling through an amended statutory framework.",
     "statusNote": "The Japanese text is authoritative. The linked government English translation is a reference translation and may lag later amendments.",
     "source": {
+      "url": "https://laws.e-gov.go.jp/law/415AC0000000057",
+      "label": "e-Gov Law Search, Government of Japan",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
       "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
-      "label": "Japanese Law Translation",
+      "label": "Japanese Law Translation, Government of Japan",
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "government-reference-translation-linked",
+      "mode": "official-current-japanese-linked-selected-articles-stored",
       "stored": false,
-      "language": "en",
-      "note": "Reference translation only; verify version-sensitive conclusions against authoritative Japanese sources."
+      "language": "ja",
+      "note": "The authoritative current Japanese Act is linked. Indexed Articles 23 and 28 store verified Japanese text and separately labelled English reference translations; the full Act is not stored."
     }
   },
   {
     "id": "jp-ai-guidelines-business-1-2",
     "shortTitle": "Japan AI Guidelines 1.2",
     "title": "AI Guidelines for Business, Version 1.2",
+    "originalTitle": "AI事業者ガイドライン（第1.2版）",
     "jurisdictionId": "jp",
     "issuingBodies": ["Ministry of Economy, Trade and Industry", "AI Safety Institute"],
     "category": "government-guideline",
@@ -448,10 +473,10 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "official-publication-linked",
+      "mode": "official-publication-linked-selected-excerpt-stored",
       "stored": false,
       "language": "ja",
-      "note": "Official Japanese materials and tentative English translations are linked; no text is reproduced here."
+      "note": "Official Japanese materials and tentative English translations are linked. A clearly identified Japanese overview extract and a separate editorial English reference translation are stored; the complete guidance is not stored."
     }
   },
   {

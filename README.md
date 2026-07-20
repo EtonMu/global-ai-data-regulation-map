@@ -8,9 +8,10 @@ The project combines a visual regulatory atlas, complete article navigation for 
 
 ## What you can explore
 
-- **Global Atlas** — browse legal systems and international frameworks in a fixed, documented comparative order.
-- **Instrument Genome** — browse an instrument chapter by chapter, use curated high-level section summaries for orientation, and open an individual article or provision.
-- **Provision Reader** — read the selected legal text or clearly labeled editorial summary in the center workspace.
+- **Global Atlas** — browse legal systems and international frameworks in a fixed, documented comparative order, or rotate a border-free point-cloud globe whose land pattern is derived from Natural Earth physical geography.
+- **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
+- **Provision Reader** — read the selected legal text or clearly labeled editorial summary in the center workspace; stored Chinese and Japanese originals can switch to separately labeled English translations.
+- **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
@@ -25,13 +26,14 @@ The current dataset was reviewed through **2026-07-19** and contains:
 
 - 15 jurisdiction, subnational, or institutional-context nodes;
 - 23 instruments across the EU, United States and California, China, the United Kingdom, Canada, Japan, India, and international or standards contexts;
-- 254 unified provision nodes after merging generated and curated records;
+- 332 unified provision nodes after merging generated and curated records;
 - 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated high-level structure summaries;
-- all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications.
+- all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications;
+- all **81 articles of China's Cybersecurity Law as amended in 2025 and effective from 1 January 2026**, with the current official Chinese text, official chapter/section structure, and clearly identified non-official English reference translations.
 
 The 23-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, standards, soft law, declarations, and an advisory report. Its framework and soft-law coverage includes **NIST AI RMF 1.0, ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process,** and the **UN Advisory Body's _Governing AI for Humanity_** report. Legal force and lifecycle status are first-class data—not styling trivia.
 
-Complete stored article corpora are currently limited to the GDPR and EU AI Act. For most other instruments, the repository provides structured metadata, editorial summaries, and official links rather than copying source text. The EU imports include enacted article text and structural hierarchy; recitals, signatures, and footnotes remain at EUR-Lex.
+Complete stored article corpora are currently limited to the GDPR, EU AI Act, and the current 81-article Chinese Cybersecurity Law. Selected Chinese and Japanese provisions from other instruments also include verified original-language text and labeled English reference translations. For most remaining instruments, the repository provides structured metadata, editorial summaries, and official links rather than copying source text. The EU imports include enacted article text and structural hierarchy; recitals, signatures, and footnotes remain at EUR-Lex.
 
 ## Why qualified mappings matter
 
@@ -75,6 +77,10 @@ The application is intentionally simple to inspect and fork:
 ```text
 app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
+  regulation-globe.tsx       border-free physical-land point globe and compass
+  concept-constellation.tsx  theme, concept, and source-evidence visualization
+data/geo/
+  natural-earth-land-110m.json  public-domain physical-land geometry
 data/v2/
   jurisdictions.json         jurisdiction and institutional contexts
   instruments.json           legal force, lifecycle, dates, and official sources
@@ -93,7 +99,7 @@ scripts/
 
 At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
 
-The frontend is built with React, TypeScript, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
+The frontend is built with React, TypeScript, D3 geographic primitives, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
 
 ## Run locally
 

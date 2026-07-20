@@ -47,6 +47,7 @@ const endpointTypes = new Set(["instrument", "provision"]);
 const directionalityValues = new Set(["directed", "undirected"]);
 const relationStatuses = new Set(["candidate", "editorial-reviewed"]);
 const confidenceValues = new Set(["low", "medium", "high"]);
+const translationStatuses = new Set(["official", "reference"]);
 const structureSummaryLevels = new Set(["section", "hierarchy-root"]);
 const instrumentDateFields = [
   "adoptedOn",
@@ -166,6 +167,41 @@ function assertTextAvailability(value, label) {
   );
   if (value.note !== undefined) {
     assertString(value.note, `${label}.note`, 20);
+  }
+}
+
+function assertTranslation(value, label, sourceParagraphs) {
+  assertObject(value, label);
+  if (value.title !== undefined) {
+    assertString(value.title, `${label}.title`);
+  }
+  assertStringArray(value.paragraphs, `${label}.paragraphs`);
+  assertString(value.fullText, `${label}.fullText`);
+  assert(
+    value.fullText === value.paragraphs.join("\n\n"),
+    `${label}.fullText does not match its paragraph sequence`,
+  );
+  assert(
+    translationStatuses.has(value.status),
+    `${label}.status must be official or reference`,
+  );
+  if (value.status === "reference") {
+    assertString(value.note, `${label}.note`, 20);
+    assert(
+      /reference|not an official|non-official/i.test(value.note),
+      `${label}.note must clearly identify a non-official reference translation`,
+    );
+  } else if (value.note !== undefined) {
+    assertString(value.note, `${label}.note`, 20);
+  }
+  if (value.source !== undefined) {
+    assertSource(value.source, `${label}.source`);
+  }
+  if (sourceParagraphs !== undefined) {
+    assert(
+      value.paragraphs.length === sourceParagraphs.length,
+      `${label} must preserve one-to-one paragraph alignment with the source text`,
+    );
   }
 }
 
@@ -294,6 +330,9 @@ for (const [theme, conceptCount] of conceptsByTheme) {
 }
 
 for (const instrument of instruments) {
+  if (instrument.originalTitle !== undefined) {
+    assertString(instrument.originalTitle, `${instrument.id}.originalTitle`);
+  }
   assertString(instrument.shortTitle, `${instrument.id}.shortTitle`);
   assertString(instrument.title, `${instrument.id}.title`);
   assert(
@@ -320,6 +359,11 @@ for (const instrument of instruments) {
     assertIsoDate(instrument.dates[field], `${instrument.id}.dates.${field}`, {
       nullable: true,
     });
+  }
+  for (const field of ["lastAmendedOn", "latestAmendmentEffectiveFrom"]) {
+    if (instrument.dates[field] !== undefined) {
+      assertIsoDate(instrument.dates[field], `${instrument.id}.dates.${field}`);
+    }
   }
   if (instrument.dates.adoptedOn && instrument.dates.publishedOn) {
     assert(
@@ -359,10 +403,62 @@ for (const instrument of instruments) {
   assertSource(instrument.source, `${instrument.id}.source`, {
     requireAccessedOn: true,
   });
+  for (const field of ["amendmentSource", "referenceTranslationSource"]) {
+    if (instrument[field] !== undefined) {
+      assertSource(instrument[field], `${instrument.id}.${field}`, {
+        requireAccessedOn: true,
+      });
+    }
+  }
   assertTextAvailability(
     instrument.textAvailability,
     `${instrument.id}.textAvailability`,
   );
+  if (instrument.textAvailability.mode.includes("full-corpus-stored")) {
+    assert(
+      instrument.textAvailability.stored,
+      `${instrument.id} full stored corpus must set textAvailability.stored to true`,
+    );
+    assertObject(instrument.coverage, `${instrument.id}.coverage`);
+    assert(
+      instrument.coverage.unit === "article",
+      `${instrument.id}.coverage.unit must be article`,
+    );
+    for (const field of ["first", "last", "count"]) {
+      assert(
+        Number.isInteger(instrument.coverage[field]) &&
+          instrument.coverage[field] > 0,
+        `${instrument.id}.coverage.${field} must be a positive integer`,
+      );
+    }
+    assertString(
+      instrument.coverage.completeness,
+      `${instrument.id}.coverage.completeness`,
+    );
+    const storedChildren = provisions.filter(
+      (provision) => provision.instrumentId === instrument.id,
+    );
+    assert(
+      storedChildren.length === instrument.coverage.count,
+      `${instrument.id} claims ${instrument.coverage.count} stored Articles but has ${storedChildren.length}`,
+    );
+    assert(
+      instrument.coverage.last - instrument.coverage.first + 1 ===
+        instrument.coverage.count,
+      `${instrument.id}.coverage range is not contiguous`,
+    );
+    assert(
+      storedChildren.every(
+        (provision) =>
+          provision.provisionType === "article" &&
+          provision.textAvailability?.stored === true &&
+          provision.textAvailability?.language ===
+            instrument.textAvailability.language &&
+          !provision.textAvailability?.mode.includes("excerpt"),
+      ),
+      `${instrument.id} full stored corpus contains a missing, non-Article, or excerpt record`,
+    );
+  }
 }
 
 for (const provision of provisions) {
@@ -372,6 +468,17 @@ for (const provision of provisions) {
   );
   for (const field of ["locator", "title", "provisionType", "legalEffectStatus"]) {
     assertString(provision[field], `${provision.id}.${field}`);
+  }
+  if (provision.originalTitle !== undefined) {
+    assertString(provision.originalTitle, `${provision.id}.originalTitle`);
+  }
+  for (const field of ["chapter", "section"]) {
+    if (provision[field] !== undefined) {
+      assertObject(provision[field], `${provision.id}.${field}`);
+      assertId(provision[field].id, `${provision.id}.${field}.id`);
+      assertString(provision[field].label, `${provision.id}.${field}.label`);
+      assertString(provision[field].title, `${provision.id}.${field}.title`);
+    }
   }
   if (provision.parentId !== null) {
     assert(
@@ -400,7 +507,7 @@ for (const provision of provisions) {
   );
   if (provision.textAvailability.stored) {
     assertStringArray(provision.paragraphs, `${provision.id}.paragraphs`);
-    assertString(provision.fullText, `${provision.id}.fullText`, 20);
+    assertString(provision.fullText, `${provision.id}.fullText`);
     assert(
       provision.fullText === provision.paragraphs.join("\n\n"),
       `${provision.id}.fullText does not match its paragraph sequence`,
@@ -409,11 +516,37 @@ for (const provision of provisions) {
       provision.textAvailability.mode.includes("stored"),
       `${provision.id}.textAvailability.mode must identify stored text`,
     );
+    if (!/^en(?:-|$)/i.test(provision.textAvailability.language)) {
+      assertObject(
+        provision.translations,
+        `${provision.id}.translations`,
+      );
+      assertObject(
+        provision.translations.en,
+        `${provision.id}.translations.en`,
+      );
+    }
   } else {
     assert(
       provision.paragraphs === undefined && provision.fullText === undefined,
       `${provision.id} cannot expose text while textAvailability.stored is false`,
     );
+  }
+  if (provision.translations !== undefined) {
+    assertObject(provision.translations, `${provision.id}.translations`);
+    for (const [language, translation] of Object.entries(
+      provision.translations,
+    )) {
+      assert(
+        languagePattern.test(language),
+        `${provision.id}.translations language key ${language} is invalid`,
+      );
+      assertTranslation(
+        translation,
+        `${provision.id}.translations.${language}`,
+        provision.paragraphs,
+      );
+    }
   }
   assertSource(provision.source, `${provision.id}.source`, {
     requireAccessedOn: true,
@@ -435,6 +568,102 @@ for (const provision of provisions) {
     );
   }
 }
+
+const cslInstrument = instruments.find(
+  (instrument) => instrument.id === "cn-cybersecurity-law",
+);
+assert(cslInstrument, "China Cybersecurity Law instrument is missing");
+assert(
+  cslInstrument.originalTitle === "中华人民共和国网络安全法",
+  "China Cybersecurity Law must retain its official Chinese title",
+);
+assert(
+  cslInstrument.dates.lastAmendedOn === "2025-10-28" &&
+    cslInstrument.dates.latestAmendmentEffectiveFrom === "2026-01-01",
+  "China Cybersecurity Law amendment dates are not the current 2025/2026 version",
+);
+
+const cslArticles = provisions.filter(
+  (provision) => provision.instrumentId === "cn-cybersecurity-law",
+);
+assert(
+  cslArticles.length === 81,
+  `Current China Cybersecurity Law corpus must contain 81 Articles; found ${cslArticles.length}`,
+);
+assert(
+  cslArticles.reduce((count, article) => count + article.paragraphs.length, 0) ===
+    141,
+  "Current China Cybersecurity Law corpus must contain exactly 141 aligned source paragraphs",
+);
+const cslChapterRanges = [
+  [1, 15, "cn-csl-chapter-1", "Chapter I", "General Provisions"],
+  [16, 22, "cn-csl-chapter-2", "Chapter II", "Cybersecurity Support and Promotion"],
+  [23, 41, "cn-csl-chapter-3", "Chapter III", "Network Operations Security"],
+  [42, 52, "cn-csl-chapter-4", "Chapter IV", "Network Information Security"],
+  [53, 60, "cn-csl-chapter-5", "Chapter V", "Monitoring, Early Warning, and Emergency Response"],
+  [61, 77, "cn-csl-chapter-6", "Chapter VI", "Legal Liability"],
+  [78, 81, "cn-csl-chapter-7", "Chapter VII", "Supplementary Provisions"],
+];
+
+cslArticles.forEach((article, index) => {
+  const number = index + 1;
+  assert(article.id === `cn-csl-art-${number}`, `CSL Article ${number} id is invalid`);
+  assert(article.locator === `Article ${number}`, `CSL Article ${number} locator is invalid`);
+  assertString(article.originalTitle, `${article.id}.originalTitle`);
+  assert(article.appliesFrom === "2026-01-01", `${article.id} has a stale amendment date`);
+  assert(
+    article.source.url ===
+      "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+    `${article.id} must cite the current official consolidated Chinese text`,
+  );
+  const chapterRange = cslChapterRanges.find(
+    ([first, last]) => number >= first && number <= last,
+  );
+  const [, , chapterId, chapterLabel, chapterTitle] = chapterRange;
+  assert(
+    article.chapter.id === chapterId &&
+      article.chapter.label === chapterLabel &&
+      article.chapter.title === chapterTitle,
+    `${article.id} has incorrect Chapter metadata`,
+  );
+  if (number >= 23 && number <= 32) {
+    assert(
+      article.section?.id === "cn-csl-chapter-3-section-1" &&
+        article.section?.label === "Section 1" &&
+        article.section?.title === "General Provisions",
+      `${article.id} has incorrect Chapter III, Section 1 metadata`,
+    );
+  } else if (number >= 33 && number <= 41) {
+    assert(
+      article.section?.id === "cn-csl-chapter-3-section-2" &&
+        article.section?.label === "Section 2" &&
+        article.section?.title ===
+          "Operational Security of Critical Information Infrastructure",
+      `${article.id} has incorrect Chapter III, Section 2 metadata`,
+    );
+  } else {
+    assert(article.section === undefined, `${article.id} must not invent a Section`);
+  }
+});
+
+const cslById = new Map(cslArticles.map((article) => [article.id, article]));
+assert(
+  cslById.get("cn-csl-art-1").fullText.startsWith("为了保障网络安全"),
+  "CSL Article 1 official text anchor is missing",
+);
+assert(
+  cslById.get("cn-csl-art-20").fullText.includes("人工智能基础理论研究") &&
+    cslById.get("cn-csl-art-20").paragraphs.length === 2,
+  "CSL Article 20 does not contain the complete 2025 AI amendment text",
+);
+assert(
+  cslById.get("cn-csl-art-61").fullText.includes("二百万元以上一千万元以下罚款"),
+  "CSL Article 61 does not contain the current amended maximum penalty text",
+);
+assert(
+  cslById.get("cn-csl-art-81").fullText === "本法自2017年6月1日起施行。",
+  "CSL Article 81 official text is missing or contaminated by page furniture",
+);
 
 function validateOfficialArticles({
   articles,

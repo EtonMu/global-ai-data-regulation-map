@@ -94,18 +94,18 @@ test("ProvisionReader exposes source-language text and labels official originals
 
   assert.match(
     readerSource,
-    /const isOriginalLanguage\s*=\s*!\s*\/\^en[\s\S]*?\.test\(\s*provision!\.textAvailability\.language,?\s*\)/,
+    /const originalLanguage = provision!\.textAvailability\.language;[\s\S]*?const isOriginalLanguage\s*=\s*!\s*\/\^en[\s\S]*?\.test\(originalLanguage\)/,
     "original-language status must be derived from the provision language metadata",
   );
   assert.match(
     readerSource,
-    /<div(?=[^>]*className="reader-document")(?=[^>]*role="tabpanel")(?=[^>]*lang=\{provision!\.textAvailability\.language\})(?=[^>]*data-text-language=\{provision!\.textAvailability\.language\})[^>]*>/,
+    /<div(?=[^>]*className="reader-document")(?=[^>]*role="tabpanel")(?=[^>]*lang=\{displayedLanguage\})(?=[^>]*data-text-language=\{displayedLanguage\})[^>]*>/,
     "the reader document must expose both the native lang attribute and an inspectable text-language marker",
   );
   assert.match(
     readerSource,
-    /availableParagraphs\.length[\s\S]*?isStoredExcerpt[\s\S]*?isOriginalLanguage[\s\S]*?"OFFICIAL ORIGINAL EXCERPT"[\s\S]*?"OFFICIAL EXCERPT"[\s\S]*?isOriginalLanguage[\s\S]*?"OFFICIAL ORIGINAL TEXT"[\s\S]*?"OFFICIAL TEXT"[\s\S]*?"EDITORIAL SUMMARY"/,
-    "stored originals and excerpts must be distinguished from translations and editorial summaries",
+    /"EDITORIAL ENGLISH SUMMARY — NOT A TRANSLATION"[\s\S]*?"OFFICIAL ENGLISH TEXT"[\s\S]*?"ENGLISH REFERENCE TRANSLATION"[\s\S]*?"OFFICIAL ORIGINAL EXCERPT"[\s\S]*?"OFFICIAL EXCERPT"[\s\S]*?"OFFICIAL ORIGINAL TEXT"[\s\S]*?"OFFICIAL TEXT"[\s\S]*?"EDITORIAL SUMMARY"/,
+    "stored originals, translations, excerpts, and editorial summaries must have distinct labels",
   );
   assert.match(
     readerSource,

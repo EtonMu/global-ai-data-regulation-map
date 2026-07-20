@@ -31,6 +31,7 @@ import {
   Globe2,
   Info,
   Landmark,
+  Languages,
   Link2,
   Map as MapIcon,
   Moon,
@@ -52,6 +53,7 @@ import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
 import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
+import { ConceptConstellation } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
 import { RegulationGlobe } from "./regulation-globe";
 
@@ -82,6 +84,7 @@ type Instrument = {
   id: string;
   shortTitle: string;
   title: string;
+  originalTitle?: string;
   jurisdictionId: string;
   issuingBodies: string[];
   category: string;
@@ -94,6 +97,8 @@ type Instrument = {
     publishedOn?: string | null;
     effectiveFrom?: string | null;
     generalApplicationFrom?: string | null;
+    lastAmendedOn?: string | null;
+    latestAmendmentEffectiveFrom?: string | null;
     ceasedOn?: string | null;
   };
   version: string;
@@ -102,6 +107,14 @@ type Instrument = {
   summary: string;
   statusNote: string;
   source: Source;
+  amendmentSource?: Source;
+  coverage?: {
+    unit: string;
+    first: number;
+    last: number;
+    count: number;
+    completeness: string;
+  };
   textAvailability: TextAvailability;
 };
 
@@ -116,6 +129,7 @@ type SeedProvision = {
   instrumentId: string;
   locator: string;
   title: string;
+  originalTitle?: string;
   provisionType: string;
   parentId?: string | null;
   summary: string;
@@ -129,6 +143,27 @@ type SeedProvision = {
   editorial: Editorial;
   paragraphs?: string[];
   fullText?: string;
+  chapter?: {
+    id: string | null;
+    label: string;
+    title: string;
+  };
+  section?: {
+    id: string;
+    label: string;
+    title: string;
+  } | null;
+  articleNumber?: string;
+  translations?: {
+    en?: {
+      title?: string;
+      paragraphs: string[];
+      fullText: string;
+      status: "official" | "reference";
+      note?: string;
+      source?: Source;
+    };
+  };
 };
 
 type ArticleRecord = {
@@ -589,6 +624,12 @@ function humanize(value: string) {
   return value.replaceAll("_", " ").replaceAll("-", " ");
 }
 
+function nativeLanguageLabel(language: string) {
+  if (/^zh(?:-|$)/i.test(language)) return "中文";
+  if (/^ja(?:-|$)/i.test(language)) return "日本語";
+  return language.toUpperCase();
+}
+
 function formatDate(value?: string | null) {
   if (!value) return "—";
   const parts = value.split("-");
@@ -857,6 +898,29 @@ const globeConcepts = [
   instrumentIds: Array.from(
     conceptEvidenceById.get(concept.id)?.instrumentIds ?? [],
   ),
+}));
+
+const constellationThemes = conceptThemes.map((theme) => ({
+  id: theme.id,
+  label: theme.label,
+  summary: theme.summary,
+}));
+const constellationConcepts = concepts.map((concept) => ({
+  id: concept.id,
+  label: concept.label,
+  themeId: concept.theme,
+  instrumentIds: Array.from(
+    conceptEvidenceById.get(concept.id)?.instrumentIds ?? [],
+  ),
+}));
+const constellationInstruments = instruments.map((instrument) => ({
+  id: instrument.id,
+  label: instrument.title,
+  shortLabel: instrument.shortTitle,
+  jurisdictionId: instrument.jurisdictionId,
+  jurisdictionLabel:
+    jurisdictionById.get(instrument.jurisdictionId)?.shortName ??
+    instrument.jurisdictionId,
 }));
 
 function safeDomId(value: string) {
@@ -1211,6 +1275,7 @@ function CorpusNavigator({
           [
             instrument.shortTitle,
             instrument.title,
+            instrument.originalTitle ?? "",
             instrument.summary,
             jurisdictionById.get(instrument.jurisdictionId)?.name ?? "",
             ...instrument.topicIds.map(
@@ -1231,8 +1296,10 @@ function CorpusNavigator({
             instrument?.shortTitle ?? "",
             provision.locator,
             provision.title,
+            provision.originalTitle ?? "",
             provision.summary,
             provision.fullText ?? "",
+            ...(provision.translations?.en?.paragraphs ?? []),
             ...provision.conceptIds.map(
               (conceptId) => conceptById.get(conceptId)?.label ?? conceptId,
             ),
@@ -1931,7 +1998,14 @@ function InstrumentGenome({
             INSTRUMENT_GENOME / {jurisdiction?.shortName ?? instrument.jurisdictionId}
           </p>
           <h1 id="instrument-title">{instrument.shortTitle}</h1>
-          <p>{instrument.title}</p>
+          <p className="bilingual-instrument-title">
+            <span>{instrument.title}</span>
+            {instrument.originalTitle && (
+              <span lang={instrument.textAvailability.language}>
+                {instrument.originalTitle}
+              </span>
+            )}
+          </p>
         </div>
         <div className="instrument-readout">
           <span className={"status-chip status-" + statusClass(instrument)}>
@@ -1957,6 +2031,20 @@ function InstrumentGenome({
             <dt>General application</dt>
             <dd>{formatDate(instrument.dates.generalApplicationFrom)}</dd>
           </div>
+          {instrument.dates.lastAmendedOn && (
+            <div>
+              <dt>Last amended</dt>
+              <dd>{formatDate(instrument.dates.lastAmendedOn)}</dd>
+            </div>
+          )}
+          {instrument.dates.latestAmendmentEffectiveFrom && (
+            <div>
+              <dt>Current text effective</dt>
+              <dd>
+                {formatDate(instrument.dates.latestAmendmentEffectiveFrom)}
+              </dd>
+            </div>
+          )}
           <div>
             <dt>Text access</dt>
             <dd>{humanize(instrument.textAvailability.mode)}</dd>
@@ -1996,7 +2084,7 @@ function InstrumentGenome({
                   <p>{group.label}</p>
                   <h2>{group.title}</h2>
                 </div>
-                <small>{group.provisions.length} nodes</small>
+                <small>{group.provisions.length} articles</small>
               </header>
               <div className="genome-sections">
                 {sections.map((section) => {
@@ -2025,18 +2113,21 @@ function InstrumentGenome({
                       </span>
                       <p>{overview.summary}</p>
                     </div>
-                    <div className="provision-grid">
+                    <ol
+                      className="provision-list"
+                      aria-label={section.title + " articles"}
+                    >
                       {section.provisions.map((provision) => {
                         const mappingCount =
                           relationsByProvision.get(provision.id)?.length ?? 0;
                         return (
+                          <li key={provision.id}>
                           <button
                             type="button"
-                            key={provision.id}
                             className={
                               mappingCount
-                                ? "provision-cell has-mappings"
-                                : "provision-cell"
+                                ? "provision-list-item has-mappings"
+                                : "provision-list-item"
                             }
                             onClick={() => onOpenProvision(provision)}
                             aria-label={
@@ -2048,16 +2139,30 @@ function InstrumentGenome({
                               " mapped provisions"
                             }
                           >
-                            <span>
-                              {provision.locator.replace("Article ", "A")}
+                            <span className="provision-list-locator">
+                              {provision.locator}
                             </span>
-                            {mappingCount > 0 && (
-                              <small aria-hidden="true">{mappingCount}</small>
-                            )}
+                            <span className="provision-list-copy">
+                              <strong>{provision.title}</strong>
+                              {provision.originalTitle && (
+                                <span lang={provision.textAvailability.language}>
+                                  {provision.originalTitle}
+                                </span>
+                              )}
+                              <small>{provision.summary}</small>
+                            </span>
+                            <span
+                              className="provision-list-mappings"
+                              aria-hidden="true"
+                            >
+                              <Network aria-hidden="true" />
+                              {mappingCount}
+                            </span>
                           </button>
+                          </li>
                         );
                       })}
-                    </div>
+                    </ol>
                   </section>
                   );
                 })}
@@ -2614,9 +2719,24 @@ function ProvisionReader({
   onAddCompare: (provisionId: string) => void;
 }) {
   const readerRef = useRef<HTMLElement>(null);
+  const [languageSelection, setLanguageSelection] = useState<{
+    provisionId: string | null;
+    language: "original" | "en";
+  }>({ provisionId: null, language: "original" });
+  const readerLanguage =
+    languageSelection.provisionId === (provision?.id ?? null)
+      ? languageSelection.language
+      : "original";
   useEffect(() => {
     readerRef.current?.scrollTo({ top: 0 });
   }, [instrument?.id, provision?.id]);
+
+  function setReaderLanguage(language: "original" | "en") {
+    setLanguageSelection({
+      provisionId: provision?.id ?? null,
+      language,
+    });
+  }
 
   if (!instrument && !provision) {
     return (
@@ -2655,7 +2775,14 @@ function ProvisionReader({
             {jurisdiction?.name}
           </small>
           <h2>{instrument.shortTitle}</h2>
-          <p>{instrument.title}</p>
+          <p className="bilingual-instrument-title">
+            <span>{instrument.title}</span>
+            {instrument.originalTitle && (
+              <span lang={instrument.textAvailability.language}>
+                {instrument.originalTitle}
+              </span>
+            )}
+          </p>
         </div>
         <div className="reader-status">
           <span className={"status-chip status-" + statusClass(instrument)}>
@@ -2681,6 +2808,14 @@ function ProvisionReader({
             <dt>Status verified</dt>
             <dd>{formatDate(instrument.statusAsOf)}</dd>
           </div>
+          {instrument.dates.latestAmendmentEffectiveFrom && (
+            <div>
+              <dt>Current text</dt>
+              <dd>
+                Effective {formatDate(instrument.dates.latestAmendmentEffectiveFrom)}
+              </dd>
+            </div>
+          )}
         </dl>
         <a
           className="official-source-button"
@@ -2702,14 +2837,24 @@ function ProvisionReader({
   const activeStructureSummary = activeStructureId
     ? structureSummaryByKey.get(activeInstrument.id + "::" + activeStructureId)
     : undefined;
-  const availableParagraphs = provision!.paragraphs?.length
+  const originalParagraphs = provision!.paragraphs?.length
     ? provision!.paragraphs
     : provision!.fullText?.trim()
       ? [provision!.fullText.trim()]
       : [];
-  const isOriginalLanguage = !/^en(?:-|$)/i.test(
-    provision!.textAvailability.language,
-  );
+  const originalLanguage = provision!.textAvailability.language;
+  const isOriginalLanguage = !/^en(?:-|$)/i.test(originalLanguage);
+  const englishTranslation = provision!.translations?.en;
+  const hasEnglishTranslation = Boolean(englishTranslation?.paragraphs.length);
+  const showLanguageSwitch = isOriginalLanguage && originalParagraphs.length > 0;
+  const showingEnglish = showLanguageSwitch && readerLanguage === "en";
+  const englishSummaryFallback = showingEnglish && !hasEnglishTranslation;
+  const availableParagraphs = showingEnglish
+    ? hasEnglishTranslation
+      ? englishTranslation!.paragraphs
+      : [provision!.summary]
+    : originalParagraphs;
+  const displayedLanguage = showingEnglish ? "en" : originalLanguage;
   const isStoredExcerpt = provision!.textAvailability.mode.includes("excerpt");
   const readerTabs: ReaderTab[] = ["text", "analysis", "sources"];
   const readerTabIcons: Record<ReaderTab, LucideIcon> = {
@@ -2722,10 +2867,19 @@ function ProvisionReader({
     event: ReactKeyboardEvent<HTMLButtonElement>,
     index: number,
   ) {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    let nextIndex = index;
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % readerTabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + readerTabs.length) % readerTabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = readerTabs.length - 1;
+    } else {
+      return;
+    }
     event.preventDefault();
-    const delta = event.key === "ArrowRight" ? 1 : -1;
-    const nextIndex = (index + delta + readerTabs.length) % readerTabs.length;
     const nextTab = readerTabs[nextIndex];
     onSetTab(nextTab);
     document.getElementById("reader-tab-" + nextTab)?.focus();
@@ -2745,7 +2899,12 @@ function ProvisionReader({
         <h2>
           {activeInstrument.shortTitle} {provision!.locator}
         </h2>
-        <p>{provision!.title}</p>
+        <p className="bilingual-provision-title">
+          <span>{provision!.title}</span>
+          {provision!.originalTitle && (
+            <span lang={originalLanguage}>{provision!.originalTitle}</span>
+          )}
+        </p>
       </div>
       <div className="reader-status">
         <span className={"status-chip status-" + statusClass(activeInstrument)}>
@@ -2755,7 +2914,7 @@ function ProvisionReader({
         {provision!.appliesFrom && (
           <span>APPLIES::{formatDate(provision!.appliesFrom)}</span>
         )}
-        <span>{provision!.textAvailability.language.toUpperCase()}</span>
+        <span>{displayedLanguage.toUpperCase()}</span>
         <span>
           {provision!.textAvailability.stored ? "TEXT STORED" : "LINK ONLY"}
         </span>
@@ -2774,6 +2933,32 @@ function ProvisionReader({
           OFFICIAL
         </a>
       </div>
+      {showLanguageSwitch && (
+        <div
+          className="reader-language-switch"
+          role="group"
+          aria-label="Legal text language"
+        >
+          <span>
+            <Languages aria-hidden="true" />
+            TEXT LANGUAGE
+          </span>
+          <button
+            type="button"
+            aria-pressed={readerLanguage === "en"}
+            onClick={() => setReaderLanguage("en")}
+          >
+            {hasEnglishTranslation ? "ENGLISH" : "ENGLISH SUMMARY"}
+          </button>
+          <button
+            type="button"
+            aria-pressed={readerLanguage === "original"}
+            onClick={() => setReaderLanguage("original")}
+          >
+            {nativeLanguageLabel(originalLanguage)}
+          </button>
+        </div>
+      )}
       <div className="reader-tabs" role="tablist" aria-label="Reader panels">
         {readerTabs.map((tab, index) => {
           const TabIcon = readerTabIcons[tab];
@@ -2784,6 +2969,7 @@ function ProvisionReader({
               id={"reader-tab-" + tab}
               aria-controls={"reader-panel-" + tab}
               aria-selected={readerTab === tab}
+              tabIndex={readerTab === tab ? 0 : -1}
               key={tab}
               onClick={() => onSetTab(tab)}
               onKeyDown={(event) => handleTabKeyDown(event, index)}
@@ -2801,8 +2987,8 @@ function ProvisionReader({
           className="reader-document"
           role="tabpanel"
           aria-labelledby="reader-tab-text"
-          lang={provision!.textAvailability.language}
-          data-text-language={provision!.textAvailability.language}
+          lang={displayedLanguage}
+          data-text-language={displayedLanguage}
         >
           {activeStructureSummary && (
             <div className="reader-section-overview">
@@ -2818,7 +3004,13 @@ function ProvisionReader({
             <span>
               <FileText aria-hidden="true" />
               {availableParagraphs.length
-                ? isStoredExcerpt
+                ? englishSummaryFallback
+                  ? "EDITORIAL ENGLISH SUMMARY — NOT A TRANSLATION"
+                  : showingEnglish && englishTranslation
+                    ? englishTranslation.status === "official"
+                      ? "OFFICIAL ENGLISH TEXT"
+                      : "ENGLISH REFERENCE TRANSLATION"
+                    : isStoredExcerpt
                   ? isOriginalLanguage
                     ? "OFFICIAL ORIGINAL EXCERPT"
                     : "OFFICIAL EXCERPT"
@@ -2827,7 +3019,11 @@ function ProvisionReader({
                     : "OFFICIAL TEXT"
                 : "EDITORIAL SUMMARY"}
             </span>
-            <span>{provision!.source.label}</span>
+            <span>
+              {showingEnglish && englishTranslation?.source
+                ? englishTranslation.source.label
+                : provision!.source.label}
+            </span>
           </div>
           {availableParagraphs.length ? (
             availableParagraphs.map((paragraph, index) => (
@@ -2843,6 +3039,26 @@ function ProvisionReader({
                 <p>{provision!.textAvailability.note}</p>
               </div>
             </>
+          )}
+          {englishSummaryFallback && (
+            <div className="restricted-text-note">
+              <strong>Translation coverage pending</strong>
+              <p>
+                This English view is an editorial summary, not a translation of
+                the statutory text. Use the original-language view for the
+                complete official wording.
+              </p>
+            </div>
+          )}
+          {showingEnglish && englishTranslation?.note && (
+            <div className="translation-status-note">
+              <strong>
+                {englishTranslation.status === "official"
+                  ? "Official translation"
+                  : "Reference translation"}
+              </strong>
+              <p>{englishTranslation.note}</p>
+            </div>
           )}
         </div>
       )}
@@ -3581,6 +3797,19 @@ export default function RegulationExplorer() {
         onOpenConcept={openConcept}
       />
     ) : null;
+  const conceptVisualizationPanel =
+    state.navigatorTab === "concepts" && state.view === "atlas" ? (
+      <ConceptConstellation
+        className="concept-constellation-panel"
+        themes={constellationThemes}
+        concepts={constellationConcepts}
+        instruments={constellationInstruments}
+        selectedConceptId={state.selectedConceptId}
+        maxSourceNodes={7}
+        onOpenConcept={openConcept}
+        onOpenInstrument={openInstrument}
+      />
+    ) : null;
 
   return (
     <main className="terminal-app">
@@ -3686,6 +3915,9 @@ export default function RegulationExplorer() {
           "app-shell",
           "view-" + state.view,
           state.navigatorTab === "concepts" ? "navigator-concepts-mode" : "",
+          state.navigatorTab === "concepts" && state.view === "atlas"
+            ? "concept-visualization-active"
+            : "",
         ].filter(Boolean).join(" ")}
       >
         <CorpusNavigator
@@ -3791,6 +4023,7 @@ export default function RegulationExplorer() {
         </section>
 
         {atlasGlobePanel}
+        {conceptVisualizationPanel}
         {state.navigatorTab === "sources" &&
           state.view !== "connections" &&
           state.view !== "atlas" &&
