@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const dataRoot = new URL("../data/v2/", import.meta.url);
@@ -78,7 +80,46 @@ test("the stored CSL corpus is complete, structured, and translation-aligned", (
     );
     assert.equal(article.fullText, article.paragraphs.join("\n\n"));
     assert.equal(article.translations.en.status, "reference");
-    assert.match(article.translations.en.note, /not an official|non-official/i);
+    assert.equal(
+      article.translations.en.coverageStatus,
+      "complete-current-project-reference",
+    );
+    assert.equal(article.translations.en.versionAsOf, "2026-01-01");
+    assert.match(article.translations.en.versionLabel, /81-Article Chinese consolidation/);
+    assert.equal(article.translations.en.currentTextEquivalent, true);
+    assert.equal(
+      article.translations.en.source.url,
+      "https://github.com/EtonMu/global-ai-data-regulation-map/blob/main/data/v2/provisions.json",
+    );
+    assert.equal(article.translations.en.source.recordId, article.id);
+    assert.equal(
+      article.translations.en.source.label,
+      "Compliance Compass project-authored English reference translation record",
+    );
+    assert.equal(
+      article.translations.en.translationBasis.url,
+      "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+    );
+    assert.equal(article.translations.en.translationBasis.language, "zh-CN");
+    assert.equal(
+      article.translations.en.translationBasis.versionAsOf,
+      "2026-01-01",
+    );
+    assert.notEqual(
+      article.translations.en.source.url,
+      article.translations.en.translationBasis.url,
+    );
+    assert.match(article.translations.en.authorityNote, /project-authored/i);
+    assert.match(article.translations.en.authorityNote, /not an official translation/i);
+    assert.equal(article.translations.en.note, article.translations.en.authorityNote);
+    assert.deepEqual(article.translations.en.rights, {
+      redistributable: true,
+      license: "CC BY 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+      attribution: "Compliance Compass contributors",
+      basis:
+        "The English wording is original project-authored editorial material and is licensed under CC BY 4.0. It is not copied or adapted from a third-party English translation.",
+    });
     assert.equal(
       article.translations.en.paragraphs.length,
       article.paragraphs.length,
@@ -86,6 +127,12 @@ test("the stored CSL corpus is complete, structured, and translation-aligned", (
     assert.equal(
       article.translations.en.fullText,
       article.translations.en.paragraphs.join("\n\n"),
+    );
+    assert.equal(
+      article.translations.en.contentSha256,
+      createHash("sha256")
+        .update(article.translations.en.fullText, "utf8")
+        .digest("hex"),
     );
 
     if (articleNumber >= 23 && articleNumber <= 32) {
@@ -118,4 +165,14 @@ test("the stored CSL corpus is complete, structured, and translation-aligned", (
     "446e6fba0dadd123ab924a95277c557b0f54517f6883973609f888df8762e454",
     "CSL source text changed; re-check the official consolidated publication before updating this digest",
   );
+});
+
+test("the CSL English metadata annotator is reproducible and current", () => {
+  const scriptPath = fileURLToPath(
+    new URL("../scripts/annotate-cn-csl-english.mjs", import.meta.url),
+  );
+  const stdout = execFileSync(process.execPath, [scriptPath, "--check"], {
+    encoding: "utf8",
+  });
+  assert.match(stdout, /81 English records are current/);
 });

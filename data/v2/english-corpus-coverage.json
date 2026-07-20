@@ -1,0 +1,716 @@
+{
+  "schemaVersion": "2.0",
+  "reviewedOn": "2026-07-20",
+  "scope": "Complete locally imported corpora whose controlling/default stored text is not English. The audit distinguishes stored English legal text from explicit coverage gaps; it does not treat concept mappings or summaries as translations.",
+  "totals": {
+    "corpusCount": 22,
+    "totalUnitCount": 1337,
+    "storedEnglishUnitCount": 1337,
+    "currentAlignedEnglishUnitCount": 1332,
+    "temporallyMismatchedEnglishUnitCount": 5,
+    "missingEnglishUnitCount": 0,
+    "completionPercent": 100,
+    "currentAlignedPercent": 99.6
+  },
+  "corpora": [
+    {
+      "instrumentId": "ae-federal-pdpl-45-2021",
+      "corpusFile": "uae-federal-pdpl-45-2021-articles.json",
+      "originalLanguages": [
+        "ar-AE"
+      ],
+      "totalUnitCount": 31,
+      "storedEnglishUnitCount": 31,
+      "currentAlignedEnglishUnitCount": 31,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Federal Decree-Law No. 45 of 2021 — official bilingual UAE Legislation Platform text"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.uaelegislation.gov.ae/en/legislations/1972",
+          "label": "UAE Legislation Platform official English reference text"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "br-lgpd-2018",
+      "corpusFile": "brazil-lgpd-articles.json",
+      "originalLanguages": [
+        "pt-BR"
+      ],
+      "totalUnitCount": 80,
+      "storedEnglishUnitCount": 80,
+      "currentAlignedEnglishUnitCount": 80,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation-no-legal-effect",
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-project-reference-translation",
+        "complete-current-wording-official-reference-translation"
+      ],
+      "versionLabels": [
+        "ANPD English reference published 6 November 2024; source text includes amendments through Law No. 14,460/2022",
+        "Current Portuguese consolidation through Law No. 15,352/2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf/@@display-file/file",
+          "label": "ANPD official English reference translation"
+        },
+        {
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm",
+          "label": "Presidency of the Republic — current Portuguese consolidation and Law No. 15,352/2026"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "br-pl-2338-2023-ai-bill",
+      "corpusFile": "br-ai-bill-2338-2023-articles.json",
+      "originalLanguages": [
+        "pt-BR"
+      ],
+      "totalUnitCount": 79,
+      "storedEnglishUnitCount": 79,
+      "currentAlignedEnglishUnitCount": 79,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-pending-bill-project-reference"
+      ],
+      "versionLabels": [
+        "Senate-approved substitute autograph transmitted to the Chamber of Deputies; pending bill text as of 20 July 2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=PL+2338%2F2023",
+          "label": "Câmara dos Deputados — electronically authenticated Senate autograph"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "ca-pipeda",
+      "corpusFile": "canada-pipeda-provisions.json",
+      "originalLanguages": [
+        "fr"
+      ],
+      "totalUnitCount": 75,
+      "storedEnglishUnitCount": 75,
+      "currentAlignedEnglishUnitCount": 75,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official"
+      ],
+      "unitCoverageStatuses": [
+        "stored-source-aligned"
+      ],
+      "versionLabels": [
+        "2026-03-31"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
+          "label": "Justice Laws Website — official English text"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "cn-cybersecurity-law",
+      "corpusFile": "provisions.json",
+      "originalLanguages": [
+        "zh-CN"
+      ],
+      "totalUnitCount": 81,
+      "storedEnglishUnitCount": 81,
+      "currentAlignedEnglishUnitCount": 81,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "reference"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-project-reference"
+      ],
+      "versionLabels": [
+        "Project-authored English reference aligned to the 81-Article Chinese consolidation amended 28 October 2025 and effective 1 January 2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://github.com/EtonMu/global-ai-data-regulation-map/blob/main/data/v2/provisions.json",
+          "label": "Compliance Compass project-authored English reference translation record"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "cn-generative-ai-measures",
+      "corpusFile": "cn-generative-ai-measures-articles.json",
+      "originalLanguages": [
+        "zh-CN"
+      ],
+      "totalUnitCount": 24,
+      "storedEnglishUnitCount": 24,
+      "currentAlignedEnglishUnitCount": 24,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "public-domain-government-reference"
+      ],
+      "unitCoverageStatuses": [
+        "complete-versioned-reference"
+      ],
+      "versionLabels": [
+        "CASI English reference translation of the final Order No. 15 text effective 15 August 2023"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "cn-network-data-regulations",
+      "corpusFile": "cn-network-data-regulations-articles.json",
+      "originalLanguages": [
+        "zh-CN"
+      ],
+      "totalUnitCount": 64,
+      "storedEnglishUnitCount": 64,
+      "currentAlignedEnglishUnitCount": 64,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "government-published-reference"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current"
+      ],
+      "versionLabels": [
+        "Ministry of Justice English publication of State Council Order No. 790, effective 1 January 2025"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+          "label": "Ministry of Justice of the People's Republic of China"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "cn-pipl",
+      "corpusFile": "cn-pipl-articles.json",
+      "originalLanguages": [
+        "zh-CN"
+      ],
+      "totalUnitCount": 74,
+      "storedEnglishUnitCount": 74,
+      "currentAlignedEnglishUnitCount": 74,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "government-published-reference"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current"
+      ],
+      "versionLabels": [
+        "NPC English reference text for the law adopted 20 August 2021 and effective 1 November 2021"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+          "label": "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "id-pdp-law-2022",
+      "corpusFile": "id-pdp-law-2022-articles.json",
+      "originalLanguages": [
+        "id-ID"
+      ],
+      "totalUnitCount": 76,
+      "storedEnglishUnitCount": 76,
+      "currentAlignedEnglishUnitCount": 76,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-project-reference"
+      ],
+      "versionLabels": [
+        "Law No. 27 of 2022, including the current binding interpretation of Article 53(1)(b) under Constitutional Court Decision 151/PUU-XXII/2024"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.jdihn.go.id/files/2098/2022uu027.pdf",
+          "label": "JDIHN official Gazette PDF — controlling Indonesian text"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "jp-ai-promotion-act-2025",
+      "corpusFile": "jp-ai-promotion-act-2025-articles.json",
+      "originalLanguages": [
+        "ja-JP"
+      ],
+      "totalUnitCount": 29,
+      "storedEnglishUnitCount": 29,
+      "currentAlignedEnglishUnitCount": 29,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "government-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "stored-source-aligned"
+      ],
+      "versionLabels": [
+        "2026-07-20"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+          "label": "Japanese Law Translation Database — government reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "jp-appi",
+      "corpusFile": "jp-appi-current-articles.json",
+      "originalLanguages": [
+        "ja-JP"
+      ],
+      "totalUnitCount": 208,
+      "storedEnglishUnitCount": 208,
+      "currentAlignedEnglishUnitCount": 208,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "government-reference-translation-current-text-equivalent-verified-no-legal-effect",
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-equivalent-government-reference",
+        "complete-current-project-reference"
+      ],
+      "versionLabels": [
+        "Act No. 37 of 2021 consolidated government reference (published 2023-03-01)",
+        "Current e-Gov Japanese consolidation as of 20 July 2026 — project current-alignment reference",
+        "Current e-Gov Japanese consolidation as of 20 July 2026 — project-authored English reference"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057?occasion_date=20260720",
+          "label": "e-Gov Law Search — controlling Japanese source for nonofficial current-alignment reference"
+        },
+        {
+          "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+          "label": "Japanese Law Translation Database — Act No. 37 of 2021 reference; current Japanese equivalence verified"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "kr-ai-framework-act-2025",
+      "corpusFile": "kr-ai-framework-act-2025-current-articles.json",
+      "originalLanguages": [
+        "ko-KR"
+      ],
+      "totalUnitCount": 47,
+      "storedEnglishUnitCount": 47,
+      "currentAlignedEnglishUnitCount": 42,
+      "temporallyMismatchedEnglishUnitCount": 5,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english-with-version-boundaries",
+      "translationStatuses": [
+        "government-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-aligned-reference",
+        "complete-next-phase-reference-not-current",
+        "complete-promulgated-addenda-reference"
+      ],
+      "versionLabels": [
+        "Act No. 21311 full phase (effective 2026-07-21)"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282791&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
+          "label": "Korean Law Information Center — government English reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "kr-pipa-2011",
+      "corpusFile": "kr-pipa-2011-current-articles.json",
+      "originalLanguages": [
+        "ko-KR"
+      ],
+      "totalUnitCount": 138,
+      "storedEnglishUnitCount": 138,
+      "currentAlignedEnglishUnitCount": 138,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "government-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-reference"
+      ],
+      "versionLabels": [
+        "Act No. 20897 (effective 2025-10-02)"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270351&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
+          "label": "Korean Law Information Center — government English reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "sa-pdpl-2021-amended-2023",
+      "corpusFile": "sa-pdpl-2021-amended-2023-articles.json",
+      "originalLanguages": [
+        "ar-SA"
+      ],
+      "totalUnitCount": 43,
+      "storedEnglishUnitCount": 43,
+      "currentAlignedEnglishUnitCount": 43,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Royal Decree M/19 consolidated with Royal Decree M/148 amendments"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://dgp.sdaia.gov.sa/wps/wcm/connect/ce84f976-2fdf-4a76-a8c4-638b7ca9e3ba/Personal%2BData%2BEnglish.pdf?CACHEID=ROOTWORKSPACE-ce84f976-2fdf-4a76-a8c4-638b7ca9e3ba-oMcvYOB&CONVERT_TO=url&MOD=AJPERES",
+          "label": "Saudi Data Governance Platform official English reference PDF"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "sa-pdpl-implementing-regulation-2023",
+      "corpusFile": "sa-pdpl-implementing-regulation-2023-articles.json",
+      "originalLanguages": [
+        "ar-SA"
+      ],
+      "totalUnitCount": 38,
+      "storedEnglishUnitCount": 38,
+      "currentAlignedEnglishUnitCount": 38,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Implementing Regulation of the amended Personal Data Protection Law"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
+          "label": "Saudi Data Governance Platform official English reference PDF"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "sa-pdpl-transfer-regulation-2023",
+      "corpusFile": "sa-pdpl-transfer-regulation-2023-articles.json",
+      "originalLanguages": [
+        "ar-SA"
+      ],
+      "totalUnitCount": 9,
+      "storedEnglishUnitCount": 9,
+      "currentAlignedEnglishUnitCount": 9,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 (August 2024)"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://dgp.sdaia.gov.sa/wps/wcm/connect/e5bbede0-1119-4f70-b4ef-f043ce58d780/Regulation%2Bon%2BPersonal%2BData%2BTransfer%2BOutside%2Bthe%2BKingdom..pdf?CACHEID=ROOTWORKSPACE-e5bbede0-1119-4f70-b4ef-f043ce58d780-p6OMj1M&CONVERT_TO=url&MOD=AJPERES",
+          "label": "Saudi Data Governance Platform official English reference PDF"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "tw-ai-basic-act-2026",
+      "corpusFile": "tw-ai-basic-act-2026-articles.json",
+      "originalLanguages": [
+        "zh-Hant-TW"
+      ],
+      "totalUnitCount": 20,
+      "storedEnglishUnitCount": 20,
+      "currentAlignedEnglishUnitCount": 20,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Artificial Intelligence Basic Act promulgated 14 January 2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
+          "label": "National Science and Technology Council — official English reference translation"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+      "corpusFile": "tw-executive-yuan-generative-ai-guidelines-2023-points.json",
+      "originalLanguages": [
+        "zh-Hant-TW"
+      ],
+      "totalUnitCount": 11,
+      "storedEnglishUnitCount": 11,
+      "currentAlignedEnglishUnitCount": 11,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-guidance-project-reference"
+      ],
+      "versionLabels": [
+        "Final ten-point Executive Yuan guidance issued 3 October 2023"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+          "label": "National Science and Technology Council — official Traditional-Chinese ODT"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "tw-personal-data-protection-act",
+      "corpusFile": "tw-personal-data-protection-act-articles.json",
+      "originalLanguages": [
+        "zh-Hant-TW"
+      ],
+      "totalUnitCount": 66,
+      "storedEnglishUnitCount": 66,
+      "currentAlignedEnglishUnitCount": 66,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "official-reference-translation"
+      ],
+      "unitCoverageStatuses": [
+        "complete-latest-consolidation-official-reference-translation"
+      ],
+      "versionLabels": [
+        "Latest promulgated PDPA consolidation, including amendments awaiting Executive Yuan commencement"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=I0050021",
+          "label": "Ministry of Justice Laws and Regulations Database — official English reference translation"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "vn-decree-13-2023",
+      "corpusFile": "vn-decree-13-2023-historical-provisions.json",
+      "originalLanguages": [
+        "vi-VN"
+      ],
+      "totalUnitCount": 50,
+      "storedEnglishUnitCount": 50,
+      "currentAlignedEnglishUnitCount": 50,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-historical-project-reference"
+      ],
+      "versionLabels": [
+        "Pinned official Vietnamese text of Decree 13/2023/NĐ-CP — effective 1 July 2023 through 31 December 2025"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/4/13nd.signed.pdf",
+          "label": "Signed Government Vietnamese text — controlling historical source for project reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "vn-decree-356-2025",
+      "corpusFile": "vn-decree-356-2025-provisions.json",
+      "originalLanguages": [
+        "vi-VN"
+      ],
+      "totalUnitCount": 55,
+      "storedEnglishUnitCount": 55,
+      "currentAlignedEnglishUnitCount": 55,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-project-reference"
+      ],
+      "versionLabels": [
+        "Decree No. 356/2025/NĐ-CP, issued 31 December 2025 and effective 1 January 2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf",
+          "label": "Signed Government Vietnamese text — controlling source for project reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "vn-personal-data-protection-law-2025",
+      "corpusFile": "vn-personal-data-protection-law-2025-articles.json",
+      "originalLanguages": [
+        "vi-VN"
+      ],
+      "totalUnitCount": 39,
+      "storedEnglishUnitCount": 39,
+      "currentAlignedEnglishUnitCount": 39,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-current-project-reference"
+      ],
+      "versionLabels": [
+        "Law No. 91/2025/QH15, enacted 26 June 2025 and effective 1 January 2026"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/91qh.signed.pdf",
+          "label": "Signed National Assembly Vietnamese text — controlling source for project reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    }
+  ]
+}

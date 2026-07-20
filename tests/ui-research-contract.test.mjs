@@ -115,12 +115,12 @@ test("ProvisionReader exposes source-language text and labels official originals
   );
   assert.match(
     readerSource,
-    /"EDITORIAL ENGLISH SUMMARY — NOT A TRANSLATION"[\s\S]*?"OFFICIAL ENGLISH TEXT"[\s\S]*?"ENGLISH REFERENCE TRANSLATION"[\s\S]*?"OFFICIAL ORIGINAL EXCERPT"[\s\S]*?"OFFICIAL EXCERPT"[\s\S]*?"OFFICIAL ORIGINAL TEXT"[\s\S]*?"OFFICIAL TEXT"[\s\S]*?"EDITORIAL SUMMARY"/,
+    /"ENGLISH LEGAL TEXT NOT STORED — COVERAGE NOTICE"[\s\S]*?"OFFICIAL ENGLISH TEXT"[\s\S]*?"ENGLISH REFERENCE TRANSLATION"[\s\S]*?"OFFICIAL ORIGINAL EXCERPT"[\s\S]*?"OFFICIAL EXCERPT"[\s\S]*?"OFFICIAL ORIGINAL TEXT"[\s\S]*?"OFFICIAL TEXT"[\s\S]*?"EDITORIAL SUMMARY"/,
     "stored originals, translations, excerpts, and editorial summaries must have distinct labels",
   );
   assert.match(
     readerSource,
-    /availableParagraphs\.map\(\(paragraph, index\) =>\s*\([\s\S]*?<p key=\{index\}/,
+    /renderedParagraphs\.map\(\(paragraph, index\) =>\s*\([\s\S]*?<p key=\{index\}/,
     "stored paragraphs must render as the legal text rather than only as a summary",
   );
 });
@@ -285,6 +285,24 @@ test("the connections view reflows against its resized column instead of fragmen
     globalStyles,
     /@container connections-workspace \(max-width: 560px\)[\s\S]*?\.connection-canvas\s*\{[\s\S]*?display:\s*grid;[\s\S]*?\.connection-node\s*\{[\s\S]*?position:\s*relative;/,
     "the graph must become a legible node grid when its own column is narrow",
+  );
+});
+
+test("a narrow source navigator stacks issuer metadata before titles fragment", () => {
+  assert.match(
+    globalStyles,
+    /\.corpus-navigator\s*\{[\s\S]*?container-name:\s*corpus-navigation;[\s\S]*?container-type:\s*inline-size;/,
+    "the resizable source navigator must expose its own container width",
+  );
+  assert.match(
+    globalStyles,
+    /@container corpus-navigation \(max-width: 230px\)[\s\S]*?\.tree-instrument-list button\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\);/,
+    "instrument titles and issuer labels must stack when the navigator is narrow",
+  );
+  assert.match(
+    globalStyles,
+    /@container corpus-navigation \(max-width: 230px\)[\s\S]*?\.instrument-tree-title\s*\{[\s\S]*?overflow-wrap:\s*break-word;/,
+    "narrow instrument titles must wrap at word boundaries",
   );
 });
 

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "vn-current-personal-data-regime-project-english-2026-07-20",
+  "reviewedAsOf": "2026-07-20",
+  "scope": {
+    "instrumentCount": 2,
+    "expectedUnitCount": 94,
+    "translatedUnitCount": 94,
+    "articleCount": 81,
+    "appendixFormCount": 13,
+    "sourceParagraphCount": 1881,
+    "translationParagraphCount": 1881,
+    "coverageStatus": "complete-current-project-reference"
+  },
+  "versionBoundary": {
+    "controllingLanguage": "vi-VN",
+    "effectiveFrom": "2026-01-01",
+    "sourceAsOf": "2026-07-20",
+    "officialEnglishAvailability": "No complete issuing-authority or openly reusable official Government English text was verified for either current instrument.",
+    "commercialTranslationBoundary": "Commercial, subscription-database and law-firm translations were not copied into this corpus."
+  },
+  "method": {
+    "draftGenerator": "scripts/prepare-project-english-translation-drafts.py",
+    "annotator": "scripts/annotate-vietnam-current-english.py",
+    "annotatorVersion": "1.2.0",
+    "sourceHashLock": true,
+    "paragraphOrderLock": true,
+    "listMarkerLock": true,
+    "controlledTerminology": true,
+    "qualityBoundary": "Machine-assisted project reference with deterministic legal-title and privacy-terminology normalization plus structural and hash verification; not a certified legal translation."
+  },
+  "rights": {
+    "projectEnglishLicense": "CC BY 4.0",
+    "projectEnglishLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "officialVietnameseBoundary": "The licence applies only to the project-authored English references. The official Vietnamese texts are government edicts and remain controlling."
+  },
+  "corpora": [
+    {
+      "instrumentId": "vn-personal-data-protection-law-2025",
+      "instrumentNumber": "91/2025/QH15",
+      "corpusPath": "data/v2/vn-personal-data-protection-law-2025-articles.json",
+      "sourceUrl": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/91qh.signed.pdf",
+      "unitCount": 39,
+      "articleCount": 39,
+      "appendixFormCount": 0,
+      "sourceParagraphCount": 332,
+      "translationParagraphCount": 332,
+      "coverageStatus": "complete-current-project-reference",
+      "versionLabel": "Law No. 91/2025/QH15, enacted 26 June 2025 and effective 1 January 2026",
+      "cataloguePath": "data/v2/source-snapshots/vn-pdpl-2025-project-en-draft-2026-07-20.json",
+      "catalogueSha256": "3fab66c08b4678d3d57f87b286912d240a91697edeea9877d4851de9b208fb66",
+      "outputSha256": "b76d8741c05a1c0c8dd9f9e7e00aa2a1442e90d4e55b6d6fcf6f31a92f780a2b",
+      "sourceUnitSequenceSha256": "681f93a57e32eb4580aecdc24bf10a0399864a742a52b78d3e4db49bcef463f7",
+      "translationUnitSequenceSha256": "90c308e346eedcb98a1aed079ff1d34ae1c57809fc528284d81ac3da945f8d09"
+    },
+    {
+      "instrumentId": "vn-decree-356-2025",
+      "instrumentNumber": "356/2025/NĐ-CP",
+      "corpusPath": "data/v2/vn-decree-356-2025-provisions.json",
+      "sourceUrl": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf",
+      "unitCount": 55,
+      "articleCount": 42,
+      "appendixFormCount": 13,
+      "sourceParagraphCount": 1549,
+      "translationParagraphCount": 1549,
+      "coverageStatus": "complete-current-project-reference",
+      "versionLabel": "Decree No. 356/2025/NĐ-CP, issued 31 December 2025 and effective 1 January 2026",
+      "cataloguePath": "data/v2/source-snapshots/vn-decree-356-2025-project-en-draft-2026-07-20.json",
+      "catalogueSha256": "e0de6c8b08cbf25c0c85de38181f945fe8c2ebf1c5a3b80347e9197df9d827da",
+      "outputSha256": "1c62ddb1ce81e822f21637f0a796877be54e017b688cc8824d3c59a5d38026d5",
+      "sourceUnitSequenceSha256": "c9d33ea30feca8dc08c1c5a51b2c855fc6cbfc5071705e2896f6155caa4a3a90",
+      "translationUnitSequenceSha256": "1d6e55c7810a851149c2d57f673af41fec5cd8b48862fd94828ee8415da4fff0"
+    }
+  ]
+}

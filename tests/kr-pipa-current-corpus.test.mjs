@@ -49,10 +49,29 @@ test("Korea PIPA corpus contains all 126 current Articles and all 12 addenda blo
     assert.match(unit.sourceNodeSha256, /^[a-f0-9]{64}$/);
     assert.equal(
       unit.translationStatus,
-      "external-current-reference-not-redistributed-copyright",
+      "government-current-reference-stored-no-legal-effect",
     );
-    assert.equal(unit.translationReference.currentLanguageToggleEligible, false);
-    assert.ok(!("translations" in unit));
+    assert.equal(unit.translationReference.currentLanguageToggleEligible, true);
+    assert.equal(
+      unit.translationReference.coverageStatus,
+      "complete-current-reference",
+    );
+    const english = unit.translations.en;
+    assert.equal(english.language, "en");
+    assert.equal(
+      english.status,
+      "government-reference-translation-no-legal-effect",
+    );
+    assert.equal(english.coverageStatus, "complete-current-reference");
+    assert.equal(english.versionAsOf, "2025-10-02");
+    assert.equal(english.versionLabel, "Act No. 20897 (effective 2025-10-02)");
+    assert.equal(english.currentTextEquivalent, true);
+    assert.equal(english.referenceViewEligible, true);
+    assert.match(english.fullText, /[A-Za-z]/);
+    assert.equal(english.contentSha256, digest(english.fullText));
+    assert.match(english.sourceNodeSha256, /^[a-f0-9]{64}$/);
+    assert.match(english.note, /promulgated Korean text controls/i);
+    assert.equal(english.rights.reuseStatus, "moleg-law-open-data-free-use");
     assert.equal(
       unit.rights.reuseStatus,
       "korean-statutory-text-not-copyright-protected",
@@ -76,6 +95,10 @@ test("Korea PIPA corpus contains all 126 current Articles and all 12 addenda blo
   assert.match(articles.find((unit) => unit.articleNumber === "34").fullText, /유출/);
   assert.match(addenda[0].fullText, /제10465호,2011.3.29/);
   assert.match(addenda.at(-1).fullText, /제20897호,2025.4.1/);
+  assert.match(article15.translations.en.fullText, /consent is obtained from the data subject/i);
+  assert.match(article28_8.translations.en.fullText, /cross-border transfer of personal information/i);
+  assert.match(addenda[0].translations.en.fullText, /ADDENDA <Act No. 10465/i);
+  assert.match(addenda.at(-1).translations.en.fullText, /ADDENDA <Act No. 20897/i);
 });
 
 test("PIPA automated-decision refusal, explanation, human-intervention, and transparency rights are current", () => {
@@ -88,6 +111,8 @@ test("PIPA automated-decision refusal, explanation, human-intervention, and tran
   assert.match(article37_2.fullText, /설명 등을 요구할 수 있다/);
   assert.match(article37_2.fullText, /인적 개입에 의한 재처리/);
   assert.match(article37_2.fullText, /쉽게 확인할 수 있도록 공개/);
+  assert.match(article37_2.translations.en.fullText, /automated decision/i);
+  assert.match(article37_2.translations.en.fullText, /request explanation, etc/i);
   assert.equal(
     manifest.automatedDecisionRightsAudit.article37_2ContentSha256,
     article37_2.contentSha256,
@@ -144,15 +169,27 @@ test("PIPA manifest isolates both Act No. 21445 future-effective phases", async 
   assert.match(secondFutureMain, /다만, 매출액, 개인정보의 처리 규모[^<]+인증을 받아야 한다/);
 });
 
-test("PIPA English reference is version-aligned but external-only under KLRI rights", () => {
+test("PIPA English reference is complete, current-aligned, and stored from MOLEG Open Data", () => {
   assert.equal(manifest.translation.sourceVersion, "Act No. 20897, Apr. 1, 2025");
   assert.equal(manifest.translation.referenceMainArticleCount, 126);
+  assert.equal(manifest.translation.referenceSupplementaryProvisionBlockCount, 12);
+  assert.equal(manifest.translation.attachedReferenceUnitCount, 138);
   assert.equal(manifest.translation.futureAct21445Included, false);
-  assert.equal(manifest.translation.currentLanguageToggleEligible, false);
-  assert.equal(manifest.translation.bodyStored, false);
+  assert.equal(manifest.translation.currentLanguageToggleEligible, true);
+  assert.equal(manifest.translation.coverageStatus, "complete-current-reference");
+  assert.equal(manifest.translation.versionAsOf, "2025-10-02");
+  assert.equal(manifest.translation.bodyStored, true);
   assert.match(manifest.translation.legalEffect, /no-legal-or-official-authority/);
-  assert.match(manifest.translation.reasonNotAttached, /prohibits unauthorized reproduction/i);
   assert.match(manifest.translation.authorityNote, /Korean prevails/i);
+  assert.equal(
+    manifest.rights.referenceTranslation.reuseStatus,
+    "moleg-law-open-data-free-use",
+  );
+  assert.match(manifest.rights.referenceTranslation.basis, /including commercially/i);
+  assert.equal(
+    manifest.rights.alternativeKLRIReference.reuseStatus,
+    "external-link-only-no-redistribution",
+  );
 });
 
 test("Every PIPA frozen source snapshot matches its manifest SHA-256", async () => {

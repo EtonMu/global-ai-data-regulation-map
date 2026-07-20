@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "jp-appi-supplement-project-english-2026-07-20",
+  "reviewedAsOf": "2026-07-20",
+  "instrumentId": "jp-appi",
+  "scope": {
+    "unitType": "supplementary-provision-block",
+    "expectedUnitCount": 21,
+    "translatedUnitCount": 21,
+    "sourceParagraphCount": 65,
+    "translationParagraphCount": 65,
+    "translationLegalEffectStatusCount": 21,
+    "applicabilityNoteCount": 21,
+    "coverageStatus": "complete-current-project-reference"
+  },
+  "versionBoundary": {
+    "controllingLanguage": "ja-JP",
+    "controllingSource": "https://laws.e-gov.go.jp/law/415AC0000000057?occasion_date=20260720",
+    "sourceAsOf": "2026-07-20",
+    "currentRevisionId": "415AC0000000057_20260717_508AC0000000062",
+    "governmentEnglishReferenceBoundary": "The JLT Act No. 37 of 2021 XML contains 185 main Articles and two appended tables but no supplementary provisions. These 21 English blocks are project references, not JLT text."
+  },
+  "method": {
+    "draftGenerator": "scripts/prepare-project-english-translation-drafts.py",
+    "annotator": "scripts/annotate-japan-appi-supplement-english.py",
+    "annotatorVersion": "1.2.0",
+    "cataloguePath": "data/v2/source-snapshots/jp-appi-supplements-project-en-draft-2026-07-20.json",
+    "catalogueSha256": "414ab0715151298e06951a56ec0ce6341a3dbde674b97aa9da21af6ecc964983",
+    "sourceHashLock": true,
+    "paragraphOrderLock": true,
+    "subBlockOrderLock": true,
+    "qualityBoundary": "Machine-assisted project reference with deterministic terminology normalization and structural verification; not a certified legal translation."
+  },
+  "rights": {
+    "projectEnglishLicense": "CC BY 4.0",
+    "projectEnglishLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "originalJapaneseBoundary": "The licence applies only to the project-authored English reference. The e-Gov Japanese source remains authoritative and retains its own reuse terms."
+  },
+  "hashes": {
+    "sourceUnitSequenceSha256": "ecc270632b75b6b32f0f674e2aca4f52aa3592492e9de3f0f8869053d3ea3cb7",
+    "translationUnitSequenceSha256": "c885cde0771a58628171f70c88cf5d3bddeeffc807acc8680f129ba9ca8d1a7e"
+  }
+}

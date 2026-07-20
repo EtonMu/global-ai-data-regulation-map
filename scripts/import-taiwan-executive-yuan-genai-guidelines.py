@@ -6,9 +6,11 @@ National Science and Technology Council (NSTC).  The document contains a
 general explanation followed by ten numbered points.  This importer preserves
 all fifteen source paragraphs as one explanation node and ten point nodes.
 
-No English body is emitted.  The Executive Yuan's English page is a contextual
-press release about the draft, not a complete official translation of the
-final ten-point guidance.
+The Executive Yuan's English page is a contextual press release about the
+draft, not a complete official translation of the final ten-point guidance.
+A reviewed project-authored English reference is attached from a versioned,
+network-free resource and is explicitly labeled nonofficial and without legal
+effect.
 """
 
 from __future__ import annotations
@@ -21,6 +23,8 @@ from pathlib import Path
 import re
 from xml.etree import ElementTree as ET
 from zipfile import ZipFile
+
+from project_english_corpus import attach_project_english
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -390,8 +394,44 @@ def common_node_fields() -> dict:
             "are not part of the source document."
         ),
         "translationStatus": "no-complete-official-english-text-located",
+        "englishAvailability": {
+            "coverageStatus": "no-source-text",
+            "status": "not-available-for-final-issued-guidance",
+            "versionAsOf": AS_OF,
+            "versionLabel": "Final Traditional-Chinese guidance issued 3 October 2023",
+            "authorityNote": (
+                "Traditional Chinese is the complete issued guidance text. The "
+                "Executive Yuan English page describes approval of an earlier draft "
+                "and is not a point-by-point translation of the final guidance."
+            ),
+            "sourcesChecked": [NSTC_INDEX_URL, EY_ENGLISH_CONTEXT_URL],
+            "note": (
+                "No complete official English version of the final guidance was "
+                "located, and no editorial or commercial translation is substituted."
+            ),
+        },
         "currentLanguageToggleEligible": False,
         "rightsProfile": "tw-nstc-government-open-data-license-v1",
+        "rights": {
+            "reuseStatus": (
+                "government-open-data-license-v1-subject-to-attribution-and-"
+                "published-exceptions"
+            ),
+            "license": "政府資料開放授權條款－第1版",
+            "licenseUrl": NSTC_RIGHTS_URL,
+            "attributionRequired": True,
+            "attribution": (
+                "Source: National Science and Technology Council, Taiwan — "
+                f"{OFFICIAL_TITLE}."
+            ),
+            "scopeNote": (
+                "The NSTC declaration applies to copyrightable website data and "
+                "materials unless specially excluded. It excludes other "
+                "intellectual-property rights, agency marks, specified third-party "
+                "works, and requires respect for moral rights and no malicious "
+                "alteration."
+            ),
+        },
     }
 
 
@@ -562,8 +602,7 @@ def main() -> None:
 
     if len(corpus) != 11:
         raise ValueError("Corpus must contain one explanation and ten points")
-    if any("translations" in node for node in corpus):
-        raise ValueError("No English translations may be emitted")
+    attach_project_english(corpus, INSTRUMENT_ID)
 
     write_json(args.output, corpus)
     corpus_bytes = args.output.read_bytes()
@@ -660,18 +699,22 @@ def main() -> None:
         },
         "translation": {
             "language": "en",
-            "status": "no-complete-official-english-text-located",
-            "bodyStored": False,
-            "currentLanguageToggleEligible": False,
+            "status": "complete-current-guidance-project-reference",
+            "officialStatus": "non-official-no-legal-effect",
+            "bodyStored": True,
+            "currentLanguageToggleEligible": True,
             "officialContextSource": EY_ENGLISH_CONTEXT_URL,
             "officialContextSourceStatus": (
                 "English Executive Yuan press release about the 2023-08-31 draft; "
                 "not a point-by-point or complete translation of the final guidance"
             ),
-            "reasonNotAttached": (
+            "projectReferenceBoundary": (
                 "No complete official English text corresponding to the final "
                 "Traditional-Chinese general explanation and ten numbered points "
-                "was located. No editorial translation was generated."
+                "was located. A complete project-authored, machine-assisted and "
+                "editorially normalized English reference is stored under CC BY "
+                "4.0; it is nonofficial, has no legal effect, and the Traditional-"
+                "Chinese text controls."
             ),
         },
         "rights": {

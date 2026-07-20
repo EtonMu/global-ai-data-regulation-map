@@ -1,0 +1,243 @@
+{
+  "schemaVersion": "1.0",
+  "reviewedOn": "2026-07-20",
+  "scope": "Non-Chinese, non-Japanese and non-Korean foreign-language instruments currently represented in Compliance Compass, plus jurisdictions whose official legal text is English.",
+  "policy": {
+    "preferredSources": [
+      "co-authentic English legal text",
+      "official government reference translation",
+      "issuing-authority English translation with an explicit reuse basis"
+    ],
+    "projectTranslationRule": "A project-authored translation may be stored only when the controlling original is pinned, the translation is complete at the provision level, the non-official status is prominent, and no protected third-party translation is adapted.",
+    "excludedSources": [
+      "subscription legal databases",
+      "commercial law-firm translations",
+      "consultancy translations without republication permission",
+      "machine output presented as official or authoritative text"
+    ]
+  },
+  "instruments": [
+    {
+      "instrumentId": "br-lgpd-2018",
+      "corpus": "brazil-lgpd-articles.json",
+      "unitCount": 80,
+      "englishCoverage": "complete-current-at-article-level",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 77,
+        "projectAuthoredCurrentReference": 3,
+        "missing": 0
+      },
+      "versionBoundary": "The ANPD English reference published 6 November 2024 predates Law No. 15,352/2026 for Articles 5, 55-A and 55-C. Those three nodes use separately labelled current project translations and retain the superseded ANPD wording as historical metadata.",
+      "englishSource": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf/@@display-file/file",
+      "sourceSnapshot": "data/v2/source-snapshots/br-lgpd-anpd-en-2024-pdftotext-normalized.txt",
+      "sourceManifest": "data/v2/source-snapshots/br-lgpd-anpd-en-2024-source-manifest.json",
+      "controllingSource": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "rightsBoundary": "ANPD source is published under CC BY-ND 3.0; project-authored current references are CC BY 4.0. Portuguese controls."
+    },
+    {
+      "instrumentId": "br-pl-2338-2023-ai-bill",
+      "corpus": "br-ai-bill-2338-2023-articles.json",
+      "unitCount": 79,
+      "englishCoverage": "complete-current-pending-bill-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 79,
+        "missing": 0
+      },
+      "versionBoundary": "Pending Senate-approved autograph transmitted to the Chamber; every English node is aligned to the pinned Portuguese proposal while preserving its not-law status.",
+      "controllingSource": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=PL+2338%2F2023",
+      "rightsBoundary": "The project-authored, machine-assisted English reference is CC BY 4.0, nonofficial and without legal effect. The Portuguese autograph controls and remains a pending bill. Commercial translations were not copied.",
+      "englishSource": "data/v2/reference-translations/br-pl2338-2023-project-en.json"
+    },
+    {
+      "instrumentId": "tw-ai-basic-act-2026",
+      "corpus": "tw-ai-basic-act-2026-articles.json",
+      "unitCount": 20,
+      "englishCoverage": "complete-official-reference-translation",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 20,
+        "projectAuthoredCurrentReference": 0,
+        "missing": 0
+      },
+      "versionBoundary": "Promulgated and effective 14 January 2026.",
+      "englishSource": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
+      "controllingSource": "https://law.nstc.gov.tw/LawContent.aspx?id=GL000592&kw=",
+      "rightsBoundary": "Government translation excluded from copyright under Taiwan Copyright Act Article 9; Traditional Chinese controls."
+    },
+    {
+      "instrumentId": "tw-personal-data-protection-act",
+      "corpus": "tw-personal-data-protection-act-articles.json",
+      "unitCount": 66,
+      "englishCoverage": "complete-official-latest-consolidation-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 66,
+        "projectAuthoredCurrentReference": 0,
+        "missing": 0
+      },
+      "versionBoundary": "The official latest Chinese and English consolidation includes amendments promulgated 11 November 2025 whose commencement is still to be set. Applicability metadata identifies the current-effective older text where necessary.",
+      "englishSource": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=I0050021",
+      "controllingSource": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+      "rightsBoundary": "Government translation excluded from copyright under Taiwan Copyright Act Article 9; Traditional Chinese controls."
+    },
+    {
+      "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+      "corpus": "tw-executive-yuan-generative-ai-guidelines-2023-points.json",
+      "unitCount": 11,
+      "englishCoverage": "complete-current-guidance-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 11,
+        "missing": 0
+      },
+      "versionBoundary": "Final Traditional-Chinese guidance issued 3 October 2023. Every project English node is aligned to the pinned final guidance; the Executive Yuan English page describes approval of a draft and is not a complete translation of the final points.",
+      "controllingSource": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+      "rightsBoundary": "The project-authored English reference is CC BY 4.0, nonofficial and without legal effect. The official Traditional-Chinese guidance controls and remains non-binding. Commercial translations were not copied.",
+      "englishSource": "data/v2/reference-translations/tw-genai-guidelines-2023-project-en.json"
+    },
+    {
+      "instrumentId": "hk-personal-data-privacy-ordinance",
+      "corpus": "hk-pdpo-486-provisions.json",
+      "unitCount": 130,
+      "englishCoverage": "complete-co-authentic-english-text",
+      "coverageBreakdown": {
+        "coAuthenticEnglish": 130,
+        "missing": 0
+      },
+      "versionBoundary": "Current HKeL whole-chapter version dated 1 October 2022, retrieved 20 July 2026; commencement metadata is provision-specific.",
+      "englishSource": "https://www.elegislation.gov.hk/hk/cap486!en",
+      "controllingSource": "https://www.elegislation.gov.hk/hk/cap486",
+      "rightsBoundary": "English and Chinese are equally authentic; reuse follows DATA.GOV.HK Terms and Conditions 1.2 with attribution."
+    },
+    {
+      "instrumentId": "id-pdp-law-2022",
+      "corpus": "id-pdp-law-2022-articles.json",
+      "unitCount": 76,
+      "englishCoverage": "complete-current-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 76,
+        "missing": 0
+      },
+      "versionBoundary": "Law No. 27 of 2022 with the binding Article 53 interpretation from Constitutional Court Decision 151/PUU-XXII/2024; the English layer applies and discloses the current-operative interpretation.",
+      "controllingSource": "https://www.jdihn.go.id/files/2098/2022uu027.pdf",
+      "rightsBoundary": "The project-authored, machine-assisted English reference is CC BY 4.0, nonofficial and without legal effect. The Indonesian Gazette text and Constitutional Court decision control. A translation-team publication expressly labelled nonofficial was consulted only for terminology and was not copied.",
+      "englishSource": "data/v2/reference-translations/id-pdp-law-2022-project-en.json"
+    },
+    {
+      "instrumentId": "vn-personal-data-protection-law-2025",
+      "corpus": "vn-personal-data-protection-law-2025-articles.json",
+      "unitCount": 39,
+      "englishCoverage": "complete-current-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 39,
+        "missing": 0
+      },
+      "versionBoundary": "Law No. 91/2025/QH15, enacted 26 June 2025 and effective 1 January 2026; each English node is aligned to the pinned current Vietnamese node.",
+      "controllingSource": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/91qh.signed.pdf",
+      "rightsBoundary": "The project-authored, machine-assisted English reference is CC BY 4.0, nonofficial and without legal effect. Official Vietnamese controls. Commercial translations were not copied.",
+      "englishSource": "data/v2/source-snapshots/vn-pdpl-2025-project-en-draft-2026-07-20.json"
+    },
+    {
+      "instrumentId": "vn-decree-356-2025",
+      "corpus": "vn-decree-356-2025-provisions.json",
+      "unitCount": 55,
+      "englishCoverage": "complete-current-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 55,
+        "missing": 0
+      },
+      "versionBoundary": "Decree No. 356/2025/NĐ-CP, issued 31 December 2025 and effective 1 January 2026; each English node is aligned to the pinned current Vietnamese node.",
+      "controllingSource": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf",
+      "rightsBoundary": "The project-authored, machine-assisted English reference is CC BY 4.0, nonofficial and without legal effect. Official Vietnamese controls. Commercial translations were not copied.",
+      "englishSource": "data/v2/source-snapshots/vn-decree-356-2025-project-en-draft-2026-07-20.json"
+    },
+    {
+      "instrumentId": "vn-decree-13-2023",
+      "corpus": "vn-decree-13-2023-historical-provisions.json",
+      "unitCount": 50,
+      "englishCoverage": "complete-historical-project-reference",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 0,
+        "projectAuthoredCurrentReference": 0,
+        "projectAuthoredHistoricalReference": 50,
+        "missing": 0
+      },
+      "versionBoundary": "Historical decree effective 1 July 2023 through 31 December 2025 and repealed by Decree 356/2025; every English node is aligned to the stored historical Vietnamese version.",
+      "controllingSource": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/4/13nd.signed.pdf",
+      "rightsBoundary": "The project-authored, machine-assisted English reference is CC BY 4.0, nonofficial and without legal effect. Official Vietnamese controls for the Decree's former effective period. Third-party and subscription translations were not copied.",
+      "englishSource": "data/v2/source-snapshots/vn-decree-13-2023-project-en-draft-2026-07-20.json"
+    },
+    {
+      "instrumentId": "ae-federal-pdpl-45-2021",
+      "corpus": "uae-federal-pdpl-45-2021-articles.json",
+      "unitCount": 31,
+      "englishCoverage": "complete-official-reference-translation",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 31,
+        "missing": 0
+      },
+      "versionBoundary": "Federal Decree-Law No. 45 of 2021, effective 2 January 2022.",
+      "englishSource": "https://www.uaelegislation.gov.ae/en/legislations/1972",
+      "controllingSource": "https://www.uaelegislation.gov.ae/ar/legislations/1972",
+      "rightsBoundary": "Official laws, regulations and official translations are excluded from copyright under UAE Federal Decree-Law No. 38 of 2021, Article 3; Arabic prevails."
+    },
+    {
+      "instrumentId": "sa-pdpl-2021-amended-2023",
+      "corpus": "sa-pdpl-2021-amended-2023-articles.json",
+      "unitCount": 43,
+      "englishCoverage": "complete-official-reference-translation",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 43,
+        "missing": 0
+      },
+      "versionBoundary": "Royal Decree M/19 consolidated with Royal Decree M/148 amendments; effective 14 September 2023.",
+      "englishSource": "https://dgp.sdaia.gov.sa/",
+      "controllingSource": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
+      "rightsBoundary": "Laws, regulations and official translations are excluded from copyright under Saudi Copyright Law Article 4; Arabic controls."
+    },
+    {
+      "instrumentId": "sa-pdpl-implementing-regulation-2023",
+      "corpus": "sa-pdpl-implementing-regulation-2023-articles.json",
+      "unitCount": 38,
+      "englishCoverage": "complete-official-reference-translation",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 38,
+        "missing": 0
+      },
+      "versionBoundary": "Implementing Regulation effective with the amended Law on 14 September 2023.",
+      "englishSource": "https://dgp.sdaia.gov.sa/",
+      "controllingSource": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
+      "rightsBoundary": "Official translation; Arabic controls; Saudi Copyright Law Article 4 boundary applies."
+    },
+    {
+      "instrumentId": "sa-pdpl-transfer-regulation-2023",
+      "corpus": "sa-pdpl-transfer-regulation-2023-articles.json",
+      "unitCount": 9,
+      "englishCoverage": "complete-official-reference-translation",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 9,
+        "missing": 0
+      },
+      "versionBoundary": "Version 2.0 dated August 2024; Article 9 ties effect to Official Gazette publication.",
+      "englishSource": "https://dgp.sdaia.gov.sa/",
+      "controllingSource": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
+      "rightsBoundary": "Official translation; Arabic controls; Saudi Copyright Law Article 4 boundary applies."
+    },
+    {
+      "instrumentId": "ch-fadp-2020",
+      "corpus": "ch-fadp-2020-provisions.json",
+      "unitCount": 79,
+      "englishCoverage": "complete-official-non-authoritative-english-text",
+      "coverageBreakdown": {
+        "officialReferenceCurrentWording": 79,
+        "missing": 0
+      },
+      "versionBoundary": "Fedlex consolidation applicable from 7 July 2025 and open-ended as of 20 July 2026.",
+      "englishSource": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+      "controllingSource": "https://www.fedlex.admin.ch/eli/cc/2022/491/de",
+      "rightsBoundary": "German, French and Italian are equally authoritative; official English has no legal force. Fedlex authorises reuse under its third-party-user information with attribution."
+    }
+  ]
+}

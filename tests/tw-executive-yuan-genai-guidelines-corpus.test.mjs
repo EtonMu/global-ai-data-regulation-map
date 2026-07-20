@@ -56,10 +56,21 @@ test("Taiwan Executive Yuan GenAI guidance preserves the explanation and all ten
     assert.equal(node.thematicRelevance.highlightEntireUnit, true);
     assert.equal(
       node.translationStatus,
-      "no-complete-official-english-text-located",
+      "complete-current-guidance-project-reference",
     );
-    assert.equal(node.currentLanguageToggleEligible, false);
-    assert.ok(!("translations" in node));
+    assert.equal(node.currentLanguageToggleEligible, true);
+    const english = node.translations.en;
+    assert.equal(english.language, "en");
+    assert.equal(
+      english.coverageStatus,
+      "complete-current-guidance-project-reference",
+    );
+    assert.equal(english.officialStatus, "non-official-no-legal-effect");
+    assert.equal(english.fullText, english.paragraphs.join("\n\n"));
+    assert.equal(english.contentSha256, digest(english.fullText));
+    assert.equal(english.paragraphs.length, node.paragraphs.length);
+    assert.equal(node.rights.license, "政府資料開放授權條款－第1版");
+    assert.equal(node.rights.attributionRequired, true);
   }
 });
 
@@ -144,13 +155,14 @@ test("Manifest records the current 3 October 2023 dispatch and complete source c
   assert.equal(manifest.relatedLaterGuidance.includedInCorpus, false);
 });
 
-test("No contextual English press release is misrepresented as a full official translation", async () => {
+test("Contextual press release is not misrepresented; project English is labeled nonofficial", async () => {
   assert.equal(
     manifest.translation.status,
-    "no-complete-official-english-text-located",
+    "complete-current-guidance-project-reference",
   );
-  assert.equal(manifest.translation.bodyStored, false);
-  assert.equal(manifest.translation.currentLanguageToggleEligible, false);
+  assert.equal(manifest.translation.officialStatus, "non-official-no-legal-effect");
+  assert.equal(manifest.translation.bodyStored, true);
+  assert.equal(manifest.translation.currentLanguageToggleEligible, true);
   assert.match(manifest.translation.officialContextSourceStatus, /draft/i);
   assert.match(manifest.translation.officialContextSourceStatus, /not a point-by-point or complete translation/i);
 
@@ -163,7 +175,12 @@ test("No contextual English press release is misrepresented as a full official t
   );
   assert.match(englishContext, /Cabinet approves draft guidelines/i);
   assert.match(englishContext, /At Thursday's weekly Cabinet meeting/i);
-  assert.ok(corpus.every((node) => !("translations" in node)));
+  assert.ok(
+    corpus.every(
+      (node) =>
+        node.translations.en.officialStatus === "non-official-no-legal-effect",
+    ),
+  );
 });
 
 test("NSTC open-data rights and attribution limits are recorded from the frozen official declaration", async () => {

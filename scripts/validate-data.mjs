@@ -313,6 +313,100 @@ function assertTranslation(value, label, sourceParagraphs) {
   }
 }
 
+function assertImportedEnglishTranslation(article, label) {
+  assertObject(article.translations, `${label}.translations`);
+  const translation = article.translations.en;
+  assertObject(translation, `${label}.translations.en`);
+  assertString(translation.title, `${label}.translations.en.title`);
+  assertStringArray(
+    translation.paragraphs,
+    `${label}.translations.en.paragraphs`,
+    { allowDuplicates: true },
+  );
+  assertString(translation.fullText, `${label}.translations.en.fullText`);
+  assert(translation.language === "en", `${label}.translations.en.language must be en`);
+  assertString(translation.status, `${label}.translations.en.status`);
+  assertString(translation.coverageStatus, `${label}.translations.en.coverageStatus`);
+  assertIsoDate(translation.versionAsOf, `${label}.translations.en.versionAsOf`);
+  assertString(translation.versionLabel, `${label}.translations.en.versionLabel`, 12);
+  assertString(
+    translation.note ?? translation.authorityNote,
+    `${label}.translations.en.note`,
+    30,
+  );
+
+  let cursor = 0;
+  for (const [index, paragraph] of translation.paragraphs.entries()) {
+    const next = translation.fullText.indexOf(paragraph, cursor);
+    assert(
+      next >= cursor,
+      `${label}.translations.en.paragraphs[${index}] is missing or out of order in fullText`,
+    );
+    cursor = next + paragraph.length;
+  }
+
+  const sourceUrl =
+    typeof translation.source === "string"
+      ? translation.source
+      : translation.source?.url;
+  assertString(sourceUrl, `${label}.translations.en.source`);
+  let parsedSource;
+  try {
+    parsedSource = new URL(sourceUrl);
+  } catch {
+    throw new Error(`${label}.translations.en.source is not a valid URL`);
+  }
+  assert(
+    parsedSource.protocol === "https:" || parsedSource.protocol === "http:",
+    `${label}.translations.en.source must use HTTP or HTTPS`,
+  );
+  assert(parsedSource.hostname.length > 0, `${label}.translations.en.source must include a hostname`);
+
+  const searchableText = [
+    translation.title,
+    ...translation.paragraphs,
+    translation.fullText,
+  ].join("\n");
+  assert(
+    !/this (?:article|section|provision)[\s\S]{0,180}mapped to|complete official [\s\S]{0,100}wording is available in the original-language view/i.test(
+      searchableText,
+    ),
+    `${label}.translations.en contains an orientation placeholder rather than legal text`,
+  );
+
+  if (translation.contentSha256 !== undefined) {
+    assert(
+      translation.contentSha256 ===
+        createHash("sha256").update(translation.fullText, "utf8").digest("hex"),
+      `${label}.translations.en.contentSha256 does not match its stored text`,
+    );
+  }
+
+  if (translation.coverageStatus.includes("project")) {
+    assert(
+      typeof translation.currentTextEquivalent === "boolean",
+      `${label}.translations.en must explicitly state whether the project reference matches the displayed source version`,
+    );
+    assertString(
+      translation.contentSha256,
+      `${label}.translations.en.contentSha256`,
+      64,
+    );
+    assertObject(translation.rights, `${label}.translations.en.rights`);
+    assert(
+      translation.rights.licenseUrl ===
+        "https://creativecommons.org/licenses/by/4.0/",
+      `${label}.translations.en must identify the CC BY 4.0 licence for project-authored wording`,
+    );
+    assert(
+      /project|nonofficial|not an official|no legal effect/i.test(
+        `${translation.note ?? ""} ${translation.authorityNote ?? ""}`,
+      ),
+      `${label}.translations.en must disclose its nonofficial project status`,
+    );
+  }
+}
+
 const jurisdictionIds = assertUnique(jurisdictions, "jurisdiction");
 const instrumentIds = assertUnique(instruments, "instrument");
 const provisionIds = assertUnique(provisions, "provision");
@@ -1203,7 +1297,12 @@ function validateOfficialChineseArticles({
     assertString(article.originalTitle, `${article.id}.originalTitle`);
     assert(/^第[零〇一二两三四五六七八九十百]+条$/u.test(article.originalTitle), `${article.id}.originalTitle is not an official Chinese Article locator`);
     assertString(article.summary, `${article.id}.summary`, 80);
-    assert(/No English translation|not a translation/i.test(article.summary), `${article.id}.summary must not imply that an English translation exists`);
+    assert(
+      !/No English translation|not a translation|wording is available in the original-language view/i.test(
+        article.summary,
+      ),
+      `${article.id}.summary must describe the stored English legal/reference text rather than a fallback`,
+    );
     assertObject(article.chapter, `${article.id}.chapter`);
     assertString(article.chapter.id, `${article.id}.chapter.id`);
     assertString(article.chapter.label, `${article.id}.chapter.label`);
@@ -1240,6 +1339,7 @@ function validateOfficialChineseArticles({
         createHash("sha256").update(article.fullText, "utf8").digest("hex"),
       `${article.id}.contentSha256 does not match its stored official text`,
     );
+    assertImportedEnglishTranslation(article, article.id);
 
     const curated = provisions.find((provision) => provision.id === expectedId);
     if (translatedIds.has(expectedId)) {
@@ -1260,8 +1360,10 @@ function validateOfficialChineseArticles({
   const instrument = instruments.find((item) => item.id === instrumentId);
   assert(instrument, `${label} instrument metadata is missing`);
   assert(
-    instrument.textAvailability.mode === "separate-official-original-import",
-    `${instrumentId} must declare its separate official original-language import`,
+    /^separate-complete-official-original-and-(?:government|public-domain)-English-reference-import$/.test(
+      instrument.textAvailability.mode,
+    ),
+    `${instrumentId} must declare its complete original and English reference imports`,
   );
   assert(instrument.textAvailability.language === "zh-CN", `${instrumentId} source language must be zh-CN`);
   assertObject(instrument.coverage, `${instrumentId}.coverage`);
@@ -1446,11 +1548,66 @@ function validateLgpdCorpus() {
     assert(article.language === "pt-BR", `${article.id}.language must be pt-BR`);
     assert(article.textAvailability === "official-current-consolidated-text", `${article.id} is not labelled as current official text`);
     assert(article.versionAsOf === "2026-07-20", `${article.id}.versionAsOf is incorrect`);
-    assert(article.translations === undefined, `${article.id} must not imply a current English translation is stored`);
+    assertImportedEnglishTranslation(article, article.id);
+    const isProjectCurrentTranslation = ["5", "55-A", "55-C"].includes(
+      article.articleNumber,
+    );
+    assert(
+      article.translations.en.status ===
+        (isProjectCurrentTranslation
+          ? "project-authored-reference-translation-no-legal-effect"
+          : "official-reference-translation-no-legal-effect"),
+      `${article.id}.translations.en.status is incorrect`,
+    );
+    assert(
+      article.translations.en.coverageStatus ===
+        (isProjectCurrentTranslation
+          ? "complete-current-project-reference-translation"
+          : "complete-current-wording-official-reference-translation"),
+      `${article.id}.translations.en.coverageStatus is incorrect`,
+    );
+    assertObject(article.translations.en.rights, `${article.id}.translations.en.rights`);
+    assertHttpsUrl(
+      article.translations.en.rights.licenseUrl,
+      `${article.id}.translations.en.rights.licenseUrl`,
+    );
+    if (isProjectCurrentTranslation) {
+      assertObject(
+        article.translations.en.historicalOfficialReference,
+        `${article.id}.translations.en.historicalOfficialReference`,
+      );
+      assert(
+        article.translations.en.rights.license ===
+          "Creative Commons Attribution 4.0 International",
+        `${article.id} project-authored English text must retain CC BY 4.0 metadata`,
+      );
+    } else {
+      assert(
+        article.translations.en.rights.license ===
+          "Creative Commons Attribution-NoDerivs 3.0 Unported",
+        `${article.id} ANPD English text must retain CC BY-ND 3.0 metadata`,
+      );
+    }
     assertObject(article.rights, `${article.id}.rights`);
     assert(article.rights.reuseStatus === "government-edict", `${article.id}.rights is incorrect`);
     assertHttpsUrl(article.rights.licenseUrl, `${article.id}.rights.licenseUrl`);
   }
+  assert(
+    lgpdArticles.filter(
+      (item) =>
+        item.translations.en.status ===
+        "official-reference-translation-no-legal-effect",
+    ).length === 77,
+    "LGPD must store 77 current-wording ANPD English references",
+  );
+  assert(
+    lgpdArticles.filter(
+      (item) =>
+        item.translations.en.status ===
+        "project-authored-reference-translation-no-legal-effect",
+    ).length === 3,
+    "LGPD must store three explicitly labelled current project translations",
+  );
   assert(lgpdArticles.find((item) => item.articleNumber === "20")?.fullText.includes("decisões"), "LGPD Article 20 automated-decision text is missing");
   assert(lgpdArticles.find((item) => item.articleNumber === "48")?.fullText.includes("incidente de segurança"), "LGPD Article 48 incident text is missing");
   assertCompleteCoverageMetadata("br-lgpd-2018", {
@@ -1701,10 +1858,18 @@ function validateAfricaIndonesiaCorpora() {
       "in-force-as-conditionally-interpreted",
     ]),
   });
-  assert(
-    indonesiaPdpArticles.every((item) => item.translations === undefined),
-    "Indonesia PDP corpus must not invent an English translation",
-  );
+  for (const article of indonesiaPdpArticles) {
+    assertImportedEnglishTranslation(article, article.id);
+    assert(
+      article.translationStatus === "complete-current-project-reference" &&
+        article.currentLanguageToggleEligible === true &&
+        article.translations.en.coverageStatus ===
+          "complete-current-project-reference" &&
+        article.translations.en.currentTextEquivalent === true &&
+        article.translations.en.legalEffectStatus === article.legalEffectStatus,
+      `${article.id} must expose a complete project reference aligned to the current operative Indonesian text`,
+    );
+  }
   const article53 = indonesiaPdpArticles.find(
     (item) => item.id === "id-pdp-law-2022-art-53",
   );
@@ -1720,6 +1885,12 @@ function validateAfricaIndonesiaCorpora() {
   assert(
     article53.currentOperativeText.includes("dan/atau"),
     "Indonesia PDP Article 53 must retain the binding judicial interpretation",
+  );
+  assert(
+    article53.translations.en.fullText.includes("; and/or") &&
+      article53.translations.en.legalEffectAlignment ===
+        "current-operative-text-after-Decision-151-PUU-XXII-2024",
+    "Indonesia PDP Article 53 English must apply and disclose the binding and/or interpretation",
   );
 }
 
@@ -2039,16 +2210,90 @@ function validateJapanHongKongCorpora() {
     assert(provision.instrumentId === "jp-appi", `${provision.id} references the wrong instrument`);
     assert(provision.language === "ja-JP", `${provision.id}.language must be ja-JP`);
     assert(provision.versionAsOf === "2026-07-20", `${provision.id}.versionAsOf is incorrect`);
-    assert(
+    if (
       provision.translationStatus ===
-        "government-reference-translation-outdated-see-manifest",
-      `${provision.id} must preserve the lagging-English boundary`,
-    );
-    assert(
-      !provision.translations?.en,
-      `${provision.id} must not attach the stale 2021 English reference to current text`,
-    );
+      "project-authored-reference-translation-no-legal-effect"
+    ) {
+      assert(
+        provision.translations?.en?.status ===
+          "project-authored-reference-translation-no-legal-effect",
+        `${provision.id} must identify the nonofficial project English reference`,
+      );
+      assertImportedEnglishTranslation(provision, provision.id);
+      assert(
+        provision.translations.en.coverageStatus ===
+            "complete-current-project-reference" &&
+          provision.translations.en.currentTextEquivalent === true &&
+          provision.translations.en.versionAsOf === "2026-07-20",
+        `${provision.id} must align its project English reference to the current e-Gov unit`,
+      );
+      if (provision.unitType === "supplementary-provision-block") {
+        assertObject(provision.englishAvailability, `${provision.id}.englishAvailability`);
+        assert(
+          provision.englishAvailability.coverageStatus ===
+            "complete-current-project-reference",
+          `${provision.id}.englishAvailability must identify complete project coverage`,
+        );
+        assertString(
+          provision.englishAvailability.authorityNote ??
+            provision.englishAvailability.note,
+          `${provision.id}.englishAvailability authority note`,
+          30,
+        );
+      } else {
+        assert(
+          /^project-reference-aligned-to-current-japanese-after-(?:article|table)-level-difference-review$/.test(
+            provision.translations.en.sourceVersion?.versionAlignment ?? "",
+          ),
+          `${provision.id} changed-unit project reference lacks its current-Japanese comparison decision`,
+        );
+        assertString(
+          provision.translations.en.sourceVersion?.alignmentComparisonRecordSha256,
+          `${provision.id}.translations.en.sourceVersion.alignmentComparisonRecordSha256`,
+          64,
+        );
+      }
+    } else {
+      assert(
+        provision.translationStatus ===
+          "government-reference-translation-current-text-equivalent-verified",
+        `${provision.id} must identify the verified current-equivalent government reference`,
+      );
+      assertImportedEnglishTranslation(provision, provision.id);
+      assert(
+        provision.translations.en.coverageStatus ===
+            "complete-current-equivalent-government-reference" &&
+          provision.translations.en.currentTextEquivalent === true &&
+          provision.translations.en.versionAsOf === "2021-05-19",
+        `${provision.id} must preserve the JLT version while recording current text equivalence`,
+      );
+      assert(
+        provision.translations.en.sourceVersion?.versionAlignment ===
+          "article-level-normalized-japanese-current-equivalence-verified",
+        `${provision.id} lacks its normalized Japanese comparison decision`,
+      );
+    }
   }
+  assert(
+    japanAppiArticles.filter(
+      (item) =>
+        item.translationStatus ===
+        "government-reference-translation-current-text-equivalent-verified",
+    ).length === 172,
+    "Japan APPI must retain exactly 172 verified current-equivalent government references",
+  );
+  assert(
+    japanAppiArticles.filter(
+      (item) =>
+        item.translationStatus ===
+        "project-authored-reference-translation-no-legal-effect",
+    ).length === 36,
+    "Japan APPI must contain exactly 36 current-aligned project English references",
+  );
+  assert(
+    japanAppiArticles.filter((item) => item.translations?.en?.fullText).length === 208,
+    "Japan APPI must store English text for all 185 main Articles, 21 supplementary blocks and two tables",
+  );
   assertCompleteCoverageMetadata("jp-appi", {
     count: 208,
     language: "ja-JP",
@@ -2248,6 +2493,33 @@ function validateSwissVietnamKoreaAndUsCorpora() {
     completeness: "complete-repealed-historical-official-vietnamese-corpus",
   });
 
+  for (const provision of [
+    ...vietnamPdplArticles,
+    ...vietnamDecree356Provisions,
+  ]) {
+    assertImportedEnglishTranslation(provision, provision.id);
+    assert(
+      provision.translationStatus ===
+          "complete-current-project-reference-nonofficial" &&
+        provision.translations.en.coverageStatus ===
+          "complete-current-project-reference" &&
+        provision.translations.en.currentTextEquivalent === true,
+      `${provision.id} must expose a complete current, nonofficial project English reference`,
+    );
+  }
+  for (const provision of vietnamDecree13HistoricalProvisions) {
+    assertImportedEnglishTranslation(provision, provision.id);
+    assert(
+      provision.translationStatus ===
+          "project-authored-reference-translation-no-legal-effect" &&
+        provision.translations.en.coverageStatus ===
+          "complete-historical-project-reference" &&
+        provision.translations.en.currentTextEquivalent === true &&
+        provision.translations.en.legalEffectStatus === "repealed",
+      `${provision.id} must expose a complete project English reference for the stored repealed version`,
+    );
+  }
+
   assert(koreaPipaArticles.length === 138, "Korea PIPA must contain 126 Articles and 12 supplements");
   assert(koreaAiFrameworkArticles.length === 47, "Korea AI Framework Act must contain 44 Articles and three supplements on 20 July 2026");
   validateExactTextNodes(koreaPipaArticles, {
@@ -2258,8 +2530,45 @@ function validateSwissVietnamKoreaAndUsCorpora() {
     instrumentId: "kr-ai-framework-act-2025",
     language: "ko-KR",
   });
-  assert(!koreaPipaArticles.some((item) => item.translations?.en?.fullText), "Korea PIPA must not reproduce permission-restricted KLRI English body text");
-  assert(!koreaAiFrameworkArticles.some((item) => item.translations?.en?.fullText), "Korea AI Act must not attach a different temporal English version");
+  for (const provision of koreaPipaArticles) {
+    assertImportedEnglishTranslation(provision, provision.id);
+    assert(
+      provision.translationStatus === "government-current-reference-stored-no-legal-effect" &&
+        provision.translations.en.coverageStatus === "complete-current-reference" &&
+        provision.translations.en.currentTextEquivalent === true &&
+        provision.translations.en.versionAsOf === "2025-10-02",
+      `${provision.id} must identify the current MOLEG English reference`,
+    );
+  }
+  const nextPhaseAiArticleNumbers = new Set(["2", "3", "6", "18", "35"]);
+  for (const provision of koreaAiFrameworkArticles) {
+    assertImportedEnglishTranslation(provision, provision.id);
+    const differsFromCurrent = nextPhaseAiArticleNumbers.has(provision.articleNumber);
+    assert(
+      provision.translations.en.currentTextEquivalent === !differsFromCurrent,
+      `${provision.id}.translations.en.currentTextEquivalent is incorrect`,
+    );
+    assert(
+      provision.translations.en.coverageStatus ===
+        (differsFromCurrent
+          ? "complete-next-phase-reference-not-current"
+          : provision.unitType === "supplementary-provision-block"
+            ? "complete-promulgated-addenda-reference"
+            : "complete-current-aligned-reference"),
+      `${provision.id}.translations.en.coverageStatus is incorrect`,
+    );
+    assert(
+      provision.translationStatus ===
+        "government-next-phase-reference-stored-provision-warning",
+      `${provision.id}.translationStatus is incorrect`,
+    );
+  }
+  assert(
+    koreaAiFrameworkArticles.filter(
+      (item) => item.translations.en.currentTextEquivalent === false,
+    ).length === 5,
+    "Korea AI Act must flag exactly five Articles whose available English wording belongs to the 21 July 2026 phase",
+  );
   assertCompleteCoverageMetadata("kr-pipa-2011", {
     count: 138,
     language: "ko-KR",
@@ -2316,9 +2625,17 @@ function validateSwissVietnamKoreaAndUsCorpora() {
       `${point.id}.contentSha256 does not match its official text`,
     );
     assertHttpsUrl(point.source, `${point.id}.source`);
+    assertImportedEnglishTranslation(point, point.id);
     assert(
-      point.currentLanguageToggleEligible === false,
-      `${point.id} must not claim an unavailable official English translation`,
+      point.currentLanguageToggleEligible === true &&
+        point.translationStatus ===
+          "complete-current-guidance-project-reference" &&
+        point.translations.en.coverageStatus ===
+          "complete-current-guidance-project-reference" &&
+        point.translations.en.currentTextEquivalent === true &&
+        point.translations.en.legalEffectStatus ===
+          "active-non-binding-public-sector-guidance",
+      `${point.id} must expose a complete nonofficial English reference while preserving the guidance's non-binding status`,
     );
     assertReferenceArray(
       point.coreConceptIds,
@@ -2358,7 +2675,18 @@ function validateBrazilAiBillCorpus() {
     assert(article.effectiveFrom === null, `${article.id} must not claim an effective date`);
     assert(article.legislativeStatus?.notLaw === true, `${article.id} must be marked not law`);
     assert(article.legislativeStatus?.notInForce === true, `${article.id} must be marked not in force`);
-    assert(article.translations === undefined, `${article.id} must not invent an English translation`);
+    assertImportedEnglishTranslation(article, article.id);
+    assert(
+      article.translationStatus ===
+          "complete-current-pending-bill-project-reference" &&
+        article.currentLanguageToggleEligible === true &&
+        article.translations.en.coverageStatus ===
+          "complete-current-pending-bill-project-reference" &&
+        article.translations.en.currentTextEquivalent === true &&
+        article.translations.en.legalEffectStatus ===
+          "pending-bill-not-enacted",
+      `${article.id} must expose complete project English without implying that the pending bill is law`,
+    );
     assertStringArray(article.paragraphs, `${article.id}.paragraphs`, { allowDuplicates: true });
     assert(article.fullText === article.paragraphs.join("\n\n"), `${article.id}.fullText is not normalized`);
     assert(
@@ -3112,6 +3440,23 @@ for (const audit of sourceAudits) {
       translationCoverage.completeness,
       `${audit.id}.englishAvailability.coverage.completeness`,
     );
+    if (translationCoverage.currentAlignedUnitCount !== undefined) {
+      assert(
+        Number.isInteger(translationCoverage.currentAlignedUnitCount) &&
+          translationCoverage.currentAlignedUnitCount >= 0 &&
+          translationCoverage.currentAlignedUnitCount <=
+            translationCoverage.translatedUnitCount,
+        `${audit.id}.englishAvailability.coverage.currentAlignedUnitCount is invalid`,
+      );
+      assert(
+        Number.isInteger(translationCoverage.temporallyMismatchedUnitCount) &&
+          translationCoverage.temporallyMismatchedUnitCount >= 0 &&
+          translationCoverage.currentAlignedUnitCount +
+            translationCoverage.temporallyMismatchedUnitCount ===
+            translationCoverage.translatedUnitCount,
+        `${audit.id}.englishAvailability.coverage temporal counts must reconcile`,
+      );
+    }
   }
   assertObject(audit.localCoverage, `${audit.id}.localCoverage`);
   assertString(audit.localCoverage.mode, `${audit.id}.localCoverage.mode`);

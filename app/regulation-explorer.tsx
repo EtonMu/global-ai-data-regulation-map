@@ -111,6 +111,16 @@ type TextAvailability = {
   note?: string;
 };
 
+type EnglishAvailabilityRecord = {
+  coverageStatus: string;
+  status: string;
+  versionAsOf?: string;
+  versionLabel?: string;
+  authorityNote?: string;
+  sourcesChecked?: string[];
+  note?: string;
+};
+
 type Jurisdiction = {
   id: string;
   name: string;
@@ -218,8 +228,14 @@ type SeedProvision = {
       status: "official" | "reference";
       note?: string;
       source?: Source;
+      coverageStatus?: string;
+      versionAsOf?: string;
+      versionLabel?: string;
+      currentTextEquivalent?: boolean;
+      alignmentStatus?: string;
     };
   };
+  englishAvailability?: EnglishAvailabilityRecord | null;
   alternativeLanguageTexts?: LegalLanguageText[];
   defaultLanguageStatus?: string;
   languageAuthorityNote?: string;
@@ -235,13 +251,35 @@ type ImportedTranslationRecord = {
     | "official"
     | "reference"
     | "official-reference-translation"
+    | "official-reference-translation-no-legal-effect"
     | "government-reference-translation-no-legal-effect"
+    | "government-reference-translation-historical-no-legal-effect"
+    | "government-published-reference"
+    | "public-domain-government-reference"
+    | "project-authored-reference-translation-no-legal-effect"
+    | "official-co-published"
     | "official-co-authentic-equal-status"
     | "official-authoritative-equal-status";
   note?: string;
   authorityNote?: string;
   source?: Source | string;
   sourceLabel?: string;
+  coverageStatus?: string;
+  versionAsOf?: string;
+  versionLabel?: string;
+  currentTextEquivalent?: boolean;
+  alignmentStatus?: string;
+  sourceVersion?:
+    | string
+    | ({
+        versionLabel?: string;
+        asOf?: string;
+        consolidatedAsOf?: string;
+        effectiveRevisionDate?: string;
+        lastVersion?: string;
+        translatedOn?: string;
+        publishedOnDatabase?: string;
+      } & Record<string, unknown>);
   sourceRecord?: {
     sourceExpression?: string;
     sourceSubdivision?: string;
@@ -320,6 +358,7 @@ type ArticleRecord = {
   translations?: Record<string, ImportedTranslationRecord> & {
     en?: ImportedTranslationRecord;
   };
+  englishAvailability?: EnglishAvailabilityRecord | null;
   sourceVersion?: {
     officialTitle: string;
     englishTitle?: string;
@@ -452,6 +491,13 @@ type SourceAudit = {
   englishAvailability: {
     status: string;
     note: string;
+    coverage?: {
+      translatedUnitCount: number;
+      currentAlignedUnitCount?: number;
+      temporallyMismatchedUnitCount?: number;
+      totalUnitCount: number;
+      completeness: string;
+    };
   };
   localCoverage: {
     mode: string;
@@ -778,6 +824,17 @@ function normalizedEnglishTranslation(
         }
       : translation.source;
   const isCoAuthentic = translation.status === "official";
+  const sourceVersion = translation.sourceVersion;
+  const versionLabel =
+    translation.versionLabel ??
+    (typeof sourceVersion === "string"
+      ? sourceVersion
+      : sourceVersion?.versionLabel ??
+        sourceVersion?.consolidatedAsOf ??
+        sourceVersion?.asOf ??
+        sourceVersion?.effectiveRevisionDate ??
+        sourceVersion?.lastVersion ??
+        sourceVersion?.translatedOn);
   return {
     en: {
       title: translation.title,
@@ -791,6 +848,11 @@ function normalizedEnglishTranslation(
           ? "The English and original-language enactments are co-authentic official texts."
           : "Government-published English reference translation; the original-language text controls."),
       source,
+      coverageStatus: translation.coverageStatus,
+      versionAsOf: translation.versionAsOf,
+      versionLabel,
+      currentTextEquivalent: translation.currentTextEquivalent,
+      alignmentStatus: translation.alignmentStatus,
     },
   };
 }
@@ -871,6 +933,9 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
   const isOfficialChineseImport = article.language === "zh-CN";
   const isOriginalLanguage = !/^en(?:-|$)/i.test(article.language);
   const translations = normalizedEnglishTranslation(article);
+  const hasProjectAuthoredEnglishReference = Boolean(
+    translations?.en?.coverageStatus?.includes("project"),
+  );
   const alternativeLanguageTexts = normalizedAlternativeLanguageTexts(article);
   const hasOfficialAlternativeText = Boolean(
     alternativeLanguageTexts?.some((text) => text.status === "official"),
@@ -906,9 +971,7 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
     appliesFrom: importedAppliesFrom,
     versionAsOf: importedVersion,
     textAvailability: {
-      mode: isOfficialChineseImport
-        ? "official-original-text-stored"
-        : hasOfficialAlternativeText
+      mode: hasOfficialAlternativeText
           ? "official-multilingual-full-text-stored"
         : translations
           ? translations.en?.status === "official"
@@ -919,9 +982,7 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
             : "official-full-text-stored",
       stored: true,
       language: article.language,
-      note: isOfficialChineseImport
-        ? "Complete official Chinese Article text extracted from the issuing government's publication. English is shown only where a separately labelled reference translation or editorial coverage notice exists."
-        : article.currentOperativeText
+      note: article.currentOperativeText
           ? "The reader displays the current operative wording after the identified binding judicial interpretation. The generated source record separately preserves the promulgated text and the court overlay."
         : article.hasEnactedFutureAmendment
           ? "The reader displays only the authorised current compilation. Enacted amendments with a later commencement date are preserved as future metadata and are not inserted into the current text."
@@ -932,9 +993,13 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
         : translations?.en?.status === "official"
           ? "Complete co-authentic original-language and English texts are stored from the official legislative publication."
           : translations
-            ? "Complete official original-language text and a government-published English reference translation are stored with authority labels."
-            : isOriginalLanguage
-              ? "Complete official original-language text is stored. The English interface uses an editorial summary where no current translation is incorporated."
+            ? hasProjectAuthoredEnglishReference
+              ? "Complete official original-language text and a separately labelled project-authored English reference translation are stored with source, licence and authority notices."
+              : "Complete official original-language text and a government-published English reference translation are stored with authority labels."
+          : isOfficialChineseImport
+            ? "Complete official Chinese Article text extracted from the issuing government's publication. No English legal text is shown unless a separately sourced translation is attached to this Article."
+          : isOriginalLanguage
+              ? "Complete official original-language text is stored. Where no sourced English legal text is incorporated, the English view displays a coverage notice and never substitutes concept analysis for the law."
               : "Official provision text extracted from the cited public legal source; version metadata and reuse terms remain attached to the generated corpus.",
     },
     source: {
@@ -945,9 +1010,7 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
     editorial: {
       reviewStatus: "source-verified",
       reviewedOn: article.retrievedOn,
-      note: isOfficialChineseImport
-        ? "Article boundaries, hierarchy, and Chinese text were imported from official government HTML; no English translation was generated."
-        : article.currentOperativeText
+      note: article.currentOperativeText
           ? "The source record preserves the promulgated wording; this reader renders the separately hashed current operative text required by the identified binding court decision."
         : article.hasEnactedFutureAmendment
           ? "This node is current compiled text only. Its source record separately identifies enacted future wording and confirms that the future text is not included in the displayed provision."
@@ -958,10 +1021,15 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
         : translations?.en?.status === "official"
           ? "Hierarchy and both co-authentic language texts were imported from the official legislative publication."
           : translations
-            ? "Hierarchy, original-language text, and the separately labelled government English reference translation were imported without machine translation."
+            ? hasProjectAuthoredEnglishReference
+              ? "Hierarchy and original-language text were imported from the official publication; the separately labelled project-authored English reference retains its own source basis and licence metadata."
+              : "Hierarchy, original-language text, and the separately labelled government English reference translation were imported without machine translation."
+            : isOfficialChineseImport
+              ? "Article boundaries, hierarchy, and Chinese text were imported from official government HTML; any English display is separately sourced and authority-labelled."
             : "Hierarchy and text imported from the instrument's official publication.",
     },
     translations,
+    englishAvailability: article.englishAvailability,
     alternativeLanguageTexts,
     defaultLanguageStatus: article.defaultLanguageStatus,
     languageAuthorityNote: article.authenticity?.authorityNote,
@@ -981,6 +1049,8 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
     textAvailability: base.textAvailability,
     source: base.source,
     translations: translations ?? seed?.translations,
+    englishAvailability:
+      article.englishAvailability ?? seed?.englishAvailability,
     alternativeLanguageTexts:
       alternativeLanguageTexts ?? seed?.alternativeLanguageTexts,
     defaultLanguageStatus:
@@ -3604,6 +3674,28 @@ function ProvisionReader({
           <div className="restricted-text-note">
             <strong>LOCAL COVERAGE / {humanize(sourceAudit.localCoverage.mode)}</strong>
             <p>{sourceAudit.localCoverage.statement}</p>
+            {sourceAudit.englishAvailability.coverage && (
+              <p>
+                English legal text: {sourceAudit.englishAvailability.coverage.translatedUnitCount}
+                {" / "}
+                {sourceAudit.englishAvailability.coverage.totalUnitCount} units ·{" "}
+                {humanize(
+                  sourceAudit.englishAvailability.coverage.completeness,
+                )}
+              </p>
+            )}
+            {sourceAudit.englishAvailability.coverage &&
+              (sourceAudit.englishAvailability.coverage
+                .temporallyMismatchedUnitCount ?? 0) > 0 && (
+                <p>
+                  Current-version aligned: {sourceAudit.englishAvailability.coverage.currentAlignedUnitCount}
+                  {" / "}
+                  {sourceAudit.englishAvailability.coverage.totalUnitCount} units ·{" "}
+                  {sourceAudit.englishAvailability.coverage.temporallyMismatchedUnitCount}{" "}
+                  stored English references have an explicit historical or
+                  next-phase boundary
+                </p>
+              )}
             <p>{sourceAudit.englishAvailability.note}</p>
           </div>
         )}
@@ -3627,6 +3719,7 @@ function ProvisionReader({
 
   const activeInstrument = instrumentById.get(provision!.instrumentId)!;
   const jurisdiction = jurisdictionById.get(activeInstrument.jurisdictionId);
+  const sourceAudit = sourceAuditByInstrument.get(activeInstrument.id);
   const isCompared = compareIds.includes(provision!.id);
   const activeStructureId = provision!.section?.id ?? provision!.parentId;
   const activeStructureSummary = activeStructureId
@@ -3643,11 +3736,40 @@ function ProvisionReader({
   const alternativeLanguageTexts = provision!.alternativeLanguageTexts ?? [];
   const hasEnglishTranslation =
     !isOriginalLanguage || Boolean(englishTranslation?.paragraphs.length);
+  const englishTranslationVersion =
+    englishTranslation?.versionLabel ?? englishTranslation?.versionAsOf;
+  const englishTranslationHasTemporalMismatch = Boolean(
+    englishTranslation &&
+      (englishTranslation.currentTextEquivalent === false ||
+        (englishTranslation.currentTextEquivalent !== true &&
+          /historical|not-current|next-phase|differs-from-current/i.test(
+            `${englishTranslation.coverageStatus ?? ""} ${
+              englishTranslation.alignmentStatus ?? ""
+            }`,
+          ))),
+  );
+  const englishTranslationIsFuturePhase = Boolean(
+    englishTranslation &&
+      /next-phase|future/i.test(
+        `${englishTranslation.coverageStatus ?? ""} ${
+          englishTranslation.alignmentStatus ?? ""
+        }`,
+      ),
+  );
+  const englishTranslationIsProjectAuthored = Boolean(
+    englishTranslation?.coverageStatus?.includes("project"),
+  );
   const languageChoices = isOriginalLanguage
     ? [
         {
           value: "en",
-          label: hasEnglishTranslation ? "ENGLISH" : "ENGLISH SUMMARY",
+          label: !hasEnglishTranslation
+            ? "ENGLISH COVERAGE"
+            : englishTranslationHasTemporalMismatch
+              ? englishTranslationIsFuturePhase
+                ? "ENGLISH · FUTURE REF"
+                : "ENGLISH · HISTORICAL REF"
+              : "ENGLISH",
         },
         {
           value: "original",
@@ -3668,31 +3790,34 @@ function ProvisionReader({
     : alternativeLanguageTexts.find(
         (text) => text.language === readerLanguage,
       );
-  const englishSummaryFallback =
+  const englishCoverageFallback =
     showingEnglish && isOriginalLanguage && !hasEnglishTranslation;
-  const mappedConceptLabels = provision!.conceptIds
-    .map((conceptId) => conceptById.get(conceptId)?.label)
-    .filter((label): label is string => Boolean(label));
-  const editorialEnglishSummary = mappedConceptLabels.length
-    ? `This ${humanize(provision!.provisionType)} is mapped to ${mappedConceptLabels
-        .slice(0, 4)
-        .join(", ")}. The complete official ${nativeLanguageLabel(
+  const englishAvailability = provision!.englishAvailability;
+  const englishCoverageNotice = englishAvailability
+    ? englishAvailability.authorityNote && englishAvailability.note
+      ? `${englishAvailability.authorityNote} ${englishAvailability.note}`
+      : englishAvailability.authorityNote ??
+        englishAvailability.note ??
+        `No complete English legal text is stored for ${provision!.locator}.`
+    : `No complete English legal text is stored for ${provision!.locator}. The complete official ${nativeLanguageLabel(
         originalLanguage,
-      )} wording is available in the original-language view; this orientation is not a translation.`
-    : `This ${humanize(
-        provision!.provisionType,
-      )} supplies structural or lifecycle context. The complete official ${nativeLanguageLabel(
-        originalLanguage,
-      )} wording is available in the original-language view; this orientation is not a translation.`;
+      )} wording is available in the original-language view. This panel records an English-coverage gap; it is not a translation or legal summary.`;
   const availableParagraphs = showingEnglish
     ? isOriginalLanguage
       ? hasEnglishTranslation
         ? englishTranslation!.paragraphs
-        : [editorialEnglishSummary]
+        : [englishCoverageNotice]
       : originalParagraphs
     : isOriginalLanguage
       ? originalParagraphs
       : selectedAlternativeLanguageText?.paragraphs ?? originalParagraphs;
+  const renderedParagraphs = availableParagraphs.flatMap((paragraph) => {
+    const blocks = paragraph
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean);
+    return blocks.length ? blocks : [paragraph];
+  });
   const displayedLanguage = showingEnglish
     ? "en"
     : isOriginalLanguage
@@ -3896,9 +4021,9 @@ function ProvisionReader({
           <div className="document-provenance">
             <span>
               <FileText aria-hidden="true" />
-              {availableParagraphs.length
-                ? englishSummaryFallback
-                  ? "EDITORIAL ENGLISH SUMMARY — NOT A TRANSLATION"
+              {renderedParagraphs.length
+                ? englishCoverageFallback
+                  ? "ENGLISH LEGAL TEXT NOT STORED — COVERAGE NOTICE"
                   : showingEnglish && englishTranslation
                     ? englishTranslation.status === "official"
                       ? "OFFICIAL ENGLISH TEXT"
@@ -3920,8 +4045,28 @@ function ProvisionReader({
             </span>
             <span>{displayedSource.label}</span>
           </div>
-          {availableParagraphs.length ? (
-            availableParagraphs.map((paragraph, index) => (
+          {showingEnglish &&
+            englishTranslation?.note &&
+            englishTranslationHasTemporalMismatch && (
+              <div className="translation-status-note is-version-warning">
+                <strong>
+                  {englishTranslationIsFuturePhase
+                    ? "Future-phase English reference — not current"
+                    : "Historical English reference — not current"}
+                  {englishTranslationVersion
+                    ? ` · ${englishTranslationVersion}`
+                    : ""}
+                </strong>
+                <p>{englishTranslation.note}</p>
+                {englishTranslation.coverageStatus && (
+                  <p>
+                    Coverage status: {humanize(englishTranslation.coverageStatus)}
+                  </p>
+                )}
+              </div>
+            )}
+          {renderedParagraphs.length ? (
+            renderedParagraphs.map((paragraph, index) => (
               <p key={index} id={provision!.id + "-p-" + (index + 1)}>
                 {paragraph}
               </p>
@@ -3935,26 +4080,38 @@ function ProvisionReader({
               </div>
             </>
           )}
-          {englishSummaryFallback && (
+          {englishCoverageFallback && (
             <div className="restricted-text-note">
-              <strong>Translation coverage pending</strong>
+              <strong>English legal text unavailable in this corpus</strong>
               <p>
-                This English view is an editorial summary, not a translation of
-                the statutory text. Use the original-language view for the
-                complete official wording.
+                Use the original-language view for the complete official wording.
+                The Analysis panel separately records concept mappings; those
+                mappings are not substituted for legal text.
               </p>
             </div>
           )}
-          {showingEnglish && englishTranslation?.note && (
+          {showingEnglish &&
+            englishTranslation?.note &&
+            !englishTranslationHasTemporalMismatch && (
             <div className="translation-status-note">
               <strong>
                 {englishTranslation.status === "official"
                   ? "Official translation"
-                  : "Reference translation"}
+                  : englishTranslationIsProjectAuthored
+                    ? "Project-authored reference translation"
+                    : "Reference translation"}
+                {englishTranslationVersion
+                  ? ` · ${englishTranslationVersion}`
+                  : ""}
               </strong>
               <p>{englishTranslation.note}</p>
+              {englishTranslation.coverageStatus && (
+                <p>
+                  Coverage status: {humanize(englishTranslation.coverageStatus)}
+                </p>
+              )}
             </div>
-          )}
+            )}
           {defaultEnglishIsNonAuthoritative && provision!.languageAuthorityNote && (
             <div className="translation-status-note">
               <strong>Official reference translation — no legal force</strong>
@@ -4121,6 +4278,24 @@ function ProvisionReader({
               <dt>Review status</dt>
               <dd>{humanize(provision!.editorial.reviewStatus)}</dd>
             </div>
+            {sourceAudit?.englishAvailability.coverage && (
+              <div>
+                <dt>English corpus</dt>
+                <dd>
+                  {sourceAudit.englishAvailability.coverage.translatedUnitCount}
+                  {" / "}
+                  {sourceAudit.englishAvailability.coverage.totalUnitCount} units
+                  {(sourceAudit.englishAvailability.coverage
+                    .temporallyMismatchedUnitCount ?? 0) > 0 && (
+                    <>
+                      {" · "}
+                      {sourceAudit.englishAvailability.coverage.currentAlignedUnitCount}{" "}
+                      current-aligned
+                    </>
+                  )}
+                </dd>
+              </div>
+            )}
           </dl>
           <a
             className="source-record"
@@ -4132,6 +4307,43 @@ function ProvisionReader({
             <strong>{provision!.source.label}</strong>
             <small>{provision!.source.url}</small>
           </a>
+          {englishTranslation?.source && (
+            <a
+              className="source-record"
+              href={englishTranslation.source.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>
+                {englishTranslationIsProjectAuthored
+                  ? "TRANSLATION BASIS"
+                  : "ENGLISH TEXT SOURCE"}
+              </span>
+              <strong>{englishTranslation.source.label}</strong>
+              <small>{englishTranslation.source.url}</small>
+            </a>
+          )}
+          {sourceAudit && (
+            <div className="restricted-text-note">
+              <strong>
+                ENGLISH COVERAGE / {humanize(sourceAudit.englishAvailability.status)}
+              </strong>
+              <p>{sourceAudit.englishAvailability.note}</p>
+            </div>
+          )}
+          {englishAvailability?.sourcesChecked?.map((url, index) => (
+            <a
+              className="source-record"
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              key={url}
+            >
+              <span>ENGLISH SOURCE CHECK {index + 1}</span>
+              <strong>{englishAvailability.status}</strong>
+              <small>{url}</small>
+            </a>
+          ))}
           {selectedRelation?.sourceSupport.map((source) => (
             <a
               className="source-record"

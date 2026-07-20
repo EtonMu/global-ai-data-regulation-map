@@ -16,7 +16,11 @@
       "en": {
         "title": "Definitions",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 1: Definitions\nThe terms and phrases used in this Regulation shall have the meanings assigned to them\nin Article (1) of the Personal Data Protection Law issued by Royal Decree No. (M/19)\ndated 9/2/1443H and amended by Royal Decree No. (M/148) dated 5/9/1444 AH. The\nfollowing terms and phrases - wherever used in this Regulation - shall have the meanings\nassigned to them, unless the context requires otherwise:\n1. Regulation: The Implementing Regulation of the Law.\n2. Direct Marketing: Communicate with the Data Subject by any direct physical or\nelectronic means with the aim of directing marketing material, this includes but is\nnot limited to advertisements or promotions.\n3. Personal Data Breach: Any incident that leads to the Disclosure, Destruction, or\nunauthorized access to Personal Data, whether intentional or accidental, and by\nany means, whether automated or manual.\n4. Vital Interest: Any interest necessary to preserve the life of a Data Subject.\n5. Actual Interest: refers to any moral or material interest of the Data Subject that is\ndirectly linked to the purpose of Processing Personal Data, and the Processing is\nnecessary to achieve that interest.\n6. Legitimate Interest: refers to any necessary interest of the Controller that requires\nthe Processing of Personal Data for a specific purpose, provided it does not\nadversely affect the rights and interests of the data subject.\n7. Pseudonymisation: Conversion of the main identifiers that indicate the identity of\nthe Data Subject into codes that make it difficult to directly identify them without\nusing additional data or information. Such additional data or information should be\nkept separately, and appropriate technical and administrative controls should be\nimplemented to ensure that they are not specifically linked to data subject's\nidentity.\n8. Anonymization: Removal of direct and indirect identifiers that indicate the identity\nof the Data Subject in a way that permanently makes it impossible to identify the\nData Subject.\n9. Explicit Consent: Direct and explicit consent given by the Data Subject in any\nform that clearly indicates the Data Subject's acceptance of the Processing of their\nPersonal Data in a manner that cannot be interpreted otherwise, and whose\nobtention can be proven."
@@ -24,7 +28,14 @@
         "fullText": "Article 1: Definitions\nThe terms and phrases used in this Regulation shall have the meanings assigned to them\nin Article (1) of the Personal Data Protection Law issued by Royal Decree No. (M/19)\ndated 9/2/1443H and amended by Royal Decree No. (M/148) dated 5/9/1444 AH. The\nfollowing terms and phrases - wherever used in this Regulation - shall have the meanings\nassigned to them, unless the context requires otherwise:\n1. Regulation: The Implementing Regulation of the Law.\n2. Direct Marketing: Communicate with the Data Subject by any direct physical or\nelectronic means with the aim of directing marketing material, this includes but is\nnot limited to advertisements or promotions.\n3. Personal Data Breach: Any incident that leads to the Disclosure, Destruction, or\nunauthorized access to Personal Data, whether intentional or accidental, and by\nany means, whether automated or manual.\n4. Vital Interest: Any interest necessary to preserve the life of a Data Subject.\n5. Actual Interest: refers to any moral or material interest of the Data Subject that is\ndirectly linked to the purpose of Processing Personal Data, and the Processing is\nnecessary to achieve that interest.\n6. Legitimate Interest: refers to any necessary interest of the Controller that requires\nthe Processing of Personal Data for a specific purpose, provided it does not\nadversely affect the rights and interests of the data subject.\n7. Pseudonymisation: Conversion of the main identifiers that indicate the identity of\nthe Data Subject into codes that make it difficult to directly identify them without\nusing additional data or information. Such additional data or information should be\nkept separately, and appropriate technical and administrative controls should be\nimplemented to ensure that they are not specifically linked to data subject's\nidentity.\n8. Anonymization: Removal of direct and indirect identifiers that indicate the identity\nof the Data Subject in a way that permanently makes it impossible to identify the\nData Subject.\n9. Explicit Consent: Direct and explicit consent given by the Data Subject in any\nform that clearly indicates the Data Subject's acceptance of the Processing of their\nPersonal Data in a manner that cannot be interpreted otherwise, and whose\nobtention can be proven.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "8bcec5071818511ec73c8c70eae6df8e4f79c8c2c4381ab595aa2ef48ceeb0b0"
+        "contentSha256": "8bcec5071818511ec73c8c70eae6df8e4f79c8c2c4381ab595aa2ef48ceeb0b0",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -74,7 +85,11 @@
       "en": {
         "title": "Personal or family use",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 2: Personal or family use\n1- The provisions of the Law and its Regulations shall not apply to an individual\nProcessing Personal Data for purposes not exceeding personal or family use.\n2- Personal or family use, as referred to in Article 2 of the Law, means that an individual\nProcessing Personal Data within their family or limited social circle as part of any social\nor family activity.\n3- The following shall not be considered personal or family use:\na) An individual publishing Personal Data to the public or disclosing it to any person\noutside the scope specified in paragraph (2) of this article.\nb) Using Personal Data for professional, commercial, or non-profit purposes."
@@ -82,7 +97,14 @@
         "fullText": "Article 2: Personal or family use\n1- The provisions of the Law and its Regulations shall not apply to an individual\nProcessing Personal Data for purposes not exceeding personal or family use.\n2- Personal or family use, as referred to in Article 2 of the Law, means that an individual\nProcessing Personal Data within their family or limited social circle as part of any social\nor family activity.\n3- The following shall not be considered personal or family use:\na) An individual publishing Personal Data to the public or disclosing it to any person\noutside the scope specified in paragraph (2) of this article.\nb) Using Personal Data for professional, commercial, or non-profit purposes.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "ee60c2fe939ab1130572cd1f6f1580f31f1ee08b765757e4272e9340785832e2"
+        "contentSha256": "ee60c2fe939ab1130572cd1f6f1580f31f1ee08b765757e4272e9340785832e2",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -132,7 +154,11 @@
       "en": {
         "title": "General provisions for Data Subject Rights",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 3: General provisions for Data Subject Rights\n1- The Controller shall, upon receiving a request from the Data Subject regarding their\nrights as stipulated in the Law, do the following:\na) Act on the request of the Data Subject for exercising their rights under the Law\nwithin a period not exceeding (30) days and without delay. This period may be\nextended in case the implementation requires disproportionate effort, or if the\nController receives multiple requests from the data subject, provided that the\nextension period does not exceed an additional (30) days and the Data Subject is\nnotified in advance of the extension with the reasons for the delay.\nb) Take the necessary technical, administrative, and organizational measures to\nensure a prompt response to requests related to exercising rights.\nc) Take appropriate measures to verify the identity of the requester before executing\nthe request in accordance with relevant legal requirements.\nd) Take the necessary measures to document and keep record of all received\nrequests including oral requests.\n2- The Controller may refuse to act on request when it is repetitive, manifestly\nunfounded, or requires disproportionate efforts, in which the Data Subject shall be\nnotified of such reason.\n3- In cases where the Data Subject fully or partially lacks legal capacity, their legal\nguardian shall exercise their rights on their behalf."
@@ -140,7 +166,14 @@
         "fullText": "Article 3: General provisions for Data Subject Rights\n1- The Controller shall, upon receiving a request from the Data Subject regarding their\nrights as stipulated in the Law, do the following:\na) Act on the request of the Data Subject for exercising their rights under the Law\nwithin a period not exceeding (30) days and without delay. This period may be\nextended in case the implementation requires disproportionate effort, or if the\nController receives multiple requests from the data subject, provided that the\nextension period does not exceed an additional (30) days and the Data Subject is\nnotified in advance of the extension with the reasons for the delay.\nb) Take the necessary technical, administrative, and organizational measures to\nensure a prompt response to requests related to exercising rights.\nc) Take appropriate measures to verify the identity of the requester before executing\nthe request in accordance with relevant legal requirements.\nd) Take the necessary measures to document and keep record of all received\nrequests including oral requests.\n2- The Controller may refuse to act on request when it is repetitive, manifestly\nunfounded, or requires disproportionate efforts, in which the Data Subject shall be\nnotified of such reason.\n3- In cases where the Data Subject fully or partially lacks legal capacity, their legal\nguardian shall exercise their rights on their behalf.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "9567bf0125a1e70dbdcd9185cf43703d895ab40820b0755e5f4c4b5cef140501"
+        "contentSha256": "9567bf0125a1e70dbdcd9185cf43703d895ab40820b0755e5f4c4b5cef140501",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -190,7 +223,11 @@
       "en": {
         "title": "Right to be informed",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 4: Right to be informed\n1- If the Personal Data is collected directly from the Data Subject, the Controller shall,\nbefore or when collecting the Data, take the necessary measures to inform the Data\nSubject of the following:\na) Controller’s identity, its contact details, and any other details related to the\nchannels established by the Controller for the purpose of communicating in relation\nwith Personal Data protection.\nb) Contact details of the data protection officer appointed by the Controller, where\napplicable.\nc) The legal basis and a specific, clear, and explicit purpose for collecting and\nProcessing Personal Data.\nd) The period for which the Personal Data will be stored, or if that is not possible, the\ncriteria used to determine that period.\ne) Explanation about Data Subject’s rights, as stipulated in Article (4) of the Law and\nthe mechanisms for exercising those rights.\nf) Explanation on how to withdraw consent given to process of any Personal Data.\ng) Explaining whether collecting or Processing Personal Data is mandatory or\noptional.\n2- Paragraph (1) of this article shall not apply if the information specified in subparagraphs (a) to (g) is already available to the Data Subject, or if providing such\ninformation conflicts with any of the existing laws in the Kingdom.\n3- If Personal Data is collected from a party other than the Data Subject, the Controller\nshall, without undue delay and within a period not exceeding (30) days, take\nnecessary steps to provide to the Data Subject information specified in paragraph (1)\nof this article, in addition to the categories of Personal Data being processed and the\nsource from which the Controller obtained it.\n4- Paragraph (3) of this article shall not apply in any of the following conditions if:\na) The information is already available to the Data Subject.\nb) the provision of such information proves impossible or would involve a\ndisproportionate effort.\nc) The Controller collects data to fulfil a legal requirement.\nd) The Controller is a Public Entity and the Collection of Personal Data is for security\npurposes, or to fulfil judicial requirements, or to achieve a Public Interest.\ne) The Personal Data is subject to an obligation to a professional secrecy regulated\nby a law.\n5- A Controller whose activities require continuous or large scale Processing of Personal\nData on individuals lacking full or partial legal capacity or whose parents are unknown,\ncontinuous monitoring of Data Subjects, adoption of new technologies, or making\nautomated decisions based on Personal Data, shall take the necessary measures to\ninform the Data Subject of what is stipulated in paragraph (1) of this Article, in addition\nto the following:\na) Means and methods of collecting and Processing Sensitive Data, where\napplicable.\nb) Means and procedures taken to protect Personal Data.\nc) Indicate whether decisions will be made based solely on automated Processing of\nPersonal Data.\n6- When the Controller engages in an additional Processing of Personal Data for a\npurpose other than the one for which it was initially collected for, it shall provide the\nData Subject with the necessary information in accordance with the provisions of this\narticle, before conducting such additional Processing.\n7- The Controller shall provide the required information in an appropriate language as\nstipulated in this Article when aware that the Data Subject lacks full or partial legal\ncapacity."
@@ -198,7 +235,14 @@
         "fullText": "Article 4: Right to be informed\n1- If the Personal Data is collected directly from the Data Subject, the Controller shall,\nbefore or when collecting the Data, take the necessary measures to inform the Data\nSubject of the following:\na) Controller’s identity, its contact details, and any other details related to the\nchannels established by the Controller for the purpose of communicating in relation\nwith Personal Data protection.\nb) Contact details of the data protection officer appointed by the Controller, where\napplicable.\nc) The legal basis and a specific, clear, and explicit purpose for collecting and\nProcessing Personal Data.\nd) The period for which the Personal Data will be stored, or if that is not possible, the\ncriteria used to determine that period.\ne) Explanation about Data Subject’s rights, as stipulated in Article (4) of the Law and\nthe mechanisms for exercising those rights.\nf) Explanation on how to withdraw consent given to process of any Personal Data.\ng) Explaining whether collecting or Processing Personal Data is mandatory or\noptional.\n2- Paragraph (1) of this article shall not apply if the information specified in subparagraphs (a) to (g) is already available to the Data Subject, or if providing such\ninformation conflicts with any of the existing laws in the Kingdom.\n3- If Personal Data is collected from a party other than the Data Subject, the Controller\nshall, without undue delay and within a period not exceeding (30) days, take\nnecessary steps to provide to the Data Subject information specified in paragraph (1)\nof this article, in addition to the categories of Personal Data being processed and the\nsource from which the Controller obtained it.\n4- Paragraph (3) of this article shall not apply in any of the following conditions if:\na) The information is already available to the Data Subject.\nb) the provision of such information proves impossible or would involve a\ndisproportionate effort.\nc) The Controller collects data to fulfil a legal requirement.\nd) The Controller is a Public Entity and the Collection of Personal Data is for security\npurposes, or to fulfil judicial requirements, or to achieve a Public Interest.\ne) The Personal Data is subject to an obligation to a professional secrecy regulated\nby a law.\n5- A Controller whose activities require continuous or large scale Processing of Personal\nData on individuals lacking full or partial legal capacity or whose parents are unknown,\ncontinuous monitoring of Data Subjects, adoption of new technologies, or making\nautomated decisions based on Personal Data, shall take the necessary measures to\ninform the Data Subject of what is stipulated in paragraph (1) of this Article, in addition\nto the following:\na) Means and methods of collecting and Processing Sensitive Data, where\napplicable.\nb) Means and procedures taken to protect Personal Data.\nc) Indicate whether decisions will be made based solely on automated Processing of\nPersonal Data.\n6- When the Controller engages in an additional Processing of Personal Data for a\npurpose other than the one for which it was initially collected for, it shall provide the\nData Subject with the necessary information in accordance with the provisions of this\narticle, before conducting such additional Processing.\n7- The Controller shall provide the required information in an appropriate language as\nstipulated in this Article when aware that the Data Subject lacks full or partial legal\ncapacity.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "bcc83556d8f29600a5a61407f86049fc7c41191fd534889991ed85a54c79797b"
+        "contentSha256": "bcc83556d8f29600a5a61407f86049fc7c41191fd534889991ed85a54c79797b",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -248,7 +292,11 @@
       "en": {
         "title": "Right of access to Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 5: Right of access to Personal Data\n1- Without prejudice to the provisions of Articles (9) and (16) of the Law, the Data Subject\nshall have the right to access their Personal Data at the disposal of the Controller,\nsubject to the following:\na) Exercising the right to access Personal Data shall not adversely affect the rights\nof others, such as intellectual property rights or trade secrets.\nb) Accessing to Personal Data at a request from the Data Subject, or via a channel\nprovided by the Controller to the Data Subject allowing direct access to their\nPersonal Data without the need to make a request.\n2- When granting the Data Subject access their Personal Data, the Controller shall\nensure that no Personal Data identifying another individual is not disclosed."
@@ -256,7 +304,14 @@
         "fullText": "Article 5: Right of access to Personal Data\n1- Without prejudice to the provisions of Articles (9) and (16) of the Law, the Data Subject\nshall have the right to access their Personal Data at the disposal of the Controller,\nsubject to the following:\na) Exercising the right to access Personal Data shall not adversely affect the rights\nof others, such as intellectual property rights or trade secrets.\nb) Accessing to Personal Data at a request from the Data Subject, or via a channel\nprovided by the Controller to the Data Subject allowing direct access to their\nPersonal Data without the need to make a request.\n2- When granting the Data Subject access their Personal Data, the Controller shall\nensure that no Personal Data identifying another individual is not disclosed.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "57625215e129b75c0abbb11a4f725578a6939f5bb3b99b0953d532f61d1eb190"
+        "contentSha256": "57625215e129b75c0abbb11a4f725578a6939f5bb3b99b0953d532f61d1eb190",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -306,7 +361,11 @@
       "en": {
         "title": "Right to Request Access to Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 6: Right to Request Access to Personal Data\nSubject to the provisions of Article (4) of the Law, the Data Subject shall have the right\nto request a copy of their Personal Data in a readable and clear format, subject to the\nfollowing:\n1- Exercising the right to access Personal Data shall not adversely affect the rights\nof others, such as intellectual property rights or trade secrets.\n2- Personal Data shall be provided to the Data Subject in a commonly used electronic\nformat and the Data Subject may request a printed hard copy if feasible.\n3- When granting a Data Subject access to their Personal Data, the Controller shall\nensure that it does not involve disclosing Personal Data that identifies another\nindividual."
@@ -314,7 +373,14 @@
         "fullText": "Article 6: Right to Request Access to Personal Data\nSubject to the provisions of Article (4) of the Law, the Data Subject shall have the right\nto request a copy of their Personal Data in a readable and clear format, subject to the\nfollowing:\n1- Exercising the right to access Personal Data shall not adversely affect the rights\nof others, such as intellectual property rights or trade secrets.\n2- Personal Data shall be provided to the Data Subject in a commonly used electronic\nformat and the Data Subject may request a printed hard copy if feasible.\n3- When granting a Data Subject access to their Personal Data, the Controller shall\nensure that it does not involve disclosing Personal Data that identifies another\nindividual.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "acb220c0f12b1acd28ba81569941625b3c1ac97c31f4753b0427262c44054d9d"
+        "contentSha256": "acb220c0f12b1acd28ba81569941625b3c1ac97c31f4753b0427262c44054d9d",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -364,7 +430,11 @@
       "en": {
         "title": "Right to Request Correction of Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 7: Right to Request Correction of Personal Data\n1- Data Subject shall have the right to obtain from the Controller a restriction of\nProcessing when the accuracy of the Personal Data is contested by the Data Subject,\nfor a period enabling the Controller to verify the accuracy of the Personal Data. The\naforementioned restriction shall not apply if providing such data contravenes\nprovisions of the Law and this Regulation.\n2- Controller may request needed supporting documents or evidence to verify in order to\nupdate, correct, or complete the Personal Data, provided that such documents or\nevidence are destroyed once the verification process is completed.\n3- Upon correcting Personal Data, the Controller shall notify without undue delay the\nparties to whom Personal Data have been previously disclosed."
@@ -372,7 +442,14 @@
         "fullText": "Article 7: Right to Request Correction of Personal Data\n1- Data Subject shall have the right to obtain from the Controller a restriction of\nProcessing when the accuracy of the Personal Data is contested by the Data Subject,\nfor a period enabling the Controller to verify the accuracy of the Personal Data. The\naforementioned restriction shall not apply if providing such data contravenes\nprovisions of the Law and this Regulation.\n2- Controller may request needed supporting documents or evidence to verify in order to\nupdate, correct, or complete the Personal Data, provided that such documents or\nevidence are destroyed once the verification process is completed.\n3- Upon correcting Personal Data, the Controller shall notify without undue delay the\nparties to whom Personal Data have been previously disclosed.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "0e908fe237cb00b043c72e9f5aac9c6cd095c725b7001e3938d0db631cc2fb80"
+        "contentSha256": "0e908fe237cb00b043c72e9f5aac9c6cd095c725b7001e3938d0db631cc2fb80",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -422,7 +499,11 @@
       "en": {
         "title": "Right to Request Destruction of Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 8: Right to Request Destruction of Personal Data\n1- The Controller shall destroy Personal Data in any of the following cases:\na) Upon Data Subject's request.\nb) If the Personal Data are no longer necessary to achieve the purpose for which they\nwere collected.\nc) If the Data Subject withdraws their consent, and consent is the sole legal basis for\nProcessing.\nd) If the Controller becomes aware that the Personal Data have been unlawfully\nprocessed.\n2- When destroying Personal Data, the Controller shall take the following steps:\na) Take appropriate measures to notify other parties to whom the Controller has\ndisclosed such Personal Data and request their Destruction.\nb) Take the appropriate measures to notify the individuals to whom the Personal Data\nhave been disclosed by any means and request their Destruction.\nc) Destroy all copies of the Personal Data stored in the Controller's systems, including\nbackups, in accordance with relevant regulatory requirements.\n3- The provisions of this article shall not prejudice the requirements specified in Article\n18 of the Law and the legal requirements established by the relevant Competent\nAuthorities."
@@ -430,7 +511,14 @@
         "fullText": "Article 8: Right to Request Destruction of Personal Data\n1- The Controller shall destroy Personal Data in any of the following cases:\na) Upon Data Subject's request.\nb) If the Personal Data are no longer necessary to achieve the purpose for which they\nwere collected.\nc) If the Data Subject withdraws their consent, and consent is the sole legal basis for\nProcessing.\nd) If the Controller becomes aware that the Personal Data have been unlawfully\nprocessed.\n2- When destroying Personal Data, the Controller shall take the following steps:\na) Take appropriate measures to notify other parties to whom the Controller has\ndisclosed such Personal Data and request their Destruction.\nb) Take the appropriate measures to notify the individuals to whom the Personal Data\nhave been disclosed by any means and request their Destruction.\nc) Destroy all copies of the Personal Data stored in the Controller's systems, including\nbackups, in accordance with relevant regulatory requirements.\n3- The provisions of this article shall not prejudice the requirements specified in Article\n18 of the Law and the legal requirements established by the relevant Competent\nAuthorities.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "8895a822d9c61e2a14a6b88e24d409146e4a8d5d20a994150512aa3b895cc0ba"
+        "contentSha256": "8895a822d9c61e2a14a6b88e24d409146e4a8d5d20a994150512aa3b895cc0ba",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -480,7 +568,11 @@
       "en": {
         "title": "Anonymisation",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 9: Anonymisation\n1- When a Controller anonymizes the Personal Data of a Data Subject, it shall comply\nwith the following:\na) Ensure that re-identification of the Data Subject is impossible after Anonymisation.\nb) Evaluate the impact, including the possibility of re-identifying the Data Subject, in\nthe circumstances specified in Paragraph (1) of Article 25 of this Regulation.\nc) Take the necessary organizational, administrative, and technical measures to avoid\nrisks, taking into account technological developments and methods of\nAnonymisation, and update those methods considering such developments.\nd) Evaluate the effectiveness of the applied techniques for Personal Data\nAnonymization and make necessary adjustments to ensure that re-identification of\nData Subject is impossible.\n2- Anonymized data shall no longer be considered as Personal Data."
@@ -488,7 +580,14 @@
         "fullText": "Article 9: Anonymisation\n1- When a Controller anonymizes the Personal Data of a Data Subject, it shall comply\nwith the following:\na) Ensure that re-identification of the Data Subject is impossible after Anonymisation.\nb) Evaluate the impact, including the possibility of re-identifying the Data Subject, in\nthe circumstances specified in Paragraph (1) of Article 25 of this Regulation.\nc) Take the necessary organizational, administrative, and technical measures to avoid\nrisks, taking into account technological developments and methods of\nAnonymisation, and update those methods considering such developments.\nd) Evaluate the effectiveness of the applied techniques for Personal Data\nAnonymization and make necessary adjustments to ensure that re-identification of\nData Subject is impossible.\n2- Anonymized data shall no longer be considered as Personal Data.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "77986ec252f6b6abd175b4497f3a2e381333c5e431565091694f9dc374cdb050"
+        "contentSha256": "77986ec252f6b6abd175b4497f3a2e381333c5e431565091694f9dc374cdb050",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -538,7 +637,11 @@
       "en": {
         "title": "Means of Communication",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 10: Means of Communication\nThe Controller is required to provide appropriate means to process requests related\nto Data Subject rights as stipulated in the Law. The Data Subject shall have the choice\nto use one or many among the following means according to their preference\nconsidering options made available by the Controller:\n1- E-mail.\n2- Text messages.\n3- The national address.\n4- Communication via electronic applications.\n5- Any other lawful communication mean provided by the Controller for this purpose."
@@ -546,7 +649,14 @@
         "fullText": "Article 10: Means of Communication\nThe Controller is required to provide appropriate means to process requests related\nto Data Subject rights as stipulated in the Law. The Data Subject shall have the choice\nto use one or many among the following means according to their preference\nconsidering options made available by the Controller:\n1- E-mail.\n2- Text messages.\n3- The national address.\n4- Communication via electronic applications.\n5- Any other lawful communication mean provided by the Controller for this purpose.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "004e41e0d3576935f1d582228deeb7f272dc23db8fe912be453f9b75efe27c17"
+        "contentSha256": "004e41e0d3576935f1d582228deeb7f272dc23db8fe912be453f9b75efe27c17",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -596,7 +706,11 @@
       "en": {
         "title": "Consent",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 11: Consent\n1- The Controller shall obtain Data Subject's consent to Process their Data in any\nappropriate form or means, including written or verbal consent or electronic means,\nsubject to the following conditions:\na) Consent shall be given freely and not obtained through misleading methods, and\nobtaining consent shall comply with the provisions of Article (7) of the Law.\nb) Processing purposes shall be clear, specific, and shall be explained and clarified\nto the Data Subject before or at the time of requesting consent.\nc) Consent shall be given by a person who has full legal capacity.\nd) Consent shall be documented through means allowing future verification, such as\nkeeping registers recording Data Subjects’ consent for Processing operations,\nspecifying time and the mean of Consent.\ne) A separate consent shall be obtained for each Processing purpose.\n2- Data Subject's consent shall be explicit in the following cases:\na) When the Processing involves Sensitive Data.\nb) When the Processing involves Credit Data.\nc) When decisions are made solely based on automated Processing of Personal\nData."
@@ -604,7 +718,14 @@
         "fullText": "Article 11: Consent\n1- The Controller shall obtain Data Subject's consent to Process their Data in any\nappropriate form or means, including written or verbal consent or electronic means,\nsubject to the following conditions:\na) Consent shall be given freely and not obtained through misleading methods, and\nobtaining consent shall comply with the provisions of Article (7) of the Law.\nb) Processing purposes shall be clear, specific, and shall be explained and clarified\nto the Data Subject before or at the time of requesting consent.\nc) Consent shall be given by a person who has full legal capacity.\nd) Consent shall be documented through means allowing future verification, such as\nkeeping registers recording Data Subjects’ consent for Processing operations,\nspecifying time and the mean of Consent.\ne) A separate consent shall be obtained for each Processing purpose.\n2- Data Subject's consent shall be explicit in the following cases:\na) When the Processing involves Sensitive Data.\nb) When the Processing involves Credit Data.\nc) When decisions are made solely based on automated Processing of Personal\nData.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "6b8c0d90a6af139613cef132cc711931892cbf6282848e62938d0c97f699e228"
+        "contentSha256": "6b8c0d90a6af139613cef132cc711931892cbf6282848e62938d0c97f699e228",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -654,7 +775,11 @@
       "en": {
         "title": "Consent withdrawal",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 12: Consent withdrawal\n1- A Data Subject shall have the right to withdraw their consent for Processing their\nPersonal Data at any time, and they shall inform the Controller of this through any\navailable mean in accordance with Article (4) of this Regulation.\n2- Before requesting consent from the Data Subject, the Controller shall establish\nprocedures that allow for the withdrawal of such consent and take the necessary\nmeasures to ensure their implementation, ensuring that consent withdrawal is as or\neasier than obtaining.\n3- In the event of consent withdrawal, the Controller shall cease Processing without\nundue delay from consent withdrawal request. Consent withdrawal of shall not affect\nthe lawfulness of Processing based on consent before its withdrawal.\n4- When the Data Subject withdraws their consent for Processing their data, the\nController shall take appropriate measures to notify those to whom the Personal Data\nhas been disclosed and request its Destruction through any available means.\n5- Consent withdrawal shall not affect the Processing of Personal Data that is based on\nanother legal bases."
@@ -662,7 +787,14 @@
         "fullText": "Article 12: Consent withdrawal\n1- A Data Subject shall have the right to withdraw their consent for Processing their\nPersonal Data at any time, and they shall inform the Controller of this through any\navailable mean in accordance with Article (4) of this Regulation.\n2- Before requesting consent from the Data Subject, the Controller shall establish\nprocedures that allow for the withdrawal of such consent and take the necessary\nmeasures to ensure their implementation, ensuring that consent withdrawal is as or\neasier than obtaining.\n3- In the event of consent withdrawal, the Controller shall cease Processing without\nundue delay from consent withdrawal request. Consent withdrawal of shall not affect\nthe lawfulness of Processing based on consent before its withdrawal.\n4- When the Data Subject withdraws their consent for Processing their data, the\nController shall take appropriate measures to notify those to whom the Personal Data\nhas been disclosed and request its Destruction through any available means.\n5- Consent withdrawal shall not affect the Processing of Personal Data that is based on\nanother legal bases.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "436b84e7c25e132245b6122120b43dcd9f638b0c2bb081b60365915437b6fe40"
+        "contentSha256": "436b84e7c25e132245b6122120b43dcd9f638b0c2bb081b60365915437b6fe40",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -712,7 +844,11 @@
       "en": {
         "title": "Legal Guardian",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 13: Legal Guardian\n1- Considering applicable legal requirements, the legal guardian of a Data Subject that\nlacks full or partial legal capacity shall act in the best interests of the Data Subject and\nfor this purpose, they have the following options:\na) Exercise the rights granted to the Data Subject under the Law and this Regulation.\nb) Consent to the Processing of the Data Subject's Personal Data in accordance\nwith the provisions of the Law and this Regulation.\n2- In addition to what is stipulated in paragraph (1) of Article 11 of this Regulations, in\ncase of Processing Personal Data of a Data Subject that lack full or partial legal\ncapacity, obtaining the consent of the legal guardian shall be conditioned upon\ntaking appropriate measures to verify guardianship validity over the Data Subject.\n3- When obtaining the consent from the legal guardian of a Data Subject that lacks full\nor partial legal capacity, the Controller shall comply with the following provisions:\na) Consent given by legal guardian shall not cause any harm to the interests of the\nData Subject.\nb) The Data Subject shall be allowed to exercise their rights stipulated in the Law and\nthis Regulation when they reach legal capacity."
@@ -720,7 +856,14 @@
         "fullText": "Article 13: Legal Guardian\n1- Considering applicable legal requirements, the legal guardian of a Data Subject that\nlacks full or partial legal capacity shall act in the best interests of the Data Subject and\nfor this purpose, they have the following options:\na) Exercise the rights granted to the Data Subject under the Law and this Regulation.\nb) Consent to the Processing of the Data Subject's Personal Data in accordance\nwith the provisions of the Law and this Regulation.\n2- In addition to what is stipulated in paragraph (1) of Article 11 of this Regulations, in\ncase of Processing Personal Data of a Data Subject that lack full or partial legal\ncapacity, obtaining the consent of the legal guardian shall be conditioned upon\ntaking appropriate measures to verify guardianship validity over the Data Subject.\n3- When obtaining the consent from the legal guardian of a Data Subject that lacks full\nor partial legal capacity, the Controller shall comply with the following provisions:\na) Consent given by legal guardian shall not cause any harm to the interests of the\nData Subject.\nb) The Data Subject shall be allowed to exercise their rights stipulated in the Law and\nthis Regulation when they reach legal capacity.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "699621c5cd7fe2b6b3d929f723f3de24066c66e3530ee09bcbcd2897c2de9e1c"
+        "contentSha256": "699621c5cd7fe2b6b3d929f723f3de24066c66e3530ee09bcbcd2897c2de9e1c",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -770,7 +913,11 @@
       "en": {
         "title": "Processing to serve Actual Interest of Data Subject",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 14: Processing to serve Actual Interest of Data Subject\nWhen processing data to serve Actual Interest of the Data Subject, the Controller shall\nretain evidence that such interest exists and that it is not possible to contact or\ncommunicate with the Data Subject."
@@ -778,7 +925,14 @@
         "fullText": "Article 14: Processing to serve Actual Interest of Data Subject\nWhen processing data to serve Actual Interest of the Data Subject, the Controller shall\nretain evidence that such interest exists and that it is not possible to contact or\ncommunicate with the Data Subject.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "c7682ecad163f814f1cd92de37fd75ae6418d5da66da290d8bc74af72e309278"
+        "contentSha256": "c7682ecad163f814f1cd92de37fd75ae6418d5da66da290d8bc74af72e309278",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -828,7 +982,11 @@
       "en": {
         "title": "Collecting Data from Third Parties",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 15: Collecting Data from Third Parties\n1- Except for what is stated in Paragraph (3) of Article (10) of the Law, when Processing\nPersonal Data collected from sources other than the Data Subject directly, the\nController shall consider the following:\na) Processing is necessary and proportionate to the specified purpose.\nb) Processing shall not affect the rights and interests of the Data Subject.\n2- When Processing Personal Data in accordance with paragraph (2) of Article (10) of\nthe Law, the Controller shall ensure that such data Collection from a publicly available\nsource is lawful.\n3- When Processing Personal Data in accordance with paragraph (6) of Article (10) of\nthe Law, the Controller shall consider the provisions of Article (9) of this Regulation\nregarding Anonymisation."
@@ -836,7 +994,14 @@
         "fullText": "Article 15: Collecting Data from Third Parties\n1- Except for what is stated in Paragraph (3) of Article (10) of the Law, when Processing\nPersonal Data collected from sources other than the Data Subject directly, the\nController shall consider the following:\na) Processing is necessary and proportionate to the specified purpose.\nb) Processing shall not affect the rights and interests of the Data Subject.\n2- When Processing Personal Data in accordance with paragraph (2) of Article (10) of\nthe Law, the Controller shall ensure that such data Collection from a publicly available\nsource is lawful.\n3- When Processing Personal Data in accordance with paragraph (6) of Article (10) of\nthe Law, the Controller shall consider the provisions of Article (9) of this Regulation\nregarding Anonymisation.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "368c7546994e3e790d919bc975c58b3b59bbac4e6de31e9e8e78354220d040c7"
+        "contentSha256": "368c7546994e3e790d919bc975c58b3b59bbac4e6de31e9e8e78354220d040c7",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -886,7 +1051,11 @@
       "en": {
         "title": "Processing for Legitimate Interest",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 16: Processing for Legitimate Interest\n1- Except Public Entities, a Controller may process Personal Data to achieve a\nLegitimate Interest provided that the following conditions are met:\na) Purpose shall not violate any of the laws in the Kingdom.\nb) The rights and interests of the Data Subject and the Legitimate Interest of the\nController shall be balanced, so that the interests of the Controller do not affect the\nrights and interests of the Data Subject.\nc) Processing shall not include Sensitive Data.\nd) Processing shall be within the reasonable expectations of the Data Subject.\n2- Legitimate interests include the Disclosure of fraud operations, the protection of\nnetwork and information security, and other Legitimate Interests that meet the\nconditions outlined in paragraph (1) of this article.\n3- According to the provisions of paragraph (4) of Article (6) of the Law, before\nProcessing Personal Data for Legitimate Interests, the Controller shall conduct and\ndocument an assessment of the proposed Processing and its impact on the rights and\ninterests of Data Subjects. The assessment shall include the following:\na) Identification of the proposed Processing and its purposes, as well as the type of\ndata and categories of Data Subjects.\nb) Evaluation of the purpose to ensure that it is legitimate and compliant with the laws\nin the Kingdom.\nc) Verification of the necessity to process Personal Data to achieve the legitimate\npurpose of the Controller.\nd) Evaluation of whether the proposed Processing will cause any potential harm to\nData Subjects or their ability to exercise their legally established rights.\ne) Identification of any measures that shall be taken to avoid potential risks or harms,\nin accordance with the provisions of paragraph (2) of Article (25) of this Regulation.\n4- If the assessment outlined in paragraph (3) of this article indicates that the proposed\nProcessing will in any way violate any law, infringe on the rights and interests of Data\nSubjects, cause harm to them or any other party, the Controller shall modify the\nproposed Processing and conduct a new assessment, or consider relying on another\nlegal basis."
@@ -894,7 +1063,14 @@
         "fullText": "Article 16: Processing for Legitimate Interest\n1- Except Public Entities, a Controller may process Personal Data to achieve a\nLegitimate Interest provided that the following conditions are met:\na) Purpose shall not violate any of the laws in the Kingdom.\nb) The rights and interests of the Data Subject and the Legitimate Interest of the\nController shall be balanced, so that the interests of the Controller do not affect the\nrights and interests of the Data Subject.\nc) Processing shall not include Sensitive Data.\nd) Processing shall be within the reasonable expectations of the Data Subject.\n2- Legitimate interests include the Disclosure of fraud operations, the protection of\nnetwork and information security, and other Legitimate Interests that meet the\nconditions outlined in paragraph (1) of this article.\n3- According to the provisions of paragraph (4) of Article (6) of the Law, before\nProcessing Personal Data for Legitimate Interests, the Controller shall conduct and\ndocument an assessment of the proposed Processing and its impact on the rights and\ninterests of Data Subjects. The assessment shall include the following:\na) Identification of the proposed Processing and its purposes, as well as the type of\ndata and categories of Data Subjects.\nb) Evaluation of the purpose to ensure that it is legitimate and compliant with the laws\nin the Kingdom.\nc) Verification of the necessity to process Personal Data to achieve the legitimate\npurpose of the Controller.\nd) Evaluation of whether the proposed Processing will cause any potential harm to\nData Subjects or their ability to exercise their legally established rights.\ne) Identification of any measures that shall be taken to avoid potential risks or harms,\nin accordance with the provisions of paragraph (2) of Article (25) of this Regulation.\n4- If the assessment outlined in paragraph (3) of this article indicates that the proposed\nProcessing will in any way violate any law, infringe on the rights and interests of Data\nSubjects, cause harm to them or any other party, the Controller shall modify the\nproposed Processing and conduct a new assessment, or consider relying on another\nlegal basis.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "30c3575bdb8c98d0b903b087bb211c88cf534dab94ee8601ef9d3197fc9b0921"
+        "contentSha256": "30c3575bdb8c98d0b903b087bb211c88cf534dab94ee8601ef9d3197fc9b0921",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -944,7 +1120,11 @@
       "en": {
         "title": "Processor selection",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 17: Processor selection\n1- The Controller shall ensure that any Processor selected provides sufficient guarantees\nto protect Personal Data, and that the agreement with the Processor includes the\nfollowing:\na) Purpose of the Processing.\nb) Categories of Personal Data being processed.\nc) Duration of the Processing.\nd) Processor's commitment to notify, without undue delay, the Controller in case of a\nPersonal Data Breach occurs, in accordance with the provisions of the Lawthis\nRegulation.\ne) Clarification of whether the Processor is subject to Regulations in other countries\nand the impact on their compliance with the Law and its Regulations.\nf) Not requiring the Data Subject's prior consent for mandatory Disclosure of\nPersonal Data under the applicable laws in the Kingdom, provided that the\nProcessor notifies the Controller of such Disclosure.\ng) Identifying any subcontractors contracted by the Processor, or any other party to\nwhom Personal Data will be disclosed.\n2- The Controller shall issue clear instructions to the Processor, and in case of any\nviolation of the Controller’s instructions or any applicable laws in the Kingdom, the\nProcessor shall notify the Controller in writing without undue delay.\n3- The Controller is responsible to periodically assess Processor's compliance with the\nLaw and its Regulations, and ensuring that all regulatory requirements are met,\nwhether the Processing is achieved by the Processor or third parties acting under their\nbehalf. The Controller may appoint an independent third party to assess and monitor\nProcessor’s compliance on its behalf.\n4- If Processor violates the instructions issued by the Controller or the agreement\nregarding the Processing of Personal Data, the Processor shall be considered as a\nController and held directly accountable for any violation of any provisions of the Law.\n5- Before entering any subsequent contracts with sub-Processors, the Processor shall\nabide by the following:\na) Take sufficient guarantees to ensure that such contracts would not impact the level\nof protection provided to the Personal Data being processed.\nb) Choose only sub-Processors that provide the sufficient guarantees to comply with\nthe Law and its Regulations.\nc) Obtain prior acceptance from Controller, with the Controller being notified before\nentering into such contracts and enabling the Controller to object to them within a\ntimeframe agreed upon between the Controller and the Processor."
@@ -952,7 +1132,14 @@
         "fullText": "Article 17: Processor selection\n1- The Controller shall ensure that any Processor selected provides sufficient guarantees\nto protect Personal Data, and that the agreement with the Processor includes the\nfollowing:\na) Purpose of the Processing.\nb) Categories of Personal Data being processed.\nc) Duration of the Processing.\nd) Processor's commitment to notify, without undue delay, the Controller in case of a\nPersonal Data Breach occurs, in accordance with the provisions of the Lawthis\nRegulation.\ne) Clarification of whether the Processor is subject to Regulations in other countries\nand the impact on their compliance with the Law and its Regulations.\nf) Not requiring the Data Subject's prior consent for mandatory Disclosure of\nPersonal Data under the applicable laws in the Kingdom, provided that the\nProcessor notifies the Controller of such Disclosure.\ng) Identifying any subcontractors contracted by the Processor, or any other party to\nwhom Personal Data will be disclosed.\n2- The Controller shall issue clear instructions to the Processor, and in case of any\nviolation of the Controller’s instructions or any applicable laws in the Kingdom, the\nProcessor shall notify the Controller in writing without undue delay.\n3- The Controller is responsible to periodically assess Processor's compliance with the\nLaw and its Regulations, and ensuring that all regulatory requirements are met,\nwhether the Processing is achieved by the Processor or third parties acting under their\nbehalf. The Controller may appoint an independent third party to assess and monitor\nProcessor’s compliance on its behalf.\n4- If Processor violates the instructions issued by the Controller or the agreement\nregarding the Processing of Personal Data, the Processor shall be considered as a\nController and held directly accountable for any violation of any provisions of the Law.\n5- Before entering any subsequent contracts with sub-Processors, the Processor shall\nabide by the following:\na) Take sufficient guarantees to ensure that such contracts would not impact the level\nof protection provided to the Personal Data being processed.\nb) Choose only sub-Processors that provide the sufficient guarantees to comply with\nthe Law and its Regulations.\nc) Obtain prior acceptance from Controller, with the Controller being notified before\nentering into such contracts and enabling the Controller to object to them within a\ntimeframe agreed upon between the Controller and the Processor.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "b43fb86ddd01150697d1d15105d185faed2d2e9e2460949e022f087da6bc5182"
+        "contentSha256": "b43fb86ddd01150697d1d15105d185faed2d2e9e2460949e022f087da6bc5182",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1002,7 +1189,11 @@
       "en": {
         "title": "Processing data for a purpose other than the one for which it was collected",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 18: Processing data for a purpose other than the one for which it was collected\n1- When the Controller Processes Personal Data for a purpose other than the one for\nwhich it was initially collected as provided in Article 10 of the Law, it shall do the\nfollowing:\na) Define clearly and specifically the Processing purposes.\nb) Document the procedures to fix scope of data to be processed in accordance with\nspecific purposes, including the use of data maps that indicate the need for each\nprocessed data and link it to each Processing purpose.\nc) Take necessary measures to ensure that the Personal Data is collected while\nrespecting data minimization principle to achieve the purposes as set in paragraph\n(b) above.\n2- Except for cases stated in paragraph (3) of Article 10 of the Law, when the Controller\nProcesses Personal Data for a purpose other than the one for which it was initially\ncollected as provided in paragraphs (1), (2), (4), (5), and (6) of Article 10 of the Law,\nthe Controller shall comply with the following:\na) Define clearly and accurately the purpose of the Processing and refer to it in the\nrecords of Personal Data Processing activities.\nb) Limit the Collection and Processing of the Personal Data to the minimum amount\nnecessary to achieve the purpose.\nc) Identify the type of Personal Data to be processed and the necessary measures to\nensure that such data is processed appropriately."
@@ -1010,7 +1201,14 @@
         "fullText": "Article 18: Processing data for a purpose other than the one for which it was collected\n1- When the Controller Processes Personal Data for a purpose other than the one for\nwhich it was initially collected as provided in Article 10 of the Law, it shall do the\nfollowing:\na) Define clearly and specifically the Processing purposes.\nb) Document the procedures to fix scope of data to be processed in accordance with\nspecific purposes, including the use of data maps that indicate the need for each\nprocessed data and link it to each Processing purpose.\nc) Take necessary measures to ensure that the Personal Data is collected while\nrespecting data minimization principle to achieve the purposes as set in paragraph\n(b) above.\n2- Except for cases stated in paragraph (3) of Article 10 of the Law, when the Controller\nProcesses Personal Data for a purpose other than the one for which it was initially\ncollected as provided in paragraphs (1), (2), (4), (5), and (6) of Article 10 of the Law,\nthe Controller shall comply with the following:\na) Define clearly and accurately the purpose of the Processing and refer to it in the\nrecords of Personal Data Processing activities.\nb) Limit the Collection and Processing of the Personal Data to the minimum amount\nnecessary to achieve the purpose.\nc) Identify the type of Personal Data to be processed and the necessary measures to\nensure that such data is processed appropriately.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "8900078779604479b379ce50d339ef6d864c331c011634f778dca9f2ca6b1c25"
+        "contentSha256": "8900078779604479b379ce50d339ef6d864c331c011634f778dca9f2ca6b1c25",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1060,7 +1258,11 @@
       "en": {
         "title": "Data Minimisation",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 19: Data Minimisation\n1- The Controller shall collect only the minimum amount of Personal Data necessary to\nachieve the purpose of the Processing, and ensure the following:\na) Collecting only the necessary Personal Data that is directly related to the purpose\nof Processing, and this shall be determined using appropriate means, including\ndata maps that indicate the need for each collected data and link it to each\nobjective of the Processing or other means.\nb) Provide necessary care to achieve the purpose of the Processing without collecting\nunnecessary Personal Data.\n2- The Controller shall retain the minimal Personal Data necessary to achieve the\npurpose of the Processing."
@@ -1068,7 +1270,14 @@
         "fullText": "Article 19: Data Minimisation\n1- The Controller shall collect only the minimum amount of Personal Data necessary to\nachieve the purpose of the Processing, and ensure the following:\na) Collecting only the necessary Personal Data that is directly related to the purpose\nof Processing, and this shall be determined using appropriate means, including\ndata maps that indicate the need for each collected data and link it to each\nobjective of the Processing or other means.\nb) Provide necessary care to achieve the purpose of the Processing without collecting\nunnecessary Personal Data.\n2- The Controller shall retain the minimal Personal Data necessary to achieve the\npurpose of the Processing.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "558d0c767db4f191d6018a201a04eb24b041e7fe755c70e2298dbcaa894c4d5e"
+        "contentSha256": "558d0c767db4f191d6018a201a04eb24b041e7fe755c70e2298dbcaa894c4d5e",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1118,7 +1327,11 @@
       "en": {
         "title": "Disclosure of Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 20: Disclosure of Personal Data\n1- Disclosure of data collected from publicly available sources under paragraph (2) of\nArticle 15 of the Law is allowed under the condition that such data have not been made\navailable to the public in violation of the provisions of the Law and its Regulations.\n2- Except for the circumstances provided in paragraphs (3) and (4) of Article 15 of the\nLaw, the Controller shall consider the following when disclosing Personal Data:\na) Disclosure request is closely related to a specific and clear purpose or subject.\nb) Necessary care shall be provided to protect the privacy of the Data Subject or any\nother individual.\nc) Disclosure is limited to the minimum amount of Personal Data necessary to\nachieve the purpose.\n3- When disclosing Personal Data in response to a request from a public authority for\nsecurity purposes, or to fulfil requirements of another law, or to fulfil judicial\nrequirements, or if the disclosure is necessary to protect public health or public safety,\nor to protect the life of specific individuals' or their health, the following measures shall\nbe taken:\na) Document the request for Disclosure.\nb) Accurately identify the type of Personal Data required to be disclosed.\n4. Except as provided in paragraphs (3) and (4) of Article 15 of the Law, when\ndisclosing Personal Data related to another person who is not the Data Subject, the\nController shall take necessary care and provide sufficient guarantees to ensure the\nprivacy of the other individual is preserved and not violated. This includes considering\nthe following steps:\na) In each separate case, balancing between the rights of the Data Subject and the\nrights of the other person.\nb) Whenever possible, pseudonymisation of Personal Data allowing the identification\nof the other person.\n5. When disclosing Personal Data to achieve a Legitimate Interest for the Controller, the\nController shall comply with the provisions of Article 16 of this Regulation.\n6. The Controller shall include Disclosure operations in the records of Personal Data\nProcessing activities, document the dates, methods, and purposes of Disclosure."
@@ -1126,7 +1339,14 @@
         "fullText": "Article 20: Disclosure of Personal Data\n1- Disclosure of data collected from publicly available sources under paragraph (2) of\nArticle 15 of the Law is allowed under the condition that such data have not been made\navailable to the public in violation of the provisions of the Law and its Regulations.\n2- Except for the circumstances provided in paragraphs (3) and (4) of Article 15 of the\nLaw, the Controller shall consider the following when disclosing Personal Data:\na) Disclosure request is closely related to a specific and clear purpose or subject.\nb) Necessary care shall be provided to protect the privacy of the Data Subject or any\nother individual.\nc) Disclosure is limited to the minimum amount of Personal Data necessary to\nachieve the purpose.\n3- When disclosing Personal Data in response to a request from a public authority for\nsecurity purposes, or to fulfil requirements of another law, or to fulfil judicial\nrequirements, or if the disclosure is necessary to protect public health or public safety,\nor to protect the life of specific individuals' or their health, the following measures shall\nbe taken:\na) Document the request for Disclosure.\nb) Accurately identify the type of Personal Data required to be disclosed.\n4. Except as provided in paragraphs (3) and (4) of Article 15 of the Law, when\ndisclosing Personal Data related to another person who is not the Data Subject, the\nController shall take necessary care and provide sufficient guarantees to ensure the\nprivacy of the other individual is preserved and not violated. This includes considering\nthe following steps:\na) In each separate case, balancing between the rights of the Data Subject and the\nrights of the other person.\nb) Whenever possible, pseudonymisation of Personal Data allowing the identification\nof the other person.\n5. When disclosing Personal Data to achieve a Legitimate Interest for the Controller, the\nController shall comply with the provisions of Article 16 of this Regulation.\n6. The Controller shall include Disclosure operations in the records of Personal Data\nProcessing activities, document the dates, methods, and purposes of Disclosure.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "7833658cfc34b263b7110c0cce9f33295d156f687040142672ba06858c9247de"
+        "contentSha256": "7833658cfc34b263b7110c0cce9f33295d156f687040142672ba06858c9247de",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1176,7 +1396,11 @@
       "en": {
         "title": "Controls for Processing Personal Data for Public Interest Purposes",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 21: Controls for Processing Personal Data for Public Interest Purposes\nWhen a Public Entity collects Personal Data not directly from the Data Subject, processes\nit for a purpose other than the one for which it was initially collected, or requests\nDisclosure of such data to achieve a public interest, the Public Entity shall comply with\nthe following:\na) Ensure that this is necessary to achieve a clearly defined public interest.\nb) The public interest related to Public Entity’s mandate as specified in the regulation.\nc) Take suitable measures to limit the damage that may result, including\nimplementing necessary administrative and technical controls to ensure its agents\ncommit to comply with the provisions of Article 41 of the Law.\nd) Record those operations in the records of Personal Data Processing activities.\ne) Collect and Process the minimum necessary Personal Data to achieve data\nProcessing purpose."
@@ -1184,7 +1408,14 @@
         "fullText": "Article 21: Controls for Processing Personal Data for Public Interest Purposes\nWhen a Public Entity collects Personal Data not directly from the Data Subject, processes\nit for a purpose other than the one for which it was initially collected, or requests\nDisclosure of such data to achieve a public interest, the Public Entity shall comply with\nthe following:\na) Ensure that this is necessary to achieve a clearly defined public interest.\nb) The public interest related to Public Entity’s mandate as specified in the regulation.\nc) Take suitable measures to limit the damage that may result, including\nimplementing necessary administrative and technical controls to ensure its agents\ncommit to comply with the provisions of Article 41 of the Law.\nd) Record those operations in the records of Personal Data Processing activities.\ne) Collect and Process the minimum necessary Personal Data to achieve data\nProcessing purpose.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "e3648ef32c73035344dba4a07eb8983bca8d8cef902a1201cc98a062664295be"
+        "contentSha256": "e3648ef32c73035344dba4a07eb8983bca8d8cef902a1201cc98a062664295be",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1234,7 +1465,11 @@
       "en": {
         "title": "Correction of Personal Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 22: Correction of Personal Data\n1- The types of correction of Personal Data referred to in paragraph (2) of Article 17 of\nthe Law include correcting data that is incorrect, completing data that is incomplete,\nor updating data that is outdated.\n2- When correcting Personal Data, the Controller shall comply with the following:\na) Ensure the accuracy and integrity of Personal Data by examining and reviewing\nsupporting documents if necessary.\nb) Notify the parties to whom the Personal Data has been disclosed previously without\ndelay.\nc) Notify the Data Subject when the correction is completed.\nd) Document all updates made to Personal Data.\n3- If the Controller identifies that Personal Data is inaccurate or incomplete, and that may\ncause harm to the Data Subject, the Controller shall suspend Processing until the data\nis updated or corrected.\n4- In accordance with paragraph (2) of this Article, when the Controller becomes aware\nthat Personal Data is inaccurate, outdated, or incomplete, the Controller shall take the\nnecessary steps to correct, complete, or update it using the available means without\nundue delay.\n5- The Controller shall take appropriate organizational, administrative and technical\nmeasures to avoid the impact of Processing inaccurate, incomplete, or outdated\nPersonal Data, including:\na) Develop and update internal policies and procedures in accordance with the\nprovisions of the Law and this Regulation, including procedures that enable Data\nSubjects to exercise their right to request correction in accordance with the\nprovisions of the Law and this Regulation.\nb) Periodic review of the accuracy and timeliness of Personal Data."
@@ -1242,7 +1477,14 @@
         "fullText": "Article 22: Correction of Personal Data\n1- The types of correction of Personal Data referred to in paragraph (2) of Article 17 of\nthe Law include correcting data that is incorrect, completing data that is incomplete,\nor updating data that is outdated.\n2- When correcting Personal Data, the Controller shall comply with the following:\na) Ensure the accuracy and integrity of Personal Data by examining and reviewing\nsupporting documents if necessary.\nb) Notify the parties to whom the Personal Data has been disclosed previously without\ndelay.\nc) Notify the Data Subject when the correction is completed.\nd) Document all updates made to Personal Data.\n3- If the Controller identifies that Personal Data is inaccurate or incomplete, and that may\ncause harm to the Data Subject, the Controller shall suspend Processing until the data\nis updated or corrected.\n4- In accordance with paragraph (2) of this Article, when the Controller becomes aware\nthat Personal Data is inaccurate, outdated, or incomplete, the Controller shall take the\nnecessary steps to correct, complete, or update it using the available means without\nundue delay.\n5- The Controller shall take appropriate organizational, administrative and technical\nmeasures to avoid the impact of Processing inaccurate, incomplete, or outdated\nPersonal Data, including:\na) Develop and update internal policies and procedures in accordance with the\nprovisions of the Law and this Regulation, including procedures that enable Data\nSubjects to exercise their right to request correction in accordance with the\nprovisions of the Law and this Regulation.\nb) Periodic review of the accuracy and timeliness of Personal Data.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "1ff7253d77041ec61fcb007652ad1f2538f94bbdf16efa7791c5b254ea043205"
+        "contentSha256": "1ff7253d77041ec61fcb007652ad1f2538f94bbdf16efa7791c5b254ea043205",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1292,7 +1534,11 @@
       "en": {
         "title": "Information Security",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 23: Information Security\nThe Controller shall take the necessary organizational, administrative, and technical\nmeasures to ensure Personal Data security and Data Subjects privacy, and shall comply\nwith the following:\na) Implement necessary security and technical measures to limit security risks related\nto Personal Data breach.\nb) Adopt all relevant controls, standards, and rules issued by the National\nCybersecurity Authority, or adopt recognized best practices and cybersecurity\nstandards If the Controller is not obligated to follow the controls, standards, and\nrules issued by the National Cybersecurity Authority."
@@ -1300,7 +1546,14 @@
         "fullText": "Article 23: Information Security\nThe Controller shall take the necessary organizational, administrative, and technical\nmeasures to ensure Personal Data security and Data Subjects privacy, and shall comply\nwith the following:\na) Implement necessary security and technical measures to limit security risks related\nto Personal Data breach.\nb) Adopt all relevant controls, standards, and rules issued by the National\nCybersecurity Authority, or adopt recognized best practices and cybersecurity\nstandards If the Controller is not obligated to follow the controls, standards, and\nrules issued by the National Cybersecurity Authority.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "4127358f8ce04b4600fa19874f058d20d37d3da8b288abfcfb0fd90d6c99cb18"
+        "contentSha256": "4127358f8ce04b4600fa19874f058d20d37d3da8b288abfcfb0fd90d6c99cb18",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1350,7 +1603,11 @@
       "en": {
         "title": "Notification of Personal Data Breach",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 24: Notification of Personal Data Breach\n1- The Controller shall notify the Competent Authority within a delay not exceeding (72)\nhours of becoming aware of the incident, if such incident potentially causes harm to\nthe Personal Data, or to Data Subject or conflict with their rights or interests. the\nnotification shall include the following:\na) A description of the Personal Data Breach incident, including the time, date, and\ncircumstances of the breach and the time when the Controller became aware of it.\nb) Data categories, actual or approximate numbers of impacted Data Subjects, and\nthe type of Personal Data.\nc) Description of the risks of the Personal Data Breach, including the actual or\npotential impact on Personal Data and Data Subjects, and the actions and\nmeasures taken by the Controller to prevent or limit the impact of those risks and\nmitigate them, as well as the future measures that will be taken to avoid a\nrecurrence of the breach.\nd) A Statement if the Data Subject has been notified of the breach of their Personal\nData, as stipulated in Paragraph (5) of this Article.\ne) Contact details of the Controller or its data protection officer, if any, or any other\nofficial having information regarding the reported incident.\n2- If the Controller is not able to provide any of the required information within (72) hours\nfrom the time it became aware of the Personal Data Breach in accordance with\nparagraph (1) of this article, it shall provide it as soon as possible, along with\njustifications for the delay.\n3- The Controller shall keep a copy of the reports submitted to the Competent Authority\nunder paragraph (1) of this article and document the corrective measures taken in\nrelation with the Personal Data Breach, as well as any relevant documents or\nsupporting evidence.\n4- The provisions of this article do not prejudice the obligations of the Controller or\nProcessor to submit any report or notification about Personal Data Breaches\naccording to what is issued by the National Cybersecurity Authority or any laws and\nRegulations applicable in the Kingdom.\n5- The Controller shall, without undue delay, notify the Data Subject of a Personal Data\nBreach, if it may cause damage to their data or conflict with their rights or interests,\nprovided that the notification is in simple and clear language, and that it includes the\nfollowing:\na) Description of the Personal Data Breach.\nb) Description of the potential risks arising from the Personal Data Breach, and the\nmeasures taken to prevent or limit those risks and limit their impact.\nc) Name and contact details of the Controller and its data protection officer, if any, or\nany other appropriate means of communication with the Controller.\nd) Any recommendations or advice that may assist the Data Subject in taking\nappropriate measures to avoid the identified risks or limit their impact."
@@ -1358,7 +1615,14 @@
         "fullText": "Article 24: Notification of Personal Data Breach\n1- The Controller shall notify the Competent Authority within a delay not exceeding (72)\nhours of becoming aware of the incident, if such incident potentially causes harm to\nthe Personal Data, or to Data Subject or conflict with their rights or interests. the\nnotification shall include the following:\na) A description of the Personal Data Breach incident, including the time, date, and\ncircumstances of the breach and the time when the Controller became aware of it.\nb) Data categories, actual or approximate numbers of impacted Data Subjects, and\nthe type of Personal Data.\nc) Description of the risks of the Personal Data Breach, including the actual or\npotential impact on Personal Data and Data Subjects, and the actions and\nmeasures taken by the Controller to prevent or limit the impact of those risks and\nmitigate them, as well as the future measures that will be taken to avoid a\nrecurrence of the breach.\nd) A Statement if the Data Subject has been notified of the breach of their Personal\nData, as stipulated in Paragraph (5) of this Article.\ne) Contact details of the Controller or its data protection officer, if any, or any other\nofficial having information regarding the reported incident.\n2- If the Controller is not able to provide any of the required information within (72) hours\nfrom the time it became aware of the Personal Data Breach in accordance with\nparagraph (1) of this article, it shall provide it as soon as possible, along with\njustifications for the delay.\n3- The Controller shall keep a copy of the reports submitted to the Competent Authority\nunder paragraph (1) of this article and document the corrective measures taken in\nrelation with the Personal Data Breach, as well as any relevant documents or\nsupporting evidence.\n4- The provisions of this article do not prejudice the obligations of the Controller or\nProcessor to submit any report or notification about Personal Data Breaches\naccording to what is issued by the National Cybersecurity Authority or any laws and\nRegulations applicable in the Kingdom.\n5- The Controller shall, without undue delay, notify the Data Subject of a Personal Data\nBreach, if it may cause damage to their data or conflict with their rights or interests,\nprovided that the notification is in simple and clear language, and that it includes the\nfollowing:\na) Description of the Personal Data Breach.\nb) Description of the potential risks arising from the Personal Data Breach, and the\nmeasures taken to prevent or limit those risks and limit their impact.\nc) Name and contact details of the Controller and its data protection officer, if any, or\nany other appropriate means of communication with the Controller.\nd) Any recommendations or advice that may assist the Data Subject in taking\nappropriate measures to avoid the identified risks or limit their impact.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "a99e802bd56290083e76dde3223b5b6a869f8e6e2f688ab07ff8301c453c2e18"
+        "contentSha256": "a99e802bd56290083e76dde3223b5b6a869f8e6e2f688ab07ff8301c453c2e18",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1408,7 +1672,11 @@
       "en": {
         "title": "Impact Assessment",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 25: Impact Assessment\n1- The Controller shall prepare a written and documented assessment of the potential\nimpacts and risks that may affect the Data Subject as a result of Personal Data\nProcessing. Impact assessment shall be conducted in the following cases:\na) Processing of Sensitive Data.\nb) Collecting, comparing, or linking two or more datasets of Personal Data obtained\nfrom different sources.\nc) The activity of the Controller includes - large scale and repetitive - Processing of\nPersonal Data of those who lack full or partial legal capacity, or processing\noperations that by their nature require constant monitoring of Data Subjects, or\nProcessing Personal Data based on newly adopted technologies, or making\ndecisions based on automated Personal Data Processing.\nd) Providing a product or service that involves Processing Personal Data that is likely\nto cause serious harm to Data Subjects privacy.\n2- The impact assessment shall include at least the following elements:\na) Purpose of the Processing and its legal basis.\nb) Description of the nature of the Processing to be conducted, the types and sources\nof Personal Data to be processed, and any entities to whom the Personal Data is\nto be Disclosed.\nc) Description of the scope of the Processing, which identifies the type of Personal\nData and the geographical scope of the Processing.\nd) Description of the Processing context, which identifies the relationship between the\nData Subjects, the Controller, and the Processors, as well as any other relevant\ncircumstances.\ne) Necessity and proportionality of the measures to be taken to enable the Controller\nand Processors to process the minimum Personal Data necessary to achieve the\npurposes of the Processing.\nf) Impact of the Processing, based on the severity of its impact, materially and\nmorally, and the likelihood of any negative impact on Data Subjects, including any\npsychological, social, physical, or financial impact, and the likelihood of their\noccurrence.\ng) Measures that to be taken to prevent or mitigate risks.\nh) The suitability of planned measures to prevent identified risks.\n3- The Controller shall provide a copy of the impact assessment to any Processor acting\non its behalf in relation to the relevant Processing.\n4- If the impact assessment mentioned in this article indicates that a Processing\noperation it to harm Data Subjects privacy, the Controller shall address the causes of\nsuch harm and re-conduct an impact assessment."
@@ -1416,7 +1684,14 @@
         "fullText": "Article 25: Impact Assessment\n1- The Controller shall prepare a written and documented assessment of the potential\nimpacts and risks that may affect the Data Subject as a result of Personal Data\nProcessing. Impact assessment shall be conducted in the following cases:\na) Processing of Sensitive Data.\nb) Collecting, comparing, or linking two or more datasets of Personal Data obtained\nfrom different sources.\nc) The activity of the Controller includes - large scale and repetitive - Processing of\nPersonal Data of those who lack full or partial legal capacity, or processing\noperations that by their nature require constant monitoring of Data Subjects, or\nProcessing Personal Data based on newly adopted technologies, or making\ndecisions based on automated Personal Data Processing.\nd) Providing a product or service that involves Processing Personal Data that is likely\nto cause serious harm to Data Subjects privacy.\n2- The impact assessment shall include at least the following elements:\na) Purpose of the Processing and its legal basis.\nb) Description of the nature of the Processing to be conducted, the types and sources\nof Personal Data to be processed, and any entities to whom the Personal Data is\nto be Disclosed.\nc) Description of the scope of the Processing, which identifies the type of Personal\nData and the geographical scope of the Processing.\nd) Description of the Processing context, which identifies the relationship between the\nData Subjects, the Controller, and the Processors, as well as any other relevant\ncircumstances.\ne) Necessity and proportionality of the measures to be taken to enable the Controller\nand Processors to process the minimum Personal Data necessary to achieve the\npurposes of the Processing.\nf) Impact of the Processing, based on the severity of its impact, materially and\nmorally, and the likelihood of any negative impact on Data Subjects, including any\npsychological, social, physical, or financial impact, and the likelihood of their\noccurrence.\ng) Measures that to be taken to prevent or mitigate risks.\nh) The suitability of planned measures to prevent identified risks.\n3- The Controller shall provide a copy of the impact assessment to any Processor acting\non its behalf in relation to the relevant Processing.\n4- If the impact assessment mentioned in this article indicates that a Processing\noperation it to harm Data Subjects privacy, the Controller shall address the causes of\nsuch harm and re-conduct an impact assessment.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "494fc56a6f79a28a8ae887f8a9b1351a8a90c00f01359182eb5cd8d76ad9991d"
+        "contentSha256": "494fc56a6f79a28a8ae887f8a9b1351a8a90c00f01359182eb5cd8d76ad9991d",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1466,7 +1741,11 @@
       "en": {
         "title": "Processing Health Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 26: Processing Health Data\nThe Controller shall take the appropriate organizational, technical, and administrative\nmeasures to protect Health Data from any unauthorized use, misuse, use for purposes\nother than for which it was collected, or breach, and any procedures or means that\nguarantee the preservation of the privacy of its owners, and it shall, in particular, take\nthe following controls and procedures:\n1- Adopt and implement the requirements and controls issued by the Ministry of\nHealth, the Saudi Health Council, the Saudi Central Bank, the Council of Health\nInsurance, and other related entities involved in regulating Health Services and\nhealth insurance services, that specify the tasks and responsibilities of employees\nof health care providers, health insurance companies, health insurance claims\nmanagement companies and those which are contracted by them carrying out the\nProcessing of Health Data.\n2- Adopt the provisions of the Law and its Regulations into the internal policies of the\nController.\n3- Distribute tasks and responsibilities among employees or workers in a way that\nprevents overlapping specializations and diffusion of responsibility, and taking into\naccount different level of access to data among employees or workers in a manner\nthat guarantees the highest degree of Data Subjects privacy.\n4- Document all stages of Health Data Processing and provide the means to identify\nthe person in charge for each stage.\n5- The agreement between the Controller and the Processors - to conduct work or\ntasks related to Health Data Processing - shall include provisions that oblige them\nto abide by the procedures and measures stated in this Article.\n6- Health Data Processing should be limited to the minimum necessary to provide\nhealthcare services and products or health insurance programs."
@@ -1474,7 +1753,14 @@
         "fullText": "Article 26: Processing Health Data\nThe Controller shall take the appropriate organizational, technical, and administrative\nmeasures to protect Health Data from any unauthorized use, misuse, use for purposes\nother than for which it was collected, or breach, and any procedures or means that\nguarantee the preservation of the privacy of its owners, and it shall, in particular, take\nthe following controls and procedures:\n1- Adopt and implement the requirements and controls issued by the Ministry of\nHealth, the Saudi Health Council, the Saudi Central Bank, the Council of Health\nInsurance, and other related entities involved in regulating Health Services and\nhealth insurance services, that specify the tasks and responsibilities of employees\nof health care providers, health insurance companies, health insurance claims\nmanagement companies and those which are contracted by them carrying out the\nProcessing of Health Data.\n2- Adopt the provisions of the Law and its Regulations into the internal policies of the\nController.\n3- Distribute tasks and responsibilities among employees or workers in a way that\nprevents overlapping specializations and diffusion of responsibility, and taking into\naccount different level of access to data among employees or workers in a manner\nthat guarantees the highest degree of Data Subjects privacy.\n4- Document all stages of Health Data Processing and provide the means to identify\nthe person in charge for each stage.\n5- The agreement between the Controller and the Processors - to conduct work or\ntasks related to Health Data Processing - shall include provisions that oblige them\nto abide by the procedures and measures stated in this Article.\n6- Health Data Processing should be limited to the minimum necessary to provide\nhealthcare services and products or health insurance programs.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "d9b56d5f73e81241e6a8da031008cb8df26bc52462206e468169bc62a43d9bec"
+        "contentSha256": "d9b56d5f73e81241e6a8da031008cb8df26bc52462206e468169bc62a43d9bec",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1524,7 +1810,11 @@
       "en": {
         "title": "Processing Credit Data",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 27: Processing Credit Data\nWithout prejudice to the provisions of the Credit Information Law, the Controller shall\ntake organizational, technical, and administrative measures to protect Credit Data\nfrom any unauthorized use, misuse, access by unauthorized individuals, use for\npurposes other than for which it was collected, and Disclosure. The Controller shall\nadopt the following controls and procedures:\n1- Adopt and implement requirements and controls issued by the Saudi Central Bank\nand other relevant authorities, which define the roles and responsibilities of\nemployees of establishments providing credit information services and of the\nparties that have contracts with such establishments to process Credit Data.\n2- Controller shall obtain Data Subject consent and notify them of any request to\ndisclose their Credit Data in accordance with the provisions of the Credit\nInformation Law, while considering the provisions stated in subparagraph (d) of\nparagraph (1) of Article 11 of the Regulation."
@@ -1532,7 +1822,14 @@
         "fullText": "Article 27: Processing Credit Data\nWithout prejudice to the provisions of the Credit Information Law, the Controller shall\ntake organizational, technical, and administrative measures to protect Credit Data\nfrom any unauthorized use, misuse, access by unauthorized individuals, use for\npurposes other than for which it was collected, and Disclosure. The Controller shall\nadopt the following controls and procedures:\n1- Adopt and implement requirements and controls issued by the Saudi Central Bank\nand other relevant authorities, which define the roles and responsibilities of\nemployees of establishments providing credit information services and of the\nparties that have contracts with such establishments to process Credit Data.\n2- Controller shall obtain Data Subject consent and notify them of any request to\ndisclose their Credit Data in accordance with the provisions of the Credit\nInformation Law, while considering the provisions stated in subparagraph (d) of\nparagraph (1) of Article 11 of the Regulation.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "81fa2796d454fe18fb11930c9f3756b4e7065e90d0104f3887c6200935ffc5b5"
+        "contentSha256": "81fa2796d454fe18fb11930c9f3756b4e7065e90d0104f3887c6200935ffc5b5",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1582,7 +1879,11 @@
       "en": {
         "title": "Processing Data for Advertising or Awareness Purposes",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 28: Processing Data for Advertising or Awareness Purposes\n1- Controller shall obtain Consent from a targeted recipient before sending advertising\nor awareness material in case of the absence of a prior interaction between the\nController and the targeted recipient.\n2- Conditions for obtaining the targeted recipient's consent for advertising or awareness\nmaterials shall be as follows:\na) Consent shall be given freely, and no misleading methods shall be used to obtain\nit.\nb) Targeted recipient shall be enabled to specify the options related to advertising or\nawareness material subject to consent.\nc) Consent of a targeted recipient shall be documented in a manner allowing future\nverification.\n3- Without prejudice to the Telecommunication and Information Technology Act or any\nother related laws, before using communication methods for the purpose of sending\nadvertising or awareness material, including via postal and electronic addresses of\nthe Data Subject, the Controller shall commit to the following:\na) Clearly mention sender's name without hiding their identity.\nb) Provide a mechanism that enables the Data Subject to halt reception of advertising\nand awareness materials when desired, and ensure that the procedures to halt the\nof reception of such material are as simple and easy as the procedures to the\nobtain consent to receive the material.\nc) Immediately halt sending advertising or awareness material upon request from\ntargeted recipient.\nd) Halting reception of advertising or awareness material shall be free of charge.\ne) Keep material evidence of consent from the targeted recipient to receive\nadvertising or awareness material."
@@ -1590,7 +1891,14 @@
         "fullText": "Article 28: Processing Data for Advertising or Awareness Purposes\n1- Controller shall obtain Consent from a targeted recipient before sending advertising\nor awareness material in case of the absence of a prior interaction between the\nController and the targeted recipient.\n2- Conditions for obtaining the targeted recipient's consent for advertising or awareness\nmaterials shall be as follows:\na) Consent shall be given freely, and no misleading methods shall be used to obtain\nit.\nb) Targeted recipient shall be enabled to specify the options related to advertising or\nawareness material subject to consent.\nc) Consent of a targeted recipient shall be documented in a manner allowing future\nverification.\n3- Without prejudice to the Telecommunication and Information Technology Act or any\nother related laws, before using communication methods for the purpose of sending\nadvertising or awareness material, including via postal and electronic addresses of\nthe Data Subject, the Controller shall commit to the following:\na) Clearly mention sender's name without hiding their identity.\nb) Provide a mechanism that enables the Data Subject to halt reception of advertising\nand awareness materials when desired, and ensure that the procedures to halt the\nof reception of such material are as simple and easy as the procedures to the\nobtain consent to receive the material.\nc) Immediately halt sending advertising or awareness material upon request from\ntargeted recipient.\nd) Halting reception of advertising or awareness material shall be free of charge.\ne) Keep material evidence of consent from the targeted recipient to receive\nadvertising or awareness material.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "698e4c925a528024785f114b12c8aeef15a8e9f50bfd79d59b370a177812e2e4"
+        "contentSha256": "698e4c925a528024785f114b12c8aeef15a8e9f50bfd79d59b370a177812e2e4",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1640,7 +1948,11 @@
       "en": {
         "title": "Direct Marketing",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 29: Direct Marketing\n1- Without prejudice to the Telecommunication and Information Technology Act or any\nother related laws, before Processing Personal Data for Direct Marketing purposes,\nthe Controller shall abide by to the following:\na) Obtain consent from the Data Subject in accordance with the provisions of Article\n(11) of this Regulation.\nb) Provide a mechanism that enables the Data Subject to halt the reception of\nmarketing material whenever desired, and ensure that the procedure for halting\nthe reception such material are as simple and easy\nthe procedure to obtain the\nconsent to receive the material\n2- When sending direct marketing material to a Data Subject, the identity of the sender\nshall be clearly disclosed.\n3- When the Data Subject withdraws their consent for Direct Marketing purpose, the\nController shall halt without undue delay sending marketing material."
@@ -1648,7 +1960,14 @@
         "fullText": "Article 29: Direct Marketing\n1- Without prejudice to the Telecommunication and Information Technology Act or any\nother related laws, before Processing Personal Data for Direct Marketing purposes,\nthe Controller shall abide by to the following:\na) Obtain consent from the Data Subject in accordance with the provisions of Article\n(11) of this Regulation.\nb) Provide a mechanism that enables the Data Subject to halt the reception of\nmarketing material whenever desired, and ensure that the procedure for halting\nthe reception such material are as simple and easy\nthe procedure to obtain the\nconsent to receive the material\n2- When sending direct marketing material to a Data Subject, the identity of the sender\nshall be clearly disclosed.\n3- When the Data Subject withdraws their consent for Direct Marketing purpose, the\nController shall halt without undue delay sending marketing material.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "642b245f2f38437a3417944b23cd632119fe7b867e22053c9fc098b0e5f8315e"
+        "contentSha256": "642b245f2f38437a3417944b23cd632119fe7b867e22053c9fc098b0e5f8315e",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1698,7 +2017,11 @@
       "en": {
         "title": "Collection and Processing of Data for Scientific, Research, or Statistical Purposes",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 30: Collection and Processing of Data for Scientific, Research, or Statistical Purposes\nWhen collecting or Processing Personal Data for scientific, research, or statistical\npurposes without Data Subject’s consent, the Controller shall commit to the following:\n1- Clearly and accurately specify the scientific, research, or statistical purposes in the\nrecords of Personal Data Processing activities\n2- Take the necessary measures to ensure that only the minimum Personal Data\nnecessary to achieve the specified purposes is collected.\n3- Pseudonymise Personal Data that is being processed, provided that those purposes\nof the processing can be fulfilled\n4- Take the necessary measures to ensure that the Processing does not have any\nnegative impact on the rights and interests of the Data Subject."
@@ -1706,7 +2029,14 @@
         "fullText": "Article 30: Collection and Processing of Data for Scientific, Research, or Statistical Purposes\nWhen collecting or Processing Personal Data for scientific, research, or statistical\npurposes without Data Subject’s consent, the Controller shall commit to the following:\n1- Clearly and accurately specify the scientific, research, or statistical purposes in the\nrecords of Personal Data Processing activities\n2- Take the necessary measures to ensure that only the minimum Personal Data\nnecessary to achieve the specified purposes is collected.\n3- Pseudonymise Personal Data that is being processed, provided that those purposes\nof the processing can be fulfilled\n4- Take the necessary measures to ensure that the Processing does not have any\nnegative impact on the rights and interests of the Data Subject.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "36fdf4212e27fcead488a3ec371231dfcea142c1bcdc9572484df85f3de756c8"
+        "contentSha256": "36fdf4212e27fcead488a3ec371231dfcea142c1bcdc9572484df85f3de756c8",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1756,7 +2086,11 @@
       "en": {
         "title": "Photographing or Copying Official Documents that Reveal the Identity of Data Subjects",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 31: Photographing or Copying Official Documents that Reveal the Identity of Data Subjects\nWithout prejudice to the relevant laws, the Controller shall refrain from photographing or\ncopying official documents - issued by Public Entities - where Data Subjects are\nidentifiable, except upon request from a public Competent Authority or fulfill a legal\nrequirement. The Controller shall provide the necessary protection for such documents\nand destroy them once the purpose for which they were obtained has ended unless there\nis a legal requirement to keep them."
@@ -1764,7 +2098,14 @@
         "fullText": "Article 31: Photographing or Copying Official Documents that Reveal the Identity of Data Subjects\nWithout prejudice to the relevant laws, the Controller shall refrain from photographing or\ncopying official documents - issued by Public Entities - where Data Subjects are\nidentifiable, except upon request from a public Competent Authority or fulfill a legal\nrequirement. The Controller shall provide the necessary protection for such documents\nand destroy them once the purpose for which they were obtained has ended unless there\nis a legal requirement to keep them.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "94b5379408beb2894ca246b143dcc2fbfdf364fc8988d0b174de66f62c890b2d"
+        "contentSha256": "94b5379408beb2894ca246b143dcc2fbfdf364fc8988d0b174de66f62c890b2d",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1814,7 +2155,11 @@
       "en": {
         "title": "Data Protection Officer",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 32: Data Protection Officer\n1- The Controller shall appoint one or more individuals to be responsible for the\nprotection of Personal Data in any of the following cases:\na) The Controller is a Public Entity that provides services involving Processing of\nPersonal Data on a large scale.\nb) The controller’s primary activities are based on processing operations that, by their\nnature, require regular and systematic monitoring of Data Subjects.\nc) Core activities of the Controller are based on processing sensitive Personal Data.\n2- Subject to the requirements of paragraph (1) of this Article, the data protection\nofficer may be an executive, an employee or an external contractor of the\nController.\n3- The personal data\nprotection officer is responsible\nfor monitoring\nthe\nimplementation of the provisions of the Law and its Regulations, overseeing the\nprocedures adopted by the Controller, and receiving requests related to Personal\nData in accordance with the provisions of the Law and its Regulations. Specifically,\ntheir responsibilities include:\na) Acting as the direct point of contact with the Competent Authority and implementing\nits decisions and instructions regarding the application of the provisions of the Law\nand its Regulations.\nb) Supervising impact assessment procedures, audit and control reporting related to\nPersonal Data protection requirements, documenting assessment results, and\nissuing necessary recommendations.\nc) Enabling the Data Subject to exercise their rights as stipulated in the Law.\nd) Notifying the Competent Authority of Personal Data Breach incidents.\ne) Responding to requests from Data Subjects and addressing complaints filed by\nthem in accordance with the provisions of the Law and its Regulations\nf) Monitoring and updating the records of personal data processing activities of the\nController.\ng) Handling Controller’s violations related to Personal Data and taking corrective\nactions accordingly.\n4. The Competent Authority shall issue rules for the appointment of the data protection\nofficer, which shall include the circumstances under which a data protection officer shall\nbe appointed."
@@ -1822,7 +2167,14 @@
         "fullText": "Article 32: Data Protection Officer\n1- The Controller shall appoint one or more individuals to be responsible for the\nprotection of Personal Data in any of the following cases:\na) The Controller is a Public Entity that provides services involving Processing of\nPersonal Data on a large scale.\nb) The controller’s primary activities are based on processing operations that, by their\nnature, require regular and systematic monitoring of Data Subjects.\nc) Core activities of the Controller are based on processing sensitive Personal Data.\n2- Subject to the requirements of paragraph (1) of this Article, the data protection\nofficer may be an executive, an employee or an external contractor of the\nController.\n3- The personal data\nprotection officer is responsible\nfor monitoring\nthe\nimplementation of the provisions of the Law and its Regulations, overseeing the\nprocedures adopted by the Controller, and receiving requests related to Personal\nData in accordance with the provisions of the Law and its Regulations. Specifically,\ntheir responsibilities include:\na) Acting as the direct point of contact with the Competent Authority and implementing\nits decisions and instructions regarding the application of the provisions of the Law\nand its Regulations.\nb) Supervising impact assessment procedures, audit and control reporting related to\nPersonal Data protection requirements, documenting assessment results, and\nissuing necessary recommendations.\nc) Enabling the Data Subject to exercise their rights as stipulated in the Law.\nd) Notifying the Competent Authority of Personal Data Breach incidents.\ne) Responding to requests from Data Subjects and addressing complaints filed by\nthem in accordance with the provisions of the Law and its Regulations\nf) Monitoring and updating the records of personal data processing activities of the\nController.\ng) Handling Controller’s violations related to Personal Data and taking corrective\nactions accordingly.\n4. The Competent Authority shall issue rules for the appointment of the data protection\nofficer, which shall include the circumstances under which a data protection officer shall\nbe appointed.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "ba23100a2abb94620eb200896b10da319658d75741c3b4ef16795d958ab73f42"
+        "contentSha256": "ba23100a2abb94620eb200896b10da319658d75741c3b4ef16795d958ab73f42",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1872,7 +2224,11 @@
       "en": {
         "title": "Records of Personal Data Processing Activities",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 33: Records of Personal Data Processing Activities\n1- The Controller shall keep a record of Personal Data Processing activities during all\nthe period Personal Data is being processed, and till to five years after the date of\nend of any Personal Data Processing activity.\n2- Records of Personal Data Processing activities shall be written.\n3- Controller shall ensure that the records of Personal Data Processing activities are\naccurate and up to date.\n4- Controller shall provide access to the records of Personal Data Processing activities\nto the Competent Authority upon request.\n5- The record of Personal Data Processing activities shall include, at a minimum, the\nfollowing:\na) Controller’s name and relevant contact details.\nb) Information about the Data Protection Officer, where required in accordance with\nArticle (32) of this Regulation.\nc) Purposes of the Personal Data processing.\nd) Description of Personal Data categories being processed and Data Subjects\ncategories.\ne) Retention periods for each Personal Data category, where possible.\nf) Categories of recipients to whom the Personal Data is disclosed.\ng) Description of operations of Personal Data Transfer outside the Kingdom,\nincluding the legal basis for the Transfer and recipient parties.\nh) Description of the procedures and organizational, administrative, and technical\nmeasures in place that ensure the security of Personal Data, where possible.\n6- Competent Authority shall provide templates of records of Personal Data\nProcessing activities."
@@ -1880,7 +2236,14 @@
         "fullText": "Article 33: Records of Personal Data Processing Activities\n1- The Controller shall keep a record of Personal Data Processing activities during all\nthe period Personal Data is being processed, and till to five years after the date of\nend of any Personal Data Processing activity.\n2- Records of Personal Data Processing activities shall be written.\n3- Controller shall ensure that the records of Personal Data Processing activities are\naccurate and up to date.\n4- Controller shall provide access to the records of Personal Data Processing activities\nto the Competent Authority upon request.\n5- The record of Personal Data Processing activities shall include, at a minimum, the\nfollowing:\na) Controller’s name and relevant contact details.\nb) Information about the Data Protection Officer, where required in accordance with\nArticle (32) of this Regulation.\nc) Purposes of the Personal Data processing.\nd) Description of Personal Data categories being processed and Data Subjects\ncategories.\ne) Retention periods for each Personal Data category, where possible.\nf) Categories of recipients to whom the Personal Data is disclosed.\ng) Description of operations of Personal Data Transfer outside the Kingdom,\nincluding the legal basis for the Transfer and recipient parties.\nh) Description of the procedures and organizational, administrative, and technical\nmeasures in place that ensure the security of Personal Data, where possible.\n6- Competent Authority shall provide templates of records of Personal Data\nProcessing activities.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "8248077727e360da3a3835c3e389fa111ba2292a9075193485fcde60c7f5c830"
+        "contentSha256": "8248077727e360da3a3835c3e389fa111ba2292a9075193485fcde60c7f5c830",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1930,7 +2293,11 @@
       "en": {
         "title": "National Register of Controllers",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 34: National Register of Controllers\nThe Competent Authority shall issue the rules for registration in the National Register of\nControllers, provided that the rules include Controllers that are required to register."
@@ -1938,7 +2305,14 @@
         "fullText": "Article 34: National Register of Controllers\nThe Competent Authority shall issue the rules for registration in the National Register of\nControllers, provided that the rules include Controllers that are required to register.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "fbf49f86d86603fd4133f33eb8d9863aeffdb258e9a1aaabd8864a2b1802114e"
+        "contentSha256": "fbf49f86d86603fd4133f33eb8d9863aeffdb258e9a1aaabd8864a2b1802114e",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1988,7 +2362,11 @@
       "en": {
         "title": "Accreditation bodies",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 35: Accreditation bodies\nThe Competent Authority shall issue the regulatory rules for licensing entities that issue\naccreditation certificates for Controllers and Processors in accordance with paragraph (2)\nof Article 33 of the Law. The Competent Authority shall also coordinate with the Digital\nGovernment Authority regarding licensing for entities providing services on behalf of\ngovernment entities."
@@ -1996,7 +2374,14 @@
         "fullText": "Article 35: Accreditation bodies\nThe Competent Authority shall issue the regulatory rules for licensing entities that issue\naccreditation certificates for Controllers and Processors in accordance with paragraph (2)\nof Article 33 of the Law. The Competent Authority shall also coordinate with the Digital\nGovernment Authority regarding licensing for entities providing services on behalf of\ngovernment entities.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "7bb80186ae471f578c905274cd9d396aca989ff92da9502a17beb2ef9854a3dd"
+        "contentSha256": "7bb80186ae471f578c905274cd9d396aca989ff92da9502a17beb2ef9854a3dd",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -2046,7 +2431,11 @@
       "en": {
         "title": "Auditing and Controlling",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 36: Auditing and Controlling\n1- The purpose of auditing and controlling is to ensure that the entity is properly\nprotecting Personal Data through audits and checks of Personal Data processing\nactivities, and related controls and procedures, and identification of compliance gaps\nwith the Law and its Regulations.\n2- When carrying out audits or controls of Personal Data Processing activities, the\nfollowing shall be respected:\na) Providing services with independence according to applicable professional\nstandards.\nb) Developing the necessary administrative and organizational procedures and\ncontrols to ensure the accuracy and integrity issued output.\n3- The Competent Authority shall issue the rules for licensing entities that undertake\nauditing or checking of Personal Data Processing activities in accordance with\nparagraph (3) of Article 33 of the Law. The Competent Authority shall also coordinate\nwith the Digital Government Authority regarding licensing for entities providing\nservices on behalf of government entities."
@@ -2054,7 +2443,14 @@
         "fullText": "Article 36: Auditing and Controlling\n1- The purpose of auditing and controlling is to ensure that the entity is properly\nprotecting Personal Data through audits and checks of Personal Data processing\nactivities, and related controls and procedures, and identification of compliance gaps\nwith the Law and its Regulations.\n2- When carrying out audits or controls of Personal Data Processing activities, the\nfollowing shall be respected:\na) Providing services with independence according to applicable professional\nstandards.\nb) Developing the necessary administrative and organizational procedures and\ncontrols to ensure the accuracy and integrity issued output.\n3- The Competent Authority shall issue the rules for licensing entities that undertake\nauditing or checking of Personal Data Processing activities in accordance with\nparagraph (3) of Article 33 of the Law. The Competent Authority shall also coordinate\nwith the Digital Government Authority regarding licensing for entities providing\nservices on behalf of government entities.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "d71dc1b81bfbd558cdbbf1f204ee630e917557325795a073945eee1ce41998bb"
+        "contentSha256": "d71dc1b81bfbd558cdbbf1f204ee630e917557325795a073945eee1ce41998bb",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -2104,7 +2500,11 @@
       "en": {
         "title": "Submitting and processing complaints",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 37: Submitting and processing complaints\n1- A Data Subject may submit a complaint to the Competent Authority within a period not\nexceeding (90) days from the date when the incident occurred or when the Data\nSubject became aware of it. The Competent Authority shall decide about the\nadmissibility of the complaint after aforementioned delay when there are reasonable\ncauses that may have prevented the Data Subject from submitting the complaint in\ntime.\n2- Competent Authority shall receive the complaints that are submitted to it, through the\nmean it adopts and according to procedures that ensure celerity and quality.\n3- Competent Authority shall keep a record of the complaints filed in a register\nspecifically created for this purpose.\n4- The complaint shall include the following information:\na) Place and time of the violation.\nb) Name, identification, address, and telephone number of the complainant.\nc) Information about the complained entity.\nd) Clear and specific description of the violation, along with the evidence and the\ninformation provided with the complaint.\ne) Any other requirements specified by the Competent Authority.\n5- The Competent Authority shall examine and study the complaints, their documents,\nand may communicate with the complainant as needed to request the relevant\ndocuments and information.\n6- The Competent Authority shall take the necessary measures regarding the complaints\nsubmitted to it and inform the complainant of the outcome."
@@ -2112,7 +2512,14 @@
         "fullText": "Article 37: Submitting and processing complaints\n1- A Data Subject may submit a complaint to the Competent Authority within a period not\nexceeding (90) days from the date when the incident occurred or when the Data\nSubject became aware of it. The Competent Authority shall decide about the\nadmissibility of the complaint after aforementioned delay when there are reasonable\ncauses that may have prevented the Data Subject from submitting the complaint in\ntime.\n2- Competent Authority shall receive the complaints that are submitted to it, through the\nmean it adopts and according to procedures that ensure celerity and quality.\n3- Competent Authority shall keep a record of the complaints filed in a register\nspecifically created for this purpose.\n4- The complaint shall include the following information:\na) Place and time of the violation.\nb) Name, identification, address, and telephone number of the complainant.\nc) Information about the complained entity.\nd) Clear and specific description of the violation, along with the evidence and the\ninformation provided with the complaint.\ne) Any other requirements specified by the Competent Authority.\n5- The Competent Authority shall examine and study the complaints, their documents,\nand may communicate with the complainant as needed to request the relevant\ndocuments and information.\n6- The Competent Authority shall take the necessary measures regarding the complaints\nsubmitted to it and inform the complainant of the outcome.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "291d83605d54e339992c4d6492bfa41ff23da6640b5b44fbb451b337f22fc8e1"
+        "contentSha256": "291d83605d54e339992c4d6492bfa41ff23da6640b5b44fbb451b337f22fc8e1",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -2162,7 +2569,11 @@
       "en": {
         "title": "Publication and Enforcement",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2023-09-14",
+        "versionLabel": "Implementing Regulation of the amended Personal Data Protection Law",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
           "Article 38: Publication and Enforcement\nThis Regulation shall be published in the official gazette and on the official website of the\nCompetent Authority and shall come into force from the date of the Law's enforcement."
@@ -2170,7 +2581,14 @@
         "fullText": "Article 38: Publication and Enforcement\nThis Regulation shall be published in the official gazette and on the official website of the\nCompetent Authority and shall come into force from the date of the Law's enforcement.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/2a9a4744-a2ae-444f-bad2-6dacde843637/The%2Bimpelementing%2Bregulation%2Bof%2Bthe%2Bpersonal%2Bdata%2Bprotection%2Blaw.pdf?CACHEID=ROOTWORKSPACE-2a9a4744-a2ae-444f-bad2-6dacde843637-pcruNj.&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "b78d53755bda76cd2a17d22fe5c8e7e729582279ccdee58b898fcb16e394e736"
+        "contentSha256": "b78d53755bda76cd2a17d22fe5c8e7e729582279ccdee58b898fcb16e394e736",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Saudi Copyright Law, Article 4",
+          "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
+          "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {

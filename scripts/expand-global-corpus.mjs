@@ -216,15 +216,19 @@ const newInstruments = [
       "cross-border-transfer",
     ],
     summary: "The Republic of Korea's comprehensive personal-information statute, including rights and duties for automated decisions, security, impact assessment, data-subject rights, and overseas transfers.",
-    statusNote: "The graph separates the currently effective Act from promulgated future amendments. The authoritative Korean version controls; official English materials may lag the latest Korean consolidation.",
+    statusNote: "The graph separates the currently effective Act from promulgated future amendments. All 126 main Articles and 12 addenda have a current-aligned MOLEG English reference; Korean controls and the English text has no official effect.",
     source: source(
       "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&lsId=011357",
       "Korean Law Information Center — stable PIPA record",
     ),
+    referenceTranslationSource: source(
+      "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270351&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
+      "Korean Law Information Center — government English reference",
+    ),
     textAvailability: linkedText(
-      "official-current-korean-linked",
-      "ko",
-      "The authoritative current Korean statute is linked. Selected provision summaries are indexed; no claim is made that a complete current English consolidation is stored.",
+      "complete-current-Korean-and-government-English-reference-corpus",
+      "ko-KR",
+      "All 126 main Articles and 12 addenda are stored in Korean with a complete Act No. 20897-aligned MOLEG English reference. Later future phases remain isolated.",
     ),
   },
   {
@@ -264,13 +268,13 @@ const newInstruments = [
       "Korean Law Information Center — current Korean text",
     ),
     referenceTranslationSource: source(
-      "https://www.law.go.kr/LSW/lsInfoP.do?chrClsCd=010203&lsiSeq=268543&urlMode=engLsInfoR&viewCls=engLsInfoR",
-      "Korean Law Information Center — official English text",
+      "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282791&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
+      "Korean Law Information Center — government English reference",
     ),
     textAvailability: linkedText(
-      "official-bilingual-full-text-linked",
-      "ko",
-      "Official Korean and English versions are linked. The English page may represent a specified Act version, so the Korean amendment timeline remains controlling for currency.",
+      "complete-current-Korean-with-versioned-government-English-reference-corpus",
+      "ko-KR",
+      "All 47 current Korean nodes have MOLEG English references. Forty-two are text-aligned; Articles 2, 3, 6, 18 and 35 are explicitly marked as differing next-phase English text effective 21 July 2026.",
     ),
   },
   {
@@ -428,7 +432,7 @@ const newInstruments = [
       "accountability-governance",
     ],
     summary: "Brazil's comprehensive personal-data statute, establishing processing principles, legal bases, data-subject rights, automated-decision review, security and incident duties, international-transfer mechanisms, and the ANPD.",
-    statusNote: "The authoritative Portuguese consolidation includes 2026 institutional changes to the ANPD. The official English PDF is a 2024 snapshot and must not be treated as current after that amendment.",
+    statusNote: "The authoritative Portuguese consolidation includes Law No. 15,352/2026. All 80 Article nodes have English references: 77 verified ANPD official-reference texts and three clearly marked project translations for changed Articles 5, 55-A and 55-C.",
     source: source(
       "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
       "Presidency of the Republic of Brazil — consolidated Portuguese text",
@@ -442,9 +446,9 @@ const newInstruments = [
       "Law No. 15,352 of 25 February 2026",
     ),
     textAvailability: linkedText(
-      "official-current-portuguese-and-lagging-english-linked",
+      "complete-current-Portuguese-and-English-reference-corpus",
       "pt-BR",
-      "The current Portuguese consolidation and a clearly dated official English snapshot are linked. The local graph does not represent the older English PDF as a current consolidation.",
+      "All 80 current Portuguese Article nodes have a non-authoritative English reference. The three project-translated amended Articles are distinguished from the 77 ANPD official-reference texts.",
     ),
   },
   {
@@ -2088,7 +2092,7 @@ const existingInstrumentPatches = [
     version:
       "Current authoritative Japanese e-Gov consolidation; 2026 amendment promulgated 17 July 2026, with limited immediate and six-month provisions and principal commencement by Cabinet Order within two years",
     statusNote:
-      "The Japanese text is authoritative. The 17 July 2026 amendment is promulgated but predominantly uncommenced: limited supplementary provisions began immediately, specified procedural and enforcement provisions begin after six months, and the principal package begins on a Cabinet Order date no later than two years after promulgation. The government English reference translation still identifies Act No. 37 of 2021 as its last version.",
+      "The Japanese text is authoritative. The 17 July 2026 amendment is promulgated but predominantly uncommenced. The Act No. 37 of 2021 government English reference is attached to 185 main Articles and two tables only as a historical, non-current layer; 21 supplementary blocks remain Japanese-only.",
     amendmentSource: source(
       "https://www.ppc.go.jp/files/pdf/260717_houritsu.pdf",
       "Personal Information Protection Commission — promulgated 2026 APPI amendment",
@@ -2175,7 +2179,12 @@ const existingInstrumentPatches = [
       "Cyberspace Administration of China — official republication used by the Article importer",
     ),
     statusNote:
-      "The complete official Chinese text is stored by Article and controls. Five selected Articles retain separately labelled non-official English reference translations; all other English reader views are editorial coverage notices, not translations.",
+      "The complete official Chinese text and the complete National People's Congress English reference publication are stored for all 74 Articles. The NPC labels the English as a translation for reference only; Chinese controls.",
+    referenceTranslationSource: source(
+      "https://www.npc.gov.cn/npc/c2597/c5854/bfflywwb/202311/t20231117_433007.html",
+      "National People's Congress — official index to English translations for reference only",
+      "2026-07-20",
+    ),
     coverage: {
       unit: "article",
       first: 1,
@@ -2186,13 +2195,18 @@ const existingInstrumentPatches = [
     textAvailability: linkedText(
       "separate-official-original-import",
       "zh-CN",
-      "All 74 Articles are generated separately from the official Chinese publication in cn-pipl-articles.json. Five selected Articles retain non-official English reference translations in provisions.json.",
+      "All 74 Articles are generated in Chinese with the complete NPC English reference attached in cn-pipl-articles.json.",
     ),
   },
   {
     id: "cn-network-data-regulations",
     statusNote:
-      "The complete official Chinese regulation is stored by Article and controls. Articles 9, 35, 36, 37, 38 and 44 retain separately labelled non-official English reference translations; all other English reader views are editorial coverage notices, not translations.",
+      "The complete official Chinese regulation and the complete Ministry of Justice English publication are stored for all 64 Articles. The Chinese State Council text controls.",
+    referenceTranslationSource: source(
+      "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+      "Ministry of Justice of the People's Republic of China — English reference",
+      "2026-07-20",
+    ),
     coverage: {
       unit: "article",
       first: 1,
@@ -2203,11 +2217,16 @@ const existingInstrumentPatches = [
     textAvailability: linkedText(
       "separate-official-original-import",
       "zh-CN",
-      "All 64 Articles of State Council Order No. 790 are generated separately from the official Chinese publication in cn-network-data-regulations-articles.json. Six selected Articles retain non-official English reference translations in provisions.json.",
+      "All 64 Articles of State Council Order No. 790 are generated in Chinese with the complete Ministry of Justice English reference attached in cn-network-data-regulations-articles.json.",
     ),
   },
   {
     id: "cn-generative-ai-measures",
+    referenceTranslationSource: source(
+      "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+      "CASI / Air University — complete U.S.-government English reference",
+      "2026-07-20",
+    ),
     coverage: {
       unit: "article",
       first: 1,
@@ -2218,7 +2237,7 @@ const existingInstrumentPatches = [
     textAvailability: linkedText(
       "separate-official-original-import",
       "zh-CN",
-      "All 24 Articles of Order No. 15 are generated separately from the official Chinese publication in cn-generative-ai-measures-articles.json. Articles 4, 7, and 17 retain non-official English reference translations in provisions.json.",
+      "All 24 Articles of Order No. 15 are generated in Chinese with the complete CASI/Air University English reference attached in cn-generative-ai-measures-articles.json. It is not an official Chinese translation.",
     ),
   },
   {

@@ -242,7 +242,17 @@ def build_uae(ar_path: Path, en_path: Path) -> list[dict]:
                 "en": {
                     "title": en["title"],
                     "language": "en",
+                    "coverageStatus": "complete-current-official-reference-translation",
+                    "versionAsOf": "2021-09-20",
+                    "versionLabel": (
+                        "Federal Decree-Law No. 45 of 2021 — official bilingual "
+                        "UAE Legislation Platform text"
+                    ),
                     "status": "official-reference-translation",
+                    "note": (
+                        "Complete Article-level official English reference wording is "
+                        "stored without editorial supplementation."
+                    ),
                     "authorityNote": authority_note,
                     "paragraphs": [en["fullText"]],
                     "fullText": en["fullText"],
@@ -250,6 +260,7 @@ def build_uae(ar_path: Path, en_path: Path) -> list[dict]:
                     "sourceApi": UAE_API_EN,
                     "sourceLabel": "UAE Legislation Platform official English reference text",
                     "contentSha256": sha256_text(en["fullText"]),
+                    "rights": UAE_RIGHTS,
                 }
             },
             "alignment": {
@@ -360,6 +371,8 @@ def build_saudi_records(
     continuations: dict[int, int] | None,
     source_version: dict,
     applies_from: str | None,
+    translation_version_as_of: str,
+    translation_version_label: str,
 ) -> list[dict]:
     arabic = extract_sa_arabic(arabic_path, count, titled)
     english = extract_sa_english(english_path, count, titled, continuations)
@@ -389,13 +402,21 @@ def build_saudi_records(
                 "en": {
                     "title": en["title"],
                     "language": "en",
+                    "coverageStatus": "complete-current-official-reference-translation",
+                    "versionAsOf": translation_version_as_of,
+                    "versionLabel": translation_version_label,
                     "status": "official-reference-translation",
+                    "note": (
+                        "Complete Article-level official English reference wording is "
+                        "stored without editorial supplementation."
+                    ),
                     "authorityNote": authority_note,
                     "paragraphs": [en["fullText"]],
                     "fullText": en["fullText"],
                     "source": english_source,
                     "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
                     "contentSha256": sha256_text(en["fullText"]),
+                    "rights": SA_RIGHTS,
                 }
             },
             "alignment": {
@@ -458,6 +479,10 @@ def main() -> None:
             "effectiveFrom": "2023-09-14",
         },
         applies_from="2023-09-14",
+        translation_version_as_of="2023-09-14",
+        translation_version_label=(
+            "Royal Decree M/19 consolidated with Royal Decree M/148 amendments"
+        ),
     )
     sa_ir = build_saudi_records(
         instrument_id="sa-pdpl-implementing-regulation-2023",
@@ -475,6 +500,10 @@ def main() -> None:
             "enforcementBasis": "Article 38: effective from the date of the Law's enforcement",
         },
         applies_from="2023-09-14",
+        translation_version_as_of="2023-09-14",
+        translation_version_label=(
+            "Implementing Regulation of the amended Personal Data Protection Law"
+        ),
     )
     sa_transfer = build_saudi_records(
         instrument_id="sa-pdpl-transfer-regulation-2023",
@@ -493,6 +522,11 @@ def main() -> None:
             "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
         },
         applies_from=None,
+        translation_version_as_of="2024-08-01",
+        translation_version_label=(
+            "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 "
+            "(August 2024)"
+        ),
     )
 
     write_json(args.output_dir / "uae-federal-pdpl-45-2021-articles.json", uae)

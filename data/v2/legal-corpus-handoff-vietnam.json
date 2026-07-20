@@ -10,7 +10,7 @@
     ],
     "unitHashAlgorithm": "SHA-256 over UTF-8 fullText with no trailing newline",
     "originalLanguagePolicy": "Every corpus contains the complete Vietnamese original text. No unofficial or machine translation is substituted.",
-    "englishTranslationPolicy": "No complete official Government English version was verified for any of the three instruments; English text is deliberately not supplied."
+    "englishTranslationPolicy": "No complete issuing-authority or openly reusable official Government English version was verified. All three stored instruments now have complete, source-hash-locked, machine-assisted project English references that are explicitly nonofficial, without legal effect and CC BY 4.0; commercial translations were not copied. Decree 13/2023 remains historical and repealed."
   },
   "corpora": [
     {
@@ -25,11 +25,11 @@
         "actualUnitCount": 39,
         "complete": true,
         "language": "Vietnamese (vi-VN)",
-        "englishTranslation": "not supplied"
+        "englishTranslation": "complete nonofficial current-version project reference for all 39 stored nodes; machine-assisted, source-hash locked, paragraph aligned and CC BY 4.0"
       },
       "output": {
         "path": "data/v2/vn-personal-data-protection-law-2025-articles.json",
-        "sha256": "1bab96e7867fc7ecf615e1c9a2c872d256caf30ed4e178003151c81a87b8393c"
+        "sha256": "b76d8741c05a1c0c8dd9f9e7e00aa2a1442e90d4e55b6d6fcf6f31a92f780a2b"
       },
       "generator": "scripts/import-vietnam-pdpl-2025.py",
       "sourceSnapshotGenerator": "scripts/prepare-vietnam-source-snapshots.py",
@@ -48,6 +48,11 @@
           "path": "data/v2/source-snapshots/vn-pdpl-2025-clean-crosscheck.json",
           "sha256": "c5879840f20a73698493212a94d2aa70803cb992fae3a53b0c9c0710bb41a47d",
           "role": "secondary clean transcription used only for paragraph and list structure after exact official-source verification"
+        },
+        {
+          "path": "data/v2/source-snapshots/vn-pdpl-2025-project-en-draft-2026-07-20.json",
+          "sha256": "3fab66c08b4678d3d57f87b286912d240a91697edeea9877d4851de9b208fb66",
+          "role": "machine-assisted English draft catalogue locked to every official-source unit hash; nonofficial project-reference input"
         }
       ],
       "officialSources": [
@@ -84,6 +89,20 @@
       "transcriptionDisclosure": {
         "authorityStatement": "The signed National Assembly publication and official Gazette control.",
         "method": "Every non-whitespace character of every Article was matched to the searchable official Gazette. The secondary page supplies only paragraph boundaries and list structure."
+      },
+      "englishTranslation": {
+        "manifest": "data/v2/vn-current-personal-data-regime-project-english-manifest.json",
+        "annotator": "scripts/annotate-vietnam-current-english.py",
+        "catalogue": "data/v2/source-snapshots/vn-pdpl-2025-project-en-draft-2026-07-20.json",
+        "translatedUnitCount": 39,
+        "translationParagraphCount": 332,
+        "status": "project-authored-reference-translation-no-legal-effect",
+        "coverageStatus": "complete-current-project-reference",
+        "currentTextEquivalent": true,
+        "alignmentStatus": "aligned-to-pinned-current-official-vietnamese",
+        "license": "CC BY 4.0",
+        "legalEffectStatus": "in-force",
+        "authorityWarning": "This is not an issuing-authority translation and has no legal effect; official Vietnamese controls."
       }
     },
     {
@@ -98,11 +117,11 @@
         "actualUnitCount": 55,
         "complete": true,
         "language": "Vietnamese (vi-VN)",
-        "englishTranslation": "not supplied"
+        "englishTranslation": "complete nonofficial current-version project reference for all 55 stored nodes; machine-assisted, source-hash locked, paragraph aligned and CC BY 4.0"
       },
       "output": {
         "path": "data/v2/vn-decree-356-2025-provisions.json",
-        "sha256": "13a236ce949f1f5e2151c70cf144a544505209254823d183e7bcb9b1fd1475c7"
+        "sha256": "1c62ddb1ce81e822f21637f0a796877be54e017b688cc8824d3c59a5d38026d5"
       },
       "generator": "scripts/import-vietnam-decree-356-2025.py",
       "sourceSnapshotGenerator": "scripts/prepare-vietnam-source-snapshots.py",
@@ -121,6 +140,11 @@
           "path": "data/v2/source-snapshots/vn-decree-356-2025-clean-crosscheck.json",
           "sha256": "03f9dc9a9d743bb893956c97f171f74f4521f6fd1a98c1ff9647fb2e5a3ec62d",
           "role": "secondary clean transcription used for Article paragraph boundaries and Appendix title cross-checking only"
+        },
+        {
+          "path": "data/v2/source-snapshots/vn-decree-356-2025-project-en-draft-2026-07-20.json",
+          "sha256": "e0de6c8b08cbf25c0c85de38181f945fe8c2ebf1c5a3b80347e9197df9d827da",
+          "role": "machine-assisted English draft catalogue locked to every official-source unit hash; nonofficial project-reference input"
         }
       ],
       "officialSources": [
@@ -163,6 +187,20 @@
         "authorityStatement": "The signed Government publication and official Gazette control.",
         "articles": "All non-whitespace characters match the official Gazette. Thirteen secondary-page transcription differences across Articles 6, 12, 17, 18, 19, 34 and 42 were replaced by official Gazette wording and are individually recorded in the Gazette snapshot.",
         "appendixForms": "All 13 forms are taken directly from the searchable official Gazette in PDF reading order. Table geometry is linearized without changing or adding text."
+      },
+      "englishTranslation": {
+        "manifest": "data/v2/vn-current-personal-data-regime-project-english-manifest.json",
+        "annotator": "scripts/annotate-vietnam-current-english.py",
+        "catalogue": "data/v2/source-snapshots/vn-decree-356-2025-project-en-draft-2026-07-20.json",
+        "translatedUnitCount": 55,
+        "translationParagraphCount": 1549,
+        "status": "project-authored-reference-translation-no-legal-effect",
+        "coverageStatus": "complete-current-project-reference",
+        "currentTextEquivalent": true,
+        "alignmentStatus": "aligned-to-pinned-current-official-vietnamese",
+        "license": "CC BY 4.0",
+        "legalEffectStatus": "in-force",
+        "authorityWarning": "This is not an issuing-authority translation and has no legal effect; official Vietnamese controls."
       }
     },
     {
@@ -177,12 +215,12 @@
         "actualUnitCount": 50,
         "complete": true,
         "language": "Vietnamese (vi-VN)",
-        "englishTranslation": "not supplied",
+        "englishTranslation": "complete nonofficial project reference for all 44 Articles and six Appendix forms; machine-assisted, CC BY 4.0, and explicitly historical/repealed",
         "historicalOnly": true
       },
       "output": {
         "path": "data/v2/vn-decree-13-2023-historical-provisions.json",
-        "sha256": "ecf51949c79cbf2d95bf9a9387f35b215d89d329f312d1e43d2251257c1d367b"
+        "sha256": "6fb061fe9a76a60511a55873c1c39f4beee7be06abec9146d770ca6c9adcdd45"
       },
       "generator": "scripts/import-vietnam-decree-13-2023.py",
       "sourceSnapshotGenerator": "scripts/prepare-vietnam-source-snapshots.py",
@@ -255,6 +293,18 @@
       "transcriptionDisclosure": {
         "articles": "All non-whitespace characters of Articles 1-44 match the searchable official Gazette. Five official-HTML-to-Gazette orthographic or capitalization differences across Articles 24, 27, 37 and 44 are resolved to Gazette wording and individually recorded in the Gazette snapshot.",
         "appendixForms": "All six forms are taken directly from the searchable official Gazette in PDF reading order. Table geometry is linearized without changing or adding text. The signed scan provides independent page-level verification."
+      },
+      "englishTranslation": {
+        "manifest": "data/v2/vn-decree-13-2023-project-english-manifest.json",
+        "annotator": "scripts/annotate-vietnam-decree13-english.py",
+        "catalogue": "data/v2/source-snapshots/vn-decree-13-2023-project-en-draft-2026-07-20.json",
+        "translatedUnitCount": 50,
+        "translationParagraphCount": 621,
+        "status": "project-authored-reference-translation-no-legal-effect",
+        "coverageStatus": "complete-historical-project-reference",
+        "license": "CC BY 4.0",
+        "legalEffectStatus": "repealed",
+        "currentLawWarning": "Decree 13/2023/NĐ-CP was repealed from 1 January 2026 and must not be presented as current Vietnamese law."
       }
     }
   ],
@@ -285,9 +335,9 @@
     "cautions": [
       "Treat vn-decree-13-2023 as historical-only and repealed; do not surface it as current law.",
       "Appendix nodes use unitType 'appendix-form' and articleNumber values such as 'Form 01a'.",
-      "No English toggle text is available because no complete official English version was verified.",
       "Provision-to-concept mappings were not generated in this corpus-only scope.",
-      "The Decree 356 official Gazette form text preserves PDF reading order; consumers may add presentation-only table layout but must not rewrite corpus text."
+      "The Decree 356 official Gazette form text preserves PDF reading order; consumers may add presentation-only table layout but must not rewrite corpus text.",
+      "English views for all three Vietnamese corpora are nonofficial machine-assisted project references; the official Vietnamese text controls and the English must not be labeled official."
     ]
   }
 }

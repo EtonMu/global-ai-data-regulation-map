@@ -9,7 +9,7 @@
       "Indonesia Law No. 27 of 2022 on Personal Data Protection: Articles 1-76"
     ],
     "unitHashAlgorithm": "SHA-256 over UTF-8 fullText with no trailing newline",
-    "englishTranslationPolicy": "No translation is generated or inferred. The Indonesian corpus is original-language only because no complete official English version was verified."
+    "englishTranslationPolicy": "The Indonesian corpus preserves the controlling source text and includes a complete project-authored English reference. The English is nonofficial, has no legal effect, and does not substitute for the Indonesian text or applicable Constitutional Court decisions."
   },
   "corpora": [
     {
@@ -153,11 +153,11 @@
         "actualUnitCount": 76,
         "complete": true,
         "language": "Indonesian (id-ID)",
-        "englishTranslation": "not supplied"
+        "englishTranslation": "complete project-authored nonofficial English reference stored for every Article; no complete official Government English translation was verified, and commercial or subscription translations were not copied"
       },
       "output": {
         "path": "data/v2/id-pdp-law-2022-articles.json",
-        "sha256": "879c8a1270a472a842283199601c9bb7aef85a28ae9e5d2042aaae277f74be00"
+        "sha256": "559fb4cb13957a9a0b6da5adf3f39218db9928a672998bb1a0f2776429409ddb"
       },
       "generator": "scripts/import-indonesia-pdp.py",
       "sourceSnapshots": [
@@ -222,7 +222,7 @@
             "effect": "Pending review has no textual effect while undecided."
           }
         ],
-        "englishVersionConclusion": "No complete official English translation was verified; no English text was generated or silently substituted."
+        "englishVersionConclusion": "No complete official English translation was verified. A complete project-authored nonofficial English reference is stored, expressly without legal effect; no commercial or subscription translation was copied or silently substituted."
       },
       "reuse": {
         "status": "government-edict",

@@ -42,10 +42,20 @@ test("original-language records expose a native bilingual text switch", () => {
   );
   assert.match(explorerSource, /data-text-language=\{displayedLanguage\}/);
   assert.match(explorerSource, /ENGLISH REFERENCE TRANSLATION/);
+  assert.match(explorerSource, /"ENGLISH COVERAGE"/);
+  assert.match(explorerSource, /"ENGLISH · FUTURE REF"/);
+  assert.match(explorerSource, /"ENGLISH · HISTORICAL REF"/);
+  assert.match(explorerSource, /ENGLISH LEGAL TEXT NOT STORED — COVERAGE NOTICE/);
+  assert.doesNotMatch(explorerSource, /This article is mapped to/);
+  assert.match(explorerSource, /currentTextEquivalent/);
+  assert.match(explorerSource, /Future-phase English reference — not current/);
+  assert.match(explorerSource, /Historical English reference — not current/);
   assert.match(
     explorerSource,
-    /hasEnglishTranslation \? "ENGLISH" : "ENGLISH SUMMARY"/,
+    /is-version-warning[\s\S]*?renderedParagraphs\.map/,
+    "a temporal mismatch warning must precede the English legal text",
   );
+  assert.match(stylesheet, /\.reader-document > p[\s\S]*?white-space: pre-line;/);
   assert.match(explorerSource, /alternativeLanguageTexts\.map/);
   assert.match(explorerSource, /Official reference translation — no legal force/);
   assert.match(explorerSource, /tabIndex=\{readerTab === tab \? 0 : -1\}/);

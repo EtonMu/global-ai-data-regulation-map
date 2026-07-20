@@ -76,8 +76,26 @@ test("Brazil PL 2338 corpus exactly follows the 79-Article controlling autograph
     assert.equal(unit.unitType, "article");
     assert.equal(unit.label, `Art. ${unit.articleNumber}`);
     assert.equal(unit.language, "pt-BR");
-    assert.equal(unit.translations, undefined);
-    assert.equal(unit.englishAvailability.status, "not-supplied");
+    const english = unit.translations.en;
+    assert.equal(english.language, "en");
+    assert.equal(
+      english.coverageStatus,
+      "complete-current-pending-bill-project-reference",
+    );
+    assert.equal(english.officialStatus, "non-official-no-legal-effect");
+    assert.equal(english.legalEffectStatus, "pending-bill-not-enacted");
+    assert.equal(english.fullText, english.paragraphs.join("\n\n"));
+    assert.equal(english.contentSha256, sha256(english.fullText));
+    assert.equal(english.paragraphs.length, unit.paragraphs.length);
+    assert.equal(unit.currentLanguageToggleEligible, true);
+    assert.equal(
+      unit.englishAvailability.status,
+      "project-authored-reference-translation-no-legal-effect",
+    );
+    assert.equal(
+      unit.englishAvailability.coverageStatus,
+      "complete-current-pending-bill-project-reference",
+    );
     assert.match(unit.titleProvenance, /project-authored English orientation title/u);
     assert.equal(unit.textAvailability, "official-complete-senate-approved-bill-text");
     assert.equal(unit.legalEffectStatus, "pending-bill-not-enacted");

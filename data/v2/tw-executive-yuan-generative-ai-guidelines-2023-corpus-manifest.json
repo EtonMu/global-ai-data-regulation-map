@@ -48,7 +48,7 @@
     "normalizedFullTextCharacterCount": 1305,
     "sourceBodySha256": "9000547bd0fbbad6993f5c8bf9f1afaee494c7406e58486b475f6be29947dfc7",
     "contentSha256": "9000547bd0fbbad6993f5c8bf9f1afaee494c7406e58486b475f6be29947dfc7",
-    "fileSha256": "446a39cf3559013ba3a2f532710e71ce9f0b11030f879e5ce71af03b9214646f",
+    "fileSha256": "5f79786cf6ec45b9760469a1c0cbde968a6b22ec310f8b142ba1d864ff1e748d",
     "completeSourceCoverageVerified": true,
     "pointNumberSequenceSha256": "d68dbfb354c79395d3263fb5121906a151c880c25b5ea040d969d328685e4073"
   },
@@ -62,12 +62,13 @@
   },
   "translation": {
     "language": "en",
-    "status": "no-complete-official-english-text-located",
-    "bodyStored": false,
-    "currentLanguageToggleEligible": false,
+    "status": "complete-current-guidance-project-reference",
+    "officialStatus": "non-official-no-legal-effect",
+    "bodyStored": true,
+    "currentLanguageToggleEligible": true,
     "officialContextSource": "https://english.ey.gov.tw/Page/61BF20C3E89B856/d57a1a70-c0b0-4481-9845-a6265437a8ff",
     "officialContextSourceStatus": "English Executive Yuan press release about the 2023-08-31 draft; not a point-by-point or complete translation of the final guidance",
-    "reasonNotAttached": "No complete official English text corresponding to the final Traditional-Chinese general explanation and ten numbered points was located. No editorial translation was generated."
+    "projectReferenceBoundary": "No complete official English text corresponding to the final Traditional-Chinese general explanation and ten numbered points was located. A complete project-authored, machine-assisted and editorially normalized English reference is stored under CC BY 4.0; it is nonofficial, has no legal effect, and the Traditional-Chinese text controls."
   },
   "rights": {
     "primaryTraditionalChineseText": {
@@ -164,5 +165,5 @@
     "englishAvailabilityBoundary": "https://english.ey.gov.tw/Page/61BF20C3E89B856/d57a1a70-c0b0-4481-9845-a6265437a8ff",
     "laterSeparateGuidanceBoundary": "https://moda.gov.tw/digital-affairs/digital-service/ai-resource/18248"
   },
-  "manifestContentBasisSha256": "0429ed01dbdebc90ac02f9a9ea93ab97cefcf68282b038671f433a368fa1fb12"
+  "manifestContentBasisSha256": "4a370747c9c8e5169002c152b472d5583235c5f7b1d597b935b5b47ebd007fc4"
 }

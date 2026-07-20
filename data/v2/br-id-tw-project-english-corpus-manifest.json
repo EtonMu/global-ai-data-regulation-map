@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "reviewedAsOf": "2026-07-20",
+  "purpose": "Focused provenance, lifecycle, rights, and completeness record for the Brazil, Indonesia, and Taiwan project-authored English references.",
+  "translationBoundary": {
+    "officialStatus": "non-official-no-legal-effect",
+    "method": "Independent source-aligned translation with automated first-draft assistance, terminology normalization, manual correction, and structural and residual-language quality checks.",
+    "controllingTextRule": "The pinned Portuguese, Indonesian, or Traditional-Chinese source and applicable legal decisions control.",
+    "professionalTranslatorCertification": false,
+    "notLegalAdvice": true
+  },
+  "rights": {
+    "scope": "project-authored English wording only",
+    "license": "Creative Commons Attribution 4.0 International",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Compliance Compass contributors",
+    "thirdPartyTranslationPolicy": "Commercial, subscription, and ambiguously licensed third-party translations were not copied."
+  },
+  "researchCrossChecks": [
+    {
+      "instrumentId": "id-pdp-law-2022",
+      "source": "https://jdih.denpasarkota.go.id/public/produk-hukum/monografi-hukum/buku-hukum/law-of-the-republic-of-indonesia-number-27-of-2022-on-personal-data-protection",
+      "finding": "Government-library catalogue identifies a Ministry translation-team publication that expressly says it is not an official Government translation. It was used only to cross-check terminology and was not copied because reusable rights were not established."
+    },
+    {
+      "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+      "source": "https://english.ey.gov.tw/Page/61BF20C3E89B856/d57a1a70-c0b0-4481-9845-a6265437a8ff",
+      "finding": "English contextual release concerns Cabinet approval of a draft, not a complete point-by-point translation of the final guidance."
+    }
+  ],
+  "corpora": [
+    {
+      "instrumentId": "br-pl-2338-2023-ai-bill",
+      "jurisdiction": "Brazil",
+      "sourceLanguage": "pt-BR",
+      "corpus": "data/v2/br-ai-bill-2338-2023-articles.json",
+      "resource": "data/v2/reference-translations/br-pl2338-2023-project-en.json",
+      "lifecycle": "pending-bill-not-enacted",
+      "controllingSource": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=PL+2338%2F2023",
+      "officialEnglishConclusion": "No complete English translation published by the Senate or Chamber was verified.",
+      "unitCount": 79,
+      "sourceParagraphCount": 476,
+      "englishParagraphCount": 476,
+      "completeProjectEnglishCoverage": true,
+      "paragraphOrderPreserved": true,
+      "projectEnglishStatus": "project-authored-reference-translation-no-legal-effect",
+      "legalEffect": "none-English-reference-only",
+      "corpusSha256": "3c668fdbfce475dd103aa2a567c1e6d063e374eb504ec8c5f3825b176de9dbd3",
+      "translationResourceSha256": "eb531457d0e929d153c331459d90c3c4d5b28f3c87dff4ff5a7390cf4f0bc065",
+      "translationResourceManifestSha256": "d1a0eb8198508775a1874f5399c51e5f7395d429cc60f334002d428a8fe8fcc8",
+      "combinedSourceTextSha256": "457e972f2f87657afa10c358f995655d7a10dcc84c5babadef3ac32857057bdf",
+      "combinedEnglishTextSha256": "b0267477643f766661543259059c9bf47606bb79c36390c201bede2c3a781135"
+    },
+    {
+      "instrumentId": "id-pdp-law-2022",
+      "jurisdiction": "Indonesia",
+      "sourceLanguage": "id-ID",
+      "corpus": "data/v2/id-pdp-law-2022-articles.json",
+      "resource": "data/v2/reference-translations/id-pdp-law-2022-project-en.json",
+      "lifecycle": "in-force-with-Article-53-judicial-overlay",
+      "controllingSource": "https://www.jdihn.go.id/files/2098/2022uu027.pdf",
+      "officialEnglishConclusion": "No complete English text published as an official Indonesian Government translation was verified.",
+      "unitCount": 76,
+      "sourceParagraphCount": 389,
+      "englishParagraphCount": 389,
+      "completeProjectEnglishCoverage": true,
+      "paragraphOrderPreserved": true,
+      "projectEnglishStatus": "project-authored-reference-translation-no-legal-effect",
+      "legalEffect": "none-English-reference-only",
+      "corpusSha256": "559fb4cb13957a9a0b6da5adf3f39218db9928a672998bb1a0f2776429409ddb",
+      "translationResourceSha256": "1bfd1f8f2c221e2e207c5dca1faa03732548c55b5911f1b711a5cfb3222eaa60",
+      "translationResourceManifestSha256": "2b2287eef6718ffee4fbe5efff259b7eeb2f3785ceab4420321af88466122c0f",
+      "combinedSourceTextSha256": "d18e6ed55166b6d1d516ab094f05b39ac6561881167c7bf0ed5b00d1f5d389c7",
+      "combinedEnglishTextSha256": "77a3624f6d9a094646c05d85c428fd06dd0b48956677f057250fbc823cae5b13"
+    },
+    {
+      "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+      "jurisdiction": "Taiwan",
+      "sourceLanguage": "zh-Hant-TW",
+      "corpus": "data/v2/tw-executive-yuan-generative-ai-guidelines-2023-points.json",
+      "resource": "data/v2/reference-translations/tw-genai-guidelines-2023-project-en.json",
+      "lifecycle": "active-non-binding-public-sector-guidance",
+      "controllingSource": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+      "officialEnglishConclusion": "The located Executive Yuan English page discusses the earlier draft and is not a complete translation of the final guidance.",
+      "unitCount": 11,
+      "sourceParagraphCount": 15,
+      "englishParagraphCount": 15,
+      "completeProjectEnglishCoverage": true,
+      "paragraphOrderPreserved": true,
+      "projectEnglishStatus": "project-authored-reference-translation-no-legal-effect",
+      "legalEffect": "none-English-reference-only",
+      "corpusSha256": "5f79786cf6ec45b9760469a1c0cbde968a6b22ec310f8b142ba1d864ff1e748d",
+      "translationResourceSha256": "24e7cb437b937d205ad3e81812028614a1b786445400f08a39625749006a2baf",
+      "translationResourceManifestSha256": "c590418d220915280d99d608d561192bfa5e1f411ae78b8eec0c1e7e52ef7ceb",
+      "combinedSourceTextSha256": "9000547bd0fbbad6993f5c8bf9f1afaee494c7406e58486b475f6be29947dfc7",
+      "combinedEnglishTextSha256": "81f8a100283d1fed12fb3e0d4b5e8d336bc854cdd5c45dc53242fed7143f96ab"
+    }
+  ],
+  "reproducibility": {
+    "draftPreparation": "scripts/prepare-project-english-drafts.py",
+    "offlineFinalizer": "scripts/finalize-br-id-tw-english-resources.py",
+    "offlineAnnotator": "scripts/annotate-br-id-tw-english.py",
+    "manifestBuilder": "scripts/build-br-id-tw-project-english-manifest.py",
+    "sourceImporters": [
+      "scripts/import-brazil-ai-bill-2338.py",
+      "scripts/import-indonesia-pdp.py",
+      "scripts/import-taiwan-executive-yuan-genai-guidelines.py"
+    ]
+  },
+  "manifestContentBasisSha256": "5e213181925f1002078e5fd4fea8f58f6d80d0b4cab5ba3443164e3d898454b3"
+}

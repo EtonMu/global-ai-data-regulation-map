@@ -25,6 +25,15 @@ const dataRoot = resolve(root, "data/v2");
 const USER_AGENT =
   "global-ai-data-regulation-map/0.1 (+https://github.com/EtonMu/global-ai-data-regulation-map)";
 
+const TAIWAN_OFFICIAL_TEXT_RIGHTS = {
+  reuseStatus: "official-legal-text-statutory-exclusion",
+  basis: "Taiwan Copyright Act, Article 9(1)-(2)",
+  basisUrl: "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+  note:
+    "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+  attributionRequired: true,
+};
+
 const AI_ACT = {
   instrumentId: "tw-ai-basic-act-2026",
   output: "tw-ai-basic-act-2026-articles.json",
@@ -496,12 +505,18 @@ function buildAiAct(originalHtml, translationHtml, retrievedOn) {
           paragraphs: translation.paragraphs,
           fullText: englishFullText,
           language: "en",
+          coverageStatus: "complete-current-official-reference-translation",
+          versionAsOf: "2026-01-14",
+          versionLabel: "Artificial Intelligence Basic Act promulgated 14 January 2026",
           status: "official-reference-translation",
+          note:
+            "Complete Article-level official English wording is stored without editorial supplementation.",
           authorityNote:
             "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
           source: AI_ACT.translationSource,
           sourceLabel: AI_ACT.translationSourceLabel,
           contentSha256: sha256(englishFullText),
+          rights: TAIWAN_OFFICIAL_TEXT_RIGHTS,
         },
       },
       alignment: alignment(
@@ -597,12 +612,19 @@ function buildPdpa(originalHtml, translationHtml, currentHtml, retrievedOn) {
           paragraphs: translation.paragraphs,
           fullText: englishFullText,
           language: "en",
+          coverageStatus: "complete-latest-consolidation-official-reference-translation",
+          versionAsOf: "2025-11-11",
+          versionLabel:
+            "Latest promulgated PDPA consolidation, including amendments awaiting Executive Yuan commencement",
           status: "official-reference-translation",
+          note:
+            "Complete Article-level official English wording from the latest promulgated consolidation is stored; applicability metadata marks amendments whose commencement remains pending.",
           authorityNote:
             "Published by the Ministry of Justice Laws and Regulations Database as an English translation. The official Traditional Chinese text controls.",
           source: PDPA.translationSource,
           sourceLabel: PDPA.translationSourceLabel,
           contentSha256: sha256(englishFullText),
+          rights: TAIWAN_OFFICIAL_TEXT_RIGHTS,
         },
       },
       alignment: alignment(

@@ -9,7 +9,7 @@
     ],
     "unitHashAlgorithm": "SHA-256 over UTF-8 fullText with no trailing newline",
     "statusPolicy": "Proposed commencement clauses are preserved as bill text but never represented as operative law unless the parent bill was enacted.",
-    "englishDisplayPolicy": "AIDA defaults to the official English text and offers Parliament's co-published official French text. PL 2338/2023 remains Portuguese-only because no complete official English version was verified; its English headings are editorial navigation aids, not translations."
+    "englishDisplayPolicy": "AIDA defaults to the official English text and offers Parliament's co-published official French text. PL 2338/2023 includes a complete project-authored English reference aligned to the pending Portuguese autograph. It is nonofficial, has no legal effect, and is not an enacted-law translation."
   },
   "corpora": [
     {
@@ -130,12 +130,12 @@
         "actualUnitCount": 79,
         "complete": true,
         "language": "Portuguese (pt-BR)",
-        "englishTranslation": "not supplied",
+        "englishTranslation": "complete project-authored nonofficial English reference stored for every Article; no complete English translation from a verified Senate or Chamber primary source was located, and third-party translations were not copied",
         "numberingNotice": "The official Senate autograph itself jumps directly from Article 30 to Article 32; there is no Article 31 in the controlling text."
       },
       "output": {
         "path": "data/v2/br-ai-bill-2338-2023-articles.json",
-        "sha256": "0f9712501443e2bc820b194b1acd9834522c2c4de076f9d64819bd1a940a78ee"
+        "sha256": "3c668fdbfce475dd103aa2a567c1e6d063e374eb504ec8c5f3825b176de9dbd3"
       },
       "generator": "scripts/import-brazil-ai-bill-2338.py",
       "sourceSnapshotGenerator": "scripts/prepare-brazil-ai-bill-2338-snapshot.py",

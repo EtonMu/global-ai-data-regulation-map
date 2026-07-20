@@ -15,6 +15,8 @@ import json
 import re
 from pathlib import Path
 
+from project_english_corpus import attach_project_english
+
 
 TITLES = {
     "1": "Scope, objectives and exclusions",
@@ -207,11 +209,24 @@ def main() -> None:
             "language": "pt-BR",
             "textAvailability": "official-complete-senate-approved-bill-text",
             "englishAvailability": {
-                "status": "not-supplied",
+                "coverageStatus": "no-source-text",
+                "status": "not-available-from-legislature",
+                "versionAsOf": args.retrieved_on,
+                "versionLabel": (
+                    "Senate-approved autograph transmitted to the Chamber; pending "
+                    "bill text as of 20 July 2026"
+                ),
+                "authorityNote": (
+                    "Portuguese is the sole official bill text. No complete English "
+                    "translation published by the Senado Federal or Câmara dos "
+                    "Deputados was verified."
+                ),
+                "sourcesChecked": [source_document["url"], CANONICAL_URL, STATUS_URL],
                 "note": (
                     "No complete official English version was published by the Senado "
                     "Federal or Câmara dos Deputados as of 2026-07-20; no English full "
-                    "text is supplied."
+                    "text from a machine, consultancy or commercial database is "
+                    "substituted."
                 ),
             },
             "source": source_document["url"],
@@ -303,6 +318,7 @@ def main() -> None:
             }
         records.append(record)
 
+    attach_project_english(records, "br-pl-2338-2023-ai-bill")
     args.output.write_text(
         json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

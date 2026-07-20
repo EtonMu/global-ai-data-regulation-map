@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "catalogueId": "vn-pdpl-2025-project-en-draft-2026-07-20",
+  "generatedOn": "2026-07-20",
+  "generator": {
+    "script": "scripts/prepare-project-english-translation-drafts.py",
+    "version": "1.0.0",
+    "draftEngine": "Google Translate public web endpoint",
+    "role": "machine-assisted first draft only",
+    "disclaimer": "The draft is not an official translation and is not itself legal advice. Corpus annotators add the project translation metadata and pin the source/version boundary."
+  },
+  "source": {
+    "path": "data/v2/vn-personal-data-protection-law-2025-articles.json",
+    "language": "vi-VN",
+    "unitCount": 39,
+    "paragraphCount": 332
+  },
+  "units": [
+    {
+      "id": "vn-pdpl-2025-art-1",
+      "sourceContentSha256": "55168f6a6ff4958441a0e43c7b51bdfca66b53442358254ed1fec994f63813ba",
+      "sourceParagraphCount": 6,
+      "sourceParagraphSequenceSha256": "55168f6a6ff4958441a0e43c7b51bdfca66b53442358254ed1fec994f63813ba",
+      "draftParagraphs": [
+        "Article 1. Scope of regulation and subjects of application",
+        "1. This Law regulates personal data, personal data protection and the rights, obligations and responsibilities of relevant agencies, organizations and individuals.",
+        "2. This law applies to:",
+        "a) Vietnamese agencies, organizations and individuals;",
+        "b) Foreign agencies, organizations and individuals in Vietnam;",
+        "c) Foreign agencies, organizations, and individuals directly participating in or related to the processing of personal data of Vietnamese citizens and people of Vietnamese origin of unknown nationality living in Vietnam who have been issued identification certificates."
+      ],
+      "draftParagraphSequenceSha256": "dfeb3883bf3d7f7f7c13f156fdc25be1df1ddcf83231a565522333726f9f632e"
+    },
+    {
+      "id": "vn-pdpl-2025-art-2",
+      "sourceContentSha256": "f87374fc9eb22da66a6c65c69e8f547882f10ddd7032beea0bd30af9ceacdb31",
+      "sourceParagraphCount": 14,
+      "sourceParagraphSequenceSha256": "f87374fc9eb22da66a6c65c69e8f547882f10ddd7032beea0bd30af9ceacdb31",
+      "draftParagraphs": [
+        "Article 2. Explanation of terms",
+        "In this Law, the following terms are understood as follows:",
+        "1. Personal data is digital data or information in another form that identifies or helps identify a specific person, including: basic personal data and sensitive personal data. Personal data after de-identification is no longer personal data.",
+        "2. Basic personal data is personal data that reflects common personal and background factors, frequently used in transactions and social relationships, on the list issued by the Government.",
+        "3. Sensitive personal data is personal data associated with an individual's right to privacy. When violated, it will directly affect the legitimate rights and interests of agencies, organizations, and individuals, on the list issued by the Government.",
+        "4. Personal data protection is the use of forces, means and measures by agencies, organizations and individuals to prevent and combat personal data infringement activities.",
+        "5. Personal data subject is the person to whom the personal data reflects.",
+        "6. Personal data processing is an activity that affects personal data, including one or more of the following activities: collection, analysis, synthesis, encryption, decoding, editing, deletion, destruction, de-identification, provision, disclosure, transfer of personal data and other activities affecting personal data.",
+        "7. Personal data controller is the agency, organization or individual that decides the purposes and means of processing personal data.",
+        "8. Personal data processor is an agency, organization or individual that processes personal data at the request of a personal data controller or a party that controls and processes personal data through a contract.",
+        "9. The controller and processor of personal data is the agency, organization or individual that decides the purposes, means and directly processes personal data.",
+        "10. Third party is an organization or individual other than the personal data subject, personal data controller, personal data controller and processor, personal data processor participating in the processing of personal data in accordance with the law.",
+        "11. De-identification of personal data is the process of changing or deleting information to create new data that cannot be identified or cannot help identify a specific person.",
+        "12. Impact assessment of personal data processing is the analysis and assessment of risks that may occur during the processing of personal data to apply measures to minimize risks and protect personal data."
+      ],
+      "draftParagraphSequenceSha256": "eebc23ec08c6a872f8fd6305404bfab287623c175ad73c89bc20bc8f9d553667"
+    },
+    {
+      "id": "vn-pdpl-2025-art-3",
+      "sourceContentSha256": "ddade9802350e2044a88752134c8d3fb1a5406b73d0f6a3fd21120f02f9e9735",
+      "sourceParagraphCount": 7,
+      "sourceParagraphSequenceSha256": "ddade9802350e2044a88752134c8d3fb1a5406b73d0f6a3fd21120f02f9e9735",
+      "draftParagraphs": [
+        "Article 3. Principles of personal data protection",
+        "1. Comply with the provisions of the Constitution, the provisions of this Law and other relevant laws.",
+        "2. Personal data may only be collected and processed within the specific and clear scope and purpose, ensuring compliance with the law.",
+        "3. Ensure the accuracy of personal data and be corrected, updated and supplemented when necessary; stored for a period of time consistent with the purpose of processing personal data, unless otherwise provided by law.",
+        "4. Effectively and synchronously implement appropriate institutional, technical and human measures and solutions to protect personal data.",
+        "5. Proactively prevent, detect, stop, fight, promptly and strictly handle all violations of the law on personal data protection.",
+        "6. Personal data protection is associated with protecting national and ethnic interests, serving socio-economic development, ensuring national defense, security and foreign affairs; ensure harmony between protecting personal data and protecting the legitimate rights and interests of agencies, organizations and individuals."
+      ],
+      "draftParagraphSequenceSha256": "de1f354bfa26977e091c9a83b1c41730e67a220f18cec1e872b8fc8e124713ff"
+    },
+    {
+      "id": "vn-pdpl-2025-art-4",
+      "sourceContentSha256": "3caaa3e1d6ea8f5231bdf4f872c11b239e3ed034da7df21a1a14111ec0acd630",
+      "sourceParagraphCount": 20,
+      "sourceParagraphSequenceSha256": "3caaa3e1d6ea8f5231bdf4f872c11b239e3ed034da7df21a1a14111ec0acd630",
+      "draftParagraphs": [
+        "Article 4. Rights and obligations of personal data subjects",
+        "1. Rights of personal data subjects include:",
+        "a) Be informed about personal data processing activities;",
+        "b) Agree or disagree, request to withdraw consent for processing personal data;",
+        "c) View, edit or request correction of personal data;",
+        "d) Request to provide, delete, limit processing of personal data; submit a request to object to the processing of personal data;",
+        "d) Complain, denounce, sue, request compensation for damage according to the provisions of law;",
+        "e) Request competent authorities or agencies, organizations, and individuals involved in processing personal data to implement measures and solutions to protect their personal data according to the provisions of law.",
+        "2. Obligations of personal data subjects include:",
+        "a) Protect your own personal data;",
+        "b) Respect and protect the personal data of others;",
+        "c) Provide complete and accurate personal data in accordance with the law, contract or when agreeing to process your personal data;",
+        "d) Comply with the law on personal data protection and participate in preventing and combating personal data infringement activities.",
+        "3. Personal data subjects must fully comply with the following principles when exercising their rights and obligations:",
+        "a) Follow the provisions of law; comply with the personal data subject's contractual obligations. The exercise of the rights and obligations of the personal data subject must be for the purpose of protecting the legitimate rights and interests of that personal data subject;",
+        "b) Must not cause difficulties or hinder the exercise of rights and legal obligations of the personal data controller, personal data controller and processor, or personal data processor;",
+        "c) Do not infringe upon the legitimate rights and interests of the State, other agencies, organizations or individuals.",
+        "4. Agencies, organizations and individuals are responsible for creating favorable conditions and must not cause difficulties or hinder the exercise of rights and obligations of personal data subjects according to the provisions of law.",
+        "5. Upon receiving a request from a personal data subject to exercise the personal data subject's rights specified in Clause 1 of this Article, the personal data controller, the personal data controller and processor must promptly do so within the time limit prescribed by law.",
+        "The Government regulates this clause in detail."
+      ],
+      "draftParagraphSequenceSha256": "9bf37d90c55e308c4bcf195387de03f3d7f328a9fb856abafb1fbfd1819d300f"
+    },
+    {
+      "id": "vn-pdpl-2025-art-5",
+      "sourceContentSha256": "853a86a76a97b30548ba76f69d216c844aef190e4cc3569b70531242089c6a88",
+      "sourceParagraphCount": 5,
+      "sourceParagraphSequenceSha256": "853a86a76a97b30548ba76f69d216c844aef190e4cc3569b70531242089c6a88",
+      "draftParagraphs": [
+        "Article 5. Application of laws on personal data protection",
+        "1. Personal data protection activities on the territory of the Socialist Republic of Vietnam comply with the provisions of this Law and other relevant laws.",
+        "2. In cases where laws or resolutions of the National Assembly promulgated before the effective date of this Law contain specific provisions on personal data protection that do not contravene the principles of personal data protection as prescribed in this Law, the provisions of that law or resolution shall apply.",
+        "3. In case a law or resolution of the National Assembly promulgated after the effective date of this Law has provisions on personal data protection that are different from the provisions of this Law, it must specify the content of implementation or non-implementation according to the provisions of this Law, the content of implementation according to the provisions of that law or resolution.",
+        "4. In case an agency, organization or individual carries out an impact assessment of personal data processing or impact assessment of cross-border personal data transfer according to the provisions of this Law, it is not required to conduct a risk assessment of personal data processing or impact assessment of cross-border personal data transfer according to the provisions of data law."
+      ],
+      "draftParagraphSequenceSha256": "81f55e4f7727310702d215f961d912352e004eabd348b16f02057d0c0ef63a96"
+    },
+    {
+      "id": "vn-pdpl-2025-art-6",
+      "sourceContentSha256": "a564a0f287fbfb170dcfae3e66d1455c2f815d4c3b360776d30df45284fddad0",
+      "sourceParagraphCount": 10,
+      "sourceParagraphSequenceSha256": "a564a0f287fbfb170dcfae3e66d1455c2f815d4c3b360776d30df45284fddad0",
+      "draftParagraphs": [
+        "Article 6. International cooperation on personal data protection",
+        "1. Comply with Vietnamese law, international treaties to which the Socialist Republic of Vietnam is a member and international agreements on personal data protection on the basis of equality, mutual benefit, respect for independence, sovereignty and territorial integrity.",
+        "2. Content of international cooperation on personal data protection includes:",
+        "a) Develop international cooperation mechanisms to facilitate effective enforcement of laws on personal data protection;",
+        "b) Participate in mutual legal assistance on personal data protection of other countries;",
+        "c) Prevent and fight against personal data violations;",
+        "d) Human resource training, scientific research, application of science and technology in personal data protection;",
+        "d) Exchange experiences in developing and implementing laws on personal data protection;",
+        "e) Transfer of technology to protect personal data.",
+        "3. The Government stipulates responsibility for implementing international cooperation on personal data protection."
+      ],
+      "draftParagraphSequenceSha256": "5e90a958c879fe4d3233245a9e4185159cb37be44b817a246a2a822cf6c95d1d"
+    },
+    {
+      "id": "vn-pdpl-2025-art-7",
+      "sourceContentSha256": "e887fb8d38b2c601e6700bb73580fec208b55090821949e986d8f3b542bd6185",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "e887fb8d38b2c601e6700bb73580fec208b55090821949e986d8f3b542bd6185",
+      "draftParagraphs": [
+        "Article 7. Prohibited acts",
+        "1. Processing personal data to oppose the State of the Socialist Republic of Vietnam, affecting national defense, national security, social order and safety, and legitimate rights and interests of agencies, organizations and individuals.",
+        "2. Obstructing personal data protection activities.",
+        "3. Taking advantage of personal data protection activities to commit illegal acts.",
+        "4. Processing personal data contrary to the law.",
+        "5. Using personal data of others, allowing others to use your personal data to commit acts against the law.",
+        "6. Buy and sell personal data, unless otherwise prescribed by law.",
+        "7. Appropriation, intentional disclosure, loss of personal data."
+      ],
+      "draftParagraphSequenceSha256": "be97956ec719429578aa381a978489ebdc1ed1d23f37ca44c12e79c8fb1c138e"
+    },
+    {
+      "id": "vn-pdpl-2025-art-8",
+      "sourceContentSha256": "1ecc57583e6b02c7bf07a0eba4e3ba2de56b891afd52dc7c48cfc97c8af43cd5",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "1ecc57583e6b02c7bf07a0eba4e3ba2de56b891afd52dc7c48cfc97c8af43cd5",
+      "draftParagraphs": [
+        "Article 8. Handling of violations of the law on personal data protection",
+        "1. Organizations and individuals that violate the provisions of this Law and other provisions of law related to personal data protection, depending on the nature, extent and consequences of the violation, may be subject to administrative sanctions or criminal prosecution; If causing damage, compensation must be made according to the provisions of law.",
+        "2. Sanctioning of administrative violations in the field of personal data protection shall comply with the provisions of Clauses 3, 4, 5, 6 and 7 of this Article and the law on handling of administrative violations.",
+        "3. The maximum fine in administrative sanctions for buying and selling personal data is 10 times the revenue earned from the violation; In case there is no revenue from the violation or the fine calculated based on the revenue from the violation is lower than the maximum fine specified in Clause 5 of this Article, the fine level specified in Clause 5 of this Article will apply.",
+        "4. The maximum fine in administrative sanctions for organizations that violate regulations on cross-border transfer of personal data is 5% of that organization's revenue of the immediately preceding year; In case there is no revenue from the previous year or the fine calculated based on revenue is lower than the maximum fine as prescribed in Clause 5 of this Article, the fine as prescribed in Clause 5 of this Article will apply.",
+        "5. The maximum fine in administrative sanctions for other violations in the field of personal data protection is 03 billion VND.",
+        "6. The maximum fines specified in Clauses 3, 4 and 5 of this Article apply to organizations; If an individual commits the same violation, the maximum fine is one-half of the fine imposed on an organization.",
+        "7. The Government regulates the method of calculating revenues derived from violations of the law on personal data protection."
+      ],
+      "draftParagraphSequenceSha256": "f0890ea1325a830a550793dd6f691f4a6a11ac19589572239237b1459aed7e41"
+    },
+    {
+      "id": "vn-pdpl-2025-art-9",
+      "sourceContentSha256": "8067be94ee83eef6b6e99644fe739cf7beb1cc841e372d4501bd8b7dcd385ade",
+      "sourceParagraphCount": 13,
+      "sourceParagraphSequenceSha256": "8067be94ee83eef6b6e99644fe739cf7beb1cc841e372d4501bd8b7dcd385ade",
+      "draftParagraphs": [
+        "Article 9. Consent of the personal data subject",
+        "1. The consent of the personal data subject is the personal data subject's permission to process his or her personal data, unless otherwise provided by law.",
+        "2. The consent of the personal data subject is only valid when based on voluntariness and clear knowledge of the following information:",
+        "a) Type of personal data processed, purpose of processing personal data;",
+        "b) Personal data controller or personal data controller and processor;",
+        "c) Rights and obligations of personal data subjects.",
+        "3. The consent of the personal data subject is expressed in a clear, specific, printable, copyable, written form, including in electronic or verifiable format.",
+        "4. The consent of the personal data subject must ensure the following principles:",
+        "a) Express agreement for each purpose;",
+        "b) Must not include conditions requiring agreement for purposes other than the content of the agreement;",
+        "c) The consent is valid until the personal data subject changes that consent or as required by law;",
+        "d) Silence or non-response is not considered consent.",
+        "5. The Government shall detail Clause 3 of this Article."
+      ],
+      "draftParagraphSequenceSha256": "53a4b37c8a8a5851e3c735f7547f85de05507c21cd07983c0b965823d4ca7f11"
+    },
+    {
+      "id": "vn-pdpl-2025-art-10",
+      "sourceContentSha256": "6e0abf2c2674a07c52a2f30f73d4ac806262a6d5bf3cad435cfbc5c3db36b6bf",
+      "sourceParagraphCount": 5,
+      "sourceParagraphSequenceSha256": "6e0abf2c2674a07c52a2f30f73d4ac806262a6d5bf3cad435cfbc5c3db36b6bf",
+      "draftParagraphs": [
+        "Article 10. Request for withdrawal of consent, request for restriction of processing of personal data",
+        "1. Personal data subjects have the right to request withdrawal of consent to process personal data, request restriction of processing of their personal data when there is doubt about the scope, purpose of processing personal data or accuracy of personal data, except for the case specified in Article 19 of this Law or otherwise provided by law.",
+        "2. Requests for withdrawal of consent, requests for restriction of processing of personal data by the subject of personal data must be made in writing, including in electronic or verifiable format and sent to the personal data controller, the controller and processor of personal data. Requests to withdraw consent, requests to limit processing of personal data of personal data subjects are made in accordance with the law and according to the agreement between the parties.",
+        "3. The personal data controller, the personal data controller and processor receives, executes and requests the personal data processor to implement a request to withdraw consent and limit the processing of personal data of the personal data subject within the time prescribed by law.",
+        "4. The implementation of a request to withdraw consent or request to limit the processing of personal data does not apply to personal data processing activities before the time the personal data subject requests to withdraw consent or request to limit the processing of personal data."
+      ],
+      "draftParagraphSequenceSha256": "bd8b9046af0980229b75d8a819a9ab73d77c28f16319808b5fb168eec24085e0"
+    },
+    {
+      "id": "vn-pdpl-2025-art-11",
+      "sourceContentSha256": "a4d5fb2b00f130dfee8f49e1bb2fe361809b16347c2850697a531f385cfd4601",
+      "sourceParagraphCount": 4,
+      "sourceParagraphSequenceSha256": "a4d5fb2b00f130dfee8f49e1bb2fe361809b16347c2850697a531f385cfd4601",
+      "draftParagraphs": [
+        "Article 11. Collection, analysis, and synthesis of personal data",
+        "1. Collected personal data must be consented to by the personal data subject before collection, unless otherwise provided by law.",
+        "2. Competent Party and State agencies are allowed to analyze and synthesize personal data from self-collected or shared data sources, provide, transfer, exploit and use to serve leadership, direction, state management, and socio-economic development according to the provisions of law.",
+        "3. Agencies, organizations and individuals not specified in Clause 2 of this Article may analyze and synthesize personal data from personal data sources permitted to be processed in accordance with the provisions of law."
+      ],
+      "draftParagraphSequenceSha256": "08dce551839a195ea180db5326b210e3c636ceb1029a8f81922e09121e92b177"
+    },
+    {
+      "id": "vn-pdpl-2025-art-12",
+      "sourceContentSha256": "73160d2b5340ff85b524975ab4e5b76af3794bbf4d0fd278c87a99dbbb7781c7",
+      "sourceParagraphCount": 4,
+      "sourceParagraphSequenceSha256": "73160d2b5340ff85b524975ab4e5b76af3794bbf4d0fd278c87a99dbbb7781c7",
+      "draftParagraphs": [
+        "Article 12. Encryption and decryption of personal data",
+        "1. Encryption of personal data is the conversion of personal data into an unrecognizable form if the personal data is not decrypted; Personal data after encryption is still personal data.",
+        "2. Personal data is a state secret that must be encrypted and decrypted in accordance with the law on protection of state secrets and the law on ciphers.",
+        "3. Agencies, organizations and individuals decide on encryption and decryption of personal data in accordance with personal data processing activities."
+      ],
+      "draftParagraphSequenceSha256": "b722290363f604b975323bea459dd7b1d21edde2d429b3c1224561643e54fa82"
+    },
+    {
+      "id": "vn-pdpl-2025-art-13",
+      "sourceContentSha256": "7759d48b78a44b24ce9adeedd7185e2aae46d772527bf296cc25cc585f70917d",
+      "sourceParagraphCount": 4,
+      "sourceParagraphSequenceSha256": "7759d48b78a44b24ce9adeedd7185e2aae46d772527bf296cc25cc585f70917d",
+      "draftParagraphs": [
+        "Article 13. Correction of personal data",
+        "1. Personal data subjects are allowed to independently edit their personal data for certain types of personal data in accordance with the agreement with the personal data controller, the party that controls and processes personal data; request the personal data controller, personal data controller and processor to correct your personal data.",
+        "2. The personal data controller, the personal data controller and processor edits personal data after the personal data subject requests or edits personal data in accordance with the law; request the personal data processor or third party to correct the personal data of the personal data subject.",
+        "3. Editing personal data must ensure accuracy. In case personal data cannot be edited for legitimate reasons, the personal data controller or the party that controls and processes personal data must notify the requesting agency, organization or individual."
+      ],
+      "draftParagraphSequenceSha256": "49d178eceae7ae01fff899a33890d054db98cdfee9a1b45bd17b99700b5be2b0"
+    },
+    {
+      "id": "vn-pdpl-2025-art-14",
+      "sourceContentSha256": "61fc396d98331cd0f506a2c03795f6181a3d1310f15c5ef6f40b9f21f63543d0",
+      "sourceParagraphCount": 16,
+      "sourceParagraphSequenceSha256": "61fc396d98331cd0f506a2c03795f6181a3d1310f15c5ef6f40b9f21f63543d0",
+      "draftParagraphs": [
+        "Article 14. Deletion, destruction, de-identification of personal data",
+        "1. Deletion and destruction of personal data is carried out in the following cases:",
+        "a) The personal data subject requests and accepts the risks and damages that may occur to him/her. The request of the personal data subject in this case must fully comply with the principles specified in Clause 3, Article 4 of this Law;",
+        "b) The purpose of processing personal data has been completed;",
+        "c) The storage period expires as prescribed by law;",
+        "d) Follow the decision of the competent state agency;",
+        "d) Perform according to the agreement;",
+        "e) Other cases as prescribed by law.",
+        "2. Failure to comply with the personal data subject's request to delete or destroy personal data in the cases specified in Article 19 of this Law or delete or destroy personal data in violation of the provisions of Clause 3, Article 4 of this Law.",
+        "3. The personal data controller, the party that controls and processes personal data deletes or destroys personal data in the cases specified in Clause 1 of this Article or requests the personal data processor or third party to delete or destroy personal data of the personal data subject. Deletion and destruction of personal data must be carried out using safe measures; Prevent unauthorized intrusion and recovery of deleted or destroyed personal data.",
+        "4. Agencies, organizations, and individuals may not intentionally restore personal data that has been deleted or destroyed.",
+        "5. The personal data controller, the personal data controller and processor, and the personal data processor are responsible for complying with the provisions of this Law. In case personal data cannot be deleted or destroyed for legitimate reasons after receiving a request from the personal data subject, the personal data controller, the party that controls and processes the personal data must notify the personal data subject.",
+        "6. De-identification of personal data is regulated as follows:",
+        "a) Agencies, organizations, and individuals de-identifying personal data are responsible for controlling and closely monitoring the process of de-identifying personal data; prevent unauthorized access, copying, appropriation, disclosure, or loss of personal data during the de-identification process;",
+        "b) Do not re-identify personal data after it has been de-identified, unless otherwise prescribed by law;",
+        "c) De-identification of personal data complies with the provisions of this Law and other relevant laws."
+      ],
+      "draftParagraphSequenceSha256": "4f51fdf59451e34fa56f5b16927fdc9a832f07a276cddef69faed95d7601454d"
+    },
+    {
+      "id": "vn-pdpl-2025-art-15",
+      "sourceContentSha256": "dac4c9a866dbb78097b9271198119b670168b41e24ed0b9980881cd5cd7759a6",
+      "sourceParagraphCount": 5,
+      "sourceParagraphSequenceSha256": "dac4c9a866dbb78097b9271198119b670168b41e24ed0b9980881cd5cd7759a6",
+      "draftParagraphs": [
+        "Article 15. Providing personal data",
+        "1. Personal data subjects provide personal data to agencies, organizations, and individuals according to the provisions of law or according to agreements with such agencies, organizations, and individuals.",
+        "2. Personal data controllers, personal data controllers and processors provide personal data in the following cases:",
+        "a) Provide the personal data subject at the request of the personal data subject in accordance with the provisions of law and agreement with the data subject, except in cases where such provision may harm national defense, national security, social order and safety or infringe on the life, health or property of others;",
+        "b) Provide to other agencies, organizations, and individuals with the consent of the personal data subject, unless otherwise prescribed by law."
+      ],
+      "draftParagraphSequenceSha256": "f769aa37696925b5b2b7d783fb1589141fae89c37e908c275de7d9a4df841b4b"
+    },
+    {
+      "id": "vn-pdpl-2025-art-16",
+      "sourceContentSha256": "c7ac7870d9fbb6de6fd667fc75b4817b26aeedf86312f90a97b358de8978e078",
+      "sourceParagraphCount": 10,
+      "sourceParagraphSequenceSha256": "c7ac7870d9fbb6de6fd667fc75b4817b26aeedf86312f90a97b358de8978e078",
+      "draftParagraphs": [
+        "Article 16. Disclosure of personal data",
+        "1. Personal data is only disclosed for a specific purpose. The scope of disclosure and the type of personal data disclosed must be consistent with the purpose of disclosure. Disclosure of personal data must not violate the legitimate rights and interests of the personal data subject.",
+        "2. Personal data is only disclosed in the following cases:",
+        "a) When there is consent from the personal data subject;",
+        "b) Comply with the provisions of law;",
+        "c) The cases specified in Point b, Clause 1, Article 19 of this Law;",
+        "d) Fulfill contractual obligations.",
+        "3. Public personal data must ensure accurate reflection of personal data from the original data source and facilitate agencies, organizations and individuals in accessing, exploiting and using.",
+        "4. Forms of personal data disclosure, including: posting data on websites, electronic information portals, mass media and other forms as prescribed by law.",
+        "5. Agencies, organizations and individuals disclosing personal data must strictly control and supervise the disclosure of personal data to ensure compliance with the purpose, scope and provisions of the law; prevent access, use, disclosure, copying, modification, deletion, destruction or other unauthorized processing of disclosed personal data in its capacity and conditions."
+      ],
+      "draftParagraphSequenceSha256": "f91ba8af90fbc67b01112cc54b68a2ed1811032266ff982a5e1fe26cfab673d0"
+    },
+    {
+      "id": "vn-pdpl-2025-art-17",
+      "sourceContentSha256": "53f9f00d395be1b4fed4a06bbfa647aac33cd4d3d8ee0c87643a8cf2a2fae85c",
+      "sourceParagraphCount": 10,
+      "sourceParagraphSequenceSha256": "53f9f00d395be1b4fed4a06bbfa647aac33cd4d3d8ee0c87643a8cf2a2fae85c",
+      "draftParagraphs": [
+        "Article 17. Transfer of personal data",
+        "1. The transfer of personal data is carried out in the following cases:",
+        "a) Transfer personal data with the consent of the personal data subject;",
+        "b) Sharing personal data between departments within the same agency or organization to process personal data in accordance with the established processing purposes;",
+        "c) Transfer personal data to continue processing personal data in case of division, separation, merger of agencies, organizations, administrative units and reorganization and conversion of state enterprise ownership; division, separation, merger, consolidation, and termination of operations of units and organizations; units and organizations established on the basis of the termination of operations of other units and organizations;",
+        "d) Personal data controllers, personal data controllers and processors transfer personal data to personal data processors and third parties to process personal data according to regulations;",
+        "d) Transfer personal data at the request of a competent state agency;",
+        "e) Transfer of personal data in the cases specified in Clause 1, Article 19 of this Law.",
+        "2. The transfer of personal data in the cases specified in Clause 1 of this Article with or without a fee is not determined as buying or selling personal data.",
+        "3. The Government shall detail this Article."
+      ],
+      "draftParagraphSequenceSha256": "2118735b2cc3ea94186fb8e6287d695a684a44514e2b39ffd96d004f3a048ba8"
+    },
+    {
+      "id": "vn-pdpl-2025-art-18",
+      "sourceContentSha256": "b368c2c8d88adf940d6b1afec20503f661bd6211a04ad90a2ff86f3bb6e0f931",
+      "sourceParagraphCount": 4,
+      "sourceParagraphSequenceSha256": "b368c2c8d88adf940d6b1afec20503f661bd6211a04ad90a2ff86f3bb6e0f931",
+      "draftParagraphs": [
+        "Article 18. Other activities in processing personal data",
+        "1. Personal data controllers, personal data controllers and processors, personal data processors, and third parties store personal data in a form appropriate to their operations and take measures to protect personal data during the storage process in accordance with the law.",
+        "2. Storage, access, retrieval, connection, coordination, confirmation, authentication of personal data and other activities affecting personal data are carried out in accordance with the provisions of this Law, the law on data, other relevant laws and according to the agreement between the parties.",
+        "3. Prioritize the exploitation and use of personal data in activities serving state management and activities of public service units to serve the piloting of a number of special mechanisms and policies to create breakthroughs in the development of science, technology, innovation and national digital transformation."
+      ],
+      "draftParagraphSequenceSha256": "66753864ab423614cbc39dbbf9ace3616bf4a6ff5eba7ba2f9693edb773f424c"
+    },
+    {
+      "id": "vn-pdpl-2025-art-19",
+      "sourceContentSha256": "e062bf1228bb3f901e5fd43f1f9d528f62b27ec27a0729875bcb3e91cf76f131",
+      "sourceParagraphCount": 12,
+      "sourceParagraphSequenceSha256": "e062bf1228bb3f901e5fd43f1f9d528f62b27ec27a0729875bcb3e91cf76f131",
+      "draftParagraphs": [
+        "Article 19. Processing of personal data in cases where the consent of the personal data subject is not required",
+        "1. Cases where personal data processing does not require the consent of the personal data subject include:",
+        "a) To protect the life, health, honor, dignity, rights and legitimate interests of personal data subjects or others in urgent cases; Protect your legitimate rights or interests, those of others or the interests of the State or organizations as necessary against acts of infringement of the above interests. The onus is on the personal data controller, personal data processor, personal data controller and processor, third party to prove this is the case;",
+        "b) To resolve an emergency situation; a threat to national security but not at the level of declaring a state of emergency; preventing and combating riots, terrorism, preventing and combating crime and law violations;",
+        "c) Serving the activities of state agencies and state management activities according to the provisions of law;",
+        "d) Implement the personal data subject's agreement with relevant agencies, organizations and individuals according to the provisions of law;",
+        "d) Other cases as prescribed by law.",
+        "2. Relevant agencies, organizations and individuals must establish a monitoring mechanism when processing personal data in cases where the consent of the personal data subject is not required, including:",
+        "a) Establish processes and regulations for processing personal data and determine the responsibilities of agencies, organizations and individuals in the process of processing personal data;",
+        "b) Implement appropriate personal data protection measures; regularly assess possible risks during the processing of personal data;",
+        "c) Carry out periodic inspection and assessment of compliance with laws, processes and regulations on processing personal data;",
+        "d) Have a mechanism to receive and process feedback and recommendations from relevant agencies, organizations and individuals."
+      ],
+      "draftParagraphSequenceSha256": "078be38df7e45d63a6c0b733140a6de6f0efe78ad836cae1b16aa505064599b4"
+    },
+    {
+      "id": "vn-pdpl-2025-art-20",
+      "sourceContentSha256": "cb44f27383b70bea8c63cdce49708a4cc0b6a881cb7ef2b0d7feb499f05092ae",
+      "sourceParagraphCount": 15,
+      "sourceParagraphSequenceSha256": "cb44f27383b70bea8c63cdce49708a4cc0b6a881cb7ef2b0d7feb499f05092ae",
+      "draftParagraphs": [
+        "Article 20. Cross-border transfer of personal data",
+        "1. Cases of cross-border transfer of personal data include:",
+        "a) Transfer personal data stored in Vietnam to a data storage system located outside the territory of the Socialist Republic of Vietnam;",
+        "b) Agencies, organizations and individuals in Vietnam transfer personal data to organizations and individuals abroad;",
+        "c) Agencies, organizations, and individuals in Vietnam or abroad use platforms outside the territory of the Socialist Republic of Vietnam to process personal data collected in Vietnam.",
+        "2. Agencies, organizations and individuals transferring personal data across borders carrying out the activities specified in Clause 1 of this Article must prepare a dossier assessing the impact of cross-border personal data transfer and send 01 original copy to the agency in charge of personal data protection within 60 days from the first date of cross-border transfer of personal data, except for the case specified in Clause 6 of this Article.",
+        "3. Assessment of the impact of cross-border personal data transfer is carried out once for the entire operating period of that agency, organization or individual and updated according to the provisions of Article 22 of this Law.",
+        "4. The agency in charge of personal data protection decides to periodically inspect cross-border transfers of personal data no more than once a year or to conduct unscheduled inspections when detecting violations of legal regulations on personal data protection or when incidents of exposure or loss of personal data occur.",
+        "5. The agency in charge of protecting personal data shall decide to request a stoppage of cross-border transfer of personal data by agencies, organizations and individuals when detecting that personal data transferred for use in activities may harm national defense and national security.",
+        "6. Cases where regulations on impact assessment of cross-border personal data transfer are not required include:",
+        "a) Cross-border transfer of personal data by competent state agencies;",
+        "b) Agencies and organizations store personal data of employees of that agency or organization on cloud computing services;",
+        "c) Personal data subjects transfer their personal data across borders;",
+        "d) Other cases as prescribed by the Government.",
+        "7. The Government regulates in detail Clauses 1, 5 and 6 of this Article; regulates dossier components, conditions, order, and procedures for assessing the impact of cross-border personal data transfer."
+      ],
+      "draftParagraphSequenceSha256": "371901037112ae64c74bb438706b3d7e2f88294a240052178b4c03f311a46d4d"
+    },
+    {
+      "id": "vn-pdpl-2025-art-21",
+      "sourceContentSha256": "18af8a791016d4e02d33d2807b4fc3dd0f9a4cefa321736a177f7c8174d93cc1",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "18af8a791016d4e02d33d2807b4fc3dd0f9a4cefa321736a177f7c8174d93cc1",
+      "draftParagraphs": [
+        "Article 21. Impact assessment of personal data processing",
+        "1. The personal data controller, the personal data controller and processor shall prepare and store records assessing the impact of personal data processing and send 01 original copy to the agency in charge of personal data protection within 60 days from the first day of processing personal data, except for the case specified in Clause 6 of this Article.",
+        "2. Assessment of the impact of processing personal data is carried out once for the entire operating period of the personal data controller, the party that controls and processes personal data and is updated according to the provisions of Article 22 of this Law.",
+        "3. The personal data processor shall prepare and store personal data processing impact assessment records according to the agreement with the personal data controller, the personal data controller and processor, except for the case specified in Clause 6 of this Article.",
+        "4. The agency in charge of personal data protection evaluates and requests the personal data controller, the personal data controller and processor, and the personal data processor to complete the dossier assessing the impact of personal data processing in case the dossier is not complete and in accordance with regulations.",
+        "5. The personal data controller, the personal data controller and processor, and the personal data processor update and supplement the personal data processing impact assessment file when there is a change in the content of the file sent to the agency in charge of personal data protection.",
+        "6. Competent state agencies are not required to implement regulations on impact assessment of personal data processing specified in this Article.",
+        "7. The Government regulates the composition of documents, conditions, order and procedures for assessing the impact of processing personal data."
+      ],
+      "draftParagraphSequenceSha256": "4d3995c6496a8025c36d2c0223bf350ac981e8e5473df2a1d1f386d4fe29fbc7"
+    },
+    {
+      "id": "vn-pdpl-2025-art-22",
+      "sourceContentSha256": "43d1148fe1bf2646e1ae7f5cb02d7cf9e6af31b3beb04f459866685d8718001f",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "43d1148fe1bf2646e1ae7f5cb02d7cf9e6af31b3beb04f459866685d8718001f",
+      "draftParagraphs": [
+        "Article 22. Updating personal data processing impact assessment records and cross-border personal data transfer impact assessment records",
+        "1. Records assessing the impact of processing personal data and records assessing the impact of transferring personal data across borders are updated periodically every 6 months when there are changes or updated immediately in the cases specified in Clause 2 of this Article.",
+        "2. Changes that need to be updated immediately include:",
+        "a) When an agency, organization or unit is reorganized, terminates operations, dissolves or goes bankrupt according to the provisions of law;",
+        "b) When there is a change in information about organizations or individuals providing personal data protection services;",
+        "c) When there is a change in the industry, occupation, or business service related to personal data processing registered in the personal data processing impact assessment dossier or the impact assessment dossier on cross-border personal data transfer.",
+        "3. Updating personal data processing impact assessment records and cross-border personal data transfer impact assessment records is done on the National Information Portal on personal data protection or at the agency in charge of personal data protection.",
+        "4. The Government regulates this Article in detail."
+      ],
+      "draftParagraphSequenceSha256": "25652595cfc6a1f81e198e3095f2acf76b6736d6a25c51fb1d5e31a7cac51e66"
+    },
+    {
+      "id": "vn-pdpl-2025-art-23",
+      "sourceContentSha256": "2e93a701151ff0808ecb57e32e7c7864ea8065e0b951deeea90e29d914a1a312",
+      "sourceParagraphCount": 10,
+      "sourceParagraphSequenceSha256": "2e93a701151ff0808ecb57e32e7c7864ea8065e0b951deeea90e29d914a1a312",
+      "draftParagraphs": [
+        "Article 23. Notification of violations of regulations on personal data protection",
+        "1. If the personal data controller, the party that controls and processes personal data, or a third party discovers a violation of regulations on personal data protection that may damage national defense, national security, social order and safety, or infringes upon the life, health, honor, dignity, or property of the personal data subject, it must notify the agency in charge of personal data protection no later than 72 hours from the date of discovery of the violation. In case the personal data processor detects a violation, it must promptly notify the personal data controller or the personal data controller and processor.",
+        "2. The personal data controller, the party that controls and processes personal data must make a record confirming the occurrence of a violation of regulations on personal data protection, and coordinate with the agency in charge of personal data protection to handle the violation.",
+        "3. Agencies, organizations and individuals notify the agency in charge of protecting personal data in the following cases:",
+        "a) Detecting violations of regulations on personal data protection;",
+        "b) Personal data is processed for the wrong purpose, not in accordance with the agreement between the personal data subject and the personal data controller, the party that controls and processes personal data;",
+        "c) Failure to ensure the rights or improper exercise of the rights of personal data subjects;",
+        "d) Other cases as prescribed by law.",
+        "4. The agency responsible for protecting personal data is responsible for receiving notifications and handling violations of regulations on personal data protection. The personal data controller, the party that controls and processes personal data, third parties and relevant agencies, organizations and individuals are responsible for preventing violations, overcoming consequences and coordinating with specialized agencies in charge of personal data protection in handling violations of regulations on personal data protection.",
+        "5. The Government regulates the content of notices of violations of regulations on personal data protection."
+      ],
+      "draftParagraphSequenceSha256": "dd2077fcb8a63c41e01a503e6eabf83cbf06b27a9eedfb0195705f6ca3b4d20f"
+    },
+    {
+      "id": "vn-pdpl-2025-art-24",
+      "sourceContentSha256": "598c27a2a2500e307476fdf67468c2e66841270aa6e85e8fb012f4aaa9f8a148",
+      "sourceParagraphCount": 6,
+      "sourceParagraphSequenceSha256": "598c27a2a2500e307476fdf67468c2e66841270aa6e85e8fb012f4aaa9f8a148",
+      "draftParagraphs": [
+        "Article 24. Protection of personal data of children, people with lost or limited civil capacity, and people with difficulties in cognition and behavior control",
+        "1. Protect personal data of children, people with lost or limited civil act capacity, and people with difficulties in cognition and behavior control according to the provisions of this Law.",
+        "2. For children, people with lost or limited civil act capacity, or people with difficulties in cognition and behavior control, the legal representative shall exercise the rights of the personal data subject on behalf of them, except for the cases specified in Clause 1, Article 19 of this Law. Processing children's personal data to publish and disclose information about the private life and personal secrets of children aged 7 years or older requires the consent of the child and their legal representative.",
+        "3. Stop processing personal data of children, people with lost or limited civil act capacity, and people with difficulties in cognition and behavior control in the following cases:",
+        "a) The person who has agreed as prescribed in Clause 2 of this Article withdraws consent to process personal data of children, people with lost or limited civil act capacity, people with difficulties in cognition and behavior control, unless otherwise prescribed by law;",
+        "b) At the request of a competent authority when there is sufficient evidence to prove that the processing of personal data may violate the rights and legitimate interests of children, people with lost or limited civil act capacity, and people with difficulties in cognition and behavior control, unless otherwise prescribed by law."
+      ],
+      "draftParagraphSequenceSha256": "2898a82ad2c8d40ca1be0c3f815a288e3c832992a360ccd77c95142d50a283d7"
+    },
+    {
+      "id": "vn-pdpl-2025-art-25",
+      "sourceContentSha256": "c16e86cf30b7316ce7a0d70084215c21e120e7c74fd663e70cf7ce0134dd605d",
+      "sourceParagraphCount": 12,
+      "sourceParagraphSequenceSha256": "c16e86cf30b7316ce7a0d70084215c21e120e7c74fd663e70cf7ce0134dd605d",
+      "draftParagraphs": [
+        "Article 25. Protection of personal data in recruitment, management and employment of employees",
+        "1. The responsibility to protect personal data of agencies, organizations and individuals in labor recruitment is regulated as follows:",
+        "a) Only be required to provide information for recruitment purposes of recruiting agencies, organizations and individuals in accordance with the provisions of law; The information provided is only used for recruitment purposes and other purposes as agreed upon in accordance with the provisions of law;",
+        "b) The information provided must be processed according to the provisions of law and must be approved by the candidate;",
+        "c) Must delete or destroy the applicant's provided information in case of non-recruitment, unless otherwise agreed with the applicant;",
+        "2. The responsibility to protect personal data of agencies, organizations and individuals in the management and employment of employees is stipulated as follows:",
+        "a) Comply with the provisions of this Law, laws on labor and employment, laws on data and other relevant laws;",
+        "b) Personal data of employees must be stored for a period of time as prescribed by law or as agreed upon;",
+        "c) Must delete or destroy the employee's personal data when terminating the contract, unless otherwise prescribed by agreement or law.",
+        "3. The processing of personal data of employees collected using technological and technical measures in employee management is regulated as follows:",
+        "a) Only apply technological and technical measures in accordance with the provisions of law and ensure the rights and interests of personal data subjects, on the basis that employees clearly know such measures;",
+        "b) Do not process or use personal data collected from technological and technical measures contrary to the provisions of law."
+      ],
+      "draftParagraphSequenceSha256": "403574d98fcacc83307fa02467e7d14ba6550c3dcdd6c584f26a1e120cf541b3"
+    },
+    {
+      "id": "vn-pdpl-2025-art-26",
+      "sourceContentSha256": "b1c73b2a6c96be3fae93982831f978dfed3abaa914fe236063ff04514a8ef590",
+      "sourceParagraphCount": 7,
+      "sourceParagraphSequenceSha256": "b1c73b2a6c96be3fae93982831f978dfed3abaa914fe236063ff04514a8ef590",
+      "draftParagraphs": [
+        "Article 26. Personal data protection for health information and in insurance business activities",
+        "1. Personal data protection for health information and in insurance business activities is regulated as follows:",
+        "a) There must be the consent of the personal data subject during the process of collecting and processing personal data, except for the case specified in Clause 1, Article 19 of this Law;",
+        "b) Fully apply regulations on personal data protection and other relevant laws.",
+        "2. Agencies, organizations, and individuals operating in the health field do not provide personal data to third parties that are organizations providing health care services or health insurance or life insurance services, except in cases of written request of the personal data subject or the case specified in Clause 1, Article 19 of this Law.",
+        "3. Organizations and individuals developing medical applications and insurance business applications must fully comply with regulations on personal data protection.",
+        "4. In case an enterprise does reinsurance or reinsurance business and transfers personal data to partners, it should be clearly stated in the contract with the customer."
+      ],
+      "draftParagraphSequenceSha256": "78d445d1e73f06e98f5e4690cb06dfca2000a233879af14a651b8bdb2fae841f"
+    },
+    {
+      "id": "vn-pdpl-2025-art-27",
+      "sourceContentSha256": "ec45b8ef8fbbb9a2cec1156c04a90bcebe6daf59eed6cb33a481ba018db8af53",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "ec45b8ef8fbbb9a2cec1156c04a90bcebe6daf59eed6cb33a481ba018db8af53",
+      "draftParagraphs": [
+        "Article 27. Protection of personal data in financial, banking and credit information activities",
+        "1. Organizations and individuals operating in the fields of finance, banking, and credit information activities have the following responsibilities:",
+        "a) Fully implement regulations on protection of sensitive personal data, safety and security standards in financial and banking activities according to the provisions of law;",
+        "b) Do not use the credit information of the personal data subject to score, credit rank, evaluate credit information, or assess the creditworthiness of the personal data subject without the consent of the personal data subject;",
+        "c) Only collect personal data necessary for credit information activities from sources in accordance with the provisions of this Law and other relevant laws;",
+        "d) Notify personal data subjects in case of disclosure or loss of information about bank accounts, finances, credit, or credit information.",
+        "2. Organizations and individuals performing credit information activities are responsible for complying with the provisions of this Law; Apply measures to prevent unauthorized access, use, disclosure, and editing of customers' personal data; have solutions to restore customers' personal data in case of loss; security in the process of collecting, providing and processing customers' personal data to serve credit information assessment.",
+        "3. The Government shall detail this Article."
+      ],
+      "draftParagraphSequenceSha256": "bb91086e45685e9e30209fb9f4cb7c3f7909c204e996a0adf76185677e85ebca"
+    },
+    {
+      "id": "vn-pdpl-2025-art-28",
+      "sourceContentSha256": "1bec3dc56ba1c9899432bbd03b694a7ca1bec772592d1403fa35dd528610413d",
+      "sourceParagraphCount": 11,
+      "sourceParagraphSequenceSha256": "1bec3dc56ba1c9899432bbd03b694a7ca1bec772592d1403fa35dd528610413d",
+      "draftParagraphs": [
+        "Article 28. Protection of personal data in advertising service business",
+        "1. Organizations and individuals providing advertising services may only use personal data of customers transferred by the personal data controller, controller and processor of personal data according to agreement or collected through their business activities to provide advertising services. The collection, use, and transfer of personal data must ensure the rights of personal data subjects specified in Article 4 of this Law.",
+        "2. The personal data controller and the party that controls and processes personal data may only transfer personal data to organizations and individuals providing advertising services in accordance with the provisions of law.",
+        "3. Processing of customers' personal data to provide advertising services must be approved by the customer, on the basis that the customer clearly knows the content, method, form, and frequency of product introduction; Provide methods for customers to refuse to receive advertising information.",
+        "4. The use of personal data for advertising must be in accordance with the law on preventing and combating spam messages, spam emails, spam calls and the law on advertising.",
+        "5. Personal data subjects have the right to request to stop receiving information from advertising services. Organizations and individuals providing advertising services must provide mechanisms and stop advertising at the request of personal data subjects.",
+        "6. Organizations and individuals providing advertising services may not subcontract or agree for another organization or individual to perform all advertising services using personal data on their behalf.",
+        "7. Organizations and individuals providing advertising services are responsible for proving the use of customers' personal data for advertising; comply with the provisions of Clauses 1, 2, 3, 4 of this Article and the provisions of law on advertising.",
+        "8. Organizations and individuals that use personal data for behavioral or specific targeted advertising or personalization of advertising must comply with the provisions of this Article and the following regulations:",
+        "a) Personal data may only be collected through monitoring websites, portals, and applications with the consent of the personal data subject;",
+        "b) A method must be established to allow personal data subjects to refuse to share data; determine storage time; Delete and destroy data when no longer needed."
+      ],
+      "draftParagraphSequenceSha256": "fd395fc584c17cce0c0592657eb081dd98b37aaa63cf5bc6409e826fd9ff1025"
+    },
+    {
+      "id": "vn-pdpl-2025-art-29",
+      "sourceContentSha256": "4d01c9634d7c4a9ec64d089bc6613c6c469dd73548174ca6dcd00ea701d6415e",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "4d01c9634d7c4a9ec64d089bc6613c6c469dd73548174ca6dcd00ea701d6415e",
+      "draftParagraphs": [
+        "Article 29. Personal data protection for social networking platforms and online media services",
+        "Organizations and individuals providing social network services and online media services have the following responsibilities:",
+        "1. Clearly notify the content of personal data collected when personal data subjects install and use social networks and online communication services; Do not collect personal data illegally and beyond the scope of the agreement with the customer;",
+        "2. Do not request to provide images or videos containing full content or partial identification documents as an account authentication factor;",
+        "3. Provide options for users to refuse collection and sharing of data files (called cookies);",
+        "4. Provide the option to \"not track\" or only track usage of social networks and online media services with the user's consent;",
+        "5. Do not eavesdrop, eavesdrop or record calls and read text messages without the consent of the personal data subject, unless otherwise prescribed by law;",
+        "6. Publicize the privacy policy, clearly explaining how to collect, use and share personal data; provide users with mechanisms to access, edit, delete data and set privacy rights for personal data, and report security and privacy violations; protect personal data of Vietnamese citizens when transferring data across borders; Build a process to handle violations of personal data protection quickly and effectively."
+      ],
+      "draftParagraphSequenceSha256": "872374e1a712dc92e077fd28653f5c817adcd9aea05d0dde458cc1ed49d8bf22"
+    },
+    {
+      "id": "vn-pdpl-2025-art-30",
+      "sourceContentSha256": "4d19128aad15bc92b3c538f0242049ee646b5ec2770258b03fe0765306dad6a5",
+      "sourceParagraphCount": 7,
+      "sourceParagraphSequenceSha256": "4d19128aad15bc92b3c538f0242049ee646b5ec2770258b03fe0765306dad6a5",
+      "draftParagraphs": [
+        "Article 30. Protection of personal data in big data processing, artificial intelligence, blockchain, virtual universe, cloud computing",
+        "1. Personal data in the environment of big data, artificial intelligence, blockchain, virtual universe and cloud computing must be processed for the right purpose and limited to the necessary scope, ensuring the legitimate rights and interests of the personal data subject.",
+        "2. The processing of personal data in the environment of big data, artificial intelligence, blockchain, virtual universe and cloud computing must comply with the provisions of this Law and other relevant laws; in accordance with ethical standards and fine customs of Vietnam.",
+        "3. Systems and services using big data, artificial intelligence, blockchain, virtual universe and cloud computing must be integrated with appropriate personal data security measures; Must use appropriate authentication, identification and access authorization methods to process personal data.",
+        "4. Processing personal data using artificial intelligence must be classified according to risk level to have appropriate personal data protection measures.",
+        "5. Do not use or develop big data processing systems, artificial intelligence, blockchain, virtual universe, cloud computing that use personal data to damage national defense, national security, social order and safety or infringe on the life, health, honor, dignity and property of others.",
+        "6. The Government shall detail this Article."
+      ],
+      "draftParagraphSequenceSha256": "05785c6821f674ab3d6ee767141887c7d019ec8702b3c3b7e9fadfb1783a7103"
+    },
+    {
+      "id": "vn-pdpl-2025-art-31",
+      "sourceContentSha256": "a061ccac64c86a7bdd66c1798988cd93ff084c6f6f7b9330cba7169e8c4ba25e",
+      "sourceParagraphCount": 9,
+      "sourceParagraphSequenceSha256": "a061ccac64c86a7bdd66c1798988cd93ff084c6f6f7b9330cba7169e8c4ba25e",
+      "draftParagraphs": [
+        "Article 31. Personal data protection for personal location data and biometric data",
+        "1. Personal location data is data determined through location technology to know the location and help identify specific people.",
+        "2. Biometric data is data about physical attributes, unique and stable biological characteristics of a person to identify that person.",
+        "3. Personal data protection for personal location data is regulated as follows:",
+        "a) Do not apply location tracking via radio frequency identification cards and other technologies, except in cases where there is consent from the personal data subject or in cases where there is a request from a competent authority according to the provisions of law or in cases where the law has other provisions;",
+        "b) Organizations and individuals providing mobile application platforms must notify users about the use of personal location data; take measures to prevent the collection of personal location data by unrelated organizations and individuals; provides users with personal location tracking options.",
+        "4. The protection of biometric data is regulated as follows:",
+        "a) Agencies, organizations and individuals collecting and processing biometric data must have physical security measures for their biometric data storage and transmission devices; restrict access to biometric data; have a monitoring system to prevent and detect violations of biometric data; comply with relevant laws and international standards;",
+        "b) In case biometric data processing causes damage to the personal data subject, the organization or individual collecting and processing biometric data must notify that personal data subject according to Government regulations."
+      ],
+      "draftParagraphSequenceSha256": "baca06ac1094b319f2465a56e8e132d3622b1378aba09519f754a54d9de01269"
+    },
+    {
+      "id": "vn-pdpl-2025-art-32",
+      "sourceContentSha256": "d2cfc4c1e5760c1b677ed68cad68d49b2c507c2c0ac77c80f0719b8b3f1546c7",
+      "sourceParagraphCount": 9,
+      "sourceParagraphSequenceSha256": "d2cfc4c1e5760c1b677ed68cad68d49b2c507c2c0ac77c80f0719b8b3f1546c7",
+      "draftParagraphs": [
+        "Article 32. Protection of personal data obtained from audio and video recording activities in public places and public activities",
+        "1. Agencies, organizations, and individuals may record audio, video, and process personal data obtained from audio and video recording activities in public places and public activities without the consent of the personal data subject in the following cases:",
+        "a) To perform national defense tasks, protect national security, ensure social order and safety, and protect the legitimate rights and interests of agencies, organizations and individuals;",
+        "b) Sound, images, and other identifying information obtained from public activities including conferences, seminars, sports competitions, art performances and other public activities without damaging the honor, dignity and reputation of the personal data subject;",
+        "c) Other cases as prescribed by law.",
+        "2. In case of audio or video recording as prescribed in Clause 1 of this Article, agencies, organizations and individuals are responsible for notifying or using other forms of information to let the personal data subject know that he or she is being audio or video recorded, unless otherwise prescribed by law.",
+        "3. Collected personal data is only processed and used in accordance with the processing purpose, and must not be used for illegal purposes or to infringe on the legitimate rights and interests of the personal data subject.",
+        "4. Personal data obtained from audio and video recording activities in public places and public activities will only be stored for the period necessary to serve the purpose of collection, unless otherwise prescribed by law. When the storage period expires, personal data must be deleted and destroyed according to the provisions of this Law.",
+        "5. Agencies, organizations, and individuals that record audio, video, and process personal data obtained from audio or video recording in the cases specified in Clause 1 of this Article are responsible for protecting personal data according to the provisions of this Law and other relevant laws."
+      ],
+      "draftParagraphSequenceSha256": "066aa0ee9f498a51e42893fedb4077928a6646e2327bd342613741297e53a76c"
+    },
+    {
+      "id": "vn-pdpl-2025-art-33",
+      "sourceContentSha256": "8d1008e4373f9a08c47a329cac9e3d049ad21875d6682748ff14a43f06d028d2",
+      "sourceParagraphCount": 8,
+      "sourceParagraphSequenceSha256": "8d1008e4373f9a08c47a329cac9e3d049ad21875d6682748ff14a43f06d028d2",
+      "draftParagraphs": [
+        "Article 33. Personal data protection force",
+        "1. Personal data protection force includes:",
+        "a) Specialized agency for personal data protection under the Ministry of Public Security;",
+        "b) Departments and personnel protecting personal data in agencies and organizations;",
+        "c) Organizations and individuals providing personal data protection services;",
+        "d) Organizations and individuals are mobilized to participate in protecting personal data.",
+        "2. Agencies and organizations are responsible for designating departments and personnel qualified to protect personal data or hiring organizations and individuals to provide personal data protection services.",
+        "3. The Government regulates the conditions and tasks of personal data protection departments and personnel in agencies and organizations; organizations and individuals providing personal data protection services; personal data processing services."
+      ],
+      "draftParagraphSequenceSha256": "5d85c5826ce79dbe6f9c0d071f4504cb60688224ea6a98bdb0665eb494ef391a"
+    },
+    {
+      "id": "vn-pdpl-2025-art-34",
+      "sourceContentSha256": "60a6930eb8506788faacce5b85deff3a6e093c7713dea5316e920a0ad591f5a6",
+      "sourceParagraphCount": 4,
+      "sourceParagraphSequenceSha256": "60a6930eb8506788faacce5b85deff3a6e093c7713dea5316e920a0ad591f5a6",
+      "draftParagraphs": [
+        "Article 34. Standards and technical regulations on personal data protection",
+        "1. Standards on personal data protection include standards for information systems, hardware, software, management, operation, processing, and protection of personal data published and recognized for application in Vietnam.",
+        "2. Technical regulations on personal data protection include technical regulations on information systems, hardware, software, management, operation, processing, and protection of personal data developed, promulgated and applied in Vietnam.",
+        "3. The promulgation of standards and technical regulations on personal data protection shall comply with the provisions of law on standards and technical regulations."
+      ],
+      "draftParagraphSequenceSha256": "74cdd6966f75884f6bad07b9b5c37f36ebbefcc5f1b061688f99bf297f21dc59"
+    },
+    {
+      "id": "vn-pdpl-2025-art-35",
+      "sourceContentSha256": "d05971fd1c7cbc03b23fc20d729198af0b9d0879fe730de3ef3a9be145c237c5",
+      "sourceParagraphCount": 2,
+      "sourceParagraphSequenceSha256": "d05971fd1c7cbc03b23fc20d729198af0b9d0879fe730de3ef3a9be145c237c5",
+      "draftParagraphs": [
+        "Article 35. Checking personal data protection activities",
+        "Inspection of personal data protection activities is carried out in accordance with the provisions of this Law and the Government's regulations."
+      ],
+      "draftParagraphSequenceSha256": "e3afe02791644983f308d207d937f4b97a651c54521f37d34fe19443c75189af"
+    },
+    {
+      "id": "vn-pdpl-2025-art-36",
+      "sourceContentSha256": "116f2eb8f6df6a19445d025474e3109d071fb0b41ca9ddd51410a3c052c8f49f",
+      "sourceParagraphCount": 6,
+      "sourceParagraphSequenceSha256": "116f2eb8f6df6a19445d025474e3109d071fb0b41ca9ddd51410a3c052c8f49f",
+      "draftParagraphs": [
+        "Article 36. Responsibility for state management of personal data protection",
+        "1. The Government uniformly implements state management of personal data protection.",
+        "2. The Ministry of Public Security is the focal agency responsible to the Government for implementing state management of personal data protection, except for content under the management of the Ministry of National Defense.",
+        "3. The Ministry of National Defense is responsible before the Government for implementing state management of personal data protection within its scope of management.",
+        "4. Ministries, ministerial-level agencies, and Government agencies perform state management of personal data protection for industries and fields under their management according to the provisions of law and assigned functions and tasks.",
+        "5. Provincial People's Committees carry out state management of personal data protection according to the provisions of law and assigned functions and tasks."
+      ],
+      "draftParagraphSequenceSha256": "673cdae238e50f016b0a92ccf701ccba549fca74874b9c1dd69fcb9596565273"
+    },
+    {
+      "id": "vn-pdpl-2025-art-37",
+      "sourceContentSha256": "446ad87d29d44738528c41c3446ffd91a5c00a08920ee9e144945a91043c2037",
+      "sourceParagraphCount": 21,
+      "sourceParagraphSequenceSha256": "446ad87d29d44738528c41c3446ffd91a5c00a08920ee9e144945a91043c2037",
+      "draftParagraphs": [
+        "Article 37. Responsibilities of personal data controllers, personal data processors, personal data controllers and processors",
+        "1. Responsibilities of the personal data controller are as follows:",
+        "a) Clearly state the responsibilities, rights and obligations of the parties in agreements and contracts related to personal data processing according to the provisions of this Law and other relevant laws;",
+        "b) Decide on the purpose and means of processing personal data in documents and agreements with personal data subjects, ensuring compliance with the principles and content prescribed by this Law;",
+        "c) Implement appropriate management and technical measures to protect personal data according to the provisions of law, review and update these measures when necessary;",
+        "d) Notify violations of regulations on personal data protection as prescribed in Article 23 of this Law;",
+        "d) Select an appropriate personal data processor to process personal data;",
+        "e) Ensure the rights of personal data subjects as prescribed in Article 4 of this Law;",
+        "g) Be responsible to the personal data subject for damages caused by the processing of personal data;",
+        "h) Prevent unauthorized collection of personal data from our systems, equipment and services;",
+        "i) Coordinate with the Ministry of Public Security and competent state agencies in protecting personal data, providing information to serve the investigation and handling of violations of the law on personal data protection;",
+        "k) Perform other responsibilities according to the provisions of this Law and other relevant laws.",
+        "2. Responsibilities of personal data processors are as follows:",
+        "a) Only receive personal data after there is an agreement or contract on personal data processing with the personal data controller, the party that controls and processes personal data;",
+        "b) Process personal data in accordance with agreements and contracts signed with the personal data controller and the party that controls and processes personal data;",
+        "c) Fully implement personal data protection measures according to the provisions of this Law and other relevant laws;",
+        "d) Be responsible to the personal data controller, personal data controller and processor for damages caused by the processing of personal data;",
+        "d) Prevent unauthorized collection of personal data from our systems, equipment, and services;",
+        "e) Coordinate with the Ministry of Public Security and competent state agencies in protecting personal data, providing information to serve the investigation and handling of violations of the law on personal data protection;",
+        "g) Carry out other responsibilities according to the provisions of this Law and other relevant laws.",
+        "3. The party controlling and processing personal data is responsible for fully implementing the provisions in Clauses 1 and 2 of this Article."
+      ],
+      "draftParagraphSequenceSha256": "1d9fe1a0531a21911512b42ddf2ab82dd8f3f549ad2726a939e927eb942ce2db"
+    },
+    {
+      "id": "vn-pdpl-2025-art-38",
+      "sourceContentSha256": "d3ec40e18ad72c397a9683c22588d64032fd773f028f8faf627f6a9c336e229a",
+      "sourceParagraphCount": 5,
+      "sourceParagraphSequenceSha256": "d3ec40e18ad72c397a9683c22588d64032fd773f028f8faf627f6a9c336e229a",
+      "draftParagraphs": [
+        "Article 38. Implementation effect",
+        "1. This Law takes effect from January 1, 2026.",
+        "2. Small businesses and startups have the right to choose whether or not to implement the provisions of Article 21, Article 22 and Clause 2, Article 33 of this Law within 5 years from the effective date of this Law, except for small businesses and startups providing personal data processing services, directly processing sensitive personal data or processing personal data of a large number of personal data subjects.",
+        "3. Business households and micro enterprises are not required to comply with the provisions of Article 21, Article 22 and Clause 2, Article 33 of this Law, except for business households and micro enterprises providing personal data processing services, directly processing sensitive personal data or processing personal data of a large number of personal data subjects.",
+        "4. The Government regulates in detail Clauses 2 and 3 of this Article."
+      ],
+      "draftParagraphSequenceSha256": "86fc084fc7cf10ba9ff7c8757c8a2ded272f4d1ed0aa2f64cf9cef2a3ce5f495"
+    },
+    {
+      "id": "vn-pdpl-2025-art-39",
+      "sourceContentSha256": "b099de66b97b01018637392f4d5c71523513936c08c92dc6ba2ed51ae86683f1",
+      "sourceParagraphCount": 3,
+      "sourceParagraphSequenceSha256": "b099de66b97b01018637392f4d5c71523513936c08c92dc6ba2ed51ae86683f1",
+      "draftParagraphs": [
+        "Article 39. Transitional regulations",
+        "1. Ongoing personal data processing activities that have been agreed upon or agreed upon by the personal data subject in accordance with the provisions of Decree No. 13/2023/ND-CP dated April 17, 2023 of the Government before the effective date of this Law will continue to be performed without having to request re-consent or re-agreement.",
+        "2. Dossiers assessing the impact of processing personal data, dossiers assessing the impact of transferring personal data abroad according to the provisions of Decree No. 13/2023/ND-CP dated April 17, 2023 of the Government that have been received by the agency in charge of protecting personal data before the effective date of this Law will continue to be used and do not have to prepare dossiers assessing the impact of processing personal data or dossiers assessing impacts. Cross-border transfers of personal data in accordance with the provisions of this Law; Updating the above-mentioned records after the effective date of this Law shall be carried out in accordance with the provisions of this Law."
+      ],
+      "draftParagraphSequenceSha256": "4b27a61c394d5724e32e8ba637e45dbb0cf182b13cc4b545a8897aaf65e9975e"
+    }
+  ]
+}

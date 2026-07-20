@@ -61,6 +61,94 @@ def element_sha256(element: ET.Element) -> str:
     return content_sha256(ET.tostring(element, encoding="unicode"))
 
 
+def english_display_segments(value: str | None) -> tuple[list[str], str]:
+    """Normalize MOLEG English API line layout without rewriting its wording."""
+
+    if not value:
+        return [], ""
+    segments = [
+        compact_text(line)
+        for line in value.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+        if compact_text(line)
+    ]
+    return segments, "\n\n".join(segments)
+
+
+def parse_moleg_english_open_data(path: Path) -> dict:
+    """Parse a pinned MOLEG ``target=elaw`` XML response.
+
+    The API supplies complete Article bodies in ``joCts`` and addenda in
+    ``arCts``.  This parser changes only whitespace used for display and keeps
+    a hash of each source XML node so importers can prove completeness.
+    """
+
+    root = ET.parse(path).getroot()
+    info = root.find("InfSection")
+    if root.tag != "Law" or info is None:
+        raise ValueError(f"Not a MOLEG English law response: {path}")
+
+    articles: dict[str, dict] = {}
+    structural_headings: list[str] = []
+    for node in root.findall("./JoSection/Jo"):
+        if compact_text(node.findtext("joYn")) != "Y":
+            heading = compact_text(node.findtext("joCts"))
+            if heading:
+                structural_headings.append(heading)
+            continue
+        base = compact_text(node.findtext("joNo"))
+        branch = compact_text(node.findtext("joBrNo"))
+        if not base:
+            raise ValueError("MOLEG English Article has no joNo")
+        number = str(int(base))
+        if branch and int(branch):
+            number = f"{number}-{int(branch)}"
+        paragraphs, full_text = english_display_segments(node.findtext("joCts"))
+        if not full_text:
+            raise ValueError(f"MOLEG English Article {number} has no joCts")
+        if number in articles:
+            raise ValueError(f"Duplicate MOLEG English Article number {number}")
+        articles[number] = {
+            "articleNumber": number,
+            "title": compact_text(node.findtext("joTtl")) or f"Article {number}",
+            "paragraphs": paragraphs,
+            "fullText": full_text,
+            "sourceXmlPath": (
+                f"JoSection/Jo[joNo='{base}' and joBrNo='{branch or '00'}']"
+            ),
+            "sourceNodeSha256": element_sha256(node),
+            "contentSha256": content_sha256(full_text),
+        }
+
+    supplements: list[dict] = []
+    for index, node in enumerate(root.findall("./ArSection/Ar"), start=1):
+        paragraphs, full_text = english_display_segments(node.findtext("arCts"))
+        if not full_text:
+            raise ValueError(f"MOLEG English addendum {index} has no arCts")
+        supplements.append(
+            {
+                "supplementNumber": str(index),
+                "promulgatedOn": compact_text(node.findtext("arAncYd")),
+                "amendingActNumber": compact_text(node.findtext("arAncNo")),
+                "title": "Addenda",
+                "paragraphs": paragraphs,
+                "fullText": full_text,
+                "sourceXmlPath": f"ArSection/Ar[{index}]",
+                "sourceNodeSha256": element_sha256(node),
+                "contentSha256": content_sha256(full_text),
+            }
+        )
+
+    return {
+        "lawId": compact_text(info.findtext("lsId")),
+        "promulgatedOn": compact_text(info.findtext("ancYd")),
+        "actNumber": compact_text(info.findtext("ancNo")),
+        "englishTitle": compact_text(info.findtext("lsNmEng")),
+        "articles": articles,
+        "supplements": supplements,
+        "structuralHeadingCount": len(structural_headings),
+    }
+
+
 def article_number(element: ET.Element) -> str:
     number = compact_text(element.findtext("조문번호"))
     branch = compact_text(element.findtext("조문가지번호"))

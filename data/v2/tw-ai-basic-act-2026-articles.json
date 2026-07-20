@@ -22,11 +22,22 @@
         ],
         "fullText": "This Act is enacted to build a smart nation; promote the human-centric research, development, and industrial advancement of artificial intelligence (AI); establish a safe environment for AI applications; ensure digital equity; safeguard the fundamental rights of the people; enhance social well-being; improve the quality of life for the people; foster the sustainable development of society and the nation; preserve national cultural values; and enhance international competitiveness, as well as to ensure that the application of technology complies with social ethics. Matters not stipulated in this Act shall be governed by the provisions of other laws.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "5818baf4c7c295991a9984f4230602186cbcd39d49b0dbef0018f9fdb1b8f87b"
+        "contentSha256": "5818baf4c7c295991a9984f4230602186cbcd39d49b0dbef0018f9fdb1b8f87b",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -77,11 +88,22 @@
         ],
         "fullText": "For the purposes of this Act, the term \"competent authority\" as used in this Act refers to the National Science and Technology Council at the central government level, and the special municipality, county, or city governments at the local level.\n\nMatters stipulated in this Act that fall within the purview of various central competent authorities shall be handled by those respective competent authorities.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "3ae75f85c1efe443762a34570f3d05c74979cc4d86251b48087717b89a5967aa"
+        "contentSha256": "3ae75f85c1efe443762a34570f3d05c74979cc4d86251b48087717b89a5967aa",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -131,11 +153,22 @@
         ],
         "fullText": "The term \"artificial intelligence\" as used in this Act refers to a system capable of autonomous operation, which, through input or sensing and by means of machine learning and algorithms, can generate outputs such as predictions, content, recommendations, or decisions that affect physical or virtual environments to achieve explicit or implicit objectives.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "1484f732bcedcde8200b8eae7fa2cd5ddc0717c69bc481072472440c8f45f4c4"
+        "contentSha256": "1484f732bcedcde8200b8eae7fa2cd5ddc0717c69bc481072472440c8f45f4c4",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -199,11 +232,22 @@
         ],
         "fullText": "In promoting the research, development, and application of AI, the government shall, while balancing public interest, digital equity, the promotion of innovation and R&D, and the enhancement of national competitiveness, develop sound governance and infrastructure, and adhere to the following principles:\n\n1. Sustainable Development and Well-being: Social equity and environmental sustainability shall be considered simultaneously. Appropriate education and training shall be provided to reduce potential digital gaps and help citizens adapt to the changes brought about by artificial intelligence.\n\n2. Human Autonomy: Shall support human autonomy, respect rights of personality and other fundamental human rights and cultural values, and ensure human oversight, implementing a human-centered approach that respects the rule of law and democratic values.\n\n3. Privacy Protection and Data Governance: Personal data privacy must be properly protected, and corporate trade secrets must be respected to avoid the risk of data leakage while the principle of data minimization should be adopted. At the same time, open access to and reuse of non-sensitive data should be promoted, provided that it complies with constitutional protection of privacy rights.\n\n4. Cybersecurity and Safety: In the process of AI R&D and application, cybersecurity measures shall be established to prevent security threats and attacks, ensuring the robustness and safety of the system.\n\n5. Transparency and Explainability: The outputs of AI shall be accompanied by appropriate disclosures or labeled to facilitate the assessment of potential risks and understanding of their impact on relevant rights and interests, thereby enhancing the trustworthiness of AI.\n\n6. Fairness and Non-Discrimination: In the process of AI R&D and application, efforts shall be made to minimize the risks of algorithmic bias and discrimination, and the results should not discriminate against specific groups.\n\n7. Accountability: It is essential to ensure that corresponding responsibilities are assumed, including internal governance responsibilities and external social responsibilities.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "ba2e6b31feb0b64eba0e377c58c4470cf7de189287d47fcc1dfbb65a8d6e9ee4"
+        "contentSha256": "ba2e6b31feb0b64eba0e377c58c4470cf7de189287d47fcc1dfbb65a8d6e9ee4",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -256,11 +300,22 @@
         ],
         "fullText": "The government shall ensure that the application of artificial intelligence does not result in any of the following: infringement upon the people's life, body, liberty, or property; disruption of social order, national security, or the ecological environment; or conduct that violates relevant laws and regulations, including bias, discrimination, false advertising, or the dissemination of misleading or false information.\n\nThe government shall act in the best interests of children and adolescents. If an AI product or system is identified as a high-risk application by a central competent authority for the relevant industry in consultation with the Ministry of Digital Affairs, it shall come with advisory notices or warnings.\n\nThe Ministry of Digital Affairs and other relevant agencies shall provide or recommend assessment and verification tools or methods to assist the competent authorities for the relevant industries in carrying out the matters described in the preceding paragraph.\n\nThe formulation of the verification tools and methods mentioned in the preceding paragraph shall seek the opinions of relevant interest groups, industry, academics, social organizations, and legal experts.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "11099768ff2b85764bc6b278bedbe9d49e5e970dac7b4cb706629db93aa9501c"
+        "contentSha256": "11099768ff2b85764bc6b278bedbe9d49e5e970dac7b4cb706629db93aa9501c",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -312,11 +367,22 @@
         ],
         "fullText": "The Executive Yuan shall establish a National AI Strategic Committee, to be convened by the Premier of the Executive Yuan and composed of scholars, experts, representatives from AI-related private organizations and industry, ministers without portfolio, heads or representatives of relevant agencies, and heads of special municipality and county/city governments. The Committee shall coordinate, promote, and supervise national AI affairs and formulate the National AI Development Guidelines.\n\nThe Committee mentioned in the preceding paragraph shall convene at least once a year to review the National AI Development Guidelines. In the event of a sudden emergency or major incident, a special meeting shall be convened.\n\nThe administrative and staff operations of the Committee mentioned in the first paragraph shall be handled by the National Science and Technology Council.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "40ac3a99f650c6a91c3b3e1870d0e9e0b7cb0818593a244fee65de5e34b1df7e"
+        "contentSha256": "40ac3a99f650c6a91c3b3e1870d0e9e0b7cb0818593a244fee65de5e34b1df7e",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -366,11 +432,22 @@
         ],
         "fullText": "To enhance the knowledge and skills of the public regarding AI, the government shall continuously promote education in artificial intelligence and ethics in schools at all levels, industries, organizations, society, and public agencies (institutions), and shall cultivate the digital literacy of the public.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "18a4651c0977c8fbefe668783dbd9825266da1572f60a582abc453cd585a0763"
+        "contentSha256": "18a4651c0977c8fbefe668783dbd9825266da1572f60a582abc453cd585a0763",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -420,11 +497,22 @@
         ],
         "fullText": "The government shall implement AI development policies and encourage cross-disciplinary cooperation, exchange, and the establishment of infrastructure for talent and technology among government, industry, and academia.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "44ff33496f8277e459f447bccdacb15cdcbb9f406bfd0b8be5b8092d4d8f7a37"
+        "contentSha256": "44ff33496f8277e459f447bccdacb15cdcbb9f406bfd0b8be5b8092d4d8f7a37",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -474,11 +562,22 @@
         ],
         "fullText": "The government shall, within its financial capacity, make adequate budgetary allocations and take necessary measures to continuously ensure that funding meets the needs of promoting AI policy development.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "4d67874129613df1effe0f93bf54a1abcf470ed9a8096df8fc5d9f938d12c4ac"
+        "contentSha256": "4d67874129613df1effe0f93bf54a1abcf470ed9a8096df8fc5d9f938d12c4ac",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -528,11 +627,22 @@
         ],
         "fullText": "The government shall actively promote the R&D, application, and infrastructure of AI, properly plan the overall allocation of resources, and handle subsidies, commissions, funding, investments, incentives, and guidance for AI-related industries, or provide fiscal incentives such as tax and financial measures. An annual performance report system shall be established, and relevant results and evaluation opinions shall be publicly announced on a regular basis to serve as a basis for the continuous promotion of policies and resource adjustments.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "80c56196a06f90935d0ae5c288506fe27c7d04ac5abef24732b3b7dd948f9ad5"
+        "contentSha256": "80c56196a06f90935d0ae5c288506fe27c7d04ac5abef24732b3b7dd948f9ad5",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -583,11 +693,22 @@
         ],
         "fullText": "When developing, training, testing, and verifying the operational impact of emerging AI technologies, the government shall provide for reasonable use, support, and subsidy measures, and shall improve the legal framework for AI research, development, and application. In cases where the interpretation and application of relevant regulations conflict with other laws, the principle of promoting the provision of new technologies and services shall take priority, provided that it is consistent with the fundamental principles set forth in Article 4 of this Act.\n\nTo promote the innovation and sustainable development of AI technology, the competent authorities for the relevant industries may, for innovative AI products or services, establish or complete a safe environment for innovative AI R&D and application services experimentation.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "7a3b8ebac2e642154da548c012f9d691d1ffa32b9756c596e58ccd4de18e13c8"
+        "contentSha256": "7a3b8ebac2e642154da548c012f9d691d1ffa32b9756c596e58ccd4de18e13c8",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -637,11 +758,22 @@
         ],
         "fullText": "The government shall strive to promote international cooperation related to AI; and, based on the principle of public-private partnership, shall actively promote the innovative applications of AI in collaboration with the private sector.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "6cedf9c89beffe8f23ab93d7a2547b4270ea43d8b9a907f7e99b46d70e359a84"
+        "contentSha256": "6cedf9c89beffe8f23ab93d7a2547b4270ea43d8b9a907f7e99b46d70e359a84",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -692,11 +824,22 @@
         ],
         "fullText": "The government shall establish mechanisms for open data, data sharing, and data reuse to enhance the availability of data for AI, and shall regularly review and revise relevant laws and regulations.\n\nThe government shall strive to improve our quality and quantity of data used for AI, ensuring that training and output results sufficiently reflect the nation's diverse cultural values and protect intellectual property rights.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "5de1dbd8820335ff69b4f966f8aa529e43a0cba14c4546119ff33dba27bfc6e6"
+        "contentSha256": "5de1dbd8820335ff69b4f966f8aa529e43a0cba14c4546119ff33dba27bfc6e6",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -746,11 +889,22 @@
         ],
         "fullText": "Each competent authority for the relevant industries shall consult with the competent authority for personal data protection, and shall, in the process of AI R&D and application, avoid the unnecessary collection, processing, or use of personal data, and shall promote the integration of personal data protection by design and by default measures or mechanisms to safeguard the rights and interests of the data subjects.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "ddc955474ef57524fc4acbc4d116b1cce0f0b9af2b54561baed12b611b186b60"
+        "contentSha256": "ddc955474ef57524fc4acbc4d116b1cce0f0b9af2b54561baed12b611b186b60",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -802,11 +956,22 @@
         ],
         "fullText": "The government shall actively use AI to safeguard workers' labor rights.\n\nThe government shall actively bridge the skills gap caused by AI development, enhance labor participation, ensure economic security, and implement dignified labor.\n\nThe government shall provide employment counseling to those who become unemployed due to the use of AI, based on their work capabilities.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "26a939dea17e990122faa7e0b10fdbf37b66c3ace3d02a596c526785880c6bcc"
+        "contentSha256": "26a939dea17e990122faa7e0b10fdbf37b66c3ace3d02a596c526785880c6bcc",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -857,11 +1022,22 @@
         ],
         "fullText": "The Ministry of Digital Affairs shall, with reference to international standards or norms, promote an AI risk taxonomy and assessment framework that is interoperable with international frameworks, and shall assist the competent authorities for the relevant industries in establishing risk-based management regulations.\n\nThe competent authorities for the relevant industries shall, as needed for AI application risk management, follow the AI risk taxonomy and assessment framework of the preceding paragraph to establish risk-based management regulations, and shall assist the relevant industries in formulating their own industry guidelines and codes of conduct. Any of the circumstances listed in Article 5, paragraph 1, shall be restricted or prohibited in accordance with the law.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "fd13aa9727ec74e8b470f0959282b7d75295ed6da993b11e9482b6b07d3544f1"
+        "contentSha256": "fd13aa9727ec74e8b470f0959282b7d75295ed6da993b11e9482b6b07d3544f1",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -912,11 +1088,22 @@
         ],
         "fullText": "For the application of high-risk AI, the government shall clarify the attribution of liability and the conditions for such liability, and shall establish relief, compensation, or insurance mechanisms.\n\nThe provisions of the preceding paragraph shall not apply to the R&D of AI before its actual application. However, this exception shall not apply when such research and development is tested in a real-world environment or when the results of such research and development are used to provide products or services.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "6b7e5823e8ea0355833f9d56739d93c3574998b0bc56120cd538e5113cba1fb7"
+        "contentSha256": "6b7e5823e8ea0355833f9d56739d93c3574998b0bc56120cd538e5113cba1fb7",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -967,11 +1154,22 @@
         ],
         "fullText": "The government shall review the laws, regulations, and administrative measures under its jurisdiction in accordance with the provisions of this Act. Where any such laws, regulations, or administrative measures do not comply with the provisions of this Act or where no applicable laws or regulations exist, the government shall, within two years of the effective date of this Act, complete the enactment, amendment, or repeal of such laws and regulations, as well as the improvement of administrative measures.\n\nPrior to the enactment or amendment of the laws and regulations mentioned in the preceding paragraph, for matters where existing regulations have no provisions, the central competent authorities shall, in consultation with the central competent authority, interpret and apply them in accordance with the provisions of this Act.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "9f6e8ee8dde6c9e8694c836288efacdf99e53dac417be801b352a88e0a1d19c1"
+        "contentSha256": "9f6e8ee8dde6c9e8694c836288efacdf99e53dac417be801b352a88e0a1d19c1",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1022,11 +1220,22 @@
         ],
         "fullText": "When using AI to perform duties or provide services, the government shall conduct risk assessments and plan risk response measures.\n\nThe government shall, based on the nature of the duties involving the use of AI, establish usage guidelines, regulations, or internal control management mechanisms.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "6664d89102f2e996a303b37cdf18497dac812045790cf1bfd80db8b4d6d67970"
+        "contentSha256": "6664d89102f2e996a303b37cdf18497dac812045790cf1bfd80db8b4d6d67970",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {
@@ -1076,11 +1285,22 @@
         ],
         "fullText": "This Act shall take effect on the date of its promulgation.",
         "language": "en",
+        "coverageStatus": "complete-current-official-reference-translation",
+        "versionAsOf": "2026-01-14",
+        "versionLabel": "Artificial Intelligence Basic Act promulgated 14 January 2026",
         "status": "official-reference-translation",
+        "note": "Complete Article-level official English wording is stored without editorial supplementation.",
         "authorityNote": "Published by the National Science and Technology Council as an English translation. The official Traditional Chinese text controls.",
         "source": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
         "sourceLabel": "National Science and Technology Council — official English reference translation",
-        "contentSha256": "c901df4d8f294ac4b1888990f5b022c7c3c05e4e8de5e86a98d6549d2c6e0ea8"
+        "contentSha256": "c901df4d8f294ac4b1888990f5b022c7c3c05e4e8de5e86a98d6549d2c6e0ea8",
+        "rights": {
+          "reuseStatus": "official-legal-text-statutory-exclusion",
+          "basis": "Taiwan Copyright Act, Article 9(1)-(2)",
+          "basisUrl": "https://law.moea.gov.tw/EngLawContent.aspx?id=10504&lan=E",
+          "note": "Acts and translations of acts prepared by central or local government agencies are not subject matter of copyright under Article 9.",
+          "attributionRequired": true
+        }
       }
     },
     "alignment": {

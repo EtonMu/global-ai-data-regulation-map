@@ -7,11 +7,11 @@ const dataRoot = new URL("../data/v2/", import.meta.url);
 const loadJson = async (filename) =>
   JSON.parse(await readFile(new URL(filename, dataRoot), "utf8"));
 
-const [instruments, provisions, sourceAudits, pipl, networkData, genAi] =
+const [instruments, provisions, manifest, pipl, networkData, genAi] =
   await Promise.all([
     loadJson("instruments.json"),
     loadJson("provisions.json"),
-    loadJson("source-audit.json"),
+    loadJson("cn-english-corpus-manifest.json"),
     loadJson("cn-pipl-articles.json"),
     loadJson("cn-network-data-regulations-articles.json"),
     loadJson("cn-generative-ai-measures-articles.json"),
@@ -27,6 +27,10 @@ const corpusDefinitions = [
     firstText: "为了保护个人信息权益",
     lastText: "本法自2021年11月1日起施行。",
     translatedArticles: [24, 38, 51, 55, 57],
+    englishStatus: "government-published-reference",
+    englishCoverageStatus: "complete-current",
+    englishVersionAsOf: "2021-11-01",
+    englishSourceHostname: "en.npc.gov.cn",
   },
   {
     instrumentId: "cn-network-data-regulations",
@@ -37,6 +41,10 @@ const corpusDefinitions = [
     firstText: "为了规范网络数据处理活动",
     lastText: "本条例自2025年1月1日起施行。",
     translatedArticles: [9, 35, 36, 37, 38, 44],
+    englishStatus: "government-published-reference",
+    englishCoverageStatus: "complete-current",
+    englishVersionAsOf: "2025-01-01",
+    englishSourceHostname: "en.moj.gov.cn",
   },
   {
     instrumentId: "cn-generative-ai-measures",
@@ -47,6 +55,10 @@ const corpusDefinitions = [
     firstText: "为了促进生成式人工智能健康发展",
     lastText: "本办法自2023年8月15日起施行。",
     translatedArticles: [4, 7, 17],
+    englishStatus: "public-domain-government-reference",
+    englishCoverageStatus: "complete-versioned-reference",
+    englishVersionAsOf: "2023-08-15",
+    englishSourceHostname: "www.airuniversity.af.edu",
   },
 ];
 
@@ -72,7 +84,7 @@ test("complete Chinese corpora retain sequential official Articles and provenanc
         article.contentSha256,
         createHash("sha256").update(article.fullText, "utf8").digest("hex"),
       );
-      assert.match(article.summary, /No English translation|not a translation/i);
+      assert.doesNotMatch(article.summary, /No English translation|coverage notice/i);
       assert.ok(article.chapter.id.startsWith(`${definition.instrumentId}-chapter-`));
       assert.equal(article.sourceVersion.effectiveFrom, article.appliesFrom);
     });
@@ -95,7 +107,88 @@ test("official source wording is retained at sensitive verification anchors", ()
   assert.match(genAi[16].fullText, /安全评估/u);
 });
 
-test("selected curated metadata and English reference translations remain aligned", () => {
+test("all Chinese corpus Articles have complete, versioned English reference text", () => {
+  for (const definition of corpusDefinitions) {
+    for (const article of definition.articles) {
+      const translation = article.translations?.en;
+      assert.ok(translation, `${article.id} must have English reference text`);
+      assert.equal(translation.language, "en");
+      assert.equal(translation.status, definition.englishStatus);
+      assert.equal(translation.coverageStatus, definition.englishCoverageStatus);
+      assert.equal(translation.versionAsOf, definition.englishVersionAsOf);
+      assert.ok(translation.versionLabel.length > 20);
+      assert.match(translation.authorityNote, /Chinese text controls/i);
+      assert.ok(translation.paragraphs.length > 0);
+      assert.ok(translation.paragraphs.every((paragraph) => paragraph.trim().length > 0));
+      assert.equal(translation.fullText, translation.paragraphs.join("\n\n"));
+      assert.match(translation.fullText, /[A-Za-z]/u);
+      assert.doesNotMatch(
+        translation.fullText,
+        /This article is mapped to|complete official .* wording is available|orientation is not a translation/i,
+      );
+      assert.equal(
+        translation.contentSha256,
+        createHash("sha256").update(translation.fullText, "utf8").digest("hex"),
+      );
+      assert.equal(new URL(translation.source.url).hostname, definition.englishSourceHostname);
+      assert.equal(translation.source.accessedOn, "2026-07-20");
+      assert.equal(translation.rights.redistributable, true);
+      assert.ok(translation.rights.basis.length > 40);
+      assert.ok(translation.rights.attribution.length > 3);
+    }
+  }
+});
+
+test("pagination and structural headings do not leak into English Article bodies", () => {
+  const structuralOnlyLines = /^(?:Chapter\s+[IVX]+|Section\s+\d+|General Provisions|General Rules|Personal Information by State Organs|Legal Liability|Supplementary Provisions)$/i;
+  for (const definition of corpusDefinitions) {
+    for (const article of definition.articles) {
+      for (const paragraph of article.translations.en.paragraphs) {
+        assert.doesNotMatch(paragraph, structuralOnlyLines, article.id);
+      }
+      assert.doesNotMatch(
+        article.translations.en.fullText,
+        /SNAPSHOT PAGE BOUNDARY|enpcontent|displaypagenum|\f/u,
+        article.id,
+      );
+    }
+  }
+  assert.equal(pipl[31].translations.en.paragraphs.length, 1);
+  assert.doesNotMatch(
+    pipl[31].translations.en.fullText,
+    /Special Provisions on the Processing of|Personal Information by State Organs/i,
+  );
+});
+
+test("Ministry of Justice PDF paragraph and list structure is preserved", () => {
+  assert.equal(
+    networkData.reduce(
+      (count, article) => count + article.translations.en.paragraphs.length,
+      0,
+    ),
+    150,
+  );
+  assert.equal(
+    networkData.filter(
+      (article) => article.translations.en.paragraphs.length > 1,
+    ).length,
+    22,
+  );
+  assert.equal(networkData[1].translations.en.paragraphs.length, 3);
+  assert.equal(networkData[7].translations.en.paragraphs.length, 2);
+  assert.equal(networkData[11].translations.en.paragraphs.length, 3);
+  assert.equal(networkData[32].translations.en.paragraphs.length, 11);
+  assert.equal(networkData[61].translations.en.paragraphs.length, 9);
+  assert.match(networkData[32].translations.en.fullText, /\n\n\(1\) basic information/);
+  assert.match(networkData[61].translations.en.fullText, /\n\n\(8\) “large online platform”/);
+  assert.doesNotMatch(
+    networkData[61].translations.en.paragraphs[8],
+    /\n/u,
+    "visual PDF line wraps must be normalized within a statutory list item",
+  );
+});
+
+test("selected curated concept overlays remain aligned with complete corpora", () => {
   const seedById = new Map(provisions.map((provision) => [provision.id, provision]));
   for (const definition of corpusDefinitions) {
     for (const number of definition.translatedArticles) {
@@ -112,32 +205,86 @@ test("selected curated metadata and English reference translations remain aligne
       );
     }
   }
-  assert.equal(pipl[0].translations, undefined);
-  assert.equal(networkData[0].translations, undefined);
-  assert.equal(genAi[0].translations, undefined);
 });
 
-test("instrument and source-audit coverage declarations match generated corpora", () => {
+test("instrument and English-corpus manifest coverage declarations match generated corpora", () => {
   const instrumentById = new Map(instruments.map((item) => [item.id, item]));
-  const auditById = new Map(sourceAudits.map((item) => [item.instrumentId, item]));
+  const manifestById = new Map(
+    manifest.instruments.map((item) => [item.instrumentId, item]),
+  );
   for (const definition of corpusDefinitions) {
     const instrument = instrumentById.get(definition.instrumentId);
     assert.equal(instrument.coverage.unit, "article");
     assert.equal(instrument.coverage.first, 1);
     assert.equal(instrument.coverage.last, definition.count);
     assert.equal(instrument.coverage.count, definition.count);
-    assert.equal(instrument.textAvailability.mode, "separate-official-original-import");
-
-    const audit = auditById.get(definition.instrumentId);
-    assert.equal(audit.localCoverage.mode, "complete-official-original-article-corpus");
-    assert.equal(audit.localCoverage.localUnitCount, definition.count);
-    assert.equal(
-      audit.englishAvailability.coverage.totalUnitCount,
-      definition.count,
+    assert.match(
+      instrument.textAvailability.mode,
+      /separate-complete-official-original-and-(?:government|public-domain)-English-reference-import/,
     );
+
+    const entry = manifestById.get(definition.instrumentId);
+    assert.ok(entry, `${definition.instrumentId} must appear in the manifest`);
+    assert.equal(entry.currentVersion.currentVersionAligned, true);
+    assert.equal(entry.corpus.unitCount, definition.count);
+    assert.equal(entry.corpus.originalLanguageUnitCount, definition.count);
+    assert.equal(entry.corpus.englishUnitCount, definition.count);
+    assert.equal(entry.corpus.coverageStatus, definition.englishCoverageStatus);
+    assert.equal(entry.translation.status, definition.englishStatus);
+    assert.equal(entry.translation.coAuthentic, false);
+    assert.match(entry.translation.recommendedUiLabel, /CHINESE CONTROLS/);
+    assert.equal(entry.rights.redistributable, true);
+  }
+});
+
+test("Chinese English-source snapshots match the manifest's SHA-256 records", async () => {
+  const repositoryRoot = new URL("../../", dataRoot);
+  for (const entry of manifest.instruments) {
+    for (const snapshot of entry.sourceSnapshots ?? []) {
+      const bytes = await readFile(new URL(snapshot.path, repositoryRoot));
+      assert.equal(
+        createHash("sha256").update(bytes).digest("hex"),
+        snapshot.sha256,
+        snapshot.path,
+      );
+    }
+  }
+});
+
+test("generated Chinese corpus files match the manifest's SHA-256 records", async () => {
+  const repositoryRoot = new URL("../../", dataRoot);
+  for (const entry of manifest.instruments.filter((item) => item.corpus.fileSha256)) {
+    const bytes = await readFile(new URL(entry.corpus.path, repositoryRoot));
     assert.equal(
-      audit.englishAvailability.coverage.translatedUnitCount,
-      definition.translatedArticles.length,
+      createHash("sha256").update(bytes).digest("hex"),
+      entry.corpus.fileSha256,
+      entry.corpus.path,
     );
   }
+});
+
+test("current 2026 Cybersecurity Law English coverage is explicitly editorial", () => {
+  const csl = manifest.instruments.find(
+    (entry) => entry.instrumentId === "cn-cybersecurity-law",
+  );
+  assert.ok(csl);
+  assert.equal(csl.currentVersion.versionAsOf, "2026-01-01");
+  assert.equal(csl.corpus.unitCount, 81);
+  assert.equal(csl.corpus.englishUnitCount, 81);
+  assert.equal(
+    csl.corpus.coverageStatus,
+    "complete-current-project-reference",
+  );
+  const cslOriginalText = provisions
+    .filter((provision) => provision.instrumentId === "cn-cybersecurity-law")
+    .map((provision) => provision.fullText)
+    .join("\n\n");
+  assert.equal(
+    createHash("sha256").update(cslOriginalText, "utf8").digest("hex"),
+    csl.corpus.selectedOriginalFullTextSha256,
+  );
+  assert.equal(csl.translation.status, "project-authored-editorial-reference");
+  assert.equal(csl.translation.governmentPublishedCurrentEnglishLocated, false);
+  assert.match(csl.translation.versionBoundary, /pre-amendment/i);
+  assert.match(csl.translation.recommendedUiLabel, /NOT OFFICIAL/);
 });

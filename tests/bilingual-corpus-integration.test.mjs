@@ -52,18 +52,34 @@ test("PIPEDA exposes complete co-authentic English and French units", () => {
   assert.equal(auditByInstrumentId.get("ca-pipeda").localCoverage.localUnitCount, 75);
 });
 
-test("LGPD stores the current Portuguese corpus without mislabelling the lagging English snapshot", () => {
+test("LGPD stores complete current Portuguese and explicitly sourced English references", () => {
   assert.equal(lgpd.length, 80);
   assert.ok(lgpd.every((item) => item.language === "pt-BR"));
-  assert.ok(lgpd.every((item) => item.translations === undefined));
+  assert.ok(lgpd.every((item) => item.translations?.en));
+  assert.equal(
+    lgpd.filter(
+      (item) =>
+        item.translations.en.status ===
+        "official-reference-translation-no-legal-effect",
+    ).length,
+    77,
+  );
+  assert.equal(
+    lgpd.filter(
+      (item) =>
+        item.translations.en.status ===
+        "project-authored-reference-translation-no-legal-effect",
+    ).length,
+    3,
+  );
   assert.equal(
     auditByInstrumentId.get("br-lgpd-2018").englishAvailability.coverage
       .translatedUnitCount,
-    0,
+    80,
   );
   assert.match(
     instrumentById.get("br-lgpd-2018").textAvailability.note,
-    /80 current Article identifiers/i,
+    /80 current Portuguese Article identifiers/i,
   );
 });
 

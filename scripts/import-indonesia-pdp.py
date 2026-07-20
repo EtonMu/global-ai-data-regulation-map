@@ -13,6 +13,7 @@ from legal_corpus_utils import (
     load_snapshot,
     write_json,
 )
+from project_english_corpus import attach_project_english
 
 
 INSTRUMENT_ID = "id-pdp-law-2022"
@@ -116,6 +117,12 @@ def clean(value: str) -> str:
     # spaces (for example, ``Undang\xad Undang``).  They represent visible
     # hyphens in the official text, not discretionary line-break characters.
     value = value.replace("\u00ad ", "-").replace("\u00ad", "")
+    # The clean cross-check retains three visible OCR/transcription defects.  The
+    # official Gazette layout confirms the ordinary forms below.  Normalizing
+    # ``BABX`` also prevents a Chapter heading from being swallowed into Article
+    # 61's body.
+    value = value.replace("D&.ta", "Data").replace("BABX", "BAB X")
+    value = value.replace("( 1)", "(1)")
     return re.sub(r"\s+", " ", value.replace("\u00a0", " ")).strip()
 
 
@@ -178,6 +185,11 @@ def main() -> None:
     parser.add_argument("output", type=Path)
     parser.add_argument("--official-snapshot", type=Path, required=True)
     parser.add_argument("--retrieved-on", required=True)
+    parser.add_argument(
+        "--skip-project-english",
+        action="store_true",
+        help="Emit the source corpus only (bootstrap/review use).",
+    )
     args = parser.parse_args()
 
     validate_official_snapshot(args.official_snapshot)
@@ -301,8 +313,28 @@ def main() -> None:
                 "the Indonesian text controls."
             ),
             "englishAvailability": {
-                "status": "not-supplied",
-                "note": "No complete official English translation was verified for this corpus.",
+                "coverageStatus": "no-source-text",
+                "status": "not-available-in-government-primary-sources",
+                "versionAsOf": args.retrieved_on,
+                "versionLabel": (
+                    "Law No. 27 of 2022 with Article 53 judicial overlay through "
+                    "20 July 2026"
+                ),
+                "authorityNote": (
+                    "Indonesian is the controlling legal text. No complete English "
+                    "translation published by the legislature, JDIHN, Komdigi JDIH "
+                    "or the national regulations portal was verified."
+                ),
+                "sourcesChecked": [
+                    OFFICIAL_SOURCE,
+                    OFFICIAL_HTML,
+                    REGISTRY_SOURCE,
+                    STATUS_SOURCE,
+                ],
+                "note": (
+                    "No machine, commercial-database or unofficial full translation "
+                    "is substituted in this open corpus."
+                ),
             },
             "rights": RIGHTS,
             "contentSha256": content_sha256(full_text),
@@ -340,6 +372,14 @@ def main() -> None:
         records.append(record)
 
     assert_sequential([record["articleNumber"] for record in records], 76, "Indonesia PDP")
+    if not args.skip_project_english:
+        attach_project_english(records, INSTRUMENT_ID)
+        for record in records:
+            record["summary"] = (
+                "Complete official Indonesian Article text with a complete "
+                "project-authored English reference; Indonesian and applicable "
+                "Constitutional Court decisions control."
+            )
     write_json(args.output, records)
     print(f"Generated {len(records)} Indonesian PDP Articles at {args.output}")
 

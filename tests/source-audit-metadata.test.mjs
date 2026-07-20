@@ -18,12 +18,12 @@ const auditByInstrumentId = new Map(
   sourceAudits.map((audit) => [audit.instrumentId, audit]),
 );
 
-test("Chinese English availability distinguishes selected and complete reference translations", () => {
+test("Chinese English availability distinguishes government and project references", () => {
   const expected = new Map([
-    ["cn-pipl", ["selected-non-official-reference-translations-stored", 5, 74]],
+    ["cn-pipl", ["complete-government-published-English-reference-stored", 74, 74]],
     ["cn-cybersecurity-law", ["complete-non-official-reference-translation-stored", 81, 81]],
-    ["cn-network-data-regulations", ["selected-non-official-reference-translations-stored", 6, 64]],
-    ["cn-generative-ai-measures", ["selected-non-official-reference-translations-stored", 3, 24]],
+    ["cn-network-data-regulations", ["complete-government-published-English-reference-stored", 64, 64]],
+    ["cn-generative-ai-measures", ["complete-public-domain-government-reference-translation-stored", 24, 24]],
   ]);
 
   for (const [instrumentId, [status, translated, total]] of expected) {
@@ -35,7 +35,7 @@ test("Chinese English availability distinguishes selected and complete reference
 
   assert.match(
     auditByInstrumentId.get("cn-network-data-regulations").localCoverage.statement,
-    /Articles 9, 35, 36, 37, 38 and 44/,
+    /all 64 Articles/i,
   );
 });
 
@@ -112,12 +112,21 @@ test("publication-language notes remain instrument-specific", () => {
 
   const japanAppi = auditByInstrumentId.get("jp-appi");
   assert.equal(japanAppi.localCoverage.localUnitCount, 208);
-  assert.match(japanAppi.localCoverage.mode, /authoritative-japanese/);
+  assert.match(japanAppi.localCoverage.mode, /current-Japanese/);
   assert.equal(
     japanAppi.englishAvailability.coverage.translatedUnitCount,
+    208,
+  );
+  assert.equal(
+    japanAppi.englishAvailability.coverage.currentAlignedUnitCount,
+    208,
+  );
+  assert.equal(
+    japanAppi.englishAvailability.coverage.temporallyMismatchedUnitCount,
     0,
   );
-  assert.match(japanAppi.caveats.join(" "), /not offered as a current/i);
+  assert.match(japanAppi.rightsBoundary.note, /36 project-authored/i);
+  assert.match(japanAppi.caveats.join(" "), /172 units/i);
 
   const japanAiAct = auditByInstrumentId.get("jp-ai-promotion-act-2025");
   assert.equal(japanAiAct.localCoverage.localUnitCount, 29);
@@ -126,6 +135,14 @@ test("publication-language notes remain instrument-specific", () => {
     29,
   );
   assert.match(japanAiAct.authoritativeLanguage.note, /no legal effect/i);
+
+  const koreaAi = auditByInstrumentId.get("kr-ai-framework-act-2025");
+  assert.equal(koreaAi.englishAvailability.coverage.translatedUnitCount, 47);
+  assert.equal(koreaAi.englishAvailability.coverage.currentAlignedUnitCount, 42);
+  assert.equal(
+    koreaAi.englishAvailability.coverage.temporallyMismatchedUnitCount,
+    5,
+  );
 
   const hongKongPdpo = auditByInstrumentId.get(
     "hk-personal-data-privacy-ordinance",
@@ -160,11 +177,12 @@ test("future-effective amendments and implementation sources stay explicit", () 
 test("new public corpora preserve completeness, lifecycle, language, and rights boundaries", () => {
   const brazil = auditByInstrumentId.get("br-pl-2338-2023-ai-bill");
   assert.equal(brazil.localCoverage.localUnitCount, 79);
-  assert.match(brazil.localCoverage.mode, /pending-Portuguese-bill/);
-  assert.equal(brazil.englishAvailability.coverage.translatedUnitCount, 0);
+  assert.match(brazil.localCoverage.mode, /pending-Portuguese.*bill/);
+  assert.equal(brazil.englishAvailability.coverage.translatedUnitCount, 79);
+  assert.equal(brazil.englishAvailability.coverage.currentAlignedUnitCount, 79);
   assert.match(brazil.caveats.join(" "), /not enacted|not an enacted/i);
   assert.match(brazil.caveats.join(" "), /Article 31/);
-  assert.match(brazil.rightsBoundary.projectLicenseBoundary, /excluded-from-project-CC-BY/);
+  assert.match(brazil.rightsBoundary.projectLicenseBoundary, /project-English-reference-licensed-CC-BY/);
 
   const california = auditByInstrumentId.get("us-ca-sb-1047-2024");
   assert.equal(california.localCoverage.localUnitCount, 18);

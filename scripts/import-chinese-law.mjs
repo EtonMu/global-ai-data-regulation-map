@@ -3,14 +3,14 @@
 /**
  * Import complete Article-level Chinese text from official government pages.
  *
- * The importer deliberately does not translate statutory text. Existing curated
- * English reference translations remain in provisions.json and are overlaid by
- * stable Article id in the UI. Every run verifies the expected sequential
- * Article count before replacing a generated corpus file.
+ * The importer does not create translations. It aligns complete, separately
+ * sourced English reference texts with the official Chinese Articles and keeps
+ * authority, version, rights, and source metadata on every aligned unit. Every
+ * run verifies the expected sequential Article count before replacing a corpus.
  */
 
 import { createHash } from "node:crypto";
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
@@ -35,6 +35,32 @@ const configs = {
       effectiveFrom: "2021-11-01",
       versionNote:
         "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021.",
+    },
+    english: {
+      kind: "npc-reference-html",
+      snapshots: [
+        "source-snapshots/cn-pipl-npc-en-reference-2021-12-29.html",
+        "source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-2.html",
+        "source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-3.html",
+      ],
+      source: "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+      sourceLabel:
+        "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)",
+      publishedOn: "2021-12-29",
+      versionAsOf: "2021-11-01",
+      versionLabel:
+        "NPC English reference text for the law adopted 20 August 2021 and effective 1 November 2021",
+      coverageStatus: "complete-current",
+      status: "government-published-reference",
+      authorityNote:
+        "The National People's Congress publishes this complete English text in its 'Laws (Translation for Reference Only)' collection. It is a government-published reference translation, not a co-authentic enactment; the Chinese text controls.",
+      rights: {
+        redistributable: true,
+        basis:
+          "The text is a government-published translation of a law. Article 5 of the Copyright Law of the People's Republic of China excludes laws and their official translations from copyright protection. The NPC expressly labels legal authority as reference only.",
+        attribution:
+          "National People's Congress of the People's Republic of China",
+      },
     },
     chapters: [
       [1, 12, 1, "General Provisions"],
@@ -69,6 +95,27 @@ const configs = {
       versionNote:
         "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025.",
     },
+    english: {
+      kind: "moj-pdftotext",
+      snapshot:
+        "source-snapshots/cn-network-data-regulations-moj-en-2026-01-09-pdftotext.txt",
+      source: "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+      sourceLabel: "Ministry of Justice of the People's Republic of China",
+      publishedOn: "2026-01-09",
+      versionAsOf: "2025-01-01",
+      versionLabel:
+        "Ministry of Justice English publication of State Council Order No. 790, effective 1 January 2025",
+      coverageStatus: "complete-current",
+      status: "government-published-reference",
+      authorityNote:
+        "The Ministry of Justice publishes this complete English rendering of State Council Order No. 790. It is government-published but is not represented here as co-authentic with the promulgated Chinese text; the Chinese text controls.",
+      rights: {
+        redistributable: true,
+        basis:
+          "The text is a Ministry of Justice publication of an administrative regulation and its English translation. Article 5 of the Copyright Law of the People's Republic of China excludes laws, regulations, and their official translations from copyright protection.",
+        attribution: "Ministry of Justice of the People's Republic of China",
+      },
+    },
     chapters: [
       [1, 7, 1, "General Provisions"],
       [8, 20, 2, "General Requirements"],
@@ -99,6 +146,31 @@ const configs = {
       effectiveFrom: "2023-08-15",
       versionNote:
         "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023.",
+    },
+    english: {
+      kind: "normalized-article-blocks",
+      snapshot:
+        "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt",
+      source:
+        "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+      sourceLabel:
+        "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+      translator: "Josh Baughman",
+      publishedOn: "2023-08-07",
+      versionAsOf: "2023-08-15",
+      versionLabel:
+        "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+      coverageStatus: "complete-versioned-reference",
+      status: "public-domain-government-reference",
+      authorityNote:
+        "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+      rights: {
+        redistributable: true,
+        basis:
+          "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+        attribution:
+          "Josh Baughman; China Aerospace Studies Institute, Air University",
+      },
     },
     chapters: [
       [1, 4, 1, "General Provisions"],
@@ -184,7 +256,9 @@ function normalizedText(html) {
       .replace(/<[^>]+>/g, "")
       .replace(/[\u00a0\u3000\s]+/g, " ")
       .trim(),
-  );
+  )
+    .replace(/[\u00a0\u3000\s]+/g, " ")
+    .trim();
 }
 
 function extractBody(html, kind) {
@@ -204,11 +278,200 @@ function extractParagraphs(html, kind) {
     .filter(Boolean);
 }
 
+const piplStructuralHeadings = new Set([
+  "Contents",
+  "General Provisions",
+  "Personal Information Processing Rules",
+  "General Rules",
+  "Rules on Processing Sensitive Personal Information",
+  "Special Provisions on the Processing of Personal Information by State Organs",
+  "Rules on Provision of Personal Information Across Border",
+  "Individuals' Rights in Personal Information Processing Activities",
+  "Obligations of Personal Information Processors",
+  "Departments with Personal Information Protection Duties",
+  "Legal Liability",
+  "Supplementary Provisions",
+]);
+
+function parseNpcReferenceHtml(html, expectedArticleCount) {
+  const contentMatches = [
+    ...html.matchAll(/<!--enpcontent-->([\s\S]*?)<!--\/enpcontent-->/gi),
+  ];
+  if (!contentMatches.length) {
+    throw new Error("Could not locate NPC English reference-law content");
+  }
+  const sourceParagraphs = [
+    ...contentMatches.flatMap((contentMatch) => [
+      ...contentMatch[1].matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p>/gi),
+    ]),
+  ]
+    .map((match) => ({
+      text: normalizedText(match[2]),
+      isCentered: /text-align\s*:\s*center/i.test(match[1]),
+    }))
+    .filter((paragraph) => paragraph.text);
+  const articles = [];
+  let current = null;
+  let expectedNext = 1;
+  for (const { text: paragraph, isCentered } of sourceParagraphs) {
+    const articleMatch = paragraph.match(/^Article\s+(\d+)\s*(.*)$/i);
+    if (articleMatch && Number(articleMatch[1]) === expectedNext) {
+      current = {
+        articleNumber: expectedNext,
+        paragraphs: articleMatch[2] ? [articleMatch[2]] : [],
+      };
+      articles.push(current);
+      expectedNext += 1;
+      continue;
+    }
+    if (
+      !current ||
+      isCentered ||
+      /^Chapter\s+[IVX]+$/i.test(paragraph) ||
+      /^Section\s+\d+$/i.test(paragraph) ||
+      piplStructuralHeadings.has(paragraph)
+    ) {
+      continue;
+    }
+    current.paragraphs.push(paragraph);
+  }
+  verifyEnglishSequence(articles, expectedArticleCount, "NPC English reference text");
+  return articles;
+}
+
+function parseMojPdfText(text, expectedArticleCount) {
+  const articles = [];
+  let current = null;
+  let expectedNext = 1;
+  for (const rawLine of text.split(/\r?\n/)) {
+    // pdftotext retains the source PDF's first-line indentation. Six-space
+    // indentation marks an Article, a new statutory paragraph, or a numbered
+    // list item; wrapped continuation lines begin at the left margin. Page
+    // numbers and form-feed characters are layout artifacts and are removed.
+    const line = rawLine.replace(/\f/g, "");
+    const trimmed = line.trim();
+    if (
+      !trimmed ||
+      /^\d+$/.test(trimmed) ||
+      /^Chapter\s+[IVX]+\b/i.test(trimmed)
+    ) {
+      continue;
+    }
+    const articleMatch = trimmed.match(/^Article\s+(\d+)\s+(.*)$/i);
+    if (articleMatch && Number(articleMatch[1]) === expectedNext) {
+      current = {
+        articleNumber: expectedNext,
+        paragraphs: [articleMatch[2]],
+      };
+      articles.push(current);
+      expectedNext += 1;
+      continue;
+    }
+    if (!current) continue;
+    if (/^[ \t]{4,}\S/.test(line)) {
+      current.paragraphs.push(trimmed);
+    } else {
+      current.paragraphs[current.paragraphs.length - 1] += ` ${trimmed}`;
+    }
+  }
+  for (const article of articles) {
+    article.paragraphs = article.paragraphs.map((paragraph) =>
+      paragraph.replace(/\s+/g, " ").trim(),
+    );
+  }
+  verifyEnglishSequence(articles, expectedArticleCount, "Ministry of Justice PDF text");
+  return articles;
+}
+
+function parseNormalizedArticleBlocks(text, expectedArticleCount) {
+  const starts = [...text.matchAll(/^Article\s+(\d+)\s*$/gim)];
+  const articles = starts.map((match, index) => {
+    const start = match.index + match[0].length;
+    const end = starts[index + 1]?.index ?? text.length;
+    const paragraphs = text
+      .slice(start, end)
+      .trim()
+      .split(/\n\s*\n/g)
+      .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+    return { articleNumber: Number(match[1]), paragraphs };
+  });
+  verifyEnglishSequence(articles, expectedArticleCount, "normalized reference text");
+  return articles;
+}
+
+function verifyEnglishSequence(articles, expectedArticleCount, label) {
+  const expected = Array.from({ length: expectedArticleCount }, (_, index) => index + 1);
+  const actual = articles.map((article) => article.articleNumber);
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    throw new Error(
+      `${label}: expected sequential Articles 1–${expectedArticleCount}; found ${actual.join(", ")}`,
+    );
+  }
+  for (const article of articles) {
+    if (!article.paragraphs.length || article.paragraphs.some((paragraph) => !paragraph)) {
+      throw new Error(`${label}: Article ${article.articleNumber} is empty`);
+    }
+  }
+}
+
+async function loadEnglishArticles(config) {
+  if (!config.english) return null;
+  const snapshotPaths = config.english.snapshots ?? [config.english.snapshot];
+  const snapshotText = (
+    await Promise.all(
+      snapshotPaths.map((snapshotPath) =>
+        readFile(resolve(dataRoot, snapshotPath), "utf8"),
+      ),
+    )
+  ).join("\n<!-- SNAPSHOT PAGE BOUNDARY -->\n");
+  if (config.english.kind === "npc-reference-html") {
+    return parseNpcReferenceHtml(snapshotText, config.expectedArticleCount);
+  }
+  if (config.english.kind === "moj-pdftotext") {
+    return parseMojPdfText(snapshotText, config.expectedArticleCount);
+  }
+  if (config.english.kind === "normalized-article-blocks") {
+    return parseNormalizedArticleBlocks(snapshotText, config.expectedArticleCount);
+  }
+  throw new Error(`Unsupported English source kind: ${config.english.kind}`);
+}
+
+function englishTranslation(article, config, englishArticle, retrievedOn) {
+  if (!englishArticle || !config.english) return undefined;
+  const paragraphs = englishArticle.paragraphs;
+  const fullText = paragraphs.join("\n\n");
+  return {
+    title: `Article ${article.articleNumber}`,
+    paragraphs,
+    fullText,
+    language: "en",
+    status: config.english.status,
+    coverageStatus: config.english.coverageStatus,
+    versionAsOf: config.english.versionAsOf,
+    versionLabel: config.english.versionLabel,
+    authorityNote: config.english.authorityNote,
+    note: config.english.authorityNote,
+    source: {
+      url: config.english.source,
+      label: config.english.sourceLabel,
+      accessedOn: retrievedOn,
+      publishedOn: config.english.publishedOn,
+      ...(config.english.snapshots
+        ? { snapshotPaths: config.english.snapshots }
+        : { snapshotPath: config.english.snapshot }),
+    },
+    translator: config.english.translator,
+    rights: config.english.rights,
+    contentSha256: createHash("sha256").update(fullText, "utf8").digest("hex"),
+  };
+}
+
 function rangeRecord(ranges, articleNumber) {
   return ranges.find(([first, last]) => articleNumber >= first && articleNumber <= last);
 }
 
-function parseArticles(instrumentId, config, html, retrievedOn) {
+function parseArticles(instrumentId, config, html, retrievedOn, englishArticles) {
   const sourceParagraphs = extractParagraphs(html, config.bodyKind);
   const articles = [];
   let currentArticle = null;
@@ -273,6 +536,12 @@ function parseArticles(instrumentId, config, html, retrievedOn) {
     if (!fullText || !/[\u3400-\u9fff]/u.test(fullText)) {
       throw new Error(`Article ${article.articleNumber} has no Chinese source text`);
     }
+    const translation = englishTranslation(
+      article,
+      config,
+      englishArticles?.[article.articleNumber - 1],
+      retrievedOn,
+    );
     return {
       id: `${config.idPrefix}${article.articleNumber}`,
       instrumentId,
@@ -280,8 +549,11 @@ function parseArticles(instrumentId, config, html, retrievedOn) {
       label: `Article ${article.articleNumber}`,
       originalTitle: article.originalTitle,
       title: `Article ${article.articleNumber}`,
-      summary:
-        "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+      summary: translation
+        ? instrumentId === "cn-generative-ai-measures"
+          ? "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls."
+          : "The complete official Chinese Article text and a complete government-published English reference translation are stored. The English text is not co-authentic; the Chinese text controls."
+        : "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
       chapter: {
         id: `${instrumentId}-chapter-${chapterNumber}`,
         label: `Chapter ${roman(chapterNumber)}`,
@@ -306,6 +578,7 @@ function parseArticles(instrumentId, config, html, retrievedOn) {
       appliesFrom: config.appliesFrom,
       sourceVersion: config.sourceVersion,
       contentSha256: createHash("sha256").update(fullText, "utf8").digest("hex"),
+      ...(translation ? { translations: { en: translation } } : {}),
     };
   });
 }
@@ -334,6 +607,7 @@ async function main() {
       : [[instrument, configs[instrument]]];
 
   for (const [instrumentId, config] of selected) {
+    const englishArticles = await loadEnglishArticles(config);
     const response = await fetch(config.source, {
       headers: {
         "user-agent":
@@ -345,7 +619,13 @@ async function main() {
       throw new Error(`${instrumentId}: official source returned HTTP ${response.status}`);
     }
     const html = await response.text();
-    const articles = parseArticles(instrumentId, config, html, retrievedOn);
+    const articles = parseArticles(
+      instrumentId,
+      config,
+      html,
+      retrievedOn,
+      englishArticles,
+    );
     await writeFile(
       resolve(dataRoot, config.output),
       `${JSON.stringify(articles, null, 2)}\n`,

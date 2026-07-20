@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "vn-decree-13-2023-project-english-2026-07-20",
+  "reviewedAsOf": "2026-07-20",
+  "instrumentId": "vn-decree-13-2023",
+  "instrumentNumber": "13/2023/NĐ-CP",
+  "scope": {
+    "expectedUnitCount": 50,
+    "translatedUnitCount": 50,
+    "articleCount": 44,
+    "appendixFormCount": 6,
+    "sourceParagraphCount": 621,
+    "translationParagraphCount": 621,
+    "coverageStatus": "complete-historical-project-reference"
+  },
+  "legalLifecycle": {
+    "status": "repealed",
+    "effectiveFrom": "2023-07-01",
+    "repealedFrom": "2026-01-01",
+    "historicalEffectivePeriod": {
+      "from": "2023-07-01",
+      "through": "2025-12-31"
+    },
+    "controllingRepeal": "Decree 356/2025/NĐ-CP, Article 42(2)",
+    "controllingRepealSource": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf"
+  },
+  "versionBoundary": {
+    "controllingLanguage": "vi-VN",
+    "controllingSource": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/4/13nd.signed.pdf",
+    "sourceAsOf": "2026-07-20",
+    "officialEnglishAvailability": "No complete issuing-authority or openly reusable official Government English text was verified.",
+    "commercialTranslationBoundary": "Commercial, subscription-database and law-firm translations were not copied into this corpus."
+  },
+  "method": {
+    "draftGenerator": "scripts/prepare-project-english-translation-drafts.py",
+    "annotator": "scripts/annotate-vietnam-decree13-english.py",
+    "annotatorVersion": "1.1.0",
+    "cataloguePath": "data/v2/source-snapshots/vn-decree-13-2023-project-en-draft-2026-07-20.json",
+    "catalogueSha256": "c3262f8e6853f82f5c7d2276673fa5dc619ee75860384be6e95d105334e19e2e",
+    "sourceHashLock": true,
+    "paragraphOrderLock": true,
+    "listMarkerLock": true,
+    "qualityBoundary": "Machine-assisted project reference with deterministic terminology normalization and structural verification; not a certified legal translation."
+  },
+  "rights": {
+    "projectEnglishLicense": "CC BY 4.0",
+    "projectEnglishLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "officialVietnameseBoundary": "The licence applies only to the project-authored English reference. The official Vietnamese text is a government edict and remains controlling."
+  },
+  "hashes": {
+    "sourceUnitSequenceSha256": "44f4835359a558ddbf2f1990810cc480d6da3784e3b7a945ad3e29e12cec5c6d",
+    "translationUnitSequenceSha256": "45d23b073422a14e7761b398e35fe966936bd642bd3bae397629b69f9169e5c0"
+  }
+}

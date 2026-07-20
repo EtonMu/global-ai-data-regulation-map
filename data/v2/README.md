@@ -26,6 +26,8 @@ Thirty-eight instruments have a complete, version-locked local corpus within the
 - `relations.json`: qualified analytical edges between provision or instrument nodes.
 - `status-events.json`: dated lifecycle events such as adoption, entry into force, partial application, amendment, revocation, veto, and scheduled commencement.
 - `source-audit.json`: one structured source, lifecycle, language-authority, English-availability, local-coverage, and caveat record for every instrument.
+- `english-corpus-coverage.json`: generated node-level English coverage and temporal-alignment totals for every complete non-English corpus in scope.
+- `foreign-english-corpus-audit.json` and `cn-english-corpus-manifest.json`: source, authority, version, reuse, and unresolved-gap manifests for foreign-law English corpora.
 - `gdpr-articles.json`: generated complete GDPR Article corpus from EUR-Lex; produced by the EU-law import script.
 - `eu-ai-act-articles.json`: generated complete EU AI Act Article corpus from EUR-Lex; produced by the EU-law import script.
 
@@ -39,7 +41,7 @@ The left navigator has two peer browsing modes: **Global Atlas** and **Core Conc
 
 That presentation lane is intentionally orthogonal to issuer metadata. NIST AI RMF, for example, retains its US issuing context and voluntary force even when surfaced beside ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process, and the UN Advisory Body's _Governing AI for Humanity_ report. These materials have different issuers, audiences, update processes, and legal effects; co-location supports discovery and does not imply equivalence.
 
-The frontend offers **Dark / Geek** and **Bright / Lawyer** modes. On wide layouts, the selected legal text or clearly labeled editorial summary occupies the center workspace and the animated relationship graph occupies the right workspace. Users can collapse or resize the side columns and use clickable breadcrumbs to return to any point in the current research path. National, regional, and subnational legal-system entries use their corresponding flags; international and standards contexts use issuer or framework icons rather than fictional flags. These cues supplement—not replace—accessible text labels and explicit legal-force/status wording.
+The frontend offers **Dark / Geek** and **Bright / Lawyer** modes. On wide layouts, the selected legal text, an explicit English-coverage notice, or a clearly labeled editorial summary occupies the center workspace and the animated relationship graph occupies the right workspace. Users can collapse or resize the side columns and use clickable breadcrumbs to return to any point in the current research path. National, regional, and subnational legal-system entries use their corresponding flags; international and standards contexts use issuer or framework icons rather than fictional flags. These cues supplement—not replace—accessible text labels and explicit legal-force/status wording.
 
 ## Stable IDs
 
@@ -110,12 +112,14 @@ Each provision contains:
 - `versionAsOf`: date on which a source-linked editorial anchor was verified against the identified instrument version. It is not a substitute for `appliesFrom`.
 - `textAvailability`: text mode, storage flag, language, and an explicit caveat.
 - `paragraphs` and `fullText`: present only when verified source text is stored. `fullText` is the paragraph sequence joined with blank lines. `official-original-text-stored` denotes a complete original-language provision; `official-original-excerpt-stored` denotes an expressly identified extract rather than a complete section.
-- `translations`: language-keyed renderings kept separate from the controlling source text. A `reference` translation is explicitly non-official, preserves one-to-one paragraph alignment, and may not be presented as authoritative law.
+- `translations`: language-keyed renderings kept separate from the controlling source text. A `reference` translation is explicitly non-authoritative and may not be presented as controlling law. Article-level alignment, source order, authority, provenance, version and coverage are preserved; paragraph segmentation may differ between official publications and is therefore not assumed to be one-to-one.
 - `source`: official provision or instrument source.
 - `supportingSources`: optional provision-specific evidence, such as a court decision or companion implementation document.
 - `editorial`: review status, review date, and a caveat.
 
-The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English editorial summaries, and English reference translations remain separate fields. Complete official Chinese Article corpora are stored for the current Cybersecurity Law (81 Articles), PIPL (74 Articles), Network Data Security Management Regulations (64 Articles), and Interim Generative AI Measures (24 Articles). The Cybersecurity Law has a complete non-official English reference translation; PIPL and the two regulations retain only expressly identified selected English reference translations. A separate 120-node UK GDPR corpus stores the current revised legislation.gov.uk Articles as at 19 June 2026 and is not treated as identical to EU GDPR. The Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, distinguish a stored extract from a complete provision, and mark every `reference` translation as non-official.
+The curated file does **not** fabricate full text. It stores editorial summaries unless verified legal text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English coverage notices, English editorial summaries, and English reference translations remain separate fields. Complete official Chinese Article corpora are stored for the current Cybersecurity Law (81 Articles), PIPL (74 Articles), Network Data Security Management Regulations (64 Articles), and Interim Generative AI Measures (24 Articles). Their English coverage is respectively 81 project-authored current references, 74 NPC government references, 64 PRC Ministry of Justice references, and 24 CASI/Air University public-sector references. Japan APPI stores current Japanese and current-aligned English for all 208 nodes: 172 government-reference units were verified against normalized Japanese source text, while 15 changed main-Article/table units and 21 supplementary blocks carry complete project references. Korea PIPA stores 138 current-aligned MOLEG English references. The Korea AI Framework Act stores English for all 47 current nodes, with 42 current-aligned and five Articles expressly marked as next-phase wording effective 21 July 2026. LGPD stores English for all 80 Articles: 77 ANPD current-wording references and three separately licensed project-authored references for the 2026 amendments. Brazil PL 2338 (79 pending-bill Articles), Indonesia's PDP Law (76 Articles), Taiwan's final Executive Yuan generative-AI guidance (11 nodes), Vietnam Law 91/2025 (39 Articles), Decree 356/2025 (42 Articles and 13 forms), and historical Decree 13/2023 (44 Articles and six forms) now have complete, separately labelled project English references. A separate 120-node UK GDPR corpus stores the current revised legislation.gov.uk Articles as at 19 June 2026 and is not treated as identical to EU GDPR. UI labels must distinguish source text, historical or future-phase reference text, project-authored reference text, coverage notices, extracts, and editorial summaries.
+
+`english-corpus-coverage.json` audits 22 complete non-English or bilingual corpora: all 1,337 nodes have stored English legal/reference text, 1,332 are aligned to the displayed source version, and five Korean AI Act nodes are explicitly marked as next-phase references for 21 July 2026. APPI is 208/208 current-aligned: 172 government-reference units were verified against normalized Japanese source text, while 15 changed main-Article/table units and 21 supplementary blocks have separately labelled project references. These figures measure stored text and temporal alignment, not legal authority, legal effect, certification, or translation quality.
 
 ## `source-audit.json`
 
@@ -218,7 +222,7 @@ The seed currently uses these modes:
 - `official-bill-text-linked`: official legislative text that did not necessarily become law.
 - `official-source-linked-editorial-summary`: the controlling or reference source is linked, while the local provision node contains a dated English editorial summary rather than quoted legal text.
 
-`stored: false` means the interface must not claim that the repository contains the full text. Where verified original-language text is stored, the UI defaults to English and reveals the original only after an explicit user selection. Where it is not stored, an English editorial summary must not be presented as a translation; the official source remains the path to the complete wording.
+`stored: false` means the interface must not claim that the repository contains the full text. Where verified original-language text is stored, the UI defaults to a sourced English text when one is available; otherwise it shows an explicit English-coverage notice and reveals the full original after user selection. An editorial summary or concept mapping must never occupy the English legal-text view as though it were a translation; the official source remains the path to complete wording where local English text is unavailable.
 
 ## Important caveats in this snapshot
 
@@ -262,6 +266,7 @@ After changing corpus or reviewed metadata, rebuild derived records in order:
 
 ```bash
 node scripts/build-provision-concepts.mjs
+node scripts/build-english-corpus-coverage.mjs
 node scripts/build-source-audit.mjs
 pnpm validate:data
 ```
@@ -279,7 +284,7 @@ Before accepting a new instrument, provision, relation, structure summary, or ev
 5. Identify actor, trigger, scope, legal force, exceptions, and version before creating a mapping.
 6. Write both a mapping rationale and its limits.
 7. Do not store purported full text unless its source, version, completeness, language, and reuse basis have been verified.
-8. Keep translations separate from source text, label non-official renderings as `reference`, and preserve one-to-one paragraph alignment when a language toggle is offered.
+8. Keep translations separate from source text, label non-authoritative renderings as `reference`, preserve Article-level alignment and source order, and record any paragraph-model or version boundary shown by a language toggle.
 9. Ground each structure summary in official sources and existing provision IDs; label it as editorial orientation and keep it concise.
 10. For ISO/IEC 42001 and IEEE Ethically Aligned Design, store only metadata, original summaries, and official access links—not publication text.
 11. Validate every ID reference and ISO date before merging.

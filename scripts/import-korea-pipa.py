@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Build the current Korean PIPA corpus from pinned MOLEG snapshots.
 
-Only text effective on 2026-07-20 is emitted. Act No. 21445 is preserved as
-two future-effective snapshots (2026-09-11 and 2027-07-01) and is never merged
-into current provision nodes. The KLRI English reference is linked, but its
-copyrighted translation body is not redistributed.
+Only Korean text effective on 2026-07-20 is emitted. Act No. 21445 is preserved
+as two future-effective snapshots (2026-09-11 and 2027-07-01) and is never
+merged into current provision nodes. The current 126-Article / 12-addenda
+government English reference is imported from MOLEG's official Law Open Data
+API with a no-official-effect notice and the agency's reuse-policy evidence.
+The separately published KLRI version remains an external link only.
 """
 
 from __future__ import annotations
@@ -20,6 +22,7 @@ from korea_legal_corpus_utils import (
     compact_text,
     effective_index_records,
     inspect_phase,
+    parse_moleg_english_open_data,
     snapshot_entry,
 )
 from legal_corpus_utils import content_sha256, snapshot_sha256, write_json
@@ -37,6 +40,8 @@ FUTURE_2026_NAME = "kr-pipa-011357-future-2026-09-11.xml"
 FUTURE_2027_NAME = "kr-pipa-011357-future-2027-07-01.xml"
 EN_INDEX_NAME = "kr-pipa-011357-english-reference-index-2026-07-20.xml"
 EN_AUDIT_NAME = "kr-pipa-011357-klri-english-reference-audit-2026-07-20.json"
+EN_TEXT_NAME = "kr-pipa-011357-moleg-english-current-2026-07-20.xml"
+MOLEG_RIGHTS_NAME = "kr-moleg-legal-effect-copyright-policy-2026-07-20.html"
 
 CURRENT_API = (
     "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw"
@@ -59,6 +64,17 @@ EN_INDEX_API = (
     "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=elaw&type=XML"
     "&query=PERSONAL%20INFORMATION%20PROTECTION%20ACT&display=100"
 )
+EN_TEXT_API = (
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw"
+    "&MST=270351&type=XML"
+)
+EN_TEXT_PAGE = (
+    "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270351&chrClsCd=010203"
+    "&urlMode=engLsInfoR&viewCls=engLsInfoR"
+)
+MOLEG_RIGHTS_PAGE = (
+    "https://www.law.go.kr/LSW/lawPetitionForm.do?menuId=13&query=&subMenuId=79"
+)
 KLRI_REFERENCE = (
     "https://elaw.klri.re.kr/eng_mobile/viewer.do?"
     "hseq=71740&key=71&type=sogan"
@@ -71,23 +87,29 @@ EXPECTED_SNAPSHOT_HASHES = {
     FUTURE_2027_NAME: "439dbb535654eacac7615f030eb72903c4c905c55ffaa1606e9621d0dde8b541",
     EN_INDEX_NAME: "ef23509327605284075650b1dc1214cf8b472d3200833905548fe1389074a85f",
     EN_AUDIT_NAME: "97288d8d89ee7228ed37f51ef3afb8e177313dad4536bdd82c51cb8de83c769d",
+    EN_TEXT_NAME: "735ab5302a6a7e90119dda8dd02eac227dc36f06d7adef5a82946c27e3ce1a83",
+    MOLEG_RIGHTS_NAME: "984f8e79534da759684858199c60979665b9af3bf504a27d55413e56d8ddc3c5",
 }
 
 TRANSLATION_REFERENCE = {
     "language": "en",
-    "availability": "external-link-only",
+    "availability": "complete-current-reference-stored",
+    "coverageStatus": "complete-current-reference",
     "title": "PERSONAL INFORMATION PROTECTION ACT",
-    "source": KLRI_REFERENCE,
-    "sourceLabel": "KLRI Statutes of the Republic of Korea — reference English",
+    "source": EN_TEXT_PAGE,
+    "sourceLabel": "Korean Law Information Center — government English reference",
     "sourceVersion": "Act No. 20897, Apr. 1, 2025",
+    "versionAsOf": "2025-10-02",
+    "versionLabel": "Act No. 20897 (effective 2025-10-02)",
     "versionAlignment": "all-126-main-article-numbers-align-with-current-Korean-MST-270351",
     "legalEffect": "reference-only-no-legal-or-official-authority",
-    "currentLanguageToggleEligible": False,
-    "reasonNotAttached": (
-        "KLRI prohibits unauthorized reproduction or distribution of its translation "
-        "material. A simple/direct external link is provided instead."
+    "currentLanguageToggleEligible": True,
+    "rightsBasis": (
+        "MOLEG's official legal-information policy opens supplied legal information "
+        "for free reuse, including commercial use, while excluding unlicensed "
+        "third-party-rights material from the supplied dataset."
     ),
-    "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do",
+    "rightsPolicy": MOLEG_RIGHTS_PAGE,
 }
 
 CONFIG = KoreanCorpusConfig(
@@ -111,7 +133,7 @@ CONFIG = KoreanCorpusConfig(
     expected_article_sequence_sha256=(
         "fe8bf7df85b48c94bb60a54ea662942bcc319c666d81f56d3fe68cfc996f9855"
     ),
-    translation_status="external-current-reference-not-redistributed-copyright",
+    translation_status="government-current-reference-stored-no-legal-effect",
     translation_reference=TRANSLATION_REFERENCE,
 )
 
@@ -166,6 +188,16 @@ def main() -> None:
     future_2027_path = snapshot_dir / FUTURE_2027_NAME
     en_index_path = snapshot_dir / EN_INDEX_NAME
     en_audit_path = snapshot_dir / EN_AUDIT_NAME
+    en_text_path = snapshot_dir / EN_TEXT_NAME
+    moleg_rights_path = snapshot_dir / MOLEG_RIGHTS_NAME
+
+    rights_text = moleg_rights_path.read_text(encoding="utf-8")
+    for required in (
+        "영리 목적의 이용을 포함하여 자유로운 활용이 보장됩니다",
+        "제3자의 권리가 포함된 것으로",
+    ):
+        if required not in rights_text:
+            raise ValueError(f"MOLEG reuse-policy language missing: {required}")
 
     index_records = effective_index_records(index_path, CONFIG.official_title)
     expected_index_phases = {
@@ -194,6 +226,112 @@ def main() -> None:
         raise ValueError("KLRI PIPA reference-version audit is inconsistent")
 
     corpus, counts = build_current_corpus(current_path, index_path, CONFIG)
+    english = parse_moleg_english_open_data(en_text_path)
+    if (
+        english["lawId"] != CONFIG.law_id
+        or english["actNumber"] != "20897"
+        or english["promulgatedOn"] != "20250401"
+        or len(english["articles"]) != 126
+        or len(english["supplements"]) != 12
+    ):
+        raise ValueError("MOLEG PIPA English full-text response has changed")
+
+    english_rights = {
+        "reuseStatus": "moleg-law-open-data-free-use",
+        "policyUrl": MOLEG_RIGHTS_PAGE,
+        "policySnapshotSha256": snapshot_sha256(moleg_rights_path),
+        "basis": (
+            "MOLEG states that supplied legal information is open to everyone and "
+            "may be freely used, including commercially; material with unlicensed "
+            "third-party rights is excluded from the supplied dataset."
+        ),
+        "attribution": (
+            "Source: Korean Law Information Center, Ministry of Government "
+            "Legislation, Republic of Korea."
+        ),
+    }
+    english_source_version = {
+        "masterSequence": "270351",
+        "actNumber": "20897",
+        "promulgatedOn": "2025-04-01",
+        "effectiveFrom": "2025-10-02",
+        "versionAsOf": "2025-10-02",
+        "versionLabel": "Act No. 20897 (effective 2025-10-02)",
+        "sourceDocumentSha256": snapshot_sha256(en_text_path),
+        "versionAlignment": (
+            "all-126-main-articles-and-12-addenda-align-with-current-Korean-MST-270351"
+        ),
+    }
+    english_note = (
+        "Complete government English reference aligned with Act No. 20897 and "
+        "the Korean consolidation effective 2 October 2025. MOLEG states that "
+        "foreign-language statute information has no official effect; the "
+        "promulgated Korean text controls."
+    )
+    article_units = [unit for unit in corpus if unit["unitType"] == "article"]
+    supplement_units = [
+        unit for unit in corpus if unit["unitType"] == "supplementary-provision-block"
+    ]
+    if [unit["articleNumber"] for unit in article_units] != list(english["articles"]):
+        raise ValueError("PIPA English and Korean Article number sequences do not align")
+    for unit in article_units:
+        record = english["articles"][unit["articleNumber"]]
+        unit["title"] = record["title"]
+        unit["translations"] = {
+            "en": {
+                "title": record["title"],
+                "paragraphs": record["paragraphs"],
+                "fullText": record["fullText"],
+                "language": "en",
+                "status": "government-reference-translation-no-legal-effect",
+                "coverageStatus": "complete-current-reference",
+                "versionAsOf": "2025-10-02",
+                "versionLabel": "Act No. 20897 (effective 2025-10-02)",
+                "currentTextEquivalent": True,
+                "referenceViewEligible": True,
+                "note": english_note,
+                "authorityNote": english_note,
+                "source": EN_TEXT_PAGE,
+                "sourceLabel": (
+                    "Korean Law Information Center — government English reference"
+                ),
+                "sourceXmlPath": record["sourceXmlPath"],
+                "sourceNodeSha256": record["sourceNodeSha256"],
+                "sourceVersion": english_source_version,
+                "contentSha256": record["contentSha256"],
+                "rights": english_rights,
+            }
+        }
+    if [unit.get("amendingActNumber") for unit in supplement_units] != [
+        record["amendingActNumber"] for record in english["supplements"]
+    ]:
+        raise ValueError("PIPA English and Korean addenda Act numbers do not align")
+    for unit, record in zip(supplement_units, english["supplements"], strict=True):
+        unit["translations"] = {
+            "en": {
+                "title": record["title"],
+                "paragraphs": record["paragraphs"],
+                "fullText": record["fullText"],
+                "language": "en",
+                "status": "government-reference-translation-no-legal-effect",
+                "coverageStatus": "complete-current-reference",
+                "versionAsOf": "2025-10-02",
+                "versionLabel": "Act No. 20897 (effective 2025-10-02)",
+                "currentTextEquivalent": True,
+                "referenceViewEligible": True,
+                "note": english_note,
+                "authorityNote": english_note,
+                "source": EN_TEXT_PAGE,
+                "sourceLabel": (
+                    "Korean Law Information Center — government English reference"
+                ),
+                "sourceXmlPath": record["sourceXmlPath"],
+                "sourceNodeSha256": record["sourceNodeSha256"],
+                "sourceVersion": english_source_version,
+                "contentSha256": record["contentSha256"],
+                "rights": english_rights,
+            }
+        }
     future_2026 = inspect_phase(future_2026_path, "2026-09-11")
     future_2027 = inspect_phase(future_2027_path, "2027-07-01")
     if future_2026["mainArticleCount"] != 127:
@@ -275,11 +413,14 @@ def main() -> None:
             **TRANSLATION_REFERENCE,
             "officialIndexMasterSequence": "270351",
             "referenceMainArticleCount": 126,
+            "referenceSupplementaryProvisionBlockCount": 12,
+            "attachedReferenceUnitCount": 138,
             "referenceArticleNumberSequenceSha256": (
                 en_audit["articleAudit"]["articleNumberSequenceSha256"]
             ),
             "futureAct21445Included": False,
-            "bodyStored": False,
+            "bodyStored": True,
+            "sourceDocumentSha256": snapshot_sha256(en_text_path),
             "authorityNote": (
                 "MOLEG states that foreign-language statute information has no "
                 "official effect and that Korean prevails in case of discrepancy."
@@ -295,8 +436,13 @@ def main() -> None:
                 ),
             },
             "referenceTranslation": {
+                **english_rights,
+                "sourceDataset": "MOLEG target=elaw official English-law Open API",
+            },
+            "alternativeKLRIReference": {
                 "reuseStatus": "external-link-only-no-redistribution",
                 "copyrightOwner": "Korea Legislation Research Institute",
+                "source": KLRI_REFERENCE,
                 "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do",
             },
         },
@@ -348,6 +494,22 @@ def main() -> None:
                 "application/json",
                 "English-reference-version-and-rights-audit-no-translation-text",
                 "audit-metadata-only",
+            ),
+            snapshot_entry(
+                snapshot_dir,
+                EN_TEXT_NAME,
+                EN_TEXT_API,
+                "application/xml",
+                "current-government-English-reference-full-text",
+                "moleg-law-open-data-free-use",
+            ),
+            snapshot_entry(
+                snapshot_dir,
+                MOLEG_RIGHTS_NAME,
+                MOLEG_RIGHTS_PAGE,
+                "text/html",
+                "government-open-data-reuse-policy",
+                "rights-audit",
             ),
         ],
     }

@@ -1,0 +1,1086 @@
+{
+  "schemaVersion": 1,
+  "instrumentId": "id-pdp-law-2022",
+  "sourceLanguage": "id",
+  "targetLanguage": "en",
+  "status": "machine-assisted-draft-requires-editorial-review",
+  "sourceCorpus": "data/v2/id-pdp-law-2022-articles.json",
+  "unitCount": 76,
+  "units": [
+    {
+      "id": "id-pdp-law-2022-art-1",
+      "sourceContentSha256": "992ae8b80c178eeb335f4a868530c84c7147f504479e3bc3c2fe83c546732f8d",
+      "sourceParagraphCount": 13,
+      "paragraphs": [
+        "article 1",
+        "In this Law what is meant by:",
+        "1. Personal Data is data about natural persons who are identified or can be identified individually or in combination with other information, either directly or indirectly, through electronic or non-electronic systems.",
+        "2. Personal Data Protection is the overall effort to protect Personal Data in the process of processing Personal Data in order to guarantee the constitutional rights of Personal Data subjects.",
+        "3. Information is information, statements, ideas and signs that contain values, meanings and messages, including data, facts and explanations that can be seen, heard and read, presented in various packages and formats in accordance with developments in electronic and non-electronic information and communication technology.",
+        "4. Personal Data Controller is any person, public body and international organization acting individually or jointly in determining the purposes and exercising control over the processing of Personal Data.",
+        "5. Personal Data Processor is any person, public body and international organization acting individually or jointly in processing Personal Data on behalf of the Personal Data Controller.",
+        "6. Personal Data Subject is the individual to whom the Personal Data is attached.",
+        "7. Every person is an individual or corporation.",
+        "8. A corporation is an organized collection of people and/or assets, whether with a legal entity or without a legal entity.",
+        "9. Public Bodies are executive, legislative, judicial and other bodies whose main functions and tasks are related to state administration, some or all of whose funds are sourced from the State Revenue and Expenditure Budget and/or Regional Revenue and Expenditure Budget, or non-governmental organizations as long as some or all of their funds are sourced from the State Revenue and Expenditure Budget and/or Regional Revenue and Expenditure Budget, community donations, and/or abroad.",
+        "10. International Organizations are organizations that are recognized as subjects of international law and have the capacity to make international agreements.",
+        "11. The Central Government, hereinafter referred to as the Government, is the President of the Republic of Indonesia who holds the governmental power of the Republic of Indonesia as intended in the 1945 Constitution of the Republic of Indonesia."
+      ],
+      "fullText": "article 1\n\nIn this Law what is meant by:\n\n1. Personal Data is data about natural persons who are identified or can be identified individually or in combination with other information, either directly or indirectly, through electronic or non-electronic systems.\n\n2. Personal Data Protection is the overall effort to protect Personal Data in the process of processing Personal Data in order to guarantee the constitutional rights of Personal Data subjects.\n\n3. Information is information, statements, ideas and signs that contain values, meanings and messages, including data, facts and explanations that can be seen, heard and read, presented in various packages and formats in accordance with developments in electronic and non-electronic information and communication technology.\n\n4. Personal Data Controller is any person, public body and international organization acting individually or jointly in determining the purposes and exercising control over the processing of Personal Data.\n\n5. Personal Data Processor is any person, public body and international organization acting individually or jointly in processing Personal Data on behalf of the Personal Data Controller.\n\n6. Personal Data Subject is the individual to whom the Personal Data is attached.\n\n7. Every person is an individual or corporation.\n\n8. A corporation is an organized collection of people and/or assets, whether with a legal entity or without a legal entity.\n\n9. Public Bodies are executive, legislative, judicial and other bodies whose main functions and tasks are related to state administration, some or all of whose funds are sourced from the State Revenue and Expenditure Budget and/or Regional Revenue and Expenditure Budget, or non-governmental organizations as long as some or all of their funds are sourced from the State Revenue and Expenditure Budget and/or Regional Revenue and Expenditure Budget, community donations, and/or abroad.\n\n10. International Organizations are organizations that are recognized as subjects of international law and have the capacity to make international agreements.\n\n11. The Central Government, hereinafter referred to as the Government, is the President of the Republic of Indonesia who holds the governmental power of the Republic of Indonesia as intended in the 1945 Constitution of the Republic of Indonesia.",
+      "contentSha256": "3d691f606a465eb46a318fc94693519c5e88810152005fd1fe834d0a173f04fe"
+    },
+    {
+      "id": "id-pdp-law-2022-art-2",
+      "sourceContentSha256": "fcc67a26edc08b12d0c6698b06ca52f6fe50826b832fba2a008accb6174242af",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 2",
+        "(1) This Law applies to every person, public body and international organization that carries out legal actions as regulated in this law:",
+        "a. which are in the jurisdiction of the Republic of Indonesia; And",
+        "b. outside the legal territory of the Republic of Indonesia, which has legal consequences:",
+        "1. in the jurisdiction of the Republic of Indonesia; and/or",
+        "2. for Personal Data Subjects who are Indonesian citizens outside the jurisdiction of the Republic of Indonesia.",
+        "(2) This Law does not apply to the processing of Personal Data by natural persons in personal or household activities."
+      ],
+      "fullText": "Article 2\n\n(1) This Law applies to every person, public body and international organization that carries out legal actions as regulated in this law:\n\na. which are in the jurisdiction of the Republic of Indonesia; And\n\nb. outside the legal territory of the Republic of Indonesia, which has legal consequences:\n\n1. in the jurisdiction of the Republic of Indonesia; and/or\n\n2. for Personal Data Subjects who are Indonesian citizens outside the jurisdiction of the Republic of Indonesia.\n\n(2) This Law does not apply to the processing of Personal Data by natural persons in personal or household activities.",
+      "contentSha256": "6c31ead11c2f7f6d102400a5b28d67ba70f9735f45e004947b09cc09795251c3"
+    },
+    {
+      "id": "id-pdp-law-2022-art-3",
+      "sourceContentSha256": "8d14eeaee3345ceb7dd16d56659c90bafa05fb8c1f6aa7b25a04c971e016e662",
+      "sourceParagraphCount": 10,
+      "paragraphs": [
+        "Article 3",
+        "This law is based on:",
+        "a. protection;",
+        "b. legal certainty;",
+        "c. public interest;",
+        "d. expediency;",
+        "e. caution;",
+        "f. balance;",
+        "g. accountability; And",
+        "h. confidentiality."
+      ],
+      "fullText": "Article 3\n\nThis law is based on:\n\na. protection;\n\nb. legal certainty;\n\nc. public interest;\n\nd. expediency;\n\ne. caution;\n\nf. balance;\n\ng. accountability; And\n\nh. confidentiality.",
+      "contentSha256": "f86b79c8162c3ff4af21e46b9a31a747dc748c7858ed56079062f9b14f1b89a2"
+    },
+    {
+      "id": "id-pdp-law-2022-art-4",
+      "sourceContentSha256": "d226f443019a6c217d533cf1369881dd409696086b18ba34b200bb678b0e3657",
+      "sourceParagraphCount": 19,
+      "paragraphs": [
+        "Article 4",
+        "(1) Personal Data consists of:",
+        "a. Personal Data of a specific nature; And",
+        "b. General Personal Data.",
+        "(2) Personal Data of a specific nature as intended in paragraph (1) letter a includes:",
+        "a. health data and information;",
+        "b. biometric data;",
+        "c. genetic data;",
+        "d. criminal record;",
+        "e. child data;",
+        "f. personal financial data; and/or",
+        "g. other data in accordance with statutory provisions.",
+        "(3) Personal Data of a general nature as intended in paragraph (1) letter b includes:",
+        "a. full name;",
+        "b. gender;",
+        "c. citizenship;",
+        "d. religion;",
+        "e. marital status; and/or",
+        "f. Personal Data combined to identify an individual."
+      ],
+      "fullText": "Article 4\n\n(1) Personal Data consists of:\n\na. Personal Data of a specific nature; And\n\nb. General Personal Data.\n\n(2) Personal Data of a specific nature as intended in paragraph (1) letter a includes:\n\na. health data and information;\n\nb. biometric data;\n\nc. genetic data;\n\nd. criminal record;\n\ne. child data;\n\nf. personal financial data; and/or\n\ng. other data in accordance with statutory provisions.\n\n(3) Personal Data of a general nature as intended in paragraph (1) letter b includes:\n\na. full name;\n\nb. gender;\n\nc. citizenship;\n\nd. religion;\n\ne. marital status; and/or\n\nf. Personal Data combined to identify an individual.",
+      "contentSha256": "ac48a1b62d025a7695b66c71f23306fbb941ba8e80e8d5c90f93be47c8839e31"
+    },
+    {
+      "id": "id-pdp-law-2022-art-5",
+      "sourceContentSha256": "8b8a862f8a0c0603de6e88d6303ac3c9135d63c2e7c81b300a33a3e5d9f69371",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 5",
+        "Personal Data Subjects have the right to obtain information regarding clarity of identity, the basis of legal interests, the purpose of requesting and using Personal Data, and the accountability of the party requesting Personal Data."
+      ],
+      "fullText": "Article 5\n\nPersonal Data Subjects have the right to obtain information regarding clarity of identity, the basis of legal interests, the purpose of requesting and using Personal Data, and the accountability of the party requesting Personal Data.",
+      "contentSha256": "10345e71dfa81d10a2cd0651b0b7a44750d123b8b6c73fdd73ac0117c567f3f2"
+    },
+    {
+      "id": "id-pdp-law-2022-art-6",
+      "sourceContentSha256": "d45851bed5dbc432a7ab768ce674bd85fb4a031efbaef1e2669826cfeea3994c",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 6",
+        "Personal Data Subjects have the right to complete, update, and/or correct errors and/or inaccuracies in Personal Data about themselves in accordance with the purposes of processing Personal Data."
+      ],
+      "fullText": "Article 6\n\nPersonal Data Subjects have the right to complete, update, and/or correct errors and/or inaccuracies in Personal Data about themselves in accordance with the purposes of processing Personal Data.",
+      "contentSha256": "735a9a8f52a2ce2ac88b3f1984c0ab8d1d5ea22d53006e6a8c53949444d1debc"
+    },
+    {
+      "id": "id-pdp-law-2022-art-7",
+      "sourceContentSha256": "cbee0aa5840d4bd7bbbc0456f945aa45c9ee87d6d7d9df82118acb866a7f36e3",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 7",
+        "Personal Data Subjects have the right to access and obtain a copy of Personal Data about themselves in accordance with statutory provisions."
+      ],
+      "fullText": "Article 7\n\nPersonal Data Subjects have the right to access and obtain a copy of Personal Data about themselves in accordance with statutory provisions.",
+      "contentSha256": "e81b51002a1faadea106dc17078b8793549c6016390312213a5ab78b9e18c449"
+    },
+    {
+      "id": "id-pdp-law-2022-art-8",
+      "sourceContentSha256": "5d21447b216f74534dccdfd96936794941605c38ce648cdccca21adda38eb520",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 8",
+        "Personal Data Subjects have the right to end processing, delete and/or destroy Personal Data about themselves in accordance with statutory provisions."
+      ],
+      "fullText": "Article 8\n\nPersonal Data Subjects have the right to end processing, delete and/or destroy Personal Data about themselves in accordance with statutory provisions.",
+      "contentSha256": "b37be545b199fd24e499480beae6b535426af076ea7eb430651ada3df2b1f262"
+    },
+    {
+      "id": "id-pdp-law-2022-art-9",
+      "sourceContentSha256": "45ca18bc15c1d245064109ac07422c4cd9c4a3b4d7a96ce44431e2f8c963ee3b",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 9",
+        "Personal Data Subjects have the right to withdraw consent to the processing of Personal Data about them that has been given to the Personal Data Controller."
+      ],
+      "fullText": "Article 9\n\nPersonal Data Subjects have the right to withdraw consent to the processing of Personal Data about them that has been given to the Personal Data Controller.",
+      "contentSha256": "9883231ac6a5060ec1015facad46e5084e443c643e7124d1a17b043e579daff7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-10",
+      "sourceContentSha256": "568956f79b8d49ef1214221f8057e107790ec4baf24e144cc2a8c75d21fea38d",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 10",
+        "(1) Personal Data Subjects have the right to submit objections to decision-making actions that are based solely on automated processing, including profiling, which give rise to legal consequences or have a significant impact on the Personal Data Subjects.",
+        "(2) Further provisions regarding submitting objections to automatic processing as intended in paragraph (1) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 10\n\n(1) Personal Data Subjects have the right to submit objections to decision-making actions that are based solely on automated processing, including profiling, which give rise to legal consequences or have a significant impact on the Personal Data Subjects.\n\n(2) Further provisions regarding submitting objections to automatic processing as intended in paragraph (1) are regulated in Government Regulations.",
+      "contentSha256": "333fc56d313126c1a1cddc0576d11139c3e77396b9933b0678c3ab38d185db4a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-11",
+      "sourceContentSha256": "19734efcdaa8a1ee29002fc9abc8c188a9b16900b84ae649eb6cfb83908697c0",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 11",
+        "Personal Data Subjects have the right to delay or limit the processing of Personal Data in proportion to the purposes of the Personal Data processing."
+      ],
+      "fullText": "Article 11\n\nPersonal Data Subjects have the right to delay or limit the processing of Personal Data in proportion to the purposes of the Personal Data processing.",
+      "contentSha256": "e3e19a3e814398909444dc9b8a36691282e1d8af46a082dfd5e907952138effd"
+    },
+    {
+      "id": "id-pdp-law-2022-art-12",
+      "sourceContentSha256": "08743b0bc57598ae8f78f84d6e2d6a2037b3e41cf57e7909011f1fe61bb1fba2",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 12",
+        "(1) Personal Data Subjects have the right to sue and receive compensation for violations of the processing of Personal Data about themselves in accordance with statutory provisions.",
+        "(2) Further provisions regarding violations of Personal Data processing and procedures for imposing compensation as intended in paragraph (1) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 12\n\n(1) Personal Data Subjects have the right to sue and receive compensation for violations of the processing of Personal Data about themselves in accordance with statutory provisions.\n\n(2) Further provisions regarding violations of Personal Data processing and procedures for imposing compensation as intended in paragraph (1) are regulated in Government Regulations.",
+      "contentSha256": "309d8f19452a126d09d130eebc98ba94646eed011126008fa0b7b9cda22ce9a6"
+    },
+    {
+      "id": "id-pdp-law-2022-art-13",
+      "sourceContentSha256": "cc0b15769c4dfe3f2ac7b13c5f4572b0d8bd66ba6a499f44366599daf429ab99",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 13",
+        "(1) Personal Data Subjects have the right to obtain and/or use Personal Data about themselves from the Personal Data Controller in a form that conforms to the structure and/or format commonly used or can be read by electronic systems.",
+        "(2) Personal Data Subjects have the right to use and send Personal Data about themselves to other Personal Data Controllers, as long as the systems used can communicate with each other securely in accordance with the principles of Personal Data Protection under this Law.",
+        "(3) Further provisions regarding the rights of Personal Data Subjects to use and transmit Personal Data as intended in paragraph (2) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 13\n\n(1) Personal Data Subjects have the right to obtain and/or use Personal Data about themselves from the Personal Data Controller in a form that conforms to the structure and/or format commonly used or can be read by electronic systems.\n\n(2) Personal Data Subjects have the right to use and send Personal Data about themselves to other Personal Data Controllers, as long as the systems used can communicate with each other securely in accordance with the principles of Personal Data Protection under this Law.\n\n(3) Further provisions regarding the rights of Personal Data Subjects to use and transmit Personal Data as intended in paragraph (2) are regulated in Government Regulations.",
+      "contentSha256": "c116f128789708af36cb3f17e06f6b7e01eabe124dece4f8cd79f3776447a3b6"
+    },
+    {
+      "id": "id-pdp-law-2022-art-14",
+      "sourceContentSha256": "0690456b61587cacf89dd05f61782ee42e8f16a06653b26032277e563ad0fab9",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 14",
+        "The implementation of the rights of Personal Data Subjects as referred to in Articles 6 to Article 11 is submitted through a registered application submitted electronically or non-electronically to the Personal Data Controller."
+      ],
+      "fullText": "Article 14\n\nThe implementation of the rights of Personal Data Subjects as referred to in Articles 6 to Article 11 is submitted through a registered application submitted electronically or non-electronically to the Personal Data Controller.",
+      "contentSha256": "fd59e8e23cb9f777cdc8d1422c146cbddb2c610c99d8ef9ac3a72d2cc1471b5b"
+    },
+    {
+      "id": "id-pdp-law-2022-art-15",
+      "sourceContentSha256": "6936fa71224587bf1be293e3a6e4eb245f94302805a9244a404116bb317d03b9",
+      "sourceParagraphCount": 8,
+      "paragraphs": [
+        "Article 15",
+        "(1) The rights of Personal Data Subjects as intended in Article 8, Article 9, Article 10 paragraph (1), Article 11, and Article 13 paragraph (1) and paragraph (2) are excluded for:",
+        "a. national defense and security interests;",
+        "b. interests of the law enforcement process;",
+        "c. public interest in the context of state administration;",
+        "d. interests in supervision of the financial services sector, monetary, payment systems and financial system stability carried out in the context of state administration; or",
+        "e. interests of statistics and scientific research.",
+        "(2) The exception as intended in paragraph (1) is implemented only in the context of implementing the provisions of the Law."
+      ],
+      "fullText": "Article 15\n\n(1) The rights of Personal Data Subjects as intended in Article 8, Article 9, Article 10 paragraph (1), Article 11, and Article 13 paragraph (1) and paragraph (2) are excluded for:\n\na. national defense and security interests;\n\nb. interests of the law enforcement process;\n\nc. public interest in the context of state administration;\n\nd. interests in supervision of the financial services sector, monetary, payment systems and financial system stability carried out in the context of state administration; or\n\ne. interests of statistics and scientific research.\n\n(2) The exception as intended in paragraph (1) is implemented only in the context of implementing the provisions of the Law.",
+      "contentSha256": "1875512a41ce1812b7ed40f263f7e74f526663c3b7987fa2c13b01636fd1c865"
+    },
+    {
+      "id": "id-pdp-law-2022-art-16",
+      "sourceContentSha256": "0bf5ace90cf838c3458cf1cf8bfdeea8238d59de8390fba6c031a5fa3512e5b6",
+      "sourceParagraphCount": 18,
+      "paragraphs": [
+        "Article 16",
+        "(1) Processing of Personal Data includes:",
+        "a. acquisition and collection;",
+        "b. processing and analysis;",
+        "c. storage;",
+        "d. fixes and updates;",
+        "e. appearance, announcement, transfer, distribution or disclosure; and/or",
+        "f. deletion or destruction.",
+        "(2) The processing of Personal Data as intended in paragraph (1) is carried out in accordance with the principles of Personal Data Protection including:",
+        "a. Personal Data collection is carried out in a limited and specific manner, is legally valid and transparent;",
+        "b. the processing of Personal Data is carried out in accordance with its purpose;",
+        "c. processing of Personal Data is carried out by guaranteeing the rights of the Personal Data Subject;",
+        "d. the processing of Personal Data is carried out accurately, completely, not misleadingly, up to date and responsibly;",
+        "e. processing of Personal Data is carried out by protecting the security of Personal Data from unauthorized access, unauthorized disclosure, unauthorized modification, misuse, destruction and/or deletion of Personal Data;",
+        "f. Personal Data processing is carried out by notifying the purposes and processing activities, as well as the failure to protect Personal Data;",
+        "g. Personal Data is destroyed and/or deleted after the retention period ends or at the request of the Personal Data Subject, unless otherwise determined by statutory regulations; And",
+        "h. Personal Data processing is carried out responsibly and can be clearly proven.",
+        "(3) Further provisions regarding the implementation of Personal Data processing as intended in paragraph (1) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 16\n\n(1) Processing of Personal Data includes:\n\na. acquisition and collection;\n\nb. processing and analysis;\n\nc. storage;\n\nd. fixes and updates;\n\ne. appearance, announcement, transfer, distribution or disclosure; and/or\n\nf. deletion or destruction.\n\n(2) The processing of Personal Data as intended in paragraph (1) is carried out in accordance with the principles of Personal Data Protection including:\n\na. Personal Data collection is carried out in a limited and specific manner, is legally valid and transparent;\n\nb. the processing of Personal Data is carried out in accordance with its purpose;\n\nc. processing of Personal Data is carried out by guaranteeing the rights of the Personal Data Subject;\n\nd. the processing of Personal Data is carried out accurately, completely, not misleadingly, up to date and responsibly;\n\ne. processing of Personal Data is carried out by protecting the security of Personal Data from unauthorized access, unauthorized disclosure, unauthorized modification, misuse, destruction and/or deletion of Personal Data;\n\nf. Personal Data processing is carried out by notifying the purposes and processing activities, as well as the failure to protect Personal Data;\n\ng. Personal Data is destroyed and/or deleted after the retention period ends or at the request of the Personal Data Subject, unless otherwise determined by statutory regulations; And\n\nh. Personal Data processing is carried out responsibly and can be clearly proven.\n\n(3) Further provisions regarding the implementation of Personal Data processing as intended in paragraph (1) are regulated in Government Regulations.",
+      "contentSha256": "e0dc2e7d4706912aa0d38b90c43ae1a3ab815f36a061eceaa15c282b5ec792ae"
+    },
+    {
+      "id": "id-pdp-law-2022-art-17",
+      "sourceContentSha256": "f06003b0c41d7c896c7c3d508a3fea029d03c15ee0b92d18b33b1d868536b0aa",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 17",
+        "(1) Installation of processing equipment or visual data processors in public places and/or public service facilities is carried out with the following provisions:",
+        "a. for the purposes of security, disaster prevention, and/or traffic management or collecting, analyzing, and organizing traffic information;",
+        "b. must display information in areas where visual data processing or processing tools have been installed; And",
+        "c. is not used to identify a person.",
+        "(2) The provisions as intended in paragraph (1) letters b and c are excluded for the prevention of criminal acts and law enforcement processes in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 17\n\n(1) Installation of processing equipment or visual data processors in public places and/or public service facilities is carried out with the following provisions:\n\na. for the purposes of security, disaster prevention, and/or traffic management or collecting, analyzing, and organizing traffic information;\n\nb. must display information in areas where visual data processing or processing tools have been installed; And\n\nc. is not used to identify a person.\n\n(2) The provisions as intended in paragraph (1) letters b and c are excluded for the prevention of criminal acts and law enforcement processes in accordance with the provisions of statutory regulations.",
+      "contentSha256": "b1896abe6b88a4456d903e9ff51b8bdfd5c2749f8d4d03ebf00ac3c07a378c44"
+    },
+    {
+      "id": "id-pdp-law-2022-art-18",
+      "sourceContentSha256": "80021c8395090c6746904eed15e11c7c5c35245ddfca398d4b2103d03670f3bb",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 18",
+        "(1) Personal Data processing can be carried out by 2 (two) or more Personal Data Controllers.",
+        "(2) In the event that Personal Data Processing is carried out by 2 (two) or more Personal Data Controllers, they must fulfill the minimum requirements:",
+        "a. there is an agreement between Personal Data Controllers which contains the roles, responsibilities and relationships between Personal Data Controllers;",
+        "b. there are interrelated purposes and methods of processing Personal Data that are mutually determined; And",
+        "c. there is a contact person appointed jointly."
+      ],
+      "fullText": "Article 18\n\n(1) Personal Data processing can be carried out by 2 (two) or more Personal Data Controllers.\n\n(2) In the event that Personal Data Processing is carried out by 2 (two) or more Personal Data Controllers, they must fulfill the minimum requirements:\n\na. there is an agreement between Personal Data Controllers which contains the roles, responsibilities and relationships between Personal Data Controllers;\n\nb. there are interrelated purposes and methods of processing Personal Data that are mutually determined; And\n\nc. there is a contact person appointed jointly.",
+      "contentSha256": "10a393876633258b6efe86ef3d154fb2b787664cfe4ee3246a81e70b744859c4"
+    },
+    {
+      "id": "id-pdp-law-2022-art-19",
+      "sourceContentSha256": "a43d20b182295a93bfdc2b5e7d4fdce78ff50fa903663e37b80ee38ed0733e44",
+      "sourceParagraphCount": 5,
+      "paragraphs": [
+        "Article 19",
+        "Personal Data Controllers and Personal Data Processors include:",
+        "a. Each person;",
+        "b. Public Bodies; And",
+        "c. International Organization."
+      ],
+      "fullText": "Article 19\n\nPersonal Data Controllers and Personal Data Processors include:\n\na. Each person;\n\nb. Public Bodies; And\n\nc. International Organization.",
+      "contentSha256": "be966a4e390055c9695c8cd3c1337ad5927c4a6c324f54c21f3f1fb96db52e4e"
+    },
+    {
+      "id": "id-pdp-law-2022-art-20",
+      "sourceContentSha256": "c43def557cc175817b78ffc95762a244e9058aa12878ccdb067952be75b67422",
+      "sourceParagraphCount": 9,
+      "paragraphs": [
+        "Article 20",
+        "(1) Personal Data Controllers are required to own the basis for processing Personal Data.",
+        "(2) The basis for processing Personal Data as intended in paragraph (1) includes:",
+        "a. explicit legal consent from the Personal Data Subject for 1 (one) or several specific purposes that have been conveyed by the Personal Data Controller to the Personal Data Subject;",
+        "b. fulfillment of contractual obligations in the event that the Personal Data Subject is a party or to fulfill the request of the Personal Data Subject when entering into an agreement;",
+        "c. Fulfillment of the legal obligations of the Personal Data Controller in accordance with statutory provisions;",
+        "d. fulfilling the protection of the vital interests of Personal Data Subjects;",
+        "e. carrying out duties in the public interest, public service, or exercising the authority of the Personal Data Controller based on statutory regulations; and/or",
+        "f. fulfillment of other legitimate interests by taking into account the objectives, needs and balance of interests of the Personal Data Controller and the rights of the Personal Data Subject."
+      ],
+      "fullText": "Article 20\n\n(1) Personal Data Controllers are required to own the basis for processing Personal Data.\n\n(2) The basis for processing Personal Data as intended in paragraph (1) includes:\n\na. explicit legal consent from the Personal Data Subject for 1 (one) or several specific purposes that have been conveyed by the Personal Data Controller to the Personal Data Subject;\n\nb. fulfillment of contractual obligations in the event that the Personal Data Subject is a party or to fulfill the request of the Personal Data Subject when entering into an agreement;\n\nc. Fulfillment of the legal obligations of the Personal Data Controller in accordance with statutory provisions;\n\nd. fulfilling the protection of the vital interests of Personal Data Subjects;\n\ne. carrying out duties in the public interest, public service, or exercising the authority of the Personal Data Controller based on statutory regulations; and/or\n\nf. fulfillment of other legitimate interests by taking into account the objectives, needs and balance of interests of the Personal Data Controller and the rights of the Personal Data Subject.",
+      "contentSha256": "a1acc4e95e858cacf99e79daf13dad1a49283f11629a8bf9eb7d477908a3eac8"
+    },
+    {
+      "id": "id-pdp-law-2022-art-21",
+      "sourceContentSha256": "38fa61b10d34cd4ffb4f01c677b10dd4365356b48985890a98e90aad97b2f16a",
+      "sourceParagraphCount": 10,
+      "paragraphs": [
+        "Article 21",
+        "(1) In the case of processing Personal Data based on consent as intended in Article 20 paragraph (2) letter a, the Personal Data Controller is obliged to submit information regarding:",
+        "a. legality of the processing of Personal Data;",
+        "b. purposes of processing Personal Data;",
+        "c. the type and relevance of Personal Data to be processed;",
+        "d. retention period for documents containing Personal Data;",
+        "e. details regarding the information collected;",
+        "f. period of processing of Personal Data; And",
+        "g. rights of Personal Data Subjects.",
+        "(2) In the event that there is a change in the Information as intended in paragraph (1), the Personal Data Controller is obliged to notify the Personal Data Subject before the change in the Information occurs."
+      ],
+      "fullText": "Article 21\n\n(1) In the case of processing Personal Data based on consent as intended in Article 20 paragraph (2) letter a, the Personal Data Controller is obliged to submit information regarding:\n\na. legality of the processing of Personal Data;\n\nb. purposes of processing Personal Data;\n\nc. the type and relevance of Personal Data to be processed;\n\nd. retention period for documents containing Personal Data;\n\ne. details regarding the information collected;\n\nf. period of processing of Personal Data; And\n\ng. rights of Personal Data Subjects.\n\n(2) In the event that there is a change in the Information as intended in paragraph (1), the Personal Data Controller is obliged to notify the Personal Data Subject before the change in the Information occurs.",
+      "contentSha256": "2e248965c21308fdfade77828f201ee84a3bce09d953d920500b629ca9d94267"
+    },
+    {
+      "id": "id-pdp-law-2022-art-22",
+      "sourceContentSha256": "114f8a79585748b90c4857581d886c5b5e3e8c6721ba0d370be3c89955dd7600",
+      "sourceParagraphCount": 9,
+      "paragraphs": [
+        "Article 22",
+        "(1) Consent to the processing of Personal Data is carried out through written or recorded consent.",
+        "(2) Approval as intended in paragraph (1) can be submitted electronically or non-electronically.",
+        "(3) The approval as intended in paragraph (1) has the same legal force.",
+        "(4) In the event that the approval as intended in paragraph (1) contains other purposes, the request for approval must fulfill the following provisions:",
+        "a. can be clearly distinguished from other things;",
+        "b. created in a format that is understandable and easy to access; And",
+        "c. use simple and clear language.",
+        "(5) Approvals that do not meet the provisions as intended in paragraph (1) and paragraph (4) are declared null and void by law."
+      ],
+      "fullText": "Article 22\n\n(1) Consent to the processing of Personal Data is carried out through written or recorded consent.\n\n(2) Approval as intended in paragraph (1) can be submitted electronically or non-electronically.\n\n(3) The approval as intended in paragraph (1) has the same legal force.\n\n(4) In the event that the approval as intended in paragraph (1) contains other purposes, the request for approval must fulfill the following provisions:\n\na. can be clearly distinguished from other things;\n\nb. created in a format that is understandable and easy to access; And\n\nc. use simple and clear language.\n\n(5) Approvals that do not meet the provisions as intended in paragraph (1) and paragraph (4) are declared null and void by law.",
+      "contentSha256": "71c511b514005b6b61556b287dc37e4a1b327cb5d66e3fde57e6fcb6aa4470b6"
+    },
+    {
+      "id": "id-pdp-law-2022-art-23",
+      "sourceContentSha256": "682d73ed267390f7170d5bd25f98672194e547b5a11b1cae4c41b00162ec25f2",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 23",
+        "Agreement clauses in which there is a request for processing of Personal Data that does not contain explicit valid consent from the Personal Data Subject are declared null and void."
+      ],
+      "fullText": "Article 23\n\nAgreement clauses in which there is a request for processing of Personal Data that does not contain explicit valid consent from the Personal Data Subject are declared null and void.",
+      "contentSha256": "683a3d4671629faba22f367b88e6ac41de5ab632e7b60cda0fe6a53ae00e9b6f"
+    },
+    {
+      "id": "id-pdp-law-2022-art-24",
+      "sourceContentSha256": "a8b514c057faf7acc6e82c0576b1f708b443fa1239cad82c441b5e9e652e5a29",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 24",
+        "In processing Personal Data, the Personal Data Controller is required to show proof of the consent that has been given by the Personal Data Subject."
+      ],
+      "fullText": "Article 24\n\nIn processing Personal Data, the Personal Data Controller is required to show proof of the consent that has been given by the Personal Data Subject.",
+      "contentSha256": "f323e2be75da0547b4b01b1405547f8b10a8a650a0d53edee2bc85e87151689e"
+    },
+    {
+      "id": "id-pdp-law-2022-art-25",
+      "sourceContentSha256": "736b90b039081df2183175c27b8d79435d87b48e338316ec528997c456cca1cd",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 25",
+        "(1) Processing of children's Personal Data is carried out specifically.",
+        "(2) Processing of children's Personal Data as intended in paragraph (1) must obtain approval from the child's parents and/or child's guardian in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 25\n\n(1) Processing of children's Personal Data is carried out specifically.\n\n(2) Processing of children's Personal Data as intended in paragraph (1) must obtain approval from the child's parents and/or child's guardian in accordance with the provisions of statutory regulations.",
+      "contentSha256": "c1cb7f4371022f7aa1a0f25869000408c99f35b2c7831f5886dc27c91cd6183a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-26",
+      "sourceContentSha256": "5b5313b72e9481de4590cec1025337a27353db0dd04db22d897ef5e536393186",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 26",
+        "(1) Processing of Personal Data of persons with disabilities is carried out specifically.",
+        "(2) Processing of Personal Data of persons with disabilities as referred to in paragraph (1) is carried out through communication using certain methods in accordance with statutory provisions.",
+        "(3) Processing of Personal Data of persons with disabilities as referred to in paragraph (2) must obtain approval from persons with disabilities and/or guardians of persons with disabilities in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 26\n\n(1) Processing of Personal Data of persons with disabilities is carried out specifically.\n\n(2) Processing of Personal Data of persons with disabilities as referred to in paragraph (1) is carried out through communication using certain methods in accordance with statutory provisions.\n\n(3) Processing of Personal Data of persons with disabilities as referred to in paragraph (2) must obtain approval from persons with disabilities and/or guardians of persons with disabilities in accordance with the provisions of statutory regulations.",
+      "contentSha256": "9cd61f58d9161cbf22ea8fbf99ee5f7374209217b1f2bcc2c0e7dcdfa002d544"
+    },
+    {
+      "id": "id-pdp-law-2022-art-27",
+      "sourceContentSha256": "3874dc5424522c3d26a4b57ae60fa22e7082396db7025b1892165f92c06659c8",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 27",
+        "Personal Data Controllers are required to carry out processing of Personal Data in a limited and specific manner, legally and transparently."
+      ],
+      "fullText": "Article 27\n\nPersonal Data Controllers are required to carry out processing of Personal Data in a limited and specific manner, legally and transparently.",
+      "contentSha256": "d73c6e0a0e74c4e1a5eb1a9291df2ed555cb9321ebf4a3217b0d03c4081f4c22"
+    },
+    {
+      "id": "id-pdp-law-2022-art-28",
+      "sourceContentSha256": "47470d437c901603cfc3fe78525b11bb86431d7b0d37a8edaaeef7517afc5453",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 28",
+        "Personal Data Controllers are obliged to process Personal Data in accordance with the purposes of processing Personal Data."
+      ],
+      "fullText": "Article 28\n\nPersonal Data Controllers are obliged to process Personal Data in accordance with the purposes of processing Personal Data.",
+      "contentSha256": "82ceeb01a558001efe2f8b5713d6f083ba18514d1f4323ca3de71d431fef23be"
+    },
+    {
+      "id": "id-pdp-law-2022-art-29",
+      "sourceContentSha256": "03eae47750974f450516545d5426bc2dc333d7a1631e9c1b80e279b9204ce28f",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 29",
+        "(1) Personal Data Controllers are required to ensure the accuracy, completeness and consistency of Personal Data in accordance with statutory provisions.",
+        "(2) In ensuring the accuracy, completeness and consistency of Personal Data as intended in paragraph (1) the Personal Data Controller is obliged to carry out verification."
+      ],
+      "fullText": "Article 29\n\n(1) Personal Data Controllers are required to ensure the accuracy, completeness and consistency of Personal Data in accordance with statutory provisions.\n\n(2) In ensuring the accuracy, completeness and consistency of Personal Data as intended in paragraph (1) the Personal Data Controller is obliged to carry out verification.",
+      "contentSha256": "2ed46b86a143b3d1242fb0e68a07fb4c1067749b0f3a50c58299aa0430f135cb"
+    },
+    {
+      "id": "id-pdp-law-2022-art-30",
+      "sourceContentSha256": "b4057662e9f4ed6ad82586c9033ed4b2c310bb8097b1ada9ed04dde6374dd4ad",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 30",
+        "(1) The Personal Data Controller is obliged to update and/or correct errors and/or inaccuracies in Personal Data no later than 3 x 24 (three times twenty four) hours from when the Personal Data Controller receives the request for updating and/or correcting Personal Data.",
+        "(2) The Personal Data Controller is obliged to notify the Personal Data Subject of the results of updating and/or correcting Personal Data."
+      ],
+      "fullText": "Article 30\n\n(1) The Personal Data Controller is obliged to update and/or correct errors and/or inaccuracies in Personal Data no later than 3 x 24 (three times twenty four) hours from when the Personal Data Controller receives the request for updating and/or correcting Personal Data.\n\n(2) The Personal Data Controller is obliged to notify the Personal Data Subject of the results of updating and/or correcting Personal Data.",
+      "contentSha256": "9d299e292ac22ec7d9b691f1741ce90c275a0d37e43b5eb246f81370e8ad6d35"
+    },
+    {
+      "id": "id-pdp-law-2022-art-31",
+      "sourceContentSha256": "d007d95cf8dd37fd91939a9d2145c6b46208e24b6ba0b96421d11d58c51f3693",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 31",
+        "Personal Data Controllers are required to record all Personal Data processing activities."
+      ],
+      "fullText": "Article 31\n\nPersonal Data Controllers are required to record all Personal Data processing activities.",
+      "contentSha256": "738e11dab65d96365e3a4f0dfc0e884a811eae2b4490903602fc697d8c8e5375"
+    },
+    {
+      "id": "id-pdp-law-2022-art-32",
+      "sourceContentSha256": "3fbc58334ecd48d99614d05086000644f8e13d9452731fa384c1f6b270d9fef0",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 32",
+        "(1) Personal Data Controllers are obliged to provide Personal Data Subjects with access to the Personal Data processed along with the track record of Personal Data processing in accordance with the period of storage of Personal Data.",
+        "(2) Access as intended in paragraph (1) is granted no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the access request."
+      ],
+      "fullText": "Article 32\n\n(1) Personal Data Controllers are obliged to provide Personal Data Subjects with access to the Personal Data processed along with the track record of Personal Data processing in accordance with the period of storage of Personal Data.\n\n(2) Access as intended in paragraph (1) is granted no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the access request.",
+      "contentSha256": "4a133f84f779dcccdea839fef5fce9f0672761d2caa4d88c94452200aee37d1f"
+    },
+    {
+      "id": "id-pdp-law-2022-art-33",
+      "sourceContentSha256": "cdd38afd8487193e33649cce6988e33072cac2d546d7f2854ac058eba13c4b33",
+      "sourceParagraphCount": 5,
+      "paragraphs": [
+        "Article 33",
+        "Personal Data Controllers are obliged to refuse to provide access to changes to Personal Data to Personal Data Subjects in the event that:",
+        "a. endanger the security, physical health or mental health of Personal Data Subjects and/or other people;",
+        "b. impact on the disclosure of Personal Data belonging to other people; and/or",
+        "c. contrary to the interests of national defense and security."
+      ],
+      "fullText": "Article 33\n\nPersonal Data Controllers are obliged to refuse to provide access to changes to Personal Data to Personal Data Subjects in the event that:\n\na. endanger the security, physical health or mental health of Personal Data Subjects and/or other people;\n\nb. impact on the disclosure of Personal Data belonging to other people; and/or\n\nc. contrary to the interests of national defense and security.",
+      "contentSha256": "eb7c6c302a2f07751dfd3d8fca24da71018e26459b2c3b0e47d77df5949c7a6c"
+    },
+    {
+      "id": "id-pdp-law-2022-art-34",
+      "sourceContentSha256": "1ed48675de6a94e6cbd087dc719330098f070cfd6d99ba290aa05d25bb13e0a2",
+      "sourceParagraphCount": 11,
+      "paragraphs": [
+        "Article 34",
+        "(1) Personal Data Controllers are required to assess the impact of Personal Data Protection in the event that the processing of Personal Data has the potential for high risk to Personal Data Subjects.",
+        "(2) Processing of Personal Data has the potential for high risk as intended in paragraph (1) including:",
+        "a. making automatic decisions that have legal consequences or significant impacts on Personal Data Subjects;",
+        "b. processing of specific Personal Data;",
+        "c. processing of Personal Data on a large scale;",
+        "d. processing of Personal Data for systematic evaluation, scoring or monitoring activities of Personal Data Subjects;",
+        "e. processing of Personal Data for matching or combining groups of data;",
+        "f. use of new technologies in the processing of Personal Data; and/or",
+        "g. processing of Personal Data that limits the exercise of the Personal Data Subject's rights.",
+        "(3) Further provisions regarding the assessment of the impact of Personal Data Protection are regulated in Government Regulations."
+      ],
+      "fullText": "Article 34\n\n(1) Personal Data Controllers are required to assess the impact of Personal Data Protection in the event that the processing of Personal Data has the potential for high risk to Personal Data Subjects.\n\n(2) Processing of Personal Data has the potential for high risk as intended in paragraph (1) including:\n\na. making automatic decisions that have legal consequences or significant impacts on Personal Data Subjects;\n\nb. processing of specific Personal Data;\n\nc. processing of Personal Data on a large scale;\n\nd. processing of Personal Data for systematic evaluation, scoring or monitoring activities of Personal Data Subjects;\n\ne. processing of Personal Data for matching or combining groups of data;\n\nf. use of new technologies in the processing of Personal Data; and/or\n\ng. processing of Personal Data that limits the exercise of the Personal Data Subject's rights.\n\n(3) Further provisions regarding the assessment of the impact of Personal Data Protection are regulated in Government Regulations.",
+      "contentSha256": "55ac2d3fb9a0404e2f1d739aef556e019da4bdc9fba46c718eca997e723d1abf"
+    },
+    {
+      "id": "id-pdp-law-2022-art-35",
+      "sourceContentSha256": "8bdb3476781fda50110422cd1430bf0dfe89195817a4f064a26a68c8e2bff0c3",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 35",
+        "Personal Data Controllers are obliged to protect and ensure the security of the Personal Data they process, by:",
+        "a. preparation and implementation of operational technical measures to protect Personal Data from interference with the processing of Personal Data which is contrary to the provisions of laws and regulations; And",
+        "b. determining the security level of Personal Data by taking into account the nature and risks of Personal Data that must be protected in the processing of Personal Data."
+      ],
+      "fullText": "Article 35\n\nPersonal Data Controllers are obliged to protect and ensure the security of the Personal Data they process, by:\n\na. preparation and implementation of operational technical measures to protect Personal Data from interference with the processing of Personal Data which is contrary to the provisions of laws and regulations; And\n\nb. determining the security level of Personal Data by taking into account the nature and risks of Personal Data that must be protected in the processing of Personal Data.",
+      "contentSha256": "33aa50e2ec6d974b95fa90e055f6474fc8cb80fc49fbd304fde6f974a082d50d"
+    },
+    {
+      "id": "id-pdp-law-2022-art-36",
+      "sourceContentSha256": "a87ff06b9304fc0c0031bc1845a16498928e083304fd7c7861c9c4af9c43c9be",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 36",
+        "In processing Personal Data, the Personal Data Controller is obliged to maintain the confidentiality of Personal Data."
+      ],
+      "fullText": "Article 36\n\nIn processing Personal Data, the Personal Data Controller is obliged to maintain the confidentiality of Personal Data.",
+      "contentSha256": "fd9bc4c5c830eaeeb51704ee832dbebc8b26dfedfffc78b9a07035b027e30f4a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-37",
+      "sourceContentSha256": "3c4178f306d5f18bda27072fef315c24205fee8165136415b815838c7c9d4efd",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 37",
+        "The Personal Data Controller is obliged to supervise every party involved in the processing of Personal Data under the control of the Personal Data Controller."
+      ],
+      "fullText": "Article 37\n\nThe Personal Data Controller is obliged to supervise every party involved in the processing of Personal Data under the control of the Personal Data Controller.",
+      "contentSha256": "12d4173e756c9f8ea1262d58438f9436b5bffb7d1abda933d70e6720f1516678"
+    },
+    {
+      "id": "id-pdp-law-2022-art-38",
+      "sourceContentSha256": "bdf8c0ac189bb16e12c5863f08172421fd1339f2fd6e10e68972778a71481e3b",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 38",
+        "Personal Data Controllers are obliged to protect Personal Data from unauthorized processing."
+      ],
+      "fullText": "Article 38\n\nPersonal Data Controllers are obliged to protect Personal Data from unauthorized processing.",
+      "contentSha256": "66fd4ed158e51f061a3cd10ae82f1a2a80e37906c13bd6cb6ff79b9f1eba89f0"
+    },
+    {
+      "id": "id-pdp-law-2022-art-39",
+      "sourceContentSha256": "92c393c9064ee4830d238f2b4e0875cbebd06bfccca00008c08f1a7ded418247",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 39",
+        "(1) Personal Data Controllers are obliged to prevent Personal Data from being accessed unlawfully.",
+        "(2) Prevention as intended in paragraph (1) is carried out by using a security system for processed Personal Data and/or processing Personal Data using an electronic system in a reliable, safe and responsible manner.",
+        "(3) Prevention as intended in paragraph (2) is carried out in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 39\n\n(1) Personal Data Controllers are obliged to prevent Personal Data from being accessed unlawfully.\n\n(2) Prevention as intended in paragraph (1) is carried out by using a security system for processed Personal Data and/or processing Personal Data using an electronic system in a reliable, safe and responsible manner.\n\n(3) Prevention as intended in paragraph (2) is carried out in accordance with the provisions of statutory regulations.",
+      "contentSha256": "f8569147e9f31963924d9e848a0f614751979411b0c7a9f7af0a1a6d1fcdea57"
+    },
+    {
+      "id": "id-pdp-law-2022-art-40",
+      "sourceContentSha256": "d9fed665fe9381344b09c9742e331ed0197d21c291b838d27002f802e3d2496c",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 40",
+        "(1) The Personal Data Controller is obliged to stop processing Personal Data if the Personal Data Subject withdraws consent to the processing of Personal Data.",
+        "(2) Termination of Personal Data processing as referred to in paragraph (1) shall be carried out no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the request to withdraw consent to the processing of Personal Data."
+      ],
+      "fullText": "Article 40\n\n(1) The Personal Data Controller is obliged to stop processing Personal Data if the Personal Data Subject withdraws consent to the processing of Personal Data.\n\n(2) Termination of Personal Data processing as referred to in paragraph (1) shall be carried out no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the request to withdraw consent to the processing of Personal Data.",
+      "contentSha256": "75dd3d34ac93f3b7db783500ecc430ed8a3b713c6255b5e035f68d663802b2ac"
+    },
+    {
+      "id": "id-pdp-law-2022-art-41",
+      "sourceContentSha256": "50e57ce50ddf2f315c1a8046f382e72e5b8692fb707b99d951d9c6ae01ec01b0",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 41",
+        "(1) The Personal Data Controller is obliged to postpone and limit the processing of Personal Data in whole or in part no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the request for delay and restriction of the processing of Personal Data.",
+        "(2) Delays and restrictions on the processing of Personal Data as intended in paragraph (1) are excluded in the case of:",
+        "a. there are provisions in laws and regulations that do not allow delays and restrictions on the processing of Personal Data;",
+        "b. may endanger the safety of other parties; and/or",
+        "c. Personal Data Subjects are bound by a written agreement with the Personal Data Controller which does not allow for delays and restrictions on the processing of Personal Data.",
+        "(3) Personal Data Controllers are required to notify Personal Data Subjects of suspensions and restrictions on processing of Personal Data."
+      ],
+      "fullText": "Article 41\n\n(1) The Personal Data Controller is obliged to postpone and limit the processing of Personal Data in whole or in part no later than 3 x 24 (three times twenty four) hours from the time the Personal Data Controller receives the request for delay and restriction of the processing of Personal Data.\n\n(2) Delays and restrictions on the processing of Personal Data as intended in paragraph (1) are excluded in the case of:\n\na. there are provisions in laws and regulations that do not allow delays and restrictions on the processing of Personal Data;\n\nb. may endanger the safety of other parties; and/or\n\nc. Personal Data Subjects are bound by a written agreement with the Personal Data Controller which does not allow for delays and restrictions on the processing of Personal Data.\n\n(3) Personal Data Controllers are required to notify Personal Data Subjects of suspensions and restrictions on processing of Personal Data.",
+      "contentSha256": "c1c2b8a7c35e25e5d60502155d449aab477a7a9bed4115213ba6dc2dfacf8e2a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-42",
+      "sourceContentSha256": "612da2e0cd725b7e97b50330efd11bf9a65e77820f2a3cc50e7a4d48d201aaff",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 42",
+        "(1) The Personal Data Controller is obliged to end the processing of Personal Data in the event that:",
+        "a. has reached the retention period;",
+        "b. the purpose of processing Personal Data has been achieved; or",
+        "c. there is a request from the Personal Data Subject.",
+        "(2) Termination of Personal Data processing as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 42\n\n(1) The Personal Data Controller is obliged to end the processing of Personal Data in the event that:\n\na. has reached the retention period;\n\nb. the purpose of processing Personal Data has been achieved; or\n\nc. there is a request from the Personal Data Subject.\n\n(2) Termination of Personal Data processing as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations.",
+      "contentSha256": "5f92c36b3893970961fb01c84374a856ef680c0352e8897748ff516269af686e"
+    },
+    {
+      "id": "id-pdp-law-2022-art-43",
+      "sourceContentSha256": "c0ed73ff3306e027f21a7f9f26107d7e94ddaecd40714b40cbe1c27ecdef9633",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 43",
+        "(1) Personal Data Controllers are obliged to delete Personal Data in the event that:",
+        "a. Personal Data is no longer necessary to achieve the purposes for which the Personal Data was processed;",
+        "b. The Personal Data Subject has withdrawn his consent to the processing of Personal Data;",
+        "c. there is a request from the Personal Data Subject; or",
+        "d. Personal Data is obtained and/or processed unlawfully.",
+        "(2) Deletion of Personal Data as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 43\n\n(1) Personal Data Controllers are obliged to delete Personal Data in the event that:\n\na. Personal Data is no longer necessary to achieve the purposes for which the Personal Data was processed;\n\nb. The Personal Data Subject has withdrawn his consent to the processing of Personal Data;\n\nc. there is a request from the Personal Data Subject; or\n\nd. Personal Data is obtained and/or processed unlawfully.\n\n(2) Deletion of Personal Data as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations.",
+      "contentSha256": "f8f18e8d92eced360865f03efecc811a2e83d9174d0143ea8dbf54e4c9384c3c"
+    },
+    {
+      "id": "id-pdp-law-2022-art-44",
+      "sourceContentSha256": "4e8ec63b701de0423d3da3fb9a6bc875f15c06568154d04c42e9c49118c074f6",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 44",
+        "(1) Personal Data Controllers are required to destroy Personal Data in the event that:",
+        "a. the retention period has expired and is certified as being destroyed based on the archive retention schedule;",
+        "b. there is a request from the Personal Data Subject;",
+        "c. not related to the completion of the legal process of a case; and/or",
+        "d. Personal Data is obtained and/or processed unlawfully.",
+        "(2) Destruction of Personal Data as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 44\n\n(1) Personal Data Controllers are required to destroy Personal Data in the event that:\n\na. the retention period has expired and is certified as being destroyed based on the archive retention schedule;\n\nb. there is a request from the Personal Data Subject;\n\nc. not related to the completion of the legal process of a case; and/or\n\nd. Personal Data is obtained and/or processed unlawfully.\n\n(2) Destruction of Personal Data as intended in paragraph (1) is carried out in accordance with the provisions of statutory regulations.",
+      "contentSha256": "f34de56f4a2a2e59e758d6fd6b454dcce8c82102699d37dc26fbbe0af44bb23e"
+    },
+    {
+      "id": "id-pdp-law-2022-art-45",
+      "sourceContentSha256": "60a101ad235d037f7d95ce1b5edc72086729ea9c9dbcd4db00023224e11eb88b",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 45",
+        "The Personal Data Controller is obliged to notify the Personal Data Subject of the deletion and/or destruction of Personal Data."
+      ],
+      "fullText": "Article 45\n\nThe Personal Data Controller is obliged to notify the Personal Data Subject of the deletion and/or destruction of Personal Data.",
+      "contentSha256": "958bcceb8786a2b941aa2723ac8c9728877042e541c8e3abb9710628136079a7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-46",
+      "sourceContentSha256": "efa2999e548632cc5fe34ec4f885454890590ce04b8aa0d5bc987144bec9adfc",
+      "sourceParagraphCount": 9,
+      "paragraphs": [
+        "Article 46",
+        "(1) In the event of a failure to protect Personal Data, the Personal Data Controller is obliged to provide written notification no later than 3 x 24 (three times twenty four) hours to:",
+        "a. Personal Data Subject; And",
+        "b. institution.",
+        "(2) The written notification as intended in paragraph (1) must contain at least:",
+        "a. Personal Data disclosed;",
+        "b. when and how Personal Data is disclosed; And",
+        "c. efforts to handle and recover from disclosure of Personal Data by the Personal Data Controller.",
+        "(3) In certain cases, the Personal Data Controller is obliged to notify the public regarding the failure to protect Personal Data."
+      ],
+      "fullText": "Article 46\n\n(1) In the event of a failure to protect Personal Data, the Personal Data Controller is obliged to provide written notification no later than 3 x 24 (three times twenty four) hours to:\n\na. Personal Data Subject; And\n\nb. institution.\n\n(2) The written notification as intended in paragraph (1) must contain at least:\n\na. Personal Data disclosed;\n\nb. when and how Personal Data is disclosed; And\n\nc. efforts to handle and recover from disclosure of Personal Data by the Personal Data Controller.\n\n(3) In certain cases, the Personal Data Controller is obliged to notify the public regarding the failure to protect Personal Data.",
+      "contentSha256": "d5b016caf558ab5bb0dce555f30ee71447dff208442455e7c7e324c600972354"
+    },
+    {
+      "id": "id-pdp-law-2022-art-47",
+      "sourceContentSha256": "9ba11bcdc81d973e24a603e90866c4bc276d6eaddaeeb2227d3a48a64f7d4802",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 47",
+        "Personal Data Controllers must be responsible for the processing of Personal Data and show responsibility in fulfilling obligations to implement the principles of Personal Data Protection."
+      ],
+      "fullText": "Article 47\n\nPersonal Data Controllers must be responsible for the processing of Personal Data and show responsibility in fulfilling obligations to implement the principles of Personal Data Protection.",
+      "contentSha256": "ead24c8b1cd4bf8cfa62746012826e82209eb80ef2ce82d577eae74fe9001f5f"
+    },
+    {
+      "id": "id-pdp-law-2022-art-48",
+      "sourceContentSha256": "0c0f07388420b7685d09c23daa9faac277bf9639cfaac64cada04b3080339de6",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 48",
+        "(1) A Personal Data Controller in the form of a legal entity that carries out a merger, separation, takeover, consolidation or dissolution of a legal entity is required to provide notification of the transfer of Personal Data to the Personal Data Subject.",
+        "(2) Notification of the transfer of Personal Data as intended in paragraph (1) is carried out before and after the merger, separation, takeover, consolidation or dissolution of a legal entity.",
+        "(3) In the event that the Personal Data Controller in the form of a legal entity dissolves or is dissolved, the storage, transfer, deletion or destruction of Personal Data is carried out in accordance with the provisions of statutory regulations.",
+        "(4) The storage, transfer, deletion or destruction of Personal Data as intended in paragraph (3) shall be notified to the Personal Data Subject.",
+        "(5) Further provisions regarding notification procedures as intended in paragraph (1), paragraph (2), and paragraph (4) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 48\n\n(1) A Personal Data Controller in the form of a legal entity that carries out a merger, separation, takeover, consolidation or dissolution of a legal entity is required to provide notification of the transfer of Personal Data to the Personal Data Subject.\n\n(2) Notification of the transfer of Personal Data as intended in paragraph (1) is carried out before and after the merger, separation, takeover, consolidation or dissolution of a legal entity.\n\n(3) In the event that the Personal Data Controller in the form of a legal entity dissolves or is dissolved, the storage, transfer, deletion or destruction of Personal Data is carried out in accordance with the provisions of statutory regulations.\n\n(4) The storage, transfer, deletion or destruction of Personal Data as intended in paragraph (3) shall be notified to the Personal Data Subject.\n\n(5) Further provisions regarding notification procedures as intended in paragraph (1), paragraph (2), and paragraph (4) are regulated in Government Regulations.",
+      "contentSha256": "1689f8d75c9748e29ad9277ce339f798b2f2bb336581c353f8a60e91882889b6"
+    },
+    {
+      "id": "id-pdp-law-2022-art-49",
+      "sourceContentSha256": "bbf3d39e3c6e53b1989d5f78866c114c73fba9933cb13a5d5184cb6ade644493",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 49",
+        "Personal Data Controllers and/or Personal Data Processors are obliged to carry out institutional orders in the context of implementing Personal Data Protection in accordance with this Law."
+      ],
+      "fullText": "Article 49\n\nPersonal Data Controllers and/or Personal Data Processors are obliged to carry out institutional orders in the context of implementing Personal Data Protection in accordance with this Law.",
+      "contentSha256": "afe08c9d0331a266593a267790ad1c17244127737720db2429a8f6790eac3ea5"
+    },
+    {
+      "id": "id-pdp-law-2022-art-50",
+      "sourceContentSha256": "e0758b22fba67350803a529eca7841414457e409fed555d12be55a50503644bf",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 50",
+        "(1) Obligations of Personal Data Controllers as intended in Article 30, Article 32, Article 36, Article 42, Article 43 paragraph (1) letters a to letter c, Article 44 paragraph (1) letter b, Article 45, and Article 46 paragraph (1) letter a, are excluded for:",
+        "a. national defense and security interests;",
+        "b. interests of the law enforcement process;",
+        "c. public interest in the context of state administration; or",
+        "d. the interests of supervising the financial services sector, monetary, payment systems and financial system stability carried out in the context of state administration.",
+        "(2) The exception as intended in paragraph (1) is implemented only in the context of implementing the provisions of the Law."
+      ],
+      "fullText": "Article 50\n\n(1) Obligations of Personal Data Controllers as intended in Article 30, Article 32, Article 36, Article 42, Article 43 paragraph (1) letters a to letter c, Article 44 paragraph (1) letter b, Article 45, and Article 46 paragraph (1) letter a, are excluded for:\n\na. national defense and security interests;\n\nb. interests of the law enforcement process;\n\nc. public interest in the context of state administration; or\n\nd. the interests of supervising the financial services sector, monetary, payment systems and financial system stability carried out in the context of state administration.\n\n(2) The exception as intended in paragraph (1) is implemented only in the context of implementing the provisions of the Law.",
+      "contentSha256": "c1cb6647ef460cdcd6977e7978f540bf9df3644d6d23de8cd0a20ab6851b9647"
+    },
+    {
+      "id": "id-pdp-law-2022-art-51",
+      "sourceContentSha256": "25215f63ca688a1aa1203561a39aa412d82ec48c6223f24c825ea462ac03bb38",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 51",
+        "(1) In the event that the Personal Data Controller appoints a Personal Data Processor, the Personal Data Processor is obliged to process the Personal Data based on the orders of the Personal Data Controller.",
+        "(2) Processing of Personal Data as intended in paragraph (1), is carried out in accordance with the provisions regulated in this Law.",
+        "(3) Processing of Personal Data as referred to in paragraph (1) is included in the responsibility of the Personal Data Controller.",
+        "(4) Personal Data Processors may involve other Personal Data Processors in processing Personal Data.",
+        "(5) Personal Data Processors are required to obtain written approval from the Personal Data Controller before involving other Personal Data Processors as intended in paragraph (4).",
+        "(6) In the event that the Personal Data Processor processes Personal Data outside the orders and purposes determined by the Personal Data Controller, the processing of Personal Data is the responsibility of the Personal Data Processor."
+      ],
+      "fullText": "Article 51\n\n(1) In the event that the Personal Data Controller appoints a Personal Data Processor, the Personal Data Processor is obliged to process the Personal Data based on the orders of the Personal Data Controller.\n\n(2) Processing of Personal Data as intended in paragraph (1), is carried out in accordance with the provisions regulated in this Law.\n\n(3) Processing of Personal Data as referred to in paragraph (1) is included in the responsibility of the Personal Data Controller.\n\n(4) Personal Data Processors may involve other Personal Data Processors in processing Personal Data.\n\n(5) Personal Data Processors are required to obtain written approval from the Personal Data Controller before involving other Personal Data Processors as intended in paragraph (4).\n\n(6) In the event that the Personal Data Processor processes Personal Data outside the orders and purposes determined by the Personal Data Controller, the processing of Personal Data is the responsibility of the Personal Data Processor.",
+      "contentSha256": "92468f87ca1e725b4a9045a9f18d99d2828c2e4865448e65e68368e578ed8ee7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-52",
+      "sourceContentSha256": "6f6aff7c373a77b74b69b8a9967f027083b1c8b5c9faa9fc89e63756e23631c4",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 52",
+        "Provisions regarding the obligations of Personal Data Controllers as intended in Article 29, Article 31, Article 35, Article 36, Article 37, Article 38 and Article 39 also apply to Personal Data Processors."
+      ],
+      "fullText": "Article 52\n\nProvisions regarding the obligations of Personal Data Controllers as intended in Article 29, Article 31, Article 35, Article 36, Article 37, Article 38 and Article 39 also apply to Personal Data Processors.",
+      "contentSha256": "302771073cbe2468d9a13c5024fce96181ab2d9856a59b674a7402665d83aa6d"
+    },
+    {
+      "id": "id-pdp-law-2022-art-53",
+      "sourceContentSha256": "48c27dc268c1955b893d9e55f5c261313766fa6d8e2fc0206d870e8c665bf145",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 53",
+        "(1) Personal Data Controllers and Personal Data Processors are required to appoint officials or officers who carry out the function of Personal Data Protection in the event of:",
+        "a. processing Personal Data for public service purposes;",
+        "b. The core activities of the Personal Data Controller have the nature, scope and/or objectives that require regular and systematic monitoring of Personal Data on a large scale; And",
+        "c. The core activities of the Personal Data Controller consist of processing Personal Data on a large scale for Personal Data of a specific nature and/or Personal Data relating to criminal acts.",
+        "(2) Officials or officers who carry out the Personal Data Protection function as intended in paragraph (1) are appointed based on professionalism, knowledge of the law, Personal Data Protection practices, and ability to fulfill their duties.",
+        "(3) Officials or officers who carry out the Personal Data Protection function as intended in paragraph (2) may come from within and/or outside the Personal Data Controller or Personal Data Processor."
+      ],
+      "fullText": "Article 53\n\n(1) Personal Data Controllers and Personal Data Processors are required to appoint officials or officers who carry out the function of Personal Data Protection in the event of:\n\na. processing Personal Data for public service purposes;\n\nb. The core activities of the Personal Data Controller have the nature, scope and/or objectives that require regular and systematic monitoring of Personal Data on a large scale; And\n\nc. The core activities of the Personal Data Controller consist of processing Personal Data on a large scale for Personal Data of a specific nature and/or Personal Data relating to criminal acts.\n\n(2) Officials or officers who carry out the Personal Data Protection function as intended in paragraph (1) are appointed based on professionalism, knowledge of the law, Personal Data Protection practices, and ability to fulfill their duties.\n\n(3) Officials or officers who carry out the Personal Data Protection function as intended in paragraph (2) may come from within and/or outside the Personal Data Controller or Personal Data Processor.",
+      "contentSha256": "f71445cda3e25ba311e8b5b6f21e22a35cf52ca53eed968d65d9601d6384a7a8"
+    },
+    {
+      "id": "id-pdp-law-2022-art-54",
+      "sourceContentSha256": "f652b9b35658cddb9ad037a24aebef875826ebd14aef11a9f95a075a623ac950",
+      "sourceParagraphCount": 8,
+      "paragraphs": [
+        "Article 54",
+        "(1) Officials or officers who carry out the Personal Data Protection function have duties of at least:",
+        "a. inform and provide advice to Personal Data Controllers or Personal Data Processors to comply with the provisions of this Law;",
+        "b. monitor and ensure compliance with this Law and the policies of the Personal Data Controller or Personal Data Processor;",
+        "c. provide advice regarding the assessment of the impact of Personal Data Protection and monitor the performance of Personal Data Controllers and Personal Data Processors; And",
+        "d. coordinate and act as a contact person for issues related to the processing of Personal Data.",
+        "(2) In carrying out the duties as intended in paragraph (1), officials or officers carrying out the Personal Data Protection function pay attention to the risks related to the processing of Personal Data, taking into account the nature, scope, context and purpose of the processing.",
+        "(3) Further provisions regarding officials or officers who carry out the Personal Data Protection function are regulated in Government Regulations."
+      ],
+      "fullText": "Article 54\n\n(1) Officials or officers who carry out the Personal Data Protection function have duties of at least:\n\na. inform and provide advice to Personal Data Controllers or Personal Data Processors to comply with the provisions of this Law;\n\nb. monitor and ensure compliance with this Law and the policies of the Personal Data Controller or Personal Data Processor;\n\nc. provide advice regarding the assessment of the impact of Personal Data Protection and monitor the performance of Personal Data Controllers and Personal Data Processors; And\n\nd. coordinate and act as a contact person for issues related to the processing of Personal Data.\n\n(2) In carrying out the duties as intended in paragraph (1), officials or officers carrying out the Personal Data Protection function pay attention to the risks related to the processing of Personal Data, taking into account the nature, scope, context and purpose of the processing.\n\n(3) Further provisions regarding officials or officers who carry out the Personal Data Protection function are regulated in Government Regulations.",
+      "contentSha256": "273011c0f683ae1d86b41bd84b1ab2024d3333f188141d032ba10981bba2b263"
+    },
+    {
+      "id": "id-pdp-law-2022-art-55",
+      "sourceContentSha256": "561292f32b6673b74755566d817906d269ef1a0b40f3440eea32da0f8124150e",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 55",
+        "(1) Personal Data Controllers can transfer Personal Data to other Personal Data Controllers within the jurisdiction of the Republic of Indonesia.",
+        "(2) Personal Data Controllers who transfer Personal Data and who receive Personal Data transfers are required to protect Personal Data as intended in this Law."
+      ],
+      "fullText": "Article 55\n\n(1) Personal Data Controllers can transfer Personal Data to other Personal Data Controllers within the jurisdiction of the Republic of Indonesia.\n\n(2) Personal Data Controllers who transfer Personal Data and who receive Personal Data transfers are required to protect Personal Data as intended in this Law.",
+      "contentSha256": "200e0d5fa717452df8d1318eb85f4a6932d88dfecdcc074e617a34d29bc7e0a3"
+    },
+    {
+      "id": "id-pdp-law-2022-art-56",
+      "sourceContentSha256": "092143401065173381ceed6f2615eca9d95fc660a5a0935a2612e949593ecc70",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 56",
+        "(1) Personal Data Controllers may transfer Personal Data to Personal Data Controllers and/or Personal Data Processors outside the jurisdiction of the Republic of Indonesia in accordance with the provisions regulated in this Law.",
+        "(2) In carrying out the transfer of Personal Data as intended in paragraph (1), the Personal Data Controller is obliged to ensure that the country of residence of the Personal Data Controller and/or Personal Data Processor receiving the transfer of Personal Data has a level of Personal Data Protection that is equivalent to or higher than that regulated in this Law.",
+        "(3) In the event that the provisions as intended in paragraph (2) are not met, the Personal Data Controller is obliged to ensure that there is adequate and binding Personal Data Protection.",
+        "(4) In the event that the provisions as intended in paragraph (2) and paragraph (3) are not fulfilled, the Personal Data Controller is required to obtain the approval of the Personal Data Subject.",
+        "(5) Further provisions regarding the transfer of Personal Data are regulated in Government Regulations."
+      ],
+      "fullText": "Article 56\n\n(1) Personal Data Controllers may transfer Personal Data to Personal Data Controllers and/or Personal Data Processors outside the jurisdiction of the Republic of Indonesia in accordance with the provisions regulated in this Law.\n\n(2) In carrying out the transfer of Personal Data as intended in paragraph (1), the Personal Data Controller is obliged to ensure that the country of residence of the Personal Data Controller and/or Personal Data Processor receiving the transfer of Personal Data has a level of Personal Data Protection that is equivalent to or higher than that regulated in this Law.\n\n(3) In the event that the provisions as intended in paragraph (2) are not met, the Personal Data Controller is obliged to ensure that there is adequate and binding Personal Data Protection.\n\n(4) In the event that the provisions as intended in paragraph (2) and paragraph (3) are not fulfilled, the Personal Data Controller is required to obtain the approval of the Personal Data Subject.\n\n(5) Further provisions regarding the transfer of Personal Data are regulated in Government Regulations.",
+      "contentSha256": "5fe35559559f646442e7ebfbc5c140db3f278bb6b821aacbb007842c213e33bb"
+    },
+    {
+      "id": "id-pdp-law-2022-art-57",
+      "sourceContentSha256": "9802ac5fd2a352aaae695b88a8997897b0baef6195c82aeefcc268326d7628d6",
+      "sourceParagraphCount": 10,
+      "paragraphs": [
+        "Article 57",
+        "(1) Violation of the provisions of Article 20 paragraph (1), Article 21, Article 24, Article 25 paragraph (2), Article 26 paragraph (3), Article 27, Article 28, Article 29, Article 30, Article 31, Article 32 paragraph (1), Article 33, Article 34 paragraph (1), Article 35, Article 36, Article 37, Article 38, Article 39 paragraph (1), Article 40 paragraph (1), Article 41 paragraph (1) and paragraph (3), Article 42 paragraph (1), Article 43 paragraph (1), Article 44 paragraph (1), Article 45, Article 46 paragraph (1) and paragraph (3), Article 47, Article 48 paragraph (1), Article 49, Article 51 paragraph (1) and paragraph (5), Article 52, Article 53 paragraph (1), Article 55 paragraph (2), and Article 56 paragraphs (2) to paragraph (4) are subject to administrative sanctions.",
+        "(2) Administrative sanctions as intended in paragraph (1) are in the form of:",
+        "a. written warning;",
+        "b. temporary suspension of Personal Data processing activities;",
+        "c. deletion or destruction of Personal Data; and/or",
+        "d. administrative fines.",
+        "(3) Administrative sanctions in the form of administrative fines as referred to in paragraph (2) letter d are a maximum of 2 (two) percent of the annual income or annual receipts for the violation variable.",
+        "(4) The administrative sanctions as intended in paragraph (2) are imposed by the institution.",
+        "(5) Further provisions regarding procedures for the imposition of administrative sanctions as intended in paragraph (3) are regulated in Government Regulations."
+      ],
+      "fullText": "Article 57\n\n(1) Violation of the provisions of Article 20 paragraph (1), Article 21, Article 24, Article 25 paragraph (2), Article 26 paragraph (3), Article 27, Article 28, Article 29, Article 30, Article 31, Article 32 paragraph (1), Article 33, Article 34 paragraph (1), Article 35, Article 36, Article 37, Article 38, Article 39 paragraph (1), Article 40 paragraph (1), Article 41 paragraph (1) and paragraph (3), Article 42 paragraph (1), Article 43 paragraph (1), Article 44 paragraph (1), Article 45, Article 46 paragraph (1) and paragraph (3), Article 47, Article 48 paragraph (1), Article 49, Article 51 paragraph (1) and paragraph (5), Article 52, Article 53 paragraph (1), Article 55 paragraph (2), and Article 56 paragraphs (2) to paragraph (4) are subject to administrative sanctions.\n\n(2) Administrative sanctions as intended in paragraph (1) are in the form of:\n\na. written warning;\n\nb. temporary suspension of Personal Data processing activities;\n\nc. deletion or destruction of Personal Data; and/or\n\nd. administrative fines.\n\n(3) Administrative sanctions in the form of administrative fines as referred to in paragraph (2) letter d are a maximum of 2 (two) percent of the annual income or annual receipts for the violation variable.\n\n(4) The administrative sanctions as intended in paragraph (2) are imposed by the institution.\n\n(5) Further provisions regarding procedures for the imposition of administrative sanctions as intended in paragraph (3) are regulated in Government Regulations.",
+      "contentSha256": "dbf7e7d9c4b2b149b25ac7c633119fae9b22c04e4ed7521d6a0aecdde946d7d5"
+    },
+    {
+      "id": "id-pdp-law-2022-art-58",
+      "sourceContentSha256": "0e6c87a0d91b57f53f884624fd4b864cc12b63b7ea8fdde31315bce645e66f1a",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 58",
+        "(1) The government plays a role in realizing the implementation of Personal Data Protection in accordance with the provisions of this Law.",
+        "(2) The implementation of Personal Data Protection as intended in paragraph (1) is carried out by the institution.",
+        "(3) The institution as intended in paragraph (2) is determined by the President.",
+        "(4) The institution as intended in paragraph (2) is responsible to the President.",
+        "(5) Further provisions regarding institutions as intended in paragraph (2) are regulated by Presidential Regulation."
+      ],
+      "fullText": "Article 58\n\n(1) The government plays a role in realizing the implementation of Personal Data Protection in accordance with the provisions of this Law.\n\n(2) The implementation of Personal Data Protection as intended in paragraph (1) is carried out by the institution.\n\n(3) The institution as intended in paragraph (2) is determined by the President.\n\n(4) The institution as intended in paragraph (2) is responsible to the President.\n\n(5) Further provisions regarding institutions as intended in paragraph (2) are regulated by Presidential Regulation.",
+      "contentSha256": "eb3a9209c86b1db7571311c47b7f5bf13655e589f2d6fdbc2d12060e4bc72fc7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-59",
+      "sourceContentSha256": "4a05f42e9478e89c9dba0960bc4e3948347361b09c66b3cba631d979e75c9899",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 59",
+        "The institution as intended in Article 58 paragraph (2) carries out:",
+        "a. formulating and establishing Personal Data Protection policies and strategies that serve as guidelines for Personal Data Subjects, Personal Data Controllers and Personal Data Processors;",
+        "b. supervision of the implementation of Personal Data Protection;",
+        "c. administrative law enforcement against violations of this Law; And",
+        "d. facilitation of dispute resolution outside of court."
+      ],
+      "fullText": "Article 59\n\nThe institution as intended in Article 58 paragraph (2) carries out:\n\na. formulating and establishing Personal Data Protection policies and strategies that serve as guidelines for Personal Data Subjects, Personal Data Controllers and Personal Data Processors;\n\nb. supervision of the implementation of Personal Data Protection;\n\nc. administrative law enforcement against violations of this Law; And\n\nd. facilitation of dispute resolution outside of court.",
+      "contentSha256": "e48c10667a720ff599b05af48499bb7cdc385d3802ef1b5eaf6939eecb312f13"
+    },
+    {
+      "id": "id-pdp-law-2022-art-60",
+      "sourceContentSha256": "5b1e6b1b0d0b88bb9a96ae8d81dc4e038fbcf09beb32a68966d113de7f807d28",
+      "sourceParagraphCount": 17,
+      "paragraphs": [
+        "Article 60",
+        "The institution as intended in Article 58 paragraph (2) has the authority to:",
+        "a. formulate and establish policies in the field of Personal Data Protection;",
+        "b. supervising Personal Data Controller compliance;",
+        "c. impose administrative sanctions for violations of Personal Data Protection committed by Personal Data Controllers and/or Personal Data Processors;",
+        "d. assist law enforcement officials in handling suspected Personal Data criminal acts as intended in this Law;",
+        "e. cooperate with other countries' Personal Data Protection agencies in the context of resolving alleged cross-border Personal Data Protection violations;",
+        "f. carry out an assessment of the fulfillment of requirements for the transfer of Personal Data outside the jurisdiction of the Republic of Indonesia;",
+        "g. give orders in order to follow up on the results of supervision to the Personal Data Controller and/or Personal Data Processor;",
+        "h. publish the results of the implementation of supervision of Personal Data Protection in accordance with statutory provisions;",
+        "i. receive complaints and/or reports regarding alleged violations of Personal Data Protection;",
+        "j. carry out inspections and investigations of complaints, reports and/or monitoring results regarding alleged violations of Personal Data Protection;",
+        "k. summon and present any Person and/or Public Body related to an alleged violation of Personal Data Protection;",
+        "l. request information, data, information and documents from any person and/or public body regarding alleged violations of personal data protection;",
+        "m. summon and present the necessary experts in the examination and investigation regarding suspected violations of Personal Data Protection;",
+        "n. carry out inspections and searches of electronic systems, facilities, spaces and/or places used by Personal Data Controllers and/or Personal Data Processors, including gaining access to data and/or appointing third parties; And",
+        "o. request legal assistance from the prosecutor's office in resolving Personal Data Protection disputes."
+      ],
+      "fullText": "Article 60\n\nThe institution as intended in Article 58 paragraph (2) has the authority to:\n\na. formulate and establish policies in the field of Personal Data Protection;\n\nb. supervising Personal Data Controller compliance;\n\nc. impose administrative sanctions for violations of Personal Data Protection committed by Personal Data Controllers and/or Personal Data Processors;\n\nd. assist law enforcement officials in handling suspected Personal Data criminal acts as intended in this Law;\n\ne. cooperate with other countries' Personal Data Protection agencies in the context of resolving alleged cross-border Personal Data Protection violations;\n\nf. carry out an assessment of the fulfillment of requirements for the transfer of Personal Data outside the jurisdiction of the Republic of Indonesia;\n\ng. give orders in order to follow up on the results of supervision to the Personal Data Controller and/or Personal Data Processor;\n\nh. publish the results of the implementation of supervision of Personal Data Protection in accordance with statutory provisions;\n\ni. receive complaints and/or reports regarding alleged violations of Personal Data Protection;\n\nj. carry out inspections and investigations of complaints, reports and/or monitoring results regarding alleged violations of Personal Data Protection;\n\nk. summon and present any Person and/or Public Body related to an alleged violation of Personal Data Protection;\n\nl. request information, data, information and documents from any person and/or public body regarding alleged violations of personal data protection;\n\nm. summon and present the necessary experts in the examination and investigation regarding suspected violations of Personal Data Protection;\n\nn. carry out inspections and searches of electronic systems, facilities, spaces and/or places used by Personal Data Controllers and/or Personal Data Processors, including gaining access to data and/or appointing third parties; And\n\no. request legal assistance from the prosecutor's office in resolving Personal Data Protection disputes.",
+      "contentSha256": "6a44d62d104f717dae728d69a6808e38d08c259a578d266422604aa562e59dd0"
+    },
+    {
+      "id": "id-pdp-law-2022-art-61",
+      "sourceContentSha256": "ed4fea6afa48d93719910a1be92f55a18b2ad698b9c3a83acf700f6777665f24",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 61",
+        "Provisions regarding procedures for implementing institutional authority as intended in Article 60 are regulated in Government Regulations.",
+        "BABX",
+        "INTERNATIONAL COOPERATION"
+      ],
+      "fullText": "Article 61\n\nProvisions regarding procedures for implementing institutional authority as intended in Article 60 are regulated in Government Regulations.\n\nBABX\n\nINTERNATIONAL COOPERATION",
+      "contentSha256": "3adbb474ac42ac3989adb1af855aa88fd4a343477bdbb39c6201bad81097ab58"
+    },
+    {
+      "id": "id-pdp-law-2022-art-62",
+      "sourceContentSha256": "211915bad5bf12564092d1d80b1cd2ddd454df0379ddb1bbb9fef7344ee78f64",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 62",
+        "(1) International cooperation is carried out by the Government with governments of other countries or International Organizations related to the Protection of Personal Data.",
+        "(2) International cooperation in the context of implementing this Law is carried out in accordance with the provisions of statutory regulations and principles of international law."
+      ],
+      "fullText": "Article 62\n\n(1) International cooperation is carried out by the Government with governments of other countries or International Organizations related to the Protection of Personal Data.\n\n(2) International cooperation in the context of implementing this Law is carried out in accordance with the provisions of statutory regulations and principles of international law.",
+      "contentSha256": "c846483953f1db35205500745288e491c6e579d9192d00969019abcc13ede61f"
+    },
+    {
+      "id": "id-pdp-law-2022-art-63",
+      "sourceContentSha256": "2274c0adea8570246edb1f9d8d9e82e387d8b96fd496ac78148fafd5174d386b",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 63",
+        "(1) The public can play a role either directly or indirectly in supporting the implementation of Personal Data Protection.",
+        "(2) The implementation of the role as intended in paragraph (1) can be carried out through education, training, advocacy, outreach, and/or supervision in accordance with the provisions of statutory regulations."
+      ],
+      "fullText": "Article 63\n\n(1) The public can play a role either directly or indirectly in supporting the implementation of Personal Data Protection.\n\n(2) The implementation of the role as intended in paragraph (1) can be carried out through education, training, advocacy, outreach, and/or supervision in accordance with the provisions of statutory regulations.",
+      "contentSha256": "a38c9db76e27b7cc42cf33c25e83f6356accdb65eff86b3f66c20290f4591126"
+    },
+    {
+      "id": "id-pdp-law-2022-art-64",
+      "sourceContentSha256": "233df914afa2ac4cc8f92482761d4a69a722d0d37658d52deaec0056e08e6ba3",
+      "sourceParagraphCount": 7,
+      "paragraphs": [
+        "Article 64",
+        "(1) Settlement of Personal Data Protection disputes is carried out through arbitration, court, or other alternative dispute resolution institutions in accordance with the provisions of statutory regulations.",
+        "(2) The applicable procedural law in dispute resolution and/or judicial processes for Personal Data Protection as intended in paragraph (1) is implemented based on the applicable procedural law in accordance with the provisions of statutory regulations.",
+        "(3) Legal evidence in this Law includes:",
+        "a. evidence as intended in procedural law; And",
+        "b. other evidence in the form of electronic information and/or electronic documents in accordance with statutory provisions.",
+        "(4) In cases where it is necessary to protect Personal Data, the trial process will be carried out behind closed doors."
+      ],
+      "fullText": "Article 64\n\n(1) Settlement of Personal Data Protection disputes is carried out through arbitration, court, or other alternative dispute resolution institutions in accordance with the provisions of statutory regulations.\n\n(2) The applicable procedural law in dispute resolution and/or judicial processes for Personal Data Protection as intended in paragraph (1) is implemented based on the applicable procedural law in accordance with the provisions of statutory regulations.\n\n(3) Legal evidence in this Law includes:\n\na. evidence as intended in procedural law; And\n\nb. other evidence in the form of electronic information and/or electronic documents in accordance with statutory provisions.\n\n(4) In cases where it is necessary to protect Personal Data, the trial process will be carried out behind closed doors.",
+      "contentSha256": "524a6d8abf5b4d1ce6ee0a82ab40474d88447f27fb8e80c6448f14b5abc746d7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-65",
+      "sourceContentSha256": "8bcbcdfa38f32eb0fecef228c63412420638897db581772b574bb6c1a2d48f53",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 65",
+        "(1) Every person is prohibited from unlawfully obtaining or collecting Personal Data that does not belong to him with the intention of benefiting himself or another person which could result in loss to the Personal Data Subject.",
+        "(2) Every person is unlawfully prohibited from disclosing Personal Data that does not belong to him.",
+        "(3) Every person is prohibited from unlawfully using Personal Data that does not belong to him."
+      ],
+      "fullText": "Article 65\n\n(1) Every person is prohibited from unlawfully obtaining or collecting Personal Data that does not belong to him with the intention of benefiting himself or another person which could result in loss to the Personal Data Subject.\n\n(2) Every person is unlawfully prohibited from disclosing Personal Data that does not belong to him.\n\n(3) Every person is prohibited from unlawfully using Personal Data that does not belong to him.",
+      "contentSha256": "87b165414332721a063881810676364736f8659601e87d0d235f0a30d46fdc5f"
+    },
+    {
+      "id": "id-pdp-law-2022-art-66",
+      "sourceContentSha256": "dcf89c1322c46f2c114cc301d7480a42c924cffd09cda6c855aec32605baa490",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 66",
+        "Every person is prohibited from creating false Personal Data or falsifying Personal Data with the intention of benefiting themselves or others which could result in harm to others."
+      ],
+      "fullText": "Article 66\n\nEvery person is prohibited from creating false Personal Data or falsifying Personal Data with the intention of benefiting themselves or others which could result in harm to others.",
+      "contentSha256": "292f4bd636cb7dd80d1b06cb26c47c0bdc18924aab6cfc1e45fab281068fca82"
+    },
+    {
+      "id": "id-pdp-law-2022-art-67",
+      "sourceContentSha256": "40a59cf758d9bbc42aec6dd70dcd3e5dae5f8c50c4e6ed23eb055787d4a7c0cd",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Article 67",
+        "(1) Any person who intentionally and unlawfully obtains or collects Personal Data that does not belong to him with the intention of benefiting himself or another person which may result in loss to the Personal Data Subject as intended in Article 65 paragraph (1) shall be punished by a maximum imprisonment of 5 (five) years and/or a maximum fine of IDR 5,000,000,000.00 (five billion rupiah).",
+        "(2) Any person who intentionally and unlawfully discloses Personal Data that does not belong to him as intended in Article 65 paragraph (2) shall be punished by a maximum imprisonment of 4 (four) years and/or a maximum fine of Rp. 4,000,000,000.00 (four billion rupiah).",
+        "(3) Any person who intentionally and unlawfully uses Personal Data that does not belong to him as intended in Article 65 paragraph (3) shall be punished with a maximum imprisonment of 5 (five) years and/or a maximum fine of IDR 5,000,000,000.00 (five billion rupiah)."
+      ],
+      "fullText": "Article 67\n\n(1) Any person who intentionally and unlawfully obtains or collects Personal Data that does not belong to him with the intention of benefiting himself or another person which may result in loss to the Personal Data Subject as intended in Article 65 paragraph (1) shall be punished by a maximum imprisonment of 5 (five) years and/or a maximum fine of IDR 5,000,000,000.00 (five billion rupiah).\n\n(2) Any person who intentionally and unlawfully discloses Personal Data that does not belong to him as intended in Article 65 paragraph (2) shall be punished by a maximum imprisonment of 4 (four) years and/or a maximum fine of Rp. 4,000,000,000.00 (four billion rupiah).\n\n(3) Any person who intentionally and unlawfully uses Personal Data that does not belong to him as intended in Article 65 paragraph (3) shall be punished with a maximum imprisonment of 5 (five) years and/or a maximum fine of IDR 5,000,000,000.00 (five billion rupiah).",
+      "contentSha256": "ba770be87a44965288b8a38d10cdf943a03303d635f7004cb6cafc7936a2ca2a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-68",
+      "sourceContentSha256": "9d4b60d1caea9f5a097a054277c4f8fe65cc25095225ae22eca529b3f63b0fe4",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 68",
+        "Any person who deliberately creates false Personal Data or falsifies Personal Data with the intention of benefiting himself or another person which may result in harm to others as intended in Article 66 shall be punished by a maximum imprisonment of 6 (six) years and/or a maximum fine of Rp. 6,000,000,000.00 (six billion rupiah)."
+      ],
+      "fullText": "Article 68\n\nAny person who deliberately creates false Personal Data or falsifies Personal Data with the intention of benefiting himself or another person which may result in harm to others as intended in Article 66 shall be punished by a maximum imprisonment of 6 (six) years and/or a maximum fine of Rp. 6,000,000,000.00 (six billion rupiah).",
+      "contentSha256": "8b26ff3f737f8b7fb95e44e5ea3109d5b5d1b39c3c5fad77f95a4a9e80bb426e"
+    },
+    {
+      "id": "id-pdp-law-2022-art-69",
+      "sourceContentSha256": "94797b1bfd8b8b5d1ee70f0bb9c8cc66f829bd7290b990fd8ba90360f2f0fc06",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 69",
+        "Apart from being sentenced to the crime as intended in Article 67 and Article 68, additional punishment can also be imposed in the form of confiscation of profits and/or assets obtained or proceeds from criminal acts and payment of compensation."
+      ],
+      "fullText": "Article 69\n\nApart from being sentenced to the crime as intended in Article 67 and Article 68, additional punishment can also be imposed in the form of confiscation of profits and/or assets obtained or proceeds from criminal acts and payment of compensation.",
+      "contentSha256": "4f7ce96de6754d0e04ccbe888b49bca87b48529b10477851b5455275dd0f456a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-70",
+      "sourceContentSha256": "0ad086c2547ae7d6884ff224da40328c12a6bdf38632a5b7ea1c16893db5ec38",
+      "sourceParagraphCount": 13,
+      "paragraphs": [
+        "Article 70",
+        "(1) In the event that a criminal act as intended in Article 67 and Article 68 is committed by a Corporation, the criminal may be imposed on the management, control holder, order giver, beneficial owner, and/or the Corporation.",
+        "(2) The only penalty that can be imposed on a Corporation is a fine.",
+        "(3) The fine imposed on the Corporation is a maximum of 10 (ten) times the maximum fine imposed.",
+        "(4) Apart from being sentenced to a fine as intended in paragraph (2), the Corporation may be sentenced to additional penalties in the form of:",
+        "a. confiscation of profits and/or assets obtained or proceeds from criminal acts;",
+        "b. freezing all or part of the Corporation's business;",
+        "c. permanent prohibition on carrying out certain acts;",
+        "d. closure of all or part of the Company's business premises and/or activities;",
+        "e. carry out obligations that have been neglected;",
+        "f. payment of compensation;",
+        "g. revocation of permits; and/or",
+        "h. dissolution of the Corporation."
+      ],
+      "fullText": "Article 70\n\n(1) In the event that a criminal act as intended in Article 67 and Article 68 is committed by a Corporation, the criminal may be imposed on the management, control holder, order giver, beneficial owner, and/or the Corporation.\n\n(2) The only penalty that can be imposed on a Corporation is a fine.\n\n(3) The fine imposed on the Corporation is a maximum of 10 (ten) times the maximum fine imposed.\n\n(4) Apart from being sentenced to a fine as intended in paragraph (2), the Corporation may be sentenced to additional penalties in the form of:\n\na. confiscation of profits and/or assets obtained or proceeds from criminal acts;\n\nb. freezing all or part of the Corporation's business;\n\nc. permanent prohibition on carrying out certain acts;\n\nd. closure of all or part of the Company's business premises and/or activities;\n\ne. carry out obligations that have been neglected;\n\nf. payment of compensation;\n\ng. revocation of permits; and/or\n\nh. dissolution of the Corporation.",
+      "contentSha256": "12e9967300e8ad1b5a3a43180710e2fa785e0cb3142db2a7c1355bfcd1e7db84"
+    },
+    {
+      "id": "id-pdp-law-2022-art-71",
+      "sourceContentSha256": "ed0ef326773e63b61ab583f36153c4e37a4849ee1b2e7db1bb12c9151951bbfd",
+      "sourceParagraphCount": 6,
+      "paragraphs": [
+        "Article 71",
+        "(1) In the event that the court imposes a criminal decision on a fine, the convict is given a period of 1 (one) month after the decision has obtained permanent legal force to pay the fine.",
+        "(2) If there are strong reasons, the period as intended in paragraph (1) can be extended for a maximum period of 1 (one) month.",
+        "(3) In the event that the convict does not pay the criminal fine within the time period as intended in paragraph (1) or paragraph (2), the convict's assets or income can be confiscated and auctioned off by the prosecutor to pay off the unpaid criminal fine.",
+        "(4) In the event that the confiscation and auction of assets or income as intended in paragraph (3) is insufficient or impossible to carry out, the unpaid fine shall be replaced by the longest imprisonment as threatened for the crime in question.",
+        "(5) The length of imprisonment as intended in paragraph (4) determined by the judge, is included in the court decision."
+      ],
+      "fullText": "Article 71\n\n(1) In the event that the court imposes a criminal decision on a fine, the convict is given a period of 1 (one) month after the decision has obtained permanent legal force to pay the fine.\n\n(2) If there are strong reasons, the period as intended in paragraph (1) can be extended for a maximum period of 1 (one) month.\n\n(3) In the event that the convict does not pay the criminal fine within the time period as intended in paragraph (1) or paragraph (2), the convict's assets or income can be confiscated and auctioned off by the prosecutor to pay off the unpaid criminal fine.\n\n(4) In the event that the confiscation and auction of assets or income as intended in paragraph (3) is insufficient or impossible to carry out, the unpaid fine shall be replaced by the longest imprisonment as threatened for the crime in question.\n\n(5) The length of imprisonment as intended in paragraph (4) determined by the judge, is included in the court decision.",
+      "contentSha256": "f18c1949a99300c57955d3d8049f5ec141f756b9b9a816483d7d878c622b82b7"
+    },
+    {
+      "id": "id-pdp-law-2022-art-72",
+      "sourceContentSha256": "6779d3efa37d74c388420908ecc6576e01c2fe2dd17dfdcbf69457ce3dfefc07",
+      "sourceParagraphCount": 3,
+      "paragraphs": [
+        "Article 72",
+        "(1) In the event that the confiscation and auction of assets or income as intended in Article 71 paragraph (4) is carried out against a convicted Corporation and is not sufficient to pay off the criminal fine, the Corporation is subject to a substitute penalty in the form of freezing part or all of the Corporation's business activities for a maximum period of 5 (five) years.",
+        "(2) The duration of suspension of part or all of the Corporation's business activities as intended in paragraph (1) determined by the judge, is included in the court decision."
+      ],
+      "fullText": "Article 72\n\n(1) In the event that the confiscation and auction of assets or income as intended in Article 71 paragraph (4) is carried out against a convicted Corporation and is not sufficient to pay off the criminal fine, the Corporation is subject to a substitute penalty in the form of freezing part or all of the Corporation's business activities for a maximum period of 5 (five) years.\n\n(2) The duration of suspension of part or all of the Corporation's business activities as intended in paragraph (1) determined by the judge, is included in the court decision.",
+      "contentSha256": "9540986bd9ee4db5ac9b9a23d42eab0999ffcac107a6a35dc41076b655bbed43"
+    },
+    {
+      "id": "id-pdp-law-2022-art-73",
+      "sourceContentSha256": "155c1a98368a5f34adf9476f70d3be73f15683ef234eb35d965a6b6a3f09ad34",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 73",
+        "The provisions as intended in Article 71 and Article 72 also apply in the case of additional criminal penalties in the form of payment of compensation."
+      ],
+      "fullText": "Article 73\n\nThe provisions as intended in Article 71 and Article 72 also apply in the case of additional criminal penalties in the form of payment of compensation.",
+      "contentSha256": "c05377fbe97218eeb7f6e3e16e6300dc674cdf93fd0391543402d753b543aa0a"
+    },
+    {
+      "id": "id-pdp-law-2022-art-74",
+      "sourceContentSha256": "776b8bd5f18d7e53e8c1e9c180b2042dea4f394f2618632dac1c43a0c4d4293f",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 74",
+        "When this Law comes into force, Personal Data Controllers, Personal Data Processors, and other parties related to the processing of Personal Data, are obliged to comply with the provisions for processing Personal Data based on this Law no later than 2 (two) years after this Law is promulgated."
+      ],
+      "fullText": "Article 74\n\nWhen this Law comes into force, Personal Data Controllers, Personal Data Processors, and other parties related to the processing of Personal Data, are obliged to comply with the provisions for processing Personal Data based on this Law no later than 2 (two) years after this Law is promulgated.",
+      "contentSha256": "0459c59867a100b1fef8232aa944854e1b8930c4d096ba01794d333060dce91d"
+    },
+    {
+      "id": "id-pdp-law-2022-art-75",
+      "sourceContentSha256": "148d7905256d8ce1db0dca2cbb2291c5efedbb3061588525a880c9a8aba7b0f9",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 75",
+        "When this Law comes into force, all provisions of laws and regulations governing the Protection of Personal Data are declared to remain in effect as long as they do not conflict with the provisions of this Law."
+      ],
+      "fullText": "Article 75\n\nWhen this Law comes into force, all provisions of laws and regulations governing the Protection of Personal Data are declared to remain in effect as long as they do not conflict with the provisions of this Law.",
+      "contentSha256": "e2d7fdac1a4b218fafee4bd589b14ea77eea44a946f9c43566ac72abae5421f2"
+    },
+    {
+      "id": "id-pdp-law-2022-art-76",
+      "sourceContentSha256": "7034f5cd22575fd453bd745863e8f2e8abbb8121766cbe39badb4254dd8b881b",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "Article 76",
+        "This Law comes into force on the date of promulgation."
+      ],
+      "fullText": "Article 76\n\nThis Law comes into force on the date of promulgation.",
+      "contentSha256": "912859c0b980177480e6bb4eb9dd08f3e43b182c42b479165585d59f94c21386"
+    }
+  ]
+}

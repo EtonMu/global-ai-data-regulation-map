@@ -6,7 +6,7 @@
     "label": "Article 1",
     "originalTitle": "第一条",
     "title": "Article 1",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-1",
       "label": "Chapter I",
@@ -33,7 +33,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "ff442e97e98fbffcf5f5dc55aebdd7f18971e66e658874bee224e241ca0ab6ce"
+    "contentSha256": "ff442e97e98fbffcf5f5dc55aebdd7f18971e66e658874bee224e241ca0ab6ce",
+    "translations": {
+      "en": {
+        "title": "Article 1",
+        "paragraphs": [
+          "These measures are established to promote the healthy development and standardized application of generative artificial intelligence, safeguard national security and social public interests, and protect the legitimate rights and interests of citizens, legal persons, and other organizations, in accordance with the \"Cybersecurity Law of the People's Republic of China\", \"Data Security Law of the People's Republic of China\", \"Personal Information Protection Law of the People's Republic of China\", \"Science and Technology Progress Law of the People's Republic of China\" and other laws and administrative regulations."
+        ],
+        "fullText": "These measures are established to promote the healthy development and standardized application of generative artificial intelligence, safeguard national security and social public interests, and protect the legitimate rights and interests of citizens, legal persons, and other organizations, in accordance with the \"Cybersecurity Law of the People's Republic of China\", \"Data Security Law of the People's Republic of China\", \"Personal Information Protection Law of the People's Republic of China\", \"Science and Technology Progress Law of the People's Republic of China\" and other laws and administrative regulations.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "0ea6aeabb7a76c3d38112c814d782781cdb8b54726c086c708bc194aa63a6588"
+      }
+    }
   },
   {
     "id": "cn-genai-art-2",
@@ -42,7 +72,7 @@
     "label": "Article 2",
     "originalTitle": "第二条",
     "title": "Article 2",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-1",
       "label": "Chapter I",
@@ -71,7 +101,39 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "03a092f77080329c8c3f4ee4c77fbb2550e586042e10089c5d240da743a8f431"
+    "contentSha256": "03a092f77080329c8c3f4ee4c77fbb2550e586042e10089c5d240da743a8f431",
+    "translations": {
+      "en": {
+        "title": "Article 2",
+        "paragraphs": [
+          "These measures apply to services that use generative artificial intelligence technology to generate text, pictures, audio, video, and other content (hereinafter referred to as generative artificial intelligence services) to the public within the territory of the People's Republic of China.",
+          "If the State has other regulations on the use of generative artificial intelligence services to engage in activities such as news publishing, film and television production, and literary and artistic creation, those regulations shall prevail.",
+          "Industry organizations, enterprises, educational and scientific research institutions, public cultural institutions, and relevant professional institutions that develop and apply generative artificial intelligence technology, but do not provide generative artificial intelligence services to the domestic public, shall not be subject to the provisions of these measures."
+        ],
+        "fullText": "These measures apply to services that use generative artificial intelligence technology to generate text, pictures, audio, video, and other content (hereinafter referred to as generative artificial intelligence services) to the public within the territory of the People's Republic of China.\n\nIf the State has other regulations on the use of generative artificial intelligence services to engage in activities such as news publishing, film and television production, and literary and artistic creation, those regulations shall prevail.\n\nIndustry organizations, enterprises, educational and scientific research institutions, public cultural institutions, and relevant professional institutions that develop and apply generative artificial intelligence technology, but do not provide generative artificial intelligence services to the domestic public, shall not be subject to the provisions of these measures.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "05d7802ab788aa0786281f671e9c46737f522194744c3de65b0b99af35aa013c"
+      }
+    }
   },
   {
     "id": "cn-genai-art-3",
@@ -80,7 +142,7 @@
     "label": "Article 3",
     "originalTitle": "第三条",
     "title": "Article 3",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-1",
       "label": "Chapter I",
@@ -107,7 +169,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "0b07652a5ff20f81842f80297c725174975b90bc310855e9b1d726d001e13167"
+    "contentSha256": "0b07652a5ff20f81842f80297c725174975b90bc310855e9b1d726d001e13167",
+    "translations": {
+      "en": {
+        "title": "Article 3",
+        "paragraphs": [
+          "The State, adhering to the principles of equally valuing development and security and of uniting the ideals of promoting innovation and governing according to the law, adopts effective measures to encourage the innovation and development of generative artificial intelligence, and implements supervision of generative artificial intelligence services that is inclusive and prudent as well as differentiated and hierarchical."
+        ],
+        "fullText": "The State, adhering to the principles of equally valuing development and security and of uniting the ideals of promoting innovation and governing according to the law, adopts effective measures to encourage the innovation and development of generative artificial intelligence, and implements supervision of generative artificial intelligence services that is inclusive and prudent as well as differentiated and hierarchical.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "a79e2e4d20d24008ec3996cfdc9aa466b330b756c4bd97bf3a8f4f64ae0d8039"
+      }
+    }
   },
   {
     "id": "cn-genai-art-4",
@@ -116,7 +208,7 @@
     "label": "Article 4",
     "originalTitle": "第四条",
     "title": "Article 4",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-1",
       "label": "Chapter I",
@@ -148,7 +240,42 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "4276077a61866f9fa054769957a029ecf60d4924fbe1b00f2656fbcd2e50adb9"
+    "contentSha256": "4276077a61866f9fa054769957a029ecf60d4924fbe1b00f2656fbcd2e50adb9",
+    "translations": {
+      "en": {
+        "title": "Article 4",
+        "paragraphs": [
+          "The provision and use of generative artificial intelligence services shall abide by laws and administrative regulations, respect social morality and ethics, and abide by the following provisions:",
+          "(1) Adhere to the socialist core values, and must not generate content that incites subversion of State power and overthrowing the socialist system, endangers national security and interests, damages national image, incites secession, undermines national unity and social stability, promotes terrorism, extremism, promotes ethnic hatred, ethnic discrimination, violence, obscenity, and false and harmful information prohibited by laws and administrative regulations;",
+          "(2) In the process of algorithm design, training data selection, model generation and optimization, and service provision, take effective measures to prevent discrimination based on ethnicity, belief, country, region, gender, age, occupation, health, etc.;",
+          "(3) Respect intellectual property rights, business ethics, keep business secrets, and not use algorithms, data, platforms, and other advantages to implement monopoly and unfair competition;",
+          "(4) Respect the legitimate rights and interests of others, and must not endanger the physical and mental health of others, and must not infringe on the likeness rights [人肖像权], reputation rights [名誉权], honor rights [荣誉权], privacy rights, and personal information rights of others;",
+          "(5) Based on the characteristics of the service type, take effective measures to improve the transparency of generative artificial intelligence services and improve the accuracy and reliability of generated content."
+        ],
+        "fullText": "The provision and use of generative artificial intelligence services shall abide by laws and administrative regulations, respect social morality and ethics, and abide by the following provisions:\n\n(1) Adhere to the socialist core values, and must not generate content that incites subversion of State power and overthrowing the socialist system, endangers national security and interests, damages national image, incites secession, undermines national unity and social stability, promotes terrorism, extremism, promotes ethnic hatred, ethnic discrimination, violence, obscenity, and false and harmful information prohibited by laws and administrative regulations;\n\n(2) In the process of algorithm design, training data selection, model generation and optimization, and service provision, take effective measures to prevent discrimination based on ethnicity, belief, country, region, gender, age, occupation, health, etc.;\n\n(3) Respect intellectual property rights, business ethics, keep business secrets, and not use algorithms, data, platforms, and other advantages to implement monopoly and unfair competition;\n\n(4) Respect the legitimate rights and interests of others, and must not endanger the physical and mental health of others, and must not infringe on the likeness rights [人肖像权], reputation rights [名誉权], honor rights [荣誉权], privacy rights, and personal information rights of others;\n\n(5) Based on the characteristics of the service type, take effective measures to improve the transparency of generative artificial intelligence services and improve the accuracy and reliability of generated content.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "99e6db442ef1fb1ce77ff5a2be1f495d4af36a3d2d4821c967cfe7a017da9fc3"
+      }
+    }
   },
   {
     "id": "cn-genai-art-5",
@@ -157,7 +284,7 @@
     "label": "Article 5",
     "originalTitle": "第五条",
     "title": "Article 5",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-2",
       "label": "Chapter II",
@@ -185,7 +312,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "e029622ea02ecb76d0130fb2872a19e243277806daaeff61c40a36d27546d050"
+    "contentSha256": "e029622ea02ecb76d0130fb2872a19e243277806daaeff61c40a36d27546d050",
+    "translations": {
+      "en": {
+        "title": "Article 5",
+        "paragraphs": [
+          "Encourage the innovative application of generative artificial intelligence technology in various industries and fields, generate positive, healthy, and uplifting high-quality content, explore and optimize application scenarios, and build an application ecosystem [应用生态体系].",
+          "Support industry organizations, enterprises, educational and scientific research institutions, public cultural institutions, and relevant professional institutions to collaborate in generative artificial intelligence technology areas such as innovation, data resource construction, transfer of applications [转化应用], and risk prevention."
+        ],
+        "fullText": "Encourage the innovative application of generative artificial intelligence technology in various industries and fields, generate positive, healthy, and uplifting high-quality content, explore and optimize application scenarios, and build an application ecosystem [应用生态体系].\n\nSupport industry organizations, enterprises, educational and scientific research institutions, public cultural institutions, and relevant professional institutions to collaborate in generative artificial intelligence technology areas such as innovation, data resource construction, transfer of applications [转化应用], and risk prevention.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "5215f1b600420f642fe81b8a5db2fc7d8c174baea170aa06fbb4074c81247dfe"
+      }
+    }
   },
   {
     "id": "cn-genai-art-6",
@@ -194,7 +352,7 @@
     "label": "Article 6",
     "originalTitle": "第六条",
     "title": "Article 6",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-2",
       "label": "Chapter II",
@@ -222,7 +380,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "ead42254a07a17fe9181130f07bb01c32a5c1af0f62e1d6221482baf88324c39"
+    "contentSha256": "ead42254a07a17fe9181130f07bb01c32a5c1af0f62e1d6221482baf88324c39",
+    "translations": {
+      "en": {
+        "title": "Article 6",
+        "paragraphs": [
+          "Encourage the independent innovation of basic technologies such as generative artificial intelligence algorithms, frameworks, chips, and supporting software platforms, carry out international exchanges and cooperation on an equal and mutually beneficial basis, and participate in the formulation of international rules related to generative artificial intelligence.",
+          "Promote the construction of generative artificial intelligence infrastructure and public training data resource platforms. Promote the collaborative sharing of computing power resources and improve the efficient use of computing power resources. Promote the differentiated and hierarchical orderly opening of public data, and expand high-quality public training data resources. Encourage the adoption of secure and trusted chips, software, tools, computing power and data resources."
+        ],
+        "fullText": "Encourage the independent innovation of basic technologies such as generative artificial intelligence algorithms, frameworks, chips, and supporting software platforms, carry out international exchanges and cooperation on an equal and mutually beneficial basis, and participate in the formulation of international rules related to generative artificial intelligence.\n\nPromote the construction of generative artificial intelligence infrastructure and public training data resource platforms. Promote the collaborative sharing of computing power resources and improve the efficient use of computing power resources. Promote the differentiated and hierarchical orderly opening of public data, and expand high-quality public training data resources. Encourage the adoption of secure and trusted chips, software, tools, computing power and data resources.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "bedce6e2d86288bbdf26a47f0679d7fbd154d235c0ff3a4056cafe8dd5edffbf"
+      }
+    }
   },
   {
     "id": "cn-genai-art-7",
@@ -231,7 +420,7 @@
     "label": "Article 7",
     "originalTitle": "第七条",
     "title": "Article 7",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-2",
       "label": "Chapter II",
@@ -263,7 +452,42 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "ebf51771ed0c763283a7c20ce3910690b0a3a3ec916ce31aa8f9722d94f48c05"
+    "contentSha256": "ebf51771ed0c763283a7c20ce3910690b0a3a3ec916ce31aa8f9722d94f48c05",
+    "translations": {
+      "en": {
+        "title": "Article 7",
+        "paragraphs": [
+          "Generative artificial intelligence service providers (hereinafter referred to as providers) shall carry out training data processing activities such as pre-training and optimization training in accordance with the law, and abide by the following provisions:",
+          "(1) Use data and basic models from legal sources;",
+          "(2) Where intellectual property rights are involved, the intellectual property rights enjoyed by others shall not be infringed;",
+          "(3) Where personal information is involved, [providers] should obtain the consent of the individual or comply with other conditions stipulated by laws and administrative regulations;",
+          "(4) Take effective measures to improve the quality of training data, and enhance the authenticity, accuracy, objectivity, and diversity of training data;",
+          "(5) [Abide by] other relevant regulations from laws and administrative regulations such as \"Cybersecurity Law of the People's Republic of China\", \"Data Security Law of the People's Republic of China\", and \"Personal Information Protection Law of the People's Republic of China\", as well as relevant regulatory requirements of responsible departments."
+        ],
+        "fullText": "Generative artificial intelligence service providers (hereinafter referred to as providers) shall carry out training data processing activities such as pre-training and optimization training in accordance with the law, and abide by the following provisions:\n\n(1) Use data and basic models from legal sources;\n\n(2) Where intellectual property rights are involved, the intellectual property rights enjoyed by others shall not be infringed;\n\n(3) Where personal information is involved, [providers] should obtain the consent of the individual or comply with other conditions stipulated by laws and administrative regulations;\n\n(4) Take effective measures to improve the quality of training data, and enhance the authenticity, accuracy, objectivity, and diversity of training data;\n\n(5) [Abide by] other relevant regulations from laws and administrative regulations such as \"Cybersecurity Law of the People's Republic of China\", \"Data Security Law of the People's Republic of China\", and \"Personal Information Protection Law of the People's Republic of China\", as well as relevant regulatory requirements of responsible departments.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "4f1bc7cf44fa8ff39e05ffc414dea8e5099364b2425a6d894ff4ab55eb6d28d8"
+      }
+    }
   },
   {
     "id": "cn-genai-art-8",
@@ -272,7 +496,7 @@
     "label": "Article 8",
     "originalTitle": "第八条",
     "title": "Article 8",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-2",
       "label": "Chapter II",
@@ -299,7 +523,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "b02bbb863f0d82b7d7e02dfc998627b8804c60d9776c162c810887bdf169a5e2"
+    "contentSha256": "b02bbb863f0d82b7d7e02dfc998627b8804c60d9776c162c810887bdf169a5e2",
+    "translations": {
+      "en": {
+        "title": "Article 8",
+        "paragraphs": [
+          "Where data labeling is carried out during the research and development of generative artificial intelligence technology, providers shall formulate clear, specific, and operable labeling rules that meet the requirements of these measures; carry out data labeling quality assessment, and conduct sampling verification of the accuracy of the labeling content; conduct necessary training for labeling personnel, improve awareness of respecting and abiding by the law, and supervise and guide labeling personnel to standardize labeling work."
+        ],
+        "fullText": "Where data labeling is carried out during the research and development of generative artificial intelligence technology, providers shall formulate clear, specific, and operable labeling rules that meet the requirements of these measures; carry out data labeling quality assessment, and conduct sampling verification of the accuracy of the labeling content; conduct necessary training for labeling personnel, improve awareness of respecting and abiding by the law, and supervise and guide labeling personnel to standardize labeling work.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "6e04f01f8a088f25149ce74706d55bd2b94316e81bbceac0a4563e3c7e68c668"
+      }
+    }
   },
   {
     "id": "cn-genai-art-9",
@@ -308,7 +562,7 @@
     "label": "Article 9",
     "originalTitle": "第九条",
     "title": "Article 9",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -336,7 +590,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "c5f6da9a97269e68d7cedb9d43442df0bd1285c135995668a4c0c6f2b711f0a0"
+    "contentSha256": "c5f6da9a97269e68d7cedb9d43442df0bd1285c135995668a4c0c6f2b711f0a0",
+    "translations": {
+      "en": {
+        "title": "Article 9",
+        "paragraphs": [
+          "Providers should bear the legal responsibilities of being network information content producers and fulfill their obligations concerning network information security. If it involves personal information, they should assume the responsibilities of personal information processors according to the law and fulfill their duties of protecting personal information.",
+          "Providers should sign service agreements with generative artificial intelligence service users (hereinafter referred to as users) who register their services, clarifying the rights and obligations of both parties."
+        ],
+        "fullText": "Providers should bear the legal responsibilities of being network information content producers and fulfill their obligations concerning network information security. If it involves personal information, they should assume the responsibilities of personal information processors according to the law and fulfill their duties of protecting personal information.\n\nProviders should sign service agreements with generative artificial intelligence service users (hereinafter referred to as users) who register their services, clarifying the rights and obligations of both parties.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "6cb20fa918559a1943fc3b3e9d76a337e1aa290dcbd2ca51ae7344510fa9d438"
+      }
+    }
   },
   {
     "id": "cn-genai-art-10",
@@ -345,7 +630,7 @@
     "label": "Article 10",
     "originalTitle": "第十条",
     "title": "Article 10",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -372,7 +657,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "46b1d580281449025d0819987d55abe3a7226ea06d75f9ff1bd3c45c4104c680"
+    "contentSha256": "46b1d580281449025d0819987d55abe3a7226ea06d75f9ff1bd3c45c4104c680",
+    "translations": {
+      "en": {
+        "title": "Article 10",
+        "paragraphs": [
+          "Providers should clearly define and publicly disclose the applicable user groups, scenarios, and purposes of their services. They should guide users to use generative artificial intelligence technology in a scientific and rational manner, complying with the law. Providers should also implement effective measures to prevent excessive reliance or addiction to generative artificial intelligence services by underage users."
+        ],
+        "fullText": "Providers should clearly define and publicly disclose the applicable user groups, scenarios, and purposes of their services. They should guide users to use generative artificial intelligence technology in a scientific and rational manner, complying with the law. Providers should also implement effective measures to prevent excessive reliance or addiction to generative artificial intelligence services by underage users.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "ccfd3677b8adccdf7eca96c849d60ecb4e8a198c20d2a6dd9ab5328e9de744b2"
+      }
+    }
   },
   {
     "id": "cn-genai-art-11",
@@ -381,7 +696,7 @@
     "label": "Article 11",
     "originalTitle": "第十一条",
     "title": "Article 11",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -409,7 +724,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "448d7fd995fa6d3da504ced4a0f0e09a0cdf2e0eceaa2144d6e247ef4296370f"
+    "contentSha256": "448d7fd995fa6d3da504ced4a0f0e09a0cdf2e0eceaa2144d6e247ef4296370f",
+    "translations": {
+      "en": {
+        "title": "Article 11",
+        "paragraphs": [
+          "Providers must fulfill their legal obligations to protect the input information and usage records of users. They must not collect unnecessary personal information, illegally retain identifiable input information and usage records of users, or unlawfully provide such information and records to others.",
+          "Providers must promptly accept and handle individuals' requests regarding accessing, copying, correcting, supplementing, and deleting their personal information in accordance with the law."
+        ],
+        "fullText": "Providers must fulfill their legal obligations to protect the input information and usage records of users. They must not collect unnecessary personal information, illegally retain identifiable input information and usage records of users, or unlawfully provide such information and records to others.\n\nProviders must promptly accept and handle individuals' requests regarding accessing, copying, correcting, supplementing, and deleting their personal information in accordance with the law.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "be19544fb56c1048aaed1200d04da1dc7df254207282d2c0a9248c9d57122cfa"
+      }
+    }
   },
   {
     "id": "cn-genai-art-12",
@@ -418,7 +764,7 @@
     "label": "Article 12",
     "originalTitle": "第十二条",
     "title": "Article 12",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -445,7 +791,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "7a76727076b39efc68353728e76e32df5975a9aa13110f02bccd05ada981413e"
+    "contentSha256": "7a76727076b39efc68353728e76e32df5975a9aa13110f02bccd05ada981413e",
+    "translations": {
+      "en": {
+        "title": "Article 12",
+        "paragraphs": [
+          "Providers should label pictures, videos, and other generated content in accordance with the “Internet Information Service Deep Synthesis Management Provisions”."
+        ],
+        "fullText": "Providers should label pictures, videos, and other generated content in accordance with the “Internet Information Service Deep Synthesis Management Provisions”.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "0010fb831e9ffaf83cf1dd8231511638d73d3fcb00c7f368ab3ed5042db97b9c"
+      }
+    }
   },
   {
     "id": "cn-genai-art-13",
@@ -454,7 +830,7 @@
     "label": "Article 13",
     "originalTitle": "第十三条",
     "title": "Article 13",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -481,7 +857,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "d3340d058111bb76c846ef3b06d3dccefdc9a9b916a64ffa42b9a9a91f4fd194"
+    "contentSha256": "d3340d058111bb76c846ef3b06d3dccefdc9a9b916a64ffa42b9a9a91f4fd194",
+    "translations": {
+      "en": {
+        "title": "Article 13",
+        "paragraphs": [
+          "Providers should offer service that is secure, stable, and uninterrupted, ensuring that users can use them without any disruptions."
+        ],
+        "fullText": "Providers should offer service that is secure, stable, and uninterrupted, ensuring that users can use them without any disruptions.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "8a950b68b90c83c90bb889c2d500e6601b1f7b382b81d84219f91e15d7fb359c"
+      }
+    }
   },
   {
     "id": "cn-genai-art-14",
@@ -490,7 +896,7 @@
     "label": "Article 14",
     "originalTitle": "第十四条",
     "title": "Article 14",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -518,7 +924,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "9de24f0836ff94735496d5be7eb7fbc803c540b384add1e752c93c3ddb4d83db"
+    "contentSha256": "9de24f0836ff94735496d5be7eb7fbc803c540b384add1e752c93c3ddb4d83db",
+    "translations": {
+      "en": {
+        "title": "Article 14",
+        "paragraphs": [
+          "Where a provider discovers illegal content, it shall promptly take disposal measures such as stopping generation, stopping transmission, and elimination, take measures such as model optimization training for rectification, and report to the relevant responsible authority.",
+          "If the provider discovers that the user is using the generative artificial intelligence service to engage in illegal activities, it shall take measures such as warning, restricting functions, suspending or terminating the provision of services to it in accordance with the law, keep relevant records, and report to the relevant responsible authority."
+        ],
+        "fullText": "Where a provider discovers illegal content, it shall promptly take disposal measures such as stopping generation, stopping transmission, and elimination, take measures such as model optimization training for rectification, and report to the relevant responsible authority.\n\nIf the provider discovers that the user is using the generative artificial intelligence service to engage in illegal activities, it shall take measures such as warning, restricting functions, suspending or terminating the provision of services to it in accordance with the law, keep relevant records, and report to the relevant responsible authority.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "0ebccb3fed4ee82750dd21d0f4aa42b2fc4dbbc6bcdcd4b7d402562389286f32"
+      }
+    }
   },
   {
     "id": "cn-genai-art-15",
@@ -527,7 +964,7 @@
     "label": "Article 15",
     "originalTitle": "第十五条",
     "title": "Article 15",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-3",
       "label": "Chapter III",
@@ -554,7 +991,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "63360b01df5fd0edfd221b3009c51cde9eac72d57bba405298fad1181b670fab"
+    "contentSha256": "63360b01df5fd0edfd221b3009c51cde9eac72d57bba405298fad1181b670fab",
+    "translations": {
+      "en": {
+        "title": "Article 15",
+        "paragraphs": [
+          "Providers should establish and improve a mechanism for receiving complaints and reports, setting up accessible channels for such complaints and reports. They should also publicize the processing procedures and feedback timelines, promptly accepting and handling public complaints and reports, and providing feedback on the results of their actions."
+        ],
+        "fullText": "Providers should establish and improve a mechanism for receiving complaints and reports, setting up accessible channels for such complaints and reports. They should also publicize the processing procedures and feedback timelines, promptly accepting and handling public complaints and reports, and providing feedback on the results of their actions.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "7df53f676cc4ec1c159b24017b5f43746e595713cb97d1d8c81f888dabcb64a1"
+      }
+    }
   },
   {
     "id": "cn-genai-art-16",
@@ -563,7 +1030,7 @@
     "label": "Article 16",
     "originalTitle": "第十六条",
     "title": "Article 16",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -591,7 +1058,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "c2b9e7902c9afab175b7a3e36a746fbed2ab86aae0a3a1285c3225f1d2cec81a"
+    "contentSha256": "c2b9e7902c9afab175b7a3e36a746fbed2ab86aae0a3a1285c3225f1d2cec81a",
+    "translations": {
+      "en": {
+        "title": "Article 16",
+        "paragraphs": [
+          "The Cyberspace Administration of China, National Development and Reform Commission, Ministry of Education, Ministry of Science and Technology, Ministry of Industry and Information Technology, Ministry of Public Security, National Radio and Television Administration:, National Press and Publication Administration, etc., shall strengthen the management of generative artificial intelligence services in accordance with the law according to their respective responsibilities.",
+          "The relevant responsible national authorities shall, based on the characteristics of generative artificial intelligence technology and its applications in relevant industries and fields, improve and innovate scientific regulatory methods that are suitable for its development. They shall also establish corresponding differentiated and hierarchical regulatory rules or guidelines."
+        ],
+        "fullText": "The Cyberspace Administration of China, National Development and Reform Commission, Ministry of Education, Ministry of Science and Technology, Ministry of Industry and Information Technology, Ministry of Public Security, National Radio and Television Administration:, National Press and Publication Administration, etc., shall strengthen the management of generative artificial intelligence services in accordance with the law according to their respective responsibilities.\n\nThe relevant responsible national authorities shall, based on the characteristics of generative artificial intelligence technology and its applications in relevant industries and fields, improve and innovate scientific regulatory methods that are suitable for its development. They shall also establish corresponding differentiated and hierarchical regulatory rules or guidelines.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "3bcc14f1783c7099908345f8bf7367eb0fa1a19d3a034b47c9a80d5f03a3af1f"
+      }
+    }
   },
   {
     "id": "cn-genai-art-17",
@@ -600,7 +1098,7 @@
     "label": "Article 17",
     "originalTitle": "第十七条",
     "title": "Article 17",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -627,7 +1125,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "610b0ad3ce0c3df1ed2cc02bfc9df1c0dcb82f35b6f577e84e83ed38e33289cf"
+    "contentSha256": "610b0ad3ce0c3df1ed2cc02bfc9df1c0dcb82f35b6f577e84e83ed38e33289cf",
+    "translations": {
+      "en": {
+        "title": "Article 17",
+        "paragraphs": [
+          "If a generative artificial intelligence service possesses public opinion attributes or social mobilization capability, it should undergo a security assessment in accordance with relevant national regulations. Additionally, it must comply with the \"Internet Information Service Algorithmic Recommendation Management Provisions\" to complete algorithm filing, updates, and cancellation procedures."
+        ],
+        "fullText": "If a generative artificial intelligence service possesses public opinion attributes or social mobilization capability, it should undergo a security assessment in accordance with relevant national regulations. Additionally, it must comply with the \"Internet Information Service Algorithmic Recommendation Management Provisions\" to complete algorithm filing, updates, and cancellation procedures.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "a8f34f685c3daf22c16f8eca78185de8c1675a3eadb61061dcdccf65a14a9fb9"
+      }
+    }
   },
   {
     "id": "cn-genai-art-18",
@@ -636,7 +1164,7 @@
     "label": "Article 18",
     "originalTitle": "第十八条",
     "title": "Article 18",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -663,7 +1191,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "0a6a49dcde720bea6e26a30d21597e3d3265e7c4359ff2b9d8a20e7070f2b9e7"
+    "contentSha256": "0a6a49dcde720bea6e26a30d21597e3d3265e7c4359ff2b9d8a20e7070f2b9e7",
+    "translations": {
+      "en": {
+        "title": "Article 18",
+        "paragraphs": [
+          "Users have the right to lodge complaints or reports with the relevant responsible authorities if they find that generative artificial intelligence services do not comply with the laws, regulations, or provisions stipulated in these measures."
+        ],
+        "fullText": "Users have the right to lodge complaints or reports with the relevant responsible authorities if they find that generative artificial intelligence services do not comply with the laws, regulations, or provisions stipulated in these measures.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "dcfa20c68a6c8baa3d18539f7e59de27cabe67f566195eb53742b12d86a0ea0e"
+      }
+    }
   },
   {
     "id": "cn-genai-art-19",
@@ -672,7 +1230,7 @@
     "label": "Article 19",
     "originalTitle": "第十九条",
     "title": "Article 19",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -700,7 +1258,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "e69322a2f2907f723c78be7497015362a2c3d8b68e257a1943deba5697ef8a12"
+    "contentSha256": "e69322a2f2907f723c78be7497015362a2c3d8b68e257a1943deba5697ef8a12",
+    "translations": {
+      "en": {
+        "title": "Article 19",
+        "paragraphs": [
+          "The relevant responsible departments conduct supervision and inspection of generative artificial intelligence services according to their duties, and the provider shall cooperate in accordance with the law, explain the source, scale, type, labeling rules, algorithm mechanism, etc. of training data as required, and provide necessary technical and data support and assistance.",
+          "Relevant institutions and personnel participating in the security assessment and supervision and inspection of generative artificial intelligence services shall keep state secrets, commercial secrets, personal privacy [个人隐私] and personal information [个人信息] learned in the performance of their duties confidential in accordance with the law, and shall not disclose or illegally provide them to others."
+        ],
+        "fullText": "The relevant responsible departments conduct supervision and inspection of generative artificial intelligence services according to their duties, and the provider shall cooperate in accordance with the law, explain the source, scale, type, labeling rules, algorithm mechanism, etc. of training data as required, and provide necessary technical and data support and assistance.\n\nRelevant institutions and personnel participating in the security assessment and supervision and inspection of generative artificial intelligence services shall keep state secrets, commercial secrets, personal privacy [个人隐私] and personal information [个人信息] learned in the performance of their duties confidential in accordance with the law, and shall not disclose or illegally provide them to others.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "f5fab5d3484c99d42820d6620733aa4e0ea3dcaf564a9d559771fdf240b1243a"
+      }
+    }
   },
   {
     "id": "cn-genai-art-20",
@@ -709,7 +1298,7 @@
     "label": "Article 20",
     "originalTitle": "第二十条",
     "title": "Article 20",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -736,7 +1325,37 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "85c7b74e1569abffee6c2809b5ed6596411e661a379876924c483e8d96dfdb86"
+    "contentSha256": "85c7b74e1569abffee6c2809b5ed6596411e661a379876924c483e8d96dfdb86",
+    "translations": {
+      "en": {
+        "title": "Article 20",
+        "paragraphs": [
+          "For those providing generative artificial intelligence services from outside the territory of the People's Republic of China that do not comply with laws, administrative regulations, and these measures, the State cybersecurity and informatization department [国家网信部门] should notify relevant agencies to take technical and other necessary measures to deal with them."
+        ],
+        "fullText": "For those providing generative artificial intelligence services from outside the territory of the People's Republic of China that do not comply with laws, administrative regulations, and these measures, the State cybersecurity and informatization department [国家网信部门] should notify relevant agencies to take technical and other necessary measures to deal with them.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "688a8164a0c60034479cbe71e23cb32988209199cb69f407a6627b6bb79d9f70"
+      }
+    }
   },
   {
     "id": "cn-genai-art-21",
@@ -745,7 +1364,7 @@
     "label": "Article 21",
     "originalTitle": "第二十一条",
     "title": "Article 21",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-4",
       "label": "Chapter IV",
@@ -773,7 +1392,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "555b6c040e23b8b62cff17cb5e3676b7e4f1cb2a687a35a768c9a5f1b40000a7"
+    "contentSha256": "555b6c040e23b8b62cff17cb5e3676b7e4f1cb2a687a35a768c9a5f1b40000a7",
+    "translations": {
+      "en": {
+        "title": "Article 21",
+        "paragraphs": [
+          "If providers violate the provisions of these measures, the relevant responsible authorities shall impose penalties in accordance with the \"Cybersecurity Law of the People's Republic of China,\" \"Data Security Law of the People's Republic of China,\" \"Personal Information Protection Law of the People's Republic of China,\" \"Science and Technology Progress Law of the People's Republic of China,\" and other laws and administrative regulations.",
+          "If the violation constitutes a breach of public security management, administrative penalties shall be imposed in accordance with the law. If it constitutes a crime, criminal responsibility shall be pursued in accordance with the law."
+        ],
+        "fullText": "If providers violate the provisions of these measures, the relevant responsible authorities shall impose penalties in accordance with the \"Cybersecurity Law of the People's Republic of China,\" \"Data Security Law of the People's Republic of China,\" \"Personal Information Protection Law of the People's Republic of China,\" \"Science and Technology Progress Law of the People's Republic of China,\" and other laws and administrative regulations.\n\nIf the violation constitutes a breach of public security management, administrative penalties shall be imposed in accordance with the law. If it constitutes a crime, criminal responsibility shall be pursued in accordance with the law.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "e958a2be025b96516120ec699e2386d9cc179c73ae18c35b53520d9ab2cf6e3b"
+      }
+    }
   },
   {
     "id": "cn-genai-art-22",
@@ -782,7 +1432,7 @@
     "label": "Article 22",
     "originalTitle": "第二十二条",
     "title": "Article 22",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-5",
       "label": "Chapter V",
@@ -812,7 +1462,40 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "d4f662e8705db79a97f5c912f93efe14762a6537243ebe17966677393628992d"
+    "contentSha256": "d4f662e8705db79a97f5c912f93efe14762a6537243ebe17966677393628992d",
+    "translations": {
+      "en": {
+        "title": "Article 22",
+        "paragraphs": [
+          "The meanings of the following terms in these measures are:",
+          "(1) Generative artificial intelligence technology refers to models and related technologies that have the ability to generate content such as text, pictures, audio, and video.",
+          "(2) Generative artificial intelligence service providers refer to organizations or individuals that utilize generative artificial intelligence technology to offer generative artificial intelligence services, including providing such services through programmable interfaces or other means.",
+          "(3) Generative artificial intelligence service users refer to organizations and individuals who use generative artificial intelligence services to generate content."
+        ],
+        "fullText": "The meanings of the following terms in these measures are:\n\n(1) Generative artificial intelligence technology refers to models and related technologies that have the ability to generate content such as text, pictures, audio, and video.\n\n(2) Generative artificial intelligence service providers refer to organizations or individuals that utilize generative artificial intelligence technology to offer generative artificial intelligence services, including providing such services through programmable interfaces or other means.\n\n(3) Generative artificial intelligence service users refer to organizations and individuals who use generative artificial intelligence services to generate content.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "082edf55fd3d7becf76492cc259b67d689f7556f41e7c932cbe200c280a7af81"
+      }
+    }
   },
   {
     "id": "cn-genai-art-23",
@@ -821,7 +1504,7 @@
     "label": "Article 23",
     "originalTitle": "第二十三条",
     "title": "Article 23",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-5",
       "label": "Chapter V",
@@ -849,7 +1532,38 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "5890abc101c84be5d812b5755acb1e416176fe3844154965a89282e1973aeea1"
+    "contentSha256": "5890abc101c84be5d812b5755acb1e416176fe3844154965a89282e1973aeea1",
+    "translations": {
+      "en": {
+        "title": "Article 23",
+        "paragraphs": [
+          "If laws and administrative regulations stipulate that providing generative artificial intelligence services requires obtaining relevant administrative licenses, providers must obtain the necessary permits in accordance with the law.",
+          "Foreign investment in generative artificial intelligence services should comply with the relevant laws and administrative regulations regarding foreign investment."
+        ],
+        "fullText": "If laws and administrative regulations stipulate that providing generative artificial intelligence services requires obtaining relevant administrative licenses, providers must obtain the necessary permits in accordance with the law.\n\nForeign investment in generative artificial intelligence services should comply with the relevant laws and administrative regulations regarding foreign investment.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "8ef67ae430335a9110155e3160315510151e624f7de6cc36a084ea2b8a5f62dc"
+      }
+    }
   },
   {
     "id": "cn-genai-art-24",
@@ -858,7 +1572,7 @@
     "label": "Article 24",
     "originalTitle": "第二十四条",
     "title": "Article 24",
-    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "summary": "The complete official Chinese Article text and a complete public-domain U.S. government reference translation are stored. The English text is not an official Chinese translation; the Chinese text controls.",
     "chapter": {
       "id": "cn-generative-ai-measures-chapter-5",
       "label": "Chapter V",
@@ -885,6 +1599,36 @@
       "effectiveFrom": "2023-08-15",
       "versionNote": "Order No. 15, approved by the Cyberspace Administration of China on 23 May 2023, promulgated by seven departments on 10 July 2023, published 13 July 2023, effective 15 August 2023."
     },
-    "contentSha256": "505c9c9807835eaf5b0b012ab3d8c8f15d4ae2b2a601c5237321a71f0bb92fd7"
+    "contentSha256": "505c9c9807835eaf5b0b012ab3d8c8f15d4ae2b2a601c5237321a71f0bb92fd7",
+    "translations": {
+      "en": {
+        "title": "Article 24",
+        "paragraphs": [
+          "These measures shall come into effect on August 15, 2023."
+        ],
+        "fullText": "These measures shall come into effect on August 15, 2023.",
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "coverageStatus": "complete-versioned-reference",
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "CASI English reference translation of the final Order No. 15 text effective 15 August 2023",
+        "authorityNote": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "note": "This complete translation was prepared by a China Aerospace Studies Institute analyst and published by Air University. It is a United States government reference translation, not an official or co-authentic Chinese text; the official Chinese text controls.",
+        "source": {
+          "url": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "label": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+          "accessedOn": "2026-07-20",
+          "publishedOn": "2023-08-07",
+          "snapshotPath": "source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt"
+        },
+        "translator": "Josh Baughman",
+        "rights": {
+          "redistributable": true,
+          "basis": "The translation was prepared and published by the United States Department of the Air Force through Air University's China Aerospace Studies Institute as an official-duty government publication. United States government works are not protected by U.S. copyright under 17 U.S.C. § 105; the PDF carries no contrary copyright notice.",
+          "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+        },
+        "contentSha256": "667efa33cd4a56938dc01018c2513bcb5def45f802ca90f4f26c25f64ef94ab4"
+      }
+    }
   }
 ]

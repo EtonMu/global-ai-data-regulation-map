@@ -11,6 +11,19 @@ const instruments = JSON.parse(
 const provisions = JSON.parse(
   await readFile(resolve(dataRoot, "provisions.json"), "utf8"),
 );
+const englishCorpusCoverage = JSON.parse(
+  await readFile(resolve(dataRoot, "english-corpus-coverage.json"), "utf8"),
+);
+const englishCoverageByInstrument = new Map(
+  englishCorpusCoverage.corpora.map((record) => [record.instrumentId, record]),
+);
+for (const [corpusInstrumentId, registryInstrumentId] of [
+  ["vn-decree-356-2025", "vn-pdpl-implementing-decree-356-2025"],
+  ["vn-decree-13-2023", "vn-personal-data-protection-decree-13-2023"],
+]) {
+  const coverage = englishCoverageByInstrument.get(corpusInstrumentId);
+  if (coverage) englishCoverageByInstrument.set(registryInstrumentId, coverage);
+}
 const [
   piplArticles,
   networkDataArticles,
@@ -93,7 +106,7 @@ const languageProfiles = {
   },
   cn: {
     languages: ["zh-CN"],
-    note: "The official Chinese publication controls. Any locally stored English rendering is expressly a non-official reference translation.",
+    note: "The official Chinese publication controls. Government-published, U.S.-government, and project-authored English renderings are each labelled by source and are never represented as co-authentic enactments.",
   },
   jp: {
     languages: ["ja"],
@@ -101,11 +114,11 @@ const languageProfiles = {
   },
   kr: {
     languages: ["ko"],
-    note: "The Korean statutory text and amendment timeline control. The government English database is useful but may represent an earlier consolidation.",
+    note: "The Korean statutory text and amendment timeline control. Stored MOLEG English references retain provision-level version alignment and no-official-effect labels.",
   },
   br: {
     languages: ["pt-BR"],
-    note: "The current official Portuguese consolidation controls. The government English LGPD PDF is a dated translation snapshot.",
+    note: "The current official Portuguese text controls. ANPD English wording is retained only where verified against the current provision; separately identified project references cover later changes and remain non-authoritative.",
   },
   ae: {
     languages: ["ar"],
@@ -133,7 +146,7 @@ const languageProfiles = {
   },
   vn: {
     languages: ["vi"],
-    note: "The official Vietnamese text controls; English navigation content is an editorial summary unless a separately identified official translation is linked.",
+    note: "The official Vietnamese text controls. Complete project-authored English references are separately labelled as nonofficial, machine-assisted research aids with no legal effect.",
   },
   ch: {
     languages: ["de", "fr", "it"],
@@ -152,7 +165,7 @@ const authoritativeLanguageOverrides = {
   },
   "jp-appi": {
     languages: ["ja-JP"],
-    note: "The e-Gov Japanese consolidation is authoritative. The complete current Japanese corpus is stored; the government English reference ends at Act No. 37 of 2021 and is not aligned to current units.",
+    note: "The e-Gov Japanese consolidation is authoritative. A normalized source-text comparison verifies that 172 Act No. 37 of 2021 government-reference units remain text-equivalent to the current Japanese. The 13 changed main Articles, two changed appended tables and all 21 supplementary blocks have separately labelled current project English references.",
   },
   "jp-ai-promotion-act-2025": {
     languages: ["ja-JP"],
@@ -168,23 +181,23 @@ const authoritativeLanguageOverrides = {
   },
   "vn-personal-data-protection-law-2025": {
     languages: ["vi-VN"],
-    note: "The signed Vietnamese National Assembly text and Official Gazette control. No complete official English version was verified or generated.",
+    note: "The signed Vietnamese National Assembly text and Official Gazette control. All 39 Articles have a separately labelled complete, nonofficial project English reference; no issuing-authority English version was verified.",
   },
   "vn-pdpl-implementing-decree-356-2025": {
     languages: ["vi-VN"],
-    note: "The signed Vietnamese Government text and Official Gazette control. No complete official English version was verified or generated.",
+    note: "The signed Vietnamese Government text and Official Gazette control. All 42 Articles and 13 forms have separately labelled complete, nonofficial project English references; no issuing-authority English version was verified.",
   },
   "vn-personal-data-protection-decree-13-2023": {
     languages: ["vi-VN"],
-    note: "The historical Vietnamese Government text controls. The Decree was repealed in full from 1 January 2026 and no complete official English version is supplied.",
+    note: "The historical Vietnamese Government text controls. The Decree was repealed in full from 1 January 2026; all 44 Articles and six forms have complete project English references aligned to that stored historical version.",
   },
   "kr-pipa-2011": {
     languages: ["ko-KR"],
-    note: "The current Korean promulgated text controls. A KLRI English consolidation was audited externally but is not copied into the repository because the publisher's copyright policy requires permission.",
+    note: "The current Korean promulgated text controls. All 126 main Articles and 12 addenda have an aligned MOLEG government English reference with no official effect; the separately audited KLRI text remains external.",
   },
   "kr-ai-framework-act-2025": {
     languages: ["ko-KR"],
-    note: "The Korean promulgated text effective on 20 July 2026 controls. English database records describe other temporal versions and are retained only as external audit references.",
+    note: "The Korean promulgated text effective on 20 July 2026 controls. The MOLEG English reference is stored for all 47 current nodes: 42 are text-aligned, while Articles 2, 3, 6, 18 and 35 are explicitly marked as differing next-phase references effective 21 July 2026.",
   },
   "us-eo-14110": {
     languages: ["en-US"],
@@ -220,7 +233,7 @@ const authoritativeLanguageOverrides = {
   },
   "id-pdp-law-2022": {
     languages: ["id-ID"],
-    note: "The official Indonesian Gazette text controls. No complete official English translation was verified or generated; Article 53 retains a separately identified binding judicial interpretation layer.",
+    note: "The official Indonesian Gazette text controls. All 76 Articles have complete, nonofficial project English references; Article 53 applies and discloses the separately identified binding judicial interpretation layer.",
   },
   "za-popia-4-2013": {
     languages: ["en-ZA"],
@@ -244,11 +257,11 @@ const authoritativeLanguageOverrides = {
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
     languages: ["zh-Hant-TW"],
-    note: "The complete official Traditional-Chinese ODT controls the local guidance corpus. No complete official English translation of the final four-paragraph explanation and ten points was located.",
+    note: "The complete official Traditional-Chinese ODT controls the local guidance corpus. The final four-paragraph explanation and ten points have complete, nonofficial project English references; the earlier English news page is not presented as a translation of the final guidance.",
   },
   "br-pl-2338-2023-ai-bill": {
     languages: ["pt-BR"],
-    note: "The Chamber dossier and the Senate-approved bill text are published in Portuguese. No current official English bill text is claimed, and the LGPD translation profile does not apply to this proposal.",
+    note: "The Chamber dossier and the Senate-approved bill text are published in Portuguese. All 79 stored Articles have complete, nonofficial project English references; the proposal remains a pending bill and is not law.",
   },
   "us-ca-sb-1047-2024": {
     languages: ["en-US"],
@@ -312,24 +325,24 @@ const englishOverrides = {
     coverage: { translatedUnitCount: 79, totalUnitCount: 79, completeness: "complete-four-language-alignment" },
   },
   "vn-personal-data-protection-law-2025": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 39 Articles are stored in verified official Vietnamese. No machine or unofficial English translation is substituted.",
+    status: "complete-current-project-English-reference-stored-no-official-translation-verified",
+    note: "All 39 Articles are stored in verified official Vietnamese with complete, current-aligned project English references. The English is machine-assisted, nonofficial and has no legal effect; Vietnamese controls.",
   },
   "vn-pdpl-implementing-decree-356-2025": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 42 Articles and 13 Appendix forms are stored in verified official Vietnamese. No machine or unofficial English translation is substituted.",
+    status: "complete-current-project-English-reference-stored-no-official-translation-verified",
+    note: "All 42 Articles and 13 Appendix forms are stored in verified official Vietnamese with complete, current-aligned project English references. The English is machine-assisted, nonofficial and has no legal effect; Vietnamese controls.",
   },
   "vn-personal-data-protection-decree-13-2023": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 44 Articles and six Appendix forms are stored in historical official Vietnamese. No machine or unofficial English translation is substituted.",
+    status: "complete-historical-project-English-reference-stored-no-official-translation-verified",
+    note: "All 44 Articles and six Appendix forms are stored in historical official Vietnamese with complete project English references aligned to that repealed version. The English is machine-assisted, nonofficial and has no legal effect.",
   },
   "kr-pipa-2011": {
-    status: "external-English-reference-audited-not-reproduced",
-    note: "All 138 current corpus nodes are stored in Korean. The externally audited KLRI English text is not copied because permission is required, and no machine translation is substituted.",
+    status: "complete-current-government-English-reference-stored",
+    note: "All 126 main Articles and 12 addenda have an Act No. 20897-aligned MOLEG government English reference. The Korean text controls and the English publication has no official effect; KLRI remains external.",
   },
   "kr-ai-framework-act-2025": {
-    status: "no-current-aligned-English-toggle",
-    note: "All 47 nodes current on 20 July 2026 are stored in Korean. Available government/reference English records correspond to a different temporal version and are not mixed into the current corpus.",
+    status: "complete-versioned-government-English-reference-stored",
+    note: "All 47 current Korean nodes have a MOLEG English reference. Thirty-nine main Articles and three addenda are text-aligned across the 20/21 July boundary; Articles 2, 3, 6, 18 and 35 carry an upfront warning that the English text is the differing 21 July 2026 phase.",
   },
   "au-privacy-act-1988": {
     status: "complete-authorised-current-original-English-text-stored",
@@ -367,8 +380,8 @@ const englishOverrides = {
     coverage: { translatedUnitCount: 9, totalUnitCount: 9, completeness: "complete-government-reference-translation" },
   },
   "id-pdp-law-2022": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 76 Articles are stored only in controlling Indonesian. No English legal text was generated or silently substituted.",
+    status: "complete-current-project-English-reference-stored-no-official-translation-verified",
+    note: "All 76 Articles are stored in controlling Indonesian with complete, current-operative project English references. The nonofficial English has no legal effect; Article 53 incorporates and discloses the binding Constitutional Court interpretation.",
   },
   "za-popia-4-2013": {
     status: "complete-official-original-English-text-stored",
@@ -390,8 +403,8 @@ const englishOverrides = {
     },
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 11 navigation nodes are stored in official Traditional Chinese. The 31 August 2023 English news page is background on a draft and is not misrepresented as a translation of the final guidance.",
+    status: "complete-current-project-English-reference-stored-no-final-official-translation-verified",
+    note: "All 11 nodes are stored in official Traditional Chinese with complete project English references. The English is nonofficial and has no legal effect; the 31 August 2023 English news page is background on a draft, not a translation of the final guidance.",
   },
   "tw-ai-basic-act-2026": {
     status: "complete-government-English-reference-translation-stored",
@@ -416,13 +429,8 @@ const englishOverrides = {
     note: "All 95 current section slots and 11 Schedules are stored in English from Singapore Statutes Online. SSO identifies its consolidation as unofficial and non-authoritative; the reproduction permission, attribution and latest-version conditions remain attached to every unit.",
   },
   "cn-pipl": {
-    status: "selected-non-official-reference-translations-stored",
-    note: "All 74 Articles are stored in official Chinese. Five selected Articles have separately labelled non-official English reference translations; the other English reader views are editorial coverage notices, not translations.",
-    coverage: {
-      translatedUnitCount: 5,
-      totalUnitCount: 74,
-      completeness: "selected-articles-only",
-    },
+    status: "complete-government-published-English-reference-stored",
+    note: "All 74 official Chinese Articles have the complete National People's Congress English reference text attached. The NPC labels the publication as a translation for reference only; Chinese controls.",
   },
   "cn-cybersecurity-law": {
     status: "complete-non-official-reference-translation-stored",
@@ -434,31 +442,16 @@ const englishOverrides = {
     },
   },
   "cn-network-data-regulations": {
-    status: "selected-non-official-reference-translations-stored",
-    note: "All 64 Articles are stored in official Chinese. Articles 9, 35, 36, 37, 38 and 44 have separately labelled non-official English reference translations; the other English reader views are editorial coverage notices, not translations.",
-    coverage: {
-      translatedUnitCount: 6,
-      totalUnitCount: 64,
-      completeness: "selected-articles-only",
-    },
+    status: "complete-government-published-English-reference-stored",
+    note: "All 64 official Chinese Articles have the complete Ministry of Justice English publication attached as a government reference text. The Chinese State Council text controls.",
   },
   "cn-generative-ai-measures": {
-    status: "selected-non-official-reference-translations-stored",
-    note: "All 24 Articles are stored in official Chinese. Articles 4, 7, and 17 have separately labelled non-official English reference translations; the other English reader views are editorial coverage notices, not translations.",
-    coverage: {
-      translatedUnitCount: 3,
-      totalUnitCount: 24,
-      completeness: "selected-articles-only",
-    },
+    status: "complete-public-domain-government-reference-translation-stored",
+    note: "All 24 official Chinese Articles have a complete CASI/Air University English reference translation attached. It is a U.S.-government publication, not an official Chinese translation; Chinese controls.",
   },
   "jp-appi": {
-    status: "government-reference-translation-lagging",
-    note: "A government English translation exists through Act No. 37 of 2021, but it predates the 2026 current Japanese consolidation. It is linked for research and deliberately not attached to current provision nodes.",
-    coverage: {
-      translatedUnitCount: 0,
-      totalUnitCount: 208,
-      completeness: "not-current-no-unit-level-toggle",
-    },
+    status: "complete-current-aligned-mixed-government-and-project-English-reference-stored",
+    note: "Current-aligned English text is stored for all 208 nodes. A Japanese source-text comparison verified 172 government-reference units as unchanged; 13 changed main Articles, two changed appended tables and all 21 supplementary blocks have separately labelled project English references.",
   },
   "jp-ai-promotion-act-2025": {
     status: "complete-current-government-English-reference-translation-stored",
@@ -474,21 +467,16 @@ const englishOverrides = {
     note: "The current Version 1.2 source is Japanese; the local English view is an editorial summary, not a complete translation.",
   },
   "br-lgpd-2018": {
-    status: "official-translation-snapshot-lagging",
-    note: "The ANPD English PDF is useful but does not include the February 2026 Portuguese consolidation change.",
-    coverage: {
-      translatedUnitCount: 0,
-      totalUnitCount: 80,
-      completeness: "no-current-unit-aligned-English-translation",
-    },
+    status: "complete-current-English-reference-layer-stored",
+    note: "All 80 current Article nodes have an English reference. Seventy-seven preserve the ANPD 2024 official reference where current wording is unchanged; Articles 5, 55-A and 55-C use clearly marked project-authored references aligned to Law No. 15,352/2026, with the Portuguese consolidation controlling.",
   },
   "br-pl-2338-2023-ai-bill": {
-    status: "no-complete-official-English-text-verified",
-    note: "All 79 Article nodes preserve the Senate-approved Portuguese autograph transmitted to the Chamber. No complete official English bill text is claimed or generated.",
+    status: "complete-current-pending-bill-project-English-reference-stored",
+    note: "All 79 Article nodes preserve the Senate-approved Portuguese autograph transmitted to the Chamber and a complete, nonofficial project English reference. The English has no legal effect and the proposal is not law.",
     coverage: {
-      translatedUnitCount: 0,
+      translatedUnitCount: 79,
       totalUnitCount: 79,
-      completeness: "complete-official-Portuguese-bill-text-without-English-translation",
+      completeness: "complete-pending-Portuguese-bill-with-project-English-reference",
     },
   },
   "us-ca-sb-1047-2024": {
@@ -563,19 +551,19 @@ const coverageOverrides = {
     statement: "All 81 Articles of the Chinese consolidation effective 1 January 2026 are stored in Chinese with aligned, expressly non-official English reference translations.",
   },
   "cn-pipl": {
-    mode: "complete-official-original-article-corpus",
+    mode: "complete-official-Chinese-and-government-English-reference-article-corpus",
     localUnitCount: piplArticles.length,
-    statement: "All 74 Articles are stored from the official Chinese publication. Five selected Articles retain separately labelled non-official English reference translations; no complete English translation is claimed.",
+    statement: "All 74 Articles are stored from the official Chinese publication with the complete National People's Congress English reference publication attached Article by Article; the NPC marks it as a translation for reference only.",
   },
   "cn-network-data-regulations": {
-    mode: "complete-official-original-article-corpus",
+    mode: "complete-official-Chinese-and-government-English-reference-article-corpus",
     localUnitCount: networkDataArticles.length,
-    statement: "All 64 Articles of State Council Order No. 790 are stored from the official Chinese publication. Articles 9, 35, 36, 37, 38 and 44 retain separately labelled non-official English reference translations; no complete English translation is claimed.",
+    statement: "All 64 Articles of State Council Order No. 790 are stored from the official Chinese publication with the Ministry of Justice's complete English publication attached Article by Article; Chinese controls.",
   },
   "cn-generative-ai-measures": {
-    mode: "complete-official-original-article-corpus",
+    mode: "complete-official-Chinese-and-public-domain-English-reference-article-corpus",
     localUnitCount: generativeAiArticles.length,
-    statement: "All 24 Articles of Order No. 15 are stored from the official Chinese publication. Articles 4, 7, and 17 retain separately labelled non-official English reference translations.",
+    statement: "All 24 Articles of Order No. 15 are stored from the official Chinese publication with the complete CASI/Air University U.S.-government English reference translation attached; it is not an official Chinese translation.",
   },
   "gb-uk-gdpr": {
     mode: "complete-current-consolidated-article-corpus",
@@ -588,9 +576,9 @@ const coverageOverrides = {
     statement: "All 75 current top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications. The two enactments are co-authentic, and the local corpus is current to 31 March 2026.",
   },
   "br-lgpd-2018": {
-    mode: "complete-official-current-original-language-article-corpus",
+    mode: "complete-current-Portuguese-and-English-reference-article-corpus",
     localUnitCount: lgpdArticles.length,
-    statement: "All 80 current Article identifiers, including lettered and vetoed or repealed placeholders, are stored from the official Portuguese consolidation including Law No. 15,352 of 25 February 2026. The linked 2024 English snapshot is not represented as current.",
+    statement: "All 80 current Article identifiers are stored from the official Portuguese consolidation including Law No. 15,352/2026. Seventy-seven use the unchanged ANPD official English reference; Articles 5, 55-A and 55-C use separately labelled project references aligned to the current Portuguese wording.",
   },
   "tw-ai-basic-act-2026": {
     mode: "complete-official-bilingual-article-corpus",
@@ -603,9 +591,9 @@ const coverageOverrides = {
     statement: "All 66 Article nodes are stored from the official latest Traditional-Chinese consolidation with the Ministry of Justice English reference publication. Each node identifies whether its latest wording is in force, uncommenced, or accompanied by a still-operative prior version.",
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
-    mode: "complete-current-official-traditional-chinese-guidance-corpus",
+    mode: "complete-current-official-traditional-chinese-and-project-English-guidance-corpus",
     localUnitCount: taiwanExecutiveYuanGenAiGuidelines.length,
-    statement: "The complete four-paragraph general explanation and all ten numbered points are stored from the official NSTC Traditional-Chinese ODT under the Government Open Data License v1. No complete official English translation is claimed.",
+    statement: "The complete four-paragraph general explanation and all ten numbered points are stored from the official NSTC Traditional-Chinese ODT under the Government Open Data License v1, with complete separately licensed project English references. No complete official translation of the final guidance is claimed.",
   },
   "sg-pdpa-2012": {
     mode: "complete-current-government-consolidation",
@@ -623,9 +611,9 @@ const coverageOverrides = {
     statement: "All 66 Sections and the complete Schedule (paragraphs 1–18) are stored from the official Gazette copy hosted by the Nigeria Data Protection Commission. Reviewed pending bills are not represented as enacted amendments.",
   },
   "id-pdp-law-2022": {
-    mode: "complete-official-original-article-corpus-with-judicial-overlay",
+    mode: "complete-official-original-and-project-English-article-corpus-with-judicial-overlay",
     localUnitCount: indonesiaPdpArticles.length,
-    statement: "All 76 Articles are stored in controlling Indonesian with disclosed OCR/list-marker verification. Article 53 preserves promulgated text and a separately hashed current operative judicial interpretation; no English translation is supplied.",
+    statement: "All 76 Articles are stored in controlling Indonesian with complete project English references and disclosed OCR/list-marker verification. Article 53 preserves promulgated text and separately hashed current-operative Indonesian and English layers applying the binding judicial interpretation.",
   },
   "in-dpdp-act-2023": {
     mode: "complete-official-enacted-section-and-schedule-corpus-with-phase-status",
@@ -663,9 +651,9 @@ const coverageOverrides = {
     statement: "All 313 current main Sections, 13 current Australian Privacy Principles and 26 Schedule 2 clauses are stored from authorised Compilation No. 104. Future APP 1.7–1.9 wording and the related Section 13K amendment remain metadata only until 10 December 2026.",
   },
   "jp-appi": {
-    mode: "complete-current-authoritative-japanese-article-supplement-and-table-corpus",
+    mode: "complete-current-Japanese-with-complete-current-aligned-mixed-English-reference-corpus",
     localUnitCount: japanAppiArticles.length,
-    statement: "All 185 main Articles, 21 complete current supplementary-provision blocks and two appended tables are stored from the authoritative e-Gov consolidation effective on 20 July 2026. Seven promulgated future revisions are isolated in the corpus manifest and not merged into current text.",
+    statement: "All 185 main Articles, 21 current supplementary-provision blocks and two appended tables are stored from the authoritative e-Gov consolidation effective on 20 July 2026. English is current-aligned for all 208 nodes: 172 government-reference units are verified text-equivalent, while 15 changed main-Article/table units and all 21 supplementary blocks have project references.",
   },
   "jp-ai-promotion-act-2025": {
     mode: "complete-current-japanese-and-government-english-reference-corpus",
@@ -683,29 +671,29 @@ const coverageOverrides = {
     statement: "All 77 Articles and two Annexes of the current 7 July 2025 Fedlex consolidation are stored in aligned English, German, French and Italian. German, French and Italian are equally authoritative; English is official but non-authoritative.",
   },
   "vn-personal-data-protection-law-2025": {
-    mode: "complete-current-official-vietnamese-article-corpus",
+    mode: "complete-current-official-vietnamese-and-project-English-article-corpus",
     localUnitCount: vietnamPdplArticles.length,
-    statement: "All 39 Articles of Law No. 91/2025/QH15 are stored in exact Vietnamese verified against the signed National Assembly text and searchable Official Gazette.",
+    statement: "All 39 Articles of Law No. 91/2025/QH15 are stored in exact Vietnamese verified against the signed National Assembly text and searchable Official Gazette, with complete current-aligned project English references.",
   },
   "vn-pdpl-implementing-decree-356-2025": {
-    mode: "complete-current-official-vietnamese-article-and-appendix-form-corpus",
+    mode: "complete-current-official-vietnamese-and-project-English-article-and-appendix-form-corpus",
     localUnitCount: vietnamDecree356Provisions.length,
-    statement: "All 42 Articles and 13 Appendix forms of Decree No. 356/2025/NĐ-CP are stored in exact Vietnamese verified against the signed Government publication and Official Gazette.",
+    statement: "All 42 Articles and 13 Appendix forms of Decree No. 356/2025/NĐ-CP are stored in exact Vietnamese verified against the signed Government publication and Official Gazette, with complete current-aligned project English references.",
   },
   "vn-personal-data-protection-decree-13-2023": {
-    mode: "complete-repealed-historical-official-vietnamese-article-and-appendix-form-corpus",
+    mode: "complete-repealed-historical-official-vietnamese-and-project-English-article-and-appendix-form-corpus",
     localUnitCount: vietnamDecree13HistoricalProvisions.length,
-    statement: "All 44 Articles and six Appendix forms are stored as historical Vietnamese text. Decree No. 13/2023/NĐ-CP was repealed in full from 1 January 2026 and is never presented as current law.",
+    statement: "All 44 Articles and six Appendix forms are stored as historical Vietnamese text with complete project English references. Decree No. 13/2023/NĐ-CP was repealed in full from 1 January 2026 and is never presented as current law.",
   },
   "kr-pipa-2011": {
-    mode: "complete-current-authoritative-korean-article-and-supplement-corpus",
+    mode: "complete-current-Korean-and-government-English-reference-corpus",
     localUnitCount: koreaPipaArticles.length,
-    statement: "All 126 main Articles and 12 current Supplementary Provision blocks are stored from the Korean consolidation effective 2 October 2025. Two later promulgated phases are frozen in the manifest and excluded from current text.",
+    statement: "All 126 main Articles and 12 addenda are stored from the Korean consolidation effective 2 October 2025 with a complete, current-aligned MOLEG government English reference. Later promulgated phases remain isolated in the manifest.",
   },
   "kr-ai-framework-act-2025": {
-    mode: "complete-current-authoritative-korean-article-and-supplement-corpus",
+    mode: "complete-current-Korean-with-versioned-government-English-reference-corpus",
     localUnitCount: koreaAiFrameworkArticles.length,
-    statement: "All 44 main Articles and three Supplementary Provision blocks effective on 20 July 2026 are stored in Korean. The 21 July 2026 46-Article phase is frozen but not inserted one day early.",
+    statement: "All 44 main Articles and three addenda effective on 20 July 2026 are stored in Korean with MOLEG English references. Forty-two nodes are text-aligned; Articles 2, 3, 6, 18 and 35 display the differing 21 July 2026 English phase with an upfront not-current warning.",
   },
   "us-eo-14110": {
     mode: "complete-revoked-historical-official-executive-order-corpus",
@@ -718,9 +706,9 @@ const coverageOverrides = {
     statement: "The complete current Executive Order is stored from the GovInfo official electronic Federal Register edition in seven navigable section nodes.",
   },
   "br-pl-2338-2023-ai-bill": {
-    mode: "complete-official-pending-Portuguese-bill-article-corpus",
+    mode: "complete-official-pending-Portuguese-and-project-English-bill-article-corpus",
     localUnitCount: brazilAiBillArticles.length,
-    statement: "All 79 Articles of the Senate-approved Portuguese autograph transmitted to the Chamber are stored, including the controlling numbering gap from Article 30 to Article 32. The corpus is pending proposal text, not enacted Brazilian law.",
+    statement: "All 79 Articles of the Senate-approved Portuguese autograph transmitted to the Chamber are stored with complete project English references, including the controlling numbering gap from Article 30 to Article 32. The corpus is pending proposal text, not enacted Brazilian law.",
   },
   "us-ca-sb-1047-2024": {
     mode: "complete-official-vetoed-enrolled-bill-corpus",
@@ -836,7 +824,7 @@ const instrumentCaveats = {
     "The HKeL XML is official current open data, but the corpus does not describe it as a verification-marked PDF under Cap. 614 section 5.",
   ],
   "jp-appi": [
-    "The government English reference ends at Act No. 37 of 2021 and is not offered as a current provision-level language toggle.",
+    "The government English reference ends at Act No. 37 of 2021. It is used as current-equivalent text only for the 172 units whose normalized Japanese source wording was verified as unchanged; changed units use separately labelled project references.",
     "Seven promulgated future e-Gov revisions are preserved in the manifest but excluded from the current displayed corpus.",
   ],
   "jp-ai-promotion-act-2025": [
@@ -860,10 +848,10 @@ const instrumentCaveats = {
   ],
   "kr-pipa-2011": [
     "Promulgated phases effective 11 September 2026 and 1 July 2027 are isolated in the manifest and not inserted into the current text.",
-    "KLRI English body text is not reproduced without permission.",
+    "The complete MOLEG English reference is stored under the government's open-data terms and has no official effect; KLRI text is still not reproduced without permission.",
   ],
   "kr-ai-framework-act-2025": [
-    "The 46-Article phase takes effect on 21 July 2026, one day after the review date, and is not inserted into the current 44-Article corpus.",
+    "The 46-Article Korean phase takes effect on 21 July 2026, one day after the review date, and is not inserted into the current Korean corpus. Five differing English reference Articles are retained only with explicit future-phase warnings.",
   ],
   "us-eo-14110": [
     "Every node is historical: Executive Order 14148 revoked EO 14110 in full on 20 January 2025.",
@@ -893,8 +881,38 @@ const instrumentCaveats = {
 const rightsBoundaryOverrides = {
   "br-pl-2338-2023-ai-bill": {
     sourceTextStatus: "official-act-excluded-from-copyright-protection-under-Brazilian-law",
-    projectLicenseBoundary: "official-Portuguese-bill-text-excluded-from-project-CC-BY-license",
-    note: "The Portuguese legislative text is reproduced as an official act under Lei nº 9.610/1998 Article 8(IV). Project-authored English orientation titles, summaries, classifications, and mappings remain separately licensed editorial material.",
+    projectLicenseBoundary: "official-Portuguese-bill-text-excluded-from-project-CC-BY-license-project-English-reference-licensed-CC-BY-4.0",
+    note: "The Portuguese legislative text is reproduced as an official act under Lei nº 9.610/1998 Article 8(IV). The separately labelled project English reference, titles, summaries, classifications and mappings are licensed under CC BY 4.0 and have no legal effect.",
+  },
+  "id-pdp-law-2022": {
+    sourceTextStatus: "official-Indonesian-government-edict-controlling-text",
+    projectLicenseBoundary: "project-English-reference-only-licensed-CC-BY-4.0",
+    note: "CC BY 4.0 applies to the separately labelled project-authored English reference, not to the controlling Indonesian Gazette text or Constitutional Court decision.",
+  },
+  "tw-executive-yuan-generative-ai-guidelines-2023": {
+    sourceTextStatus: "official-Traditional-Chinese-guidance-under-recorded-government-open-data-terms",
+    projectLicenseBoundary: "project-English-reference-only-licensed-CC-BY-4.0",
+    note: "The source-language guidance retains the Government Open Data License boundary recorded on each node. The separately labelled project English reference is licensed under CC BY 4.0 and has no legal effect.",
+  },
+  "jp-appi": {
+    sourceTextStatus: "authoritative-e-Gov-Japanese-law-and-versioned-JLT-government-reference",
+    projectLicenseBoundary: "APPI-changed-unit-and-supplement-project-English-references-only-licensed-CC-BY-4.0",
+    note: "CC BY 4.0 applies only to the 36 project-authored APPI English references: 13 changed main Articles, two changed appended tables and 21 supplementary-provision blocks. The authoritative Japanese text and 172 verified-equivalent JLT government references retain their recorded source terms.",
+  },
+  "vn-personal-data-protection-law-2025": {
+    sourceTextStatus: "official-Vietnamese-government-edict-controlling-text",
+    projectLicenseBoundary: "project-English-reference-only-licensed-CC-BY-4.0",
+    note: "CC BY 4.0 applies only to the nonofficial project English reference; the signed Vietnamese text remains controlling.",
+  },
+  "vn-pdpl-implementing-decree-356-2025": {
+    sourceTextStatus: "official-Vietnamese-government-edict-controlling-text",
+    projectLicenseBoundary: "project-English-reference-only-licensed-CC-BY-4.0",
+    note: "CC BY 4.0 applies only to the nonofficial project English references for the 42 Articles and 13 forms; the signed Vietnamese text remains controlling.",
+  },
+  "vn-personal-data-protection-decree-13-2023": {
+    sourceTextStatus: "official-repealed-Vietnamese-government-edict-historical-text",
+    projectLicenseBoundary: "project-English-reference-only-licensed-CC-BY-4.0",
+    note: "CC BY 4.0 applies only to the nonofficial project English reference aligned to the stored historical version; the Vietnamese text controls for its former effective period.",
   },
   "us-ca-sb-1047-2024": {
     sourceTextStatus: "California-legislative-information-public-domain-record",
@@ -919,23 +937,39 @@ const rightsBoundaryOverrides = {
 };
 
 function englishProfile(instrument) {
-  if (englishOverrides[instrument.id]) return englishOverrides[instrument.id];
-  if (/^en(?:-|$)/i.test(instrument.textAvailability.language)) {
-    return {
+  let profile;
+  if (englishOverrides[instrument.id]) {
+    profile = englishOverrides[instrument.id];
+  } else if (/^en(?:-|$)/i.test(instrument.textAvailability.language)) {
+    profile = {
       status: "official-or-original-english-source",
       note: "The indexed source is available in English; legal effect and completeness still follow the instrument's source and version notes.",
     };
-  }
-  if (instrument.referenceTranslationSource) {
-    return {
+  } else if (instrument.referenceTranslationSource) {
+    profile = {
       status: "official-or-government-reference-translation-linked",
       note: "A separately identified English translation is linked. The authoritative original-language text and amendment record control version-sensitive research.",
     };
+  } else {
+    profile = {
+      status: "no-stored-English-legal-text",
+      note: "No complete current English legal text is stored. The English reader shows an explicit coverage notice, never a concept mapping or editorial summary in place of the law; the original official source remains linked.",
+    };
   }
-  return {
-    status: "editorial-summary-only",
-    note: "No complete current official English text is claimed. The default English interface content is an editorial summary and the original official source remains linked.",
-  };
+  const computed = englishCoverageByInstrument.get(instrument.id);
+  return computed
+    ? {
+        ...profile,
+        coverage: {
+          translatedUnitCount: computed.storedEnglishUnitCount,
+          currentAlignedUnitCount: computed.currentAlignedEnglishUnitCount,
+          temporallyMismatchedUnitCount:
+            computed.temporallyMismatchedEnglishUnitCount,
+          totalUnitCount: computed.totalUnitCount,
+          completeness: computed.coverageStatus,
+        },
+      }
+    : profile;
 }
 
 function sourceRecords(instrument) {

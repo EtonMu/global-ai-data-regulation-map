@@ -853,6 +853,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .corpus-navigator {
   position: relative;
+  container-name: corpus-navigation;
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1335,6 +1337,35 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .jurisdiction-label > span:last-child,
 .concept-theme-label > span:last-child {
   min-width: 0;
+}
+
+/*
+ * A resizable navigation rail can become too narrow for both an instrument
+ * title and its issuer label to remain side-by-side.  Stack the issuer below
+ * the title before either label is reduced to one character per line.
+ */
+@container corpus-navigation (max-width: 230px) {
+  .tree-instrument-list button {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 3px;
+  }
+
+  .tree-instrument-list small {
+    min-width: 0;
+    max-width: 100%;
+    padding-left: 31px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .instrument-tree-title {
+    width: 100%;
+    align-items: flex-start;
+    overflow-wrap: break-word;
+  }
 }
 
 .selected-article-tree {
@@ -3945,6 +3976,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-size: 0.86rem;
   line-height: 1.72;
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 .reader-document[data-text-language^="zh"] > p,
@@ -4001,6 +4033,16 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--muted);
   font-size: 0.7rem;
   line-height: 1.55;
+}
+
+.translation-status-note.is-version-warning {
+  margin: 0 0 18px;
+  border-left-color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.translation-status-note.is-version-warning strong {
+  color: var(--amber);
 }
 
 .topic-relevance-note {

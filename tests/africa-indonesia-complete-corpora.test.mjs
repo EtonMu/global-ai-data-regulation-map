@@ -109,7 +109,7 @@ test("Nigeria NDPA corpus contains all 66 sections and Schedule paragraphs 1-18"
   );
 });
 
-test("Indonesia PDP corpus contains Articles 1-76 in controlling Indonesian only", () => {
+test("Indonesia PDP corpus contains Articles 1-76 with aligned nonofficial English", () => {
   assert.equal(indonesia.length, 76);
   for (const [index, article] of indonesia.entries()) {
     const number = index + 1;
@@ -119,8 +119,22 @@ test("Indonesia PDP corpus contains Articles 1-76 in controlling Indonesian only
     assert.equal(article.articleNumber, String(number));
     assert.equal(article.originalTitle, `Pasal ${number}`);
     assert.equal(article.language, "id-ID");
-    assert.equal(article.translations, undefined);
-    assert.equal(article.englishAvailability.status, "not-supplied");
+    const english = article.translations.en;
+    assert.equal(english.language, "en");
+    assert.equal(english.coverageStatus, "complete-current-project-reference");
+    assert.equal(english.officialStatus, "non-official-no-legal-effect");
+    assert.equal(english.fullText, english.paragraphs.join("\n\n"));
+    assert.equal(english.contentSha256, sha256(english.fullText));
+    assert.equal(english.paragraphs.length, article.paragraphs.length);
+    assert.equal(article.currentLanguageToggleEligible, true);
+    assert.equal(
+      article.englishAvailability.status,
+      "project-authored-reference-translation-no-legal-effect",
+    );
+    assert.equal(
+      article.englishAvailability.coverageStatus,
+      "complete-current-project-reference",
+    );
     assert.match(article.chapter.label, /^BAB [IVXLCDM]+$/u);
     assert.doesNotMatch(
       article.fullText,

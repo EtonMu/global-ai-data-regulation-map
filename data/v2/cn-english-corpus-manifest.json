@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "1.0",
+  "reviewedOn": "2026-07-20",
+  "jurisdictionId": "cn",
+  "scope": "Version, provenance, authority, reuse, and unit-level English-coverage audit for the four complete Chinese corpora currently stored by Compliance Compass.",
+  "policy": {
+    "controllingLanguage": "zh-CN",
+    "defaultReaderLanguage": "en",
+    "authorityRule": "An English text is never labelled co-authentic merely because a government body publishes it. The promulgated Chinese text controls unless the issuing authority expressly states otherwise.",
+    "sourcePriority": [
+      "government-published complete reference translation aligned to the current Chinese version",
+      "complete reusable public-sector reference translation aligned to the current Chinese version",
+      "complete project-authored editorial translation with an explicit non-official label"
+    ],
+    "excludedSources": [
+      "commercial or law-firm translations without republication permission",
+      "older English translations presented as if they reflected the current amended Chinese law",
+      "concept summaries or coverage notices presented as Article text"
+    ],
+    "displayRule": "The English toggle may display stored Article text only when the Article has a non-empty translations.en.fullText whose version and authority metadata are present. Otherwise the interface must show a conspicuous coverage notice outside the legal-text container."
+  },
+  "instruments": [
+    {
+      "instrumentId": "cn-pipl",
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "englishTitle": "Personal Information Protection Law of the People's Republic of China",
+      "currentVersion": {
+        "versionAsOf": "2021-11-01",
+        "versionLabel": "Law adopted 20 August 2021 and effective 1 November 2021",
+        "lifecycleStatus": "in-force",
+        "currentVersionAligned": true
+      },
+      "corpus": {
+        "path": "data/v2/cn-pipl-articles.json",
+        "unit": "article",
+        "unitCount": 74,
+        "originalLanguageUnitCount": 74,
+        "englishUnitCount": 74,
+        "coverageStatus": "complete-current",
+        "fileSha256": "54f2eef0528f157776380700a0d5ed3d5b55e7bb53291bb634e9e059bac0fa65"
+      },
+      "translation": {
+        "language": "en",
+        "status": "government-published-reference",
+        "authorityLevel": "NPC-published-reference-only",
+        "coAuthentic": false,
+        "source": "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+        "sourceLabel": "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)",
+        "publishedOn": "2021-12-29",
+        "authorityNote": "The NPC publishes this complete English text in its 'Laws (Translation for Reference Only)' collection. It is not a co-authentic enactment; the Chinese text controls.",
+        "recommendedUiLabel": "COMPLETE NPC REFERENCE ENGLISH · CHINESE CONTROLS"
+      },
+      "rights": {
+        "redistributable": true,
+        "basis": "PRC Copyright Law Article 5 excludes laws, regulations, legislative/administrative/judicial documents, and their official translations from copyright protection. This corpus retains NPC attribution and the NPC's reference-only authority label.",
+        "legalBasisSource": "https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html",
+        "attribution": "National People's Congress of the People's Republic of China"
+      },
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/cn-pipl-npc-en-reference-index-2023-11-17.html",
+          "sourceUrl": "https://www.npc.gov.cn/npc/c2597/c5854/bfflywwb/202311/t20231117_433007.html",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/html",
+          "role": "NPC reference-translation index and authority wrapper",
+          "sha256": "3a44d024b47f4633b176efc820dc153f265c85114f5892264c250f1d650d127e"
+        },
+        {
+          "path": "data/v2/source-snapshots/cn-pipl-npc-en-reference-2021-12-29.html",
+          "sourceUrl": "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/html",
+          "role": "English reference text, page 1 of 3",
+          "sha256": "0308d0beebe32510ea23c28225d9b3db406fc0d8ad67aa632b48c9395122d1da"
+        },
+        {
+          "path": "data/v2/source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-2.html",
+          "sourceUrl": "http://en.npc.gov.cn/2021-12/29/c_694559_2.htm",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/html",
+          "role": "English reference text, page 2 of 3",
+          "sha256": "59a9ee37ee7166594388160fdb42f0e4964f6200879cecdeda4040e1f348307a"
+        },
+        {
+          "path": "data/v2/source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-3.html",
+          "sourceUrl": "http://en.npc.gov.cn/2021-12/29/c_694559_3.htm",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/html",
+          "role": "English reference text, page 3 of 3",
+          "sha256": "e7286ef49adaf69cfd4520f2fa0fb5f2ce44901abb4e47a6eac7fa51cd207693"
+        }
+      ]
+    },
+    {
+      "instrumentId": "cn-network-data-regulations",
+      "officialTitle": "网络数据安全管理条例",
+      "englishTitle": "Regulations on Network Data Security Management",
+      "currentVersion": {
+        "versionAsOf": "2025-01-01",
+        "versionLabel": "State Council Order No. 790, effective 1 January 2025",
+        "lifecycleStatus": "in-force",
+        "currentVersionAligned": true
+      },
+      "corpus": {
+        "path": "data/v2/cn-network-data-regulations-articles.json",
+        "unit": "article",
+        "unitCount": 64,
+        "originalLanguageUnitCount": 64,
+        "englishUnitCount": 64,
+        "coverageStatus": "complete-current",
+        "fileSha256": "6855f4c21517418071848d68070e85307f8c361853cee612f36b13a269f5e870"
+      },
+      "translation": {
+        "language": "en",
+        "status": "government-published-reference",
+        "authorityLevel": "PRC-Ministry-of-Justice-published-reference",
+        "coAuthentic": false,
+        "source": "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+        "sourceLabel": "Ministry of Justice of the People's Republic of China",
+        "publishedOn": "2026-01-09",
+        "authorityNote": "The Ministry of Justice publishes a complete English rendering of State Council Order No. 790. The project does not represent it as co-authentic with the promulgated Chinese text; the Chinese text controls.",
+        "sourceFidelityNote": "The stored English text preserves the Ministry PDF's wording, including apparent source typographical or drafting anomalies, rather than silently rewriting them.",
+        "recommendedUiLabel": "COMPLETE MOJ REFERENCE ENGLISH · CHINESE CONTROLS"
+      },
+      "rights": {
+        "redistributable": true,
+        "basis": "PRC Copyright Law Article 5 excludes laws, regulations, legislative/administrative/judicial documents, and their official translations from copyright protection. This corpus retains Ministry of Justice attribution and does not claim co-authenticity.",
+        "legalBasisSource": "https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html",
+        "attribution": "Ministry of Justice of the People's Republic of China"
+      },
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/cn-network-data-regulations-moj-en-2026-01-09.pdf",
+          "sourceUrl": "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "application/pdf",
+          "role": "government-published complete English reference",
+          "sha256": "c53389ccde161db59d7fc7b09455d50cb7e3c8dbd17dd565637a3db3e92989c7"
+        },
+        {
+          "path": "data/v2/source-snapshots/cn-network-data-regulations-moj-en-2026-01-09-pdftotext.txt",
+          "sourceUrl": "https://en.moj.gov.cn/pdf/RegulationsonNetworkDataSecurityManagement.pdf",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/plain",
+          "role": "deterministic text extraction used by the importer",
+          "sha256": "476524700cee89ee02cc943f7298612f46d861e1011ee759cff622d9f0576560"
+        }
+      ]
+    },
+    {
+      "instrumentId": "cn-generative-ai-measures",
+      "officialTitle": "生成式人工智能服务管理暂行办法",
+      "englishTitle": "Interim Measures for the Management of Generative Artificial Intelligence Services",
+      "currentVersion": {
+        "versionAsOf": "2023-08-15",
+        "versionLabel": "Order No. 15, effective 15 August 2023",
+        "lifecycleStatus": "in-force",
+        "currentVersionAligned": true
+      },
+      "corpus": {
+        "path": "data/v2/cn-generative-ai-measures-articles.json",
+        "unit": "article",
+        "unitCount": 24,
+        "originalLanguageUnitCount": 24,
+        "englishUnitCount": 24,
+        "coverageStatus": "complete-versioned-reference",
+        "fileSha256": "5a67c08b8c5b125363e3ea7bfe9a7a87b283b90555fae08a612e99e65633184b"
+      },
+      "translation": {
+        "language": "en",
+        "status": "public-domain-government-reference",
+        "authorityLevel": "United-States-government-reference-not-PRC-official",
+        "coAuthentic": false,
+        "source": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+        "sourceLabel": "China Aerospace Studies Institute, Air University, United States Department of the Air Force",
+        "translator": "Josh Baughman",
+        "publishedOn": "2023-08-07",
+        "authorityNote": "CASI's complete English reference is not a Chinese government translation and has no legal effect. The official Chinese Order No. 15 text controls.",
+        "normalizationNote": "The normalized snapshot retains all 24 Article bodies and translator-supplied square-bracket explanatory glosses; page headers, footers, and footnotes are excluded from Article text.",
+        "recommendedUiLabel": "COMPLETE U.S. GOVERNMENT REFERENCE ENGLISH · NOT PRC-OFFICIAL · CHINESE CONTROLS"
+      },
+      "rights": {
+        "redistributable": true,
+        "basis": "CASI identifies Josh Baughman as its analyst and Air University records his participation in the Defense Civilian Emerging Leader Program. Air University states that a manuscript written by a government employee as part of the employee's job is public domain; 17 U.S.C. §§ 101 and 105 govern United States Government works. The source PDF carries no contrary copyright notice.",
+        "policySource": "https://www.airuniversity.af.edu/AUPress/Display/Article/1145827/introduction-to-the-press/",
+        "statutorySource": "https://www.copyright.gov/title17/92chap1.html",
+        "attribution": "Josh Baughman; China Aerospace Studies Institute, Air University"
+      },
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/cn-genai-measures-casi-en-2023-08-07-normalized.txt",
+          "sourceUrl": "https://www.airuniversity.af.edu/Portals/10/CASI/documents/Translations/2023-08-07%20ITOW%20Interim%20Measures%20for%20the%20Management%20of%20Generative%20Artificial%20Intelligence%20Services.pdf",
+          "retrievedOn": "2026-07-20",
+          "mediaType": "text/plain",
+          "role": "normalized full Article text from the public-domain government reference translation",
+          "sha256": "d11daafcfd7e8c1577a35f5690b3e6de38c394ceac55dc6c9ddd9df5c0b9842a"
+        }
+      ]
+    },
+    {
+      "instrumentId": "cn-cybersecurity-law",
+      "officialTitle": "中华人民共和国网络安全法",
+      "englishTitle": "Cybersecurity Law of the People's Republic of China",
+      "currentVersion": {
+        "versionAsOf": "2026-01-01",
+        "versionLabel": "Consolidated Chinese text amended 28 October 2025 and effective 1 January 2026",
+        "lifecycleStatus": "in-force-amended",
+        "currentVersionAligned": true
+      },
+      "corpus": {
+        "path": "data/v2/provisions.json",
+        "selection": "instrumentId == 'cn-cybersecurity-law'",
+        "unit": "article",
+        "unitCount": 81,
+        "originalLanguageUnitCount": 81,
+        "englishUnitCount": 81,
+        "coverageStatus": "complete-current-project-reference",
+        "selectedOriginalFullTextSha256": "f8c9889734692c1c90aff6b6255756c5b568107b69d3bbeefe124d55a685a668"
+      },
+      "translation": {
+        "language": "en",
+        "status": "project-authored-editorial-reference",
+        "authorityLevel": "non-official-editorial",
+        "coAuthentic": false,
+        "governmentPublishedCurrentEnglishLocated": false,
+        "source": "https://github.com/EtonMu/global-ai-data-regulation-map/blob/main/data/v2/provisions.json",
+        "translationBasis": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+        "authorityNote": "No complete Chinese-government English text aligned to the 81-Article consolidation effective 1 January 2026 was located in this audit. The stored English is a complete project-authored navigation and study aid, not an official translation; the current Chinese text controls.",
+        "versionBoundary": "English texts based on the pre-amendment 2016/2017 law must not be presented as the current 2026 consolidation.",
+        "recommendedUiLabel": "COMPLETE EDITORIAL ENGLISH · NOT OFFICIAL · 2026 CHINESE CONTROLS"
+      },
+      "rights": {
+        "redistributable": true,
+        "basis": "The English text is original project-authored editorial material, not copied from a protected third-party translation. The controlling Chinese statutory text falls under PRC Copyright Law Article 5.",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Compliance Compass contributors",
+        "projectLicenseBoundary": "The project-authored English reference is licensed under CC BY 4.0. Preserve attribution together with the non-official and Chinese-controls notices.",
+        "legalBasisSource": "https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html"
+      },
+      "sources": [
+        {
+          "role": "primary-current-Chinese-consolidation",
+          "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+          "label": "Cyberspace Administration of China reproduction of the NPC consolidated text",
+          "retrievedOn": "2026-07-19"
+        },
+        {
+          "role": "amendment-record",
+          "url": "https://www.npc.gov.cn/npc/c1773/c1848/c21114/wlaqfxz/wlaqfxz002/202511/t20251103_449242.html",
+          "label": "Standing Committee of the National People's Congress amendment decision",
+          "retrievedOn": "2026-07-19"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "instrumentId": "br-lgpd-2018",
+  "manifestPath": "data/v2/source-snapshots/br-lgpd-anpd-en-2024-source-manifest.json",
+  "reviewedOn": "2026-07-20",
+  "primarySource": {
+    "publisher": "Brazilian National Data Protection Authority (ANPD)",
+    "title": "Brazilian Data Protection Law (LGPD) — official English reference translation",
+    "landingPage": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf",
+    "downloadUrl": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf/@@display-file/file",
+    "createdOn": "2024-11-06",
+    "pageModifiedOn": "2025-01-23",
+    "retrievedOn": "2026-07-20",
+    "mediaType": "application/pdf",
+    "byteLength": 1261558,
+    "sha256": "268d284b279f9f2ec9e0e494ccf2841ead40155599c77a095cf8d0ae867ebd61",
+    "storedInRepository": false,
+    "storageNote": "The smaller normalized text extraction is pinned in the repository. The exact PDF remains independently reacquirable and is identified by URL, byte length and SHA-256."
+  },
+  "normalizedSnapshot": {
+    "path": "data/v2/source-snapshots/br-lgpd-anpd-en-2024-pdftotext-normalized.txt",
+    "mediaType": "text/plain; charset=utf-8",
+    "byteLength": 81605,
+    "lineCount": 1246,
+    "sha256": "3a4c1e99969e7611b413c1ceec39dfd79c07c8739cecdbf2c3aa86f9f6db6764",
+    "derivedFromPdfSha256": "268d284b279f9f2ec9e0e494ccf2841ead40155599c77a095cf8d0ae867ebd61",
+    "extraction": {
+      "tool": "Poppler pdftotext",
+      "toolVersion": "25.03.0",
+      "arguments": [
+        "-enc",
+        "UTF-8"
+      ],
+      "normalization": "UTF-8 text in the extractor's default reading order with LF line endings. Page-break form feeds are preserved. No wording is edited in this snapshot."
+    }
+  },
+  "rights": {
+    "reuseStatus": "government-site-cc-by-nd-3.0-verbatim-extraction",
+    "license": "Creative Commons Attribution-NoDerivs 3.0 Unported",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nd/3.0/",
+    "licenseEvidenceUrl": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf",
+    "attribution": "Brazilian National Data Protection Authority (ANPD), Brazilian Data Protection Law (LGPD), English reference translation, created 6 November 2024.",
+    "transformationBoundary": "The stored snapshot is a verbatim format extraction. Corpus generation removes non-operative running headings and changes only PDF line wrapping; it does not alter official English wording."
+  },
+  "reproducibility": {
+    "importer": "scripts/import-brazil-lgpd-english.py",
+    "defaultSource": "data/v2/source-snapshots/br-lgpd-anpd-en-2024-pdftotext-normalized.txt",
+    "expectedArticleIdentifierCount": 80,
+    "officialCurrentWordingCount": 77,
+    "projectAuthoredCurrentWordingCount": 3,
+    "projectAuthoredArticleIdentifiers": [
+      "5",
+      "55-A",
+      "55-C"
+    ]
+  }
+}

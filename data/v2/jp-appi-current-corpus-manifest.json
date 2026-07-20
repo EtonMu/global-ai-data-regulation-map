@@ -109,15 +109,111 @@
   ],
   "translation": {
     "language": "en",
-    "status": "government-reference-only-outdated-not-attached-to-current-units",
-    "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
-    "lastVersion": "Act No. 37 of 2021",
-    "translatedOn": "2021-11-05",
-    "publishedOnDatabase": "2023-03-01",
-    "dictionaryVersion": "14.0",
-    "referenceMainArticleCount": 185,
-    "versionDifference": "The English reference incorporates through Act No. 37 of 2021. It does not represent the current 2026 Japanese consolidation or the promulgated future phases listed in this manifest. No English reference text is copied into current APPI units.",
-    "legalEffect": "Japanese Law Translation states that translations are reference materials only and that only the original Japanese text has legal effect."
+    "status": "mixed-verified-government-and-project-current-references",
+    "coverageStatus": "complete-current-aligned-english-reference-for-all-208-nodes",
+    "totalNodeCount": 208,
+    "currentAlignedUnitCount": 208,
+    "temporallyMismatchedUnitCount": 0,
+    "unitCountWithoutEnglishReference": 0,
+    "governmentReference": {
+      "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "lastVersion": "Act No. 37 of 2021",
+      "versionAsOf": "2021-05-19",
+      "versionLabel": "Act No. 37 of 2021 consolidated government reference (published 2023-03-01)",
+      "translatedOn": "2021-11-05",
+      "publishedOnDatabase": "2023-03-01",
+      "dictionaryVersion": "14.0",
+      "mainArticleCount": 185,
+      "appendedTableCount": 2,
+      "supplementaryProvisionCount": 0,
+      "normalizedCurrentEquivalentUnitCount": 172,
+      "normalizedChangedUnitCount": 15,
+      "currentTextEquivalent": "true-only-for-the-172-unit-ids-verified-by-the-alignment-audit",
+      "applicabilityStatus": "article-level-current-equivalence-verified; changed-units-replaced-by-project-current-references"
+    },
+    "projectCurrentAlignmentReference": {
+      "versionAsOf": "2026-07-20",
+      "unitCount": 15,
+      "mainArticleCount": 13,
+      "appendedTableCount": 2,
+      "unitIds": [
+        "jp-appi-art-48",
+        "jp-appi-art-113",
+        "jp-appi-art-132",
+        "jp-appi-art-136",
+        "jp-appi-art-150",
+        "jp-appi-art-162",
+        "jp-appi-art-164",
+        "jp-appi-art-176",
+        "jp-appi-art-177",
+        "jp-appi-art-178",
+        "jp-appi-art-179",
+        "jp-appi-art-180",
+        "jp-appi-art-181",
+        "jp-appi-appended-table-1",
+        "jp-appi-appended-table-2"
+      ],
+      "currentTextEquivalent": true,
+      "status": "project-authored-reference-translation-no-legal-effect",
+      "license": "CC BY 4.0",
+      "sourceTranslationLicense": "Public Data License (Version 1.0)"
+    },
+    "projectSupplementReference": {
+      "manifest": "data/v2/jp-appi-supplement-project-english-manifest.json",
+      "versionAsOf": "2026-07-20",
+      "supplementaryProvisionCount": 21,
+      "currentTextEquivalent": true,
+      "status": "project-authored-reference-translation-no-legal-effect",
+      "license": "CC BY 4.0"
+    },
+    "alignmentAudit": {
+      "method": "recursive-text-content-unicode-nfc-all-unicode-whitespace-removed-v1",
+      "comparedUnitCount": 187,
+      "normalizedEquivalentUnitCount": 172,
+      "normalizedChangedUnitCount": 15,
+      "changedUnitIds": [
+        "jp-appi-art-48",
+        "jp-appi-art-113",
+        "jp-appi-art-132",
+        "jp-appi-art-136",
+        "jp-appi-art-150",
+        "jp-appi-art-162",
+        "jp-appi-art-164",
+        "jp-appi-art-176",
+        "jp-appi-art-177",
+        "jp-appi-art-178",
+        "jp-appi-art-179",
+        "jp-appi-art-180",
+        "jp-appi-art-181",
+        "jp-appi-appended-table-1",
+        "jp-appi-appended-table-2"
+      ],
+      "projectCurrentAlignmentUnitIds": [
+        "jp-appi-art-48",
+        "jp-appi-art-113",
+        "jp-appi-art-132",
+        "jp-appi-art-136",
+        "jp-appi-art-150",
+        "jp-appi-art-162",
+        "jp-appi-art-164",
+        "jp-appi-art-176",
+        "jp-appi-art-177",
+        "jp-appi-art-178",
+        "jp-appi-art-179",
+        "jp-appi-art-180",
+        "jp-appi-art-181",
+        "jp-appi-appended-table-1",
+        "jp-appi-appended-table-2"
+      ],
+      "remainingHistoricalMismatchUnitIds": [],
+      "currentJapaneseSource": "https://laws.e-gov.go.jp/api/2/law_file/xml/415AC0000000057?asof=2026-07-20",
+      "currentJapaneseSourceDocumentSha256": "4b0bcfca1781fbaf8756d39976c8e8d55b7cb99065aa3008d3b659d0f9e40c4f",
+      "historicalJapaneseSource": "https://www.japaneselawtranslation.go.jp/ja/laws/download/4241/01/h15Aa000570305ja14.0_r3A37.xml",
+      "historicalJapaneseSourceDocumentSha256": "a0fc4c953d912de7eafae08f287ecf4c5dc6fb25cf4bb704529d3c064655dca3",
+      "comparisonRecordSequenceSha256": "53ba2e2996ea20a4c781bf3ecffa2bfd114fe2ac52eaaf7987d923c6429ab297",
+      "recordLocation": "Each compared Article/table translation stores its complete japaneseTextComparison record and record hash."
+    },
+    "legalEffect": "Only the original Japanese text has legal effect. Government English is reused only for normalized-identical Japanese nodes; changed Articles, tables and all supplementary blocks use separately labelled nonofficial project references."
   },
   "rights": {
     "primaryJapaneseText": {
@@ -131,6 +227,15 @@
       "license": "Public Data License (Version 1.0)",
       "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
       "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+    },
+    "projectCurrentAlignmentReference": {
+      "reuseStatus": "jlt-pdl-1.0-source-and-cc-by-4.0-project-adaptation",
+      "license": "Creative Commons Attribution 4.0 International",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Compliance Compass contributors — nonofficial current-alignment reference adapted from the Japanese Law Translation Database government reference.",
+      "sourceTranslationLicense": "Public Data License (Version 1.0)",
+      "sourceTranslationLicenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+      "boundary": "The Japanese Law Translation Database source wording remains attributed under the Public Data License. CC BY 4.0 applies to the project's current-law adaptation and alignment metadata only."
     }
   },
   "sourceSnapshots": [
@@ -153,11 +258,20 @@
       "rightsProfile": "egov"
     },
     {
+      "path": "data/v2/source-snapshots/jp-appi-government-ja-reference-act-37-2021.xml",
+      "sourceUrl": "https://www.japaneselawtranslation.go.jp/ja/laws/download/4241/01/h15Aa000570305ja14.0_r3A37.xml",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "historical-japanese-comparison-source",
+      "sha256": "a0fc4c953d912de7eafae08f287ecf4c5dc6fb25cf4bb704529d3c064655dca3",
+      "rightsProfile": "jlt-pdl-1.0"
+    },
+    {
       "path": "data/v2/source-snapshots/jp-appi-government-en-reference-act-37-2021.xml",
       "sourceUrl": "https://www.japaneselawtranslation.go.jp/en/laws/download/4241/06/h15Aa000570305en14.0_r3A37.xml",
       "retrievedOn": "2026-07-20",
       "mediaType": "application/xml",
-      "role": "outdated-government-reference-translation",
+      "role": "government-reference-translation-and-project-adaptation-base",
       "sha256": "e08010d9ce57953fc971d4ffaa07bc1df1719c0d6ce62b3bf1b92a8c0e7de556",
       "rightsProfile": "jlt-pdl-1.0"
     },

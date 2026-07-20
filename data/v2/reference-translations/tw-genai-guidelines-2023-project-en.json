@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+  "sourceLanguage": "zh-Hant-TW",
+  "targetLanguage": "en",
+  "status": "reviewed-project-authored-reference-translation",
+  "officialStatus": "non-official-no-legal-effect",
+  "preparedOn": "2026-07-20",
+  "versionLabel": "Final ten-point Executive Yuan guidance issued 3 October 2023",
+  "method": "Independently prepared from the pinned controlling source-language text with automated first-draft assistance, followed by project terminology normalization, manual correction of identified defects, and structural, locator, source-language-residue, and numeric-citation quality checks. It is not a certified or official translation.",
+  "rights": {
+    "redistributable": true,
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Compliance Compass contributors",
+    "basis": "The English wording is project-authored editorial material and is not copied from a proprietary or commercial translation."
+  },
+  "qualityAssurance": {
+    "unitCount": 11,
+    "paragraphCount": 15,
+    "sourceParagraphOrderPreserved": true,
+    "sourceLanguageResidueCheck": true,
+    "locatorAndListMarkerCheck": true,
+    "numericCitationParityCheck": false,
+    "knownPlaceholderAndMachineArtifactCheck": true,
+    "professionalTranslatorCertification": false
+  },
+  "units": [
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-general-explanation",
+      "sourceContentSha256": "1ab0c67dc3d0bf25d13323ae48728616e6dda03eb5b99559247bffea774c8fea",
+      "sourceParagraphCount": 4,
+      "paragraphs": [
+        "Generative AI has developed rapidly in recent years and is affecting government, industry, academia, and research worldwide. ChatGPT, released at the end of 2022, sparked global interest; its wide-ranging capabilities are regarded as a major breakthrough in artificial intelligence. Drawing on the European Union's definition, a generative AI model is a computer program designed to create new content resembling human-made content. The large volumes of data that such a model collects, learns from, and produces may implicate intellectual-property rights, human rights, or business confidentiality. Because generated results are constrained by the quality and quantity of the training data, they may be difficult to distinguish as true or false, or may contain fabricated information. The information produced and its risks therefore require objective, professional assessment.",
+        "Use of generative AI by the Executive Yuan and its subordinate agencies and institutions (collectively, the agencies) to assist in performing official functions or providing services can improve administrative efficiency. To preserve the confidentiality and professionalism of public service and establish a shared understanding and basic principles for generative-AI use across agencies, the Reference Guidelines for the Use of Generative AI by the Executive Yuan and Its Subordinate Agencies and Institutions (these Guidelines) were prepared with reference to the cautious approaches adopted by governments in other countries. Each agency may, according to its operational needs, adopt separate rules or internal controls by reference to these Guidelines.",
+        "Given the importance of AI development and its close relationship with information security and national security, these Guidelines state that agency personnel using generative AI should act responsibly and trustworthily, retain autonomy and control, and follow principles of security, privacy, data governance, and accountability. Personnel must not arbitrarily disclose non-public official information, share private personal information, or place complete trust in generated information. Because AI is developing rapidly, global trends and responses, together with agencies' implementation of AI applications, will continue to be monitored, and these Guidelines will be updated on a rolling basis.",
+        "These Guidelines comprise the following ten points:"
+      ],
+      "fullText": "Generative AI has developed rapidly in recent years and is affecting government, industry, academia, and research worldwide. ChatGPT, released at the end of 2022, sparked global interest; its wide-ranging capabilities are regarded as a major breakthrough in artificial intelligence. Drawing on the European Union's definition, a generative AI model is a computer program designed to create new content resembling human-made content. The large volumes of data that such a model collects, learns from, and produces may implicate intellectual-property rights, human rights, or business confidentiality. Because generated results are constrained by the quality and quantity of the training data, they may be difficult to distinguish as true or false, or may contain fabricated information. The information produced and its risks therefore require objective, professional assessment.\n\nUse of generative AI by the Executive Yuan and its subordinate agencies and institutions (collectively, the agencies) to assist in performing official functions or providing services can improve administrative efficiency. To preserve the confidentiality and professionalism of public service and establish a shared understanding and basic principles for generative-AI use across agencies, the Reference Guidelines for the Use of Generative AI by the Executive Yuan and Its Subordinate Agencies and Institutions (these Guidelines) were prepared with reference to the cautious approaches adopted by governments in other countries. Each agency may, according to its operational needs, adopt separate rules or internal controls by reference to these Guidelines.\n\nGiven the importance of AI development and its close relationship with information security and national security, these Guidelines state that agency personnel using generative AI should act responsibly and trustworthily, retain autonomy and control, and follow principles of security, privacy, data governance, and accountability. Personnel must not arbitrarily disclose non-public official information, share private personal information, or place complete trust in generated information. Because AI is developing rapidly, global trends and responses, together with agencies' implementation of AI applications, will continue to be monitored, and these Guidelines will be updated on a rolling basis.\n\nThese Guidelines comprise the following ten points:",
+      "contentSha256": "d8119eb29b2670cbd5f2ec7bf9a2d8d57edb96fd1a6f3784eb1e7fd28a79ea65"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-1",
+      "sourceContentSha256": "30d9777ecbacadce76842e50e3f418691bb82ab09ff10965dfe198138ff90c63",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "1. These Guidelines set out matters to which the Executive Yuan and its subordinate agencies and institutions (collectively, the agencies) should pay attention when using generative AI, so that they may improve administrative efficiency while avoiding potential risks to national security, information security, human rights, privacy, ethics, and law."
+      ],
+      "fullText": "1. These Guidelines set out matters to which the Executive Yuan and its subordinate agencies and institutions (collectively, the agencies) should pay attention when using generative AI, so that they may improve administrative efficiency while avoiding potential risks to national security, information security, human rights, privacy, ethics, and law.",
+      "contentSha256": "f493c050bfc21416c372997b0a8b5ac3d585011d05934cb525559c39d133fc70"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-2",
+      "sourceContentSha256": "73f54286e639870e2199e15e800da44bb4c94f47d0a226025aceaac0fdc0b50d",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "2. Information produced by generative AI must be subject to the objective and professional final judgment of the personnel responsible for the matter, taking account of its risks. Generative AI must not replace those personnel's independent thought, creativity, or interpersonal interaction."
+      ],
+      "fullText": "2. Information produced by generative AI must be subject to the objective and professional final judgment of the personnel responsible for the matter, taking account of its risks. Generative AI must not replace those personnel's independent thought, creativity, or interpersonal interaction.",
+      "contentSha256": "70b4e3012564a839d12c4f08f6e8b239d7cc43f52abe4a180b78d980d446e420"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-3",
+      "sourceContentSha256": "716276d3684066f9da2ee9b88023fd282dd686129c12533ce457fda6cde9afe4",
+      "sourceParagraphCount": 2,
+      "paragraphs": [
+        "3. Personnel responsible for a matter must personally draft confidential documents; use of generative AI for this purpose is prohibited.",
+        "For purposes of the preceding paragraph, confidential documents mean national classified documents and ordinary official confidential documents as defined in the Executive Yuan's Manual for Document Processing."
+      ],
+      "fullText": "3. Personnel responsible for a matter must personally draft confidential documents; use of generative AI for this purpose is prohibited.\n\nFor purposes of the preceding paragraph, confidential documents mean national classified documents and ordinary official confidential documents as defined in the Executive Yuan's Manual for Document Processing.",
+      "contentSha256": "6c5901e028d8818e3e331e0ded9e197fddc7cc94707e19b546d966a320feaf0a"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-4",
+      "sourceContentSha256": "c7b36c79b923db0069a690638e3a1bb7322fc6f6a1f21c81bf72683e83184f60",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "4. Personnel responsible for a matter must not provide generative AI with official information that must remain confidential, personal information, or information not authorized by the agency or institution for public disclosure. They also must not ask generative AI questions that may involve confidential official business or personal data. However, after the security of the system environment has been confirmed, a generative-AI model deployed in a closed, on-premises environment may be used according to the applicable confidentiality classification of the document or information."
+      ],
+      "fullText": "4. Personnel responsible for a matter must not provide generative AI with official information that must remain confidential, personal information, or information not authorized by the agency or institution for public disclosure. They also must not ask generative AI questions that may involve confidential official business or personal data. However, after the security of the system environment has been confirmed, a generative-AI model deployed in a closed, on-premises environment may be used according to the applicable confidentiality classification of the document or information.",
+      "contentSha256": "5b499d962921c4987919c3e92014b7ace7347546df88f084f8b38411818a9cf4"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-5",
+      "sourceContentSha256": "a206ee2b66e936c3c10e81d18ad46f45409ca18a1117c59317e2725f65e8b39e",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "5. Agencies must not place complete trust in information produced by generative AI. Nor may they use unverified output directly to take an administrative action or as the sole basis for an official decision."
+      ],
+      "fullText": "5. Agencies must not place complete trust in information produced by generative AI. Nor may they use unverified output directly to take an administrative action or as the sole basis for an official decision.",
+      "contentSha256": "967fd7a1caed21276cb599c701a5cbfc151d83d4a63a070c3a03b12de0c0bef5"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-6",
+      "sourceContentSha256": "a2d870af07f14868bdbcb71244d399c18ca75455b76d617d99a78f095a86baaf",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "6. An agency must make appropriate disclosure when it uses generative AI as an assistive tool in performing official functions or providing services."
+      ],
+      "fullText": "6. An agency must make appropriate disclosure when it uses generative AI as an assistive tool in performing official functions or providing services.",
+      "contentSha256": "47ff538b90a08a7f46b08182afc5e9b52acd3a2d777415e74f3e4fc49e036cb3"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-7",
+      "sourceContentSha256": "0419a0714a2e2767ebb6766b2f36d5ea150fb2a853749ecb837e3271abdf5e01",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "7. Use of generative AI must comply with requirements concerning information and communications security, personal-data protection, copyright, and related uses of information, and must take account of the potential infringement of intellectual-property and personality rights. Each agency may establish rules or internal controls for generative-AI use according to the equipment used and the nature of its operations."
+      ],
+      "fullText": "7. Use of generative AI must comply with requirements concerning information and communications security, personal-data protection, copyright, and related uses of information, and must take account of the potential infringement of intellectual-property and personality rights. Each agency may establish rules or internal controls for generative-AI use according to the equipment used and the nature of its operations.",
+      "contentSha256": "0ff93ad76e19ea81d61f1bc5f6dc7abedea49957f528b411705ad5bbe901759f"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-8",
+      "sourceContentSha256": "7645a3942d1ce53610d38a39bfe684535c086253076fd06cef0678c085117bb5",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "8. For procurements it conducts, an agency must require a successful bidder that is a legal person, organization, or individual to take these Guidelines into account and comply with the rules or internal controls adopted by the agency under the preceding point."
+      ],
+      "fullText": "8. For procurements it conducts, an agency must require a successful bidder that is a legal person, organization, or individual to take these Guidelines into account and comply with the rules or internal controls adopted by the agency under the preceding point.",
+      "contentSha256": "cad8021b9c72c582cd253d7bae9b25bbf7830708743af392cf7297803f387479"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-9",
+      "sourceContentSha256": "ac624f678c691bcf3389cd5961d626196a7331224993bca8181f96a04d9b57b8",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "9. State-owned enterprises, public schools, administrative corporations, and government-funded foundations may apply these Guidelines mutatis mutandis when using generative AI."
+      ],
+      "fullText": "9. State-owned enterprises, public schools, administrative corporations, and government-funded foundations may apply these Guidelines mutatis mutandis when using generative AI.",
+      "contentSha256": "4118f2d963bff213b970382cf5dc8a739a2e786ef56c3406add37a0b849c925b"
+    },
+    {
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-10",
+      "sourceContentSha256": "e1761b957feb4f076bfbd1ce639a62a09988987ac6171f6b7e2b8b6d2396b2f0",
+      "sourceParagraphCount": 1,
+      "paragraphs": [
+        "10. Government bodies other than the Executive Yuan and its subordinate agencies and institutions may refer to these Guidelines when establishing their own rules for the use of generative AI."
+      ],
+      "fullText": "10. Government bodies other than the Executive Yuan and its subordinate agencies and institutions may refer to these Guidelines when establishing their own rules for the use of generative AI.",
+      "contentSha256": "4bb0cc8a1bedb404412e8e3f0b92bb0304d8e6953a5053caab1bb86ae9d90418"
+    }
+  ],
+  "manifestContentSha256": "c590418d220915280d99d608d561192bfa5e1f411ae78b8eec0c1e7e52ef7ceb"
+}

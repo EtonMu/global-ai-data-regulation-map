@@ -204,10 +204,28 @@ def build_text_record(
         "sourceVersion": source_version,
         "summary": summary,
         "englishAvailability": {
-            "status": "not-supplied",
+            "coverageStatus": "no-source-text",
+            "status": "not-available-in-government-primary-sources",
+            "versionAsOf": retrieved_on,
+            "versionLabel": source_version.get(
+                "instrumentNumber",
+                source_version.get("officialTitle", "official Vietnamese source version"),
+            ),
+            "authorityNote": (
+                "Vietnamese is the controlling legal text. No complete English "
+                "translation published by the issuing authority or an open official "
+                "Government source was verified."
+            ),
+            "sourcesChecked": [
+                source,
+                canonical_source,
+                *([official_html_source] if official_html_source else []),
+            ],
             "note": (
                 "No complete official Government English version was verified; "
-                "no machine or unofficial translation is substituted."
+                "no machine, commercial-database or unofficial translation is "
+                "substituted. English versions visible on subscription legal "
+                "databases are outside this open corpus's republication boundary."
             ),
         },
         "rights": RIGHTS,
