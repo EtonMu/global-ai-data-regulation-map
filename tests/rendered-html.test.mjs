@@ -51,6 +51,30 @@ const frameworkInstrumentIds = [
   "oecd-ai-principles",
   "int-bletchley-declaration-2023",
 ];
+const expectedFlagCodes = new Map([
+  ["eu", "EU"],
+  ["us", "US"],
+  ["cn", "CN"],
+  ["gb", "GB"],
+  ["ca", "CA"],
+  ["jp", "JP"],
+  ["in", "IN"],
+]);
+const expectedIssuerMarks = new Map([
+  ["int", ["International frameworks and soft law", "INT"]],
+  ["g7", ["Group of Seven", "G7"]],
+  ["un", ["United Nations", "UN"]],
+  ["iso-iec", ["ISO and IEC", "ISO"]],
+  [
+    "ieee",
+    ["Institute of Electrical and Electronics Engineers", "IEEE"],
+  ],
+  [
+    "oecd",
+    ["Organisation for Economic Co-operation and Development", "OECD"],
+  ],
+  ["ai-safety-summit", ["AI Safety Summit", "AISS"]],
+]);
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -192,7 +216,7 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   assert.match(html, /Search regulations and provisions/i);
   assert.match(
     html,
-    /<nav[^>]*class="mode-switch"[^>]*aria-label="Explorer mode"/i,
+    /<nav(?=[^>]*class="mode-switch")(?=[^>]*aria-label="Explorer mode")(?=[^>]*data-active-view="atlas")[^>]*>/i,
   );
   assert.match(
     html,
@@ -201,21 +225,41 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   assert.match(html, /<section[^>]*class="workspace"[^>]*aria-label="Regulation visualization"/i);
   assert.match(html, /<aside[^>]*aria-label="Provision reader"/i);
   assert.match(html, /aria-live="polite"/i);
+  const modeControls = html.match(
+    /<nav(?=[^>]*class="mode-switch")(?=[^>]*data-active-view="atlas")[^>]*>[\s\S]*?<\/nav>/i,
+  )?.[0];
+  assert.ok(modeControls, "the semantic explorer mode control must render");
+  assert.match(
+    modeControls,
+    /<span[^>]*class="mode-switch-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
+  );
   assert.match(
     html,
     /<button(?=[^>]*aria-pressed="true")[^>]*>[\s\S]*?Atlas\s*<\/button>/i,
   );
   const themeControls = html.match(
-    /<div[^>]*class="theme-switch"[^>]*>[\s\S]*?<\/div>/i,
+    /<div(?=[^>]*class="theme-switch")(?=[^>]*data-active-theme="dark")[^>]*>[\s\S]*?<\/div>/i,
   )?.[0];
   assert.ok(themeControls, "the semantic color theme control must render");
   assert.match(
     themeControls,
-    /<button(?=[^>]*aria-pressed="true")[^>]*>[\s\S]*?lucide-moon[\s\S]*?Dark\s*<\/button>/i,
+    /<span[^>]*class="theme-switch-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
   );
   assert.match(
     themeControls,
-    /<button(?=[^>]*aria-pressed="false")[^>]*>[\s\S]*?lucide-sun[\s\S]*?Bright\s*<\/button>/i,
+    /<button(?=[^>]*data-theme-option="dark")(?=[^>]*aria-pressed="true")[^>]*>[\s\S]*?lucide-moon[\s\S]*?Dark\s*<\/button>/i,
+  );
+  assert.match(
+    themeControls,
+    /<button(?=[^>]*data-theme-option="bright")(?=[^>]*aria-pressed="false")[^>]*>[\s\S]*?lucide-sun[\s\S]*?Bright\s*<\/button>/i,
+  );
+  const liveRegion = html.match(
+    /<p(?=[^>]*class="sr-only")(?=[^>]*aria-live="polite")[^>]*>[\s\S]*?<\/p>/i,
+  )?.[0];
+  assert.ok(liveRegion, "view changes must retain a polite live region");
+  assert.match(
+    normalizedText(liveRegion),
+    /Atlas view\. Global regulatory atlas open\./i,
   );
   assert.match(text, /Atlas Instrument Connections Timeline Compare/i);
   assert.match(text, /Binding law/i);
@@ -234,7 +278,7 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   assert.doesNotMatch(text, /ONE_HOP_PROVISION_NEIGHBORHOOD|COMPARE_LAB/i);
 });
 
-test("server output preserves jurisdiction order, flags, icons, and the framework lane", async () => {
+test("server output preserves jurisdiction order, inline flags, issuer marks, and the framework lane", async () => {
   const response = await render();
   const html = await response.text();
 
@@ -246,24 +290,55 @@ test("server output preserves jurisdiction order, flags, icons, and the framewor
     ...topLevelGroupOrder,
   ]);
 
-  const expectedFlags = new Map([
-    ["eu", "🇪🇺"],
-    ["us", "🇺🇸"],
-    ["cn", "🇨🇳"],
-    ["gb", "🇬🇧"],
-    ["ca", "🇨🇦"],
-    ["jp", "🇯🇵"],
-    ["in", "🇮🇳"],
-  ]);
-  for (const [jurisdictionId, flag] of expectedFlags) {
+  assert.doesNotMatch(
+    html,
+    /[\u{1f1e6}-\u{1f1ff}]|\p{Extended_Pictographic}/u,
+    "navigation marks must use SVGs and readable issuer components, not emoji glyphs",
+  );
+
+  const renderedFlagCodes = new Set(
+    [...html.matchAll(/data-flag-code="([A-Z]{2})"/g)].map(
+      (match) => match[1],
+    ),
+  );
+  assert.deepEqual(
+    [...renderedFlagCodes].sort(),
+    [...expectedFlagCodes.values()].sort(),
+    "all seven primary legal systems must render their intended flag code",
+  );
+
+  for (const [jurisdictionId, flagCode] of expectedFlagCodes) {
     const jurisdiction = jurisdictionById.get(jurisdictionId);
     assert.ok(jurisdiction, `missing test jurisdiction ${jurisdictionId}`);
     assert.match(
       html,
       new RegExp(
-        `<span class="jurisdiction-mark" aria-hidden="true">\\s*${flag}\\s*</span>\\s*${escapeRegExp(escapeHtmlText(jurisdiction.name))}`,
+        `<span(?=[^>]*class="[^"]*jurisdiction-mark[^"]*is-flag[^"]*")(?=[^>]*data-flag-code="${flagCode}")(?=[^>]*aria-hidden="true")[^>]*>\\s*<svg[^>]*>[\\s\\S]*?<\\/svg>\\s*<\\/span>\\s*(?:<span[^>]*>)?${escapeRegExp(escapeHtmlText(jurisdiction.name))}`,
         "i",
       ),
+      `${jurisdiction.name} must use a decorative inline SVG flag beside its visible label`,
+    );
+  }
+
+  const renderedIssuerIds = new Set(
+    [...html.matchAll(/data-issuer-id="([^"]+)"/g)].map(
+      (match) => match[1],
+    ),
+  );
+  for (const issuerId of expectedIssuerMarks.keys()) {
+    assert.ok(
+      renderedIssuerIds.has(issuerId),
+      `missing issuer mark for ${issuerId}`,
+    );
+  }
+  for (const [issuerId, [label, abbreviation]] of expectedIssuerMarks) {
+    assert.match(
+      html,
+      new RegExp(
+        `<span(?=[^>]*class="[^"]*jurisdiction-mark[^"]*is-issuer[^"]*")(?=[^>]*data-issuer-id="${escapeRegExp(issuerId)}")(?=[^>]*aria-label="${escapeRegExp(escapeHtmlText(label))}")(?=[^>]*role="img")[^>]*>[\\s\\S]*?<svg[^>]*class="[^"]*lucide[^"]*"[^>]*>[\\s\\S]*?<\\/svg>\\s*<span[^>]*aria-hidden="true"[^>]*>${escapeRegExp(abbreviation)}<\\/span>\\s*<\\/span>`,
+        "i",
+      ),
+      `${issuerId} must expose a readable abbreviation and accessible issuer label`,
     );
   }
 

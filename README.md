@@ -119,6 +119,7 @@ Every instrument and relation should point to an official primary source where o
 - Source code is licensed under the [MIT License](LICENSE).
 - Original classifications, summaries, mappings, rationales, and editorial metadata are licensed under [CC BY 4.0](DATA-LICENSE.md).
 - Official legislation, government publications, translations, standards, reports, names, and third-party material remain subject to their own laws, licenses, and terms.
+- The compact national flag components come from the MIT-licensed [`country-flag-icons`](https://github.com/catamphetamine/country-flag-icons) project; international bodies use neutral issuer marks rather than third-party institutional flags or emblems.
 
 The project does not claim that the data license grants rights in incorporated official text. Do not copy commercial standards, paywalled database content, or restricted publications into the repository. In particular, **ISO/IEC 42001 and IEEE Ethically Aligned Design are represented only by metadata, project-authored summaries, and official access links**—not copied publication text. Prefer metadata, structure, original summaries, short lawful excerpts where appropriate, and an official access or purchase link.
 

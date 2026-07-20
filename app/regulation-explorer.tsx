@@ -1,13 +1,16 @@
 "use client";
 
 import {
+  type CSSProperties,
   type KeyboardEvent as ReactKeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
   useEffect,
   useMemo,
   useReducer,
   useRef,
   useSyncExternalStore,
 } from "react";
+import { flushSync } from "react-dom";
 import {
   Archive,
   BookOpenText,
@@ -40,6 +43,7 @@ import statusEventsJson from "@/data/v2/status-events.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
+import { JurisdictionMark } from "./jurisdiction-mark";
 
 type Source = {
   url: string;
@@ -204,6 +208,19 @@ type StatusEvent = {
 type View = "atlas" | "instrument" | "connections" | "timeline" | "compare";
 type ReaderTab = "text" | "analysis" | "sources";
 type Theme = "dark" | "bright";
+type TransitionKind = "theme" | "view";
+type ViewDirection = "forward" | "backward";
+
+type SameDocumentViewTransition = {
+  finished: Promise<void>;
+  skipTransition: () => void;
+};
+
+type TransitionDocument = Document & {
+  startViewTransition?: (
+    update: () => void | Promise<void>,
+  ) => SameDocumentViewTransition;
+};
 
 const themeChangeEvent = "gadrm-theme-change";
 
@@ -613,34 +630,11 @@ type AtlasGroup = {
   id: string;
   label: string;
   description: string;
-  icon: string;
+  markId: string;
   instruments: Instrument[];
 };
 
 const atlasGroupOrder = ["eu", "us", "cn", "gb", "ca", "jp", "in", "frameworks"];
-
-const jurisdictionMarks: Record<string, string> = {
-  eu: "🇪🇺",
-  us: "🇺🇸",
-  "us-ca": "🇺🇸",
-  cn: "🇨🇳",
-  gb: "🇬🇧",
-  ca: "🇨🇦",
-  jp: "🇯🇵",
-  in: "🇮🇳",
-  int: "🌐",
-  g7: "G7",
-  un: "🇺🇳",
-  "iso-iec": "ISO",
-  ieee: "IEEE",
-  oecd: "OECD",
-  "ai-safety-summit": "AISS",
-};
-
-function jurisdictionMark(jurisdictionId: string) {
-  const root = rootJurisdiction(jurisdictionId);
-  return jurisdictionMarks[jurisdictionId] ?? jurisdictionMarks[root?.id ?? ""] ?? "🌐";
-}
 
 function buildAtlasGroups(): AtlasGroup[] {
   const groups = new Map<string, AtlasGroup>();
@@ -660,7 +654,7 @@ function buildAtlasGroups(): AtlasGroup[] {
     const group = groups.get(key) ?? {
       id: key,
       label,
-      icon: framework ? "🌐" : jurisdictionMark(root?.id ?? instrument.jurisdictionId),
+      markId: framework ? "int" : (root?.id ?? instrument.jurisdictionId),
       description:
         framework
           ? "Standards, multilateral principles, policy declarations and voluntary governance frameworks"
@@ -1014,9 +1008,7 @@ function CorpusNavigator({
             >
               <summary>
                 <span className="jurisdiction-label">
-                  <span className="jurisdiction-mark" aria-hidden="true">
-                    {group.icon}
-                  </span>
+                  <JurisdictionMark jurisdictionId={group.markId} />
                   {group.label}
                 </span>
                 <small>{group.instruments.length}</small>
@@ -1035,9 +1027,10 @@ function CorpusNavigator({
                     onClick={() => onOpenInstrument(instrument.id)}
                   >
                     <span className="instrument-tree-title">
-                      <span className="jurisdiction-mark is-small" aria-hidden="true">
-                        {jurisdictionMark(instrument.jurisdictionId)}
-                      </span>
+                      <JurisdictionMark
+                        jurisdictionId={instrument.jurisdictionId}
+                        small
+                      />
                       {instrument.shortTitle}
                     </span>
                     <small>
@@ -1137,9 +1130,7 @@ function GlobalAtlas({
               </span>
               <div>
                 <h2>
-                  <span className="jurisdiction-mark" aria-hidden="true">
-                    {group.icon}
-                  </span>
+                  <JurisdictionMark jurisdictionId={group.markId} />
                   {group.label}
                 </h2>
                 <p>{group.description}</p>
@@ -1162,6 +1153,9 @@ function GlobalAtlas({
                     aria-label={
                       instrument.shortTitle +
                       ", " +
+                      (jurisdictionById.get(instrument.jurisdictionId)
+                        ?.shortName ?? instrument.jurisdictionId) +
+                      ", " +
                       humanize(instrument.lifecycleStatus) +
                       ", " +
                       count +
@@ -1172,7 +1166,13 @@ function GlobalAtlas({
                     <span className="instrument-kind-icon" aria-hidden="true">
                       <InstrumentKindIcon instrument={instrument} />
                     </span>
-                    <strong>{instrument.shortTitle}</strong>
+                    <span className="instrument-node-heading">
+                      <JurisdictionMark
+                        jurisdictionId={instrument.jurisdictionId}
+                        small
+                      />
+                      <strong>{instrument.shortTitle}</strong>
+                    </span>
                     <span>{humanize(instrument.category)}</span>
                     <small>
                       {humanize(instrument.lifecycleStatus)} · {count}
@@ -1216,9 +1216,7 @@ function InstrumentGenome({
       <div className="instrument-masthead">
         <div>
           <p className="terminal-label">
-            <span className="jurisdiction-mark is-small" aria-hidden="true">
-              {jurisdictionMark(instrument.jurisdictionId)}
-            </span>
+            <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
             INSTRUMENT_GENOME / {jurisdiction?.shortName ?? instrument.jurisdictionId}
           </p>
           <h1 id="instrument-title">{instrument.shortTitle}</h1>
@@ -1774,9 +1772,10 @@ function CompareView({
                   <header>
                     <div>
                       <span>
-                        <span className="jurisdiction-mark is-small" aria-hidden="true">
-                          {jurisdictionMark(instrument.jurisdictionId)}
-                        </span>
+                        <JurisdictionMark
+                          jurisdictionId={instrument.jurisdictionId}
+                          small
+                        />
                         {jurisdiction?.shortName}
                       </span>
                       <h2>
@@ -1915,9 +1914,7 @@ function ProvisionReader({
         <span className="terminal-label">INSTRUMENT_RECORD</span>
         <div className="reader-heading">
           <small>
-            <span className="jurisdiction-mark is-small" aria-hidden="true">
-              {jurisdictionMark(instrument.jurisdictionId)}
-            </span>
+            <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
             {jurisdiction?.name}
           </small>
           <h2>{instrument.shortTitle}</h2>
@@ -1993,9 +1990,10 @@ function ProvisionReader({
       <span className="terminal-label">PROVISION_READER / {readerTab.toUpperCase()}</span>
       <div className="reader-heading">
         <small>
-          <span className="jurisdiction-mark is-small" aria-hidden="true">
-            {jurisdictionMark(activeInstrument.jurisdictionId)}
-          </span>
+          <JurisdictionMark
+            jurisdictionId={activeInstrument.jurisdictionId}
+            small
+          />
           {jurisdiction?.shortName} / {humanize(activeInstrument.legalForce)}
         </small>
         <h2>
@@ -2327,15 +2325,141 @@ export default function RegulationExplorer() {
   const searchRef = useRef<HTMLInputElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
   const urlSyncReadyRef = useRef(false);
+  const transitionRef = useRef<SameDocumentViewTransition | null>(null);
+  const transitionTokenRef = useRef(0);
 
-  function chooseTheme(nextTheme: Theme) {
-    document.documentElement.dataset.theme = nextTheme;
-    try {
-      window.localStorage.setItem("gadrm-theme", nextTheme);
-    } catch {
-      // The selected theme still applies for this session when storage is blocked.
+  function clearTransitionMetadata(token: number) {
+    if (transitionTokenRef.current !== token) return;
+    const root = document.documentElement;
+    root.removeAttribute("data-ui-transition");
+    root.removeAttribute("data-view-direction");
+    root.removeAttribute("data-transition-fallback");
+    root.style.removeProperty("--theme-x");
+    root.style.removeProperty("--theme-y");
+    transitionRef.current = null;
+  }
+
+  function runVisualTransition(
+    kind: TransitionKind,
+    update: () => void,
+    options?: {
+      nextView?: View;
+      origin?: { x: number; y: number };
+    },
+  ) {
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const transitionDocument = document as TransitionDocument;
+    if (reducedMotion) {
+      update();
+      return;
     }
-    window.dispatchEvent(new Event(themeChangeEvent));
+
+    transitionRef.current?.skipTransition();
+    const token = transitionTokenRef.current + 1;
+    transitionTokenRef.current = token;
+    const root = document.documentElement;
+    root.setAttribute("data-ui-transition", kind);
+
+    if (kind === "view" && options?.nextView) {
+      const currentIndex = viewLabels.findIndex((view) => view.id === state.view);
+      const nextIndex = viewLabels.findIndex(
+        (view) => view.id === options.nextView,
+      );
+      const direction: ViewDirection =
+        nextIndex >= currentIndex ? "forward" : "backward";
+      root.setAttribute("data-view-direction", direction);
+    }
+
+    if (kind === "theme" && options?.origin) {
+      root.style.setProperty("--theme-x", options.origin.x + "px");
+      root.style.setProperty("--theme-y", options.origin.y + "px");
+    }
+
+    if (!transitionDocument.startViewTransition) {
+      root.setAttribute("data-transition-fallback", "true");
+      flushSync(() => update());
+      window.setTimeout(
+        () => clearTransitionMetadata(token),
+        kind === "theme" ? 520 : 380,
+      );
+      return;
+    }
+
+    let committed = false;
+    try {
+      const transition = transitionDocument.startViewTransition(() => {
+        flushSync(() => update());
+        committed = true;
+      });
+      transitionRef.current = transition;
+      transition.finished.then(
+        () => clearTransitionMetadata(token),
+        () => clearTransitionMetadata(token),
+      );
+    } catch {
+      if (!committed) update();
+      clearTransitionMetadata(token);
+    }
+  }
+
+  function chooseTheme(
+    nextTheme: Theme,
+    event: ReactMouseEvent<HTMLButtonElement>,
+  ) {
+    if (theme === nextTheme) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    runVisualTransition(
+      "theme",
+      () => {
+        document.documentElement.dataset.theme = nextTheme;
+        try {
+          window.localStorage.setItem("gadrm-theme", nextTheme);
+        } catch {
+          // The selected theme still applies for this session when storage is blocked.
+        }
+        window.dispatchEvent(new Event(themeChangeEvent));
+      },
+      {
+        origin: {
+          x: bounds.left + bounds.width / 2,
+          y: bounds.top + bounds.height / 2,
+        },
+      },
+    );
+  }
+
+  function openAtlas() {
+    if (state.view === "atlas" && !state.selectedInstrumentId) return;
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "OPEN_ATLAS" }),
+      { nextView: "atlas" },
+    );
+  }
+
+  function openInstrument(instrumentId: string) {
+    if (
+      state.view === "instrument" &&
+      state.selectedInstrumentId === instrumentId
+    ) {
+      return;
+    }
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "OPEN_INSTRUMENT", instrumentId }),
+      { nextView: "instrument" },
+    );
+  }
+
+  function openView(nextView: View) {
+    if (state.view === nextView) return;
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "OPEN_VIEW", view: nextView }),
+      { nextView },
+    );
   }
 
   useEffect(() => {
@@ -2462,17 +2586,33 @@ export default function RegulationExplorer() {
   }, [selectedInstrument, selectedProvision]);
 
   function openProvision(provision: Provision, relationId?: string) {
-    dispatch({
-      type: "OPEN_PROVISION",
-      provisionId: provision.id,
-      instrumentId: provision.instrumentId,
-      relationId,
-    });
+    if (
+      state.view === "connections" &&
+      state.selectedProvisionId === provision.id &&
+      (!relationId || state.selectedRelationId === relationId)
+    ) {
+      return;
+    }
+    runVisualTransition(
+      "view",
+      () =>
+        dispatch({
+          type: "OPEN_PROVISION",
+          provisionId: provision.id,
+          instrumentId: provision.instrumentId,
+          relationId,
+        }),
+      { nextView: "connections" },
+    );
   }
 
   const canOpenInstrument = Boolean(selectedInstrument);
   const canOpenConnections = Boolean(selectedProvision);
   const canOpenCompare = state.compareIds.length === 2;
+  const activeViewIndex = viewLabels.findIndex((view) => view.id === state.view);
+  const modeSwitchStyle = {
+    "--active-view-index": activeViewIndex,
+  } as CSSProperties;
   const readerPanel =
     state.view !== "compare" && state.view !== "timeline" ? (
       <ProvisionReader
@@ -2487,9 +2627,7 @@ export default function RegulationExplorer() {
           dispatch({ type: "SELECT_RELATION", relationId })
         }
         onOpenProvision={openProvision}
-        onOpenInstrument={(instrumentId) =>
-          dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-        }
+        onOpenInstrument={openInstrument}
         onAddCompare={(provisionId) =>
           dispatch({ type: "ADD_COMPARE", provisionId })
         }
@@ -2502,7 +2640,7 @@ export default function RegulationExplorer() {
         <button
           type="button"
           className="wordmark"
-          onClick={() => dispatch({ type: "OPEN_ATLAS" })}
+          onClick={openAtlas}
           aria-label="Open Global AI Data Regulation Map atlas"
         >
           <span>GLOBAL AI · DATA</span>
@@ -2522,7 +2660,13 @@ export default function RegulationExplorer() {
           />
           <kbd>⌘K</kbd>
         </label>
-        <nav className="mode-switch" aria-label="Explorer mode">
+        <nav
+          className="mode-switch"
+          aria-label="Explorer mode"
+          data-active-view={state.view}
+          style={modeSwitchStyle}
+        >
+          <span className="mode-switch-indicator" aria-hidden="true" />
           {viewLabels.map((view) => {
             const ViewIcon = view.icon;
             const disabled =
@@ -2536,29 +2680,36 @@ export default function RegulationExplorer() {
                 key={view.id}
                 disabled={disabled}
                 aria-pressed={state.view === view.id}
-                onClick={() =>
-                  dispatch({ type: "OPEN_VIEW", view: view.id })
-                }
+                aria-label={view.label + " view"}
+                onClick={() => openView(view.id)}
               >
                 <ViewIcon aria-hidden="true" />
-                {view.label}
+                <span>{view.label}</span>
               </button>
             );
           })}
         </nav>
-        <div className="theme-switch" role="group" aria-label="Color theme">
+        <div
+          className="theme-switch"
+          role="group"
+          aria-label="Color theme"
+          data-active-theme={theme}
+        >
+          <span className="theme-switch-indicator" aria-hidden="true" />
           <button
             type="button"
+            data-theme-option="dark"
             aria-pressed={theme === "dark"}
-            onClick={() => chooseTheme("dark")}
+            onClick={(event) => chooseTheme("dark", event)}
           >
             <Moon aria-hidden="true" />
             Dark
           </button>
           <button
             type="button"
+            data-theme-option="bright"
             aria-pressed={theme === "bright"}
-            onClick={() => chooseTheme("bright")}
+            onClick={(event) => chooseTheme("bright", event)}
           >
             <Sun aria-hidden="true" />
             Bright
@@ -2586,10 +2737,8 @@ export default function RegulationExplorer() {
           selectedInstrumentId={state.selectedInstrumentId}
           selectedProvisionId={state.selectedProvisionId}
           query={state.query}
-          onOpenAtlas={() => dispatch({ type: "OPEN_ATLAS" })}
-          onOpenInstrument={(instrumentId) =>
-            dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-          }
+          onOpenAtlas={openAtlas}
+          onOpenInstrument={openInstrument}
           onOpenProvision={openProvision}
         />
 
@@ -2616,18 +2765,14 @@ export default function RegulationExplorer() {
 
           {state.view === "atlas" && (
             <GlobalAtlas
-              onOpenInstrument={(instrumentId) =>
-                dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-              }
+              onOpenInstrument={openInstrument}
             />
           )}
           {state.view === "instrument" && selectedInstrument && (
             <InstrumentGenome
               instrument={selectedInstrument}
               onOpenProvision={openProvision}
-              onOpenInstrument={(instrumentId) =>
-                dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-              }
+              onOpenInstrument={openInstrument}
             />
           )}
           {state.view === "connections" && selectedProvision && (
@@ -2635,9 +2780,7 @@ export default function RegulationExplorer() {
               anchor={selectedProvision}
               selectedRelationId={effectiveRelation?.id ?? null}
               onOpenProvision={openProvision}
-              onOpenInstrument={(instrumentId) =>
-                dispatch({ type: "OPEN_INSTRUMENT", instrumentId })
-              }
+              onOpenInstrument={openInstrument}
             />
           )}
           {state.view === "timeline" && selectedInstrument && (
@@ -2658,7 +2801,7 @@ export default function RegulationExplorer() {
 
       <CompareTray
         compareIds={state.compareIds}
-        onOpen={() => dispatch({ type: "OPEN_VIEW", view: "compare" })}
+        onOpen={() => openView("compare")}
         onRemove={(provisionId) =>
           dispatch({ type: "REMOVE_COMPARE", provisionId })
         }
@@ -2666,6 +2809,7 @@ export default function RegulationExplorer() {
       />
 
       <p className="sr-only" aria-live="polite">
+        {viewLabels.find((view) => view.id === state.view)?.label + " view. "}
         {selectedProvision
           ? selectedProvision.locator +
             " selected with " +

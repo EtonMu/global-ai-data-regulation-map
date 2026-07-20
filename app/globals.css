@@ -291,12 +291,36 @@ button {
 }
 
 .mode-switch {
-  display: flex;
+  --active-view-index: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: center;
+  overflow: hidden;
   border: 1px solid var(--line);
+  isolation: isolate;
+}
+
+.mode-switch-indicator {
+  position: absolute;
+  z-index: 0;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: calc((100% - 4px) / 5);
+  border-bottom: 1px solid var(--cyan);
+  background: var(--cyan-soft);
+  pointer-events: none;
+  transform: translateX(calc(var(--active-view-index) * 100%));
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 260ms ease,
+    border-color 260ms ease;
 }
 
 .mode-switch button {
+  position: relative;
+  z-index: 1;
   min-height: 34px;
   padding: 0 9px;
   border: 0;
@@ -308,6 +332,9 @@ button {
   font-size: 0.7rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  transition:
+    color 220ms ease,
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mode-switch button,
@@ -332,13 +359,16 @@ button {
 }
 
 .mode-switch button:hover:not(:disabled) {
-  background: var(--panel-hover);
   color: var(--ink);
+  transform: translateY(-1px);
 }
 
 .mode-switch button[aria-pressed="true"] {
-  background: var(--cyan-soft);
   color: var(--cyan);
+}
+
+.mode-switch button[aria-pressed="true"] svg {
+  transform: scale(1.08);
 }
 
 .mode-switch button:disabled {
@@ -347,12 +377,40 @@ button {
 }
 
 .theme-switch {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+  overflow: hidden;
   border: 1px solid var(--line);
+  isolation: isolate;
+}
+
+.theme-switch-indicator {
+  position: absolute;
+  z-index: 0;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: calc((100% - 4px) / 2);
+  border: 1px solid color-mix(in srgb, var(--cyan) 45%, transparent);
+  background: var(--cyan-soft);
+  pointer-events: none;
+  transform: translateX(0);
+  transition:
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 280ms ease,
+    border-color 280ms ease;
+}
+
+.theme-switch[data-active-theme="bright"] .theme-switch-indicator {
+  transform: translateX(100%);
 }
 
 .theme-switch button {
+  position: relative;
+  z-index: 1;
+  min-width: 68px;
   min-height: 34px;
   padding: 0 8px;
   border: 0;
@@ -363,6 +421,9 @@ button {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-transform: uppercase;
+  transition:
+    color 220ms ease,
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .theme-switch button:last-child {
@@ -371,8 +432,20 @@ button {
 
 .theme-switch button:hover,
 .theme-switch button[aria-pressed="true"] {
-  background: var(--cyan-soft);
   color: var(--cyan);
+}
+
+.theme-switch button:hover {
+  transform: translateY(-1px);
+}
+
+.theme-switch button[aria-pressed="true"] svg {
+  transform: rotate(8deg) scale(1.08);
+}
+
+.mode-switch button svg,
+.theme-switch button svg {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .github-link {
@@ -427,6 +500,160 @@ button {
 .app-shell.view-compare,
 .app-shell.view-timeline {
   grid-template-columns: 268px minmax(0, 1fr);
+}
+
+html[data-ui-transition="theme"] :is(
+  body,
+  .terminal-app,
+  .top-bar,
+  .system-strip,
+  .corpus-navigator,
+  .workspace,
+  .workspace-status,
+  .provision-reader,
+  .instrument-node,
+  .connection-node
+) {
+  transition:
+    background-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 380ms ease,
+    color 320ms ease,
+    box-shadow 420ms ease;
+}
+
+html[data-ui-transition="view"] .corpus-navigator {
+  view-transition-name: atlas-navigator;
+}
+
+html[data-ui-transition="view"] .workspace {
+  view-transition-name: atlas-workspace;
+}
+
+html[data-ui-transition="view"] .provision-reader {
+  view-transition-name: atlas-reader;
+}
+
+html[data-ui-transition="view"] .mode-switch-indicator {
+  view-transition-name: mode-indicator;
+}
+
+html[data-ui-transition="theme"] .theme-switch-indicator {
+  view-transition-name: theme-indicator;
+}
+
+html[data-ui-transition="theme"]::view-transition-old(root) {
+  z-index: 1;
+  animation: none;
+}
+
+html[data-ui-transition="theme"]::view-transition-new(root) {
+  z-index: 2;
+  mix-blend-mode: normal;
+  animation: theme-surface-reveal 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-ui-transition="view"]::view-transition-old(root),
+html[data-ui-transition="view"]::view-transition-new(root) {
+  animation: none;
+}
+
+html[data-ui-transition="view"]::view-transition-group(atlas-navigator),
+html[data-ui-transition="view"]::view-transition-group(atlas-workspace),
+html[data-ui-transition="view"]::view-transition-group(atlas-reader),
+html[data-ui-transition="view"]::view-transition-group(mode-indicator),
+html[data-ui-transition="theme"]::view-transition-group(theme-indicator) {
+  animation-duration: 360ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-ui-transition="view"]::view-transition-old(atlas-navigator),
+html[data-ui-transition="view"]::view-transition-new(atlas-navigator) {
+  animation: navigator-state-settle 260ms ease both;
+}
+
+html[data-ui-transition="view"][data-view-direction="forward"]::view-transition-old(atlas-workspace),
+html[data-ui-transition="view"][data-view-direction="forward"]::view-transition-old(atlas-reader) {
+  animation: view-stage-out-forward 190ms ease-in both;
+}
+
+html[data-ui-transition="view"][data-view-direction="forward"]::view-transition-new(atlas-workspace),
+html[data-ui-transition="view"][data-view-direction="forward"]::view-transition-new(atlas-reader) {
+  animation: view-stage-in-forward 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-ui-transition="view"][data-view-direction="backward"]::view-transition-old(atlas-workspace),
+html[data-ui-transition="view"][data-view-direction="backward"]::view-transition-old(atlas-reader) {
+  animation: view-stage-out-backward 190ms ease-in both;
+}
+
+html[data-ui-transition="view"][data-view-direction="backward"]::view-transition-new(atlas-workspace),
+html[data-ui-transition="view"][data-view-direction="backward"]::view-transition-new(atlas-reader) {
+  animation: view-stage-in-backward 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :is(
+  .atlas-view,
+  .instrument-view,
+  .connections-view,
+  .timeline-view,
+  .compare-view
+) {
+  animation: view-fallback-enter 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes theme-surface-reveal {
+  from {
+    clip-path: circle(0 at var(--theme-x, 92%) var(--theme-y, 32px));
+  }
+  to {
+    clip-path: circle(150vmax at var(--theme-x, 92%) var(--theme-y, 32px));
+  }
+}
+
+@keyframes view-stage-out-forward {
+  to {
+    opacity: 0.72;
+    transform: translateX(-12px) scale(0.994);
+    clip-path: inset(0 8% 0 0);
+  }
+}
+
+@keyframes view-stage-in-forward {
+  from {
+    opacity: 0.76;
+    transform: translateX(18px) scale(0.994);
+    clip-path: inset(0 0 0 7%);
+  }
+}
+
+@keyframes view-stage-out-backward {
+  to {
+    opacity: 0.72;
+    transform: translateX(12px) scale(0.994);
+    clip-path: inset(0 0 0 8%);
+  }
+}
+
+@keyframes view-stage-in-backward {
+  from {
+    opacity: 0.76;
+    transform: translateX(-18px) scale(0.994);
+    clip-path: inset(0 7% 0 0);
+  }
+}
+
+@keyframes view-fallback-enter {
+  from {
+    opacity: 0.76;
+    transform: translateX(14px);
+    clip-path: inset(0 0 0 5%);
+  }
+}
+
+@keyframes navigator-state-settle {
+  from {
+    opacity: 0.9;
+  }
 }
 
 .terminal-app:has(.compare-tray) .corpus-navigator,
@@ -522,12 +749,9 @@ button {
 }
 
 .jurisdiction-mark {
-  min-width: 24px;
-  min-height: 20px;
   display: inline-grid;
   place-items: center;
   flex: 0 0 auto;
-  padding: 0 3px;
   border: 1px solid var(--line);
   background: var(--panel);
   color: var(--ink-strong);
@@ -539,11 +763,53 @@ button {
   text-transform: none;
 }
 
+.jurisdiction-mark.is-flag {
+  width: 30px;
+  height: 20px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px var(--ambient-shadow);
+}
+
+.jurisdiction-mark.is-flag svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.jurisdiction-mark.is-issuer {
+  min-width: 34px;
+  min-height: 20px;
+  grid-auto-flow: column;
+  gap: 3px;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.02em;
+}
+
+.jurisdiction-mark.is-issuer svg {
+  width: 11px;
+  height: 11px;
+  color: var(--cyan);
+  stroke-width: 1.9;
+}
+
+.jurisdiction-mark.is-flag.is-small {
+  width: 24px;
+  height: 16px;
+}
+
+.jurisdiction-mark.is-issuer.is-small {
+  min-width: 24px;
+  min-height: 16px;
+  padding: 0 3px;
+  font-size: 0.52rem;
+}
+
 .jurisdiction-mark.is-small {
-  min-width: 20px;
-  min-height: 17px;
   margin-right: 5px;
-  font-size: 0.68rem;
   vertical-align: -2px;
 }
 
@@ -982,6 +1248,14 @@ button {
   border-color: var(--cyan);
   background: var(--panel-hover);
   transform: translateY(-2px);
+}
+
+.instrument-node > .instrument-node-heading {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-right: 16px;
 }
 
 .instrument-node strong {
@@ -1498,7 +1772,7 @@ button {
   opacity: 0.9;
   filter: drop-shadow(0 0 4px var(--cyan-soft));
   vector-effect: non-scaling-stroke;
-  animation: relation-flow-pass 1.25s linear 2;
+  animation: relation-flow-pass 1s linear 280ms 1 both;
 }
 
 .relation-terminal {
@@ -2872,6 +3146,16 @@ button {
   }
 }
 
+@media (max-width: 520px) {
+  .mode-switch button > span {
+    display: none;
+  }
+
+  .mode-switch button {
+    min-width: 0;
+  }
+}
+
 @media (max-width: 430px) {
   .instrument-track {
     grid-template-columns: 1fr;
@@ -2910,6 +3194,20 @@ button {
 
   .relation-flow {
     display: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .mode-switch-indicator,
+  .theme-switch-indicator {
+    border: 1px solid CanvasText;
+    background: Canvas;
   }
 }
 
