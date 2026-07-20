@@ -6,6 +6,10 @@ const explorerSource = await readFile(
   new URL("../app/regulation-explorer.tsx", import.meta.url),
   "utf8",
 );
+const globalStyles = await readFile(
+  new URL("../app/globals.css", import.meta.url),
+  "utf8",
+);
 
 function sourceBetween(start, end) {
   const startIndex = explorerSource.indexOf(start);
@@ -58,7 +62,9 @@ test("workspace breadcrumbs are a native-button navigation hierarchy", () => {
   assert.match(breadcrumbModel, /destination:/);
   assert.match(breadcrumbModel, /type: "atlas"/);
   assert.match(breadcrumbModel, /type: "concept-index"/);
+  assert.match(breadcrumbModel, /type: "concept"/);
   assert.match(breadcrumbModel, /type: "instrument"/);
+  assert.match(breadcrumbModel, /type: "provision"/);
   assert.match(
     breadcrumbMarkup,
     /breadcrumb\.map\(\(part, index\) =>/,
@@ -76,8 +82,13 @@ test("workspace breadcrumbs are a native-button navigation hierarchy", () => {
   );
   assert.match(
     breadcrumbMarkup,
-    /aria-current=\{part\.destination \? undefined : "page"\}/,
+    /aria-current=\{part\.current \? "page" : undefined\}/,
     "the current breadcrumb leaf must expose aria-current on its button",
+  );
+  assert.doesNotMatch(
+    breadcrumbMarkup,
+    /disabled=/,
+    "the current breadcrumb and every ancestor must remain clickable",
   );
   assert.doesNotMatch(
     breadcrumbMarkup,
@@ -209,12 +220,37 @@ test("Global Atlas mounts the interactive globe as a legal-to-concept bridge", (
   );
   assert.match(
     explorerComponent,
-    /const atlasGlobePanel\s*=\s*state\.navigatorTab === "sources" && state\.view === "atlas"[\s\S]*?<RegulationGlobe(?=[^>]*className="atlas-globe-panel")(?=[^>]*jurisdictions=\{globeJurisdictions\})(?=[^>]*concepts=\{globeConcepts\})(?=[^>]*onOpenInstrument=\{openInstrument\})(?=[^>]*onOpenConcept=\{openConcept\})[^>]*\/>/,
+    /const atlasGlobePanel\s*=\s*state\.navigatorTab === "sources" && state\.view === "atlas"[\s\S]*?<RegulationGlobe(?=[^>]*className="atlas-globe-panel right-column-panel")(?=[^>]*jurisdictions=\{globeJurisdictions\})(?=[^>]*concepts=\{globeConcepts\})(?=[^>]*onOpenInstrument=\{openInstrument\})(?=[^>]*onOpenConcept=\{openConcept\})[^>]*\/>/,
     "the Global Atlas state must show a right-panel globe wired to both legal sources and concepts",
   );
   assert.match(
     explorerComponent,
     /<\/section>\s*\{atlasGlobePanel\}/,
     "the globe panel must be mounted alongside and after the central workspace",
+  );
+});
+
+test("desktop columns can be collapsed, dragged, resized by keyboard, and restored", () => {
+  const explorerComponent = sourceFrom(
+    "export default function RegulationExplorer()",
+  );
+
+  assert.match(explorerComponent, /columnLayoutStorageKey/);
+  assert.match(explorerComponent, /beginColumnResize/);
+  assert.match(explorerComponent, /setPointerCapture/);
+  assert.match(explorerComponent, /handleColumnResizeKeyDown/);
+  assert.match(explorerComponent, /role="separator"/);
+  assert.match(explorerComponent, /aria-orientation="vertical"/);
+  assert.match(explorerComponent, /aria-controls="corpus-navigator-panel"/);
+  assert.match(explorerComponent, /aria-controls="right-column-panel"/);
+  assert.match(explorerComponent, /is-left-collapsed/);
+  assert.match(explorerComponent, /is-right-collapsed/);
+  assert.match(globalStyles, /--left-column-width/);
+  assert.match(globalStyles, /--right-column-width/);
+  assert.match(globalStyles, /\.column-resizer/);
+  assert.match(
+    globalStyles,
+    /@media \(max-width: 1080px\)[\s\S]*?\.column-toggle,[\s\S]*?\.column-resizer\s*\{\s*display:\s*none/,
+    "desktop panel controls must not disturb the responsive stacked layout",
   );
 });

@@ -1,11 +1,20 @@
 [
   {
     "id": "v2-rel-001",
-    "source": {"type": "provision", "id": "eu-gdpr-art-22"},
-    "target": {"type": "provision", "id": "cn-pipl-art-24"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-22"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-24"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["automated-decision-safeguards", "transparency-explainability"],
+    "conceptIds": [
+      "automated-decision-safeguards",
+      "transparency-explainability"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -13,17 +22,32 @@
     "limits": "Their actors, legal triggers, categories of decisions, available rights, exceptions, and enforcement structures are not equivalent.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_22/oj", "label": "GDPR Article 22 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_22/oj",
+        "label": "GDPR Article 22 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-002",
-    "source": {"type": "provision", "id": "eu-gdpr-art-35"},
-    "target": {"type": "provision", "id": "cn-pipl-art-55"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-35"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-55"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["impact-assessment", "ai-risk-management"],
+    "conceptIds": [
+      "impact-assessment",
+      "ai-risk-management"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -31,17 +55,32 @@
     "limits": "The enumerated triggers, assessment content, consultation expectations, retention rules, and terminology differ.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj", "label": "GDPR Article 35 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj",
+        "label": "GDPR Article 35 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-003",
-    "source": {"type": "provision", "id": "eu-gdpr-art-32"},
-    "target": {"type": "provision", "id": "cn-pipl-art-51"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-51"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls", "accountability-governance"],
+    "conceptIds": [
+      "security-controls",
+      "accountability-governance"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -49,17 +88,31 @@
     "limits": "The governing standards, actors, listed measures, enforcement, and surrounding statutory systems differ.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-004",
-    "source": {"type": "provision", "id": "eu-gdpr-art-33"},
-    "target": {"type": "provision", "id": "cn-pipl-art-57"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-33"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-57"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["incident-response"],
+    "conceptIds": [
+      "incident-response"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -67,17 +120,31 @@
     "limits": "GDPR Article 33 includes a 72-hour benchmark and a risk exception; PIPL uses different notice conditions and does not establish the same deadline in Article 57.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj", "label": "GDPR Article 33 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj",
+        "label": "GDPR Article 33 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-005",
-    "source": {"type": "provision", "id": "eu-gdpr-art-44"},
-    "target": {"type": "provision", "id": "cn-pipl-art-38"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-44"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-38"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["cross-border-transfer"],
+    "conceptIds": [
+      "cross-border-transfer"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -85,35 +152,68 @@
     "limits": "The transfer mechanisms, thresholds, government procedures, contractual routes, and supplementary individual-facing requirements differ materially.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_44/oj", "label": "GDPR Article 44 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_44/oj",
+        "label": "GDPR Article 44 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-006",
-    "source": {"type": "provision", "id": "eu-gdpr-art-32"},
-    "target": {"type": "provision", "id": "cn-csl-art-23"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-csl-art-23"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls", "incident-response"],
+    "conceptIds": [
+      "security-controls",
+      "incident-response"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
-    "rationale": "Both require risk-sensitive organizational and technical protections and continuing security practices.",
-    "limits": "GDPR Article 32 concerns personal-data processing; the Cybersecurity Law provision governs network operators within China's classified cybersecurity-protection architecture.",
+    "rationale": "Both impose organizational and technical security controls; GDPR Article 32(1)(c)–(d) addresses restoration after incidents and effectiveness testing, while Cybersecurity Law Article 23(3) requires monitoring, recording, and retention of network-security event logs.",
+    "limits": "GDPR Article 32 concerns personal-data processing, while the Cybersecurity Law provision governs network operators within China's classified cybersecurity-protection architecture; this overlap is not an equivalent personal-data-breach notification duty.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Amended China Cybersecurity Law — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+        "label": "Amended China Cybersecurity Law — CAC"
+      },
+      {
+        "url": "https://flk.npc.gov.cn/detail?fileId=&id=021e7d7684474107b8f3febbb1c4f8b5&title=%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95&type=",
+        "label": "Current consolidated Cybersecurity Law — National Laws and Regulations Database"
+      }
     ]
   },
   {
     "id": "v2-rel-007",
-    "source": {"type": "provision", "id": "eu-gdpr-art-33"},
-    "target": {"type": "provision", "id": "cn-csl-art-44"},
+    "source": {
+      "type": "provision",
+      "id": "eu-gdpr-art-33"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-csl-art-44"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["incident-response"],
+    "conceptIds": [
+      "incident-response"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -121,17 +221,31 @@
     "limits": "The regulated actor, data and network context, notice recipients, timing, and thresholds differ; current China numbering is from the text effective in 2026.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj", "label": "GDPR Article 33 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Amended China Cybersecurity Law — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj",
+        "label": "GDPR Article 33 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+        "label": "Amended China Cybersecurity Law — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-008",
-    "source": {"type": "provision", "id": "cn-pipl-art-57"},
-    "target": {"type": "provision", "id": "cn-csl-art-44"},
+    "source": {
+      "type": "provision",
+      "id": "cn-pipl-art-57"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-csl-art-44"
+    },
     "type": "complements",
     "directionality": "undirected",
-    "conceptIds": ["incident-response"],
+    "conceptIds": [
+      "incident-response"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "same-jurisdiction-systemic-reading",
@@ -139,53 +253,96 @@
     "limits": "Whether both apply depends on the entity, processing activity, incident, and other implementing rules; overlap does not collapse them into one duty.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"},
-      {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Amended China Cybersecurity Law — CAC"}
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+        "label": "Amended China Cybersecurity Law — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-009",
-    "source": {"type": "provision", "id": "eu-ai-act-art-9"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-manage"},
-    "type": "operational-alignment",
+    "source": {
+      "type": "provision",
+      "id": "eu-ai-act-art-9"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-manage"
+    },
+    "type": "future-operational-overlap",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management"],
+    "conceptIds": [
+      "ai-risk-management"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
     "rationale": "Both treat AI risk management as a lifecycle process involving identification, prioritization, treatment, and monitoring.",
-    "limits": "Article 9 is a binding duty for scoped high-risk AI systems from its application date; NIST MANAGE is voluntary, broader, and cannot establish AI Act conformity.",
+    "limits": "At the 19 July 2026 snapshot, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories; NIST MANAGE is voluntary, broader, and cannot establish AI Act conformity.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj", "label": "EU AI Act Article 9 — EUR-Lex"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
+        "label": "EU AI Act Article 9 — EUR-Lex"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        "label": "NIST AI RMF 1.0 Core — NIST"
+      }
     ]
   },
   {
     "id": "v2-rel-010",
-    "source": {"type": "provision", "id": "eu-ai-act-art-13"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-map-2-2"},
-    "type": "operational-alignment",
+    "source": {
+      "type": "provision",
+      "id": "eu-ai-act-art-13"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-map-2-2"
+    },
+    "type": "future-partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["transparency-explainability", "human-oversight"],
+    "conceptIds": [
+      "transparency-explainability",
+      "human-oversight"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
     "rationale": "Both emphasize usable information about system capabilities or limits for people who operate or oversee an AI system.",
-    "limits": "The AI Act provision is provider-to-deployer and legally scoped; MAP 2.2 is a voluntary outcome with different wording and audience.",
+    "limits": "At the 19 July 2026 snapshot, Article 13 had not yet reached its applicable date for the relevant high-risk-system categories; MAP 2.2 is a voluntary outcome with different wording and audience.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_13/oj", "label": "EU AI Act Article 13 — EUR-Lex"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_13/oj",
+        "label": "EU AI Act Article 13 — EUR-Lex"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        "label": "NIST AI RMF 1.0 Core — NIST"
+      }
     ]
   },
   {
     "id": "v2-rel-011",
-    "source": {"type": "provision", "id": "eu-ai-act-art-10"},
-    "target": {"type": "provision", "id": "cn-genai-art-7"},
-    "type": "partial-overlap",
+    "source": {
+      "type": "provision",
+      "id": "eu-ai-act-art-10"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-genai-art-7"
+    },
+    "type": "future-partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["training-data-governance"],
+    "conceptIds": [
+      "training-data-governance"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -193,35 +350,65 @@
     "limits": "Article 10 targets high-risk AI-system data sets under EU definitions; the China measure applies to training-data processing by providers within its public generative-AI service scope and includes different content and rights requirements.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_10/oj", "label": "EU AI Act Article 10 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "China Generative AI Measures — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_10/oj",
+        "label": "EU AI Act Article 10 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+        "label": "China Generative AI Measures — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-012",
-    "source": {"type": "provision", "id": "eu-ai-act-art-9"},
-    "target": {"type": "provision", "id": "cn-genai-art-17"},
-    "type": "partial-overlap",
+    "source": {
+      "type": "provision",
+      "id": "eu-ai-act-art-9"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-genai-art-17"
+    },
+    "type": "future-partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["impact-assessment", "ai-risk-management"],
+    "conceptIds": [
+      "impact-assessment",
+      "ai-risk-management"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "structural-comparison",
     "rationale": "Both create ex ante risk-governance activity for some AI services or systems.",
-    "limits": "Article 9 requires a provider-run lifecycle system for high-risk AI; Article 17 triggers regulatory security assessment and filing for services with specified public-opinion or social-mobilization characteristics.",
+    "limits": "At the 19 July 2026 snapshot, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories. Article 17 is already binding but triggers regulatory security assessment and filing for services with specified public-opinion or social-mobilization characteristics.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj", "label": "EU AI Act Article 9 — EUR-Lex"},
-      {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "China Generative AI Measures — CAC"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
+        "label": "EU AI Act Article 9 — EUR-Lex"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+        "label": "China Generative AI Measures — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-013",
-    "source": {"type": "provision", "id": "eu-ai-act-art-9"},
-    "target": {"type": "provision", "id": "g7-hiroshima-code-action-1"},
+    "source": {
+      "type": "provision",
+      "id": "eu-ai-act-art-9"
+    },
+    "target": {
+      "type": "provision",
+      "id": "g7-hiroshima-code-action-1"
+    },
     "type": "soft-law-alignment",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management", "frontier-model-safety"],
+    "conceptIds": [
+      "ai-risk-management",
+      "impact-assessment"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
@@ -229,17 +416,33 @@
     "limits": "They apply to different system categories and actors; Hiroshima Action 1 is non-binding international guidance, while Article 9 is a scoped EU legal duty.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj", "label": "EU AI Act Article 9 — EUR-Lex"},
-      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
+        "label": "EU AI Act Article 9 — EUR-Lex"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/files/100573473.pdf",
+        "label": "Hiroshima International Code of Conduct — Japan MOFA"
+      }
     ]
   },
   {
     "id": "v2-rel-014",
-    "source": {"type": "provision", "id": "cn-genai-art-4"},
-    "target": {"type": "provision", "id": "g7-hiroshima-guiding-principles"},
+    "source": {
+      "type": "provision",
+      "id": "cn-genai-art-4"
+    },
+    "target": {
+      "type": "provision",
+      "id": "g7-hiroshima-guiding-principles"
+    },
     "type": "soft-law-alignment",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management", "transparency-explainability", "accountability-governance"],
+    "conceptIds": [
+      "ai-risk-management",
+      "transparency-explainability",
+      "accountability-governance"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "theme-level-comparison",
@@ -247,17 +450,32 @@
     "limits": "The China provision is binding within a defined domestic service scope and includes jurisdiction-specific content duties; Hiroshima is international soft law for advanced AI actors.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "China Generative AI Measures — CAC"},
-      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+      {
+        "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+        "label": "China Generative AI Measures — CAC"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/files/100573471.pdf",
+        "label": "Hiroshima International Guiding Principles — Japan MOFA"
+      }
     ]
   },
   {
     "id": "v2-rel-015",
-    "source": {"type": "provision", "id": "us-eo-14110-sec-4-2"},
-    "target": {"type": "provision", "id": "us-ca-sb1047-enrolled-ch22-6"},
+    "source": {
+      "type": "provision",
+      "id": "us-eo-14110-sec-4-2"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-ca-sb1047-enrolled-ch22-6"
+    },
     "type": "historical-policy-overlap",
     "directionality": "undirected",
-    "conceptIds": ["frontier-model-safety", "ai-risk-management"],
+    "conceptIds": [
+      "frontier-model-safety",
+      "ai-risk-management"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "historical-text-comparison",
@@ -265,17 +483,30 @@
     "limits": "EO 14110 was revoked and governed federal executive action; SB 1047 was vetoed and never became California law. Their thresholds, authorities, and proposed duties differed.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence", "label": "EO 14110 — Federal Register"},
-      {"url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047", "label": "California SB 1047 — official status"}
+      {
+        "url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+        "label": "EO 14110 — Federal Register"
+      },
+      {
+        "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047",
+        "label": "California SB 1047 — official status"
+      }
     ]
   },
   {
     "id": "v2-rel-016",
-    "source": {"type": "instrument", "id": "us-eo-14110"},
-    "target": {"type": "instrument", "id": "us-eo-14179"},
+    "source": {
+      "type": "instrument",
+      "id": "us-eo-14110"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "us-eo-14179"
+    },
     "type": "policy-transition",
+    "relationClass": "lifecycle",
     "directionality": "directed",
-    "conceptIds": ["accountability-governance"],
+    "conceptIds": [],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "official-status-lineage",
@@ -283,35 +514,64 @@
     "limits": "EO 14179 did not itself revoke EO 14110; EO 14148 did. Later executive orders and agency actions must be modeled separately.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.federalregister.gov/documents/2025/01/28/2025-01901/initial-rescissions-of-harmful-executive-orders-and-actions", "label": "EO 14148 revocation — Federal Register"},
-      {"url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence", "label": "EO 14179 — Federal Register"}
+      {
+        "url": "https://www.federalregister.gov/documents/2025/01/28/2025-01901/initial-rescissions-of-harmful-executive-orders-and-actions",
+        "label": "EO 14148 revocation — Federal Register"
+      },
+      {
+        "url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence",
+        "label": "EO 14179 — Federal Register"
+      }
     ]
   },
   {
     "id": "v2-rel-017",
-    "source": {"type": "provision", "id": "us-ca-sb1047-enrolled-ch22-6"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-manage"},
-    "type": "historical-operational-alignment",
+    "source": {
+      "type": "provision",
+      "id": "us-ca-sb1047-enrolled-ch22-6"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-manage"
+    },
+    "type": "historical-operational-overlap",
     "directionality": "undirected",
-    "conceptIds": ["frontier-model-safety", "ai-risk-management"],
+    "conceptIds": [
+      "ai-risk-management",
+      "incident-response"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "theme-level-comparison",
-    "rationale": "NIST risk-treatment practices provide an operational vocabulary relevant to some safety-program ideas present in the enrolled bill.",
+    "rationale": "NIST MANAGE risk-treatment, monitoring, incident-response, and recovery outcomes overlap operationally with safety-program and safety-incident ideas in the vetoed enrolled bill.",
     "limits": "The NIST framework is voluntary and general; the bill was vetoed, used statutory definitions and thresholds, and never created an obligation.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047", "label": "California SB 1047 — official status"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047",
+        "label": "California SB 1047 — official status"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        "label": "NIST AI RMF 1.0 Core — NIST"
+      }
     ]
   },
   {
     "id": "v2-rel-018",
-    "source": {"type": "provision", "id": "gb-uk-gdpr-art-32"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-32"},
+    "source": {
+      "type": "provision",
+      "id": "gb-uk-gdpr-art-32"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
     "type": "shared-legal-origin",
     "directionality": "undirected",
-    "conceptIds": ["security-controls"],
+    "conceptIds": [
+      "security-controls"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "legislative-lineage",
@@ -319,17 +579,31 @@
     "limits": "Post-transition UK amendments, domestic interpretation, regulator guidance, and EU law developments can create divergence; current text must be compared at a specified date.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.legislation.gov.uk/eur/2016/679/article/32", "label": "UK GDPR Article 32 — UK Legislation"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "EU GDPR Article 32 — EUR-Lex"}
+      {
+        "url": "https://www.legislation.gov.uk/eur/2016/679/article/32",
+        "label": "UK GDPR Article 32 — UK Legislation"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "EU GDPR Article 32 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-019",
-    "source": {"type": "provision", "id": "gb-uk-gdpr-art-35"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-35"},
+    "source": {
+      "type": "provision",
+      "id": "gb-uk-gdpr-art-35"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-35"
+    },
     "type": "shared-legal-origin",
     "directionality": "undirected",
-    "conceptIds": ["impact-assessment"],
+    "conceptIds": [
+      "impact-assessment"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "legislative-lineage",
@@ -337,53 +611,112 @@
     "limits": "Shared origin is not a claim of permanent textual, interpretive, or enforcement equivalence after UK legal divergence.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.legislation.gov.uk/eur/2016/679/article/35", "label": "UK GDPR Article 35 — UK Legislation"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj", "label": "EU GDPR Article 35 — EUR-Lex"}
+      {
+        "url": "https://www.legislation.gov.uk/eur/2016/679/article/35",
+        "label": "UK GDPR Article 35 — UK Legislation"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj",
+        "label": "EU GDPR Article 35 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-020",
-    "source": {"type": "provision", "id": "jp-appi-art-23"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-32"},
+    "source": {
+      "type": "provision",
+      "id": "jp-appi-art-23"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls"],
+    "conceptIds": [
+      "security-controls"
+    ],
     "status": "candidate",
     "confidence": "medium",
-    "evidenceBasis": "government-translation-comparison",
+    "evidenceBasis": "authoritative-original-and-reference-translation-comparison",
     "rationale": "Both require necessary or appropriate security measures for personal data.",
-    "limits": "The APPI translation is a government reference translation that may lag amendments; actors, risk framing, detailed guidance, and remedies differ.",
+    "limits": "The authoritative Japanese text governs. The government English reference translation may lag amendments, and the amendment promulgated on 17 July 2026 is predominantly subject to later commencement; actors, risk framing, detailed guidance, and remedies also differ.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japan APPI — government reference translation"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"}
+      {
+        "url": "https://laws.e-gov.go.jp/law/415AC0000000057",
+        "label": "Current APPI Japanese text — e-Gov Law Search"
+      },
+      {
+        "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+        "label": "Japan APPI — government reference translation"
+      },
+      {
+        "url": "https://www.ppc.go.jp/news/press/2026/260717/",
+        "label": "17 July 2026 APPI amendment announcement — PPC Japan"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-021",
-    "source": {"type": "provision", "id": "jp-appi-art-28"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-44"},
+    "source": {
+      "type": "provision",
+      "id": "jp-appi-art-28"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-44"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["cross-border-transfer"],
+    "conceptIds": [
+      "cross-border-transfer"
+    ],
     "status": "candidate",
     "confidence": "medium",
-    "evidenceBasis": "government-translation-comparison",
+    "evidenceBasis": "authoritative-original-and-reference-translation-comparison",
     "rationale": "Both govern overseas personal-data disclosures through protective conditions and alternatives.",
-    "limits": "The consent structure, country recognition, equivalent-measures route, information duties, and broader Chapter V architecture differ.",
+    "limits": "The authoritative Japanese text governs, and the 17 July 2026 amendment is predominantly subject to later commencement. The consent structure, country recognition, equivalent-measures route, information duties, and broader GDPR Chapter V architecture also differ.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japan APPI — government reference translation"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_44/oj", "label": "GDPR Article 44 — EUR-Lex"}
+      {
+        "url": "https://laws.e-gov.go.jp/law/415AC0000000057",
+        "label": "Current APPI Japanese text — e-Gov Law Search"
+      },
+      {
+        "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+        "label": "Japan APPI — government reference translation"
+      },
+      {
+        "url": "https://www.ppc.go.jp/news/press/2026/260717/",
+        "label": "17 July 2026 APPI amendment announcement — PPC Japan"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_44/oj",
+        "label": "GDPR Article 44 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-022",
-    "source": {"type": "provision", "id": "jp-ai-guidelines-1-2-common-principles"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-govern"},
+    "source": {
+      "type": "provision",
+      "id": "jp-ai-guidelines-1-2-common-principles"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-govern"
+    },
     "type": "soft-law-alignment",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management", "accountability-governance"],
+    "conceptIds": [
+      "ai-risk-management",
+      "accountability-governance"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "theme-level-comparison",
@@ -391,17 +724,31 @@
     "limits": "The documents use different structures, audiences, cultural and policy contexts, and neither becomes binding merely through this mapping.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html", "label": "Japan AI Guidelines for Business 1.2 — METI"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html",
+        "label": "Japan AI Guidelines for Business 1.2 — METI"
+      },
+      {
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+        "label": "NIST AI RMF 1.0"
+      }
     ]
   },
   {
     "id": "v2-rel-023",
-    "source": {"type": "provision", "id": "ca-pipeda-schedule1-4-7"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-32"},
+    "source": {
+      "type": "provision",
+      "id": "ca-pipeda-schedule1-4-7"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls"],
+    "conceptIds": [
+      "security-controls"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -409,17 +756,31 @@
     "limits": "The Canadian standard operates through PIPEDA sections and Schedule 1 within a distinct federal and provincial allocation; GDPR has different actors, criteria, and enforcement.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/", "label": "PIPEDA — Justice Laws"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"}
+      {
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
+        "label": "PIPEDA — Justice Laws"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-024",
-    "source": {"type": "provision", "id": "ca-pipeda-sec-10-1"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-33"},
+    "source": {
+      "type": "provision",
+      "id": "ca-pipeda-sec-10-1"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-33"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["incident-response"],
+    "conceptIds": [
+      "incident-response"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
@@ -427,17 +788,31 @@
     "limits": "PIPEDA uses a real-risk-of-significant-harm threshold and distinct notice and record rules; GDPR uses different risk tests, timing, actors, and supervisory architecture.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/", "label": "PIPEDA — Justice Laws"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj", "label": "GDPR Article 33 — EUR-Lex"}
+      {
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
+        "label": "PIPEDA — Justice Laws"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj",
+        "label": "GDPR Article 33 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-025",
-    "source": {"type": "provision", "id": "ca-adm-directive-sec-6-1"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-35"},
+    "source": {
+      "type": "provision",
+      "id": "ca-adm-directive-sec-6-1"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-35"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["impact-assessment"],
+    "conceptIds": [
+      "impact-assessment"
+    ],
     "status": "editorial-reviewed",
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
@@ -445,17 +820,32 @@
     "limits": "The Canadian directive is an internal federal policy for covered administrative decisions and publishes an algorithmic assessment; GDPR Article 35 is a statutory data-protection duty triggered by likely high risk.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Canada ADM Directive"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj", "label": "GDPR Article 35 — EUR-Lex"}
+      {
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+        "label": "Canada ADM Directive"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj",
+        "label": "GDPR Article 35 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-026",
-    "source": {"type": "provision", "id": "ca-adm-directive-sec-6-1"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-map"},
+    "source": {
+      "type": "provision",
+      "id": "ca-adm-directive-sec-6-1"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-map"
+    },
     "type": "operationalizes",
     "directionality": "directed",
-    "conceptIds": ["impact-assessment", "ai-risk-management"],
+    "conceptIds": [
+      "impact-assessment",
+      "ai-risk-management"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
@@ -463,17 +853,32 @@
     "limits": "This is an editorial functional mapping, not evidence that the Canadian directive adopts NIST or that NIST compliance satisfies the directive.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Canada ADM Directive"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+        "label": "Canada ADM Directive"
+      },
+      {
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+        "label": "NIST AI RMF 1.0"
+      }
     ]
   },
   {
     "id": "v2-rel-027",
-    "source": {"type": "provision", "id": "ca-adm-directive-sec-6-3-13"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-22"},
+    "source": {
+      "type": "provision",
+      "id": "ca-adm-directive-sec-6-3-13"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-22"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["human-oversight", "automated-decision-safeguards"],
+    "conceptIds": [
+      "human-oversight",
+      "automated-decision-safeguards"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "concept-level-comparison",
@@ -481,17 +886,32 @@
     "limits": "The Canadian requirement is impact-level policy for federal administrative systems; GDPR Article 22 has a distinct solely-automated significant-decision trigger, exceptions, and individual safeguards.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Canada ADM Directive"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_22/oj", "label": "GDPR Article 22 — EUR-Lex"}
+      {
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+        "label": "Canada ADM Directive"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_22/oj",
+        "label": "GDPR Article 22 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-028",
-    "source": {"type": "provision", "id": "in-dpdp-act-sec-8"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-32"},
+    "source": {
+      "type": "provision",
+      "id": "in-dpdp-act-sec-8"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
     "type": "future-partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls", "accountability-governance"],
+    "conceptIds": [
+      "security-controls",
+      "accountability-governance"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "enacted-text-comparison",
@@ -499,18 +919,35 @@
     "limits": "Section 8 is not yet in force as of 19 July 2026 and operates within a different statutory model; detailed safeguards are elaborated by rules with their own commencement date.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf", "label": "India DPDP Act — MeitY"},
-      {"url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf", "label": "India DPDP commencement notification"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"}
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+        "label": "India DPDP Act — MeitY"
+      },
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+        "label": "India DPDP commencement notification"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-029",
-    "source": {"type": "provision", "id": "in-dpdp-rules-rule-6"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-32"},
+    "source": {
+      "type": "provision",
+      "id": "in-dpdp-rules-rule-6"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-32"
+    },
     "type": "future-operational-overlap",
     "directionality": "undirected",
-    "conceptIds": ["security-controls"],
+    "conceptIds": [
+      "security-controls"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "made-rule-comparison",
@@ -518,17 +955,31 @@
     "limits": "Rule 6 is scheduled for 14 May 2027 and specifies a different control and legal architecture; no current Indian duty should be asserted from it before commencement.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "India DPDP Rules — Gazette"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj", "label": "GDPR Article 32 — EUR-Lex"}
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+        "label": "India DPDP Rules — Gazette"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_32/oj",
+        "label": "GDPR Article 32 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-030",
-    "source": {"type": "provision", "id": "in-dpdp-rules-rule-7"},
-    "target": {"type": "provision", "id": "eu-gdpr-art-33"},
+    "source": {
+      "type": "provision",
+      "id": "in-dpdp-rules-rule-7"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-33"
+    },
     "type": "future-partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["incident-response"],
+    "conceptIds": [
+      "incident-response"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "made-rule-comparison",
@@ -536,17 +987,31 @@
     "limits": "Rule 7 is scheduled for 14 May 2027 and uses different recipients, timing, content, and statutory context; it is not a current obligation as of the dataset date.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "India DPDP Rules — Gazette"},
-      {"url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj", "label": "GDPR Article 33 — EUR-Lex"}
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+        "label": "India DPDP Rules — Gazette"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj",
+        "label": "GDPR Article 33 — EUR-Lex"
+      }
     ]
   },
   {
     "id": "v2-rel-031",
-    "source": {"type": "instrument", "id": "in-dpdp-rules-2025"},
-    "target": {"type": "instrument", "id": "in-dpdp-act-2023"},
+    "source": {
+      "type": "instrument",
+      "id": "in-dpdp-rules-2025"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "in-dpdp-act-2023"
+    },
     "type": "implements",
     "directionality": "directed",
-    "conceptIds": ["accountability-governance"],
+    "conceptIds": [
+      "accountability-governance"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "express-statutory-authority",
@@ -554,17 +1019,31 @@
     "limits": "The Act and Rules have different phased commencement schedules and must not be shown as wholly operative on the same date.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf", "label": "India DPDP Rules — Gazette"},
-      {"url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf", "label": "India DPDP Act — MeitY"}
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+        "label": "India DPDP Rules — Gazette"
+      },
+      {
+        "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+        "label": "India DPDP Act — MeitY"
+      }
     ]
   },
   {
     "id": "v2-rel-032",
-    "source": {"type": "instrument", "id": "cn-generative-ai-measures"},
-    "target": {"type": "instrument", "id": "cn-pipl"},
+    "source": {
+      "type": "instrument",
+      "id": "cn-generative-ai-measures"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "cn-pipl"
+    },
     "type": "grounded-in",
     "directionality": "directed",
-    "conceptIds": ["accountability-governance", "training-data-governance"],
+    "conceptIds": [
+      "accountability-governance"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "express-legal-basis",
@@ -572,17 +1051,32 @@
     "limits": "The Measures also rely on other laws and have a narrower service scope; PIPL compliance alone does not establish compliance with the Measures.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "China Generative AI Measures — CAC"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+        "label": "China Generative AI Measures — CAC"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-033",
-    "source": {"type": "instrument", "id": "cn-generative-ai-measures"},
-    "target": {"type": "instrument", "id": "cn-cybersecurity-law"},
+    "source": {
+      "type": "instrument",
+      "id": "cn-generative-ai-measures"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "cn-cybersecurity-law"
+    },
     "type": "grounded-in",
     "directionality": "directed",
-    "conceptIds": ["security-controls", "accountability-governance"],
+    "conceptIds": [
+      "security-controls",
+      "accountability-governance"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "express-legal-basis",
@@ -590,17 +1084,33 @@
     "limits": "The linked Cybersecurity Law is the current amended text; the Measures were issued before the 2026 amendment, so temporal versioning must remain visible.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "China Generative AI Measures — CAC"},
-      {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Amended China Cybersecurity Law — CAC"}
+      {
+        "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+        "label": "China Generative AI Measures — CAC"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm",
+        "label": "Amended China Cybersecurity Law — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-034",
-    "source": {"type": "instrument", "id": "cn-network-data-regulations"},
-    "target": {"type": "instrument", "id": "cn-pipl"},
+    "source": {
+      "type": "instrument",
+      "id": "cn-network-data-regulations"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "cn-pipl"
+    },
     "type": "elaborates",
     "directionality": "directed",
-    "conceptIds": ["accountability-governance", "security-controls", "cross-border-transfer"],
+    "conceptIds": [
+      "accountability-governance",
+      "security-controls",
+      "cross-border-transfer"
+    ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "express-legal-basis",
@@ -608,71 +1118,138 @@
     "limits": "It also implements the Cybersecurity Law and Data Security Law and has its own defined scope; it is not merely an appendix to PIPL.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html", "label": "Network Data Regulations — State Council"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+        "label": "Network Data Regulations — State Council"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-035",
-    "source": {"type": "provision", "id": "cn-network-data-reg-art-44"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-govern"},
-    "type": "operational-alignment",
+    "source": {
+      "type": "provision",
+      "id": "cn-network-data-reg-art-44"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-govern"
+    },
+    "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["accountability-governance", "transparency-explainability"],
+    "conceptIds": [
+      "accountability-governance",
+      "transparency-explainability"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "theme-level-comparison",
-    "rationale": "Both make organizational governance, documentation, and accountability visible, including through reporting practices.",
-    "limits": "The China provision is a binding annual-report duty for a defined class of large platforms; NIST GOVERN is voluntary AI-risk guidance for a much broader set of organizations.",
+    "rationale": "Both use documentation and communication to make governance accountable; Article 44 additionally mandates a public annual report, which NIST GOVERN does not.",
+    "limits": "The China provision is a binding annual-report duty for a defined class of large platforms; NIST GOVERN is voluntary AI-risk guidance and does not require the same public report, audience, content, or legal consequence.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html", "label": "Network Data Regulations — State Council"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+        "label": "Network Data Regulations — State Council"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        "label": "NIST AI RMF 1.0 Core — NIST"
+      }
     ]
   },
   {
     "id": "v2-rel-036",
-    "source": {"type": "provision", "id": "un-ai-report-rec-1"},
-    "target": {"type": "provision", "id": "g7-hiroshima-guiding-principles"},
+    "source": {
+      "type": "provision",
+      "id": "un-ai-report-rec-1"
+    },
+    "target": {
+      "type": "provision",
+      "id": "g7-hiroshima-guiding-principles"
+    },
     "type": "complements",
     "directionality": "undirected",
-    "conceptIds": ["global-coordination", "ai-risk-management"],
+    "conceptIds": [
+      "global-coordination",
+      "ai-risk-management"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "institutional-function-comparison",
-    "rationale": "A shared international scientific capability could inform the evidence base used to maintain and implement voluntary advanced-AI risk principles.",
-    "limits": "The UN panel is an advisory proposal; Hiroshima principles are G7-led soft law. Neither source states that one formally implements the other.",
+    "rationale": "The scientific-panel model recommended in 2024 was subsequently established by General Assembly resolution A/RES/79/325 and produced a preliminary report on 1 July 2026; its shared evidence base can inform implementation and maintenance of voluntary advanced-AI risk principles.",
+    "limits": "The 2024 recommendation, the later UN scientific panel, and the G7-led Hiroshima principles remain separate instruments and institutions; neither formally implements the other, and the Hiroshima principles remain non-binding soft law.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.un.org/en/ai-advisory-body", "label": "UN AI Advisory Body final report"},
-      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+      {
+        "url": "https://digitallibrary.un.org/record/4087699/files/A_RES_79_325-EN.pdf",
+        "label": "A/RES/79/325 establishing the UN scientific panel and global dialogue"
+      },
+      {
+        "url": "https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report",
+        "label": "Independent International Scientific Panel on AI — Preliminary Report"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/files/100573471.pdf",
+        "label": "Hiroshima International Guiding Principles — Japan MOFA"
+      }
     ]
   },
   {
     "id": "v2-rel-037",
-    "source": {"type": "provision", "id": "un-ai-report-rec-2"},
-    "target": {"type": "instrument", "id": "g7-hiroshima-ai-process"},
+    "source": {
+      "type": "provision",
+      "id": "un-ai-report-rec-2"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "g7-hiroshima-ai-process"
+    },
     "type": "complements",
     "directionality": "undirected",
-    "conceptIds": ["global-coordination", "accountability-governance"],
+    "conceptIds": [
+      "global-coordination",
+      "accountability-governance"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "institutional-function-comparison",
-    "rationale": "A global intergovernmental and multi-stakeholder dialogue could provide a forum for interoperability among initiatives such as the Hiroshima AI Process.",
-    "limits": "The UN recommendation is not yet a binding institutional mandate in this dataset, and Hiroshima is not subordinated to the report.",
+    "rationale": "The policy-dialogue model recommended in 2024 was subsequently established by A/RES/79/325 and first convened on 6–7 July 2026; its interoperability remit can connect initiatives including the Hiroshima AI Process.",
+    "limits": "The Global Dialogue is a non-negotiating, non-binding forum, and the Hiroshima AI Process is not subordinated to it; the edge records institutional complementarity, not legal hierarchy or mutual implementation.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.un.org/en/ai-advisory-body", "label": "UN AI Advisory Body final report"},
-      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+      {
+        "url": "https://digitallibrary.un.org/record/4087699/files/A_RES_79_325-EN.pdf",
+        "label": "A/RES/79/325 establishing the UN scientific panel and global dialogue"
+      },
+      {
+        "url": "https://www.un.org/global-dialogue-ai-governance/en",
+        "label": "UN Global Dialogue on AI Governance"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/files/100591757.pdf",
+        "label": "G7 Leaders' Statement endorsing the Hiroshima AI Process Comprehensive Policy Framework"
+      }
     ]
   },
   {
     "id": "v2-rel-038",
-    "source": {"type": "provision", "id": "ca-adm-directive-sec-6-4-1"},
-    "target": {"type": "provision", "id": "cn-pipl-art-24"},
+    "source": {
+      "type": "provision",
+      "id": "ca-adm-directive-sec-6-4-1"
+    },
+    "target": {
+      "type": "provision",
+      "id": "cn-pipl-art-24"
+    },
     "type": "partial-overlap",
     "directionality": "undirected",
-    "conceptIds": ["automated-decision-safeguards"],
+    "conceptIds": [
+      "automated-decision-safeguards"
+    ],
     "status": "candidate",
     "confidence": "low",
     "evidenceBasis": "concept-level-comparison",
@@ -680,17 +1257,32 @@
     "limits": "The Canadian directive applies to federal administrative decisions within its scope; PIPL governs personal-information handlers and frames different rights, triggers, and exceptions.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592", "label": "Canada ADM Directive"},
-      {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "PIPL — CAC"}
+      {
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+        "label": "Canada ADM Directive"
+      },
+      {
+        "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+        "label": "PIPL — CAC"
+      }
     ]
   },
   {
     "id": "v2-rel-039",
-    "source": {"type": "provision", "id": "iso-iec-42001-aims-overview"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-govern"},
+    "source": {
+      "type": "provision",
+      "id": "iso-iec-42001-aims-overview"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-govern"
+    },
     "type": "operational-alignment",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management", "accountability-governance"],
+    "conceptIds": [
+      "ai-risk-management",
+      "accountability-governance"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "public-metadata-structural-comparison",
@@ -698,17 +1290,33 @@
     "limits": "ISO/IEC 42001 is a requirements standard whose authoritative clauses require licensed access; NIST GOVERN is one function in a voluntary outcomes framework. This edge is not a clause crosswalk, equivalence finding, certification statement, or proof that either instrument satisfies the other.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.iso.org/standard/42001", "label": "ISO/IEC 42001 — ISO"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://www.iso.org/standard/42001",
+        "label": "ISO/IEC 42001 — ISO"
+      },
+      {
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+        "label": "NIST AI RMF 1.0"
+      }
     ]
   },
   {
     "id": "v2-rel-040",
-    "source": {"type": "provision", "id": "ieee-ead-general-principles-overview"},
-    "target": {"type": "provision", "id": "oecd-ai-principles-values"},
+    "source": {
+      "type": "provision",
+      "id": "ieee-ead-general-principles-overview"
+    },
+    "target": {
+      "type": "provision",
+      "id": "oecd-ai-principles-values"
+    },
     "type": "soft-law-alignment",
     "directionality": "undirected",
-    "conceptIds": ["accountability-governance", "human-oversight", "transparency-explainability"],
+    "conceptIds": [
+      "accountability-governance",
+      "human-oversight",
+      "transparency-explainability"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "theme-level-comparison",
@@ -716,17 +1324,32 @@
     "limits": "IEEE EAD is an expert-developed white paper for ethical design; the OECD instrument is an intergovernmental recommendation with a separate structure, audience, and revision process. Shared themes do not make their principles interchangeable or legally binding.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://standards.ieee.org/ieee/White_Paper/10594/", "label": "IEEE Ethically Aligned Design — IEEE SA"},
-      {"url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449", "label": "OECD Recommendation on AI"}
+      {
+        "url": "https://standards.ieee.org/ieee/White_Paper/10594/",
+        "label": "IEEE Ethically Aligned Design — IEEE SA"
+      },
+      {
+        "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449",
+        "label": "OECD Recommendation on AI"
+      }
     ]
   },
   {
     "id": "v2-rel-041",
-    "source": {"type": "provision", "id": "oecd-ai-principle-1-4"},
-    "target": {"type": "provision", "id": "us-nist-ai-rmf-manage"},
+    "source": {
+      "type": "provision",
+      "id": "oecd-ai-principle-1-4"
+    },
+    "target": {
+      "type": "provision",
+      "id": "us-nist-ai-rmf-manage"
+    },
     "type": "operational-alignment",
     "directionality": "undirected",
-    "conceptIds": ["ai-risk-management", "security-controls", "incident-response"],
+    "conceptIds": [
+      "ai-risk-management",
+      "incident-response"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "principle-to-framework-comparison",
@@ -734,17 +1357,33 @@
     "limits": "OECD Principle 1.4 states a high-level intergovernmental norm; NIST MANAGE organizes voluntary operational outcomes. Neither source formally incorporates the other, and this mapping is not a control-by-control implementation claim.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.oecd.org/en/topics/ai-principles.html", "label": "OECD AI Principles"},
-      {"url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10", "label": "NIST AI RMF 1.0"}
+      {
+        "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449",
+        "label": "OECD Recommendation on Artificial Intelligence — OECD/LEGAL/0449"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        "label": "NIST AI RMF 1.0 Core — NIST"
+      }
     ]
   },
   {
     "id": "v2-rel-042",
-    "source": {"type": "provision", "id": "int-bletchley-shared-risk-agenda"},
-    "target": {"type": "provision", "id": "g7-hiroshima-code-action-1"},
+    "source": {
+      "type": "provision",
+      "id": "int-bletchley-shared-risk-agenda"
+    },
+    "target": {
+      "type": "provision",
+      "id": "g7-hiroshima-code-action-1"
+    },
     "type": "soft-law-alignment",
     "directionality": "undirected",
-    "conceptIds": ["frontier-model-safety", "ai-risk-management", "impact-assessment", "global-coordination"],
+    "conceptIds": [
+      "frontier-model-safety",
+      "ai-risk-management",
+      "impact-assessment"
+    ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "official-text-theme-comparison",
@@ -752,8 +1391,871 @@
     "limits": "The Bletchley Declaration is a government-level political commitment focused on shared understanding and policy cooperation; Hiroshima Action 1 is voluntary guidance directed toward organizations developing advanced AI systems. Neither formally implements the other.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
-      {"url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023", "label": "Bletchley Declaration — UK Government"},
-      {"url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html", "label": "Hiroshima AI Process — Japan MOFA"}
+      {
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023",
+        "label": "Bletchley Declaration — UK Government"
+      },
+      {
+        "url": "https://www.mofa.go.jp/mofaj/files/100573473.pdf",
+        "label": "Hiroshima International Code of Conduct — Japan MOFA"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-043",
+    "source": {
+      "type": "provision",
+      "id": "sg-ai-verify-testing-framework-dependability-testing"
+    },
+    "target": {
+      "type": "provision",
+      "id": "sg-model-ai-governance-framework-2020-operations-management"
+    },
+    "type": "supports-operational-evidence",
+    "directionality": "directed",
+    "conceptIds": [
+      "security-controls",
+      "continuous-assurance"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-framework-and-tool-structure-comparison",
+    "rationale": "AI Verify's dependability tests can generate technical evidence relevant to the Model AI Governance Framework's operations-management practices for robustness, security and lifecycle monitoring.",
+    "limits": "AI Verify does not certify legal compliance, eliminate system risk or prove that every governance practice in the Model Framework has been implemented; test validity remains model-, data-, metric- and use-case-dependent.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.imda.gov.sg/how-we-can-help/ai-verify",
+        "label": "AI Verify — Infocomm Media Development Authority"
+      },
+      {
+        "url": "https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf",
+        "label": "Model AI Governance Framework, Second Edition — Singapore PDPC"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-044",
+    "source": {
+      "type": "provision",
+      "id": "sg-pdpa-2012-ss-26a-26e"
+    },
+    "target": {
+      "type": "provision",
+      "id": "au-privacy-act-1988-part-iiic"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "incident-response"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "current-enacted-text-comparison",
+    "rationale": "Singapore's breach-assessment and notification provisions and Australia's eligible-data-breach regime both require structured evaluation and notification responses after qualifying personal-data incidents.",
+    "limits": "The covered entities, breach thresholds, assessment periods, notification recipients, content requirements, exemptions and enforcement consequences differ; shared incident-response structure does not establish equivalent notification duties.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://sso.agc.gov.sg/Act/PDPA2012/",
+        "label": "Personal Data Protection Act 2012 — Singapore Statutes Online"
+      },
+      {
+        "url": "https://www.legislation.gov.au/C2004A03712/latest",
+        "label": "Privacy Act 1988 — Federal Register of Legislation, Australia"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-045",
+    "source": {
+      "type": "provision",
+      "id": "kr-pipa-2011-art-37-2"
+    },
+    "target": {
+      "type": "provision",
+      "id": "id-pdp-law-2022-art-10"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "automated-decision-safeguards",
+      "data-subject-rights"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-original-text-comparison",
+    "rationale": "Korea PIPA Article 37-2 and Indonesia PDP Law Article 10 both protect individuals in relation to qualifying fully or solely automated decisions with significant effects.",
+    "limits": "The statutory triggers, decision-effect tests, refusal or objection mechanisms, explanation duties, controller responses, exceptions and remedies are jurisdiction-specific and are not interchangeable.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&lsId=011357",
+        "label": "Personal Information Protection Act — Korean Law Information Center"
+      },
+      {
+        "url": "https://www.peraturan.go.id/id/uu-no-27-tahun-2022",
+        "label": "Law No. 27 of 2022 on Personal Data Protection — Government of Indonesia"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-046",
+    "source": {
+      "type": "provision",
+      "id": "kr-ai-framework-act-2025-art-31"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-ai-act-art-50"
+    },
+    "type": "future-partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "transparency-explainability"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "current-korean-text-and-eu-regulation-comparison",
+    "rationale": "Both provisions establish scenario-dependent transparency duties concerning interaction with AI or AI-generated and synthetic content, including forms of notice or output marking.",
+    "limits": "The actors, system categories, synthetic-content definitions, disclosure modalities, exceptions, application dates and enforcement systems differ materially; shared transparency themes do not make the Korean and EU duties interchangeable.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+        "label": "Korea AI Framework Act — current Korean text"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_50/oj",
+        "label": "EU AI Act Article 50 — EUR-Lex"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj",
+        "label": "EU AI Act Article 113 — application timetable"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-047",
+    "source": {
+      "type": "provision",
+      "id": "au-mandatory-ai-guardrails-proposal-2024-ten-guardrails"
+    },
+    "target": {
+      "type": "provision",
+      "id": "au-guidance-for-ai-adoption-2025-impacts-and-risks"
+    },
+    "type": "historical-operational-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "impact-assessment"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "historical-proposal-to-current-guidance-theme-comparison",
+    "rationale": "The historical ten-guardrail proposal and the current voluntary guidance both discuss organizational impact analysis, risk management and accountable AI adoption practices.",
+    "limits": "This thematic comparison is not a policy-lineage, repeal, supersession or implementation claim. The proposal informed the National AI Plan process, while the Guidance for AI Adoption evolved from the Voluntary AI Safety Standard and has a different structure and legal effect.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://consult.industry.gov.au/ai-mandatory-guardrails",
+        "label": "Mandatory AI Guardrails proposals page — Australian Government"
+      },
+      {
+        "url": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+        "label": "Voluntary AI Safety Standard guardrails and Guidance lineage — Australian Government"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-048",
+    "source": {
+      "type": "provision",
+      "id": "au-guidance-for-ai-adoption-2025-human-control"
+    },
+    "target": {
+      "type": "provision",
+      "id": "tw-ai-basic-act-2026-art-4"
+    },
+    "type": "policy-framework-alignment",
+    "directionality": "undirected",
+    "conceptIds": [
+      "human-oversight"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-guidance-to-framework-law-principle-comparison",
+    "rationale": "Australia's guidance on maintaining human control and Taiwan AI Basic Act Article 4's human-autonomy principle both preserve context-appropriate human agency and oversight in AI use.",
+    "limits": "Australia's source is voluntary organizational guidance, whereas Taiwan Article 4 directs government AI policy through a framework-law principle; neither endpoint alone specifies an identical operational intervention, appeal or liability rule.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.industry.gov.au/sites/default/files/2025-10/guidance-for-ai-adoption-foundations.pdf",
+        "label": "Guidance for AI Adoption: Foundations — Australian Government"
+      },
+      {
+        "url": "https://law.nstc.gov.tw/LawContent.aspx?id=GL000592&kw=",
+        "label": "Artificial Intelligence Basic Act — Taiwan NSTC"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-049",
+    "source": {
+      "type": "provision",
+      "id": "tw-personal-data-protection-act-art-5"
+    },
+    "target": {
+      "type": "provision",
+      "id": "br-lgpd-2018-art-6"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "purpose-limitation",
+      "data-minimization"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "authoritative-original-text-principle-comparison",
+    "rationale": "Taiwan PDPA Article 5 and Brazil LGPD Article 6 both constrain personal-data processing through purpose-related, necessity or proportionality-oriented principles and responsible handling expectations.",
+    "limits": "The provisions use different statutory terminology, enumerate different principle sets and operate within distinct coverage, legal-basis, regulator and enforcement architectures; the shared concepts do not establish equivalent compliance outcomes.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+        "label": "Personal Data Protection Act — Taiwan Ministry of Justice"
+      },
+      {
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+        "label": "LGPD consolidated text — Presidency of Brazil"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-050",
+    "source": {
+      "type": "provision",
+      "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-5"
+    },
+    "target": {
+      "type": "provision",
+      "id": "hk-genai-employee-guidelines-checklist-2025-output-verification"
+    },
+    "type": "practice-guidance-alignment",
+    "directionality": "undirected",
+    "conceptIds": [
+      "human-oversight",
+      "continuous-assurance"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-public-sector-and-workplace-guidance-comparison",
+    "rationale": "Both official guidance sources require or recommend human verification of generative-AI output before consequential organizational reliance, while keeping responsibility with the human user or organization.",
+    "limits": "Taiwan's guidance addresses Executive Yuan agencies and official decision making, whereas Hong Kong's checklist addresses employer policies and employee use; neither mapping creates a general legal standard for all GenAI outputs.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.ey.gov.tw/Page/448DE008087A1971/40c1a925-121d-4b6b-8f40-7e9e1a5401f2",
+        "label": "Guidelines for Executive Yuan agencies using generative AI — Executive Yuan"
+      },
+      {
+        "url": "https://www.pcpd.org.hk/english/news_events/media_statements/press_20250331.html",
+        "label": "Checklist on Guidelines for the Use of Generative AI by Employees — Hong Kong PCPD"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-051",
+    "source": {
+      "type": "provision",
+      "id": "hk-ai-model-pd-protection-framework-2024-implementation-management"
+    },
+    "target": {
+      "type": "provision",
+      "id": "hk-personal-data-privacy-ordinance-dpp-4"
+    },
+    "type": "operationalizes",
+    "directionality": "directed",
+    "conceptIds": [
+      "security-controls"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "regulator-framework-to-statutory-principle-comparison",
+    "rationale": "The Hong Kong AI Model Framework's model-customisation, implementation and management practices provide AI-lifecycle methods that can support the technology-neutral security and processor-control duties in PDPO DPP 4.",
+    "limits": "The voluntary framework does not amend DPP 4, create a statutory safe harbour or prove compliance; whether its recommended testing, security, monitoring and supplier practices are sufficient depends on the particular data use and risks.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.pcpd.org.hk/english/resources_centre/publications/files/ai_protection_framework.pdf",
+        "label": "Artificial Intelligence: Model Personal Data Protection Framework — Hong Kong PCPD"
+      },
+      {
+        "url": "https://www.elegislation.gov.hk/hk/cap486",
+        "label": "Personal Data (Privacy) Ordinance (Cap. 486) — Hong Kong e-Legislation"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-052",
+    "source": {
+      "type": "provision",
+      "id": "hk-ethical-ai-guidance-2021-human-oversight"
+    },
+    "target": {
+      "type": "provision",
+      "id": "sg-model-ai-governance-framework-2020-human-involvement"
+    },
+    "type": "policy-framework-alignment",
+    "directionality": "undirected",
+    "conceptIds": [
+      "human-oversight",
+      "automated-decision-safeguards"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-voluntary-framework-comparison",
+    "rationale": "Both regulator-issued frameworks treat human involvement and oversight as risk- and context-sensitive governance choices for AI-supported decisions rather than as a single universal intervention model.",
+    "limits": "Their audiences, terminology, decision taxonomies and recommended controls differ, and neither framework becomes binding or mutually substitutable through this mapping; legal duties must still be assessed separately in each jurisdiction.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.pcpd.org.hk/english/resources_centre/publications/files/guidance_ethical_e.pdf",
+        "label": "Guidance on the Ethical Development and Use of AI — Hong Kong PCPD"
+      },
+      {
+        "url": "https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf",
+        "label": "Model AI Governance Framework, Second Edition — Singapore PDPC"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-053",
+    "source": {
+      "type": "provision",
+      "id": "vn-pdpl-implementing-decree-356-2025-arts-17-20"
+    },
+    "target": {
+      "type": "provision",
+      "id": "vn-personal-data-protection-law-2025-arts-20-22"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "cross-border-transfer",
+      "impact-assessment",
+      "accountability-governance"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "express-implementing-decree-and-parent-law-reading",
+    "rationale": "Decree No. 356/2025/ND-CP Articles 17–20 supply scenarios, dossier content, exemptions and update mechanics for the processing and cross-border assessment regime established by Law No. 91/2025/QH15 Articles 20–22.",
+    "limits": "The grouped nodes are editorial anchors and must not obscure article-specific conditions, exemptions, filing deadlines or update triggers; the Decree implements only the matters within its delegated scope and does not replace the parent Law.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Decree No. 356/2025/ND-CP — Government of Viet Nam"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Law No. 91/2025/QH15 on Personal Data Protection — Government of Viet Nam"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-054",
+    "source": {
+      "type": "instrument",
+      "id": "vn-pdpl-implementing-decree-356-2025"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "vn-personal-data-protection-decree-13-2023"
+    },
+    "type": "repeals",
+    "relationClass": "lifecycle",
+    "directionality": "directed",
+    "conceptIds": [],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "express-repeal-clause",
+    "rationale": "Article 42(2) of Decree No. 356/2025/ND-CP expressly repeals Decree No. 13/2023/ND-CP from 1 January 2026, making the older decree a historical rather than current compliance source.",
+    "limits": "This lifecycle edge does not assert that every provision in Decree 356 reproduces or directly replaces a matching provision in Decree 13; transition analysis must compare the new Law and Decree article by article.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Decree No. 356/2025/ND-CP — Government of Viet Nam"
+      },
+      {
+        "url": "https://congbaocdn.chinhphu.vn/180507251028987904/2026/1/17/356signed-1768638052103952849513.pdf",
+        "label": "Signed Decree No. 356/2025/ND-CP — Official Gazette of Viet Nam"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=207759&orggroupid=2&pageid=27160",
+        "label": "Decree No. 13/2023/ND-CP — Government of Viet Nam"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-055",
+    "source": {
+      "type": "provision",
+      "id": "vn-personal-data-protection-law-2025-art-23"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-33"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "incident-response"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "current-enacted-text-comparison",
+    "rationale": "Both provisions establish supervisory-authority notification pathways with a seventy-two-hour reference period after qualifying personal-data violations or breaches.",
+    "limits": "The event definitions, harm or risk thresholds, responsible actors, timing calculations, required content, delay treatment and separate notification to affected individuals differ; the shared time reference is not legal equivalence.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Law No. 91/2025/QH15 on Personal Data Protection — Government of Viet Nam"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_33/oj",
+        "label": "GDPR Article 33 — EUR-Lex"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-056",
+    "source": {
+      "type": "provision",
+      "id": "br-lgpd-2018-art-6"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-5"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "purpose-limitation",
+      "data-minimization",
+      "accountability-governance"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "authoritative-enacted-principle-comparison",
+    "rationale": "LGPD Article 6 and GDPR Article 5 each organize core personal-data processing principles, including purpose-related limits, necessity or minimisation and accountable handling.",
+    "limits": "The enumerated principles, terminology, legal effects, relationship to lawful bases, institutional context and enforcement doctrines differ; this provision-level mapping must not be presented as a claim that LGPD is equivalent to GDPR.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+        "label": "LGPD consolidated text — Presidency of Brazil"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_5/oj",
+        "label": "GDPR Article 5 — EUR-Lex"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-057",
+    "source": {
+      "type": "provision",
+      "id": "br-pl-2338-2023-ai-bill-arts-25-28"
+    },
+    "target": {
+      "type": "provision",
+      "id": "ca-bill-c-27-aida-2022-lapsed-proposed-ss-6-11"
+    },
+    "type": "historical-comparison",
+    "directionality": "undirected",
+    "conceptIds": [
+      "ai-risk-management"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "version-specific-official-bill-text-comparison",
+    "rationale": "Brazil's pending proposal and Canada's lapsed AIDA proposal both used risk-based organizational duties to identify, assess, mitigate or monitor AI-related harm and biased outcomes.",
+    "limits": "Neither endpoint is operative law: Brazil PL 2338 remains pending and may change, while Bill C-27 lapsed on 6 January 2025; their covered systems, actors, assessment forms, remedies and legislative versions differ materially.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=Tramitacao-PL+2338%2F2023",
+        "label": "PL 2338/2023 Senate-approved text received by the Brazilian Chamber"
+      },
+      {
+        "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+        "label": "Bill C-27 first-reading text — Parliament of Canada"
+      },
+      {
+        "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262",
+        "label": "PL 2338/2023 current legislative status — Chamber of Deputies of Brazil"
+      },
+      {
+        "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
+        "label": "Bill C-27 lapsed status — Parliament of Canada LEGISinfo"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-058",
+    "source": {
+      "type": "provision",
+      "id": "ae-federal-pdpl-45-2021-art-21"
+    },
+    "target": {
+      "type": "provision",
+      "id": "ng-data-protection-act-2023-s-28"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "impact-assessment"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-enacted-text-comparison",
+    "rationale": "UAE Federal PDPL Article 21 and Nigeria section 28 both require an impact assessment where personal-data processing may create high risk under their respective statutory tests.",
+    "limits": "Assessment triggers, required content, consultation rules, responsible actors, exemptions and regulator powers differ and require separate local analysis; completion under one regime does not satisfy the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+        "label": "Federal Decree-Law No. 45 of 2021 — UAE Legislation"
+      },
+      {
+        "url": "https://uaelegislation.gov.ae/ar/legislations/1972",
+        "label": "Federal Decree-Law No. 45 of 2021 — authoritative Arabic record"
+      },
+      {
+        "url": "https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf",
+        "label": "Nigeria Data Protection Act 2023 — NDPC official Gazette PDF"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-059",
+    "source": {
+      "type": "provision",
+      "id": "ae-dubai-ai-ethics-toolkit-2019-accountability"
+    },
+    "target": {
+      "type": "provision",
+      "id": "sa-sdaia-ai-ethics-principles-1-0-2023-accountability-responsibility"
+    },
+    "type": "policy-framework-alignment",
+    "directionality": "undirected",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-government-framework-comparison",
+    "rationale": "Both government-issued AI frameworks assign responsibility to human and organizational actors and connect accountable governance to roles across AI development, deployment, use or assessment.",
+    "limits": "Digital Dubai's toolkit is voluntary subnational ethics guidance, while SDAIA's national framework has mixed or unclear practical binding effect and a different risk and assessment structure; neither framework incorporates the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.digitaldubai.ae/docs/default-source/ai-principles-resources/ai-ethics.pdf",
+        "label": "Dubai AI Ethics Guidelines — Digital Dubai"
+      },
+      {
+        "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/ai-principles.pdf",
+        "label": "AI Ethics Principles Version 1.0 — SDAIA"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-060",
+    "source": {
+      "type": "provision",
+      "id": "ae-generative-ai-guide-2023-input-output-reliability"
+    },
+    "target": {
+      "type": "provision",
+      "id": "hk-genai-employee-guidelines-checklist-2025-output-verification"
+    },
+    "type": "practice-guidance-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "human-oversight"
+    ],
+    "status": "candidate",
+    "confidence": "low",
+    "evidenceBasis": "official-non-binding-guidance-theme-comparison",
+    "rationale": "The UAE guide's page 8 discussion of unreliable inputs and outputs and the Hong Kong employee checklist both call for human verification or fact checking before organizational reliance on generative-AI output.",
+    "limits": "The UAE guide is educational and use-case oriented, whereas the Hong Kong source is an employer-policy checklist; the edge compares output accuracy and human verification only and creates no legal duty or assurance result.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://ai.gov.ae/wp-content/uploads/2023/04/406.-Generative-AI-Guide_ver1-EN.pdf",
+        "label": "100 Practical Applications and Use Cases of Generative AI — UAE AI Office"
+      },
+      {
+        "url": "https://www.pcpd.org.hk/english/news_events/media_statements/press_20250331.html",
+        "label": "Checklist on Guidelines for the Use of Generative AI by Employees — Hong Kong PCPD"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-061",
+    "source": {
+      "type": "provision",
+      "id": "sa-pdpl-2021-amended-2023-art-11"
+    },
+    "target": {
+      "type": "provision",
+      "id": "br-lgpd-2018-art-6"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "purpose-limitation",
+      "data-minimization"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "current-enacted-text-principle-comparison",
+    "rationale": "Saudi PDPL Article 11 and Brazil LGPD Article 6 both connect collection or processing to specified purposes and necessity or proportionality limits on personal data.",
+    "limits": "Saudi Article 11 also addresses cessation and destruction, while LGPD Article 6 enumerates a broader principle set; their terminology, exceptions, legal bases, regulator guidance and enforcement consequences are not equivalent.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf",
+        "label": "Personal Data Protection Law — SDAIA official English text"
+      },
+      {
+        "url": "https://uqn.gov.sa/details?p=21671",
+        "label": "Saudi Personal Data Protection Law — Umm Al-Qura Official Gazette Arabic record"
+      },
+      {
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+        "label": "LGPD consolidated text — Presidency of Brazil"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-062",
+    "source": {
+      "type": "provision",
+      "id": "za-popia-4-2013-s-71"
+    },
+    "target": {
+      "type": "provision",
+      "id": "ch-fadp-2020-art-21"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "automated-decision-safeguards",
+      "transparency-explainability"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-enacted-text-comparison",
+    "rationale": "POPIA section 71 and Swiss FADP Article 21 both address qualifying automated individual decisions and provide individual-facing information or participation safeguards in covered circumstances.",
+    "limits": "POPIA provides representations and information on underlying logic but does not state the same human-review right as Swiss Article 21; triggers, exceptions, sectoral context and remedies differ, so neither regime substitutes for the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.gov.za/documents/protection-personal-information-act",
+        "label": "Protection of Personal Information Act — Government of South Africa"
+      },
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+        "label": "Federal Act on Data Protection — Fedlex official English translation"
+      },
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de",
+        "label": "Federal Act on Data Protection — authoritative German text"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-063",
+    "source": {
+      "type": "provision",
+      "id": "ng-data-protection-act-2023-s-28"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-35"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "impact-assessment"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-enacted-text-comparison",
+    "rationale": "Nigeria section 28 and GDPR Article 35 each require prior impact assessment where personal-data processing may create a high risk to individuals' rights or freedoms.",
+    "limits": "Their trigger wording, illustrative criteria, required assessment content, consultation rules, institutional roles and legal consequences differ; a completed assessment under one regime does not automatically satisfy the other.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf",
+        "label": "Nigeria Data Protection Act 2023 — NDPC official Gazette PDF"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_35/oj",
+        "label": "GDPR Article 35 — EUR-Lex"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-064",
+    "source": {
+      "type": "instrument",
+      "id": "us-co-sb26-189-admt-2026"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "us-co-sb24-205-2024"
+    },
+    "type": "repeals-and-reenacts",
+    "relationClass": "lifecycle",
+    "directionality": "directed",
+    "conceptIds": [],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "official-session-law-lineage",
+    "rationale": "Colorado SB26-189 repeals and reenacts the earlier SB24-205 statutory regime, replacing it with materially revised automated-decision-making technology scope and duties before the earlier principal obligations operated.",
+    "limits": "This is not a simple commencement-date amendment or a claim that every earlier section has a one-to-one successor; the 2026 law's definitions, actor coverage, duties, rights and enforcement design must be read independently.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://leg.colorado.gov/bills/sb26-189",
+        "label": "SB26-189 Automated Decision-Making Technology — Colorado General Assembly"
+      },
+      {
+        "url": "https://leg.colorado.gov/bills/sb24-205",
+        "label": "SB24-205 Consumer Protections for Artificial Intelligence — Colorado General Assembly"
+      },
+      {
+        "url": "https://leg.colorado.gov/bills/sb25b-004",
+        "label": "SB25B-004 delay of SB24-205 — Colorado General Assembly"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-065",
+    "source": {
+      "type": "provision",
+      "id": "us-co-sb26-189-admt-2026-developer-documentation"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-ai-act-art-13"
+    },
+    "type": "future-partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "transparency-explainability",
+      "human-oversight"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "enacted-developer-to-deployer-information-comparison",
+    "rationale": "Both sources require upstream actors to provide downstream users or deployers with information about intended use, system characteristics, limitations and human-oversight considerations.",
+    "limits": "Colorado's regime concerns covered automated decision-making technology and principal duties beginning 1 January 2027, while EU Article 13 applies to high-risk AI systems under a different provider-deployer framework, content standard and enforcement system.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://leg.colorado.gov/bills/sb26-189",
+        "label": "SB26-189 Automated Decision-Making Technology — Colorado General Assembly"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_13/oj",
+        "label": "EU AI Act Article 13 — EUR-Lex"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj",
+        "label": "EU AI Act Article 113 — application timetable"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-066",
+    "source": {
+      "type": "provision",
+      "id": "us-co-sb26-189-admt-2026-access-review"
+    },
+    "target": {
+      "type": "provision",
+      "id": "ch-fadp-2020-art-21"
+    },
+    "type": "future-partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "data-subject-rights",
+      "automated-decision-safeguards",
+      "human-oversight"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "enacted-future-duty-comparison",
+    "rationale": "Colorado's future-effective correction, data-request and commercially reasonable human-review component and Swiss FADP Article 21 both provide individual-facing participation or reconsideration safeguards for covered automated outcomes.",
+    "limits": "Colorado is sectorally framed around adverse consequential decisions and its principal duties begin in 2027; the Swiss trigger, information duties, opportunity to express a position and human-review right operate under different personal-data concepts and exceptions.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://leg.colorado.gov/bills/sb26-189",
+        "label": "SB26-189 Automated Decision-Making Technology — Colorado General Assembly"
+      },
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+        "label": "Federal Act on Data Protection — Fedlex official English translation"
+      },
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de",
+        "label": "Federal Act on Data Protection — authoritative German text"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-067",
+    "source": {
+      "type": "provision",
+      "id": "ch-fadp-2020-art-7"
+    },
+    "target": {
+      "type": "provision",
+      "id": "eu-gdpr-art-25"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "privacy-by-design-default",
+      "data-minimization"
+    ],
+    "status": "candidate",
+    "confidence": "high",
+    "evidenceBasis": "official-enacted-text-comparison",
+    "rationale": "Swiss FADP Article 7 and GDPR Article 25 both require data-protection considerations in technical and organizational design and privacy-protective default settings.",
+    "limits": "The legal tests, regulated actors, implementation factors, remedies, enforcement and interaction with each statute's broader principles differ; this strong conceptual overlap is not a finding of textual or compliance equivalence.",
+    "verifiedOn": "2026-07-19",
+    "sourceSupport": [
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+        "label": "Federal Act on Data Protection — Fedlex official English translation"
+      },
+      {
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de",
+        "label": "Federal Act on Data Protection — authoritative German text"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_25/oj",
+        "label": "GDPR Article 25 — EUR-Lex"
+      }
     ]
   }
 ]

@@ -9,9 +9,9 @@ The dataset snapshot is verified through **2026-07-19**. It is a research aid, n
 
 ## Snapshot scope
 
-The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 332 merged provision nodes, 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
+The current seed contains **30 jurisdiction or issuing-context records, 55 instruments, 308 curated provision records, 499 merged provision nodes, 67 qualified relations, 112 lifecycle events, 55 source-audit records, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision count overlays 99 imported GDPR Articles and 113 imported EU AI Act Articles with the curated file and de-duplicates shared EU anchor IDs; it is not the raw length of `provisions.json`.
 
-Complete locally stored Article coverage currently includes the GDPR (99 Articles), EU AI Act (113 Articles), and the current consolidated Chinese text of China's Cybersecurity Law (81 Articles, amended on 28 October 2025 and effective from 1 January 2026). Other instruments generally provide selected provision metadata, original editorial summaries, and official links. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
+Complete locally stored Article coverage currently includes the GDPR (99 Articles), the enacted 2024 EU AI Act text (113 Articles), and the current consolidated Chinese text of China's Cybersecurity Law (81 Articles, amended on 28 October 2025 and effective from 1 January 2026). Other instruments provide selected source-text records or source-linked editorial provision anchors. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
 
 ## Files
 
@@ -23,6 +23,7 @@ Complete locally stored Article coverage currently includes the GDPR (99 Article
 - `structure-summaries.json`: project-authored, high-level orientation summaries for rendered sections and framework roots, with source basis and editorial review metadata.
 - `relations.json`: qualified analytical edges between provision or instrument nodes.
 - `status-events.json`: dated lifecycle events such as adoption, entry into force, partial application, amendment, revocation, veto, and scheduled commencement.
+- `source-audit.json`: one structured source, lifecycle, language-authority, English-availability, local-coverage, and caveat record for every instrument.
 - `gdpr-articles.json`: generated complete GDPR Article corpus from EUR-Lex; produced by the EU-law import script.
 - `eu-ai-act-articles.json`: generated complete EU AI Act Article corpus from EUR-Lex; produced by the EU-law import script.
 
@@ -30,13 +31,13 @@ The two generated EU Article files are intentionally separate from this hand-cur
 
 ## Navigation and presentation contract
 
-The primary legal-system display order is fixed as **EU → US → China → UK → Canada → Japan → India**. California is a subnational record and is displayed under the US. **International / Frameworks / Soft law** is a parallel top-level browsing lane, not a fictional jurisdiction and not subordinate to any one national system.
+The primary display order is fixed as **EU → US → China → UK → Canada → Japan → India → Singapore → South Korea → Australia → Brazil → UAE → Saudi Arabia → Taiwan → Hong Kong SAR → Indonesia → Vietnam → South Africa → Nigeria → Switzerland → International / Frameworks / Soft law**. California and Colorado are displayed under the US; Dubai is displayed under the UAE. **International / Frameworks / Soft law** is a parallel browsing lane, not a fictional jurisdiction and not subordinate to any one national system.
 
-The left navigator has two peer browsing modes: **Legal Sources** and **Core Concepts**. Core Concepts is not a ninth jurisdiction or legal-source lane. It is an independent learning index organized by `concept-themes.json`; selecting a concept may reveal relevant instruments and provisions, but membership signals topical relevance rather than legal equivalence.
+The left navigator has two peer browsing modes: **Global Atlas** and **Core Concepts**. Core Concepts is an independent learning index organized by `concept-themes.json`; selecting a concept may reveal relevant instruments and provisions, but membership signals topical relevance rather than legal equivalence.
 
 That presentation lane is intentionally orthogonal to issuer metadata. NIST AI RMF, for example, retains its US issuing context and voluntary force even when surfaced beside ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process, and the UN Advisory Body's _Governing AI for Humanity_ report. These materials have different issuers, audiences, update processes, and legal effects; co-location supports discovery and does not imply equivalence.
 
-The frontend offers **Dark / Geek** and **Bright / Lawyer** modes. On wide layouts, the selected legal text or clearly labeled editorial summary occupies the center workspace and the animated relationship graph occupies the right workspace. National, regional, and subnational legal-system entries use their corresponding flags; international and standards contexts use issuer or framework icons rather than fictional flags. These cues supplement—not replace—accessible text labels and explicit legal-force/status wording.
+The frontend offers **Dark / Geek** and **Bright / Lawyer** modes. On wide layouts, the selected legal text or clearly labeled editorial summary occupies the center workspace and the animated relationship graph occupies the right workspace. Users can collapse or resize the side columns and use clickable breadcrumbs to return to any point in the current research path. National, regional, and subnational legal-system entries use their corresponding flags; international and standards contexts use issuer or framework icons rather than fictional flags. These cues supplement—not replace—accessible text labels and explicit legal-force/status wording.
 
 ## Stable IDs
 
@@ -80,7 +81,7 @@ Core fields:
 - `parentInstrumentId`: parent rulemaking instrument where appropriate.
 - `topicIds`: concept IDs for browsing.
 - `summary` and `statusNote`: project-authored descriptions.
-- `source`: official URL, publisher label, and access date.
+- `source`: primary official URL, publisher label, and access date. Optional `supportingSource`, `amendmentSource`, `originalLanguageSource`, and `referenceTranslationSource` records keep companion, lifecycle, authoritative-language, and English-reference materials distinct.
 - `textAvailability`: where text exists and whether this repository stores it.
 
 `lifecycleStatus` is deliberately more expressive than a single `active` flag. For example:
@@ -104,13 +105,27 @@ Each provision contains:
 - `actorTags` and `scopeTags`: lightweight facets for filtering and comparison.
 - `legalEffectStatus`: provision-level status, which may differ from the parent instrument.
 - `appliesFrom`: provision-specific application date when known.
+- `versionAsOf`: date on which a source-linked editorial anchor was verified against the identified instrument version. It is not a substitute for `appliesFrom`.
 - `textAvailability`: text mode, storage flag, language, and an explicit caveat.
 - `paragraphs` and `fullText`: present only when verified source text is stored. `fullText` is the paragraph sequence joined with blank lines. `official-original-text-stored` denotes a complete original-language provision; `official-original-excerpt-stored` denotes an expressly identified extract rather than a complete section.
 - `translations`: language-keyed renderings kept separate from the controlling source text. A `reference` translation is explicitly non-official, preserves one-to-one paragraph alignment, and may not be presented as authoritative law.
 - `source`: official provision or instrument source.
+- `supportingSources`: optional provision-specific evidence, such as a court decision or companion implementation document.
 - `editorial`: review status, review date, and a caveat.
 
 The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English editorial summaries, and English reference translations remain separate fields. All 81 Articles of the current consolidated Chinese Cybersecurity Law are stored from the official Chinese publication. The other indexed Chinese laws contain selected verified Articles rather than complete Acts. The Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, distinguish a stored extract from a complete provision, and mark every `reference` translation as non-official.
+
+## `source-audit.json`
+
+Every instrument has exactly one audit companion containing:
+
+- `reviewedOn` and `reviewLevel`;
+- `lifecycleFinding` and `versionFinding`;
+- `authoritativeLanguage` and `englishAvailability`;
+- `localCoverage`;
+- official `sources` and instrument-specific `caveats`.
+
+The current coverage distribution is three complete Article corpora, five selected-source-text-and-index records, and 47 selected-provision indexes based on editorial summaries and official links. All 55 audit records use `primary-source-metadata-and-anchor-review`: lifecycle, version metadata, selected anchors, and cited official sources were reviewed. This does not mean that all 55 instruments received complete clause-by-clause transcription, translation, or expert legal opinion.
 
 ## `concepts.json`
 
@@ -157,7 +172,8 @@ Each relation also records:
 
 - `type`: a descriptive edge such as `partial-overlap`, `soft-law-alignment`, `shared-legal-origin`, `implements`, or `policy-transition`.
 - `directionality`: `directed` or `undirected`.
-- `conceptIds`: concepts explaining why the nodes are connected.
+- `relationClass`: omitted or `analytical` for substantive mappings; `lifecycle` for legal-lineage edges such as repeal, reenactment, or policy transition.
+- `conceptIds`: concepts explaining why analytically mapped nodes are connected. Lifecycle edges deliberately use an empty array because legal lineage does not itself assert substantive concept equivalence.
 - `status`: `candidate` or `editorial-reviewed` in this seed.
 - `confidence`: qualitative `low`, `medium`, or `high`. This is confidence in the usefulness of the asserted relation, **not a percentage of legal equivalence**.
 - `evidenceBasis`: how the edge was derived.
@@ -197,20 +213,30 @@ The seed currently uses these modes:
 - `official-paid-standard-access-linked` or `official-publication-access-linked`: an official standards publisher controls access or reuse; the seed stores original editorial metadata and links the authorized access page without copying the publication.
 - `government-reference-translation-linked`: a government-hosted translation is useful but is not the authoritative legal text.
 - `official-bill-text-linked`: official legislative text that did not necessarily become law.
+- `official-source-linked-editorial-summary`: the controlling or reference source is linked, while the local provision node contains a dated English editorial summary rather than quoted legal text.
 
-`stored: false` means the interface must not claim that the repository contains the full text. It may fetch or open the official source, subject to product architecture, source terms, and version controls.
+`stored: false` means the interface must not claim that the repository contains the full text. Where verified original-language text is stored, the UI defaults to English and reveals the original only after an explicit user selection. Where it is not stored, an English editorial summary must not be presented as a translation; the official source remains the path to the complete wording.
 
 ## Important caveats in this snapshot
 
-1. **EU phased application:** On 19 July 2026, the EU AI Act is in force but not yet generally applicable. Article-level status must follow Article 113 and transitional provisions.
-2. **US history:** EO 14110 was revoked on 20 January 2025. California SB 1047 was vetoed on 29 September 2024. Both are valuable historical nodes and neither is current law.
-3. **China numbering:** The amended Cybersecurity Law took effect on 1 January 2026. Current Article 23 corresponds to former Article 21, and current Article 44 corresponds to former Article 42. Never mix old and new locators without version metadata.
-4. **UK divergence:** UK GDPR shares an origin with EU GDPR but has a separate amendment and interpretation history. The Data (Use and Access) Act 2025 has phased commencement; compare revised texts at a specified date.
-5. **Japan translation:** The linked APPI English text is a government reference translation whose displayed last version is Act No. 37 of 2021. Authoritative and later version-sensitive work requires Japanese sources and current Personal Information Protection Commission materials.
-6. **Canada scope:** PIPEDA interacts with provincial privacy laws. The Directive on Automated Decision-Making is mandatory policy for covered federal institutions and systems, not a generally applicable private-sector AI statute.
-7. **India commencement:** As of the snapshot date, many core DPDP duties and operational Rules are enacted/made but scheduled for 14 May 2027. The interface must distinguish “future commencement” from “in force.”
-8. **Soft law and standards:** Hiroshima AI Process documents, the Bletchley Declaration, OECD AI Principles, NIST AI RMF, IEEE Ethically Aligned Design, ISO/IEC 42001, Japan's AI Guidelines for Business, and the UN Advisory Body report have different issuers, audiences, revision processes, and legal effects. Similar language does not erase those differences.
-9. **Official text and copyright:** This seed links official sources and avoids reproducing unverified or potentially restricted full text. ISO/IEC 42001 and IEEE Ethically Aligned Design are represented only through project-authored summaries, metadata, and official access links—not copied publication text.
+1. **EU AI Act amendment boundary:** Regulation (EU) 2024/1689 remained the operative stored text on 19 July 2026. The Digital Omnibus on AI had received final Council approval and a signed final text, but the snapshot had not identified an Official Journal legal-act record bringing that amendment into force. Do not rewrite the stored 2024 Articles before publication and entry into force are verified.
+2. **Historical and phased US nodes:** EO 14110 was revoked on 20 January 2025; California SB 1047 was vetoed on 29 September 2024; Colorado SB 24-205 was superseded before its principal duties operated. Specified SB 26-189 provisions took effect on 14 May 2026, while principal regulated-actor duties begin on 1 January 2027.
+3. **China versioning:** The amended Cybersecurity Law took effect on 1 January 2026 and contains 81 Articles. Pre-2026 locators must not be mixed with current numbering without version metadata. Chinese official text controls; local English renderings are non-official reference translations.
+4. **UK divergence:** UK GDPR has a separate amendment and interpretation history from EU GDPR. The majority of DUAA 2025 Part 5 privacy changes took effect on 5 February 2026 and section 103 followed on 19 June 2026.
+5. **Canada:** Bill C-27 and proposed AIDA lapsed on prorogation on 6 January 2025 and never became law. The federal Directive on Automated Decision-Making is mandatory only within its government-policy scope; its transition for older systems ended on 24 June 2026.
+6. **Japan:** Japanese APPI text controls and the government English reference translation remains versioned to Act No. 37 of 2021. A 2026 amendment was promulgated on 17 July 2026 but is predominantly subject to future staged commencement.
+7. **India:** The DPDP Act and Rules use phased commencement; many substantive duties and operational Rules are scheduled for 14 May 2027. The Act does not create a GDPR Article 22-style general automated-decision right.
+8. **South Korea:** The AI Framework Act has been in force since 22 January 2026 and is not a draft. A final indexed amendment phase was scheduled for 21 July 2026, after the legal-status cut-off. PIPA also has future 2026 and 2027 amendment phases.
+9. **Australia:** The 2024 mandatory-guardrails consultation did not become a cross-sector mandatory AI regime. The 2025 Guidance for AI Adoption is voluntary. Privacy Act automated-decision transparency changes remain future-effective until 10 December 2026.
+10. **Brazil:** LGPD is current binding law, while PL 2338/2023 remains pending. The current Portuguese consolidation controls; the official English LGPD publication is a dated translation snapshot.
+11. **Taiwan:** The AI Basic Act was promulgated and effective on 14 January 2026 and is not a draft. PDPA provisions promulgated in 2023 and 2025 include amendments that remain uncommenced.
+12. **Hong Kong SAR:** PDPO section 33 has never commenced and must not be represented as an operative transfer or localization prohibition.
+13. **Indonesia:** The PDP Law has been in force since 17 October 2022 and its adjustment period has ended. Article 53 must be read with Constitutional Court Decision 151/PUU-XXII/2024, which conditionally construed `dan` as `dan/atau`.
+14. **Vietnam:** Law No. 91/2025/QH15 and Decree No. 356/2025/ND-CP form the current regime from 1 January 2026. Decree 13/2023 was repealed on that date; the regime is not accurately summarized as blanket data localization.
+15. **Middle East frameworks:** UAE and Dubai AI materials in this corpus are guidance rather than federal legislation. SDAIA AI Ethics Principles mix mandatory and recommendatory language; practical effect must be assessed by actor, risk tier, and implementing requirements.
+16. **Africa:** POPIA is in force; section 58(2)'s applicability to section 57 processing was deferred to 1 February 2022. Nigeria's NDPA commenced on assent on 12 June 2023, while its Gazette publication is dated 1 July 2023.
+17. **Switzerland:** The revised FADP has applied since 1 September 2023. German, French, and Italian Fedlex texts are authoritative; the official English translation is non-authoritative.
+18. **Soft law, standards, and reuse:** Frameworks, standards, declarations, testing tools, reports, and guidance have different issuers, audiences, update processes, legal effects, and reuse terms. A graph edge never establishes equivalence or compliance. ISO/IEC 42001 and IEEE Ethically Aligned Design are represented through project-authored summaries, metadata, and official links—not copied publication text.
 
 ## Suggested UI merge order
 
@@ -222,8 +248,21 @@ The seed currently uses these modes:
    - never replace official text with a summary.
 4. Load `structure-summaries.json`, validate each `instrumentId`, `structureId`, concept, and source-basis provision reference, and attach it to the matching rendered structural node.
 5. Resolve all relation endpoints against the combined instrument/provision graph.
-6. Apply `status-events.json` to the selected timeline date.
-7. Render legal force, lifecycle status, source, rationale, and limits as first-class visual information.
+6. Load `source-audit.json` and attach each audit to its instrument without treating the audit record as source text.
+7. Apply `status-events.json` to the selected timeline date.
+8. Render legal force, lifecycle status, language authority, local coverage, source, rationale, and limits as first-class visual information.
+
+## Reproducible maintenance
+
+After changing reviewed expansion metadata, rebuild derived records in order:
+
+```bash
+node scripts/expand-global-corpus.mjs
+node scripts/build-source-audit.mjs
+pnpm validate:data
+```
+
+The scripts reproduce reviewed data; they do not browse, independently determine current law, prove translation accuracy, or replace expert legal review. Structural validation checks IDs, references, dates, coverage declarations, lifecycle events, relation vocabulary, graph coverage, and audit companions.
 
 ## Contribution checks
 

@@ -44,7 +44,10 @@ const corpusCounts = {
 };
 const instrumentById = new Map(instruments.map((item) => [item.id, item]));
 const jurisdictionById = new Map(jurisdictions.map((item) => [item.id, item]));
-const topLevelGroupOrder = ["eu", "us", "cn", "gb", "ca", "jp", "in", "frameworks"];
+const topLevelGroupOrder = [
+  "eu", "us", "cn", "gb", "ca", "jp", "in", "sg", "kr", "au", "br",
+  "ae", "sa", "tw", "hk", "id", "vn", "za", "ng", "ch", "frameworks",
+];
 const frameworkInstrumentIds = [
   "us-nist-ai-rmf-1-0",
   "jp-ai-guidelines-business-1-2",
@@ -54,6 +57,16 @@ const frameworkInstrumentIds = [
   "ieee-ethically-aligned-design-2019",
   "oecd-ai-principles",
   "int-bletchley-declaration-2023",
+  "sg-model-ai-governance-framework-2020",
+  "sg-ai-verify-testing-framework",
+  "au-guidance-for-ai-adoption-2025",
+  "ae-dubai-ai-ethics-toolkit-2019",
+  "ae-generative-ai-guide-2023",
+  "sa-sdaia-ai-ethics-principles-1-0-2023",
+  "tw-executive-yuan-generative-ai-guidelines-2023",
+  "hk-ai-model-pd-protection-framework-2024",
+  "hk-ethical-ai-guidance-2021",
+  "hk-genai-employee-guidelines-checklist-2025",
 ];
 const expectedFlagCodes = new Map([
   ["eu", "EU"],
@@ -63,6 +76,19 @@ const expectedFlagCodes = new Map([
   ["ca", "CA"],
   ["jp", "JP"],
   ["in", "IN"],
+  ["sg", "SG"],
+  ["kr", "KR"],
+  ["au", "AU"],
+  ["br", "BR"],
+  ["ae", "AE"],
+  ["sa", "SA"],
+  ["tw", "TW"],
+  ["hk", "HK"],
+  ["id", "ID"],
+  ["vn", "VN"],
+  ["za", "ZA"],
+  ["ng", "NG"],
+  ["ch", "CH"],
 ]);
 const expectedIssuerMarks = new Map([
   ["int", ["International frameworks and soft law", "INT"]],
@@ -189,7 +215,7 @@ test("server renders a neutral global regulatory atlas", async () => {
     text,
     /Browse primary legal sources, executive action, proposed legislation, standards and soft law through a versioned comparative index\./i,
   );
-  assert.match(text, /7 legal systems/i);
+  assert.match(text, /20 legal systems/i);
   assert.match(
     text,
     new RegExp(`${frameworkInstrumentIds.length} frameworks`, "i"),
@@ -260,7 +286,10 @@ test("server output exposes semantic atlas controls and the relation globe", asy
     html,
     /<div[^>]*class="theme-switch"[^>]*role="group"[^>]*aria-label="Color theme"/i,
   );
-  assert.match(html, /<section[^>]*class="workspace"[^>]*aria-label="Regulation visualization"/i);
+  assert.match(
+    html,
+    /<section(?=[^>]*class="[^"]*\bworkspace\b[^"]*")(?=[^>]*aria-label="Regulation visualization")[^>]*>/i,
+  );
   assert.match(
     html,
     /<section[^>]*aria-labelledby="regulation-globe-heading"/i,
@@ -370,7 +399,7 @@ test("server output preserves jurisdiction order, inline flags, issuer marks, an
   assert.deepEqual(
     [...renderedFlagCodes].sort(),
     [...expectedFlagCodes.values()].sort(),
-    "all seven primary legal systems must render their intended flag code",
+    "all primary legal systems must render their intended flag code",
   );
 
   for (const [jurisdictionId, flagCode] of expectedFlagCodes) {

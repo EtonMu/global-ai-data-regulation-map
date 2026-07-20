@@ -8,32 +8,38 @@ The project combines a visual regulatory atlas, complete article navigation for 
 
 ## What you can explore
 
-- **Global Atlas** — browse legal systems and international frameworks in a fixed, documented comparative order, or rotate a border-free point-cloud globe whose land pattern is derived from Natural Earth physical geography.
+- **Global Atlas** — browse legal systems and international frameworks in a fixed, documented comparative order, or rotate a stationary, user-controlled, border-free point-cloud globe whose land pattern is derived from Natural Earth physical geography. Jurisdiction tags support hover, focus, and direct navigation; the compass restores the canonical orientation.
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
-- **Provision Reader** — read the selected legal text or clearly labeled editorial summary in the center workspace; stored Chinese and Japanese originals can switch to separately labeled English translations.
+- **Provision Reader** — read stored legal text or a clearly labelled editorial summary. Where verified original-language text is stored, the reader defaults to an English view and exposes the original language only after the user selects it. Official English text, official but non-authoritative translations, reference translations, and editorial English summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
 - **Corpus search** — find instruments and provisions by title, locator, jurisdiction, or regulatory concept.
+- **Workspace controls** — use clickable breadcrumbs to return to any point in the current research path; on desktop, collapse or resize the left and right columns by pointer or keyboard.
 - **Two visual modes** — switch between a near-black **Dark / Geek** workspace and a restrained, paper-like **Bright / Lawyer** workspace without changing the underlying data.
 
-The legal-source navigation uses a fixed order—**EU, US, China, UK, Canada, Japan, India**—with California nested under the US. **International / Frameworks / Soft law** is a parallel top-level lane, not a country and not a child of any one national system. A peer **Core Concepts** sidebar index organizes sourced learning summaries by theme without presenting concepts as jurisdictions or legal instruments. Each national, regional, or subnational legal-system entry is paired with its flag; international and standards contexts use issuer or framework icons rather than fictional flags. Instrument-type icons, status symbols, and relation cues provide further orientation without replacing text labels. The bounded, animated graph presents one-hop relationships while preserving readable labels and qualified mapping metadata.
+The Global Atlas uses the documented display order **EU → US → China → UK → Canada → Japan → India → Singapore → South Korea → Australia → Brazil → UAE → Saudi Arabia → Taiwan → Hong Kong SAR → Indonesia → Vietnam → South Africa → Nigeria → Switzerland → International / Frameworks / Soft law**. California and Colorado remain nested under the United States, and Dubai remains nested under the UAE. The final lane is parallel to national and regional legal systems. It contains internationally issued materials as well as national voluntary frameworks, guidance, and testing tools whose issuer metadata remains attached to each instrument. Placement supports discovery and does not imply common legal force, institutional origin, or equivalence.
 
 ## V2 corpus snapshot
 
-The current dataset was reviewed through **2026-07-19** and contains:
+The legal-source and lifecycle snapshot is verified through **2026-07-19**. Relation records carry their own `verifiedOn` dates; analytical work does not silently advance the underlying legal-status cut-off.
 
-- 15 jurisdiction, subnational, or institutional-context nodes;
-- 23 instruments across the EU, United States and California, China, the United Kingdom, Canada, Japan, India, and international or standards contexts;
-- 332 unified provision nodes after merging generated and curated records;
-- 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated high-level structure summaries;
-- all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications;
-- all **81 articles of China's Cybersecurity Law as amended in 2025 and effective from 1 January 2026**, with the current official Chinese text, official chapter/section structure, and clearly identified non-official English reference translations.
+The runtime dataset contains:
 
-The 23-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, standards, soft law, declarations, and an advisory report. Its framework and soft-law coverage includes **NIST AI RMF 1.0, ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process,** and the **UN Advisory Body's _Governing AI for Humanity_** report. Legal force and lifecycle status are first-class data—not styling trivia.
+- **30 jurisdiction and issuing-context records**;
+- **55 instruments** spanning the EU, United States and its indexed state systems, China, the United Kingdom, Canada, Japan, India, Singapore, South Korea, Australia, Brazil, the UAE, Saudi Arabia, Taiwan, Hong Kong SAR, Indonesia, Vietnam, South Africa, Nigeria, Switzerland, and international or standards contexts;
+- **308 curated provision records**, producing **499 unique merged provision nodes** after overlaying the 99-Article GDPR and 113-Article EU AI Act imports and de-duplicating shared EU anchors;
+- **67 qualified relations**—44 candidate and 23 editorial-reviewed—plus **112 lifecycle events**;
+- **55 instrument-level source-audit records**, 23 controlled core concepts in 7 themes, and 34 curated structure summaries.
 
-Complete stored article corpora are currently limited to the GDPR, EU AI Act, and the current 81-article Chinese Cybersecurity Law. Selected Chinese and Japanese provisions from other instruments also include verified original-language text and labeled English reference translations. For most remaining instruments, the repository provides structured metadata, editorial summaries, and official links rather than copying source text. The EU imports include enacted article text and structural hierarchy; recitals, signatures, and footnotes remain at EUR-Lex.
+Local text completeness is intentionally narrower than instrument breadth. Complete locally stored Article coverage is limited to:
+
+- all 99 operative GDPR Articles from the official English EUR-Lex publication;
+- all 113 Articles of the enacted 2024 EU AI Act text from EUR-Lex;
+- all 81 Articles of the Chinese Cybersecurity Law consolidation effective 1 January 2026, stored in Chinese with aligned, expressly non-official English reference translations.
+
+“Complete Article coverage” does not include recitals, annexes, signatures, footnotes, amendment decisions, or every implementing instrument unless separately stated. Of the remaining instruments, some contain selected verified source-text records alongside an index; most contain selected source-linked provision or framework nodes expressed as editorial summaries. Those records support navigation and comparison and are not complete local reproductions. `source-audit.json` records the boundary separately for every instrument.
 
 ## Why qualified mappings matter
 
@@ -66,7 +72,7 @@ The tool is not a substitute for applicability analysis, regulatory monitoring, 
 
 The same title can have a different legal effect at different dates. V2 separates adoption, publication, entry into force, general application, cessation, and provision-specific application dates. It also preserves historically useful nodes.
 
-Examples in this snapshot include a partially applicable EU AI Act, a revoked EO 14110, a vetoed California SB 1047, phased Indian DPDP legislation, and voluntary or advisory frameworks. UK GDPR and EU GDPR share an origin but have separate amendment and interpretation histories. Translations and consolidated texts may also lag the legally authoritative version.
+Examples include a partially applicable EU AI Act, revoked EO 14110, vetoed California SB 1047, lapsed Canadian AIDA proposal, superseded Colorado SB 24-205, future-effective Colorado SB 26-189 duties, phased Indian DPDP legislation, enacted Taiwan and Korean AI framework laws, a repealed Vietnamese decree, and voluntary or advisory frameworks. UK GDPR and EU GDPR share an origin but have separate amendment and interpretation histories. Translations and consolidated texts may also lag the legally authoritative version.
 
 Status fields are editorial conclusions as of a recorded date. The event stream explains those conclusions but is not a complete legislative history. See the [V2 dataset guide](data/v2/README.md) for instrument-specific caveats.
 
@@ -92,14 +98,34 @@ data/v2/
   structure-summaries.json   curated section/framework orientation summaries
   relations.json             qualified provision/instrument edges
   status-events.json         auditable lifecycle events
+  source-audit.json          one source and coverage audit per instrument
 scripts/
+  expand-global-corpus.mjs   reproduces the reviewed 32-instrument expansion
+  build-source-audit.mjs     rebuilds structured instrument audit companions
   import-eu-law.py           EUR-Lex XHTML article importer
   validate-data.mjs          dataset integrity checks
+research/
+  existing-corpus-audit.md   official-source review of the original corpus
+  apac-legal-source-audit.md APAC source, version, language, and lifecycle research
+  ame-legal-source-audit.md  Americas, Middle East, Africa, and Swiss research
+  proposed-new-relations.json reviewed input for the expanded relation set
 ```
 
 At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
 
 The frontend is built with React, TypeScript, D3 geographic primitives, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
+
+## Reproducible corpus maintenance
+
+After changing reviewed expansion metadata, rebuild the derived files in this order:
+
+```bash
+node scripts/expand-global-corpus.mjs
+node scripts/build-source-audit.mjs
+pnpm validate:data
+```
+
+The expansion script does not browse the web or independently determine current law. The audit builder synchronizes reviewed metadata and coverage declarations; it is not an automated legal or clause-by-clause verifier. Validation checks structure, references, declared coverage, lifecycle-event presence, graph coverage, and audit completeness, but cannot prove legal accuracy or currentness.
 
 ## Run locally
 

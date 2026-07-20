@@ -4,7 +4,10 @@
     "shortTitle": "GDPR",
     "title": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
     "jurisdictionId": "eu",
-    "issuingBodies": ["European Parliament", "Council of the European Union"],
+    "issuingBodies": [
+      "European Parliament",
+      "Council of the European Union"
+    ],
     "category": "regulation",
     "hierarchyLevel": "supranational-regulation",
     "legalForce": "binding",
@@ -19,7 +22,13 @@
     },
     "version": "Official Journal text; current consolidated status must be checked on EUR-Lex",
     "parentInstrumentId": null,
-    "topicIds": ["automated-decision-safeguards", "impact-assessment", "security-controls", "incident-response", "cross-border-transfer"],
+    "topicIds": [
+      "automated-decision-safeguards",
+      "impact-assessment",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
     "summary": "EU-wide rules governing the processing of personal data and the protection of natural persons.",
     "statusNote": "In force and generally applicable since 25 May 2018.",
     "source": {
@@ -39,7 +48,10 @@
     "shortTitle": "EU AI Act",
     "title": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence",
     "jurisdictionId": "eu",
-    "issuingBodies": ["European Parliament", "Council of the European Union"],
+    "issuingBodies": [
+      "European Parliament",
+      "Council of the European Union"
+    ],
     "category": "regulation",
     "hierarchyLevel": "supranational-regulation",
     "legalForce": "binding-phased",
@@ -52,11 +64,19 @@
       "generalApplicationFrom": "2026-08-02",
       "ceasedOn": null
     },
-    "version": "Official Journal text",
+    "version": "Regulation (EU) 2024/1689 Official Journal text; Digital Omnibus on AI finally adopted in June 2026 with final text PE 30 2026 REV 1, pending an Official Journal legal-act record in this snapshot",
     "parentInstrumentId": null,
-    "topicIds": ["ai-risk-management", "impact-assessment", "transparency-explainability", "human-oversight", "training-data-governance", "security-controls", "frontier-model-safety"],
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "transparency-explainability",
+      "human-oversight",
+      "training-data-governance",
+      "security-controls",
+      "frontier-model-safety"
+    ],
     "summary": "Risk-tiered EU rules for placing AI systems on the market, putting them into service, deploying them, and governing general-purpose AI models.",
-    "statusNote": "In force with phased application. Chapters I and II applied from 2 February 2025; further listed provisions applied from 2 August 2025; general application is 2 August 2026, while Article 6(1) and corresponding obligations apply from 2 August 2027.",
+    "statusNote": "In force with phased application under the 2024 text. Chapters I and II applied from 2 February 2025 and further listed provisions from 2 August 2025. The Digital Omnibus on AI received final Council approval on 29 June 2026 and its final legislative text is dated 8 July 2026; this snapshot does not apply its revised dates until publication and entry into force are confirmed in the Official Journal.",
     "source": {
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
       "label": "EUR-Lex",
@@ -67,6 +87,11 @@
       "stored": false,
       "language": "en",
       "note": "Complete Article records are generated separately from EUR-Lex in eu-ai-act-articles.json."
+    },
+    "amendmentSource": {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=consil%3APE_30_2026_REV_1",
+      "label": "EUR-Lex — Digital Omnibus on AI final legislative text, PE 30 2026 REV 1",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -74,7 +99,9 @@
     "shortTitle": "EO 14110",
     "title": "Executive Order 14110 — Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence",
     "jurisdictionId": "us",
-    "issuingBodies": ["President of the United States"],
+    "issuingBodies": [
+      "President of the United States"
+    ],
     "category": "executive-order",
     "hierarchyLevel": "federal-executive-order",
     "legalForce": "binding-on-executive-branch-when-active",
@@ -89,7 +116,12 @@
     },
     "version": "Historical Federal Register text",
     "parentInstrumentId": null,
-    "topicIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "accountability-governance"],
+    "topicIds": [
+      "frontier-model-safety",
+      "ai-risk-management",
+      "security-controls",
+      "accountability-governance"
+    ],
     "summary": "A former whole-of-government AI order that directed federal agencies on safety testing, reporting, standards, civil rights, procurement, and sectoral uses.",
     "statusNote": "Revoked on 20 January 2025 by Executive Order 14148. It is retained as a historical policy node, not presented as current law.",
     "source": {
@@ -102,6 +134,11 @@
       "stored": false,
       "language": "en",
       "note": "Historical full text is available from the Federal Register."
+    },
+    "amendmentSource": {
+      "url": "https://www.federalregister.gov/documents/2025/01/28/2025-01901/initial-rescissions-of-harmful-executive-orders-and-actions",
+      "label": "Executive Order 14148 revoking Executive Order 14110 — Federal Register",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -109,7 +146,9 @@
     "shortTitle": "EO 14179",
     "title": "Executive Order 14179 — Removing Barriers to American Leadership in Artificial Intelligence",
     "jurisdictionId": "us",
-    "issuingBodies": ["President of the United States"],
+    "issuingBodies": [
+      "President of the United States"
+    ],
     "category": "executive-order",
     "hierarchyLevel": "federal-executive-order",
     "legalForce": "binding-on-executive-branch",
@@ -124,9 +163,12 @@
     },
     "version": "Federal Register text",
     "parentInstrumentId": null,
-    "topicIds": ["accountability-governance", "global-coordination"],
+    "topicIds": [
+      "accountability-governance",
+      "global-coordination"
+    ],
     "summary": "Sets the executive branch policy of sustaining and enhancing US AI leadership and directed preparation of an AI Action Plan and review of actions taken under revoked EO 14110.",
-    "statusNote": "Included to make the federal policy transition from revoked EO 14110 visible; later executive actions may add topic-specific requirements.",
+    "statusNote": "EO 14179 remains in force within its executive-branch scope, but it is not the whole current federal AI-policy picture and is not a private-sector AI statute. Later executive orders, national-security directives, and unenacted legislative recommendations must be modeled as separate instruments rather than silently incorporated here.",
     "source": {
       "url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence",
       "label": "Federal Register",
@@ -144,7 +186,9 @@
     "shortTitle": "California SB 1047",
     "title": "SB 1047 (2023–2024) — Safe and Secure Innovation for Frontier Artificial Intelligence Models Act",
     "jurisdictionId": "us-ca",
-    "issuingBodies": ["California Legislature"],
+    "issuingBodies": [
+      "California Legislature"
+    ],
     "category": "bill",
     "hierarchyLevel": "state-bill",
     "legalForce": "not-enacted",
@@ -159,7 +203,12 @@
     },
     "version": "Enrolled bill; vetoed",
     "parentInstrumentId": null,
-    "topicIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "incident-response"],
+    "topicIds": [
+      "frontier-model-safety",
+      "ai-risk-management",
+      "security-controls",
+      "incident-response"
+    ],
     "summary": "A California frontier-model safety bill that reached the Governor but did not become law.",
     "statusNote": "Vetoed by the Governor on 29 September 2024. Proposed duties must never be displayed as current California law.",
     "source": {
@@ -179,7 +228,9 @@
     "shortTitle": "NIST AI RMF 1.0",
     "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
     "jurisdictionId": "us",
-    "issuingBodies": ["National Institute of Standards and Technology"],
+    "issuingBodies": [
+      "National Institute of Standards and Technology"
+    ],
     "category": "risk-management-framework",
     "hierarchyLevel": "federal-voluntary-framework",
     "legalForce": "voluntary",
@@ -194,9 +245,15 @@
     },
     "version": "1.0",
     "parentInstrumentId": null,
-    "topicIds": ["ai-risk-management", "impact-assessment", "accountability-governance", "transparency-explainability", "security-controls"],
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "accountability-governance",
+      "transparency-explainability",
+      "security-controls"
+    ],
     "summary": "A voluntary, rights-preserving, non-sector-specific framework organized around GOVERN, MAP, MEASURE, and MANAGE functions.",
-    "statusNote": "Voluntary framework; use may support risk management but does not itself establish legal compliance.",
+    "statusNote": "AI RMF 1.0 remains NIST's current published voluntary core framework while a revision is in progress. Profiles and the Playbook are separate resources and do not silently replace the core or establish legal compliance.",
     "source": {
       "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
       "label": "NIST",
@@ -207,6 +264,11 @@
       "stored": false,
       "language": "en",
       "note": "Official publication and PDF are linked from NIST."
+    },
+    "amendmentSource": {
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "label": "NIST AI Risk Management Framework hub — current framework and revision status",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -215,7 +277,9 @@
     "title": "Personal Information Protection Law of the People's Republic of China",
     "originalTitle": "中华人民共和国个人信息保护法",
     "jurisdictionId": "cn",
-    "issuingBodies": ["Standing Committee of the National People's Congress"],
+    "issuingBodies": [
+      "Standing Committee of the National People's Congress"
+    ],
     "category": "law",
     "hierarchyLevel": "national-law",
     "legalForce": "binding",
@@ -230,12 +294,18 @@
     },
     "version": "Official Chinese text published in 2021",
     "parentInstrumentId": null,
-    "topicIds": ["automated-decision-safeguards", "impact-assessment", "security-controls", "incident-response", "cross-border-transfer"],
+    "topicIds": [
+      "automated-decision-safeguards",
+      "impact-assessment",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
     "summary": "China's comprehensive national law governing the processing and protection of personal information.",
     "statusNote": "The seed links the authoritative Chinese text; English summaries are editorial and are not official translations.",
     "source": {
-      "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
-      "label": "Cyberspace Administration of China",
+      "url": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+      "label": "National People's Congress — authoritative Chinese text",
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
@@ -251,7 +321,9 @@
     "title": "Cybersecurity Law of the People's Republic of China",
     "originalTitle": "中华人民共和国网络安全法",
     "jurisdictionId": "cn",
-    "issuingBodies": ["Standing Committee of the National People's Congress"],
+    "issuingBodies": [
+      "Standing Committee of the National People's Congress"
+    ],
     "category": "law",
     "hierarchyLevel": "national-law",
     "legalForce": "binding",
@@ -268,7 +340,12 @@
     },
     "version": "Consolidated Chinese text amended on 2025-10-28 and effective from 2026-01-01 (81 Articles)",
     "parentInstrumentId": null,
-    "topicIds": ["security-controls", "incident-response", "ai-risk-management", "accountability-governance"],
+    "topicIds": [
+      "security-controls",
+      "incident-response",
+      "ai-risk-management",
+      "accountability-governance"
+    ],
     "summary": "China's foundational national cybersecurity law, including network-operation security, information protection, monitoring, and enforcement provisions.",
     "statusNote": "The first amendment was adopted on 28 October 2025 and took effect on 1 January 2026. It added Articles 3, 20, and 73, revised liability and related provisions, and produced the current 81-Article numbering; pre-amendment mappings require migration.",
     "source": {
@@ -301,7 +378,9 @@
     "title": "Regulations on Network Data Security Management",
     "originalTitle": "网络数据安全管理条例",
     "jurisdictionId": "cn",
-    "issuingBodies": ["State Council"],
+    "issuingBodies": [
+      "State Council"
+    ],
     "category": "administrative-regulation",
     "hierarchyLevel": "state-council-administrative-regulation",
     "legalForce": "binding",
@@ -316,7 +395,12 @@
     },
     "version": "State Council Order No. 790",
     "parentInstrumentId": null,
-    "topicIds": ["security-controls", "accountability-governance", "cross-border-transfer", "incident-response"],
+    "topicIds": [
+      "security-controls",
+      "accountability-governance",
+      "cross-border-transfer",
+      "incident-response"
+    ],
     "summary": "State Council rules elaborating network-data handling, personal information, important data, platform, and security-management duties.",
     "statusNote": "An administrative regulation beneath national laws in China's legal hierarchy.",
     "source": {
@@ -337,7 +421,15 @@
     "title": "Interim Measures for the Management of Generative Artificial Intelligence Services",
     "originalTitle": "生成式人工智能服务管理暂行办法",
     "jurisdictionId": "cn",
-    "issuingBodies": ["Cyberspace Administration of China", "National Development and Reform Commission", "Ministry of Education", "Ministry of Science and Technology", "Ministry of Industry and Information Technology", "Ministry of Public Security", "National Radio and Television Administration"],
+    "issuingBodies": [
+      "Cyberspace Administration of China",
+      "National Development and Reform Commission",
+      "Ministry of Education",
+      "Ministry of Science and Technology",
+      "Ministry of Industry and Information Technology",
+      "Ministry of Public Security",
+      "National Radio and Television Administration"
+    ],
     "category": "departmental-measures",
     "hierarchyLevel": "joint-departmental-rule",
     "legalForce": "binding",
@@ -352,7 +444,13 @@
     },
     "version": "Order No. 15",
     "parentInstrumentId": null,
-    "topicIds": ["training-data-governance", "transparency-explainability", "security-controls", "accountability-governance", "ai-risk-management"],
+    "topicIds": [
+      "training-data-governance",
+      "transparency-explainability",
+      "security-controls",
+      "accountability-governance",
+      "ai-risk-management"
+    ],
     "summary": "Rules for generative-AI services provided to the public in China, including training-data, content, personal-information, service, assessment, and filing duties.",
     "statusNote": "A joint departmental instrument whose scope is limited by Article 2; it is not a general-purpose AI code for every research or internal use.",
     "source": {
@@ -372,7 +470,10 @@
     "shortTitle": "UK GDPR",
     "title": "United Kingdom General Data Protection Regulation",
     "jurisdictionId": "gb",
-    "issuingBodies": ["Parliament of the United Kingdom"],
+    "issuingBodies": [
+      "European Parliament and Council of the European Union (original regulation)",
+      "Parliament of the United Kingdom (assimilation and later amendment)"
+    ],
     "category": "assimilated-regulation",
     "hierarchyLevel": "domestic-assimilated-law",
     "legalForce": "binding",
@@ -383,13 +484,20 @@
       "publishedOn": null,
       "effectiveFrom": "2021-01-01",
       "generalApplicationFrom": "2021-01-01",
-      "ceasedOn": null
+      "ceasedOn": null,
+      "latestAmendmentEffectiveFrom": "2026-06-19"
     },
-    "version": "Assimilated Regulation (EU) 2016/679 as amended in UK law",
+    "version": "UK GDPR as amended, including most Data (Use and Access) Act 2025 Part 5 changes effective 5 February 2026 and section 103 effective 19 June 2026",
     "parentInstrumentId": null,
-    "topicIds": ["automated-decision-safeguards", "impact-assessment", "security-controls", "incident-response", "cross-border-transfer"],
+    "topicIds": [
+      "automated-decision-safeguards",
+      "impact-assessment",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
     "summary": "The UK data-protection regulation derived from the EU GDPR and operating with the Data Protection Act 2018, as amended.",
-    "statusNote": "The Data (Use and Access) Act 2025 amended the UK framework with phased commencement. Users must consult the current revised text and commencement instruments rather than assume identity with the EU GDPR.",
+    "statusNote": "The UK GDPR remains a distinct UK instrument. Most DUAA 2025 Part 5 privacy changes took effect on 5 February 2026 and section 103 on controller complaint procedures on 19 June 2026; use the legislation.gov.uk timeline for point-in-time research and do not assume identity with EU GDPR.",
     "source": {
       "url": "https://www.legislation.gov.uk/eur/2016/679/contents",
       "label": "UK Legislation",
@@ -400,6 +508,11 @@
       "stored": false,
       "language": "en",
       "note": "Use the revised-text and timeline controls on legislation.gov.uk for version-sensitive research."
+    },
+    "amendmentSource": {
+      "url": "https://www.legislation.gov.uk/uksi/2026/82/contents/made",
+      "label": "Data (Use and Access) Act 2025 (Commencement No. 6) Regulations 2026",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -408,7 +521,9 @@
     "title": "Act on the Protection of Personal Information (Act No. 57 of 2003)",
     "originalTitle": "個人情報の保護に関する法律",
     "jurisdictionId": "jp",
-    "issuingBodies": ["National Diet of Japan"],
+    "issuingBodies": [
+      "National Diet of Japan"
+    ],
     "category": "law",
     "hierarchyLevel": "national-law",
     "legalForce": "binding",
@@ -419,13 +534,19 @@
       "publishedOn": "2003-05-30",
       "effectiveFrom": "2005-04-01",
       "generalApplicationFrom": "2005-04-01",
-      "ceasedOn": null
+      "ceasedOn": null,
+      "lastAmendedOn": "2026-07-17"
     },
-    "version": "Current authoritative Japanese text on e-Gov; government English reference translation displays Act No. 37 of 2021 as its last version",
+    "version": "Current authoritative Japanese e-Gov consolidation; 2026 amendment promulgated 17 July 2026, with limited immediate and six-month provisions and principal commencement by Cabinet Order within two years",
     "parentInstrumentId": null,
-    "topicIds": ["security-controls", "incident-response", "cross-border-transfer", "accountability-governance"],
+    "topicIds": [
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer",
+      "accountability-governance"
+    ],
     "summary": "Japan's national personal-information law governing private and public-sector handling through an amended statutory framework.",
-    "statusNote": "The Japanese text is authoritative. The linked government English translation is a reference translation and may lag later amendments.",
+    "statusNote": "The Japanese text is authoritative. The 17 July 2026 amendment is promulgated but predominantly uncommenced: limited supplementary provisions began immediately, specified procedural and enforcement provisions begin after six months, and the principal package begins on a Cabinet Order date no later than two years after promulgation. The government English reference translation still identifies Act No. 37 of 2021 as its last version.",
     "source": {
       "url": "https://laws.e-gov.go.jp/law/415AC0000000057",
       "label": "e-Gov Law Search, Government of Japan",
@@ -441,6 +562,11 @@
       "stored": false,
       "language": "ja",
       "note": "The authoritative current Japanese Act is linked. Indexed Articles 23 and 28 store verified Japanese text and separately labelled English reference translations; the full Act is not stored."
+    },
+    "amendmentSource": {
+      "url": "https://www.ppc.go.jp/files/pdf/260717_houritsu.pdf",
+      "label": "Personal Information Protection Commission — promulgated 2026 APPI amendment",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -449,7 +575,10 @@
     "title": "AI Guidelines for Business, Version 1.2",
     "originalTitle": "AI事業者ガイドライン（第1.2版）",
     "jurisdictionId": "jp",
-    "issuingBodies": ["Ministry of Economy, Trade and Industry", "AI Safety Institute"],
+    "issuingBodies": [
+      "Ministry of Internal Affairs and Communications",
+      "Ministry of Economy, Trade and Industry"
+    ],
     "category": "government-guideline",
     "hierarchyLevel": "national-soft-law",
     "legalForce": "voluntary-guidance",
@@ -464,9 +593,14 @@
     },
     "version": "1.2",
     "parentInstrumentId": null,
-    "topicIds": ["ai-risk-management", "accountability-governance", "transparency-explainability", "human-oversight"],
+    "topicIds": [
+      "ai-risk-management",
+      "accountability-governance",
+      "transparency-explainability",
+      "human-oversight"
+    ],
     "summary": "Current Japanese government guidance for AI developers, providers, and business users, updating the integrated business-guideline approach.",
-    "statusNote": "Non-binding guidance. The official page provides Japanese materials and tentative English translations.",
+    "statusNote": "Non-binding guidance jointly issued by MIC and METI. The publication page provides authoritative Japanese materials and English files identified as tentative translations.",
     "source": {
       "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html",
       "label": "Ministry of Economy, Trade and Industry",
@@ -484,7 +618,9 @@
     "shortTitle": "PIPEDA",
     "title": "Personal Information Protection and Electronic Documents Act",
     "jurisdictionId": "ca",
-    "issuingBodies": ["Parliament of Canada"],
+    "issuingBodies": [
+      "Parliament of Canada"
+    ],
     "category": "law",
     "hierarchyLevel": "federal-statute",
     "legalForce": "binding",
@@ -499,7 +635,11 @@
     },
     "version": "Consolidated Act current to 2026-05-26; last amended 2025-03-04",
     "parentInstrumentId": null,
-    "topicIds": ["security-controls", "incident-response", "accountability-governance"],
+    "topicIds": [
+      "security-controls",
+      "incident-response",
+      "accountability-governance"
+    ],
     "summary": "Canada's federal private-sector privacy statute for commercial activities and specified federal works, undertakings, and businesses.",
     "statusNote": "Application interacts with substantially similar provincial privacy laws and other statutory limits; do not treat it as a universal rule for every Canadian organization.",
     "source": {
@@ -519,7 +659,9 @@
     "shortTitle": "Canada ADM Directive",
     "title": "Directive on Automated Decision-Making",
     "jurisdictionId": "ca",
-    "issuingBodies": ["Treasury Board of Canada Secretariat"],
+    "issuingBodies": [
+      "Treasury Board of Canada Secretariat"
+    ],
     "category": "government-directive",
     "hierarchyLevel": "federal-administrative-policy",
     "legalForce": "mandatory-internal-policy",
@@ -534,9 +676,15 @@
     },
     "version": "Current page modified 2025-06-24; transition to updated requirements ended 2026-06-24",
     "parentInstrumentId": null,
-    "topicIds": ["automated-decision-safeguards", "impact-assessment", "transparency-explainability", "human-oversight", "security-controls"],
+    "topicIds": [
+      "automated-decision-safeguards",
+      "impact-assessment",
+      "transparency-explainability",
+      "human-oversight",
+      "security-controls"
+    ],
     "summary": "Mandatory federal-government policy requirements for automated systems used to make or support administrative decisions within its institutional and operational scope.",
-    "statusNote": "Mandatory within its policy scope but not an act of Parliament and not a general private-sector AI law.",
+    "statusNote": "Mandatory only within its federal-policy scope, not an Act of Parliament or a general private-sector AI law. The transition to the requirements reflected on the page modified 24 June 2025 ended on 24 June 2026.",
     "source": {
       "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
       "label": "Treasury Board of Canada Secretariat",
@@ -554,7 +702,9 @@
     "shortTitle": "India DPDP Act",
     "title": "Digital Personal Data Protection Act, 2023",
     "jurisdictionId": "in",
-    "issuingBodies": ["Parliament of India"],
+    "issuingBodies": [
+      "Parliament of India"
+    ],
     "category": "law",
     "hierarchyLevel": "union-statute",
     "legalForce": "binding-phased",
@@ -569,12 +719,16 @@
     },
     "version": "Act No. 22 of 2023 with phased commencement notification G.S.R. 843(E)",
     "parentInstrumentId": null,
-    "topicIds": ["accountability-governance", "security-controls", "incident-response", "automated-decision-safeguards"],
+    "topicIds": [
+      "accountability-governance",
+      "security-controls",
+      "incident-response"
+    ],
     "summary": "India's national statute for processing digital personal data, with institutional provisions and substantive obligations commencing on different dates.",
     "statusNote": "As of 19 July 2026, specified institutional and rulemaking provisions are in force. Most core processing duties and rights are scheduled for 14 May 2027; one intermediate group is scheduled for 14 November 2026.",
     "source": {
-      "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
-      "label": "Ministry of Electronics and Information Technology",
+      "url": "https://www.meity.gov.in/writereaddata/files/Digital%20Personal%20Data%20Protection%20Act%202023.pdf",
+      "label": "Gazette of India — Digital Personal Data Protection Act 2023",
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
@@ -582,6 +736,11 @@
       "stored": false,
       "language": "en",
       "note": "The Act and separate commencement notification must be read together."
+    },
+    "amendmentSource": {
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "label": "Gazette of India — G.S.R. 843(E) phased commencement notification",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -589,7 +748,9 @@
     "shortTitle": "India DPDP Rules",
     "title": "Digital Personal Data Protection Rules, 2025",
     "jurisdictionId": "in",
-    "issuingBodies": ["Ministry of Electronics and Information Technology"],
+    "issuingBodies": [
+      "Ministry of Electronics and Information Technology"
+    ],
     "category": "rules",
     "hierarchyLevel": "union-subordinate-legislation",
     "legalForce": "binding-phased",
@@ -602,9 +763,14 @@
       "generalApplicationFrom": "2027-05-14",
       "ceasedOn": null
     },
-    "version": "G.S.R. 846(E), subject to official corrigendum",
+    "version": "G.S.R. 846(E), read with the official corrigendum published 16 December 2025",
     "parentInstrumentId": "in-dpdp-act-2023",
-    "topicIds": ["accountability-governance", "security-controls", "incident-response", "transparency-explainability"],
+    "topicIds": [
+      "accountability-governance",
+      "security-controls",
+      "incident-response",
+      "transparency-explainability"
+    ],
     "summary": "Implementation rules under the DPDP Act covering notices, consent managers, safeguards, breach notices, rights, children, significant data fiduciaries, and Board procedure through phased commencement.",
     "statusNote": "Rules 1, 2, and 17–21 took effect on publication; Rule 4 is scheduled one year later; Rules 3, 5–16, 22, and 23 are scheduled eighteen months after publication.",
     "source": {
@@ -617,6 +783,11 @@
       "stored": false,
       "language": "en",
       "note": "The official Rules, commencement clauses, and corrigendum should be consulted together."
+    },
+    "amendmentSource": {
+      "url": "https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa",
+      "label": "MeitY DPDP Rules document page and official corrigendum",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -624,7 +795,9 @@
     "shortTitle": "Hiroshima AI Process",
     "title": "Hiroshima AI Process Comprehensive Policy Framework",
     "jurisdictionId": "g7",
-    "issuingBodies": ["Group of Seven"],
+    "issuingBodies": [
+      "Group of Seven"
+    ],
     "category": "international-soft-law",
     "hierarchyLevel": "intergovernmental-policy-framework",
     "legalForce": "non-binding",
@@ -637,14 +810,20 @@
       "generalApplicationFrom": null,
       "ceasedOn": null
     },
-    "version": "Comprehensive Policy Framework endorsed 2023-12-06",
+    "version": "Comprehensive Policy Framework agreed by G7 Digital and Technology Ministers on 1 December 2023 and endorsed by G7 Leaders on 6 December 2023; voluntary OECD-hosted reporting framework updated separately",
     "parentInstrumentId": null,
-    "topicIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "transparency-explainability", "global-coordination"],
+    "topicIds": [
+      "frontier-model-safety",
+      "ai-risk-management",
+      "security-controls",
+      "transparency-explainability",
+      "global-coordination"
+    ],
     "summary": "G7 international guiding principles and a code of conduct for advanced AI systems, developed through the Hiroshima AI Process.",
-    "statusNote": "Voluntary international soft law. It is a governance reference, not domestic legislation or a certification of compliance.",
+    "statusNote": "Voluntary international soft law. The December Comprehensive Policy Framework incorporates the Hiroshima guiding principles and code of conduct; the later voluntary OECD reporting framework supports implementation but does not change legal force.",
     "source": {
-      "url": "https://www.mofa.go.jp/ecm/ec/page5e_000076.html",
-      "label": "Ministry of Foreign Affairs of Japan",
+      "url": "https://www.mofa.go.jp/mofaj/files/100591757.pdf",
+      "label": "G7 Leaders' Statement, 6 December 2023 — Ministry of Foreign Affairs of Japan",
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
@@ -652,6 +831,11 @@
       "stored": false,
       "language": "en",
       "note": "The official page links the leaders' statement, guiding principles, and code of conduct."
+    },
+    "amendmentSource": {
+      "url": "https://www.mofa.go.jp/ecm/eds/pagewe_000001_00361.html",
+      "label": "Ministry of Foreign Affairs of Japan — current AI diplomacy and Hiroshima AI Process hub",
+      "accessedOn": "2026-07-19"
     }
   },
   {
@@ -659,7 +843,9 @@
     "shortTitle": "Governing AI for Humanity",
     "title": "Governing AI for Humanity — Final Report of the UN Secretary-General's High-level Advisory Body on AI",
     "jurisdictionId": "un",
-    "issuingBodies": ["United Nations Secretary-General's High-level Advisory Body on Artificial Intelligence"],
+    "issuingBodies": [
+      "United Nations Secretary-General's High-level Advisory Body on Artificial Intelligence"
+    ],
     "category": "advisory-report",
     "hierarchyLevel": "international-advisory-report",
     "legalForce": "advisory",
@@ -674,12 +860,16 @@
     },
     "version": "Final report, September 2024",
     "parentInstrumentId": null,
-    "topicIds": ["global-coordination", "accountability-governance", "ai-risk-management"],
+    "topicIds": [
+      "global-coordination",
+      "accountability-governance",
+      "ai-risk-management"
+    ],
     "summary": "An expert advisory report proposing seven institutional recommendations for inclusive global AI governance.",
-    "statusNote": "Advisory report rather than a UN treaty, resolution, or binding legal instrument. Its recommendations must not be labeled as mandatory law.",
+    "statusNote": "Advisory report rather than a UN treaty, resolution, or binding legal instrument. The UN supplies Arabic, Chinese, English, French, Russian and Spanish editions; later UN governance initiatives are separate instruments, not amendments to this report.",
     "source": {
-      "url": "https://www.un.org/en/ai-advisory-body",
-      "label": "United Nations",
+      "url": "https://digitallibrary.un.org/record/4062495",
+      "label": "United Nations Digital Library — Governing AI for Humanity",
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
@@ -694,7 +884,10 @@
     "shortTitle": "ISO/IEC 42001",
     "title": "ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system",
     "jurisdictionId": "iso-iec",
-    "issuingBodies": ["International Organization for Standardization", "International Electrotechnical Commission"],
+    "issuingBodies": [
+      "International Organization for Standardization",
+      "International Electrotechnical Commission"
+    ],
     "category": "international-standard",
     "hierarchyLevel": "international-management-system-standard",
     "legalForce": "voluntary-standard",
@@ -709,7 +902,12 @@
     },
     "version": "Edition 1, 2023",
     "parentInstrumentId": null,
-    "topicIds": ["ai-risk-management", "impact-assessment", "accountability-governance", "security-controls"],
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "accountability-governance",
+      "security-controls"
+    ],
     "summary": "An international requirements standard for establishing, operating, maintaining, and continually improving an organization-wide AI management system that addresses AI risks and opportunities.",
     "statusNote": "Published international standard. Its requirements are not automatically law; obligations can arise through adoption, certification, contracts, procurement, or another applicable legal regime.",
     "source": {
@@ -729,7 +927,9 @@
     "shortTitle": "IEEE Ethically Aligned Design",
     "title": "Ethically Aligned Design: A Vision for Prioritizing Human Well-being with Autonomous and Intelligent Systems",
     "jurisdictionId": "ieee",
-    "issuingBodies": ["IEEE Standards Association"],
+    "issuingBodies": [
+      "IEEE Standards Association"
+    ],
     "category": "ethics-framework",
     "hierarchyLevel": "international-industry-white-paper",
     "legalForce": "voluntary-guidance",
@@ -744,7 +944,12 @@
     },
     "version": "First Edition, 2019",
     "parentInstrumentId": null,
-    "topicIds": ["accountability-governance", "human-oversight", "transparency-explainability", "automated-decision-safeguards"],
+    "topicIds": [
+      "accountability-governance",
+      "human-oversight",
+      "transparency-explainability",
+      "automated-decision-safeguards"
+    ],
     "summary": "A human-centred design framework for surfacing ethical values, rights, well-being, accountability, and societal impacts when autonomous and intelligent systems are designed and governed.",
     "statusNote": "Published IEEE white paper and voluntary ethical-design framework, not a binding law or an IEEE technical standard. Later IEEE standards and programs are separate instruments.",
     "source": {
@@ -764,7 +969,9 @@
     "shortTitle": "OECD AI Principles",
     "title": "Recommendation of the Council on Artificial Intelligence (OECD/LEGAL/0449)",
     "jurisdictionId": "oecd",
-    "issuingBodies": ["OECD Council"],
+    "issuingBodies": [
+      "OECD Council"
+    ],
     "category": "intergovernmental-recommendation",
     "hierarchyLevel": "oecd-council-recommendation",
     "legalForce": "non-binding-recommendation",
@@ -779,7 +986,14 @@
     },
     "version": "OECD/LEGAL/0449, amended 3 May 2024",
     "parentInstrumentId": null,
-    "topicIds": ["accountability-governance", "ai-risk-management", "human-oversight", "transparency-explainability", "security-controls", "global-coordination"],
+    "topicIds": [
+      "accountability-governance",
+      "ai-risk-management",
+      "human-oversight",
+      "transparency-explainability",
+      "security-controls",
+      "global-coordination"
+    ],
     "summary": "An intergovernmental recommendation combining five values-based principles for trustworthy AI with five policy recommendations for governments, updated for recent technological and policy developments.",
     "statusNote": "Active OECD recommendation, amended on 3 May 2024. It is an influential non-binding legal instrument and does not itself create directly enforceable domestic duties.",
     "source": {
@@ -799,7 +1013,9 @@
     "shortTitle": "Bletchley Declaration",
     "title": "The Bletchley Declaration by Countries Attending the AI Safety Summit, 1–2 November 2023",
     "jurisdictionId": "ai-safety-summit",
-    "issuingBodies": ["Countries and organizations attending the AI Safety Summit 2023"],
+    "issuingBodies": [
+      "Countries and organizations attending the AI Safety Summit 2023"
+    ],
     "category": "international-declaration",
     "hierarchyLevel": "multilateral-political-declaration",
     "legalForce": "non-binding",
@@ -812,9 +1028,15 @@
       "generalApplicationFrom": null,
       "ceasedOn": null
     },
-    "version": "Declaration published 1 November 2023; signatory list updated 13 February 2025",
+    "version": "Declaration issued 1 November 2023; official participant list updated 13 February 2025 to record New Zealand's 23 October 2024 accession",
     "parentInstrumentId": null,
-    "topicIds": ["frontier-model-safety", "ai-risk-management", "security-controls", "accountability-governance", "global-coordination"],
+    "topicIds": [
+      "frontier-model-safety",
+      "ai-risk-management",
+      "security-controls",
+      "accountability-governance",
+      "global-coordination"
+    ],
     "summary": "A multilateral political declaration framing frontier-AI risks as a shared international concern and calling for scientific understanding, risk-based policy, safety evaluation, transparency, and sustained cooperation.",
     "statusNote": "Non-binding political declaration rather than a treaty or domestic law. The official page was later updated to record an additional signatory without changing its legal force.",
     "source": {
@@ -827,6 +1049,1536 @@
       "stored": false,
       "language": "en",
       "note": "The official declaration is linked from GOV.UK; this seed stores an editorial summary rather than a duplicate of the text."
+    }
+  },
+  {
+    "id": "sg-pdpa-2012",
+    "shortTitle": "Singapore PDPA",
+    "title": "Personal Data Protection Act 2012 (Act 26 of 2012)",
+    "jurisdictionId": "sg",
+    "issuingBodies": [
+      "Parliament of Singapore"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2012-10-15",
+      "publishedOn": "2012-12-03",
+      "effectiveFrom": "2013-01-02",
+      "generalApplicationFrom": "2014-07-02",
+      "latestAmendmentEffectiveFrom": "2025-12-05",
+      "ceasedOn": null
+    },
+    "version": "2020 Revised Edition, legal version effective 5 December 2025; currency verified 19 July 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "purpose-limitation",
+      "security-controls",
+      "retention-deletion-lifecycle",
+      "cross-border-transfer",
+      "incident-response"
+    ],
+    "summary": "Singapore's generally applicable private-sector personal-data statute, organized around consent, purpose, access and correction, protection, retention, transfer, accountability, and breach-notification duties.",
+    "statusNote": "The Act commenced in phases and remains in force as amended. The linked Singapore Statutes Online version and its provision-level timeline control version-sensitive research.",
+    "source": {
+      "url": "https://sso.agc.gov.sg/Act/PDPA2012/",
+      "label": "Singapore Statutes Online, Attorney-General's Chambers",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-current-full-text-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The complete current English statutory text and provision timeline are linked; this repository indexes selected provisions and does not store the whole Act."
+    }
+  },
+  {
+    "id": "sg-model-ai-governance-framework-2020",
+    "shortTitle": "Singapore Model AI Framework",
+    "title": "Model Artificial Intelligence Governance Framework, Second Edition",
+    "jurisdictionId": "sg",
+    "issuingBodies": [
+      "Personal Data Protection Commission Singapore",
+      "Infocomm Media Development Authority"
+    ],
+    "category": "government-framework",
+    "hierarchyLevel": "national-soft-law",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2020-01-21",
+      "publishedOn": "2020-01-21",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Second Edition (21 January 2020)",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "accountability-governance",
+      "ai-risk-management",
+      "human-oversight",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "continuous-assurance"
+    ],
+    "summary": "A sector- and technology-agnostic implementation framework for internal governance, appropriate human involvement, operations management, and stakeholder communication in organizational AI deployment.",
+    "statusNote": "This is voluntary guidance, not legislation or certification. Specialized later Singapore frameworks for generative and agentic AI supplement rather than silently amend this edition.",
+    "source": {
+      "url": "https://www.pdpc.gov.sg/help-and-resources/2020/01/model-ai-governance-framework",
+      "label": "Personal Data Protection Commission Singapore",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-publication-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official landing page and complete Second Edition PDF are linked; only structured editorial framework nodes are stored locally."
+    }
+  },
+  {
+    "id": "sg-ai-verify-testing-framework",
+    "shortTitle": "AI Verify",
+    "title": "AI Verify",
+    "jurisdictionId": "sg",
+    "issuingBodies": [
+      "Infocomm Media Development Authority",
+      "AI Verify Foundation"
+    ],
+    "category": "open-source-assurance-tool",
+    "hierarchyLevel": "national-origin-open-source-framework",
+    "legalForce": "voluntary-testing-framework",
+    "lifecycleStatus": "active-open-source",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2022-05-25",
+      "publishedOn": "2022-05-25",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "International MVP launched 25 May 2022; open-source foundation launched 7 June 2023; status verified 19 July 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "continuous-assurance",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "security-controls",
+      "accountability-governance",
+      "ai-risk-management"
+    ],
+    "summary": "An open-source AI governance testing framework and toolkit combining technical tests and process checks across internationally recognized responsible-AI principles.",
+    "statusNote": "AI Verify supports evidence generation and assurance workflows but neither sets binding ethical standards nor guarantees that a tested system is safe, unbiased, or legally compliant.",
+    "source": {
+      "url": "https://www.imda.gov.sg/how-we-can-help/ai-verify",
+      "label": "Infocomm Media Development Authority",
+      "accessedOn": "2026-07-19"
+    },
+    "amendmentSource": {
+      "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/singapore-launches-ai-verify-foundation",
+      "label": "IMDA — launch of the AI Verify Foundation and open-source phase",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-tool-and-documentation-linked",
+      "stored": false,
+      "language": "en",
+      "note": "Official framework information and the open-source toolkit are linked; this graph stores an editorial capability map rather than software or test specifications."
+    }
+  },
+  {
+    "id": "kr-pipa-2011",
+    "shortTitle": "Korea PIPA",
+    "title": "Personal Information Protection Act",
+    "originalTitle": "개인정보 보호법",
+    "jurisdictionId": "kr",
+    "issuingBodies": [
+      "National Assembly of the Republic of Korea"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-with-scheduled-amendments",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2011-03-29",
+      "publishedOn": "2011-03-29",
+      "effectiveFrom": "2011-09-30",
+      "generalApplicationFrom": "2011-09-30",
+      "latestAmendmentEffectiveFrom": "2025-10-02",
+      "ceasedOn": null
+    },
+    "version": "Current Act No. 20897 effective 2 October 2025; later Act No. 21445 amendments have future 2026/2027 commencement dates",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "automated-decision-safeguards",
+      "data-subject-rights",
+      "security-controls",
+      "impact-assessment",
+      "cross-border-transfer"
+    ],
+    "summary": "The Republic of Korea's comprehensive personal-information statute, including rights and duties for automated decisions, security, impact assessment, data-subject rights, and overseas transfers.",
+    "statusNote": "The graph separates the currently effective Act from promulgated future amendments. The authoritative Korean version controls; official English materials may lag the latest Korean consolidation.",
+    "source": {
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&lsId=011357",
+      "label": "Korean Law Information Center — stable PIPA record",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-current-korean-linked",
+      "stored": false,
+      "language": "ko",
+      "note": "The authoritative current Korean statute is linked. Selected provision summaries are indexed; no claim is made that a complete current English consolidation is stored."
+    }
+  },
+  {
+    "id": "kr-ai-framework-act-2025",
+    "shortTitle": "Korea AI Framework Act",
+    "title": "Framework Act on the Development of Artificial Intelligence and the Creation of a Foundation for Trust",
+    "originalTitle": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법",
+    "jurisdictionId": "kr",
+    "issuingBodies": [
+      "National Assembly of the Republic of Korea"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-framework-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-with-scheduled-amendment",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-01-21",
+      "publishedOn": "2025-01-21",
+      "effectiveFrom": "2026-01-22",
+      "generalApplicationFrom": "2026-01-22",
+      "lastAmendedOn": "2026-01-20",
+      "latestAmendmentEffectiveFrom": "2026-07-21",
+      "ceasedOn": null
+    },
+    "version": "Act No. 20676 as amended by Act No. 21311; final amendment phase effective 21 July 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "frontier-model-safety",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance",
+      "incident-response"
+    ],
+    "summary": "Korea's binding horizontal AI framework statute, combining industrial-policy institutions with trust and safety duties for specified high-impact and generative AI systems.",
+    "statusNote": "This instrument is enacted and in force, not a draft. Its phased 2026 amendment dates are modeled separately and should not be conflated with the original enactment date.",
+    "source": {
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+      "label": "Korean Law Information Center — current Korean text",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?chrClsCd=010203&lsiSeq=268543&urlMode=engLsInfoR&viewCls=engLsInfoR",
+      "label": "Korean Law Information Center — official English text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-full-text-linked",
+      "stored": false,
+      "language": "ko",
+      "note": "Official Korean and English versions are linked. The English page may represent a specified Act version, so the Korean amendment timeline remains controlling for currency."
+    }
+  },
+  {
+    "id": "au-privacy-act-1988",
+    "shortTitle": "Australia Privacy Act",
+    "title": "Privacy Act 1988",
+    "jurisdictionId": "au",
+    "issuingBodies": [
+      "Parliament of Australia"
+    ],
+    "category": "law",
+    "hierarchyLevel": "federal-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "1988-12-14",
+      "publishedOn": "1988-12-14",
+      "effectiveFrom": "1989-01-01",
+      "generalApplicationFrom": "1989-01-01",
+      "latestAmendmentEffectiveFrom": "2026-06-04",
+      "ceasedOn": null
+    },
+    "version": "Compilation No. 104 (C2026C00227), current from 4 June 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "privacy-by-design-default",
+      "purpose-limitation",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
+    "summary": "Australia's federal privacy statute, including the Australian Privacy Principles, credit-reporting rules, notifiable data-breach scheme, and sector- and entity-scope limitations.",
+    "statusNote": "The official latest compilation is the source of record. Proposed and enacted reforms must be tracked by commencement date rather than described as one undifferentiated reform package.",
+    "source": {
+      "url": "https://www.legislation.gov.au/C2004A03712/latest",
+      "label": "Federal Register of Legislation, Australia",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-current-compilation-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The full current official compilation is linked. This repository stores selected structural anchors and editorial summaries rather than the complete Act."
+    }
+  },
+  {
+    "id": "au-mandatory-ai-guardrails-proposal-2024",
+    "shortTitle": "Australia Mandatory AI Guardrails Proposal",
+    "title": "Introducing Mandatory Guardrails for AI in High-Risk Settings: Proposals Paper",
+    "jurisdictionId": "au",
+    "issuingBodies": [
+      "Department of Industry, Science and Resources"
+    ],
+    "category": "consultation-paper",
+    "hierarchyLevel": "federal-policy-proposal",
+    "legalForce": "not-enacted",
+    "lifecycleStatus": "closed-not-proceeding",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2024-09-05",
+      "publishedOn": "2024-09-05",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": "2025-10-21"
+    },
+    "version": "Consultation proposal closed 4 October 2024; government stated in 2025 that it would not proceed at that time",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "human-oversight",
+      "transparency-explainability",
+      "continuous-assurance",
+      "accountability-governance"
+    ],
+    "summary": "A 2024 Australian consultation proposal for mandatory guardrails in high-risk AI settings, retained as a historical policy-design node rather than represented as law.",
+    "statusNote": "The consultation is closed and the government did not proceed with the proposed mandatory model at that time. Its guardrails are not current legal duties.",
+    "source": {
+      "url": "https://consult.industry.gov.au/ai-mandatory-guardrails",
+      "label": "Australian Government consultation portal",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-historical-proposal-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official consultation page and proposal materials are linked. The local graph stores only verified proposal components and status metadata."
+    }
+  },
+  {
+    "id": "au-guidance-for-ai-adoption-2025",
+    "shortTitle": "Australia AI Adoption Guidance",
+    "title": "Guidance for AI Adoption",
+    "jurisdictionId": "au",
+    "issuingBodies": [
+      "Department of Industry, Science and Resources"
+    ],
+    "category": "government-guidance",
+    "hierarchyLevel": "federal-voluntary-guidance",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-10-21",
+      "publishedOn": "2025-10-21",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Foundations and Implementation Practices, released 21 October 2025",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "accountability-governance",
+      "ai-risk-management",
+      "impact-assessment",
+      "human-oversight",
+      "continuous-assurance",
+      "third-party-supply-chain"
+    ],
+    "summary": "Australia's current voluntary implementation guidance for responsible AI adoption, issued after the government decided not to proceed at that time with the earlier mandatory-guardrails proposal.",
+    "statusNote": "This is voluntary government guidance and does not itself create a cross-sector mandatory high-risk AI regime. Existing sectoral and general laws continue to apply independently.",
+    "source": {
+      "url": "https://www.industry.gov.au/sites/default/files/2025-10/guidance-for-ai-adoption-foundations.pdf",
+      "label": "Australian Department of Industry, Science and Resources",
+      "accessedOn": "2026-07-19"
+    },
+    "supportingSource": {
+      "url": "https://www.industry.gov.au/sites/default/files/2025-10/guidance-for-ai-adoption-implementation-practices.pdf",
+      "label": "Australian Department of Industry, Science and Resources — Implementation Practices",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-guidance-pdfs-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official Foundations document is linked and the companion Implementation Practices document is identified in the source audit; only framework-level summaries are stored."
+    }
+  },
+  {
+    "id": "br-lgpd-2018",
+    "shortTitle": "Brazil LGPD",
+    "title": "Brazilian Data Protection Law (LGPD), Law No. 13,709 of 14 August 2018",
+    "originalTitle": "Lei Geral de Proteção de Dados Pessoais (LGPD), Lei nº 13.709, de 14 de agosto de 2018",
+    "jurisdictionId": "br",
+    "issuingBodies": [
+      "National Congress of Brazil",
+      "President of the Republic"
+    ],
+    "category": "law",
+    "hierarchyLevel": "federal-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2018-08-14",
+      "publishedOn": "2018-08-15",
+      "effectiveFrom": "2020-09-18",
+      "generalApplicationFrom": "2020-09-18",
+      "lastAmendedOn": "2026-02-25",
+      "latestAmendmentEffectiveFrom": "2026-02-25",
+      "ceasedOn": null
+    },
+    "version": "Official Portuguese consolidated text, including Law No. 15,352 of 25 February 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "data-minimization",
+      "purpose-limitation",
+      "data-subject-rights",
+      "automated-decision-safeguards",
+      "security-controls",
+      "cross-border-transfer",
+      "accountability-governance"
+    ],
+    "summary": "Brazil's comprehensive personal-data statute, establishing processing principles, legal bases, data-subject rights, automated-decision review, security and incident duties, international-transfer mechanisms, and the ANPD.",
+    "statusNote": "The authoritative Portuguese consolidation includes 2026 institutional changes to the ANPD. The official English PDF is a 2024 snapshot and must not be treated as current after that amendment.",
+    "source": {
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "label": "Presidency of the Republic of Brazil — consolidated Portuguese text",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/outros-documentos-e-publicacoes-institucionais/lgpd-en-lei-no-13-709-capa.pdf",
+      "label": "ANPD official English translation snapshot",
+      "accessedOn": "2026-07-19"
+    },
+    "amendmentSource": {
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm",
+      "label": "Law No. 15,352 of 25 February 2026",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-current-portuguese-and-lagging-english-linked",
+      "stored": false,
+      "language": "pt-BR",
+      "note": "The current Portuguese consolidation and a clearly dated official English snapshot are linked. The local graph does not represent the older English PDF as a current consolidation."
+    }
+  },
+  {
+    "id": "br-pl-2338-2023-ai-bill",
+    "shortTitle": "Brazil AI Bill PL 2338/2023",
+    "title": "Bill No. 2,338 of 2023 — Artificial Intelligence Bill",
+    "originalTitle": "Projeto de Lei nº 2.338, de 2023 — Dispõe sobre o desenvolvimento, o fomento e o uso ético e responsável da inteligência artificial com base na centralidade da pessoa humana",
+    "jurisdictionId": "br",
+    "issuingBodies": [
+      "Federal Senate of Brazil",
+      "Chamber of Deputies of Brazil"
+    ],
+    "category": "bill",
+    "hierarchyLevel": "federal-bill",
+    "legalForce": "not-enacted",
+    "lifecycleStatus": "pending-bill",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": "2023-05-03",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "introducedOn": "2023-05-03",
+      "ceasedOn": null
+    },
+    "version": "Senate-approved substitute of 10 December 2024; pending in the Chamber of Deputies as of 19 July 2026",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance"
+    ],
+    "summary": "Brazil's pending horizontal AI bill, using a rights- and risk-based structure with proposed rules for high-risk systems, governance, impact assessment, civil liability, and enforcement.",
+    "statusNote": "The Senate approved a substitute, but the Chamber has not enacted it. Every proposed obligation is displayed as pending legislative text, not current Brazilian law.",
+    "source": {
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262",
+      "label": "Chamber of Deputies of Brazil — legislative dossier",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-current-bill-dossier-linked",
+      "stored": false,
+      "language": "pt-BR",
+      "note": "The official Chamber dossier and Senate-approved text are linked. This repository stores selected proposal anchors and does not label them as enacted law."
+    }
+  },
+  {
+    "id": "ae-federal-pdpl-45-2021",
+    "shortTitle": "UAE Federal PDPL",
+    "title": "Federal Decree by Law No. (45) of 2021 Concerning the Protection of Personal Data",
+    "originalTitle": "مرسوم بقانون اتحادي رقم (45) لسنة 2021 بشأن حماية البيانات الشخصية",
+    "jurisdictionId": "ae",
+    "issuingBodies": [
+      "President of the United Arab Emirates"
+    ],
+    "category": "federal-decree-law",
+    "hierarchyLevel": "federal-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2021-09-20",
+      "publishedOn": "2021-09-26",
+      "effectiveFrom": "2022-01-02",
+      "generalApplicationFrom": "2022-01-02",
+      "ceasedOn": null
+    },
+    "version": "Official bilingual legislation portal text",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "security-controls",
+      "impact-assessment",
+      "incident-response",
+      "cross-border-transfer"
+    ],
+    "summary": "The UAE's federal personal-data protection law for covered processing, with consent and other controls, controller and processor duties, data-subject rights, security, breach, assessment, and transfer provisions.",
+    "statusNote": "This federal law does not erase separate data-protection regimes in financial free zones such as DIFC and ADGM, which require independent applicability analysis.",
+    "source": {
+      "url": "https://uaelegislation.gov.ae/ar/legislations/1972",
+      "label": "UAE Legislation — controlling official Arabic text",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+      "label": "UAE Legislation — official English translation",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-full-text-linked",
+      "stored": false,
+      "language": "ar",
+      "note": "The controlling official Arabic text and an official English translation are linked from the federal legislation portal; selected provision anchors are stored as metadata and summaries."
+    }
+  },
+  {
+    "id": "ae-dubai-ai-ethics-toolkit-2019",
+    "shortTitle": "Dubai AI Ethics Toolkit",
+    "title": "Dubai AI Ethics Guidelines and Self-Assessment Toolkit",
+    "originalTitle": "مبادئ وأخلاقيات الذكاء الاصطناعي",
+    "jurisdictionId": "ae-dubai",
+    "issuingBodies": [
+      "Smart Dubai",
+      "Digital Dubai"
+    ],
+    "category": "government-guidance",
+    "hierarchyLevel": "emirate-soft-law",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2019-01-08",
+      "publishedOn": "2019-02-01",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Dubai AI Ethics Guidelines and online self-assessment toolkit",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "accountability-governance",
+      "security-controls",
+      "human-oversight"
+    ],
+    "summary": "Dubai-level responsible-AI principles, implementation guidelines, and a self-assessment mechanism organized around ethical design and deployment considerations.",
+    "statusNote": "This is non-binding emirate-level guidance, not a UAE federal statute and not an Abu Dhabi instrument. The graph preserves that issuer and legal-force boundary.",
+    "source": {
+      "url": "https://www.digitaldubai.ae/knowledge-hub/publications/ai-ethics-principles-guidelines",
+      "label": "Digital Dubai",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-guidance-and-toolkit-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official publication, PDF, and self-assessment tool are linked; the repository stores only original editorial summaries of the principles."
+    }
+  },
+  {
+    "id": "ae-generative-ai-guide-2023",
+    "shortTitle": "UAE Generative AI Guide",
+    "title": "100 Practical Applications and Use Cases of Generative AI",
+    "originalTitle": "100 تطبيق واستخدام عملي للذكاء الاصطناعي التوليدي",
+    "jurisdictionId": "ae",
+    "issuingBodies": [
+      "UAE Minister of State for Artificial Intelligence, Digital Economy and Remote Work Applications Office"
+    ],
+    "category": "government-guide",
+    "hierarchyLevel": "federal-educational-guidance",
+    "legalForce": "non-binding-guidance",
+    "lifecycleStatus": "published-guidance",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "2023 English guide",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "human-oversight",
+      "transparency-explainability",
+      "security-controls"
+    ],
+    "summary": "A UAE government educational guide describing generative-AI concepts, 100 illustrative uses, practical applications, and adoption considerations rather than creating a federal compliance code.",
+    "statusNote": "This guide is included to distinguish national generative-AI educational material from Dubai's ethics toolkit and from binding federal personal-data law.",
+    "source": {
+      "url": "https://ai.gov.ae/wp-content/uploads/2023/04/406.-Generative-AI-Guide_ver1-EN.pdf",
+      "label": "UAE Artificial Intelligence Office",
+      "accessedOn": "2026-07-19"
+    },
+    "originalLanguageSource": {
+      "url": "https://ai.gov.ae/wp-content/uploads/2023/04/406.-Generative-AI-Guide_ver1-AR.pdf",
+      "label": "UAE Artificial Intelligence Office — official Arabic guide",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-arabic-and-english-guide-pdfs-linked",
+      "stored": false,
+      "language": "ar",
+      "note": "Official Arabic and English guide PDFs are linked; the graph stores a high-level orientation node and does not treat use cases as regulatory requirements."
+    }
+  },
+  {
+    "id": "sa-pdpl-2021-amended-2023",
+    "shortTitle": "Saudi PDPL",
+    "title": "Personal Data Protection Law",
+    "originalTitle": "نظام حماية البيانات الشخصية",
+    "jurisdictionId": "sa",
+    "issuingBodies": [
+      "Kingdom of Saudi Arabia",
+      "Saudi Data and Artificial Intelligence Authority"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": "2021-09-24",
+      "effectiveFrom": "2023-09-14",
+      "generalApplicationFrom": "2024-09-14",
+      "latestAmendmentEffectiveFrom": "2023-09-14",
+      "ceasedOn": null
+    },
+    "version": "Royal Decree M/19 as amended by Royal Decree M/148; implementing regulation read together with the Law",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "purpose-limitation",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
+    "summary": "Saudi Arabia's national personal-data statute, governing collection and processing, data-subject rights, controller duties, security and breach response, and transfers outside the Kingdom.",
+    "statusNote": "The amended Law took effect on 14 September 2023 and its one-year compliance grace period ended on 14 September 2024; the implementing regulation must be read with it.",
+    "source": {
+      "url": "https://uqn.gov.sa/?p=7759",
+      "label": "Umm Al-Qura Official Gazette — original Law",
+      "accessedOn": "2026-07-19"
+    },
+    "amendmentSource": {
+      "url": "https://uqn.gov.sa/details?p=21671",
+      "label": "Umm Al-Qura Official Gazette — 2023 amendments",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf",
+      "label": "SDAIA official English text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-arabic-gazette-and-english-pdf-linked",
+      "stored": false,
+      "language": "ar",
+      "note": "Official Arabic Gazette materials and an SDAIA English version are linked. Selected provision summaries do not replace the Law and implementing regulation."
+    }
+  },
+  {
+    "id": "sa-sdaia-ai-ethics-principles-1-0-2023",
+    "shortTitle": "SDAIA AI Ethics Principles",
+    "title": "AI Ethics Principles",
+    "originalTitle": "مبادئ أخلاقيات الذكاء الاصطناعي",
+    "jurisdictionId": "sa",
+    "issuingBodies": [
+      "Saudi Data and Artificial Intelligence Authority"
+    ],
+    "category": "government-framework",
+    "hierarchyLevel": "national-soft-law",
+    "legalForce": "mixed-or-unclear-framework-effect",
+    "lifecycleStatus": "government-framework-active",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Version 1.0, September 2023",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "fairness-nondiscrimination",
+      "privacy-by-design-default",
+      "security-controls",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance"
+    ],
+    "summary": "SDAIA's national responsible-AI principles and associated self-assessment pathway for organizations developing or deploying AI in Saudi Arabia.",
+    "statusNote": "Version 1.0 uses both mandatory and recommendatory language and assigns SDAIA compliance-monitoring roles, while registration is described as optional. Applicability and binding effect must be checked by actor and risk tier.",
+    "source": {
+      "url": "https://dgp.sdaia.gov.sa/wps/wcm/connect/4c56ed1c-1b82-447d-ac29-638f5f99c12e/ai-principles-EN.pdf?MOD=AJPERES",
+      "label": "Saudi Data and Artificial Intelligence Authority — verified English framework",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-english-framework-pdf-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The verified official English framework and SDAIA assessment service are linked. The Arabic title is retained, but a matching complete Arabic PDF is not claimed until separately verified."
+    }
+  },
+  {
+    "id": "tw-personal-data-protection-act",
+    "shortTitle": "Taiwan PDPA",
+    "title": "Personal Data Protection Act",
+    "originalTitle": "個人資料保護法",
+    "jurisdictionId": "tw",
+    "issuingBodies": [
+      "Legislative Yuan",
+      "President"
+    ],
+    "category": "law",
+    "hierarchyLevel": "statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-with-uncommenced-amendments",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2010-05-26",
+      "publishedOn": "2010-05-26",
+      "effectiveFrom": "2012-10-01",
+      "generalApplicationFrom": "2012-10-01",
+      "lastAmendedOn": "2025-11-11",
+      "ceasedOn": null
+    },
+    "version": "Current Ministry of Justice consolidation; specified 2023 and 11 November 2025 amendments remain uncommenced",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "purpose-limitation",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer"
+    ],
+    "summary": "Taiwan's generally applicable personal-data statute for public and non-public agencies, covering collection, processing, use, rights, security, supervision, and liability.",
+    "statusNote": "The statute descends from the 1995 Computer-Processed Personal Data Protection Act; its renamed current-form framework generally took effect on 1 October 2012. Promulgation is not commencement: Article 1-1 and specified 2025 amendments await dates set by the Executive Yuan, and the Personal Data Protection Commission remains in preparatory status.",
+    "source": {
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+      "label": "Ministry of Justice Laws and Regulations Database — Chinese",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=I0050021",
+      "label": "Ministry of Justice Laws and Regulations Database — English",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-full-text-linked",
+      "stored": false,
+      "language": "zh-TW",
+      "note": "Official Chinese and English statutory pages are linked with amendment commencement warnings; the graph stores selected provision summaries only."
+    }
+  },
+  {
+    "id": "tw-ai-basic-act-2026",
+    "shortTitle": "Taiwan AI Basic Act",
+    "title": "Artificial Intelligence Basic Act",
+    "originalTitle": "人工智慧基本法",
+    "jurisdictionId": "tw",
+    "issuingBodies": [
+      "Legislative Yuan",
+      "President",
+      "National Science and Technology Council"
+    ],
+    "category": "law",
+    "hierarchyLevel": "framework-statute",
+    "legalForce": "binding-framework-law",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-12-23",
+      "publishedOn": "2026-01-14",
+      "effectiveFrom": "2026-01-14",
+      "generalApplicationFrom": "2026-01-14",
+      "ceasedOn": null
+    },
+    "version": "Promulgated 14 January 2026, 20 Articles",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "privacy-by-design-default",
+      "fairness-nondiscrimination",
+      "security-controls",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance"
+    ],
+    "summary": "Taiwan's enacted AI framework law, establishing policy principles and government responsibilities for human-centric, risk-aware, secure, transparent, fair, and accountable AI development and use.",
+    "statusNote": "This is a promulgated and effective 20-Article law, not a draft. Many operational requirements depend on competent-authority measures and other applicable laws.",
+    "source": {
+      "url": "https://law.nstc.gov.tw/LawContent.aspx?id=GL000592&kw=",
+      "label": "National Science and Technology Council — official Chinese text",
+      "accessedOn": "2026-07-19"
+    },
+    "referenceTranslationSource": {
+      "url": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
+      "label": "National Science and Technology Council — official English text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-full-text-linked",
+      "stored": false,
+      "language": "zh-TW",
+      "note": "Complete official Chinese and English texts are linked. This repository indexes selected Articles and does not yet store the full bilingual corpus locally."
+    }
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "shortTitle": "Taiwan Public-Sector GenAI Guidelines",
+    "title": "Reference Guidelines for the Use of Generative AI by the Executive Yuan and Its Subordinate Agencies (Institutions)",
+    "originalTitle": "行政院及所屬機關（構）使用生成式AI參考指引",
+    "jurisdictionId": "tw",
+    "issuingBodies": [
+      "Executive Yuan"
+    ],
+    "category": "government-guideline",
+    "hierarchyLevel": "executive-branch-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "lifecycleStatus": "active-guidance",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2023-08-31",
+      "publishedOn": "2023-10-03",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Official Chinese reference guidelines issued 3 October 2023",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "security-controls",
+      "human-oversight",
+      "transparency-explainability",
+      "accountability-governance",
+      "sensitive-data-protection"
+    ],
+    "summary": "Practical public-sector guidance on generative-AI use, including protection of confidential and personal information, human verification, attribution, accountability, and risk-sensitive restrictions.",
+    "statusNote": "The guidelines are directed to the Executive Yuan and subordinate bodies and are not a generally applicable private-sector statute. No complete official English version was located.",
+    "source": {
+      "url": "https://www.ey.gov.tw/Page/448DE008087A1971/40c1a925-121d-4b6b-8f40-7e9e1a5401f2",
+      "label": "Executive Yuan — official Chinese guidance",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-original-guidance-linked",
+      "stored": false,
+      "language": "zh-TW",
+      "note": "The complete official Chinese guidance is linked. English content in the interface is an editorial summary, not an official translation or stored full text."
+    }
+  },
+  {
+    "id": "hk-personal-data-privacy-ordinance",
+    "shortTitle": "Hong Kong PDPO",
+    "title": "Personal Data (Privacy) Ordinance (Cap. 486)",
+    "originalTitle": "《個人資料（私隱）條例》（第486章）",
+    "jurisdictionId": "hk",
+    "issuingBodies": [
+      "Legislative Council of Hong Kong",
+      "Hong Kong SAR Government"
+    ],
+    "category": "ordinance",
+    "hierarchyLevel": "sar-ordinance",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "1995-08-03",
+      "publishedOn": "1995-08-03",
+      "effectiveFrom": "1996-12-20",
+      "generalApplicationFrom": "1996-12-20",
+      "latestAmendmentEffectiveFrom": "2021-10-08",
+      "ceasedOn": null
+    },
+    "version": "Current bilingual Hong Kong e-Legislation text; 2021 doxxing amendments effective 8 October 2021",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "data-minimization",
+      "purpose-limitation",
+      "data-subject-rights",
+      "security-controls",
+      "retention-deletion-lifecycle",
+      "cross-border-transfer"
+    ],
+    "summary": "Hong Kong's personal-data privacy ordinance, structured around six Data Protection Principles, data-subject rights, enforcement, exemptions, and later anti-doxxing provisions.",
+    "statusNote": "Section 33's restriction on transfers outside Hong Kong has never commenced and must not be presented as an operative localization or transfer duty.",
+    "source": {
+      "url": "https://www.elegislation.gov.hk/hk/cap486",
+      "label": "Hong Kong e-Legislation — bilingual official text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-full-text-linked",
+      "stored": false,
+      "language": "zh-Hant",
+      "note": "The official bilingual consolidated Ordinance is linked. Selected principles are indexed; the uncommenced status of section 33 is preserved explicitly."
+    }
+  },
+  {
+    "id": "hk-ai-model-pd-protection-framework-2024",
+    "shortTitle": "Hong Kong AI Data Framework",
+    "title": "Artificial Intelligence: Model Personal Data Protection Framework",
+    "originalTitle": "《人工智能（AI）：個人資料保障模範框架》",
+    "jurisdictionId": "hk",
+    "issuingBodies": [
+      "Office of the Privacy Commissioner for Personal Data, Hong Kong"
+    ],
+    "category": "regulatory-guidance",
+    "hierarchyLevel": "sar-voluntary-framework",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2024-06-11",
+      "publishedOn": "2024-06-11",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Issued 11 June 2024",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "accountability-governance",
+      "ai-risk-management",
+      "training-data-governance",
+      "human-oversight",
+      "transparency-explainability",
+      "continuous-assurance"
+    ],
+    "summary": "The Hong Kong privacy regulator's model framework for procuring, implementing, and operating AI while protecting personal data through governance, risk assessment, customization, management, and communication measures.",
+    "statusNote": "This is regulator-issued voluntary guidance that helps operationalize PDPO responsibilities; it is not itself an ordinance or a certification of compliance.",
+    "source": {
+      "url": "https://www.pcpd.org.hk/english/news_events/media_statements/press_20240611.html",
+      "label": "Privacy Commissioner for Personal Data, Hong Kong",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-bilingual-framework-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official framework PDF and release are linked. The graph stores framework components as editorial navigation nodes rather than reproducing the publication."
+    }
+  },
+  {
+    "id": "hk-ethical-ai-guidance-2021",
+    "shortTitle": "Hong Kong Ethical AI Guidance",
+    "title": "Guidance on the Ethical Development and Use of Artificial Intelligence",
+    "originalTitle": "《開發及使用人工智能道德標準指引》",
+    "jurisdictionId": "hk",
+    "issuingBodies": [
+      "Office of the Privacy Commissioner for Personal Data, Hong Kong"
+    ],
+    "category": "regulatory-guidance",
+    "hierarchyLevel": "sar-voluntary-guidance",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "August 2021",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance",
+      "privacy-by-design-default"
+    ],
+    "summary": "Hong Kong privacy-regulator guidance translating ethical AI values into governance and lifecycle practices for organizations that develop or use AI involving personal data.",
+    "statusNote": "This is non-binding regulatory guidance and predates the more operational 2024 Model Personal Data Protection Framework; both remain distinct research nodes.",
+    "source": {
+      "url": "https://www.pcpd.org.hk/english/resources_centre/publications/files/guidance_ethical_e.pdf",
+      "label": "Privacy Commissioner for Personal Data, Hong Kong",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-guidance-pdf-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official English guidance PDF is linked; the local record contains original summaries rather than copied full publication text."
+    }
+  },
+  {
+    "id": "hk-genai-employee-guidelines-checklist-2025",
+    "shortTitle": "Hong Kong Employee GenAI Checklist",
+    "title": "Checklist on Guidelines for the Use of Generative AI by Employees",
+    "originalTitle": "《僱員使用生成式AI的指引清單》",
+    "jurisdictionId": "hk",
+    "issuingBodies": [
+      "Office of the Privacy Commissioner for Personal Data, Hong Kong"
+    ],
+    "category": "regulatory-checklist",
+    "hierarchyLevel": "sar-voluntary-guidance",
+    "legalForce": "voluntary-guidance",
+    "lifecycleStatus": "active-voluntary",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-03-31",
+      "publishedOn": "2025-03-31",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": null
+    },
+    "version": "Issued 31 March 2025",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "accountability-governance",
+      "security-controls",
+      "sensitive-data-protection",
+      "human-oversight",
+      "third-party-supply-chain"
+    ],
+    "summary": "A practical Hong Kong workplace checklist for organizational generative-AI policies, including permitted tools and uses, input restrictions, output verification, security, incident reporting, and employee training.",
+    "statusNote": "The checklist is practical voluntary guidance for employers and employees; it does not create a new statutory cause of action or replace the PDPO.",
+    "source": {
+      "url": "https://www.pcpd.org.hk/english/news_events/media_statements/press_20250331.html",
+      "label": "Privacy Commissioner for Personal Data, Hong Kong",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-checklist-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official release and checklist are linked; the repository stores a structured summary of policy elements rather than the full checklist."
+    }
+  },
+  {
+    "id": "id-pdp-law-2022",
+    "shortTitle": "Indonesia PDP Law",
+    "title": "Law No. 27 of 2022 on Personal Data Protection",
+    "originalTitle": "Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi",
+    "jurisdictionId": "id",
+    "issuingBodies": [
+      "People's Representative Council",
+      "President of the Republic of Indonesia"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2022-10-17",
+      "publishedOn": "2022-10-17",
+      "effectiveFrom": "2022-10-17",
+      "generalApplicationFrom": "2024-10-17",
+      "ceasedOn": null
+    },
+    "version": "Official Indonesian text; Article 53 affected by Constitutional Court Decision 151/PUU-XXII/2024 on 30 July 2025",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "impact-assessment",
+      "cross-border-transfer",
+      "accountability-governance"
+    ],
+    "summary": "Indonesia's comprehensive personal-data protection statute, covering processing bases, controller and processor duties, rights, impact assessment, breach notification, data-protection officers, transfers, and sanctions.",
+    "statusNote": "The Law took effect on enactment and its two-year adjustment period ended in October 2024. Article 53 must be read with the 2025 Constitutional Court decision; no complete official English text was located.",
+    "source": {
+      "url": "https://www.peraturan.go.id/id/uu-no-27-tahun-2022",
+      "label": "Government of Indonesia legislation portal",
+      "accessedOn": "2026-07-19"
+    },
+    "amendmentSource": {
+      "url": "https://s.mkri.id/public/content/persidangan/putusan/putusan_mkri_12970_1753859809.pdf",
+      "label": "Constitutional Court of Indonesia — Decision 151/PUU-XXII/2024",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-original-full-text-linked",
+      "stored": false,
+      "language": "id",
+      "note": "The complete official Indonesian text is linked. English interface content is editorial summary only because no complete official English translation was verified."
+    }
+  },
+  {
+    "id": "vn-personal-data-protection-law-2025",
+    "shortTitle": "Vietnam PDP Law",
+    "title": "Law on Personal Data Protection (Law No. 91/2025/QH15)",
+    "originalTitle": "Luật Bảo vệ dữ liệu cá nhân (Luật số 91/2025/QH15)",
+    "jurisdictionId": "vn",
+    "issuingBodies": [
+      "National Assembly of Viet Nam"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-06-26",
+      "publishedOn": "2025-06-26",
+      "effectiveFrom": "2026-01-01",
+      "generalApplicationFrom": "2026-01-01",
+      "ceasedOn": null
+    },
+    "version": "Law No. 91/2025/QH15, implemented with Decree No. 356/2025/ND-CP",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "sensitive-data-protection",
+      "security-controls",
+      "incident-response",
+      "impact-assessment",
+      "cross-border-transfer"
+    ],
+    "summary": "Viet Nam's current personal-data protection statute, replacing a decree-centered framework with national legislation and detailed implementing rules from 1 January 2026.",
+    "statusNote": "The 2025 Law and Decree 356 form the current regime. It is inaccurate to present repealed Decree 13 as current or to reduce the regime to a blanket data-localization rule.",
+    "source": {
+      "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+      "label": "Government of Viet Nam — official law metadata and signed text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-original-signed-text-linked",
+      "stored": false,
+      "language": "vi",
+      "note": "The official Vietnamese signed text and Gazette publication are linked. No complete official English text is stored; English content is editorial summary."
+    }
+  },
+  {
+    "id": "vn-pdpl-implementing-decree-356-2025",
+    "shortTitle": "Vietnam Decree 356/2025",
+    "title": "Decree No. 356/2025/ND-CP Detailing Articles of and Measures for Implementing the Law on Personal Data Protection",
+    "originalTitle": "Nghị định số 356/2025/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân",
+    "jurisdictionId": "vn",
+    "issuingBodies": [
+      "Government of Viet Nam"
+    ],
+    "category": "decree",
+    "hierarchyLevel": "national-implementing-decree",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2025-12-31",
+      "publishedOn": "2025-12-31",
+      "effectiveFrom": "2026-01-01",
+      "generalApplicationFrom": "2026-01-01",
+      "ceasedOn": null
+    },
+    "version": "Decree No. 356/2025/ND-CP",
+    "parentInstrumentId": "vn-personal-data-protection-law-2025",
+    "topicIds": [
+      "accountability-governance",
+      "impact-assessment",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer",
+      "sensitive-data-protection"
+    ],
+    "summary": "The current implementing decree for Viet Nam's 2025 Personal Data Protection Law, supplying detailed procedures, assessment documentation, safeguards, and transition rules.",
+    "statusNote": "Decree 356 took effect with the Law on 1 January 2026 and expressly replaced Decree 13/2023; the parent statute and implementing decree must be read together.",
+    "source": {
+      "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+      "label": "Government of Viet Nam — official decree text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-original-full-text-linked",
+      "stored": false,
+      "language": "vi",
+      "note": "The complete official Vietnamese decree is linked. Selected implementation nodes are editorial summaries and no official English consolidation is claimed."
+    }
+  },
+  {
+    "id": "vn-personal-data-protection-decree-13-2023",
+    "shortTitle": "Vietnam Decree 13/2023",
+    "title": "Decree No. 13/2023/ND-CP on Personal Data Protection",
+    "originalTitle": "Nghị định số 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân",
+    "jurisdictionId": "vn",
+    "issuingBodies": [
+      "Government of Viet Nam"
+    ],
+    "category": "decree",
+    "hierarchyLevel": "historical-national-decree",
+    "legalForce": "repealed",
+    "lifecycleStatus": "repealed",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2023-04-17",
+      "publishedOn": "2023-04-17",
+      "effectiveFrom": "2023-07-01",
+      "generalApplicationFrom": "2023-07-01",
+      "ceasedOn": "2026-01-01"
+    },
+    "version": "Historical Decree No. 13/2023/ND-CP, repealed by Article 42(2) of Decree No. 356/2025/ND-CP",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "impact-assessment",
+      "security-controls",
+      "cross-border-transfer",
+      "incident-response"
+    ],
+    "summary": "Viet Nam's former decree-centered personal-data regime, retained to explain the transition to the 2025 Law and Decree 356 rather than presented as current law.",
+    "statusNote": "This Decree was repealed from 1 January 2026. Any current compliance description that cites it without the replacement Law and Decree 356 is stale.",
+    "source": {
+      "url": "https://vanban.chinhphu.vn/?classid=1&docid=207759&orggroupid=2&pageid=27160",
+      "label": "Government of Viet Nam — historical official decree text",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-historical-full-text-linked",
+      "stored": false,
+      "language": "vi",
+      "note": "The historical official Vietnamese text is linked for transition research; the graph marks it as repealed and stores no purported current English text."
+    }
+  },
+  {
+    "id": "za-popia-4-2013",
+    "shortTitle": "South Africa POPIA",
+    "title": "Protection of Personal Information Act 4 of 2013",
+    "jurisdictionId": "za",
+    "issuingBodies": [
+      "Parliament of South Africa",
+      "President of South Africa"
+    ],
+    "category": "law",
+    "hierarchyLevel": "national-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2013-11-26",
+      "publishedOn": "2013-11-26",
+      "effectiveFrom": "2014-04-11",
+      "generalApplicationFrom": "2021-07-01",
+      "ceasedOn": null
+    },
+    "version": "Act 4 of 2013 with phased commencement proclamations",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "accountability-governance",
+      "data-minimization",
+      "purpose-limitation",
+      "security-controls",
+      "incident-response",
+      "cross-border-transfer",
+      "data-subject-rights"
+    ],
+    "summary": "South Africa's comprehensive personal-information statute, establishing eight processing conditions, data-subject rights, regulator powers, security and breach duties, prior authorization, and transfer rules.",
+    "statusNote": "POPIA commenced in tranches; the general compliance grace period ended on 30 June 2021. Section 58(2) commenced on 1 July 2021, but its application to processing under section 57 was postponed until 1 February 2022.",
+    "source": {
+      "url": "https://www.gov.za/documents/protection-personal-information-act",
+      "label": "Government of South Africa",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-act-and-commencement-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official Act and commencement information are linked. The repository indexes selected statutory sections and does not store the whole Act."
+    }
+  },
+  {
+    "id": "ng-data-protection-act-2023",
+    "shortTitle": "Nigeria Data Protection Act",
+    "title": "Nigeria Data Protection Act, 2023 (Act No. 37 of 2023)",
+    "jurisdictionId": "ng",
+    "issuingBodies": [
+      "National Assembly of Nigeria",
+      "President of the Federal Republic of Nigeria"
+    ],
+    "category": "law",
+    "hierarchyLevel": "federal-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2023-06-12",
+      "publishedOn": "2023-07-01",
+      "effectiveFrom": "2023-06-12",
+      "generalApplicationFrom": "2023-06-12",
+      "ceasedOn": null
+    },
+    "version": "Act No. 37 of 2023",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "impact-assessment",
+      "cross-border-transfer",
+      "accountability-governance"
+    ],
+    "summary": "Nigeria's federal personal-data statute, establishing the Nigeria Data Protection Commission and rules for lawful processing, rights, governance, impact assessment, security, breaches, and cross-border transfers.",
+    "statusNote": "The Act entered into force on presidential assent. Official NDPC materials and later subsidiary instruments should be checked for implementation details and updates.",
+    "source": {
+      "url": "https://ndpc.gov.ng/download/nigeria-data-protection-act-2023",
+      "label": "Nigeria Data Protection Commission",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-act-pdf-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official Act PDF and regulator resource page are linked; this repository stores selected section-level metadata and editorial summaries."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed",
+    "shortTitle": "Canada AIDA (Bill C-27)",
+    "title": "Bill C-27 — Digital Charter Implementation Act, 2022, Part 3: Artificial Intelligence and Data Act",
+    "jurisdictionId": "ca",
+    "issuingBodies": [
+      "Parliament of Canada"
+    ],
+    "category": "bill",
+    "hierarchyLevel": "federal-bill",
+    "legalForce": "not-enacted",
+    "lifecycleStatus": "lapsed",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": null,
+      "publishedOn": "2022-06-16",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "introducedOn": "2022-06-16",
+      "ceasedOn": "2025-01-06"
+    },
+    "version": "44th Parliament, 1st Session bill; lapsed on prorogation and never received Royal Assent",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "transparency-explainability",
+      "accountability-governance",
+      "incident-response",
+      "continuous-assurance"
+    ],
+    "summary": "The lapsed Canadian Bill C-27 included the proposed Artificial Intelligence and Data Act for commercial high-impact AI, risk mitigation, records, transparency, audits, and enforcement.",
+    "statusNote": "AIDA never became law and lapsed when the parliamentary session ended in January 2025. A later Bill C-27 in another Parliament is unrelated and must not be confused with it.",
+    "source": {
+      "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
+      "label": "Parliament of Canada — LEGISinfo",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-lapsed-bill-text-linked",
+      "stored": false,
+      "language": "en",
+      "note": "The official bilingual bill dossier and text are linked. Proposed AIDA provisions are indexed solely as historical proposal nodes."
+    }
+  },
+  {
+    "id": "us-co-sb24-205-2024",
+    "shortTitle": "Colorado SB 24-205",
+    "title": "SB 24-205 — Consumer Protections for Artificial Intelligence",
+    "jurisdictionId": "us-co",
+    "issuingBodies": [
+      "Colorado General Assembly",
+      "Governor of Colorado"
+    ],
+    "category": "state-law-historical-lineage",
+    "hierarchyLevel": "state-statute",
+    "legalForce": "enacted-but-superseded-before-main-operation",
+    "lifecycleStatus": "superseded-before-substantive-effect",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2024-05-17",
+      "publishedOn": "2024-05-17",
+      "effectiveFrom": null,
+      "generalApplicationFrom": null,
+      "ceasedOn": "2026-05-14"
+    },
+    "version": "2024 enactment; delayed by SB 25B-004 and repealed/re-enacted through SB 26-189 before principal duties operated",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "human-oversight"
+    ],
+    "summary": "Colorado's 2024 high-risk AI enactment targeting algorithmic discrimination, preserved as the historical source of a regulatory lineage later delayed and re-enacted in materially revised form.",
+    "statusNote": "It is inaccurate to describe SB 24-205 as simply becoming operative in 2026. The current forward-looking node is SB 26-189, whose principal duties begin in 2027.",
+    "source": {
+      "url": "https://leg.colorado.gov/bills/sb24-205",
+      "label": "Colorado General Assembly",
+      "accessedOn": "2026-07-19"
+    },
+    "amendmentSource": {
+      "url": "https://leg.colorado.gov/bills/sb25b-004",
+      "label": "Colorado General Assembly — 2025 delay legislation",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-historical-enacted-bill-linked",
+      "stored": false,
+      "language": "en",
+      "note": "Official enrolled text, history, and fiscal materials are linked. This node is historical and not the current operative compliance text."
+    }
+  },
+  {
+    "id": "us-co-sb26-189-admt-2026",
+    "shortTitle": "Colorado SB 26-189",
+    "title": "SB 26-189 — Automated Decision-Making Technology",
+    "jurisdictionId": "us-co",
+    "issuingBodies": [
+      "Colorado General Assembly",
+      "Governor of Colorado"
+    ],
+    "category": "state-law",
+    "hierarchyLevel": "state-statute",
+    "legalForce": "binding-phased",
+    "lifecycleStatus": "partially-in-force-with-principal-duties-scheduled",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2026-05-14",
+      "publishedOn": "2026-05-14",
+      "effectiveFrom": "2026-05-14",
+      "generalApplicationFrom": "2027-01-01",
+      "ceasedOn": null
+    },
+    "version": "Colorado Session Laws 2026, chapter 131; principal obligations effective 1 January 2027",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "automated-decision-safeguards",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "human-oversight",
+      "accountability-governance",
+      "data-subject-rights"
+    ],
+    "summary": "Colorado's current enacted framework for automated decision-making technology used materially in consequential decisions, with developer documentation, deployer notices, consumer rights, records, and Attorney General enforcement.",
+    "statusNote": "Specified provisions took effect on signature on 14 May 2026, while the principal regulated-actor duties apply to consequential decisions made on or after 1 January 2027. The session law repeals and re-enacts the earlier SB 24-205 pathway.",
+    "source": {
+      "url": "https://leg.colorado.gov/bills/sb26-189",
+      "label": "Colorado General Assembly",
+      "accessedOn": "2026-07-19"
+    },
+    "supportingSource": {
+      "url": "https://leg.colorado.gov/laws/session-laws/4864/download",
+      "label": "Colorado Session Laws 2026, chapter 131",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-enacted-session-law-linked",
+      "stored": false,
+      "language": "en",
+      "note": "Official enacted text, history, and implementation materials are linked. Selected duty nodes are marked future-effective until 1 January 2027."
+    }
+  },
+  {
+    "id": "ch-fadp-2020",
+    "shortTitle": "Swiss FADP",
+    "title": "Federal Act of 25 September 2020 on Data Protection (Data Protection Act, FADP)",
+    "originalTitle": "Bundesgesetz über den Datenschutz (Datenschutzgesetz, DSG)",
+    "jurisdictionId": "ch",
+    "issuingBodies": [
+      "Swiss Federal Assembly"
+    ],
+    "category": "law",
+    "hierarchyLevel": "federal-statute",
+    "legalForce": "binding",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-19",
+    "dates": {
+      "adoptedOn": "2020-09-25",
+      "publishedOn": null,
+      "effectiveFrom": "2023-09-01",
+      "generalApplicationFrom": "2023-09-01",
+      "ceasedOn": null
+    },
+    "version": "Fedlex official consolidated text, SR 235.1",
+    "parentInstrumentId": null,
+    "topicIds": [
+      "privacy-by-design-default",
+      "data-minimization",
+      "security-controls",
+      "incident-response",
+      "impact-assessment",
+      "cross-border-transfer",
+      "data-subject-rights"
+    ],
+    "summary": "Switzerland's revised federal data-protection statute, providing technology-neutral processing principles, privacy by design and default, security, impact assessment, breach notification, rights, and international-transfer controls.",
+    "statusNote": "The revised FADP has applied since 1 September 2023. It is a technology-neutral privacy statute, not a crypto, Web3, or AI-specific regulatory code.",
+    "source": {
+      "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+      "label": "Fedlex — official non-authoritative English translation",
+      "accessedOn": "2026-07-19"
+    },
+    "originalLanguageSource": {
+      "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de",
+      "label": "Fedlex — authoritative German text and multilingual record",
+      "accessedOn": "2026-07-19"
+    },
+    "textAvailability": {
+      "mode": "official-multilingual-full-text-linked",
+      "stored": false,
+      "language": "de",
+      "note": "The legally authoritative German, French, and Italian texts and an official non-authoritative English translation are available through Fedlex. The repository indexes selected Articles only."
     }
   }
 ]

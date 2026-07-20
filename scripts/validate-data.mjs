@@ -17,6 +17,7 @@ const [
   conceptThemes,
   relations,
   statusEvents,
+  sourceAudits,
   gdprArticles,
   euAiActArticles,
   structureSummaries,
@@ -28,6 +29,7 @@ const [
   loadJson("concept-themes.json"),
   loadJson("relations.json"),
   loadJson("status-events.json"),
+  loadJson("source-audit.json"),
   loadJson("gdpr-articles.json"),
   loadJson("eu-ai-act-articles.json"),
   loadJson("structure-summaries.json"),
@@ -37,6 +39,8 @@ const idPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const languagePattern = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/;
 const jurisdictionTypes = new Set([
   "country",
+  "legal-jurisdiction",
+  "special-administrative-region",
   "subnational",
   "supranational",
   "international-context",
@@ -47,6 +51,35 @@ const endpointTypes = new Set(["instrument", "provision"]);
 const directionalityValues = new Set(["directed", "undirected"]);
 const relationStatuses = new Set(["candidate", "editorial-reviewed"]);
 const confidenceValues = new Set(["low", "medium", "high"]);
+const relationTypes = new Set([
+  "complements",
+  "elaborates",
+  "future-operational-overlap",
+  "future-partial-overlap",
+  "grounded-in",
+  "historical-comparison",
+  "historical-operational-alignment",
+  "historical-operational-overlap",
+  "historical-policy-overlap",
+  "implements",
+  "operational-alignment",
+  "operationalizes",
+  "partial-overlap",
+  "policy-framework-alignment",
+  "policy-transition",
+  "practice-guidance-alignment",
+  "practice-guidance-overlap",
+  "repeals",
+  "repeals-and-reenacts",
+  "shared-legal-origin",
+  "soft-law-alignment",
+  "supports-operational-evidence",
+]);
+const lifecycleRelationTypes = new Set([
+  "policy-transition",
+  "repeals",
+  "repeals-and-reenacts",
+]);
 const translationStatuses = new Set(["official", "reference"]);
 const structureSummaryLevels = new Set(["section", "hierarchy-root"]);
 const instrumentDateFields = [
@@ -135,8 +168,8 @@ function assertStringArray(
   });
 }
 
-function assertReferenceArray(value, knownIds, label) {
-  assertStringArray(value, label);
+function assertReferenceArray(value, knownIds, label, options = {}) {
+  assertStringArray(value, label, options);
   for (const id of value) {
     assert(knownIds.has(id), `${label} references missing id: ${id}`);
   }
@@ -212,6 +245,7 @@ const conceptIds = assertUnique(concepts, "concept");
 const conceptThemeIds = assertUnique(conceptThemes, "concept theme");
 assertUnique(relations, "relation");
 assertUnique(statusEvents, "status event");
+assertUnique(sourceAudits, "source audit");
 const gdprArticleIds = assertUnique(gdprArticles, "GDPR article");
 const euAiActArticleIds = assertUnique(euAiActArticles, "EU AI Act article");
 
@@ -360,7 +394,11 @@ for (const instrument of instruments) {
       nullable: true,
     });
   }
-  for (const field of ["lastAmendedOn", "latestAmendmentEffectiveFrom"]) {
+  for (const field of [
+    "introducedOn",
+    "lastAmendedOn",
+    "latestAmendmentEffectiveFrom",
+  ]) {
     if (instrument.dates[field] !== undefined) {
       assertIsoDate(instrument.dates[field], `${instrument.id}.dates.${field}`);
     }
@@ -403,7 +441,12 @@ for (const instrument of instruments) {
   assertSource(instrument.source, `${instrument.id}.source`, {
     requireAccessedOn: true,
   });
-  for (const field of ["amendmentSource", "referenceTranslationSource"]) {
+  for (const field of [
+    "amendmentSource",
+    "originalLanguageSource",
+    "referenceTranslationSource",
+    "supportingSource",
+  ]) {
     if (instrument[field] !== undefined) {
       assertSource(instrument[field], `${instrument.id}.${field}`, {
         requireAccessedOn: true,
@@ -501,10 +544,36 @@ for (const provision of provisions) {
   assertIsoDate(provision.appliesFrom, `${provision.id}.appliesFrom`, {
     nullable: true,
   });
+  if (provision.versionAsOf !== undefined) {
+    assertIsoDate(provision.versionAsOf, `${provision.id}.versionAsOf`);
+  }
+  if (provision.supportingSources !== undefined) {
+    assert(
+      Array.isArray(provision.supportingSources) &&
+        provision.supportingSources.length > 0,
+      `${provision.id}.supportingSources must be a non-empty array`,
+    );
+    provision.supportingSources.forEach((sourceItem, index) =>
+      assertSource(
+        sourceItem,
+        `${provision.id}.supportingSources[${index}]`,
+        { requireAccessedOn: true },
+      ),
+    );
+  }
   assertTextAvailability(
     provision.textAvailability,
     `${provision.id}.textAvailability`,
   );
+  if (
+    provision.textAvailability.mode ===
+    "official-source-linked-editorial-summary"
+  ) {
+    assertIsoDate(
+      provision.versionAsOf,
+      `${provision.id}.versionAsOf`,
+    );
+  }
   if (provision.textAvailability.stored) {
     assertStringArray(provision.paragraphs, `${provision.id}.paragraphs`);
     assertString(provision.fullText, `${provision.id}.fullText`);
@@ -792,6 +861,12 @@ const combinedProvisionIds = new Set([
   ...gdprArticleIds,
   ...euAiActArticleIds,
 ]);
+const indexedProvisionConceptIds = new Map(
+  provisions.map((provision) => [
+    provision.id,
+    new Set(provision.conceptIds),
+  ]),
+);
 const provisionInstrumentById = new Map();
 for (const provision of provisions) {
   provisionInstrumentById.set(provision.id, provision.instrumentId);
@@ -983,18 +1058,57 @@ for (const relation of relations) {
   );
   assertString(relation.type, `${relation.id}.type`);
   assert(
-    idPattern.test(relation.type),
-    `${relation.id}.type must be lowercase kebab-case`,
+    relationTypes.has(relation.type),
+    `${relation.id}.type is not in the reviewed relation-type vocabulary`,
   );
   assert(
     directionalityValues.has(relation.directionality),
     `${relation.id}.directionality must be directed or undirected`,
   );
-  assertReferenceArray(
-    relation.conceptIds,
-    conceptIds,
-    `${relation.id}.conceptIds`,
-  );
+  const isLifecycleRelation = lifecycleRelationTypes.has(relation.type);
+  if (isLifecycleRelation) {
+    assert(
+      relation.relationClass === "lifecycle",
+      `${relation.id}.relationClass must be lifecycle for a legal-lineage edge`,
+    );
+    assertReferenceArray(
+      relation.conceptIds,
+      conceptIds,
+      `${relation.id}.conceptIds`,
+      { allowEmpty: true },
+    );
+    assert(
+      relation.conceptIds.length === 0,
+      `${relation.id}.conceptIds must be empty because lifecycle edges do not assert a substantive concept mapping`,
+    );
+  } else {
+    assert(
+      relation.relationClass === undefined || relation.relationClass === "analytical",
+      `${relation.id}.relationClass must be analytical when present`,
+    );
+    assertReferenceArray(
+      relation.conceptIds,
+      conceptIds,
+      `${relation.id}.conceptIds`,
+    );
+    if (
+      relation.source.type === "provision" &&
+      relation.target.type === "provision"
+    ) {
+      const sourceConcepts = indexedProvisionConceptIds.get(relation.source.id);
+      const targetConcepts = indexedProvisionConceptIds.get(relation.target.id);
+      for (const conceptId of relation.conceptIds) {
+        assert(
+          sourceConcepts?.has(conceptId),
+          `${relation.id} needs a curated ${conceptId} anchor on source provision ${relation.source.id}`,
+        );
+        assert(
+          targetConcepts?.has(conceptId),
+          `${relation.id} needs a curated ${conceptId} anchor on target provision ${relation.target.id}`,
+        );
+      }
+    }
+  }
   assert(
     relationStatuses.has(relation.status),
     `${relation.id}.status must be candidate or editorial-reviewed`,
@@ -1052,6 +1166,79 @@ for (const instrumentId of instrumentIds) {
   );
 }
 
+const sourceAuditInstrumentIds = new Set();
+for (const audit of sourceAudits) {
+  assert(
+    instrumentIds.has(audit.instrumentId),
+    `${audit.id} references missing instrument ${audit.instrumentId}`,
+  );
+  assert(
+    audit.id === `audit-${audit.instrumentId}`,
+    `${audit.id} must use the audit-<instrumentId> identifier`,
+  );
+  assert(
+    !sourceAuditInstrumentIds.has(audit.instrumentId),
+    `${audit.instrumentId} has more than one source audit`,
+  );
+  sourceAuditInstrumentIds.add(audit.instrumentId);
+  assertIsoDate(audit.reviewedOn, `${audit.id}.reviewedOn`);
+  assertString(audit.reviewLevel, `${audit.id}.reviewLevel`);
+  assertString(audit.lifecycleFinding, `${audit.id}.lifecycleFinding`, 40);
+  assertString(audit.versionFinding, `${audit.id}.versionFinding`);
+  assertObject(audit.authoritativeLanguage, `${audit.id}.authoritativeLanguage`);
+  assertStringArray(
+    audit.authoritativeLanguage.languages,
+    `${audit.id}.authoritativeLanguage.languages`,
+  );
+  assertString(
+    audit.authoritativeLanguage.note,
+    `${audit.id}.authoritativeLanguage.note`,
+    40,
+  );
+  assertObject(audit.englishAvailability, `${audit.id}.englishAvailability`);
+  assertString(
+    audit.englishAvailability.status,
+    `${audit.id}.englishAvailability.status`,
+  );
+  assertString(
+    audit.englishAvailability.note,
+    `${audit.id}.englishAvailability.note`,
+    40,
+  );
+  assertObject(audit.localCoverage, `${audit.id}.localCoverage`);
+  assertString(audit.localCoverage.mode, `${audit.id}.localCoverage.mode`);
+  assert(
+    Number.isInteger(audit.localCoverage.localUnitCount) &&
+      audit.localCoverage.localUnitCount >= 0,
+    `${audit.id}.localCoverage.localUnitCount must be a non-negative integer`,
+  );
+  assertString(
+    audit.localCoverage.statement,
+    `${audit.id}.localCoverage.statement`,
+    60,
+  );
+  assert(
+    Array.isArray(audit.sources) && audit.sources.length > 0,
+    `${audit.id}.sources must contain at least one official source`,
+  );
+  audit.sources.forEach((sourceItem, index) => {
+    assertString(sourceItem.role, `${audit.id}.sources[${index}].role`);
+    assertSource(sourceItem, `${audit.id}.sources[${index}]`, {
+      requireAccessedOn: true,
+    });
+  });
+  assertStringArray(audit.caveats, `${audit.id}.caveats`);
+  audit.caveats.forEach((caveat, index) =>
+    assertString(caveat, `${audit.id}.caveats[${index}]`, 40),
+  );
+}
+for (const instrumentId of instrumentIds) {
+  assert(
+    sourceAuditInstrumentIds.has(instrumentId),
+    `${instrumentId} is missing its source audit`,
+  );
+}
+
 const requiredJurisdictionIds = [
   "eu",
   "us",
@@ -1063,6 +1250,21 @@ const requiredJurisdictionIds = [
   "in",
   "g7",
   "un",
+  "sg",
+  "kr",
+  "au",
+  "br",
+  "ae",
+  "ae-dubai",
+  "sa",
+  "tw",
+  "hk",
+  "id",
+  "vn",
+  "za",
+  "ng",
+  "ch",
+  "us-co",
 ];
 for (const id of requiredJurisdictionIds) {
   assert(jurisdictionIds.has(id), `Required jurisdiction is missing: ${id}`);
@@ -1120,9 +1322,61 @@ const requiredInstrumentIds = [
   "ieee-ethically-aligned-design-2019",
   "oecd-ai-principles",
   "int-bletchley-declaration-2023",
+  "sg-pdpa-2012",
+  "sg-model-ai-governance-framework-2020",
+  "sg-ai-verify-testing-framework",
+  "kr-pipa-2011",
+  "kr-ai-framework-act-2025",
+  "au-privacy-act-1988",
+  "au-mandatory-ai-guardrails-proposal-2024",
+  "au-guidance-for-ai-adoption-2025",
+  "br-lgpd-2018",
+  "br-pl-2338-2023-ai-bill",
+  "ae-federal-pdpl-45-2021",
+  "ae-dubai-ai-ethics-toolkit-2019",
+  "ae-generative-ai-guide-2023",
+  "sa-pdpl-2021-amended-2023",
+  "sa-sdaia-ai-ethics-principles-1-0-2023",
+  "tw-personal-data-protection-act",
+  "tw-ai-basic-act-2026",
+  "tw-executive-yuan-generative-ai-guidelines-2023",
+  "hk-personal-data-privacy-ordinance",
+  "hk-ai-model-pd-protection-framework-2024",
+  "hk-ethical-ai-guidance-2021",
+  "hk-genai-employee-guidelines-checklist-2025",
+  "id-pdp-law-2022",
+  "vn-personal-data-protection-law-2025",
+  "vn-pdpl-implementing-decree-356-2025",
+  "vn-personal-data-protection-decree-13-2023",
+  "za-popia-4-2013",
+  "ng-data-protection-act-2023",
+  "ca-bill-c-27-aida-2022-lapsed",
+  "us-co-sb24-205-2024",
+  "us-co-sb26-189-admt-2026",
+  "ch-fadp-2020",
 ];
 for (const id of requiredInstrumentIds) {
   assert(instrumentIds.has(id), `Required instrument is missing: ${id}`);
+}
+
+const expansionStartIndex = requiredInstrumentIds.indexOf("sg-pdpa-2012");
+assert(expansionStartIndex >= 0, "Expanded-corpus anchor is missing");
+const expandedInstrumentIds = requiredInstrumentIds.slice(expansionStartIndex);
+const graphCoveredInstrumentIds = new Set();
+for (const relation of relations) {
+  for (const endpoint of [relation.source, relation.target]) {
+    const instrumentId =
+      endpoint.type === "instrument"
+        ? endpoint.id
+        : provisionInstrumentById.get(endpoint.id);
+    if (instrumentId) graphCoveredInstrumentIds.add(instrumentId);
+  }
+}
+for (const instrumentId of expandedInstrumentIds) {
+  assert(
+    graphCoveredInstrumentIds.has(instrumentId),
+    `${instrumentId} has no reviewed production graph edge`,
+  );
 }
 
 const statusAnchors = new Map([
@@ -1130,6 +1384,12 @@ const statusAnchors = new Map([
   ["eu-ai-act", ["partially-applicable", null]],
   ["us-eo-14110", ["revoked", "2025-01-20"]],
   ["us-ca-sb-1047-2024", ["vetoed", "2024-09-29"]],
+  ["kr-ai-framework-act-2025", ["in-force-with-scheduled-amendment", null]],
+  ["tw-ai-basic-act-2026", ["in-force", null]],
+  ["vn-personal-data-protection-decree-13-2023", ["repealed", "2026-01-01"]],
+  ["ca-bill-c-27-aida-2022-lapsed", ["lapsed", "2025-01-06"]],
+  ["us-co-sb24-205-2024", ["superseded-before-substantive-effect", "2026-05-14"]],
+  ["us-co-sb26-189-admt-2026", ["partially-in-force-with-principal-duties-scheduled", null]],
 ]);
 for (const [instrumentId, [expectedStatus, expectedCeasedOn]] of statusAnchors) {
   const instrument = instruments.find((item) => item.id === instrumentId);
@@ -1150,6 +1410,7 @@ console.log(
     `${combinedProvisionIds.size} merged provisions`,
     `(${gdprArticles.length} GDPR + ${euAiActArticles.length} EU AI Act official Articles),`,
     `${relations.length} relations, and ${statusEvents.length} lifecycle events.`,
+    `${sourceAudits.length} source-audit records cover every instrument.`,
     `${concepts.length} core concepts are organized into ${conceptThemes.length} themes.`,
     `${structureSummaries.length} reviewed structure summaries cover ${officialSections.size} official EU sections.`,
   ].join(" "),

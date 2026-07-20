@@ -133,5 +133,140 @@
     "parentId": null,
     "isoCode": "IN",
     "description": "Union-level legal and regulatory context of India."
+  },
+  {
+    "id": "sg",
+    "name": "Singapore",
+    "shortName": "Singapore",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "SG",
+    "description": "National legal and policy context of Singapore, including statutory privacy law and government AI-assurance frameworks."
+  },
+  {
+    "id": "kr",
+    "name": "Republic of Korea",
+    "shortName": "South Korea",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "KR",
+    "description": "National legal and regulatory context of the Republic of Korea."
+  },
+  {
+    "id": "au",
+    "name": "Australia",
+    "shortName": "Australia",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "AU",
+    "description": "Federal legal and policy context of Australia."
+  },
+  {
+    "id": "br",
+    "name": "Federative Republic of Brazil",
+    "shortName": "Brazil",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "BR",
+    "description": "Federal legal and legislative context of Brazil."
+  },
+  {
+    "id": "ae",
+    "name": "United Arab Emirates",
+    "shortName": "UAE",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "AE",
+    "description": "Federal legal and policy context of the United Arab Emirates; free-zone regimes may create separate privacy-law layers."
+  },
+  {
+    "id": "ae-dubai",
+    "name": "Emirate of Dubai",
+    "shortName": "Dubai",
+    "type": "subnational",
+    "parentId": "ae",
+    "isoCode": "AE-DU",
+    "description": "Emirate-level digital policy and guidance context within the United Arab Emirates."
+  },
+  {
+    "id": "sa",
+    "name": "Kingdom of Saudi Arabia",
+    "shortName": "Saudi Arabia",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "SA",
+    "description": "National legal and policy context of the Kingdom of Saudi Arabia."
+  },
+  {
+    "id": "tw",
+    "name": "Taiwan",
+    "shortName": "Taiwan",
+    "type": "legal-jurisdiction",
+    "parentId": null,
+    "isoCode": "TW",
+    "description": "Legal and regulatory context administered by the authorities in Taiwan; this research label does not express a position on sovereignty."
+  },
+  {
+    "id": "hk",
+    "name": "Hong Kong Special Administrative Region",
+    "shortName": "Hong Kong SAR",
+    "type": "special-administrative-region",
+    "parentId": "cn",
+    "isoCode": "HK",
+    "description": "Separate data-protection and AI-governance context of the Hong Kong Special Administrative Region under the one country, two systems framework."
+  },
+  {
+    "id": "id",
+    "name": "Republic of Indonesia",
+    "shortName": "Indonesia",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "ID",
+    "description": "National legal and regulatory context of Indonesia."
+  },
+  {
+    "id": "vn",
+    "name": "Socialist Republic of Viet Nam",
+    "shortName": "Vietnam",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "VN",
+    "description": "National legal and regulatory context of Viet Nam."
+  },
+  {
+    "id": "za",
+    "name": "Republic of South Africa",
+    "shortName": "South Africa",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "ZA",
+    "description": "National legal and regulatory context of South Africa."
+  },
+  {
+    "id": "ng",
+    "name": "Federal Republic of Nigeria",
+    "shortName": "Nigeria",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "NG",
+    "description": "Federal legal and regulatory context of Nigeria."
+  },
+  {
+    "id": "ch",
+    "name": "Swiss Confederation",
+    "shortName": "Switzerland",
+    "type": "country",
+    "parentId": null,
+    "isoCode": "CH",
+    "description": "Federal legal and regulatory context of Switzerland."
+  },
+  {
+    "id": "us-co",
+    "name": "Colorado",
+    "shortName": "Colorado",
+    "type": "subnational",
+    "parentId": "us",
+    "isoCode": "US-CO",
+    "description": "State-level legal and legislative context within the United States."
   }
 ]

@@ -75,6 +75,29 @@ test("jurisdiction labels and an orientation-reset compass overlay the globe", (
   assert.match(globeStyles, /\.mapLabel/);
 });
 
+test("globe rotation is user-controlled and map tags open their matching jurisdictions", () => {
+  assert.doesNotMatch(globeSource, /ROTATION_SPEED/);
+  assert.doesNotMatch(globeSource, /Automatic rotation/);
+  assert.doesNotMatch(globeSource, /setMotionPaused/);
+  assert.match(
+    globeSource,
+    /pitchRef\.current - deltaY \* 0\.006/,
+    "vertical dragging must move the globe content with the pointer",
+  );
+  assert.match(
+    globeSource,
+    /className=\{classNames\([\s\S]*?styles\.mapLabel[\s\S]*?styles\.isActiveMapLabel/,
+  );
+  assert.match(
+    globeSource,
+    /onClick=\{\(\) => \{[\s\S]*?onOpenInstrument\(primaryInstrumentId\)/,
+  );
+  assert.match(globeSource, /onPointerEnter=\{\(\) => setActiveNode\(key\)\}/);
+  assert.match(globeSource, /aria-label=\{`Open \$\{jurisdiction\.label\} jurisdiction/);
+  assert.match(globeStyles, /\.mapLabel:hover,[\s\S]*?\.isActiveMapLabel/);
+  assert.match(globeStyles, /\.mapLabel\s*\{[\s\S]*?pointer-events:\s*auto/);
+});
+
 test("regulation globe reflows without a fixed panel width", () => {
   assert.doesNotMatch(globeStyles, /position:\s*fixed/);
   assert.match(globeStyles, /container-type:\s*inline-size/);

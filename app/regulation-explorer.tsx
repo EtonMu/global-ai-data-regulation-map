@@ -5,6 +5,7 @@ import {
   type Dispatch,
   type KeyboardEvent as ReactKeyboardEvent,
   type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
   type ReactNode,
   type SetStateAction,
   useEffect,
@@ -36,6 +37,10 @@ import {
   Map as MapIcon,
   Moon,
   Network,
+  PanelLeftClose,
+  PanelLeftOpen,
+  PanelRightClose,
+  PanelRightOpen,
   Scale,
   Search,
   Sparkles,
@@ -49,6 +54,7 @@ import conceptsJson from "@/data/v2/concepts.json";
 import conceptThemesJson from "@/data/v2/concept-themes.json";
 import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
+import sourceAuditsJson from "@/data/v2/source-audit.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
@@ -108,6 +114,9 @@ type Instrument = {
   statusNote: string;
   source: Source;
   amendmentSource?: Source;
+  originalLanguageSource?: Source;
+  referenceTranslationSource?: Source;
+  supportingSource?: Source;
   coverage?: {
     unit: string;
     first: number;
@@ -137,9 +146,11 @@ type SeedProvision = {
   actorTags: string[];
   scopeTags: string[];
   legalEffectStatus: string;
+  versionAsOf?: string;
   appliesFrom?: string | null;
   textAvailability: TextAvailability;
   source: Source;
+  supportingSources?: Source[];
   editorial: Editorial;
   paragraphs?: string[];
   fullText?: string;
@@ -241,6 +252,7 @@ type Relation = {
   source: RelationEndpoint;
   target: RelationEndpoint;
   type: string;
+  relationClass?: "analytical" | "lifecycle";
   directionality: string;
   conceptIds: string[];
   status: string;
@@ -263,6 +275,24 @@ type StatusEvent = {
   source: Source;
 };
 
+type SourceAudit = {
+  id: string;
+  instrumentId: string;
+  reviewedOn: string;
+  reviewLevel: string;
+  lifecycleFinding: string;
+  versionFinding: string;
+  englishAvailability: {
+    status: string;
+    note: string;
+  };
+  localCoverage: {
+    mode: string;
+    localUnitCount: number;
+    statement: string;
+  };
+};
+
 type View = "atlas" | "instrument" | "connections" | "timeline" | "compare";
 type ReaderTab = "text" | "analysis" | "sources";
 type Theme = "dark" | "bright";
@@ -282,6 +312,75 @@ type TransitionDocument = Document & {
 };
 
 const themeChangeEvent = "gadrm-theme-change";
+const columnLayoutStorageKey = "gadrm-column-layout";
+const defaultColumnLayout = {
+  leftWidth: 268,
+  rightWidth: 390,
+  leftCollapsed: false,
+  rightCollapsed: false,
+};
+const columnBounds = {
+  left: { min: 190, max: 420 },
+  right: { min: 300, max: 620 },
+  centerMin: 420,
+};
+const columnCollapsedRail = 38;
+
+type ColumnSide = "left" | "right";
+type ColumnLayout = typeof defaultColumnLayout;
+type ColumnResize = {
+  side: ColumnSide;
+  pointerId: number;
+  startX: number;
+  startWidth: number;
+} | null;
+
+function clampColumnWidth(side: ColumnSide, width: number) {
+  const bounds = columnBounds[side];
+  return Math.max(bounds.min, Math.min(bounds.max, Math.round(width)));
+}
+
+function normalizeColumnLayout(
+  layout: ColumnLayout,
+  shellWidth: number,
+  hasRightColumn: boolean,
+): ColumnLayout {
+  let leftWidth = clampColumnWidth("left", layout.leftWidth);
+  let rightWidth = clampColumnWidth("right", layout.rightWidth);
+  if (shellWidth <= 1080) {
+    return { ...layout, leftWidth, rightWidth };
+  }
+  const reservedRailWidth =
+    (layout.leftCollapsed ? columnCollapsedRail : 0) +
+    (hasRightColumn && layout.rightCollapsed ? columnCollapsedRail : 0);
+  const usableWidth = Math.max(
+    0,
+    shellWidth - columnBounds.centerMin - reservedRailWidth,
+  );
+
+  if (!layout.leftCollapsed && hasRightColumn && !layout.rightCollapsed) {
+    rightWidth = Math.max(
+      columnBounds.right.min,
+      Math.min(rightWidth, usableWidth - columnBounds.left.min),
+    );
+    leftWidth = Math.max(
+      columnBounds.left.min,
+      Math.min(leftWidth, usableWidth - rightWidth),
+    );
+  } else if (!layout.leftCollapsed) {
+    leftWidth = Math.max(
+      columnBounds.left.min,
+      Math.min(leftWidth, usableWidth),
+    );
+  } else if (hasRightColumn && !layout.rightCollapsed) {
+    rightWidth = Math.max(
+      columnBounds.right.min,
+      Math.min(rightWidth, usableWidth),
+    );
+  }
+
+  return { ...layout, leftWidth, rightWidth };
+}
 
 function themeSnapshot(): Theme {
   return document.documentElement.dataset.theme === "bright" ? "bright" : "dark";
@@ -340,6 +439,7 @@ const conceptThemes = [...(conceptThemesJson as ConceptTheme[])].sort(
 );
 const relations = relationsJson as Relation[];
 const statusEvents = statusEventsJson as StatusEvent[];
+const sourceAudits = sourceAuditsJson as SourceAudit[];
 const structureSummaries = structureSummariesJson as StructureSummary[];
 const articleRecords = [
   ...(gdprArticlesJson as ArticleRecord[]),
@@ -366,6 +466,9 @@ const structureSummaryByKey = new Map(
     summary.instrumentId + "::" + summary.structureId,
     summary,
   ]),
+);
+const sourceAuditByInstrument = new Map(
+  sourceAudits.map((audit) => [audit.instrumentId, audit]),
 );
 
 function articleToProvision(article: ArticleRecord): Provision {
@@ -488,7 +591,9 @@ const relationLabels: Record<string, string> = {
   "future-operational-overlap": "Future operational overlap",
   "operational-alignment": "Operational alignment",
   "historical-operational-alignment": "Historical operational alignment",
+  "historical-operational-overlap": "Historical operational overlap",
   "historical-policy-overlap": "Historical policy overlap",
+  "historical-comparison": "Historical comparison",
   "soft-law-alignment": "Soft-law alignment",
   "shared-legal-origin": "Shared legal origin",
   "policy-transition": "Policy transition",
@@ -496,6 +601,12 @@ const relationLabels: Record<string, string> = {
   elaborates: "Elaborates",
   operationalizes: "Operationalizes",
   implements: "Implements",
+  repeals: "Repeals",
+  "repeals-and-reenacts": "Repeals and reenacts",
+  "policy-framework-alignment": "Policy/framework alignment",
+  "practice-guidance-alignment": "Practice guidance alignment",
+  "practice-guidance-overlap": "Practice guidance overlap",
+  "supports-operational-evidence": "Supports operational evidence",
   incorporated_by_reference: "Incorporated by reference",
   conflicts_with: "Potential conflict",
   supersedes: "Supersedes",
@@ -625,8 +736,14 @@ function humanize(value: string) {
 }
 
 function nativeLanguageLabel(language: string) {
-  if (/^zh(?:-|$)/i.test(language)) return "中文";
+  if (/^zh-(?:hant|tw|hk)(?:-|$)/i.test(language)) return "繁體中文";
+  if (/^zh(?:-|$)/i.test(language)) return "简体中文";
   if (/^ja(?:-|$)/i.test(language)) return "日本語";
+  if (/^ko(?:-|$)/i.test(language)) return "한국어";
+  if (/^pt(?:-|$)/i.test(language)) return "Português";
+  if (/^ar(?:-|$)/i.test(language)) return "العربية";
+  if (/^id(?:-|$)/i.test(language)) return "Bahasa Indonesia";
+  if (/^vi(?:-|$)/i.test(language)) return "Tiếng Việt";
   return language.toUpperCase();
 }
 
@@ -690,6 +807,9 @@ function forceClass(instrument: Instrument) {
     return "soft";
   }
   if (
+    force.includes("not-enacted") ||
+    force.includes("lapsed") ||
+    category.includes("consultation") ||
     category.includes("bill") ||
     instrument.lifecycleStatus.includes("veto") ||
     instrument.lifecycleStatus.includes("pending")
@@ -715,7 +835,10 @@ function statusClass(instrument: Instrument) {
     status.includes("revoked") ||
     status.includes("repealed") ||
     status.includes("historical") ||
-    status.includes("ceased")
+    status.includes("ceased") ||
+    status.includes("lapsed") ||
+    status.includes("superseded") ||
+    status.includes("closed-not-proceeding")
   ) {
     return "historical";
   }
@@ -750,13 +873,38 @@ type AtlasGroup = {
   instruments: Instrument[];
 };
 
-const atlasGroupOrder = ["eu", "us", "cn", "gb", "ca", "jp", "in", "frameworks"];
+const atlasGroupOrder = [
+  "eu",
+  "us",
+  "cn",
+  "gb",
+  "ca",
+  "jp",
+  "in",
+  "sg",
+  "kr",
+  "au",
+  "br",
+  "ae",
+  "sa",
+  "tw",
+  "hk",
+  "id",
+  "vn",
+  "za",
+  "ng",
+  "ch",
+  "frameworks",
+];
 
 function buildAtlasGroups(): AtlasGroup[] {
   const groups = new Map<string, AtlasGroup>();
   instruments.forEach((instrument) => {
     const jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
-    const root = rootJurisdiction(instrument.jurisdictionId) ?? jurisdiction;
+    const root =
+      jurisdiction?.id === "hk"
+        ? jurisdiction
+        : (rootJurisdiction(instrument.jurisdictionId) ?? jurisdiction);
     const contextTypes = [jurisdiction?.type ?? "", root?.type ?? ""].join(" ");
     const international =
       contextTypes.includes("international") ||
@@ -1344,6 +1492,7 @@ function CorpusNavigator({
 
   return (
     <aside
+      id="corpus-navigator-panel"
       className="corpus-navigator"
       aria-label="Global regulation corpus"
       data-navigator-tab={navigatorTab}
@@ -1640,6 +1789,9 @@ function GlobalAtlas({
 }) {
   const frameworkCount =
     atlasGroups.find((group) => group.id === "frameworks")?.instruments.length ?? 0;
+  const legalSystemCount = atlasGroups.filter(
+    (group) => group.id !== "frameworks",
+  ).length;
   return (
     <section className="atlas-view" aria-labelledby="atlas-title">
       <div className="view-intro">
@@ -1652,7 +1804,7 @@ function GlobalAtlas({
           </p>
         </div>
         <div className="corpus-readout" aria-label="Corpus status">
-          <span><strong>7</strong> legal systems</span>
+          <span><strong>{legalSystemCount}</strong> legal systems</span>
           <span><strong>{frameworkCount}</strong> frameworks</span>
           <span><strong>{instruments.length}</strong> instruments</span>
           <span><strong>{provisions.length}</strong> indexed provisions</span>
@@ -2704,6 +2856,8 @@ function ProvisionReader({
   onOpenInstrument,
   onOpenConcept,
   onAddCompare,
+  id,
+  className,
 }: {
   instrument?: Instrument;
   provision?: Provision;
@@ -2717,16 +2871,18 @@ function ProvisionReader({
   onOpenInstrument: (instrumentId: string) => void;
   onOpenConcept: (conceptId: string) => void;
   onAddCompare: (provisionId: string) => void;
+  id?: string;
+  className?: string;
 }) {
   const readerRef = useRef<HTMLElement>(null);
   const [languageSelection, setLanguageSelection] = useState<{
     provisionId: string | null;
     language: "original" | "en";
-  }>({ provisionId: null, language: "original" });
+  }>({ provisionId: null, language: "en" });
   const readerLanguage =
     languageSelection.provisionId === (provision?.id ?? null)
       ? languageSelection.language
-      : "original";
+      : "en";
   useEffect(() => {
     readerRef.current?.scrollTo({ top: 0 });
   }, [instrument?.id, provision?.id]);
@@ -2741,8 +2897,11 @@ function ProvisionReader({
   if (!instrument && !provision) {
     return (
       <aside
+        id={id}
         ref={readerRef}
-        className="provision-reader reader-idle"
+        className={["provision-reader", "reader-idle", className]
+          .filter(Boolean)
+          .join(" ")}
         aria-label="Provision reader"
       >
         <span className="terminal-label">PROVISION_READER / STANDBY</span>
@@ -2762,10 +2921,32 @@ function ProvisionReader({
 
   if (instrument && !provision) {
     const jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
+    const sourceAudit = sourceAuditByInstrument.get(instrument.id);
+    const sourceEntries = [
+      { label: "PRIMARY RECORD", source: instrument.source },
+      { label: "COMPANION TEXT", source: instrument.supportingSource },
+      { label: "AMENDMENT", source: instrument.amendmentSource },
+      { label: "ORIGINAL TEXT", source: instrument.originalLanguageSource },
+      { label: "ENGLISH VERSION", source: instrument.referenceTranslationSource },
+    ].filter(
+      (
+        entry,
+      ): entry is {
+        label: string;
+        source: Source;
+      } => Boolean(entry.source),
+    );
+    const uniqueSourceEntries = sourceEntries.filter(
+      (entry, index) =>
+        sourceEntries.findIndex(
+          (candidate) => candidate.source.url === entry.source.url,
+        ) === index,
+    );
     return (
       <aside
+        id={id}
         ref={readerRef}
-        className="provision-reader"
+        className={["provision-reader", className].filter(Boolean).join(" ")}
         aria-label="Instrument metadata"
       >
         <span className="terminal-label">INSTRUMENT_RECORD</span>
@@ -2817,15 +2998,27 @@ function ProvisionReader({
             </div>
           )}
         </dl>
-        <a
-          className="official-source-button"
-          href={instrument.source.url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <ExternalLink aria-hidden="true" />
-          OPEN OFFICIAL RECORD
-        </a>
+        {sourceAudit && (
+          <div className="restricted-text-note">
+            <strong>LOCAL COVERAGE / {humanize(sourceAudit.localCoverage.mode)}</strong>
+            <p>{sourceAudit.localCoverage.statement}</p>
+            <p>{sourceAudit.englishAvailability.note}</p>
+          </div>
+        )}
+        <div className="reader-actions" aria-label="Official source records">
+          {uniqueSourceEntries.map((entry) => (
+            <a
+              href={entry.source.url}
+              target="_blank"
+              rel="noreferrer"
+              key={entry.source.url}
+              aria-label={`${entry.label}: ${entry.source.label}`}
+            >
+              <ExternalLink aria-hidden="true" />
+              {entry.label}
+            </a>
+          ))}
+        </div>
       </aside>
     );
   }
@@ -2886,7 +3079,12 @@ function ProvisionReader({
   }
 
   return (
-    <aside ref={readerRef} className="provision-reader" aria-label="Provision reader">
+    <aside
+      id={id}
+      ref={readerRef}
+      className={["provision-reader", className].filter(Boolean).join(" ")}
+      aria-label="Provision reader"
+    >
       <span className="terminal-label">PROVISION_READER / {readerTab.toUpperCase()}</span>
       <div className="reader-heading">
         <small>
@@ -3132,6 +3330,9 @@ function ProvisionReader({
                         {relatedInstrument.shortTitle} {relatedLabel}
                       </strong>
                       <small className="relation-card-meta">
+                        {relation.relationClass === "lifecycle"
+                          ? "Legal lineage · "
+                          : ""}
                         {humanize(relation.status)} · {relation.confidence} confidence
                       </small>
                     </button>
@@ -3300,12 +3501,194 @@ export default function RegulationExplorer() {
   });
   const [historyDepth, setHistoryDepth] = useState(0);
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
+  const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
+    defaultColumnLayout,
+  );
+  const [columnLayoutReady, setColumnLayoutReady] = useState(false);
+  const [activeColumnResize, setActiveColumnResize] =
+    useState<ColumnSide | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const appShellRef = useRef<HTMLDivElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
+  const columnResizeRef = useRef<ColumnResize>(null);
   const urlSyncReadyRef = useRef(false);
   const transitionRef = useRef<SameDocumentViewTransition | null>(null);
   const transitionTokenRef = useRef(0);
   const navigationHistoryRef = useRef<ExplorerState[]>([]);
+  const hasRightColumn =
+    state.view === "atlas" ||
+    (state.navigatorTab === "sources" &&
+      (state.view === "instrument" || state.view === "connections"));
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      try {
+        const stored = JSON.parse(
+          window.localStorage.getItem(columnLayoutStorageKey) ?? "null",
+        ) as Partial<ColumnLayout> | null;
+        if (stored) {
+          const restoredLayout: ColumnLayout = {
+            leftWidth:
+              typeof stored.leftWidth === "number"
+                ? clampColumnWidth("left", stored.leftWidth)
+                : defaultColumnLayout.leftWidth,
+            rightWidth:
+              typeof stored.rightWidth === "number"
+                ? clampColumnWidth("right", stored.rightWidth)
+                : defaultColumnLayout.rightWidth,
+            leftCollapsed: stored.leftCollapsed === true,
+            rightCollapsed: stored.rightCollapsed === true,
+          };
+          setColumnLayout(
+            normalizeColumnLayout(
+              restoredLayout,
+              appShellRef.current?.getBoundingClientRect().width ??
+                window.innerWidth,
+              true,
+            ),
+          );
+        }
+      } catch {
+        // The default column layout remains usable when storage is unavailable.
+      }
+      setColumnLayoutReady(true);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    const normalizeForViewport = () => {
+      const shellWidth =
+        appShellRef.current?.getBoundingClientRect().width ?? window.innerWidth;
+      setColumnLayout((current) =>
+        normalizeColumnLayout(current, shellWidth, hasRightColumn),
+      );
+    };
+    const frame = window.requestAnimationFrame(normalizeForViewport);
+    window.addEventListener("resize", normalizeForViewport);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", normalizeForViewport);
+    };
+  }, [hasRightColumn]);
+
+  useEffect(() => {
+    if (!columnLayoutReady) return;
+    try {
+      window.localStorage.setItem(
+        columnLayoutStorageKey,
+        JSON.stringify(columnLayout),
+      );
+    } catch {
+      // Local persistence is optional; resizing still works for this session.
+    }
+  }, [columnLayout, columnLayoutReady]);
+
+  function columnWidthBounds(side: ColumnSide, layout = columnLayout) {
+    const shellWidth =
+      appShellRef.current?.getBoundingClientRect().width ?? window.innerWidth;
+    const bounds = columnBounds[side];
+    const otherWidth =
+      side === "left"
+        ? hasRightColumn && !layout.rightCollapsed
+          ? layout.rightWidth
+          : hasRightColumn
+            ? columnCollapsedRail
+            : 0
+        : layout.leftCollapsed
+          ? columnCollapsedRail
+          : layout.leftWidth;
+    return {
+      min: bounds.min,
+      max: Math.max(
+        bounds.min,
+        Math.min(bounds.max, shellWidth - otherWidth - columnBounds.centerMin),
+      ),
+    };
+  }
+
+  function setColumnWidth(side: ColumnSide, requestedWidth: number) {
+    setColumnLayout((current) => {
+      const bounds = columnWidthBounds(side, current);
+      const width = Math.round(
+        Math.max(bounds.min, Math.min(bounds.max, requestedWidth)),
+      );
+      return side === "left"
+        ? { ...current, leftWidth: width }
+        : { ...current, rightWidth: width };
+    });
+  }
+
+  function beginColumnResize(
+    side: ColumnSide,
+    event: ReactPointerEvent<HTMLElement>,
+  ) {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    const startWidth =
+      side === "left" ? columnLayout.leftWidth : columnLayout.rightWidth;
+    columnResizeRef.current = {
+      side,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startWidth,
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setActiveColumnResize(side);
+  }
+
+  function moveColumnResize(event: ReactPointerEvent<HTMLElement>) {
+    const resize = columnResizeRef.current;
+    if (!resize || resize.pointerId !== event.pointerId) return;
+    const pointerDelta = event.clientX - resize.startX;
+    setColumnWidth(
+      resize.side,
+      resize.startWidth + (resize.side === "left" ? pointerDelta : -pointerDelta),
+    );
+  }
+
+  function endColumnResize(event: ReactPointerEvent<HTMLElement>) {
+    const resize = columnResizeRef.current;
+    if (!resize || resize.pointerId !== event.pointerId) return;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    columnResizeRef.current = null;
+    setActiveColumnResize(null);
+  }
+
+  function handleColumnResizeKeyDown(
+    side: ColumnSide,
+    event: ReactKeyboardEvent<HTMLElement>,
+  ) {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+      return;
+    }
+    event.preventDefault();
+    const bounds = columnWidthBounds(side);
+    const currentWidth =
+      side === "left" ? columnLayout.leftWidth : columnLayout.rightWidth;
+    const step = event.shiftKey ? 32 : 12;
+    if (event.key === "Home") {
+      setColumnWidth(side, bounds.min);
+    } else if (event.key === "End") {
+      setColumnWidth(side, bounds.max);
+    } else {
+      const physicalDirection = event.key === "ArrowRight" ? 1 : -1;
+      const widthDirection = side === "left" ? physicalDirection : -physicalDirection;
+      setColumnWidth(side, currentWidth + widthDirection * step);
+    }
+  }
+
+  function toggleColumn(side: ColumnSide) {
+    setColumnLayout((current) => {
+      const updated = side === "left"
+        ? { ...current, leftCollapsed: !current.leftCollapsed }
+        : { ...current, rightCollapsed: !current.rightCollapsed };
+      const shellWidth =
+        appShellRef.current?.getBoundingClientRect().width ?? window.innerWidth;
+      return normalizeColumnLayout(updated, shellWidth, hasRightColumn);
+    });
+  }
 
   function clearTransitionMetadata(token: number) {
     if (transitionTokenRef.current !== token) return;
@@ -3666,26 +4049,49 @@ export default function RegulationExplorer() {
   const breadcrumb = useMemo<Array<{
     key: string;
     label: string;
-    destination?:
+    current: boolean;
+    destination:
       | { type: "atlas"; groupId?: string }
       | { type: "concept-index" }
-      | { type: "instrument"; instrumentId: string };
+      | { type: "concept"; conceptId: string }
+      | { type: "instrument"; instrumentId: string }
+      | { type: "provision"; provisionId: string };
   }>>(() => {
     if (selectedConcept) {
       return [
         {
           key: "concept-index",
           label: "CORE CONCEPTS",
+          current: false,
           destination: { type: "concept-index" },
         },
-        { key: selectedConcept.id, label: selectedConcept.label },
+        {
+          key: selectedConcept.id,
+          label: selectedConcept.label,
+          current: true,
+          destination: { type: "concept", conceptId: selectedConcept.id },
+        },
       ];
     }
     if (state.navigatorTab === "concepts") {
-      return [{ key: "concept-index", label: "CORE CONCEPTS" }];
+      return [
+        {
+          key: "concept-index",
+          label: "CORE CONCEPTS",
+          current: true,
+          destination: { type: "concept-index" },
+        },
+      ];
     }
     if (!selectedInstrument) {
-      return [{ key: "global-atlas", label: "GLOBAL ATLAS" }];
+      return [
+        {
+          key: "global-atlas",
+          label: "GLOBAL ATLAS",
+          current: true,
+          destination: { type: "atlas" },
+        },
+      ];
     }
     const jurisdiction = jurisdictionById.get(
       selectedInstrument.jurisdictionId,
@@ -3696,36 +4102,54 @@ export default function RegulationExplorer() {
     const parts: Array<{
       key: string;
       label: string;
-      destination?:
+      current: boolean;
+      destination:
         | { type: "atlas"; groupId?: string }
-        | { type: "instrument"; instrumentId: string };
+        | { type: "instrument"; instrumentId: string }
+        | { type: "provision"; provisionId: string };
     }> = [
+      {
+        key: "global-atlas",
+        label: "GLOBAL ATLAS",
+        current: false,
+        destination: { type: "atlas" },
+      },
       {
         key: "jurisdiction-" + (atlasGroupId ?? selectedInstrument.jurisdictionId),
         label: jurisdiction?.shortName ?? selectedInstrument.jurisdictionId,
+        current: false,
         destination: { type: "atlas", groupId: atlasGroupId },
       },
       {
         key: selectedInstrument.id,
         label: selectedInstrument.shortTitle,
-        destination: selectedProvision
-          ? { type: "instrument", instrumentId: selectedInstrument.id }
-          : undefined,
+        current: !selectedProvision,
+        destination: { type: "instrument", instrumentId: selectedInstrument.id },
       },
     ];
     if (selectedProvision) {
-      parts.push({ key: selectedProvision.id, label: selectedProvision.locator });
+      parts.push({
+        key: selectedProvision.id,
+        label: selectedProvision.locator,
+        current: true,
+        destination: { type: "provision", provisionId: selectedProvision.id },
+      });
     }
     return parts;
   }, [selectedConcept, selectedInstrument, selectedProvision, state.navigatorTab]);
 
   function followBreadcrumb(
-    destination: NonNullable<(typeof breadcrumb)[number]["destination"]>,
+    destination: (typeof breadcrumb)[number]["destination"],
   ) {
     if (destination.type === "concept-index") {
       openConceptIndex();
+    } else if (destination.type === "concept") {
+      openConcept(destination.conceptId);
     } else if (destination.type === "instrument") {
       openInstrument(destination.instrumentId);
+    } else if (destination.type === "provision") {
+      const provision = provisionMap.get(destination.provisionId);
+      if (provision) openProvision(provision);
     } else if (destination.groupId) {
       openAtlasGroup(destination.groupId);
     } else {
@@ -3762,6 +4186,10 @@ export default function RegulationExplorer() {
   const modeSwitchStyle = {
     "--active-view-index": activeViewIndex,
   } as CSSProperties;
+  const appShellStyle = {
+    "--left-column-width": `${columnLayout.leftWidth}px`,
+    "--right-column-width": `${columnLayout.rightWidth}px`,
+  } as CSSProperties;
   const readerPanel =
     state.navigatorTab === "sources" &&
     state.view !== "atlas" &&
@@ -3770,6 +4198,12 @@ export default function RegulationExplorer() {
       <ProvisionReader
         instrument={selectedInstrument}
         provision={selectedProvision}
+        id={state.view === "connections" ? undefined : "right-column-panel"}
+        className={
+          state.view === "connections"
+            ? "center-column-panel"
+            : "right-column-panel"
+        }
         selectedRelation={effectiveRelation}
         relationsForProvision={selectedRelations}
         readerTab={state.readerTab}
@@ -3789,7 +4223,8 @@ export default function RegulationExplorer() {
   const atlasGlobePanel =
     state.navigatorTab === "sources" && state.view === "atlas" ? (
       <RegulationGlobe
-        className="atlas-globe-panel"
+        id="right-column-panel"
+        className="atlas-globe-panel right-column-panel"
         jurisdictions={globeJurisdictions}
         concepts={globeConcepts}
         maxConceptNodes={7}
@@ -3800,7 +4235,8 @@ export default function RegulationExplorer() {
   const conceptVisualizationPanel =
     state.navigatorTab === "concepts" && state.view === "atlas" ? (
       <ConceptConstellation
-        className="concept-constellation-panel"
+        id="right-column-panel"
+        className="concept-constellation-panel right-column-panel"
         themes={constellationThemes}
         concepts={constellationConcepts}
         instruments={constellationInstruments}
@@ -3911,15 +4347,105 @@ export default function RegulationExplorer() {
       </div>
 
       <div
+        ref={appShellRef}
         className={[
           "app-shell",
           "view-" + state.view,
+          hasRightColumn ? "has-right-column" : "",
+          columnLayout.leftCollapsed ? "is-left-collapsed" : "",
+          hasRightColumn && columnLayout.rightCollapsed
+            ? "is-right-collapsed"
+            : "",
+          activeColumnResize ? "is-column-resizing" : "",
           state.navigatorTab === "concepts" ? "navigator-concepts-mode" : "",
           state.navigatorTab === "concepts" && state.view === "atlas"
             ? "concept-visualization-active"
             : "",
         ].filter(Boolean).join(" ")}
+        style={appShellStyle}
       >
+        <button
+          type="button"
+          className="column-toggle column-toggle-left"
+          onClick={() => toggleColumn("left")}
+          aria-controls="corpus-navigator-panel"
+          aria-expanded={!columnLayout.leftCollapsed}
+          aria-label={
+            columnLayout.leftCollapsed
+              ? "Show navigation column"
+              : "Hide navigation column"
+          }
+        >
+          {columnLayout.leftCollapsed ? (
+            <PanelLeftOpen aria-hidden="true" />
+          ) : (
+            <PanelLeftClose aria-hidden="true" />
+          )}
+        </button>
+        {!columnLayout.leftCollapsed && (
+          <div
+            className={[
+              "column-resizer",
+              "column-resizer-left",
+              activeColumnResize === "left" ? "is-active" : "",
+            ].filter(Boolean).join(" ")}
+            role="separator"
+            tabIndex={0}
+            aria-orientation="vertical"
+            aria-label="Resize navigation column"
+            aria-valuemin={columnBounds.left.min}
+            aria-valuemax={columnBounds.left.max}
+            aria-valuenow={columnLayout.leftWidth}
+            aria-valuetext={`${columnLayout.leftWidth} pixels wide`}
+            onPointerDown={(event) => beginColumnResize("left", event)}
+            onPointerMove={moveColumnResize}
+            onPointerUp={endColumnResize}
+            onPointerCancel={endColumnResize}
+            onKeyDown={(event) => handleColumnResizeKeyDown("left", event)}
+          />
+        )}
+        {hasRightColumn && (
+          <button
+            type="button"
+            className="column-toggle column-toggle-right"
+            onClick={() => toggleColumn("right")}
+            aria-controls="right-column-panel"
+            aria-expanded={!columnLayout.rightCollapsed}
+            aria-label={
+              columnLayout.rightCollapsed
+                ? "Show right column"
+                : "Hide right column"
+            }
+          >
+            {columnLayout.rightCollapsed ? (
+              <PanelRightOpen aria-hidden="true" />
+            ) : (
+              <PanelRightClose aria-hidden="true" />
+            )}
+          </button>
+        )}
+        {hasRightColumn && !columnLayout.rightCollapsed && (
+          <div
+            className={[
+              "column-resizer",
+              "column-resizer-right",
+              activeColumnResize === "right" ? "is-active" : "",
+            ].filter(Boolean).join(" ")}
+            role="separator"
+            tabIndex={0}
+            aria-orientation="vertical"
+            aria-label="Resize right column"
+            aria-valuemin={columnBounds.right.min}
+            aria-valuemax={columnBounds.right.max}
+            aria-valuenow={columnLayout.rightWidth}
+            aria-valuetext={`${columnLayout.rightWidth} pixels wide`}
+            onPointerDown={(event) => beginColumnResize("right", event)}
+            onPointerMove={moveColumnResize}
+            onPointerUp={endColumnResize}
+            onPointerCancel={endColumnResize}
+            onKeyDown={(event) => handleColumnResizeKeyDown("right", event)}
+          />
+        )}
         <CorpusNavigator
           navigatorTab={state.navigatorTab}
           selectedInstrumentId={state.selectedInstrumentId}
@@ -3936,8 +4462,14 @@ export default function RegulationExplorer() {
         {state.view === "connections" && readerPanel}
 
         <section
+          id={state.view === "connections" ? "right-column-panel" : undefined}
           ref={workspaceRef}
-          className="workspace"
+          className={[
+            "workspace",
+            state.view === "connections"
+              ? "right-column-panel"
+              : "center-column-panel",
+          ].join(" ")}
           aria-label="Regulation visualization"
         >
           <div className="workspace-status">
@@ -3958,11 +4490,8 @@ export default function RegulationExplorer() {
                     {index > 0 && <i>/</i>}
                     <button
                       type="button"
-                      onClick={() =>
-                        part.destination && followBreadcrumb(part.destination)
-                      }
-                      aria-current={part.destination ? undefined : "page"}
-                      disabled={!part.destination}
+                      onClick={() => followBreadcrumb(part.destination)}
+                      aria-current={part.current ? "page" : undefined}
                     >
                       {part.label}
                     </button>

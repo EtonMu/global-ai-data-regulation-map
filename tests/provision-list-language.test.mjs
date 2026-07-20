@@ -24,6 +24,16 @@ test("instrument articles use titled list rows instead of square cells", () => {
 });
 
 test("original-language records expose a native bilingual text switch", () => {
+  assert.match(
+    explorerSource,
+    /\{ provisionId: null, language: "en" \}/,
+    "foreign-language provisions must open in English by default",
+  );
+  assert.match(
+    explorerSource,
+    /languageSelection\.language\s*:\s*"en";/,
+    "a newly selected foreign-language provision must reset to English",
+  );
   assert.match(explorerSource, /className="reader-language-switch"/);
   assert.match(explorerSource, /aria-label="Legal text language"/);
   assert.match(explorerSource, /onClick=\{\(\) => setReaderLanguage\("en"\)\}/);

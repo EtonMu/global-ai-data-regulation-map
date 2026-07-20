@@ -39,6 +39,7 @@ export type ConceptConstellationProps = {
   selectedConceptId?: string | null;
   onOpenConcept: (conceptId: string) => void;
   onOpenInstrument: (instrumentId: string) => void;
+  id?: string;
   className?: string;
   maxSourceNodes?: number;
 };
@@ -109,6 +110,7 @@ export function ConceptConstellation({
   selectedConceptId,
   onOpenConcept,
   onOpenInstrument,
+  id,
   className,
   maxSourceNodes = 7,
 }: ConceptConstellationProps) {
@@ -284,6 +286,7 @@ export function ConceptConstellation({
 
   return (
     <section
+      id={id}
       className={classNames(styles.panel, className)}
       aria-labelledby={titleId}
       data-active-concept={activeConceptId ?? undefined}

@@ -87,7 +87,7 @@ test("stored Chinese and Japanese records expose aligned non-official English re
       ["zh-CN", "ja"].includes(provision.textAvailability.language),
   );
 
-  assert.equal(sourceLanguageRecords.length, 93);
+  assert.equal(sourceLanguageRecords.length, 98);
   for (const provision of sourceLanguageRecords) {
     const translation = provision.translations?.en;
     assert.ok(translation, `${provision.id} must include an English rendering`);

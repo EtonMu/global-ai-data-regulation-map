@@ -15,16 +15,44 @@ import GBFlag from "country-flag-icons/react/3x2/GB";
 import CAFlag from "country-flag-icons/react/3x2/CA";
 import JPFlag from "country-flag-icons/react/3x2/JP";
 import INFlag from "country-flag-icons/react/3x2/IN";
+import SGFlag from "country-flag-icons/react/3x2/SG";
+import KRFlag from "country-flag-icons/react/3x2/KR";
+import AUFlag from "country-flag-icons/react/3x2/AU";
+import BRFlag from "country-flag-icons/react/3x2/BR";
+import AEFlag from "country-flag-icons/react/3x2/AE";
+import SAFlag from "country-flag-icons/react/3x2/SA";
+import TWFlag from "country-flag-icons/react/3x2/TW";
+import HKFlag from "country-flag-icons/react/3x2/HK";
+import IDFlag from "country-flag-icons/react/3x2/ID";
+import VNFlag from "country-flag-icons/react/3x2/VN";
+import ZAFlag from "country-flag-icons/react/3x2/ZA";
+import NGFlag from "country-flag-icons/react/3x2/NG";
+import CHFlag from "country-flag-icons/react/3x2/CH";
 
 const flagMarks = {
   eu: { code: "EU", component: EUFlag },
   us: { code: "US", component: USFlag },
   "us-ca": { code: "US", component: USFlag },
+  "us-co": { code: "US", component: USFlag },
   cn: { code: "CN", component: CNFlag },
   gb: { code: "GB", component: GBFlag },
   ca: { code: "CA", component: CAFlag },
   jp: { code: "JP", component: JPFlag },
   in: { code: "IN", component: INFlag },
+  sg: { code: "SG", component: SGFlag },
+  kr: { code: "KR", component: KRFlag },
+  au: { code: "AU", component: AUFlag },
+  br: { code: "BR", component: BRFlag },
+  ae: { code: "AE", component: AEFlag },
+  "ae-dubai": { code: "AE", component: AEFlag },
+  sa: { code: "SA", component: SAFlag },
+  tw: { code: "TW", component: TWFlag },
+  hk: { code: "HK", component: HKFlag },
+  id: { code: "ID", component: IDFlag },
+  vn: { code: "VN", component: VNFlag },
+  za: { code: "ZA", component: ZAFlag },
+  ng: { code: "NG", component: NGFlag },
+  ch: { code: "CH", component: CHFlag },
 } as const;
 
 const issuerMarks: Record<

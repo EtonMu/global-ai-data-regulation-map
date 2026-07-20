@@ -60,6 +60,6 @@ test("Core Concepts mounts the constellation as a dedicated right panel", () => 
   assert.match(explorerSource, /\{conceptVisualizationPanel\}/);
   assert.match(
     globalStyles,
-    /\.app-shell\.navigator-concepts-mode\.concept-visualization-active\s*\{[\s\S]*?grid-template-columns:\s*268px minmax\(0, 1fr\) 390px/,
+    /\.app-shell\.navigator-concepts-mode\.concept-visualization-active\s*\{[\s\S]*?grid-template-columns:\s*var\(--left-grid-width\)[\s\S]*?minmax\(0, 1fr\)[\s\S]*?var\(--right-grid-width\)/,
   );
 });

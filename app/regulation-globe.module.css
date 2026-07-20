@@ -42,49 +42,11 @@
   overflow-wrap: anywhere;
 }
 
-.motionButton {
-  flex: 0 0 auto;
-  min-block-size: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 9px;
-  border: 1px solid var(--line-strong);
-  border-radius: 6px;
-  background: var(--panel);
-  color: var(--ink);
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  transition:
-    border-color 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease;
-}
-
-.motionButton:hover:not(:disabled) {
-  border-color: var(--cyan);
-  background: var(--panel-hover);
-  color: var(--ink-strong);
-}
-
-.motionButton:focus-visible,
 .compassButton:focus-visible,
+.mapLabel:focus-visible,
 .nodeButton:focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
-}
-
-.motionButton:disabled {
-  cursor: not-allowed;
-  opacity: 0.62;
-}
-
-.motionButton svg {
-  inline-size: 14px;
-  block-size: 14px;
 }
 
 .figure {
@@ -156,19 +118,39 @@
   background: color-mix(in srgb, var(--panel) 88%, transparent);
   box-shadow: 0 3px 12px var(--graph-glow);
   color: var(--ink-strong);
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.6rem;
   line-height: 1;
   opacity: 0;
+  pointer-events: auto;
   transform:
     translate3d(var(--map-x), var(--map-y), 0)
     translate(var(--map-offset-x), var(--map-offset-y))
     translate(-50%, calc(-100% - 7px))
     scale(var(--map-scale));
   transform-origin: 50% 100%;
-  transition: opacity 90ms linear;
+  transition:
+    opacity 90ms linear,
+    border-color 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
   visibility: hidden;
   white-space: nowrap;
+}
+
+.mapLabel:hover,
+.isActiveMapLabel {
+  border-color: var(--cyan);
+  background: color-mix(in srgb, var(--panel-hover) 94%, transparent);
+  box-shadow:
+    0 0 0 2px var(--cyan-soft),
+    0 3px 16px var(--graph-glow);
+}
+
+.mapLabel:disabled {
+  cursor: not-allowed;
+  opacity: 0.48 !important;
 }
 
 .mapLabel b {
@@ -462,10 +444,6 @@
     flex-direction: column;
   }
 
-  .motionButton {
-    align-self: flex-start;
-  }
-
   .stage {
     min-block-size: 270px;
   }
@@ -488,7 +466,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .motionButton,
   .compassRose,
   .mapLabel,
   .nodeButton {

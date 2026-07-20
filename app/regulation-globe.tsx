@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { geoContains, type GeoPermissibleObjects } from "d3-geo";
-import { Move3d, Pause, Play } from "lucide-react";
+import { Move3d } from "lucide-react";
 import { ConceptIcon } from "./concept-icon";
 import { JurisdictionMark } from "./jurisdiction-mark";
 import naturalEarthLand from "../data/geo/natural-earth-land-110m.json";
@@ -33,6 +33,7 @@ export type RegulationGlobeProps = {
   concepts: readonly RegulationGlobeConcept[];
   onOpenInstrument: (instrumentId: string) => void;
   onOpenConcept: (conceptId: string) => void;
+  id?: string;
   className?: string;
   /** Keeps a large corpus legible while still plotting a representative constellation. */
   maxConceptNodes?: number;
@@ -75,7 +76,6 @@ type Palette = {
 };
 
 const POINT_COUNT = 920;
-const ROTATION_SPEED = 0.00006;
 const KEYBOARD_ROTATION_STEP = 0.09;
 const DEFAULT_YAW = 0;
 const DEFAULT_PITCH = 0;
@@ -96,6 +96,19 @@ const REGION_ANCHORS: Record<string, { latitude: number; longitude: number }> = 
   ca: { latitude: 57, longitude: -106 },
   jp: { latitude: 37, longitude: 138 },
   in: { latitude: 22, longitude: 79 },
+  sg: { latitude: 1.35, longitude: 103.82 },
+  kr: { latitude: 36.2, longitude: 127.8 },
+  au: { latitude: -25.3, longitude: 133.8 },
+  br: { latitude: -10.3, longitude: -53.2 },
+  ae: { latitude: 23.8, longitude: 54.2 },
+  sa: { latitude: 24, longitude: 45 },
+  tw: { latitude: 23.7, longitude: 121 },
+  hk: { latitude: 22.32, longitude: 114.17 },
+  id: { latitude: -2.3, longitude: 118 },
+  vn: { latitude: 16.2, longitude: 107.8 },
+  za: { latitude: -30.6, longitude: 24 },
+  ng: { latitude: 9.1, longitude: 8.7 },
+  ch: { latitude: 46.8, longitude: 8.2 },
   int: { latitude: -18, longitude: -18 },
 };
 
@@ -107,6 +120,19 @@ const MAP_LABELS: Record<string, string> = {
   ca: "Canada",
   jp: "Japan",
   in: "India",
+  sg: "Singapore",
+  kr: "S. Korea",
+  au: "Australia",
+  br: "Brazil",
+  ae: "UAE",
+  sa: "Saudi Arabia",
+  tw: "Taiwan",
+  hk: "Hong Kong",
+  id: "Indonesia",
+  vn: "Vietnam",
+  za: "South Africa",
+  ng: "Nigeria",
+  ch: "Switzerland",
   int: "Global",
 };
 
@@ -118,6 +144,14 @@ const LABEL_OFFSETS: Record<string, { x: number; y: number }> = {
   jp: { x: 13, y: -8 },
   us: { x: 8, y: 8 },
   ca: { x: -10, y: -8 },
+  sg: { x: 8, y: 11 },
+  kr: { x: -10, y: -12 },
+  tw: { x: -13, y: 8 },
+  hk: { x: 14, y: 14 },
+  id: { x: -8, y: 12 },
+  ae: { x: -12, y: -9 },
+  sa: { x: 11, y: 10 },
+  ch: { x: -17, y: 10 },
 };
 
 function classNames(...values: Array<string | undefined | false>) {
@@ -280,6 +314,7 @@ export function RegulationGlobe({
   concepts,
   onOpenInstrument,
   onOpenConcept,
+  id,
   className,
   maxConceptNodes = 7,
 }: RegulationGlobeProps) {
@@ -287,7 +322,7 @@ export function RegulationGlobe({
   const stageRef = useRef<HTMLDivElement>(null);
   const compassRef = useRef<HTMLButtonElement>(null);
   const jurisdictionLabelRefs = useRef(
-    new Map<string, HTMLSpanElement>(),
+    new Map<string, HTMLButtonElement>(),
   );
   const sizeRef = useRef<CanvasSize>({ width: 0, height: 0, dpr: 1 });
   const paletteRef = useRef<Palette | null>(null);
@@ -299,7 +334,6 @@ export function RegulationGlobe({
   const requestDrawRef = useRef<() => void>(() => undefined);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [motionPaused, setMotionPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const plottedConcepts = useMemo(
@@ -464,8 +498,8 @@ export function RegulationGlobe({
     if (!context) return;
 
     let animationFrame = 0;
-    let lastFrame = performance.now();
-    const shouldAnimate = !motionPaused && !reducedMotion;
+    const initialFrameTime = performance.now();
+    const shouldAnimate = !reducedMotion;
 
     const draw = (time: number) => {
       const { width, height, dpr } = sizeRef.current;
@@ -566,7 +600,7 @@ export function RegulationGlobe({
           : Math.max(0.12, 0.18 + start.z * 0.11);
         context.lineWidth = emphasized ? 1.7 : 0.8 + Math.min(connection.count, 3) * 0.12;
         context.setLineDash(emphasized ? [5, 4] : [2, 5]);
-        context.lineDashOffset = reducedMotion || motionPaused ? 0 : -time * 0.012;
+        context.lineDashOffset = reducedMotion ? 0 : -time * 0.012;
         context.beginPath();
         context.moveTo(start.x, start.y);
         context.quadraticCurveTo(
@@ -669,15 +703,10 @@ export function RegulationGlobe({
     };
 
     requestDrawRef.current = () => draw(performance.now());
-    draw(lastFrame);
+    draw(initialFrameTime);
 
     if (shouldAnimate) {
       const animate = (time: number) => {
-        const delta = Math.min(time - lastFrame, 34);
-        lastFrame = time;
-        if (!dragRef.current && !resetAnimationRef.current) {
-          yawRef.current += delta * ROTATION_SPEED;
-        }
         draw(time);
         animationFrame = requestAnimationFrame(animate);
       };
@@ -691,7 +720,6 @@ export function RegulationGlobe({
   }, [
     connections,
     jurisdictionVectors,
-    motionPaused,
     plottedConcepts,
     reducedMotion,
   ]);
@@ -716,7 +744,7 @@ export function RegulationGlobe({
     yawRef.current += deltaX * 0.008;
     pitchRef.current = Math.max(
       -Math.PI * 0.42,
-      Math.min(Math.PI * 0.42, pitchRef.current + deltaY * 0.006),
+      Math.min(Math.PI * 0.42, pitchRef.current - deltaY * 0.006),
     );
     dragRef.current = { ...drag, x: event.clientX, y: event.clientY };
     requestDrawRef.current();
@@ -743,20 +771,20 @@ export function RegulationGlobe({
     if (event.key === "ArrowLeft") yawRef.current -= step;
     if (event.key === "ArrowRight") yawRef.current += step;
     if (event.key === "ArrowUp") {
-      pitchRef.current = Math.max(-Math.PI * 0.42, pitchRef.current - step);
+      pitchRef.current = Math.min(Math.PI * 0.42, pitchRef.current + step);
     }
     if (event.key === "ArrowDown") {
-      pitchRef.current = Math.min(Math.PI * 0.42, pitchRef.current + step);
+      pitchRef.current = Math.max(-Math.PI * 0.42, pitchRef.current - step);
     }
     requestDrawRef.current();
   }
 
   const displayedConceptCount = plottedConcepts.length;
   const hiddenConceptCount = Math.max(0, concepts.length - displayedConceptCount);
-  const motionDisabled = reducedMotion;
 
   return (
     <section
+      id={id}
       className={classNames(styles.panel, className)}
       aria-labelledby="regulation-globe-heading"
       onKeyDownCapture={handleKeyboardRotation}
@@ -766,29 +794,6 @@ export function RegulationGlobe({
           <span className={styles.eyebrow}>GLOBAL ATLAS · RELATION GRAPH</span>
           <h2 id="regulation-globe-heading">Regulation ↔ concept globe</h2>
         </div>
-        <button
-          type="button"
-          className={styles.motionButton}
-          onClick={() => setMotionPaused((paused) => !paused)}
-          disabled={motionDisabled}
-          aria-pressed={motionPaused || motionDisabled}
-          aria-label={
-            motionDisabled
-              ? "Automatic rotation disabled by reduced-motion preference"
-              : motionPaused
-                ? "Resume automatic globe rotation"
-                : "Pause automatic globe rotation"
-          }
-        >
-          {motionPaused || motionDisabled ? (
-            <Play aria-hidden="true" />
-          ) : (
-            <Pause aria-hidden="true" />
-          )}
-          <span>
-            {motionDisabled ? "Motion off" : motionPaused ? "Resume" : "Pause"}
-          </span>
-        </button>
       </header>
 
       <figure className={styles.figure}>
@@ -800,7 +805,7 @@ export function RegulationGlobe({
             ref={canvasRef}
             className={styles.canvas}
             role="img"
-            aria-label={`${jurisdictions.length} jurisdiction nodes connected to ${displayedConceptCount} core concept nodes by shared legal instruments on a rotating point-cloud globe.`}
+            aria-label={`${jurisdictions.length} jurisdiction nodes connected to ${displayedConceptCount} core concept nodes by shared legal instruments on an interactive point-cloud globe.`}
             aria-describedby="regulation-globe-instructions"
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
@@ -812,23 +817,45 @@ export function RegulationGlobe({
             Use the buttons following the globe for an equivalent
             keyboard-accessible view.
           </canvas>
-          <div className={styles.mapLabels} aria-hidden="true">
-            {jurisdictions.map((jurisdiction) => (
-              <span
-                key={jurisdiction.id}
-                ref={(element) => {
-                  if (element) {
-                    jurisdictionLabelRefs.current.set(jurisdiction.id, element);
-                  } else {
-                    jurisdictionLabelRefs.current.delete(jurisdiction.id);
-                  }
-                }}
-                className={styles.mapLabel}
-              >
-                <JurisdictionMark jurisdictionId={jurisdiction.id} small />
-                <b>{MAP_LABELS[jurisdiction.id] ?? jurisdiction.label}</b>
-              </span>
-            ))}
+          <div
+            className={styles.mapLabels}
+            role="group"
+            aria-label="Jurisdiction tags positioned on the globe"
+          >
+            {jurisdictions.map((jurisdiction) => {
+              const primaryInstrumentId =
+                jurisdiction.primaryInstrumentId ?? jurisdiction.instrumentIds[0];
+              const key = `jurisdiction:${jurisdiction.id}`;
+              return (
+                <button
+                  key={jurisdiction.id}
+                  ref={(element) => {
+                    if (element) {
+                      jurisdictionLabelRefs.current.set(jurisdiction.id, element);
+                    } else {
+                      jurisdictionLabelRefs.current.delete(jurisdiction.id);
+                    }
+                  }}
+                  type="button"
+                  className={classNames(
+                    styles.mapLabel,
+                    activeKey === key && styles.isActiveMapLabel,
+                  )}
+                  disabled={!primaryInstrumentId}
+                  onClick={() => {
+                    if (primaryInstrumentId) onOpenInstrument(primaryInstrumentId);
+                  }}
+                  onFocus={() => setActiveNode(key)}
+                  onBlur={() => setActiveNode(null)}
+                  onPointerEnter={() => setActiveNode(key)}
+                  onPointerLeave={() => setActiveNode(null)}
+                  aria-label={`Open ${jurisdiction.label} jurisdiction; ${connectionLabel(jurisdiction.instrumentIds.length)}`}
+                >
+                  <JurisdictionMark jurisdictionId={jurisdiction.id} small />
+                  <b>{MAP_LABELS[jurisdiction.id] ?? jurisdiction.label}</b>
+                </button>
+              );
+            })}
           </div>
           <button
             ref={compassRef}
