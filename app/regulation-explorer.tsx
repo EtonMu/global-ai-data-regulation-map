@@ -1221,11 +1221,36 @@ function explorerReducer(
         query: "",
       };
     case "OPEN_VIEW":
+      if (action.view === "atlas") {
+        return {
+          ...state,
+          view: "atlas",
+          navigatorTab: "sources",
+          selectedInstrumentId: null,
+          selectedProvisionId: null,
+          selectedRelationId: null,
+          selectedConceptId: null,
+          readerTab: "text",
+        };
+      }
+      if (action.view === "instrument" || action.view === "timeline") {
+        return {
+          ...state,
+          view: action.view,
+          navigatorTab: "sources",
+          selectedProvisionId: null,
+          selectedRelationId: null,
+          selectedConceptId: null,
+          readerTab: "text",
+        };
+      }
       return {
         ...state,
         view: action.view,
         navigatorTab: "sources",
         selectedConceptId: null,
+        selectedRelationId:
+          action.view === "connections" ? state.selectedRelationId : null,
       };
     case "SET_NAVIGATOR_TAB":
       return {
@@ -1468,10 +1493,10 @@ function buildAtlasGroups(): AtlasGroup[] {
       contextTypes.includes("international") ||
       contextTypes.includes("intergovernmental") ||
       contextTypes.includes("standards");
-    const framework = international || forceClass(instrument) === "soft";
+    const framework = international;
     const key = framework ? "frameworks" : (root?.id ?? "other");
     const label = framework
-      ? "International / Frameworks / Soft law"
+      ? "International / Transnational Frameworks"
       : (root?.name ?? "Other");
     const group = groups.get(key) ?? {
       id: key,
@@ -1479,7 +1504,7 @@ function buildAtlasGroups(): AtlasGroup[] {
       markId: framework ? "int" : (root?.id ?? instrument.jurisdictionId),
       description:
         framework
-          ? "Standards, multilateral principles, policy declarations and voluntary governance frameworks"
+          ? "Multilateral principles, international standards, declarations and transnational governance frameworks"
           : (root?.description ?? ""),
       instruments: [],
     };
@@ -2197,7 +2222,10 @@ function CorpusNavigator({
                               instrument.shortTitle +
                               ", " +
                               (jurisdictionById.get(instrument.jurisdictionId)?.name ??
-                                instrument.jurisdictionId)
+                                instrument.jurisdictionId) +
+                              (forceClass(instrument) === "soft"
+                                ? ", soft law"
+                                : "")
                             }
                             onClick={() => onOpenInstrument(instrument.id)}
                           >
@@ -2208,9 +2236,14 @@ function CorpusNavigator({
                               />
                               {instrument.shortTitle}
                             </span>
-                            <small>
-                              {jurisdictionById.get(instrument.jurisdictionId)?.shortName ??
-                                instrument.jurisdictionId}
+                            <small className="instrument-tree-meta">
+                              {forceClass(instrument) === "soft" && (
+                                <strong>SOFT LAW</strong>
+                              )}
+                              <span>
+                                {jurisdictionById.get(instrument.jurisdictionId)?.shortName ??
+                                  instrument.jurisdictionId}
+                              </span>
                             </small>
                           </button>
                         ))}
@@ -2357,8 +2390,11 @@ function GlobalAtlas({
 }: {
   onOpenInstrument: (instrumentId: string) => void;
 }) {
-  const frameworkCount =
+  const internationalFrameworkCount =
     atlasGroups.find((group) => group.id === "frameworks")?.instruments.length ?? 0;
+  const softLawCount = instruments.filter(
+    (instrument) => forceClass(instrument) === "soft",
+  ).length;
   const legalSystemCount = atlasGroups.filter(
     (group) => group.id !== "frameworks",
   ).length;
@@ -2375,7 +2411,8 @@ function GlobalAtlas({
         </div>
         <div className="corpus-readout" aria-label="Corpus status">
           <span><strong>{legalSystemCount}</strong> legal systems</span>
-          <span><strong>{frameworkCount}</strong> frameworks</span>
+          <span><strong>{internationalFrameworkCount}</strong> international frameworks</span>
+          <span><strong>{softLawCount}</strong> soft-law instruments</span>
           <span><strong>{instruments.length}</strong> instruments</span>
           <span><strong>{provisions.length}</strong> indexed provisions</span>
           <span><strong>{relations.length}</strong> qualified links</span>
@@ -2423,6 +2460,9 @@ function GlobalAtlas({
                         ?.shortName ?? instrument.jurisdictionId) +
                       ", " +
                       humanize(instrument.lifecycleStatus) +
+                      (forceClass(instrument) === "soft"
+                        ? ", soft law"
+                        : "") +
                       ", " +
                       count +
                       " indexed provisions"
@@ -2439,7 +2479,12 @@ function GlobalAtlas({
                       />
                       <strong>{instrument.shortTitle}</strong>
                     </span>
-                    <span>{humanize(instrument.category)}</span>
+                    <span className="instrument-node-classification">
+                      {forceClass(instrument) === "soft" && (
+                        <strong>SOFT LAW</strong>
+                      )}
+                      {humanize(instrument.category)}
+                    </span>
                     <small>
                       {humanize(instrument.lifecycleStatus)} · {count}
                     </small>
@@ -2934,6 +2979,194 @@ function InstrumentGenome({
   );
 }
 
+type InstrumentConceptCluster = {
+  concept: Concept;
+  provisions: Provision[];
+};
+
+function InstrumentConnectionCanvas({
+  instrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  instrument: Instrument;
+  onOpenProvision: (provision: Provision) => void;
+  onOpenConcept: (conceptId: string) => void;
+}) {
+  const instrumentProvisions = provisionsByInstrument.get(instrument.id) ?? [];
+  const clusterMap = new Map<string, InstrumentConceptCluster>();
+
+  instrument.topicIds.forEach((conceptId) => {
+    const concept = conceptById.get(conceptId);
+    if (concept) clusterMap.set(conceptId, { concept, provisions: [] });
+  });
+  instrumentProvisions.forEach((provision) => {
+    provision.conceptIds.forEach((conceptId) => {
+      const concept = conceptById.get(conceptId);
+      if (!concept) return;
+      const cluster = clusterMap.get(conceptId) ?? { concept, provisions: [] };
+      if (!cluster.provisions.some((candidate) => candidate.id === provision.id)) {
+        cluster.provisions.push(provision);
+      }
+      clusterMap.set(conceptId, cluster);
+    });
+  });
+
+  const clusters = Array.from(clusterMap.values()).sort((left, right) =>
+    right.provisions.length - left.provisions.length ||
+    left.concept.label.localeCompare(right.concept.label),
+  );
+  const mappedProvisionCount = new Set(
+    clusters.flatMap((cluster) => cluster.provisions.map((provision) => provision.id)),
+  ).size;
+  const visibleClusters = clusters.slice(0, 8);
+  const overflowClusters = clusters.slice(8);
+
+  function renderCluster(cluster: InstrumentConceptCluster, compact = false) {
+    const visibleProvisions = cluster.provisions.slice(0, compact ? 5 : 8);
+    const overflowProvisions = cluster.provisions.slice(visibleProvisions.length);
+    return (
+      <article
+        className={[
+          "instrument-concept-cluster",
+          compact ? "is-compact" : "",
+        ].filter(Boolean).join(" ")}
+        key={cluster.concept.id}
+      >
+        <button
+          type="button"
+          className="instrument-concept-node"
+          onClick={() => onOpenConcept(cluster.concept.id)}
+          aria-label={
+            cluster.concept.label +
+            ", core concept linked to " +
+            cluster.provisions.length +
+            " indexed provisions"
+          }
+        >
+          <span>
+            <ConceptIcon conceptId={cluster.concept.id} />
+            CORE CONCEPT
+          </span>
+          <strong>{cluster.concept.label}</strong>
+          <small>{cluster.provisions.length} linked articles</small>
+        </button>
+        <div
+          className="instrument-article-branch"
+          aria-label={cluster.concept.label + " linked provisions"}
+        >
+          {visibleProvisions.map((provision) => (
+            <button
+              type="button"
+              className="instrument-article-node"
+              onClick={() => onOpenProvision(provision)}
+              key={provision.id}
+              aria-label={
+                instrument.shortTitle +
+                " " +
+                provision.locator +
+                ", " +
+                provision.title
+              }
+            >
+              <strong>{provision.locator}</strong>
+              <span>{provision.title}</span>
+            </button>
+          ))}
+          {overflowProvisions.length > 0 && (
+            <details className="instrument-article-overflow">
+              <summary>+{overflowProvisions.length} MORE ARTICLES</summary>
+              <div>
+                {overflowProvisions.map((provision) => (
+                  <button
+                    type="button"
+                    className="instrument-article-node"
+                    onClick={() => onOpenProvision(provision)}
+                    key={provision.id}
+                  >
+                    <strong>{provision.locator}</strong>
+                    <span>{provision.title}</span>
+                  </button>
+                ))}
+              </div>
+            </details>
+          )}
+          {!cluster.provisions.length && (
+            <span className="instrument-cluster-empty">
+              Instrument-level concept; no provision node is indexed yet.
+            </span>
+          )}
+        </div>
+      </article>
+    );
+  }
+
+  return (
+    <section
+      className="connections-view instrument-connections-view"
+      aria-labelledby="instrument-connections-title"
+    >
+      <div className="connections-header">
+        <div>
+          <p className="terminal-label">INSTRUMENT_KNOWLEDGE_GRAPH</p>
+          <h1 id="instrument-connections-title">
+            <span className="connection-title-instrument">
+              {instrument.shortTitle}
+            </span>
+            <span className="connection-title-locator">Concept map</span>
+          </h1>
+          <p>Law → core concept → indexed Article</p>
+        </div>
+        <div className="connection-readout">
+          <span><BrainCircuit aria-hidden="true" />{clusters.length} concepts</span>
+          <span><BookOpenText aria-hidden="true" />{mappedProvisionCount} mapped articles</span>
+          <span><Database aria-hidden="true" />{instrumentProvisions.length} indexed provisions</span>
+          <span><Scale aria-hidden="true" />{humanize(instrument.legalForce)}</span>
+        </div>
+      </div>
+
+      {clusters.length ? (
+        <div
+          className="instrument-knowledge-network"
+          role="group"
+          aria-label={instrument.shortTitle + " concepts and linked provisions"}
+        >
+          <div className="instrument-knowledge-anchor">
+            <span>
+              <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
+              INSTRUMENT
+            </span>
+            <strong>{instrument.shortTitle}</strong>
+            {forceClass(instrument) === "soft" && <small>SOFT LAW</small>}
+          </div>
+          <div className="instrument-concept-clusters">
+            {visibleClusters.map((cluster) => renderCluster(cluster))}
+          </div>
+          {overflowClusters.length > 0 && (
+            <details className="instrument-cluster-overflow">
+              <summary>
+                +{overflowClusters.length} ADDITIONAL CONCEPT CLUSTERS
+              </summary>
+              <div>
+                {overflowClusters.map((cluster) => renderCluster(cluster, true))}
+              </div>
+            </details>
+          )}
+        </div>
+      ) : (
+        <div className="empty-state graph-empty">
+          <span>NO_CONCEPT_CLASSIFICATION</span>
+          <h2>No concept-to-Article classification is recorded yet.</h2>
+          <p>
+            The legal source remains available in the center column while the
+            research graph is expanded.
+          </p>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function ConnectionCanvas({
   anchor,
   selectedRelationId,
@@ -2989,12 +3222,14 @@ function ConnectionCanvas({
           undefined,
           { numeric: true },
         );
-    });
+  });
   const visible = connections.slice(0, 6);
+  const overflowConnections = connections.slice(visible.length);
   const conceptConnections = anchor.conceptIds
     .map((conceptId) => conceptById.get(conceptId))
     .filter((concept): concept is Concept => Boolean(concept));
   const visibleConcepts = conceptConnections.slice(0, 4);
+  const overflowConcepts = conceptConnections.slice(visibleConcepts.length);
   const positions = visible.map((_, index) => {
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visible.length;
     return {
@@ -3277,17 +3512,60 @@ function ConnectionCanvas({
               );
             })}
           </div>
-          {connections.length > visible.length && (
-            <p className="graph-overflow">
-              +{connections.length - visible.length} additional mappings
-              collapsed to preserve legibility.
-            </p>
-          )}
-          {conceptConnections.length > visibleConcepts.length && (
-            <p className="graph-overflow">
-              +{conceptConnections.length - visibleConcepts.length} additional
-              core-concept links collapsed to preserve legibility.
-            </p>
+          {(overflowConnections.length > 0 || overflowConcepts.length > 0) && (
+            <details className="graph-overflow-list">
+              <summary>
+                OPEN ALL RELATION NODES · {overflowConnections.length} mappings ·{" "}
+                {overflowConcepts.length} concepts
+              </summary>
+              <div>
+                {overflowConcepts.map((concept) => (
+                  <button
+                    type="button"
+                    key={"overflow-concept-" + concept.id}
+                    onClick={() => onOpenConcept(concept.id)}
+                  >
+                    <span>
+                      <ConceptIcon conceptId={concept.id} />
+                      CORE CONCEPT
+                    </span>
+                    <strong>{concept.label}</strong>
+                  </button>
+                ))}
+                {overflowConnections.map((item) => {
+                  const relationLabel =
+                    relationLabels[item.relation.type] ??
+                    humanize(item.relation.type);
+                  const targetLabel =
+                    item.relatedProvision?.locator ?? "Instrument record";
+                  return (
+                    <button
+                      type="button"
+                      key={"overflow-relation-" + item.relation.id}
+                      onClick={() => {
+                        if (item.relatedProvision) {
+                          onOpenProvision(item.relatedProvision, item.relation.id);
+                        } else {
+                          onOpenInstrument(item.relatedInstrument.id);
+                        }
+                      }}
+                    >
+                      <span>
+                        <JurisdictionMark
+                          jurisdictionId={item.relatedInstrument.jurisdictionId}
+                          small
+                        />
+                        {relationDirectionMarker(item.relation, anchor.id)}{" "}
+                        {relationLabel}
+                      </span>
+                      <strong>
+                        {item.relatedInstrument.shortTitle} {targetLabel}
+                      </strong>
+                    </button>
+                  );
+                })}
+              </div>
+            </details>
           )}
         </>
       ) : (
@@ -3528,6 +3806,8 @@ function ProvisionReader({
   onOpenInstrument,
   onOpenConcept,
   onAddCompare,
+  readerLanguagePreference,
+  onSetReaderLanguagePreference,
   id,
   className,
 }: {
@@ -3543,28 +3823,15 @@ function ProvisionReader({
   onOpenInstrument: (instrumentId: string) => void;
   onOpenConcept: (conceptId: string) => void;
   onAddCompare: (provisionId: string) => void;
+  readerLanguagePreference: string;
+  onSetReaderLanguagePreference: (language: string) => void;
   id?: string;
   className?: string;
 }) {
   const readerRef = useRef<HTMLElement>(null);
-  const [languageSelection, setLanguageSelection] = useState<{
-    provisionId: string | null;
-    language: string;
-  }>({ provisionId: null, language: "en" });
-  const readerLanguage =
-    languageSelection.provisionId === (provision?.id ?? null)
-      ? languageSelection.language
-      : "en";
   useEffect(() => {
     readerRef.current?.scrollTo({ top: 0 });
   }, [instrument?.id, provision?.id]);
-
-  function setReaderLanguage(language: string) {
-    setLanguageSelection({
-      provisionId: provision?.id ?? null,
-      language,
-    });
-  }
 
   if (!instrument && !provision) {
     return (
@@ -3783,6 +4050,20 @@ function ProvisionReader({
           label: nativeLanguageLabel(text.language),
         })),
       ];
+  const readerLanguage = languageChoices.some(
+    (choice) => choice.value === readerLanguagePreference,
+  )
+    ? readerLanguagePreference
+    : "en";
+  const activeLanguageIndex = Math.max(
+    0,
+    languageChoices.findIndex((choice) => choice.value === readerLanguage),
+  );
+
+  function setReaderLanguage(language: string) {
+    onSetReaderLanguagePreference(language);
+  }
+
   const showLanguageSwitch = languageChoices.length > 1;
   const showingEnglish = readerLanguage === "en";
   const selectedAlternativeLanguageText = isOriginalLanguage
@@ -3933,16 +4214,25 @@ function ProvisionReader({
             <Languages aria-hidden="true" />
             TEXT LANGUAGE
           </span>
-          {languageChoices.map((choice) => (
-            <button
-              type="button"
-              aria-pressed={readerLanguage === choice.value}
-              onClick={() => setReaderLanguage(choice.value)}
-              key={choice.value}
-            >
-              {choice.label}
-            </button>
-          ))}
+          <div
+            className="reader-language-options"
+            style={{
+              "--language-option-count": languageChoices.length,
+              "--language-option-index": activeLanguageIndex,
+            } as CSSProperties}
+          >
+            <span className="reader-language-indicator" aria-hidden="true" />
+            {languageChoices.map((choice) => (
+              <button
+                type="button"
+                aria-pressed={readerLanguage === choice.value}
+                onClick={() => setReaderLanguage(choice.value)}
+                key={choice.value}
+              >
+                {choice.label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
       <div className="reader-tabs" role="tablist" aria-label="Reader panels">
@@ -4441,6 +4731,8 @@ export default function RegulationExplorer() {
     query: "",
   });
   const [historyDepth, setHistoryDepth] = useState(0);
+  const [readerLanguagePreference, setReaderLanguagePreference] =
+    useState("en");
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
     defaultColumnLayout,
@@ -5131,20 +5423,14 @@ export default function RegulationExplorer() {
     "--left-column-width": `${columnLayout.leftWidth}px`,
     "--right-column-width": `${columnLayout.rightWidth}px`,
   } as CSSProperties;
-  const readerPanel =
+  const provisionReaderContent =
     state.navigatorTab === "sources" &&
-    state.view !== "atlas" &&
-    state.view !== "compare" &&
-    state.view !== "timeline" ? (
+    state.view === "connections" &&
+    selectedProvision ? (
       <ProvisionReader
         instrument={selectedInstrument}
         provision={selectedProvision}
-        id={state.view === "connections" ? undefined : "right-column-panel"}
-        className={
-          state.view === "connections"
-            ? "center-column-panel"
-            : "right-column-panel"
-        }
+        className="embedded-provision-reader"
         selectedRelation={effectiveRelation}
         relationsForProvision={selectedRelations}
         readerTab={state.readerTab}
@@ -5159,6 +5445,8 @@ export default function RegulationExplorer() {
         onAddCompare={(provisionId) =>
           dispatch({ type: "ADD_COMPARE", provisionId })
         }
+        readerLanguagePreference={readerLanguagePreference}
+        onSetReaderLanguagePreference={setReaderLanguagePreference}
       />
     ) : null;
   const atlasGlobePanel =
@@ -5172,6 +5460,45 @@ export default function RegulationExplorer() {
         onOpenInstrument={openInstrument}
         onOpenConcept={openConcept}
       />
+    ) : null;
+  const instrumentVisualizationPanel =
+    state.navigatorTab === "sources" &&
+    state.view === "instrument" &&
+    selectedInstrument ? (
+      <aside
+        id="right-column-panel"
+        className="relationship-panel right-column-panel"
+        aria-label={selectedInstrument.shortTitle + " relationship visualization"}
+      >
+        <InstrumentConnectionCanvas
+          instrument={selectedInstrument}
+          onOpenProvision={openProvision}
+          onOpenConcept={openConcept}
+        />
+      </aside>
+    ) : null;
+  const provisionVisualizationPanel =
+    state.navigatorTab === "sources" &&
+    state.view === "connections" &&
+    selectedProvision ? (
+      <aside
+        id="right-column-panel"
+        className="relationship-panel right-column-panel"
+        aria-label={
+          (selectedInstrument?.shortTitle ?? selectedProvision.instrumentId) +
+          " " +
+          selectedProvision.locator +
+          " relationship visualization"
+        }
+      >
+        <ConnectionCanvas
+          anchor={selectedProvision}
+          selectedRelationId={effectiveRelation?.id ?? null}
+          onOpenProvision={openProvision}
+          onOpenInstrument={openInstrument}
+          onOpenConcept={openConcept}
+        />
+      </aside>
     ) : null;
   const conceptVisualizationPanel =
     state.navigatorTab === "concepts" && state.view === "atlas" ? (
@@ -5187,6 +5514,11 @@ export default function RegulationExplorer() {
         onOpenInstrument={openInstrument}
       />
     ) : null;
+  const rightVisualizationPanel =
+    atlasGlobePanel ??
+    conceptVisualizationPanel ??
+    instrumentVisualizationPanel ??
+    provisionVisualizationPanel;
 
   return (
     <main className="terminal-app">
@@ -5400,18 +5732,11 @@ export default function RegulationExplorer() {
           onOpenConcept={openConcept}
         />
 
-        {state.view === "connections" && readerPanel}
-
         <section
-          id={state.view === "connections" ? "right-column-panel" : undefined}
+          id="legal-content-panel"
           ref={workspaceRef}
-          className={[
-            "workspace",
-            state.view === "connections"
-              ? "right-column-panel"
-              : "center-column-panel",
-          ].join(" ")}
-          aria-label="Regulation visualization"
+          className="workspace center-column-panel"
+          aria-label="Legal source content"
         >
           <div className="workspace-status">
             <div className="workspace-location">
@@ -5472,13 +5797,7 @@ export default function RegulationExplorer() {
             />
           )}
           {state.navigatorTab === "sources" && state.view === "connections" && selectedProvision && (
-            <ConnectionCanvas
-              anchor={selectedProvision}
-              selectedRelationId={effectiveRelation?.id ?? null}
-              onOpenProvision={openProvision}
-              onOpenInstrument={openInstrument}
-              onOpenConcept={openConcept}
-            />
+            provisionReaderContent
           )}
           {state.navigatorTab === "sources" && state.view === "timeline" && selectedInstrument && (
             <LineageTimeline instrument={selectedInstrument} />
@@ -5493,12 +5812,7 @@ export default function RegulationExplorer() {
           )}
         </section>
 
-        {atlasGlobePanel}
-        {conceptVisualizationPanel}
-        {state.navigatorTab === "sources" &&
-          state.view !== "connections" &&
-          state.view !== "atlas" &&
-          readerPanel}
+        {rightVisualizationPanel}
       </div>
 
       {state.navigatorTab === "sources" && (

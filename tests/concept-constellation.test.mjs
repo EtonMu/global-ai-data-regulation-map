@@ -57,7 +57,11 @@ test("Core Concepts mounts the constellation as a dedicated right panel", () => 
     /state\.navigatorTab === "concepts" && state\.view === "atlas"[\s\S]*?<ConceptConstellation/,
   );
   assert.match(explorerSource, /selectedConceptId=\{state\.selectedConceptId\}/);
-  assert.match(explorerSource, /\{conceptVisualizationPanel\}/);
+  assert.match(
+    explorerSource,
+    /const rightVisualizationPanel\s*=\s*atlasGlobePanel\s*\?\?\s*conceptVisualizationPanel[\s\S]*?\{rightVisualizationPanel\}/,
+    "the concept constellation must occupy the stable right visualization column",
+  );
   assert.match(
     globalStyles,
     /\.app-shell\.navigator-concepts-mode\.concept-visualization-active\s*\{[\s\S]*?grid-template-columns:\s*var\(--left-grid-width\)[\s\S]*?minmax\(0, 1fr\)[\s\S]*?var\(--right-grid-width\)/,

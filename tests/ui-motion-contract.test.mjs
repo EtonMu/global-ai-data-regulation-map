@@ -99,7 +99,6 @@ test("CSS defines root theme reveal and named explorer surface transitions", () 
   for (const [surface, transitionName] of [
     ["corpus-navigator", "atlas-navigator"],
     ["workspace", "atlas-workspace"],
-    ["provision-reader", "atlas-reader"],
   ]) {
     assert.match(
       globalStyles,
@@ -114,6 +113,13 @@ test("CSS defines root theme reveal and named explorer surface transitions", () 
       `${transitionName} must participate in old/new snapshot animation`,
     );
   }
+
+  assert.match(
+    globalStyles,
+    /html\[data-ui-transition="view"\] \.atlas-globe-panel,[\s\S]*?html\[data-ui-transition="view"\] \.concept-constellation-panel,[\s\S]*?html\[data-ui-transition="view"\] \.relationship-panel\s*{\s*view-transition-name:\s*atlas-reader;/,
+    "every right-column visualization must retain the same transition identity",
+  );
+  assert.match(globalStyles, /::view-transition-(?:old|new)\(atlas-reader\)/);
 
   assert.match(
     globalStyles,

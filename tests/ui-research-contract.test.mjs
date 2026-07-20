@@ -225,8 +225,69 @@ test("Global Atlas mounts the interactive globe as a legal-to-concept bridge", (
   );
   assert.match(
     explorerComponent,
-    /<\/section>\s*\{atlasGlobePanel\}/,
-    "the globe panel must be mounted alongside and after the central workspace",
+    /const rightVisualizationPanel\s*=\s*atlasGlobePanel[\s\S]*?<\/section>\s*\{rightVisualizationPanel\}/,
+    "the globe must flow through the stable right visualization slot after legal content",
+  );
+});
+
+test("instrument and Article states preserve fixed semantic columns", () => {
+  const explorerComponent = sourceFrom(
+    "export default function RegulationExplorer()",
+  );
+
+  assert.match(
+    explorerComponent,
+    /<section(?=[^>]*id="legal-content-panel")(?=[^>]*className="workspace center-column-panel")(?=[^>]*aria-label="Legal source content")[^>]*>/,
+    "the center column must always be the legal-content workspace",
+  );
+  assert.match(
+    explorerComponent,
+    /state\.view === "connections"[\s\S]*?<ProvisionReader(?=[^>]*className="embedded-provision-reader")[\s\S]*?<section(?=[^>]*id="legal-content-panel")[\s\S]*?provisionReaderContent/,
+    "Article text must remain embedded in the center legal-content column",
+  );
+  assert.match(
+    explorerComponent,
+    /const instrumentVisualizationPanel[\s\S]*?<aside(?=[^>]*id="right-column-panel")(?=[^>]*className="relationship-panel right-column-panel")[\s\S]*?<InstrumentConnectionCanvas/,
+    "an open instrument must render its relationship graph in the right column",
+  );
+  assert.match(
+    explorerComponent,
+    /const provisionVisualizationPanel[\s\S]*?<aside(?=[^>]*id="right-column-panel")(?=[^>]*className="relationship-panel right-column-panel")[\s\S]*?<ConnectionCanvas/,
+    "an open Article must render its relationship graph in the right column",
+  );
+  assert.doesNotMatch(
+    globalStyles,
+    /\.view-connections\s*>\s*\.workspace/,
+    "responsive CSS must not swap the center workspace into the former graph position",
+  );
+  assert.match(globalStyles, /\.workspace\s*>\s*\.embedded-provision-reader\s*\{/);
+});
+
+test("instrument visualization links the law to concepts and every indexed Article", () => {
+  const graphSource = sourceBetween(
+    "function InstrumentConnectionCanvas(",
+    "function ConnectionCanvas(",
+  );
+
+  assert.match(graphSource, /instrumentProvisions\.forEach\(\(provision\) =>/);
+  assert.match(graphSource, /provision\.conceptIds\.forEach\(\(conceptId\) =>/);
+  assert.match(
+    graphSource,
+    /className="instrument-concept-node"[\s\S]*?onClick=\{\(\) => onOpenConcept\(cluster\.concept\.id\)\}/,
+    "concept nodes must navigate into Core Concepts",
+  );
+  assert.match(
+    graphSource,
+    /className="instrument-article-node"[\s\S]*?onClick=\{\(\) => onOpenProvision\(provision\)\}/,
+    "Article nodes must open Article text in the center column",
+  );
+  assert.match(graphSource, /<details className="instrument-article-overflow">/);
+  assert.match(graphSource, /<details className="instrument-cluster-overflow">/);
+  assert.match(globalStyles, /\.instrument-knowledge-network\s*\{/);
+  assert.match(
+    globalStyles,
+    /@container connections-workspace \(max-width: 430px\)[\s\S]*?\.instrument-concept-cluster\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\)/,
+    "the instrument graph must stack before labels can overlap",
   );
 });
 
@@ -328,6 +389,11 @@ test("topic-relevant provisions and core-concept graph links are visible and nav
     connectionSource,
     /className="connection-node concept-connection-node"[\s\S]*?onClick=\{\(\) => onOpenConcept\(concept\.id\)\}/,
     "concept graph nodes must open the corresponding concept",
+  );
+  assert.match(
+    connectionSource,
+    /<details className="graph-overflow-list">[\s\S]*?onClick=\{\(\) => onOpenConcept\(concept\.id\)\}[\s\S]*?overflowConnections\.map[\s\S]*?onOpenProvision\(item\.relatedProvision, item\.relation\.id\)/,
+    "overflow concept and provision mappings must remain clickable",
   );
   assert.match(globalStyles, /\.concept-relation-line/);
 });

@@ -34,7 +34,11 @@ test("the four complete corpora are imported into the production explorer", () =
   ]) {
     assert.match(appSource, new RegExp(filename.replaceAll(".", "\\.")));
   }
-  assert.match(appSource, /languageSelection[\s\S]*language:\s*"en"/);
+  assert.match(
+    appSource,
+    /\[readerLanguagePreference,\s*setReaderLanguagePreference\][\s\S]*?useState\("en"\)/,
+    "the shared article-reader preference must default to English",
+  );
   assert.match(appSource, /normalizedEnglishTranslation/);
   assert.match(appSource, /currentEffectiveVersion/);
   assert.match(appSource, /TEXT::NOT YET IN FORCE/);
