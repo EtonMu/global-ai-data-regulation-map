@@ -1,0 +1,30 @@
+{
+  "instrumentId": "kr-pipa-2011",
+  "retrievedOn": "2026-07-20",
+  "source": {
+    "publisher": "Korea Legislation Research Institute",
+    "database": "Statutes of the Republic of Korea",
+    "url": "https://elaw.klri.re.kr/eng_mobile/viewer.do?hseq=71740&key=71&type=sogan",
+    "hseq": "71740",
+    "observedTitle": "PERSONAL INFORMATION PROTECTION ACT",
+    "observedLatestAmendment": "Act No. 20897, Apr. 1, 2025",
+    "remoteResponseBytes": 430283,
+    "remoteResponseSha256": "5be9778d7afdc1f15638b7dde9971f468351ec1330dc213533a8e75e93ec8b8c"
+  },
+  "articleAudit": {
+    "observedArticleHeadingCount": 126,
+    "articleNumberSequenceSha256": "fe8bf7df85b48c94bb60a54ea662942bcc319c666d81f56d3fe68cfc996f9855",
+    "alignedKoreanMst": "270351",
+    "alignedKoreanActNumber": "20897",
+    "alignment": "all-126-main-article-numbers-align-with-current-effective-korean-consolidation",
+    "promulgatedFutureAct21445Included": false
+  },
+  "authorityBoundary": {
+    "originalLanguage": "ko",
+    "controllingText": "The promulgated Korean text controls.",
+    "englishLegalEffect": "KLRI states that the database is reference material and has no legal or official authority.",
+    "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do",
+    "redistributionDecision": "external-link-and-version-metadata-only",
+    "reason": "KLRI's copyright policy prohibits unauthorized reproduction or distribution of its translation material and permits simple or direct links. The English translation body is therefore deliberately not vendored or attached to current corpus units."
+  }
+}

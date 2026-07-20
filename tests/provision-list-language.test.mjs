@@ -36,10 +36,9 @@ test("original-language records expose a native bilingual text switch", () => {
   );
   assert.match(explorerSource, /className="reader-language-switch"/);
   assert.match(explorerSource, /aria-label="Legal text language"/);
-  assert.match(explorerSource, /onClick=\{\(\) => setReaderLanguage\("en"\)\}/);
   assert.match(
     explorerSource,
-    /onClick=\{\(\) => setReaderLanguage\("original"\)\}/,
+    /languageChoices\.map[\s\S]*?onClick=\{\(\) => setReaderLanguage\(choice\.value\)\}/,
   );
   assert.match(explorerSource, /data-text-language=\{displayedLanguage\}/);
   assert.match(explorerSource, /ENGLISH REFERENCE TRANSLATION/);
@@ -47,6 +46,8 @@ test("original-language records expose a native bilingual text switch", () => {
     explorerSource,
     /hasEnglishTranslation \? "ENGLISH" : "ENGLISH SUMMARY"/,
   );
+  assert.match(explorerSource, /alternativeLanguageTexts\.map/);
+  assert.match(explorerSource, /Official reference translation — no legal force/);
   assert.match(explorerSource, /tabIndex=\{readerTab === tab \? 0 : -1\}/);
 });
 

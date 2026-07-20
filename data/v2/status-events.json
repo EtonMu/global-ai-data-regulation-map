@@ -1432,15 +1432,43 @@
   {
     "id": "evt-jp-appi-2026-principal-commencement-deadline",
     "instrumentId": "jp-appi",
-    "date": "2028-07-17",
+    "date": "2028-07-16",
     "type": "statutory-latest-commencement-deadline",
     "label": "Latest statutory deadline for principal APPI amendment commencement",
-    "effect": "The principal package must commence on a Cabinet Order date no later than two years after promulgation; this is a deadline, not an assertion that 17 July 2028 is the operative date.",
+    "effect": "The principal package must commence on a Cabinet Order date no later than the e-Gov scheduled boundary of 16 July 2028; this is a statutory deadline, not an assertion that the deadline itself is the operative commencement date.",
     "resultingStatus": "date-to-be-fixed-by-cabinet-order",
     "source": {
       "url": "https://www.ppc.go.jp/files/pdf/260717_houritsu.pdf",
       "label": "Promulgated APPI amendment — Supplementary Provision Article 1",
       "accessedOn": "2026-07-19"
+    }
+  },
+  {
+    "id": "evt-jp-ai-promotion-act-promulgated-partly-effective",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "date": "2025-06-04",
+    "type": "promulgated-partly-effective",
+    "label": "Japan AI Promotion Act promulgated and partly effective",
+    "effect": "The Act was promulgated and the commencement provisions brought the initial statutory framework into force while the remaining provisions awaited the Cabinet Order phase.",
+    "resultingStatus": "partially-in-force",
+    "source": {
+      "url": "https://laws.e-gov.go.jp/law/507AC0000000053",
+      "label": "e-Gov Law Search — AI Promotion Act",
+      "accessedOn": "2026-07-20"
+    }
+  },
+  {
+    "id": "evt-jp-ai-promotion-act-fully-effective",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "date": "2025-09-01",
+    "type": "fully-effective",
+    "label": "Japan AI Promotion Act became fully effective",
+    "effect": "The remaining provisions entered into force; the e-Gov revision current on 20 July 2026 records no later or future amendment.",
+    "resultingStatus": "in-force",
+    "source": {
+      "url": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+      "label": "Cabinet Office — AI Act status",
+      "accessedOn": "2026-07-20"
     }
   },
   {
@@ -1511,6 +1539,34 @@
       "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=I0050021",
       "label": "Taiwan Ministry of Justice — legislative history",
       "accessedOn": "2026-07-19"
+    }
+  },
+  {
+    "id": "evt-sa-pdpl-implementing-regulation-effective",
+    "instrumentId": "sa-pdpl-implementing-regulation-2023",
+    "date": "2023-09-14",
+    "type": "regulation-effective",
+    "label": "Saudi PDPL Implementing Regulation took effect with the amended Law",
+    "effect": "Article 38 ties the Implementing Regulation's entry into force to the enforcement date of the amended Personal Data Protection Law.",
+    "resultingStatus": "in-force",
+    "source": {
+      "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
+      "label": "Saudi Data Governance Platform — Implementing Regulation",
+      "accessedOn": "2026-07-20"
+    }
+  },
+  {
+    "id": "evt-sa-pdpl-transfer-regulation-v2-verified",
+    "instrumentId": "sa-pdpl-transfer-regulation-2023",
+    "date": "2026-07-20",
+    "type": "current-version-verified",
+    "label": "Transfer Regulation Version 2.0 verified as the current official publication",
+    "effect": "The official Version 2.0 publication dated August 2024 was verified on this research date. Article 9 ties legal effect to Official Gazette publication, but the verified source does not state that Gazette date, so this event is not treated as the commencement date.",
+    "resultingStatus": "in-force-gazette-date-unverified",
+    "source": {
+      "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
+      "label": "Saudi Data Governance Platform — Transfer Regulation Version 2.0",
+      "accessedOn": "2026-07-20"
     }
   }
 ]

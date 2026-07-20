@@ -1,0 +1,1731 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+
+      
+  AI Risks and Trustworthiness
+
+
+      
+  
+  - AIRC
+
+
+    </title>
+
+    
+      
+      <link rel="stylesheet"
+            type="text/css"
+            href="/dist/custom_fontawesome.00f010cd6129.css">
+      <link rel="stylesheet"
+            type="text/css"
+            href="/dist/application.9e57c8ad8399.css">
+      
+    
+
+    
+      <script  nonce="J/XpTAWRQFtxmJ21Bhw2/w==" 
+              type="text/javascript"
+              src="/dist/uswds-init.min.0c5600cc9db1.js"></script>
+    
+
+    
+  
+  
+  
+    <link rel="canonical" href="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/" />
+    <meta property="og:url" content="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/" />
+  
+  
+    <meta name="twitter:title"
+          content="AI Risks and Trustworthiness - AIRC" />
+    <meta property="og:title"
+          content="AI Risks and Trustworthiness - AIRC" />
+  
+  
+    <meta name="description"
+          content="Review key characteristics of trustworthy AI and understand the multi-dimensional risks addressed by the AI RMF. (AI RMF Section 3)" />
+    <meta property="og:description"
+          content="Review key characteristics of trustworthy AI and understand the multi-dimensional risks addressed by the AI RMF. (AI RMF Section 3)" />
+    <meta name="twitter:description"
+          content="Review key characteristics of trustworthy AI and understand the multi-dimensional risks addressed by the AI RMF. (AI RMF Section 3)" />
+  
+  <link rel="icon" href="/img/use_aihead.png">
+  <meta name="color-scheme" content="normal">
+  <meta property="og:image"
+        content="https://airc.nist.gov/img/ai_head_ratio_191.jpeg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1148">
+  <meta property="og:image:height" content="600">
+  <meta name="twitter:image"
+        content="https://airc.nist.gov/img/ai_head_ratio_191.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:site_name" content="NIST AI Resource Center" />
+  
+    <meta property="og:updated_time"
+          content="2026-06-18T16:45:24.873988-04:00">
+  
+
+
+    
+  
+
+
+    
+      
+    
+
+  </head>
+  <body class=" 
+    
+  layout-styleguide
+
+     ">
+
+    
+  
+  
+    
+
+
+    
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  <div class="app-content">
+
+    <section class="usa-banner site-banner"
+         aria-label="Official website of the United States government">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img aria-hidden="true"
+               class="usa-banner__header-flag"
+               src="/img/us_flag_small.png"
+               alt="Small US Flag" />
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action">Here’s how you know</p>
+        </div>
+        <button type="button"
+                class="usa-accordion__button usa-banner__button"
+                aria-expanded="false"
+                aria-controls="gov-banner-default-default">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content"
+         id="gov-banner-default-default">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img"
+               src="/img/icon-dot-gov.svg"
+               role="img"
+               alt="Small Dot Gov Icon"
+               aria-hidden="true" />
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br />
+              A
+              <strong>.gov</strong> website belongs to an official government
+              organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img"
+               src="/img/icon-https.svg"
+               role="img"
+               alt="Small HTTPS Lock Icon"
+               aria-hidden="true" />
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br />
+              A
+              <strong>lock</strong> (
+              <span class="icon-lock">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="52"
+                     height="64"
+                     viewBox="0 0 52 64"
+                     class="usa-banner__lock-image"
+                     role="img"
+                     aria-labelledby="banner-lock-description-default"
+                     focusable="false">
+                  <title id="banner-lock-title-default">Lock</title>
+                  <desc id="banner-lock-description-default">Locked padlock icon</desc>
+                  <path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+                </svg>
+                </span>) or <strong>https://</strong> means you’ve safely connected to
+                the .gov website. Share sensitive information only on official,
+                secure websites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+
+
+
+
+
+<header class="usa-header usa-header--extended site-header site-header--dark"
+        role="banner">
+  <div class="usa-navbar site-header__navbar">
+    <a href="https://www.nist.gov"
+       title="National Institute of Standards and Technology"
+       aria-label="Home">
+      <img src="/img/nist_logo_brand_white.svg"
+           role="img"
+           class="nist-logo"
+           alt="National Institute of Standards and Technology logo" />
+    </a>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+</header>
+<div class="usa-overlay"></div>
+
+<nav aria-label="Main Site navigation" class="usa-nav site-nav">
+  <div class="usa-nav__inner site-nav__inner nav-header">
+    <button type="button" class="usa-nav__close">
+      <img src="/img/usa-icons/close.svg" role="img" alt="Close" />
+    </button>
+    <ul class="usa-nav__primary usa-accordion airc-nav-list">
+      <li class="usa-nav__primary-item">
+        <div class="usa-logo site-logo" id="-logo">
+          <em class="usa-logo__text site-logo__text site-nav-text">
+            <a href="/" title="NIST AI Resource Center (AIRC)">
+              <span aria-hidden="true" class="site-title--short">AIRMF</span>
+              <span class="site-title--long">NIST AI Resource Center (AIRC)</span>
+            </a>
+          </em>
+        </div>
+      </li>
+      <!-- Mobile-nav -->
+      
+
+<ul class="usa-nav__primary usa-nav__primary--mobile usa-accordion emp-mobilenav"
+    id="airc-mobile-bar">
+  
+    
+    <li class="usa-nav__primary-item is-current ">
+      <a href="/"
+         
+         class="usa-current"
+         >
+        
+          <span>Home</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item is-current ">
+      <a href="/airmf-resources/"
+          class="usa-current
+         sb-menu
+         
+         "
+         id="mentgl_4"
+         >
+        
+          <span>AI RMF Resources</span>
+          <span class="caret"></span>
+        </a>
+        
+          
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_4">
+    
+      
+      
+      <li class="usa-nav__submenu-item is-current ">
+        
+          <a href="/airmf-resources/airmf/"
+              class="usa-current 
+             sb-menu
+             "
+             
+             id="mentgl_5"
+             
+             >
+            <span>AI RMF</span>
+            <span class="caret"></span>
+          </a>
+          
+            
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_5">
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/0-ai-rmf-1-0/"
+             
+             class=""
+             >
+            <span>Executive Summary</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/1-sec-risk/"
+             
+             class=""
+             >
+            <span>Framing Risk</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/2-sec-audience/"
+             
+             class=""
+             >
+            <span>Audience</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item is-current ">
+        
+          <a href="/airmf-resources/airmf/3-sec-characteristics/"
+             
+             class="usa-current"
+             >
+            <span>AI Risks and Trustworthiness</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/4-effectiveness/"
+             
+             class=""
+             >
+            <span>Effectiveness of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/5-sec-core/"
+             
+             class=""
+             >
+            <span>AI RMF Core</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/6-sec-profile/"
+             
+             class=""
+             >
+            <span>AI RMF Profiles</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  sidebar-menu-toggle">
+        
+          <button class=" usa-accordion__button"
+                  aria-expanded="false"
+                  aria-controls="mentgl_13">Appendices</button>
+          
+            
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_13">
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/"
+             
+             class=""
+             >
+            <span>📚 App. A: Descriptions of AI Actor Tasks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/"
+             
+             class=""
+             >
+            <span>📚 App. B: How AI Risks Differ from Traditional Software Risks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-c-ai-risk-management-and-human-ai-interaction/"
+             
+             class=""
+             >
+            <span>📚 App. C: AI Risk Management and Human-AI Interaction</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-d-attributes-of-the-ai-rmf/"
+             
+             class=""
+             >
+            <span>📚 App. D: Attributes of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="J/XpTAWRQFtxmJ21Bhw2/w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="J/XpTAWRQFtxmJ21Bhw2/w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/playbook/"
+              class="
+             sb-menu
+             "
+             
+             id="mentgl_18"
+             
+             >
+            <span>Playbook</span>
+            <span class="caret"></span>
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/roadmap/"
+             
+             class=""
+             >
+            <span>Roadmap</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/usecases/"
+             
+             class=""
+             >
+            <span>Example of Use Cases</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/crosswalks/"
+             
+             class=""
+             >
+            <span>Crosswalk Documents</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="J/XpTAWRQFtxmJ21Bhw2/w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/glossary/"
+         
+         class=""
+         >
+        
+          <span>Glossary</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/metrology/"
+         
+         class=""
+         >
+        
+          <span>AI Metrology Center</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/technical-reports/"
+         
+         class=""
+         >
+        
+          <span>Technical Reports</span>
+          
+        </a>
+        
+      
+    </li>
+  
+</ul>
+
+      <!-- end Mobile nav -->
+    </ul>
+    
+    
+    
+    <div class="usa-nav__secondary">
+      <form id="search_form-mobile"
+            class="site-search usa-search usa-search--small flex-fill"
+            action="/search"
+            accept-charset="UTF-8"
+            method="get">
+        <!-- input name="utf8" type="hidden" value="&#x2713;" /-->
+        <input type="hidden" name="affiliate" id="affiliate-mobile" value="uswds" />
+        <div role="search">
+          <label class="usa-sr-only" for="query-mobile">Search the AIRC Website</label>
+          <input id="query-mobile"
+                 class="usa-input usagov-search-autocomplete"
+                 name="query"
+                 type="search"
+                 placeholder="Search AIRC Website"
+                 autocomplete="off" />
+          <button class="site-search__button usa-button margin-top-0"
+                  type="submit"
+                  name="commit">
+            <img src="/img/usa-icons-bg/search--white.svg"
+                 class="usa-search__submit-icon"
+                 alt="Search">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="default-container">
+
+      
+        
+        
+
+        
+<nav class="usa-breadcrumb site-breadcrumbs" aria-label="Breadcrumbs">
+  
+    <ol class="usa-breadcrumb__list">
+      
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/">Home</a>
+              
+            </span>
+          </li>
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/airmf-resources/">AI RMF Resources</a>
+              
+            </span>
+          </li>
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/airmf-resources/airmf/">AI RMF</a>
+              
+            </span>
+          </li>
+        
+      
+      <li class="usa-breadcrumb__link active">AI Risks and Trustworthiness</li>
+    </ol>
+  
+</nav>
+
+
+        
+      
+
+      <div id="user-content-root">
+        
+
+<aside class="sidenav emp-sidenav padding-top-1"
+       id="page-side-navigation"
+       aria-label="Side Navigation">
+  <ul class="site-sidenav usa-sidenav usa-accordion" id="airc-sidebar">
+    
+      
+      
+      <li class="usa-sidenav__item is-current">
+        
+          <a href="/"
+             
+             class="usa-current"
+             >
+            <span>Home</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item is-current">
+        
+          <a href="/airmf-resources/"
+              class="usa-current
+             sb-menu
+             
+             "
+             id="ddtoggle_4"
+             >
+            <span>AI RMF Resources</span>
+            <span class="caret"></span>
+          </a>
+          
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_4">
+    
+      
+      
+      <li class="usa-sitenav__item is-current">
+        
+          <a href="/airmf-resources/airmf/"
+              class="usa-current 
+             sb-menu
+             "
+             
+             id="ddtoggle_5"
+             
+             >
+            <span>AI RMF</span>
+            <span class="caret"></span>
+          </a>
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_5">
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/0-ai-rmf-1-0/"
+             
+             class=""
+             >
+            <span>Executive Summary</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/1-sec-risk/"
+             
+             class=""
+             >
+            <span>Framing Risk</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/2-sec-audience/"
+             
+             class=""
+             >
+            <span>Audience</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item is-current">
+        
+          <a href="/airmf-resources/airmf/3-sec-characteristics/"
+             
+             class="usa-current"
+             >
+            <span>AI Risks and Trustworthiness</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/4-effectiveness/"
+             
+             class=""
+             >
+            <span>Effectiveness of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/5-sec-core/"
+             
+             class=""
+             >
+            <span>AI RMF Core</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/6-sec-profile/"
+             
+             class=""
+             >
+            <span>AI RMF Profiles</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item  sidebar-menu-toggle">
+        
+          <button class=" usa-accordion__button"
+                  aria-expanded="false"
+                  aria-controls="ddtoggle_13">Appendices</button>
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_13">
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/"
+             
+             class=""
+             >
+            <span>📚 App. A: Descriptions of AI Actor Tasks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/"
+             
+             class=""
+             >
+            <span>📚 App. B: How AI Risks Differ from Traditional Software Risks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-c-ai-risk-management-and-human-ai-interaction/"
+             
+             class=""
+             >
+            <span>📚 App. C: AI Risk Management and Human-AI Interaction</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-d-attributes-of-the-ai-rmf/"
+             
+             class=""
+             >
+            <span>📚 App. D: Attributes of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/playbook/"
+              class="
+             sb-menu
+             "
+             
+             id="ddtoggle_18"
+             
+             >
+            <span>Playbook</span>
+            <span class="caret"></span>
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/roadmap/"
+             
+             class=""
+             >
+            <span>Roadmap</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/usecases/"
+             
+             class=""
+             >
+            <span>Example of Use Cases</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/crosswalks/"
+             
+             class=""
+             >
+            <span>Crosswalk Documents</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/glossary/"
+             
+             class=""
+             >
+            <span>Glossary</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/metrology/"
+             
+             class=""
+             >
+            <span>AI Metrology Center</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/technical-reports/"
+             
+             class=""
+             >
+            <span>Technical Reports</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+  </ul>
+</aside>
+
+        <div class="usa-in-page-nav-container site-in-page-nav-container">
+          
+          
+            <aside class="usa-in-page-nav">
+            </aside>
+          
+          <main id="main-content" class="main-content">
+
+            
+  <div class="grid-container"><div class="usa-alert usa-alert--warning margin-y-2 usa-alert--slim">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">
+      The AI RMF 1.0 is being updated. A revised version is in progress.
+    </p>
+  </div>
+</div>
+<div class="rmf-content">
+  <h1 data-number="3" id="sec:characteristics">
+    <span class="header-section-number">3</span> AI Risks and Trustworthiness
+  </h1>
+<i> Excerpt from the NIST AI Risk Management Framework 1.0 (2023). </i>
+  <p>
+    For AI systems to be trustworthy, they often need to be responsive to a
+    multiplicity of criteria that are of value to interested parties. Approaches
+    which enhance AI trustworthiness can reduce negative AI risks. This
+    Framework articulates the following
+    <span><strong>characteristics</strong></span> of trustworthy AI and offers
+    guidance for addressing them. Characteristics of trustworthy AI systems
+    include:
+    <span
+      ><strong
+        >valid and reliable, safe, secure and resilient, accountable and
+        transparent, explainable and interpretable, privacy-enhanced, and fair
+        with harmful bias managed.</strong
+      ></span
+    >
+    Creating trustworthy AI requires balancing each of these characteristics
+    based on the AI system’s context of use. While all characteristics are
+    socio-technical system attributes, accountability and transparency also
+    relate to the processes and activities internal to an AI system and its
+    external setting. Neglecting these characteristics can increase the
+    probability and magnitude of negative consequences.
+  </p>
+  <figure class="rmf-figure" id="fig:characteristics">
+    <img
+    class="usa-media-block__img"
+    src="/img/rmf1/RMF-characteristics-cropped.png"
+    alt="Characteristics of a Trustworthy AI System"
+    />
+    <figcaption>
+      <span class="caption-figure-name">Figure 4:</span> Characteristics of trustworthy AI systems. Valid &amp; Reliable is a
+      necessary condition of trustworthiness and is shown as the base for other
+      trustworthiness characteristics. Accountable &amp; Transparent is shown as
+      a vertical box because it relates to all other characteristics.
+    </figcaption>
+  </figure>
+  <p>
+    Trustworthiness characteristics (shown in Figure 4 above) are inextricably
+    tied to social and organizational behavior, the datasets used by AI systems,
+    selection of AI models and algorithms and the decisions made by those who
+    build them, and the interactions with the humans who provide insight from
+    and oversight of such systems. Human judgment should be employed when
+    deciding on the specific metrics related to AI trustworthiness
+    characteristics and the precise threshold values for those metrics.
+  </p>
+  <p>
+    Addressing AI trustworthiness characteristics individually will not ensure
+    AI system trustworthiness; tradeoffs are usually involved, rarely do all
+    characteristics apply in every setting, and some will be more or less
+    important in any given situation. Ultimately, trustworthiness is a social
+    concept that ranges across a spectrum and is only as strong as its weakest
+    characteristics.
+  </p>
+  <p>
+    When managing AI risks, organizations can face difficult decisions in
+    balancing these characteristics. For example, in certain scenarios tradeoffs
+    may emerge between optimizing for interpretability and achieving privacy. In
+    other cases, organizations might face a tradeoff between predictive accuracy
+    and interpretability. Or, under certain conditions such as data sparsity,
+    privacy-enhancing techniques can result in a loss in accuracy, affecting
+    decisions about fairness and other values in certain domains. Dealing with
+    tradeoffs requires taking into account the decision-making context. These
+    analyses can highlight the existence and extent of tradeoffs between
+    different measures, but they do not answer questions about how to navigate
+    the tradeoff. Those depend on the values at play in the relevant
+    <span><em>context</em></span> and should be resolved in a manner that is
+    both transparent and appropriately justifiable.
+  </p>
+  <p>
+    There are multiple approaches for enhancing contextual awareness in the AI
+    lifecycle. For example, subject matter experts can assist in the evaluation
+    of TEVV findings and work with product and deployment teams to align TEVV
+    parameters to requirements and deployment conditions. When properly
+    resourced, increasing the breadth and diversity of input from interested
+    parties and relevant AI actors throughout the AI lifecycle can enhance
+    opportunities for informing contextually sensitive evaluations, and for
+    identifying AI system benefits and positive impacts. These practices can
+    increase the likelihood that risks arising in social contexts are managed
+    appropriately.
+  </p>
+  <p>
+    Understanding and treatment of trustworthiness characteristics depends on an
+    AI actor’s particular role within the AI lifecycle. For any given AI system,
+    an AI designer or developer may have a different perception of the
+    characteristics than the deployer.
+  </p>
+  <div class="boxB usa-alert usa-alert--info usa-alert--no-icon">
+    <div class="usa-alert__body">
+      <p class="usa-alert__text">
+        Trustworthiness characteristics explained in this document influence
+        each other. Highly secure but unfair systems, accurate but opaque and
+        uninterpretable systems, and inaccurate but secure, privacy-enhanced,
+        and transparent systems are all undesirable. A comprehensive approach to
+        risk management calls for balancing tradeoffs among the trustworthiness
+        characteristics. It is the joint responsibility of all AI actors to
+        determine whether AI technology is an appropriate or necessary tool for
+        a given context or purpose, and how to use it responsibly. The decision
+        to commission or deploy an AI system should be based on a contextual
+        assessment of trustworthiness characteristics and the relative risks,
+        impacts, costs, and benefits, and informed by a broad set of interested
+        parties.
+      </p>
+    </div>
+  </div>
+  <h2 data-number="3.1" id="ssec:valid">
+    <span class="header-section-number">3.1</span> Valid and Reliable
+  </h2>
+  <p>
+    <span><em>Validation</em></span> is the “confirmation, through the provision
+    of objective evidence, that the requirements for a specific intended use or
+    application have been fulfilled” (Source:
+    <span><span class="smallcaps">iso</span></span> 9000:2015). Deployment of AI
+    systems which are inaccurate, unreliable, or poorly generalized to data and
+    settings beyond their training creates and increases negative AI risks and
+    reduces trustworthiness.
+  </p>
+  <p>
+    <span><em>Reliability</em></span> is defined in the same standard as the
+    “ability of an item to perform as required, without failure, for a given
+    time interval, under given conditions” (Source:
+    <span><span class="smallcaps">iso/iec ts</span></span> 5723:2022).
+    Reliability is a goal for overall correctness of AI system operation under
+    the conditions of expected use and over a given period of time, including
+    the entire lifetime of the system.
+  </p>
+  <p>
+    Accuracy and robustness contribute to the validity and trustworthiness of AI
+    systems, and can be in tension with one another in AI systems.
+  </p>
+  <p>
+    <span><em>Accuracy</em></span> is defined by
+    <span><span class="smallcaps">iso/iec ts</span></span> 5723:2022 as
+    “closeness of results of observations, computations, or estimates to the
+    true values or the values accepted as being true.” Measures of accuracy
+    should consider computational-centric measures (e.g., false positive and
+    false negative rates), human-AI teaming, and demonstrate external validity
+    (generalizable beyond the training conditions). Accuracy measurements should
+    always be paired with clearly defined and realistic test sets – that are
+    representative of conditions of expected use – and details about test
+    methodology; these should be included in associated documentation. Accuracy
+    measurements may include disaggregation of results for different data
+    segments.
+  </p>
+  <p>
+    <span><em>Robustness</em></span> or
+    <span><em>generalizability</em></span> is defined as the “ability of a
+    system to maintain its level of performance under a variety of
+    circumstances” (Source:
+    <span><span class="smallcaps">iso/iec ts</span></span> 5723:2022).
+    Robustness is a goal for appropriate system functionality in a broad set of
+    conditions and circumstances, including uses of AI systems not initially
+    anticipated. Robustness requires not only that the system perform exactly as
+    it does under expected uses, but also that it should perform in ways that
+    minimize potential harms to people if it is operating in an unexpected
+    setting.
+  </p>
+  <p>
+    Validity and reliability for deployed AI systems are often assessed by
+    ongoing testing or monitoring that confirms a system is performing as
+    intended. Measurement of validity, accuracy, robustness, and reliability
+    contribute to trustworthiness and should take into consideration that
+    certain types of failures can cause greater harm. AI risk management efforts
+    should prioritize the minimization of potential negative impacts, and may
+    need to include human intervention in cases where the AI system cannot
+    detect or correct errors.
+  </p>
+  <h2 data-number="3.2" id="sec:safe">
+    <span class="header-section-number">3.2</span> Safe
+  </h2>
+  <p>
+    AI systems should “not under defined conditions, lead to a state in which
+    human life, health, property, or the environment is endangered” (Source:
+    <span><span class="smallcaps">iso/iec ts</span></span> 5723:2022). Safe
+    operation of AI systems is improved through:
+  </p>
+  <ul>
+    <li><p>responsible design, development, and deployment practices;</p></li>
+    <li>
+      <p>clear information to deployers on responsible use of the system;</p>
+    </li>
+    <li><p>responsible decision-making by deployers and end users; and</p></li>
+    <li>
+      <p>
+        explanations and documentation of risks based on empirical evidence of
+        incidents.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Different types of safety risks may require tailored AI risk management
+    approaches based on context and the severity of potential risks presented.
+    Safety risks that pose a potential risk of serious injury or death call for
+    the most urgent prioritization and most thorough risk management process.
+  </p>
+  <p>
+    Employing safety considerations during the lifecycle and starting as early
+    as possible with planning and design can prevent failures or conditions that
+    can render a system dangerous. Other practical approaches for AI safety
+    often relate to rigorous simulation and in-domain testing, real-time
+    monitoring, and the ability to shut down, modify, or have human intervention
+    into systems that deviate from intended or expected functionality.
+  </p>
+  <p>
+    AI safety risk management approaches should take cues from efforts and
+    guidelines for safety in fields such as transportation and healthcare, and
+    align with existing sector- or application-specific guidelines or standards.
+  </p>
+  <h2 data-number="3.3" id="sec:secure">
+    <span class="header-section-number">3.3</span> Secure and Resilient
+  </h2>
+  <p>
+    AI systems, as well as the ecosystems in which they are deployed, may be
+    said to be <span><em>resilient</em></span> if they can withstand unexpected
+    adverse events or unexpected changes in their environment or use – or if
+    they can maintain their functions and structure in the face of internal and
+    external change and degrade safely and gracefully when this is necessary
+    (Adapted from:
+    <span><span class="smallcaps">iso/iec ts</span></span> 5723:2022). Common
+    security concerns relate to adversarial examples, data poisoning, and the
+    exfiltration of models, training data, or other intellectual property
+    through AI system endpoints. AI systems that can maintain confidentiality,
+    integrity, and availability through protection mechanisms that prevent
+    unauthorized access and use may be said to be <span><em>secure</em></span
+    >. Guidelines in the
+    <span
+      ><a href="https://www.NIST.gov/cyberframework/framework-documents"
+        >NIST Cybersecurity Framework</a
+      ></span
+    >
+    and
+    <span
+      ><a href="https://csrc.NIST.gov/projects/risk-management/about-rmf"
+        >Risk Management Framework</a
+      ></span
+    >
+    are among those which are applicable here.
+  </p>
+  <p>
+    Security and resilience are related but distinct characteristics. While
+    resilience is the ability to return to normal function after an unexpected
+    adverse event, security includes resilience but also encompasses protocols
+    to avoid, protect against, respond to, or recover from attacks. Resilience
+    relates to robustness and goes beyond the provenance of the data to
+    encompass unexpected or adversarial use (or abuse or misuse) of the model or
+    data.
+  </p>
+  <h2 data-number="3.4" id="sec:Accountable and Transparent">
+    <span class="header-section-number">3.4</span> Accountable and Transparent
+  </h2>
+  <p>
+    Trustworthy AI depends upon accountability. Accountability presupposes
+    transparency. <span><em>Transparency</em></span> reflects the extent to
+    which information about an AI system and its outputs is available to
+    individuals interacting with such a system – regardless of whether they are
+    even aware that they are doing so. Meaningful transparency provides access
+    to appropriate levels of information based on the stage of the AI lifecycle
+    and tailored to the role or knowledge of AI actors or individuals
+    interacting with or using the AI system. By promoting higher levels of
+    understanding, transparency increases confidence in the AI system.
+  </p>
+  <p>
+    This characteristic’s scope spans from design decisions and training data to
+    model training, the structure of the model, its intended use cases, and how
+    and when deployment, post-deployment, or end user decisions were made and by
+    whom. Transparency is often necessary for actionable redress related to AI
+    system outputs that are incorrect or otherwise lead to negative impacts.
+    Transparency should consider human-AI interaction: for example, how a human
+    operator or user is notified when a potential or actual adverse outcome
+    caused by an AI system is detected. A transparent system is not necessarily
+    an accurate, privacy-enhanced, secure, or fair system. However, it is
+    difficult to determine whether an opaque system possesses such
+    characteristics, and to do so over time as complex systems evolve.
+  </p>
+  <p>
+    The role of AI actors should be considered when seeking accountability for
+    the outcomes of AI systems. The relationship between risk and accountability
+    associated with AI and technological systems more broadly differs across
+    cultural, legal, sectoral, and societal contexts. When consequences are
+    severe, such as when life and liberty are at stake, AI developers and
+    deployers should consider proportionally and proactively adjusting their
+    transparency and accountability practices. Maintaining organizational
+    practices and governing structures for harm reduction, like risk management,
+    can help lead to more accountable systems.
+  </p>
+  <p>
+    Measures to enhance transparency and accountability should also consider the
+    impact of these efforts on the implementing entity, including the level of
+    necessary resources and the need to safeguard proprietary information.
+  </p>
+  <p>
+    Maintaining the provenance of training data and supporting attribution of
+    the AI system’s decisions to subsets of training data can assist with both
+    transparency and accountability. Training data may also be subject to
+    copyright and should follow applicable intellectual property rights laws.
+  </p>
+  <p>
+    As transparency tools for AI systems and related documentation continue to
+    evolve, developers of AI systems are encouraged to test different types of
+    transparency tools in cooperation with AI deployers to ensure that AI
+    systems are used as intended.
+  </p>
+  <h2 data-number="3.5" id="sec:explain">
+    <span class="header-section-number">3.5</span> Explainable and Interpretable
+  </h2>
+  <p>
+    <span><em>Explainability</em></span> refers to a representation of the
+    mechanisms underlying AI systems’ operation, whereas
+    <span><em>interpretability</em></span> refers to the meaning of AI systems’
+    output in the context of their designed functional purposes. Together,
+    explainability and interpretability assist those operating or overseeing an
+    AI system, as well as users of an AI system, to gain deeper insights into
+    the functionality and trustworthiness of the system, including its outputs.
+    The underlying assumption is that perceptions of negative risk stem from a
+    lack of ability to make sense of, or contextualize, system output
+    appropriately. Explainable and interpretable AI systems offer information
+    that will help end users understand the purposes and potential impact of an
+    AI system.
+  </p>
+  <p>
+    Risk from lack of explainability may be managed by describing how AI systems
+    function, with descriptions tailored to individual differences such as the
+    user’s role, knowledge, and skill level. Explainable systems can be debugged
+    and monitored more easily, and they lend themselves to more thorough
+    documentation, audit, and governance.
+  </p>
+  <p>
+    Risks to interpretability often can be addressed by communicating a
+    description of why an AI system made a particular prediction or
+    recommendation. (See “Four Principles of Explainable Artificial
+    Intelligence” and “Psychological Foundations of Explainability and
+    Interpretability in Artificial Intelligence” found
+    <span
+      ><a
+        href="https://www.NIST.gov/artificial-intelligence/ai-fundamental-research-explainability"
+        >here</a
+      ></span
+    >.)
+  </p>
+  <p>
+    Transparency, explainability, and interpretability are distinct
+    characteristics that support each other. Transparency can answer the
+    question of “what happened” in the system. Explainability can answer the
+    question of “how” a decision was made in the system. Interpretability can
+    answer the question of “why” a decision was made by the system and its
+    meaning or context to the user.
+  </p>
+  <h2 data-number="3.6" id="sec:privacy">
+    <span class="header-section-number">3.6</span> Privacy-Enhanced
+  </h2>
+  <p>
+    <span><em>Privacy</em></span> refers generally to the norms and practices
+    that help to safeguard human autonomy, identity, and dignity. These norms
+    and practices typically address freedom from intrusion, limiting
+    observation, or individuals’ agency to consent to disclosure or control of
+    facets of their identities (e.g., body, data, reputation). 
+
+    <!-- TODO line break  -->
+    <span>
+      <a href="https://www.NIST.gov/privacy-framework"
+        >The NIST Privacy Framework: A Tool for Improving Privacy through
+        Enterprise Risk Management</a>
+    </span>
+      
+  </p>
+  <p>
+    Privacy values such as anonymity, confidentiality, and control generally
+    should guide choices for AI system design, development, and deployment.
+    Privacy-related risks may influence security, bias, and transparency and
+    come with tradeoffs with these other characteristics. Like safety and
+    security, specific technical features of an AI system may promote or reduce
+    privacy. AI systems can also present new risks to privacy by allowing
+    inference to identify individuals or previously private information about
+    individuals.
+  </p>
+  <p>
+    Privacy-enhancing technologies (“PETs”) for AI, as well as data minimizing
+    methods such as de-identification and aggregation for certain model outputs,
+    can support design for privacy-enhanced AI systems. Under certain conditions
+    such as data sparsity, privacy-enhancing techniques can result in a loss in
+    accuracy, affecting decisions about fairness and other values in certain
+    domains.
+  </p>
+  <h2 data-number="3.7" id="sec:fair">
+    <span class="header-section-number">3.7</span> Fair – with Harmful Bias
+    Managed
+  </h2>
+  <p>
+    <span><em>Fairness</em></span> in AI includes concerns for equality and
+    equity by addressing issues such as harmful bias and discrimination.
+    Standards of fairness can be complex and difficult to define because
+    perceptions of fairness differ among cultures and may shift depending on
+    application. Organizations’ risk management efforts will be enhanced by
+    recognizing and considering these differences. Systems in which harmful
+    biases are mitigated are not necessarily fair. For example, systems in which
+    predictions are somewhat balanced across demographic groups may still be
+    inaccessible to individuals with disabilities or affected by the digital
+    divide or may exacerbate existing disparities or systemic biases.<br />
+    Bias is broader than demographic balance and data representativeness. NIST
+    has identified three major categories of AI bias to be considered and
+    managed: systemic, computational and statistical, and human-cognitive. Each
+    of these can occur in the absence of prejudice, partiality, or
+    discriminatory intent. Systemic bias can be present in AI datasets, the
+    organizational norms, practices, and processes across the AI lifecycle, and
+    the broader society that uses AI systems. Computational and statistical
+    biases can be present in AI datasets and algorithmic processes, and often
+    stem from systematic errors due to non-representative samples.
+    Human-cognitive biases relate to how an individual or group perceives AI
+    system information to make a decision or fill in missing information, or how
+    humans think about purposes and functions of an AI system. Human-cognitive
+    biases are omnipresent in decision-making processes across the AI lifecycle
+    and system use, including the design, implementation, operation, and
+    maintenance of AI.
+  </p>
+  <p>
+    Bias exists in many forms and can become ingrained in the automated systems
+    that help make decisions about our lives. While bias is not always a
+    negative phenomenon, AI systems can potentially increase the speed and scale
+    of biases and perpetuate and amplify harms to individuals, groups,
+    communities, organizations, and society. Bias is tightly associated with the
+    concepts of transparency as well as fairness in society. (For more
+    information about bias, including the three categories, see NIST Special
+    Publication 1270,
+    <span
+      ><a
+        href="https://nvlpubs.NIST.gov/NISTpubs/SpecialPublications/NIST.SP.1270.pdf"
+        >Towards a Standard for Identifying and Managing Bias in Artificial
+        Intelligence.</a
+      ></span
+    >)
+  </p>
+</div></div>
+
+
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <footer class="nist-footer padding-bottom-4">
+  <div class="grid-container nist-footer__info">
+    <div class="grid-row">
+      <div class="tablet:grid-col-6 padding-left-0">
+        <div class="nist-footer__logo">
+          <a href="https://www.nist.gov/"
+             title="National Institute of Standards and Technology"
+             class="nist-footer__logo-link"
+             rel="home">
+            <img src="/img/nist_logo_brand_white.svg"
+                 role="img"
+                 alt="National Institute of Standards and Technology logo"
+                 width="300px"
+                 height="42px" />
+          </a>
+        </div>
+        <div class="nist-footer__contact">
+          <p class="nist-footer__contact-heading">HEADQUARTERS</p>
+          <address>
+            100 Bureau Drive
+            <br>
+            Gaithersburg, MD 20899
+            <br>
+            <a href="tel:301-975-2000">301-975-2000</a>
+          </address>
+          <p>
+            <a href="mailto:do-webmaster@nist.gov">Webmaster</a> | <a href="https://www.nist.gov/about-nist/contact-us">Contact Us</a> | <a href="https://www.nist.gov/visit">Our Other Offices</a>
+          </p>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6">
+        <div class="nist-footer__social-links grid-row">
+          <a class="nist-social nist-social--x-white ext"
+             href=" https://x.com/NIST"
+             data-extlink="">
+            <span>X</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/x.svg"
+                 alt="X" />
+          </a>
+          <a class="nist-social nist-social--facebook-white ext"
+             href=" https://www.facebook.com/NIST"
+             data-extlink="">
+            <span>Facebook</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/facebook.svg"
+                 alt="Facebook" />
+          </a>
+          <a class="nist-social nist-social--linkedin-white ext"
+             href=" https://www.linkedin.com/company/nist"
+             data-extlink="">
+            <span>LinkedIn</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/linkedin.svg"
+                 alt="LinkedIn" />
+          </a>
+          <a class="nist-social nist-social--instagram-white ext"
+             href=" https://www.instagram.com/nist/"
+             data-extlink="">
+            <span>Instagram</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/instagram.svg"
+                 alt="Instagram" />
+          </a>
+          <a class="nist-social nist-social--youtube-white ext"
+             href=" https://www.youtube.com/NIST"
+             data-extlink="">
+            <span>YouTube</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/youtube.svg"
+                 alt="YouTube" />
+          </a>
+          <a class="nist-social nist-social--rss-white"
+             href=" https://www.nist.gov/news-events/nist-rss-feeds">
+            <span>RSS Feed</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/rss_feed.svg"
+                 alt="RSS" />
+          </a>
+          <a class="nist-social nist-social--envelope-white ext"
+             href=" https://public.govdelivery.com/accounts/USNIST/subscriber/new"
+             data-extlink="">
+            <span>Mailing List</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/mail.svg"
+                 alt="Subscribe to Mailing List" />
+          </a>
+        </div>
+        <br>
+        <div class="nist-footer__feedback grid-row">
+          <!-- <a class="usa-button" href="/contact/">Contact Us</a> -->
+          How are we doing? <a class="margin-left-2 usa-button"
+    rel="nofollow noopener"
+    href="https://www.nist.gov/form/nist-gov-feedback?destination=/national-institute-standards-and-technology"
+    title="Provide feedback">Feedback</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.usa.gov/">USA.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://vote.gov/">Vote.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  </div>
+
+
+    
+      
+      <script  nonce="J/XpTAWRQFtxmJ21Bhw2/w==" 
+              defer
+              src="/dist/uswds.min.eb67c3d6236f.js"></script>
+      <script  nonce="J/XpTAWRQFtxmJ21Bhw2/w==" 
+              type="text/javascript"
+              src="/dist/application.f2e7541630ae.js"
+              defer></script>
+    
+
+    
+      
+
+  
+
+  <script nonce="J/XpTAWRQFtxmJ21Bhw2/w==" src="https://www.googletagmanager.com/gtag/js?id=G-3CZ2H64ZSV" async></script>
+  <script nonce="J/XpTAWRQFtxmJ21Bhw2/w==" type="application/javascript" defer>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+    dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-3CZ2H64ZSV');</script>
+  <noscript>
+    <style  nonce="J/XpTAWRQFtxmJ21Bhw2/w==" >
+      iframe {
+        display: none;
+        visibility: hidden;
+      }
+    </style>
+    
+    <iframe src="https://www.googletagmanager.com/ns.html?id=G-3CZ2H64ZSV"
+            height="0"
+            width="0"
+            style="display:none;
+                   visibility:hidden"></iframe>
+  </noscript>
+
+
+    
+
+    
+      
+    
+
+  <script nonce="J/XpTAWRQFtxmJ21Bhw2/w==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='J/XpTAWRQFtxmJ21Bhw2/w==';d.innerHTML="window.__CF$cv$params={r:'a1e395bfe972add5',t:'MTc4NDU2NzQ4NQ=='};var a=document.createElement('script');a.nonce='J/XpTAWRQFtxmJ21Bhw2/w==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

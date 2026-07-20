@@ -2735,6 +2735,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .provision-list-item {
+  position: relative;
   width: 100%;
   min-width: 0;
   display: grid;
@@ -2752,6 +2753,25 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     background-color 150ms ease,
     color 150ms ease,
     padding-inline 150ms ease;
+}
+
+.provision-list-item.is-topic-relevant::before {
+  position: absolute;
+  inset-block: 8px;
+  inset-inline-start: -8px;
+  width: 2px;
+  background: var(--violet);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--violet) 42%, transparent);
+  content: "";
+}
+
+.provision-list-item.is-topic-relevant {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--violet) 8%, transparent),
+      transparent 34%
+    );
 }
 
 .provision-list > li:first-child .provision-list-item {
@@ -2806,8 +2826,15 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   -webkit-line-clamp: 2;
 }
 
-.provision-list-mappings {
+.provision-list-signals {
   min-width: 34px;
+  display: grid;
+  justify-items: end;
+  gap: 5px;
+}
+
+.provision-list-mappings,
+.provision-list-concepts {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
@@ -2817,7 +2844,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-size: 0.67rem;
 }
 
-.provision-list-mappings svg {
+.provision-list-mappings svg,
+.provision-list-concepts svg {
   width: 13px;
   height: 13px;
 }
@@ -2826,8 +2854,52 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--violet);
 }
 
+.provision-list-concepts {
+  color: var(--cyan);
+}
+
 .connections-header {
   align-items: start;
+}
+
+/*
+ * The connections workspace is the resizable right-hand column on wide
+ * screens.  Viewport media queries cannot see when a user has narrowed just
+ * this column, so the header and graph must respond to their own container.
+ */
+.connections-view {
+  container-name: connections-workspace;
+  container-type: inline-size;
+}
+
+.connections-header h1 {
+  min-width: 0;
+  max-inline-size: 100%;
+  display: grid;
+  gap: 0.18em;
+  hyphens: none;
+}
+
+.connection-title-instrument,
+.connection-title-locator {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.connection-title-instrument {
+  text-wrap: balance;
+}
+
+.connection-title-locator {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.42em;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.4;
+  text-wrap: pretty;
 }
 
 .connection-canvas {
@@ -2965,6 +3037,26 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   animation: graph-terminal-enter 380ms ease-out forwards;
 }
 
+.concept-relation-line {
+  --line-opacity: 0.92;
+  fill: none;
+  stroke: var(--violet);
+  stroke-width: 1.7;
+  stroke-dasharray: 4 5;
+  stroke-dashoffset: 100;
+  opacity: var(--line-opacity);
+  vector-effect: non-scaling-stroke;
+  animation: graph-line-enter 780ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.concept-relation-terminal {
+  fill: var(--violet);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: graph-terminal-enter 380ms ease-out forwards;
+}
+
 .connection-node {
   position: absolute;
   z-index: 4;
@@ -3046,6 +3138,31 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   box-shadow:
     0 0 0 5px rgba(86, 225, 255, 0.035),
     0 0 34px rgba(86, 225, 255, 0.12);
+}
+
+.concept-connection-node {
+  z-index: 3;
+  width: 132px;
+  border-color: color-mix(in srgb, var(--violet) 72%, var(--line-strong));
+  background: color-mix(in srgb, var(--violet) 9%, var(--graph-node-surface));
+}
+
+.concept-connection-node:hover,
+.concept-connection-node:focus-visible {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 15%, var(--panel-hover));
+  box-shadow: 0 0 22px color-mix(in srgb, var(--violet) 18%, transparent);
+}
+
+.concept-connection-node .connection-node-kicker,
+.concept-connection-node small {
+  color: var(--violet);
+}
+
+.concept-connection-node .connection-node-kicker svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
 }
 
 @keyframes graph-line-enter {
@@ -3414,6 +3531,81 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-size: clamp(1.75rem, 3vw, 3rem);
 }
 
+/*
+ * Keep the title and evidence readout vertical throughout the entire normal
+ * right-column range.  The graph can remain spatial a little longer, but the
+ * heading must never be reduced to a sliver when the adjacent columns grow.
+ */
+@container connections-workspace (max-width: 640px) {
+  .connections-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .view-connections .connections-header h1 {
+    font-size: clamp(1.72rem, 10cqi, 2.35rem);
+    line-height: 1.02;
+  }
+
+  .connection-readout {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+
+  .connection-readout span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@container connections-workspace (max-width: 560px) {
+  .connection-canvas {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 14px 0;
+    overflow: visible;
+    background-size: 24px 24px;
+  }
+
+  .connection-canvas::before,
+  .connection-canvas::after,
+  .connection-lines {
+    display: none;
+  }
+
+  .connection-node {
+    position: relative;
+    inset: auto !important;
+    width: 100%;
+    min-height: 92px;
+    transform: none;
+    animation: none;
+  }
+
+  .connection-node.anchor-node {
+    grid-column: 1 / -1;
+    min-height: 104px;
+    transform: none;
+  }
+}
+
+@container connections-workspace (max-width: 360px) {
+  .view-connections .connections-header h1 {
+    font-size: clamp(1.25rem, 9cqi, 1.55rem);
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .connection-readout,
+  .connection-canvas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .reader-idle {
   display: grid;
   align-content: center;
@@ -3572,14 +3764,15 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .reader-language-switch {
   min-width: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) repeat(2, auto);
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   padding: 0 0 10px;
 }
 
 .reader-language-switch > span {
+  margin-right: auto;
   min-width: 0;
   display: inline-flex;
   align-items: center;
@@ -3804,6 +3997,44 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .translation-status-note p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.topic-relevance-note {
+  margin-bottom: 14px;
+  padding: 11px 12px;
+  border-left: 2px solid var(--muted-dark);
+  background: var(--panel);
+}
+
+.topic-relevance-note.is-substantive {
+  border-left-color: var(--violet);
+  background: var(--violet-soft);
+}
+
+.topic-relevance-note > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.035em;
+}
+
+.topic-relevance-note.is-substantive > span {
+  color: var(--violet);
+}
+
+.topic-relevance-note svg {
+  width: 14px;
+  height: 14px;
+}
+
+.topic-relevance-note p {
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 0.7rem;
@@ -4643,17 +4874,22 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     grid-row: 2;
   }
 
-  .provision-list-mappings {
+  .provision-list-signals {
     grid-column: 2;
     grid-row: 1;
   }
 
   .reader-language-switch {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .reader-language-switch > span {
-    grid-column: 1 / -1;
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
+  .reader-language-switch button {
+    flex: 1 1 120px;
   }
 
   .view-code {

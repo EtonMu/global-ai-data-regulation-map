@@ -254,3 +254,62 @@ test("desktop columns can be collapsed, dragged, resized by keyboard, and restor
     "desktop panel controls must not disturb the responsive stacked layout",
   );
 });
+
+test("the connections view reflows against its resized column instead of fragmenting titles", () => {
+  assert.match(
+    globalStyles,
+    /\.connections-view\s*\{[\s\S]*?container-name:\s*connections-workspace;[\s\S]*?container-type:\s*inline-size;/,
+    "the visualization must establish a local size container",
+  );
+  assert.match(
+    globalStyles,
+    /\.connections-header h1\s*\{[\s\S]*?display:\s*grid;[\s\S]*?hyphens:\s*none;/,
+    "the legal-source heading must reserve its own semantic rows",
+  );
+  assert.match(
+    explorerSource,
+    /className="connection-title-instrument"[\s\S]*?anchorInstrument\.shortTitle[\s\S]*?className="connection-title-locator"/,
+    "the instrument name and provision locator must reflow independently",
+  );
+  assert.match(
+    globalStyles,
+    /\.connection-title-instrument,[\s\S]*?\.connection-title-locator\s*\{[\s\S]*?max-width:\s*100%;[\s\S]*?overflow-wrap:\s*break-word;[\s\S]*?word-break:\s*normal;/,
+    "long titles may wrap at word boundaries without collapsing into a one-character column",
+  );
+  assert.match(
+    globalStyles,
+    /@container connections-workspace \(max-width: 640px\)[\s\S]*?\.connections-header\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\);/,
+    "a narrowed resizable column must stack the heading and readout",
+  );
+  assert.match(
+    globalStyles,
+    /@container connections-workspace \(max-width: 560px\)[\s\S]*?\.connection-canvas\s*\{[\s\S]*?display:\s*grid;[\s\S]*?\.connection-node\s*\{[\s\S]*?position:\s*relative;/,
+    "the graph must become a legible node grid when its own column is narrow",
+  );
+});
+
+test("topic-relevant provisions and core-concept graph links are visible and navigable", () => {
+  const genomeSource = sourceBetween(
+    "function InstrumentGenome(",
+    "function ConnectionCanvas(",
+  );
+  const connectionSource = sourceBetween(
+    "function ConnectionCanvas(",
+    "function LineageTimeline(",
+  );
+
+  assert.match(genomeSource, /isTopicRelevant \? "is-topic-relevant"/);
+  assert.match(genomeSource, /className="provision-list-concepts"/);
+  assert.match(globalStyles, /\.provision-list-item\.is-topic-relevant::before/);
+  assert.match(
+    connectionSource,
+    /const conceptConnections = anchor\.conceptIds[\s\S]*?<ConceptIcon conceptId=\{concept\.id\}/,
+    "the same provision-to-concept classification must appear in the graph",
+  );
+  assert.match(
+    connectionSource,
+    /className="connection-node concept-connection-node"[\s\S]*?onClick=\{\(\) => onOpenConcept\(concept\.id\)\}/,
+    "concept graph nodes must open the corresponding concept",
+  );
+  assert.match(globalStyles, /\.concept-relation-line/);
+});

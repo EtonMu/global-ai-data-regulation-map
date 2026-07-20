@@ -15,6 +15,40 @@ const [
   sourceAudits,
   gdprArticles,
   euAiActArticles,
+  ukGdprArticles,
+  piplArticles,
+  networkDataArticles,
+  generativeAiArticles,
+  pipedaProvisions,
+  lgpdArticles,
+  taiwanAiActArticles,
+  taiwanPdpaArticles,
+  singaporePdpaProvisions,
+  southAfricaPopiaSections,
+  nigeriaNdpaSections,
+  indonesiaPdpArticles,
+  indiaDpdpActProvisions,
+  indiaDpdpRulesProvisions,
+  uaePdplArticles,
+  saudiPdplArticles,
+  saudiPdplImplementingArticles,
+  saudiPdplTransferArticles,
+  australiaPrivacyActProvisions,
+  japanAppiArticles,
+  japanAiPromotionActArticles,
+  hongKongPdpoProvisions,
+  swissFadpProvisions,
+  vietnamPdplArticles,
+  vietnamDecree356Provisions,
+  vietnamDecree13Provisions,
+  koreaPipaArticles,
+  koreaAiFrameworkArticles,
+  usExecutiveOrderProvisions,
+  taiwanExecutiveYuanGenAiGuidelines,
+  brazilAiBillArticles,
+  californiaSb1047Provisions,
+  coloradoAiActProvisions,
+  nistAiRmfCorpus,
 ] = await Promise.all([
   readJson("jurisdictions.json"),
   readJson("instruments.json"),
@@ -24,6 +58,40 @@ const [
   readJson("source-audit.json"),
   readJson("gdpr-articles.json"),
   readJson("eu-ai-act-articles.json"),
+  readJson("uk-gdpr-articles.json"),
+  readJson("cn-pipl-articles.json"),
+  readJson("cn-network-data-regulations-articles.json"),
+  readJson("cn-generative-ai-measures-articles.json"),
+  readJson("canada-pipeda-provisions.json"),
+  readJson("brazil-lgpd-articles.json"),
+  readJson("tw-ai-basic-act-2026-articles.json"),
+  readJson("tw-personal-data-protection-act-articles.json"),
+  readJson("sg-pdpa-provisions.json"),
+  readJson("za-popia-sections.json"),
+  readJson("ng-ndpa-2023-sections.json"),
+  readJson("id-pdp-law-2022-articles.json"),
+  readJson("india-dpdp-act-2023-provisions.json"),
+  readJson("india-dpdp-rules-2025-provisions.json"),
+  readJson("uae-federal-pdpl-45-2021-articles.json"),
+  readJson("sa-pdpl-2021-amended-2023-articles.json"),
+  readJson("sa-pdpl-implementing-regulation-2023-articles.json"),
+  readJson("sa-pdpl-transfer-regulation-2023-articles.json"),
+  readJson("au-privacy-act-1988-provisions.json"),
+  readJson("jp-appi-current-articles.json"),
+  readJson("jp-ai-promotion-act-2025-articles.json"),
+  readJson("hk-pdpo-486-provisions.json"),
+  readJson("ch-fadp-2020-provisions.json"),
+  readJson("vn-personal-data-protection-law-2025-articles.json"),
+  readJson("vn-decree-356-2025-provisions.json"),
+  readJson("vn-decree-13-2023-historical-provisions.json"),
+  readJson("kr-pipa-2011-current-articles.json"),
+  readJson("kr-ai-framework-act-2025-current-articles.json"),
+  readJson("us-executive-orders-provisions.json"),
+  readJson("tw-executive-yuan-generative-ai-guidelines-2023-points.json"),
+  readJson("br-ai-bill-2338-2023-articles.json"),
+  readJson("us-ca-sb1047-2024-provisions.json"),
+  readJson("us-co-ai-act-current-provisions.json"),
+  readJson("us-nist-ai-rmf-1-0-corpus.json"),
 ]);
 
 const instrumentById = new Map(
@@ -32,19 +100,62 @@ const instrumentById = new Map(
 const provisionById = new Map(
   provisions.map((provision) => [provision.id, provision]),
 );
+const completeCorpora = [
+  gdprArticles,
+  euAiActArticles,
+  ukGdprArticles,
+  piplArticles,
+  networkDataArticles,
+  generativeAiArticles,
+  pipedaProvisions,
+  lgpdArticles,
+  taiwanAiActArticles,
+  taiwanPdpaArticles,
+  singaporePdpaProvisions,
+  southAfricaPopiaSections,
+  nigeriaNdpaSections,
+  indonesiaPdpArticles,
+  indiaDpdpActProvisions,
+  indiaDpdpRulesProvisions,
+  uaePdplArticles,
+  saudiPdplArticles,
+  saudiPdplImplementingArticles,
+  saudiPdplTransferArticles,
+  australiaPrivacyActProvisions,
+  japanAppiArticles,
+  japanAiPromotionActArticles,
+  hongKongPdpoProvisions,
+  swissFadpProvisions,
+  vietnamPdplArticles,
+  vietnamDecree356Provisions,
+  vietnamDecree13Provisions,
+  koreaPipaArticles,
+  koreaAiFrameworkArticles,
+  usExecutiveOrderProvisions,
+  taiwanExecutiveYuanGenAiGuidelines,
+  brazilAiBillArticles,
+  californiaSb1047Provisions,
+  coloradoAiActProvisions,
+  nistAiRmfCorpus,
+];
+const mergedProvisionById = new Map(
+  [...provisions, ...completeCorpora.flat()].map((provision) => [
+    provision.id,
+    provision,
+  ]),
+);
 
 test("expanded corpus exposes its audited release snapshot", () => {
   const mergedProvisionIds = new Set([
     ...provisions.map((item) => item.id),
-    ...gdprArticles.map((item) => item.id),
-    ...euAiActArticles.map((item) => item.id),
+    ...completeCorpora.flatMap((corpus) => corpus.map((item) => item.id)),
   ]);
   assert.equal(jurisdictions.length, 30);
-  assert.equal(instruments.length, 55);
-  assert.equal(provisions.length, 308);
-  assert.equal(mergedProvisionIds.size, 499);
-  assert.equal(relations.length, 67);
-  assert.equal(statusEvents.length, 112);
+  assert.equal(instruments.length, 58);
+  assert.equal(provisions.length, 218);
+  assert.equal(mergedProvisionIds.size, 2873);
+  assert.equal(relations.length, 74);
+  assert.equal(statusEvents.length, 116);
   assert.equal(sourceAudits.length, instruments.length);
 });
 
@@ -78,19 +189,19 @@ test("high-risk lifecycle corrections remain explicit", () => {
 
 test("version dates are not substituted for provision commencement dates", () => {
   assert.equal(
-    provisionById.get("sg-pdpa-2012-ss-26a-26e").appliesFrom,
+    mergedProvisionById.get("sg-pdpa-sec-26a").appliesFrom,
     "2021-02-01",
   );
   assert.equal(
-    provisionById.get("sg-pdpa-2012-s-48j").appliesFrom,
+    mergedProvisionById.get("sg-pdpa-sec-48j").appliesFrom,
     "2022-10-01",
   );
   assert.equal(
-    provisionById.get("au-privacy-act-1988-s-2a-app-1").appliesFrom,
+    mergedProvisionById.get("au-privacy-act-1988-app-1").appliesFrom,
     "2014-03-12",
   );
   assert.equal(
-    provisionById.get("au-privacy-act-1988-part-iiic").appliesFrom,
+    mergedProvisionById.get("au-privacy-act-1988-sec-26wa").appliesFrom,
     "2018-02-22",
   );
   assert.equal(
@@ -117,8 +228,8 @@ test("overlapping grouped anchors are split into source-accurate nodes", () => {
     "https://s.mkri.id/public/content/persidangan/putusan/putusan_mkri_12970_1753859809.pdf",
   );
   assert.equal(
-    provisionById.get("us-co-sb26-189-admt-2026-access-review").locator,
-    "C.R.S. § 6-1-1705(1)",
+    mergedProvisionById.get("us-co-ai-act-current-6-1-1705").label,
+    "C.R.S. § 6-1-1705",
   );
   assert.deepEqual(
     provisionById.get("cn-network-data-reg-art-9").conceptIds,
@@ -138,9 +249,9 @@ test("source audits state honest local coverage for every instrument", () => {
   const completeCount = [...counts]
     .filter(([mode]) => mode.startsWith("complete-"))
     .reduce((sum, [, count]) => sum + count, 0);
-  assert.equal(completeCount, 3);
-  assert.equal(counts.get("selected-source-text-and-index"), 5);
-  assert.equal(counts.get("selected-provision-index"), 47);
+  assert.equal(completeCount, 38);
+  assert.equal(counts.get("selected-source-text-and-index"), 1);
+  assert.equal(counts.get("selected-provision-index"), 19);
 
   for (const provision of provisions.filter(
     (item) =>
@@ -157,7 +268,7 @@ test("reviewed expansion relations use precise endpoints and qualified types", (
     const number = Number(relation.id.replace("v2-rel-", ""));
     return number >= 43;
   });
-  assert.equal(expandedRelations.length, 25);
+  assert.equal(expandedRelations.length, 32);
   assert.equal(
     expandedRelations.some(
       (relation) => relation.type === "superseded-for-current-guidance-by",
@@ -176,10 +287,24 @@ test("reviewed expansion relations use precise endpoints and qualified types", (
     expandedRelations.find((relation) => relation.id === "v2-rel-066").type,
     "future-partial-overlap",
   );
-  assert.ok(
-    expandedRelations.every(
-      (relation) => relation.verifiedOn === "2026-07-19",
-    ),
+  for (const relationId of [
+    "v2-rel-044",
+    "v2-rel-070",
+    "v2-rel-071",
+    "v2-rel-053",
+    "v2-rel-072",
+    "v2-rel-073",
+    "v2-rel-074",
+    "v2-rel-057",
+  ]) {
+    assert.equal(
+      expandedRelations.find((relation) => relation.id === relationId).verifiedOn,
+      "2026-07-20",
+    );
+  }
+  assert.deepEqual(
+    expandedRelations.slice(-2).map((relation) => [relation.id, relation.verifiedOn]),
+    [["v2-rel-068", "2026-07-20"], ["v2-rel-069", "2026-07-20"]],
   );
 });
 

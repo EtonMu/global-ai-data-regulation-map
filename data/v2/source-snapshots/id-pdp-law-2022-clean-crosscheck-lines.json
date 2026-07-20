@@ -1,0 +1,5187 @@
+{
+  "instrumentId": "id-pdp-law-2022",
+  "source": "https://perpajakan.ddtc.co.id/id/sumber-hukum/peraturan-pusat/undang-undang-27-tahun-2022",
+  "sourceRole": "secondary-transcription-cross-check",
+  "controllingOfficialSources": [
+    "https://www.jdihn.go.id/files/2098/2022uu027.pdf",
+    "https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang%2Bnomor%2B27%2Btahun%2B2022",
+    "https://www.peraturan.go.id/id/uu-no-27-tahun-2022"
+  ],
+  "retrievedOn": "2026-07-20",
+  "extractionScope": "Clean Indonesian transcription from Chapter I through the Gazette number. Used only to restore list markers and correct obvious OCR defects in the controlling official JDIH sources; not represented as an official publication.",
+  "lines": [
+    {
+      "sourceLine": 90,
+      "text": "BAB I"
+    },
+    {
+      "sourceLine": 91,
+      "text": "KETENTUAN UMUM"
+    },
+    {
+      "sourceLine": 92,
+      "text": "## Pasal 1"
+    },
+    {
+      "sourceLine": 93,
+      "text": ""
+    },
+    {
+      "sourceLine": 94,
+      "text": "Dalam Undang-Undang ini yang dimaksud dengan:"
+    },
+    {
+      "sourceLine": 95,
+      "text": ""
+    },
+    {
+      "sourceLine": 96,
+      "text": "1."
+    },
+    {
+      "sourceLine": 97,
+      "text": ""
+    },
+    {
+      "sourceLine": 98,
+      "text": "Data Pribadi adalah data tentang orang perseorangan yang teridentifikasi atau dapat diidentifikasi secara tersendiri atau dikombinasi dengan informasi lainnya baik secara langsung maupun tidak langsung melalui sistem elektronik atau nonelektronik."
+    },
+    {
+      "sourceLine": 99,
+      "text": ""
+    },
+    {
+      "sourceLine": 100,
+      "text": "2."
+    },
+    {
+      "sourceLine": 101,
+      "text": ""
+    },
+    {
+      "sourceLine": 102,
+      "text": "Pelindungan Data Pribadi adalah keseluruhan upaya untuk melindungi Data Pribadi dalam rangkaian pemrosesan Data Pribadi guna menjamin hak konstitusional subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 103,
+      "text": ""
+    },
+    {
+      "sourceLine": 104,
+      "text": "3."
+    },
+    {
+      "sourceLine": 105,
+      "text": "Informasi adalah keterangan, pernyataan, gagasan, dan tanda-tanda yang mengandung nilai, makna, dan pesan, baik data, fakta, maupun penjelasannya yang dapat dilihat, didengar, dan dibaca yang disajikan dalam berbagai kemasan dan format sesuai dengan perkembangan teknologi informasi dan komunikasi secara elektronik ataupun nonelektronik."
+    },
+    {
+      "sourceLine": 106,
+      "text": ""
+    },
+    {
+      "sourceLine": 107,
+      "text": "4."
+    },
+    {
+      "sourceLine": 108,
+      "text": "Pengendali Data Pribadi adalah setiap orang, badan publik, dan organisasi internasional yang bertindak sendiri-sendiri atau bersama-sama dalam menentukan tujuan dan melakukan kendali pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 109,
+      "text": ""
+    },
+    {
+      "sourceLine": 110,
+      "text": "5."
+    },
+    {
+      "sourceLine": 111,
+      "text": ""
+    },
+    {
+      "sourceLine": 112,
+      "text": "Prosesor Data Pribadi adalah setiap orang, badan publik, dan organisasi internasional yang bertindak sendiri-sendiri atau bersama-sama dalam melakukan pemrosesan Data Pribadi atas nama Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 113,
+      "text": ""
+    },
+    {
+      "sourceLine": 114,
+      "text": "6."
+    },
+    {
+      "sourceLine": 115,
+      "text": "Subjek Data Pribadi adalah orang perseorangan yang pada dirinya melekat Data Pribadi."
+    },
+    {
+      "sourceLine": 116,
+      "text": ""
+    },
+    {
+      "sourceLine": 117,
+      "text": "7."
+    },
+    {
+      "sourceLine": 118,
+      "text": ""
+    },
+    {
+      "sourceLine": 119,
+      "text": "Setiap Orang adalah orang perseorangan atau korporasi."
+    },
+    {
+      "sourceLine": 120,
+      "text": ""
+    },
+    {
+      "sourceLine": 121,
+      "text": "8."
+    },
+    {
+      "sourceLine": 122,
+      "text": ""
+    },
+    {
+      "sourceLine": 123,
+      "text": "Korporasi adalah kumpulan orang dan/atau kekayaan yang terorganisasi baik yang berbadan hukum maupun tidak berbadan hukum."
+    },
+    {
+      "sourceLine": 124,
+      "text": ""
+    },
+    {
+      "sourceLine": 125,
+      "text": "9."
+    },
+    {
+      "sourceLine": 126,
+      "text": "Badan Publik adalah lembaga eksekutif, legislatif, yudikatif, dan badan lain yang fungsi dan tugas pokoknya berkaitan dengan penyelenggaraan negara, yang sebagian atau seluruh dananya bersumber dari Anggaran Pendapatan dan Belanja Negara dan/atau Anggaran Pendapatan dan Belanja Daerah, atau organisasi nonpemerintah sepanjang sebagian atau seluruh dananya bersumber dari Anggaran Pendapatan dan Belanja Negara dan/atau Anggaran Pendapatan dan Belanja Daerah, sumbangan masyarakat, dan/atau luar negeri."
+    },
+    {
+      "sourceLine": 127,
+      "text": ""
+    },
+    {
+      "sourceLine": 128,
+      "text": "10."
+    },
+    {
+      "sourceLine": 129,
+      "text": "Organisasi Internasional adalah organisasi yang diakui sebagai subjek hukum internasional dan mempunyai kapasitas untuk membuat perjanjian internasional."
+    },
+    {
+      "sourceLine": 130,
+      "text": ""
+    },
+    {
+      "sourceLine": 131,
+      "text": "11."
+    },
+    {
+      "sourceLine": 132,
+      "text": ""
+    },
+    {
+      "sourceLine": 133,
+      "text": "Pemerintah Pusat yang selanjutnya disebut Pemerintah adalah Presiden Republik Indonesia yang memegang kekuasaan pemerintahan Negara Republik Indonesia sebagaimana dimaksud dalam Undang­ Undang Dasar Negara Republik Indonesia Tahun 1945."
+    },
+    {
+      "sourceLine": 134,
+      "text": "## Pasal 2"
+    },
+    {
+      "sourceLine": 135,
+      "text": ""
+    },
+    {
+      "sourceLine": 136,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 137,
+      "text": ""
+    },
+    {
+      "sourceLine": 138,
+      "text": "Undang-Undang ini berlaku untuk Setiap Orang, Badan Publik, dan Organisasi Internasional yang melakukan perbuatan hukum sebagaimana diatur dalam Undang-Undang ini:"
+    },
+    {
+      "sourceLine": 139,
+      "text": ""
+    },
+    {
+      "sourceLine": 140,
+      "text": "a."
+    },
+    {
+      "sourceLine": 141,
+      "text": ""
+    },
+    {
+      "sourceLine": 142,
+      "text": "yang berada di wilayah hukum Negara Republik Indonesia; dan"
+    },
+    {
+      "sourceLine": 143,
+      "text": ""
+    },
+    {
+      "sourceLine": 144,
+      "text": "b."
+    },
+    {
+      "sourceLine": 145,
+      "text": ""
+    },
+    {
+      "sourceLine": 146,
+      "text": "di luar wilayah hukum Negara Republik Indonesia, yang memiliki akibat hukum:"
+    },
+    {
+      "sourceLine": 147,
+      "text": ""
+    },
+    {
+      "sourceLine": 148,
+      "text": "1."
+    },
+    {
+      "sourceLine": 149,
+      "text": ""
+    },
+    {
+      "sourceLine": 150,
+      "text": "di wilayah hukum Negara Republik Indonesia; dan/atau"
+    },
+    {
+      "sourceLine": 151,
+      "text": ""
+    },
+    {
+      "sourceLine": 152,
+      "text": "2."
+    },
+    {
+      "sourceLine": 153,
+      "text": ""
+    },
+    {
+      "sourceLine": 154,
+      "text": "bagi Subjek Data Pribadi warga negara Indonesia di luar wilayah hukum Negara Republik Indonesia."
+    },
+    {
+      "sourceLine": 155,
+      "text": ""
+    },
+    {
+      "sourceLine": 156,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 157,
+      "text": "Undang-Undang ini tidak berlaku untuk pemrosesan Data Pribadi oleh orang perseorangan dalam kegiatan pribadi atau rumah tangga."
+    },
+    {
+      "sourceLine": 158,
+      "text": ""
+    },
+    {
+      "sourceLine": 159,
+      "text": "BAB II"
+    },
+    {
+      "sourceLine": 160,
+      "text": "ASAS"
+    },
+    {
+      "sourceLine": 161,
+      "text": "## Pasal 3"
+    },
+    {
+      "sourceLine": 162,
+      "text": ""
+    },
+    {
+      "sourceLine": 163,
+      "text": "Undang-Undang ini berasaskan:"
+    },
+    {
+      "sourceLine": 164,
+      "text": ""
+    },
+    {
+      "sourceLine": 165,
+      "text": "a."
+    },
+    {
+      "sourceLine": 166,
+      "text": ""
+    },
+    {
+      "sourceLine": 167,
+      "text": "pelindungan;"
+    },
+    {
+      "sourceLine": 168,
+      "text": ""
+    },
+    {
+      "sourceLine": 169,
+      "text": "b."
+    },
+    {
+      "sourceLine": 170,
+      "text": ""
+    },
+    {
+      "sourceLine": 171,
+      "text": "kepastian hukum;"
+    },
+    {
+      "sourceLine": 172,
+      "text": ""
+    },
+    {
+      "sourceLine": 173,
+      "text": "c."
+    },
+    {
+      "sourceLine": 174,
+      "text": ""
+    },
+    {
+      "sourceLine": 175,
+      "text": "kepentingan umum;"
+    },
+    {
+      "sourceLine": 176,
+      "text": ""
+    },
+    {
+      "sourceLine": 177,
+      "text": "d."
+    },
+    {
+      "sourceLine": 178,
+      "text": ""
+    },
+    {
+      "sourceLine": 179,
+      "text": "kemanfaatan;"
+    },
+    {
+      "sourceLine": 180,
+      "text": ""
+    },
+    {
+      "sourceLine": 181,
+      "text": "e."
+    },
+    {
+      "sourceLine": 182,
+      "text": ""
+    },
+    {
+      "sourceLine": 183,
+      "text": "kehati-hatian;"
+    },
+    {
+      "sourceLine": 184,
+      "text": ""
+    },
+    {
+      "sourceLine": 185,
+      "text": "f."
+    },
+    {
+      "sourceLine": 186,
+      "text": ""
+    },
+    {
+      "sourceLine": 187,
+      "text": "keseimbangan;"
+    },
+    {
+      "sourceLine": 188,
+      "text": ""
+    },
+    {
+      "sourceLine": 189,
+      "text": "g."
+    },
+    {
+      "sourceLine": 190,
+      "text": ""
+    },
+    {
+      "sourceLine": 191,
+      "text": "pertanggungjawaban; dan"
+    },
+    {
+      "sourceLine": 192,
+      "text": ""
+    },
+    {
+      "sourceLine": 193,
+      "text": "h."
+    },
+    {
+      "sourceLine": 194,
+      "text": ""
+    },
+    {
+      "sourceLine": 195,
+      "text": "kerahasiaan."
+    },
+    {
+      "sourceLine": 196,
+      "text": ""
+    },
+    {
+      "sourceLine": 197,
+      "text": "BAB III"
+    },
+    {
+      "sourceLine": 198,
+      "text": "JENIS DATA PRIBADI"
+    },
+    {
+      "sourceLine": 199,
+      "text": "## Pasal 4"
+    },
+    {
+      "sourceLine": 200,
+      "text": ""
+    },
+    {
+      "sourceLine": 201,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 202,
+      "text": ""
+    },
+    {
+      "sourceLine": 203,
+      "text": "Data Pribadi terdiri atas:"
+    },
+    {
+      "sourceLine": 204,
+      "text": ""
+    },
+    {
+      "sourceLine": 205,
+      "text": "a."
+    },
+    {
+      "sourceLine": 206,
+      "text": ""
+    },
+    {
+      "sourceLine": 207,
+      "text": "Data Pribadi yang bersifat spesifik; dan"
+    },
+    {
+      "sourceLine": 208,
+      "text": ""
+    },
+    {
+      "sourceLine": 209,
+      "text": "b."
+    },
+    {
+      "sourceLine": 210,
+      "text": ""
+    },
+    {
+      "sourceLine": 211,
+      "text": "Data Pribadi yang bersifat umum."
+    },
+    {
+      "sourceLine": 212,
+      "text": ""
+    },
+    {
+      "sourceLine": 213,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 214,
+      "text": ""
+    },
+    {
+      "sourceLine": 215,
+      "text": "Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (1) huruf a meliputi:"
+    },
+    {
+      "sourceLine": 216,
+      "text": ""
+    },
+    {
+      "sourceLine": 217,
+      "text": "a."
+    },
+    {
+      "sourceLine": 218,
+      "text": ""
+    },
+    {
+      "sourceLine": 219,
+      "text": "data dan informasi kesehatan;"
+    },
+    {
+      "sourceLine": 220,
+      "text": ""
+    },
+    {
+      "sourceLine": 221,
+      "text": "b."
+    },
+    {
+      "sourceLine": 222,
+      "text": ""
+    },
+    {
+      "sourceLine": 223,
+      "text": "data biometrik;"
+    },
+    {
+      "sourceLine": 224,
+      "text": ""
+    },
+    {
+      "sourceLine": 225,
+      "text": "c."
+    },
+    {
+      "sourceLine": 226,
+      "text": ""
+    },
+    {
+      "sourceLine": 227,
+      "text": "data genetika;"
+    },
+    {
+      "sourceLine": 228,
+      "text": ""
+    },
+    {
+      "sourceLine": 229,
+      "text": "d."
+    },
+    {
+      "sourceLine": 230,
+      "text": ""
+    },
+    {
+      "sourceLine": 231,
+      "text": "catatan kejahatan;"
+    },
+    {
+      "sourceLine": 232,
+      "text": ""
+    },
+    {
+      "sourceLine": 233,
+      "text": "e."
+    },
+    {
+      "sourceLine": 234,
+      "text": ""
+    },
+    {
+      "sourceLine": 235,
+      "text": "data anak;"
+    },
+    {
+      "sourceLine": 236,
+      "text": ""
+    },
+    {
+      "sourceLine": 237,
+      "text": "f."
+    },
+    {
+      "sourceLine": 238,
+      "text": ""
+    },
+    {
+      "sourceLine": 239,
+      "text": "data keuangan pribadi; dan/atau"
+    },
+    {
+      "sourceLine": 240,
+      "text": ""
+    },
+    {
+      "sourceLine": 241,
+      "text": "g."
+    },
+    {
+      "sourceLine": 242,
+      "text": ""
+    },
+    {
+      "sourceLine": 243,
+      "text": "data lainnya sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 244,
+      "text": ""
+    },
+    {
+      "sourceLine": 245,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 246,
+      "text": "Data Pribadi yang bersifat umum sebagaimana dimaksud pada ayat ( 1) huruf b meliputi:"
+    },
+    {
+      "sourceLine": 247,
+      "text": ""
+    },
+    {
+      "sourceLine": 248,
+      "text": "a."
+    },
+    {
+      "sourceLine": 249,
+      "text": ""
+    },
+    {
+      "sourceLine": 250,
+      "text": "nama lengkap;"
+    },
+    {
+      "sourceLine": 251,
+      "text": ""
+    },
+    {
+      "sourceLine": 252,
+      "text": "b."
+    },
+    {
+      "sourceLine": 253,
+      "text": ""
+    },
+    {
+      "sourceLine": 254,
+      "text": "jenis kelamin;"
+    },
+    {
+      "sourceLine": 255,
+      "text": ""
+    },
+    {
+      "sourceLine": 256,
+      "text": "c."
+    },
+    {
+      "sourceLine": 257,
+      "text": ""
+    },
+    {
+      "sourceLine": 258,
+      "text": "kewarganegaraan;"
+    },
+    {
+      "sourceLine": 259,
+      "text": ""
+    },
+    {
+      "sourceLine": 260,
+      "text": "d."
+    },
+    {
+      "sourceLine": 261,
+      "text": ""
+    },
+    {
+      "sourceLine": 262,
+      "text": "agama;"
+    },
+    {
+      "sourceLine": 263,
+      "text": ""
+    },
+    {
+      "sourceLine": 264,
+      "text": "e."
+    },
+    {
+      "sourceLine": 265,
+      "text": ""
+    },
+    {
+      "sourceLine": 266,
+      "text": "status perkawinan; dan/atau"
+    },
+    {
+      "sourceLine": 267,
+      "text": ""
+    },
+    {
+      "sourceLine": 268,
+      "text": "f."
+    },
+    {
+      "sourceLine": 269,
+      "text": ""
+    },
+    {
+      "sourceLine": 270,
+      "text": "Data Pribadi yang dikombinasikan untuk mengidentifikasi seseorang."
+    },
+    {
+      "sourceLine": 271,
+      "text": ""
+    },
+    {
+      "sourceLine": 272,
+      "text": "BAB IV"
+    },
+    {
+      "sourceLine": 273,
+      "text": "HAK SUBJEK DATA PRIBADI"
+    },
+    {
+      "sourceLine": 274,
+      "text": "## Pasal 5"
+    },
+    {
+      "sourceLine": 275,
+      "text": ""
+    },
+    {
+      "sourceLine": 276,
+      "text": "Subjek Data Pribadi berhak mendapatkan Informasi tentang kejelasan identitas, dasar kepentingan hukum, tujuan permintaan dan penggunaan Data Pribadi, dan akuntabilitas pihak yang meminta Data Pribadi."
+    },
+    {
+      "sourceLine": 277,
+      "text": ""
+    },
+    {
+      "sourceLine": 278,
+      "text": "## Pasal 6"
+    },
+    {
+      "sourceLine": 279,
+      "text": ""
+    },
+    {
+      "sourceLine": 280,
+      "text": "Subjek Data Pribadi berhak melengkapi, memperbarui, dan/atau memperbaiki kesalahan dan/atau ketidakakuratan Data Pribadi tentang dirinya sesuai dengan tujuan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 281,
+      "text": "## Pasal 7"
+    },
+    {
+      "sourceLine": 282,
+      "text": ""
+    },
+    {
+      "sourceLine": 283,
+      "text": "Subjek Data Pribadi berhak mendapatkan akses dan memperoleh salinan Data Pribadi tentang dirinya sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 284,
+      "text": ""
+    },
+    {
+      "sourceLine": 285,
+      "text": "## Pasal 8"
+    },
+    {
+      "sourceLine": 286,
+      "text": ""
+    },
+    {
+      "sourceLine": 287,
+      "text": "Subjek Data Pribadi berhak untuk mengakhiri pemrosesan, menghapus, dan/atau memusnahkan Data Pribadi tentang dirinya sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 288,
+      "text": "## Pasal 9"
+    },
+    {
+      "sourceLine": 289,
+      "text": ""
+    },
+    {
+      "sourceLine": 290,
+      "text": "Subjek Data Pribadi berhak menarik kembali persetujuan pemrosesan Data Pribadi tentang dirinya yang telah diberikan kepada Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 291,
+      "text": "## Pasal 10"
+    },
+    {
+      "sourceLine": 292,
+      "text": ""
+    },
+    {
+      "sourceLine": 293,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 294,
+      "text": ""
+    },
+    {
+      "sourceLine": 295,
+      "text": "Subjek Data Pribadi berhak untuk mengajukan keberatan atas tindakan pengambilan keputusan yang hanya didasarkan pada pemrosesan secara otomatis, termasuk pemrofilan, yang menimbulkan akibat hukum atau berdampak signifikan pada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 296,
+      "text": ""
+    },
+    {
+      "sourceLine": 297,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 298,
+      "text": ""
+    },
+    {
+      "sourceLine": 299,
+      "text": "Ketentuan lebih lanjut mengenai pengajuan keberatan atas pemrosesan secara otomatis sebagaimana dimaksud pada ayat (1) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 300,
+      "text": "## Pasal 11"
+    },
+    {
+      "sourceLine": 301,
+      "text": ""
+    },
+    {
+      "sourceLine": 302,
+      "text": "Subjek Data Pribadi berhak menunda atau membatasi pemrosesan Data Pribadi secara proporsional sesuai dengan tujuan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 303,
+      "text": "## Pasal 12"
+    },
+    {
+      "sourceLine": 304,
+      "text": ""
+    },
+    {
+      "sourceLine": 305,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 306,
+      "text": ""
+    },
+    {
+      "sourceLine": 307,
+      "text": "Subjek Data Pribadi berhak menggugat dan menerima ganti rugi atas pelanggaran pemrosesan Data Pribadi tentang dirinya sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 308,
+      "text": ""
+    },
+    {
+      "sourceLine": 309,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 310,
+      "text": ""
+    },
+    {
+      "sourceLine": 311,
+      "text": "Ketentuan lebih lanjut mengenai pelanggaran pemrosesan Data Pribadi dan tata cara pengenaan ganti rugi sebagaimana dimaksud pada ayat (1) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 312,
+      "text": "## Pasal 13"
+    },
+    {
+      "sourceLine": 313,
+      "text": ""
+    },
+    {
+      "sourceLine": 314,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 315,
+      "text": ""
+    },
+    {
+      "sourceLine": 316,
+      "text": "Subjek Data Pribadi berhak mendapatkan dan/atau menggunakan Data Pribadi tentang dirinya dari Pengendali Data Pribadi dalam bentuk yang sesuai dengan struktur dan/atau format yang lazim digunakan atau dapat dibaca oleh sistem elektronik."
+    },
+    {
+      "sourceLine": 317,
+      "text": ""
+    },
+    {
+      "sourceLine": 318,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 319,
+      "text": "Subjek Data Pribadi berhak menggunakan dan mengirimkan Data Pribadi tentang dirinya ke Pengendali Data Pribadi lainnya, sepanjang sistem yang digunakan dapat saling berkomunikasi secara aman sesuai dengan prinsip Pelindungan Data Pribadi berdasarkan Undang-Undang ini."
+    },
+    {
+      "sourceLine": 320,
+      "text": ""
+    },
+    {
+      "sourceLine": 321,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 322,
+      "text": ""
+    },
+    {
+      "sourceLine": 323,
+      "text": "Ketentuan lebih lanjut mengenai hak Subjek Data Pribadi untuk menggunakan dan mengirimkan Data Pribadi sebagaimana dimaksud pada ayat (2) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 324,
+      "text": "## Pasal 14"
+    },
+    {
+      "sourceLine": 325,
+      "text": ""
+    },
+    {
+      "sourceLine": 326,
+      "text": "Pelaksanaan hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 6 sampai dengan Pasal 11 diajukan melalui permohonan tercatat yang disampaikan secara elektronik atau nonelektronik kepada Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 327,
+      "text": "## Pasal 15"
+    },
+    {
+      "sourceLine": 328,
+      "text": ""
+    },
+    {
+      "sourceLine": 329,
+      "text": "(1)."
+    },
+    {
+      "sourceLine": 330,
+      "text": ""
+    },
+    {
+      "sourceLine": 331,
+      "text": "Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 10 ayat (1), Pasal 11, dan Pasal 13 ayat (1) dan ayat (2) dikecualikan untuk:"
+    },
+    {
+      "sourceLine": 332,
+      "text": ""
+    },
+    {
+      "sourceLine": 333,
+      "text": "a."
+    },
+    {
+      "sourceLine": 334,
+      "text": ""
+    },
+    {
+      "sourceLine": 335,
+      "text": "kepentingan pertahanan dan keamanan nasional;"
+    },
+    {
+      "sourceLine": 336,
+      "text": ""
+    },
+    {
+      "sourceLine": 337,
+      "text": "b."
+    },
+    {
+      "sourceLine": 338,
+      "text": ""
+    },
+    {
+      "sourceLine": 339,
+      "text": "kepentingan proses penegakan hukum;"
+    },
+    {
+      "sourceLine": 340,
+      "text": ""
+    },
+    {
+      "sourceLine": 341,
+      "text": "c."
+    },
+    {
+      "sourceLine": 342,
+      "text": ""
+    },
+    {
+      "sourceLine": 343,
+      "text": "kepentingan umum dalam rangka penyelenggaraan negara;"
+    },
+    {
+      "sourceLine": 344,
+      "text": ""
+    },
+    {
+      "sourceLine": 345,
+      "text": "d."
+    },
+    {
+      "sourceLine": 346,
+      "text": ""
+    },
+    {
+      "sourceLine": 347,
+      "text": "kepentingan pengawasan sektor jasa keuangan, moneter, sistem pembayaran, dan stabilitas sistem keuangan yang dilakukan dalam rangka penyelenggaraan negara; atau"
+    },
+    {
+      "sourceLine": 348,
+      "text": ""
+    },
+    {
+      "sourceLine": 349,
+      "text": "e."
+    },
+    {
+      "sourceLine": 350,
+      "text": "kepentingan statistik dan penelitian ilmiah."
+    },
+    {
+      "sourceLine": 351,
+      "text": ""
+    },
+    {
+      "sourceLine": 352,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 353,
+      "text": ""
+    },
+    {
+      "sourceLine": 354,
+      "text": "Pengecualian sebagaimana dimaksud pada ayat (1) dilaksanakan hanya dalam rangka pelaksanaan ketentuan Undang-Undang."
+    },
+    {
+      "sourceLine": 355,
+      "text": ""
+    },
+    {
+      "sourceLine": 356,
+      "text": "BAB V"
+    },
+    {
+      "sourceLine": 357,
+      "text": "PEMROSESAN DATA PRIBADI"
+    },
+    {
+      "sourceLine": 358,
+      "text": "## Pasal 16"
+    },
+    {
+      "sourceLine": 359,
+      "text": ""
+    },
+    {
+      "sourceLine": 360,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 361,
+      "text": ""
+    },
+    {
+      "sourceLine": 362,
+      "text": "Pemrosesan Data Pribadi meliputi:"
+    },
+    {
+      "sourceLine": 363,
+      "text": ""
+    },
+    {
+      "sourceLine": 364,
+      "text": "a."
+    },
+    {
+      "sourceLine": 365,
+      "text": ""
+    },
+    {
+      "sourceLine": 366,
+      "text": "pemerolehan dan pengumpulan;"
+    },
+    {
+      "sourceLine": 367,
+      "text": ""
+    },
+    {
+      "sourceLine": 368,
+      "text": "b."
+    },
+    {
+      "sourceLine": 369,
+      "text": ""
+    },
+    {
+      "sourceLine": 370,
+      "text": "pengolahan dan penganalisisan;"
+    },
+    {
+      "sourceLine": 371,
+      "text": ""
+    },
+    {
+      "sourceLine": 372,
+      "text": "c."
+    },
+    {
+      "sourceLine": 373,
+      "text": ""
+    },
+    {
+      "sourceLine": 374,
+      "text": "penyimpanan;"
+    },
+    {
+      "sourceLine": 375,
+      "text": ""
+    },
+    {
+      "sourceLine": 376,
+      "text": "d."
+    },
+    {
+      "sourceLine": 377,
+      "text": ""
+    },
+    {
+      "sourceLine": 378,
+      "text": "perbaikan dan pembaruan;"
+    },
+    {
+      "sourceLine": 379,
+      "text": ""
+    },
+    {
+      "sourceLine": 380,
+      "text": "e."
+    },
+    {
+      "sourceLine": 381,
+      "text": ""
+    },
+    {
+      "sourceLine": 382,
+      "text": "penampilan, pengumuman, transfer, penyebarluasan, atau pengungkapan; dan/atau"
+    },
+    {
+      "sourceLine": 383,
+      "text": ""
+    },
+    {
+      "sourceLine": 384,
+      "text": "f."
+    },
+    {
+      "sourceLine": 385,
+      "text": ""
+    },
+    {
+      "sourceLine": 386,
+      "text": "penghapusan atau pemusnahan."
+    },
+    {
+      "sourceLine": 387,
+      "text": ""
+    },
+    {
+      "sourceLine": 388,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 389,
+      "text": ""
+    },
+    {
+      "sourceLine": 390,
+      "text": "Pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan prinsip Pelindungan Data Pribadi meliputi:"
+    },
+    {
+      "sourceLine": 391,
+      "text": ""
+    },
+    {
+      "sourceLine": 392,
+      "text": "a."
+    },
+    {
+      "sourceLine": 393,
+      "text": "pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, dan transparan;"
+    },
+    {
+      "sourceLine": 394,
+      "text": ""
+    },
+    {
+      "sourceLine": 395,
+      "text": "b."
+    },
+    {
+      "sourceLine": 396,
+      "text": ""
+    },
+    {
+      "sourceLine": 397,
+      "text": "pemrosesan Data Pribadi dilakukan sesuai dengan tujuannya;"
+    },
+    {
+      "sourceLine": 398,
+      "text": ""
+    },
+    {
+      "sourceLine": 399,
+      "text": "c."
+    },
+    {
+      "sourceLine": 400,
+      "text": ""
+    },
+    {
+      "sourceLine": 401,
+      "text": "pemrosesan Data Pribadi dilakukan dengan menjamin hak Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 402,
+      "text": ""
+    },
+    {
+      "sourceLine": 403,
+      "text": "d."
+    },
+    {
+      "sourceLine": 404,
+      "text": ""
+    },
+    {
+      "sourceLine": 405,
+      "text": "pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak menyesatkan, mutakhir, dan dapat dipertanggungjawabkan;"
+    },
+    {
+      "sourceLine": 406,
+      "text": ""
+    },
+    {
+      "sourceLine": 407,
+      "text": "e."
+    },
+    {
+      "sourceLine": 408,
+      "text": "pemrosesan Data Pribadi dilakukan dengan melindungi keamanan Data Pribadi dari pengaksesan yang tidak sah, pengungkapan yang tidak sah, pengubahan yang tidak sah, penyalahgunaan, perusakan, dan/atau penghilangan Data Pribadi;"
+    },
+    {
+      "sourceLine": 409,
+      "text": ""
+    },
+    {
+      "sourceLine": 410,
+      "text": "f."
+    },
+    {
+      "sourceLine": 411,
+      "text": ""
+    },
+    {
+      "sourceLine": 412,
+      "text": "pemrosesan Data Pribadi dilakukan dengan memberitahukan tujuan dan aktivitas pemrosesan, serta kegagalan Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 413,
+      "text": ""
+    },
+    {
+      "sourceLine": 414,
+      "text": "g."
+    },
+    {
+      "sourceLine": 415,
+      "text": "Data Pribadi dimusnahkan dan/atau dihapus setelah masa retensi berakhir atau berdasarkan permintaan Subjek Data Pribadi, kecuali ditentukan lain oleh peraturan perundang-undangan; dan"
+    },
+    {
+      "sourceLine": 416,
+      "text": ""
+    },
+    {
+      "sourceLine": 417,
+      "text": "h."
+    },
+    {
+      "sourceLine": 418,
+      "text": ""
+    },
+    {
+      "sourceLine": 419,
+      "text": "pemrosesan Data Pribadi dilakukan secara bertanggung jawab dan dapat dibuktikan secara jelas."
+    },
+    {
+      "sourceLine": 420,
+      "text": ""
+    },
+    {
+      "sourceLine": 421,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 422,
+      "text": ""
+    },
+    {
+      "sourceLine": 423,
+      "text": "Ketentuan lebih lanjut mengenai pelaksanaan pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 424,
+      "text": "## Pasal 17"
+    },
+    {
+      "sourceLine": 425,
+      "text": ""
+    },
+    {
+      "sourceLine": 426,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 427,
+      "text": ""
+    },
+    {
+      "sourceLine": 428,
+      "text": "Pemasangan alat pemroses atau pengolah data visual di tempat umum dan/atau pada fasilitas pelayanan publik dilakukan dengan ketentuan:"
+    },
+    {
+      "sourceLine": 429,
+      "text": ""
+    },
+    {
+      "sourceLine": 430,
+      "text": "a."
+    },
+    {
+      "sourceLine": 431,
+      "text": ""
+    },
+    {
+      "sourceLine": 432,
+      "text": "untuk tujuan keamanan, pencegahan bencana, dan/atau penyelenggaraan lalu lintas atau pengumpulan, analisis, dan pengaturan Informasi lalu lintas;"
+    },
+    {
+      "sourceLine": 433,
+      "text": ""
+    },
+    {
+      "sourceLine": 434,
+      "text": "b."
+    },
+    {
+      "sourceLine": 435,
+      "text": ""
+    },
+    {
+      "sourceLine": 436,
+      "text": "harus menampilkan Informasi pada area yang telah dipasang alat pemroses atau pengolah data visual; dan"
+    },
+    {
+      "sourceLine": 437,
+      "text": ""
+    },
+    {
+      "sourceLine": 438,
+      "text": "c."
+    },
+    {
+      "sourceLine": 439,
+      "text": ""
+    },
+    {
+      "sourceLine": 440,
+      "text": "tidak digunakan untuk mengidentifikasi seseorang."
+    },
+    {
+      "sourceLine": 441,
+      "text": ""
+    },
+    {
+      "sourceLine": 442,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 443,
+      "text": "Ketentuan sebagaimana dimaksud pada ayat (1) huruf b dan huruf c dikecualikan untuk pencegahan tindak pidana dan proses penegakan hukum sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 444,
+      "text": "## Pasal 18"
+    },
+    {
+      "sourceLine": 445,
+      "text": ""
+    },
+    {
+      "sourceLine": 446,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 447,
+      "text": ""
+    },
+    {
+      "sourceLine": 448,
+      "text": "Pemrosesan Data Pribadi dapat dilakukan oleh 2 (dua) atau lebih Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 449,
+      "text": ""
+    },
+    {
+      "sourceLine": 450,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 451,
+      "text": ""
+    },
+    {
+      "sourceLine": 452,
+      "text": "Dalam hal Pemrosesan Data Pribadi dilakukan oleh 2 (dua) atau lebih Pengendali Data Pribadi harus memenuhi syarat minimal:"
+    },
+    {
+      "sourceLine": 453,
+      "text": ""
+    },
+    {
+      "sourceLine": 454,
+      "text": "a."
+    },
+    {
+      "sourceLine": 455,
+      "text": ""
+    },
+    {
+      "sourceLine": 456,
+      "text": "terdapat perjanjian antara para Pengendali Data Pribadi yang memuat peran, tanggung jawab, dan hubungan antar-Pengendali Data Pribadi;"
+    },
+    {
+      "sourceLine": 457,
+      "text": ""
+    },
+    {
+      "sourceLine": 458,
+      "text": "b."
+    },
+    {
+      "sourceLine": 459,
+      "text": ""
+    },
+    {
+      "sourceLine": 460,
+      "text": "terdapat tujuan yang saling berkaitan dan cara pemrosesan Data Pribadi yang ditentukan secara bersama; dan"
+    },
+    {
+      "sourceLine": 461,
+      "text": ""
+    },
+    {
+      "sourceLine": 462,
+      "text": "c."
+    },
+    {
+      "sourceLine": 463,
+      "text": "terdapat narahubung yang ditunjuk secara bersama-sama."
+    },
+    {
+      "sourceLine": 464,
+      "text": ""
+    },
+    {
+      "sourceLine": 465,
+      "text": "BAB VI"
+    },
+    {
+      "sourceLine": 466,
+      "text": "KEWAJIBAN PENGENDALI DATA PRIBADI DAN PROSESOR DATA PRIBADI DALAM PEMROSESAN DATA PRIBADI"
+    },
+    {
+      "sourceLine": 467,
+      "text": ""
+    },
+    {
+      "sourceLine": 468,
+      "text": "Bagian Kesatu"
+    },
+    {
+      "sourceLine": 469,
+      "text": "Umum"
+    },
+    {
+      "sourceLine": 470,
+      "text": "## Pasal 19"
+    },
+    {
+      "sourceLine": 471,
+      "text": ""
+    },
+    {
+      "sourceLine": 472,
+      "text": "Pengendali Data Pribadi dan Prosesor Data Pribadi meliputi:"
+    },
+    {
+      "sourceLine": 473,
+      "text": ""
+    },
+    {
+      "sourceLine": 474,
+      "text": "a."
+    },
+    {
+      "sourceLine": 475,
+      "text": ""
+    },
+    {
+      "sourceLine": 476,
+      "text": "Setiap Orang;"
+    },
+    {
+      "sourceLine": 477,
+      "text": ""
+    },
+    {
+      "sourceLine": 478,
+      "text": "b."
+    },
+    {
+      "sourceLine": 479,
+      "text": ""
+    },
+    {
+      "sourceLine": 480,
+      "text": "Badan Publik; dan"
+    },
+    {
+      "sourceLine": 481,
+      "text": ""
+    },
+    {
+      "sourceLine": 482,
+      "text": "c."
+    },
+    {
+      "sourceLine": 483,
+      "text": ""
+    },
+    {
+      "sourceLine": 484,
+      "text": "Organisasi Internasional."
+    },
+    {
+      "sourceLine": 485,
+      "text": ""
+    },
+    {
+      "sourceLine": 486,
+      "text": "Bagian Kedua"
+    },
+    {
+      "sourceLine": 487,
+      "text": "Kewajiban Pengendali Data Pribadi"
+    },
+    {
+      "sourceLine": 488,
+      "text": "## Pasal 20"
+    },
+    {
+      "sourceLine": 489,
+      "text": ""
+    },
+    {
+      "sourceLine": 490,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 491,
+      "text": ""
+    },
+    {
+      "sourceLine": 492,
+      "text": "Pengendali Data Pribadi wajib memiliki dasar pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 493,
+      "text": ""
+    },
+    {
+      "sourceLine": 494,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 495,
+      "text": ""
+    },
+    {
+      "sourceLine": 496,
+      "text": "Dasar pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) meliputi:"
+    },
+    {
+      "sourceLine": 497,
+      "text": ""
+    },
+    {
+      "sourceLine": 498,
+      "text": "a."
+    },
+    {
+      "sourceLine": 499,
+      "text": ""
+    },
+    {
+      "sourceLine": 500,
+      "text": "persetujuan yang sah secara eksplisit dari Subjek Data Pribadi untuk 1 (satu) atau beberapa tujuan tertentu yang telah disampaikan oleh Pengendali Data Pribadi kepada Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 501,
+      "text": ""
+    },
+    {
+      "sourceLine": 502,
+      "text": "b."
+    },
+    {
+      "sourceLine": 503,
+      "text": "pemenuhan kewajiban perjanjian dalam hal Subjek Data Pribadi merupakan salah satu pihak atau untuk memenuhi permintaan Subjek Data Pribadi pada saat akan melakukan perjanjian;"
+    },
+    {
+      "sourceLine": 504,
+      "text": ""
+    },
+    {
+      "sourceLine": 505,
+      "text": "c."
+    },
+    {
+      "sourceLine": 506,
+      "text": ""
+    },
+    {
+      "sourceLine": 507,
+      "text": "pemenuhan kewajiban hukum dari Pengendali Data Pribadi sesuai dengan ketentuan peraturan perundang-undangan;"
+    },
+    {
+      "sourceLine": 508,
+      "text": ""
+    },
+    {
+      "sourceLine": 509,
+      "text": "d."
+    },
+    {
+      "sourceLine": 510,
+      "text": ""
+    },
+    {
+      "sourceLine": 511,
+      "text": "pemenuhan pelindungan kepentingan vital Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 512,
+      "text": ""
+    },
+    {
+      "sourceLine": 513,
+      "text": "e."
+    },
+    {
+      "sourceLine": 514,
+      "text": "pelaksanaan tugas dalam rangka kepentingan umum, pelayanan publik, atau pelaksanaan kewenangan Pengendali Data Pribadi berdasarkan peraturan perundang-undangan; dan/atau"
+    },
+    {
+      "sourceLine": 515,
+      "text": ""
+    },
+    {
+      "sourceLine": 516,
+      "text": "f."
+    },
+    {
+      "sourceLine": 517,
+      "text": ""
+    },
+    {
+      "sourceLine": 518,
+      "text": "pemenuhan kepentingan yang sah lainnya dengan memperhatikan tujuan, kebutuhan, dan keseimbangan kepentingan Pengendali Data Pribadi dan hak Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 519,
+      "text": "## Pasal 21"
+    },
+    {
+      "sourceLine": 520,
+      "text": ""
+    },
+    {
+      "sourceLine": 521,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 522,
+      "text": ""
+    },
+    {
+      "sourceLine": 523,
+      "text": "Dalam hal pemrosesan Data Pribadi berdasarkan persetujuan sebagaimana dimaksud dalam Pasal 20 ayat (2) huruf a, Pengendali Data Pribadi wajib menyampaikan Informasi mengenai:"
+    },
+    {
+      "sourceLine": 524,
+      "text": ""
+    },
+    {
+      "sourceLine": 525,
+      "text": "a."
+    },
+    {
+      "sourceLine": 526,
+      "text": ""
+    },
+    {
+      "sourceLine": 527,
+      "text": "legalitas dari pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 528,
+      "text": ""
+    },
+    {
+      "sourceLine": 529,
+      "text": "b."
+    },
+    {
+      "sourceLine": 530,
+      "text": ""
+    },
+    {
+      "sourceLine": 531,
+      "text": "tujuan pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 532,
+      "text": ""
+    },
+    {
+      "sourceLine": 533,
+      "text": "c."
+    },
+    {
+      "sourceLine": 534,
+      "text": ""
+    },
+    {
+      "sourceLine": 535,
+      "text": "jenis dan relevansi Data Pribadi yang akan diproses;"
+    },
+    {
+      "sourceLine": 536,
+      "text": ""
+    },
+    {
+      "sourceLine": 537,
+      "text": "d."
+    },
+    {
+      "sourceLine": 538,
+      "text": ""
+    },
+    {
+      "sourceLine": 539,
+      "text": "jangka waktu retensi dokumen yang memuat Data Pribadi;"
+    },
+    {
+      "sourceLine": 540,
+      "text": ""
+    },
+    {
+      "sourceLine": 541,
+      "text": "e."
+    },
+    {
+      "sourceLine": 542,
+      "text": ""
+    },
+    {
+      "sourceLine": 543,
+      "text": "rincian mengenai lnformasi yang dikumpulkan;"
+    },
+    {
+      "sourceLine": 544,
+      "text": ""
+    },
+    {
+      "sourceLine": 545,
+      "text": "f."
+    },
+    {
+      "sourceLine": 546,
+      "text": ""
+    },
+    {
+      "sourceLine": 547,
+      "text": "jangka waktu pemrosesan Data Pribadi; dan"
+    },
+    {
+      "sourceLine": 548,
+      "text": ""
+    },
+    {
+      "sourceLine": 549,
+      "text": "g."
+    },
+    {
+      "sourceLine": 550,
+      "text": "hak Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 551,
+      "text": ""
+    },
+    {
+      "sourceLine": 552,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 553,
+      "text": ""
+    },
+    {
+      "sourceLine": 554,
+      "text": "Dalam hal terdapat perubahan Informasi sebagaimana dimaksud pada ayat (1), Pengendali Data Pribadi wajib memberitahukan kepada Subjek Data Pribadi sebelum terjadi perubahan Informasi."
+    },
+    {
+      "sourceLine": 555,
+      "text": "## Pasal 22"
+    },
+    {
+      "sourceLine": 556,
+      "text": ""
+    },
+    {
+      "sourceLine": 557,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 558,
+      "text": ""
+    },
+    {
+      "sourceLine": 559,
+      "text": "Persetujuan pemrosesan Data Pribadi dilakukan melalui persetujuan tertulis atau terekam."
+    },
+    {
+      "sourceLine": 560,
+      "text": ""
+    },
+    {
+      "sourceLine": 561,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 562,
+      "text": ""
+    },
+    {
+      "sourceLine": 563,
+      "text": "Persetujuan sebagaimana dimaksud pada ayat (1) dapat disampaikan secara elektronik atau nonelektronik."
+    },
+    {
+      "sourceLine": 564,
+      "text": ""
+    },
+    {
+      "sourceLine": 565,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 566,
+      "text": ""
+    },
+    {
+      "sourceLine": 567,
+      "text": "Persetujuan sebagaimana dimaksud pada ayat (1) mempunyai kekuatan hukum yang sama."
+    },
+    {
+      "sourceLine": 568,
+      "text": ""
+    },
+    {
+      "sourceLine": 569,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 570,
+      "text": ""
+    },
+    {
+      "sourceLine": 571,
+      "text": "Dalam hal persetujuan sebagaimana dimaksud pada ayat (1) memuat tujuan lain, permintaan persetujuan harus memenuhi ketentuan:"
+    },
+    {
+      "sourceLine": 572,
+      "text": ""
+    },
+    {
+      "sourceLine": 573,
+      "text": "a."
+    },
+    {
+      "sourceLine": 574,
+      "text": ""
+    },
+    {
+      "sourceLine": 575,
+      "text": "dapat dibedakan secara jelas dengan hal lainnya;"
+    },
+    {
+      "sourceLine": 576,
+      "text": ""
+    },
+    {
+      "sourceLine": 577,
+      "text": "b."
+    },
+    {
+      "sourceLine": 578,
+      "text": "dibuat dengan format yang dapat dipahami dan mudah diakses; dan"
+    },
+    {
+      "sourceLine": 579,
+      "text": ""
+    },
+    {
+      "sourceLine": 580,
+      "text": "c."
+    },
+    {
+      "sourceLine": 581,
+      "text": ""
+    },
+    {
+      "sourceLine": 582,
+      "text": "menggunakan bahasa yang sederhana dan jelas."
+    },
+    {
+      "sourceLine": 583,
+      "text": ""
+    },
+    {
+      "sourceLine": 584,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 585,
+      "text": ""
+    },
+    {
+      "sourceLine": 586,
+      "text": "Persetujuan yang tidak memenuhi ketentuan sebagaimana dimaksud pada ayat (1) dan ayat (4) dinyatakan batal demi hukum."
+    },
+    {
+      "sourceLine": 587,
+      "text": "## Pasal 23"
+    },
+    {
+      "sourceLine": 588,
+      "text": ""
+    },
+    {
+      "sourceLine": 589,
+      "text": "Klausul perjanjian yang di dalamnya terdapat permintaan pemrosesan Data Pribadi yang tidak memuat persetujuan yang sah secara eksplisit dari Subjek Data Pribadi dinyatakan batal demi hukum."
+    },
+    {
+      "sourceLine": 590,
+      "text": ""
+    },
+    {
+      "sourceLine": 591,
+      "text": "## Pasal 24"
+    },
+    {
+      "sourceLine": 592,
+      "text": ""
+    },
+    {
+      "sourceLine": 593,
+      "text": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menunjukkan bukti persetujuan yang telah diberikan oleh Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 594,
+      "text": "## Pasal 25"
+    },
+    {
+      "sourceLine": 595,
+      "text": ""
+    },
+    {
+      "sourceLine": 596,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 597,
+      "text": ""
+    },
+    {
+      "sourceLine": 598,
+      "text": "Pemrosesan Data Pribadi anak diselenggarakan secara khusus."
+    },
+    {
+      "sourceLine": 599,
+      "text": ""
+    },
+    {
+      "sourceLine": 600,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 601,
+      "text": ""
+    },
+    {
+      "sourceLine": 602,
+      "text": "Pemrosesan Data Pribadi anak sebagaimana dimaksud pada ayat (1) wajib mendapat persetujuan dari orang tua anak dan/atau wali anak sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 603,
+      "text": "## Pasal 26"
+    },
+    {
+      "sourceLine": 604,
+      "text": ""
+    },
+    {
+      "sourceLine": 605,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 606,
+      "text": ""
+    },
+    {
+      "sourceLine": 607,
+      "text": "Pemrosesan Data Pribadi penyandang disabilitas diselenggarakan secara khusus."
+    },
+    {
+      "sourceLine": 608,
+      "text": ""
+    },
+    {
+      "sourceLine": 609,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 610,
+      "text": ""
+    },
+    {
+      "sourceLine": 611,
+      "text": "Pemrosesan Data Pribadi penyandang disabilitas sebagaimana dimaksud pada ayat (1) dilakukan melalui komunikasi dengan menggunakan cara tertentu sesuai dengan ketentuan perundang­ undangan."
+    },
+    {
+      "sourceLine": 612,
+      "text": ""
+    },
+    {
+      "sourceLine": 613,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 614,
+      "text": "Pemrosesan Data Pribadi penyandang disabilitas sebagaimana dimaksud pada ayat (2) wajib mendapat persetujuan dari penyandang disabilitas dan/atau wali penyandang disabilitas sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 615,
+      "text": "## Pasal 27"
+    },
+    {
+      "sourceLine": 616,
+      "text": ""
+    },
+    {
+      "sourceLine": 617,
+      "text": "Pengendali Data Pribadi wajib melakukan pemrosesan Data Pribadi secara terbatas dan spesifik, sah secara hukum, dan transparan."
+    },
+    {
+      "sourceLine": 618,
+      "text": ""
+    },
+    {
+      "sourceLine": 619,
+      "text": "## Pasal 28"
+    },
+    {
+      "sourceLine": 620,
+      "text": ""
+    },
+    {
+      "sourceLine": 621,
+      "text": "Pengendali Data Pribadi wajib melakukan pemrosesan Data Pribadi sesuai dengan tujuan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 622,
+      "text": "## Pasal 29"
+    },
+    {
+      "sourceLine": 623,
+      "text": ""
+    },
+    {
+      "sourceLine": 624,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 625,
+      "text": ""
+    },
+    {
+      "sourceLine": 626,
+      "text": "Pengendali Data Pribadi wajib memastikan akurasi, kelengkapan, dan konsistensi Data Pribadi sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 627,
+      "text": ""
+    },
+    {
+      "sourceLine": 628,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 629,
+      "text": ""
+    },
+    {
+      "sourceLine": 630,
+      "text": "Dalam memastikan akurasi, kelengkapan, dan konsistensi Data Pribadi sebagaimana dimaksud pada ayat (1) Pengendali Data Pribadi wajib melakukan verifikasi."
+    },
+    {
+      "sourceLine": 631,
+      "text": "## Pasal 30"
+    },
+    {
+      "sourceLine": 632,
+      "text": ""
+    },
+    {
+      "sourceLine": 633,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 634,
+      "text": ""
+    },
+    {
+      "sourceLine": 635,
+      "text": "Pengendali Data Pribadi wajib memperbarui dan/atau memperbaiki kesalahan dan/atau ketidakakuratan Data Pribadi paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan pembaruan dan/atau perbaikan Data Pribadi."
+    },
+    {
+      "sourceLine": 636,
+      "text": ""
+    },
+    {
+      "sourceLine": 637,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 638,
+      "text": ""
+    },
+    {
+      "sourceLine": 639,
+      "text": "Pengendali Data Pribadi wajib memberitahukan basil pembaruan dan/atau perbaikan Data Pribadi kepada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 640,
+      "text": "## Pasal 31"
+    },
+    {
+      "sourceLine": 641,
+      "text": ""
+    },
+    {
+      "sourceLine": 642,
+      "text": "Pengendali Data Pribadi wajib melakukan perekaman terhadap seluruh kegiatan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 643,
+      "text": "## Pasal 32"
+    },
+    {
+      "sourceLine": 644,
+      "text": ""
+    },
+    {
+      "sourceLine": 645,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 646,
+      "text": ""
+    },
+    {
+      "sourceLine": 647,
+      "text": "Pengendali Data Pribadi wajib memberikan akses kepada Subjek Data Pribadi terhadap Data Pribadi yang diproses beserta rekam jejak pemrosesan Data Pribadi sesuai dengan jangka waktu penyimpanan Data Pribadi."
+    },
+    {
+      "sourceLine": 648,
+      "text": ""
+    },
+    {
+      "sourceLine": 649,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 650,
+      "text": ""
+    },
+    {
+      "sourceLine": 651,
+      "text": "Akses sebagaimana dimaksud pada ayat (1) diberikan paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan akses."
+    },
+    {
+      "sourceLine": 652,
+      "text": "## Pasal 33"
+    },
+    {
+      "sourceLine": 653,
+      "text": ""
+    },
+    {
+      "sourceLine": 654,
+      "text": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Pribadi kepada Subjek Data Pribadi dalam hal:"
+    },
+    {
+      "sourceLine": 655,
+      "text": ""
+    },
+    {
+      "sourceLine": 656,
+      "text": "a."
+    },
+    {
+      "sourceLine": 657,
+      "text": ""
+    },
+    {
+      "sourceLine": 658,
+      "text": "membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/atau orang lain;"
+    },
+    {
+      "sourceLine": 659,
+      "text": ""
+    },
+    {
+      "sourceLine": 660,
+      "text": "b."
+    },
+    {
+      "sourceLine": 661,
+      "text": ""
+    },
+    {
+      "sourceLine": 662,
+      "text": "berdampak pada pengungkapan Data Pribadi milik orang lain; dan/atau"
+    },
+    {
+      "sourceLine": 663,
+      "text": ""
+    },
+    {
+      "sourceLine": 664,
+      "text": "c."
+    },
+    {
+      "sourceLine": 665,
+      "text": ""
+    },
+    {
+      "sourceLine": 666,
+      "text": "bertentangan dengan kepentingan pertahanan dan keamanan nasional."
+    },
+    {
+      "sourceLine": 667,
+      "text": "## Pasal 34"
+    },
+    {
+      "sourceLine": 668,
+      "text": ""
+    },
+    {
+      "sourceLine": 669,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 670,
+      "text": ""
+    },
+    {
+      "sourceLine": 671,
+      "text": "Pengendali Data Pribadi wajib melakukan penilaian dampak Pelindungan Data Pribadi dalam hal pemrosesan Data Pribadi memiliki potensi risiko tinggi terhadap Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 672,
+      "text": ""
+    },
+    {
+      "sourceLine": 673,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 674,
+      "text": ""
+    },
+    {
+      "sourceLine": 675,
+      "text": "Pemrosesan Data Pribadi memiliki potensi risiko tinggi sebagaimana dimaksud pada ayat (1) meliputi:"
+    },
+    {
+      "sourceLine": 676,
+      "text": ""
+    },
+    {
+      "sourceLine": 677,
+      "text": "a."
+    },
+    {
+      "sourceLine": 678,
+      "text": ""
+    },
+    {
+      "sourceLine": 679,
+      "text": "pengambilan keputusan secara otomatis yang memiliki akibat hukum atau dampak yang signifikan terhadap Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 680,
+      "text": ""
+    },
+    {
+      "sourceLine": 681,
+      "text": "b."
+    },
+    {
+      "sourceLine": 682,
+      "text": ""
+    },
+    {
+      "sourceLine": 683,
+      "text": "pemrosesan atas Data Pribadi yang bersifat spesifik;"
+    },
+    {
+      "sourceLine": 684,
+      "text": ""
+    },
+    {
+      "sourceLine": 685,
+      "text": "c."
+    },
+    {
+      "sourceLine": 686,
+      "text": "pemrosesan Data Pribadi dalam skala besar;"
+    },
+    {
+      "sourceLine": 687,
+      "text": ""
+    },
+    {
+      "sourceLine": 688,
+      "text": "d."
+    },
+    {
+      "sourceLine": 689,
+      "text": ""
+    },
+    {
+      "sourceLine": 690,
+      "text": "pemrosesan Data Pribadi untuk kegiatan evaluasi, penskoran, atau pemantauan yang sistematis terhadap Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 691,
+      "text": ""
+    },
+    {
+      "sourceLine": 692,
+      "text": "e."
+    },
+    {
+      "sourceLine": 693,
+      "text": ""
+    },
+    {
+      "sourceLine": 694,
+      "text": "pemrosesan Data Pribadi untuk kegiatan pencocokan atau penggabungan sekelompok data;"
+    },
+    {
+      "sourceLine": 695,
+      "text": ""
+    },
+    {
+      "sourceLine": 696,
+      "text": "f."
+    },
+    {
+      "sourceLine": 697,
+      "text": ""
+    },
+    {
+      "sourceLine": 698,
+      "text": "penggunaan teknologi baru dalam pemrosesan Data Pribadi; dan/atau"
+    },
+    {
+      "sourceLine": 699,
+      "text": ""
+    },
+    {
+      "sourceLine": 700,
+      "text": "g."
+    },
+    {
+      "sourceLine": 701,
+      "text": ""
+    },
+    {
+      "sourceLine": 702,
+      "text": "pemrosesan Data Pribadi yang membatasi pelaksanaan hak Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 703,
+      "text": ""
+    },
+    {
+      "sourceLine": 704,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 705,
+      "text": "Ketentuan lebih lanjut mengenai penilaian dampak Pelindungan Data Pribadi diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 706,
+      "text": "## Pasal 35"
+    },
+    {
+      "sourceLine": 707,
+      "text": ""
+    },
+    {
+      "sourceLine": 708,
+      "text": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan:"
+    },
+    {
+      "sourceLine": 709,
+      "text": ""
+    },
+    {
+      "sourceLine": 710,
+      "text": "a."
+    },
+    {
+      "sourceLine": 711,
+      "text": ""
+    },
+    {
+      "sourceLine": 712,
+      "text": "penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan"
+    },
+    {
+      "sourceLine": 713,
+      "text": ""
+    },
+    {
+      "sourceLine": 714,
+      "text": "b."
+    },
+    {
+      "sourceLine": 715,
+      "text": ""
+    },
+    {
+      "sourceLine": 716,
+      "text": "penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dilindungi dalam pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 717,
+      "text": "## Pasal 36"
+    },
+    {
+      "sourceLine": 718,
+      "text": ""
+    },
+    {
+      "sourceLine": 719,
+      "text": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menjaga kerahasiaan Data Pribadi."
+    },
+    {
+      "sourceLine": 720,
+      "text": ""
+    },
+    {
+      "sourceLine": 721,
+      "text": "## Pasal 37"
+    },
+    {
+      "sourceLine": 722,
+      "text": ""
+    },
+    {
+      "sourceLine": 723,
+      "text": "Pengendali Data Pribadi wajib melakukan pengawasan terhadap setiap pihak yang terlibat dalam pemrosesan Data Pribadi di bawah kendali Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 724,
+      "text": ""
+    },
+    {
+      "sourceLine": 725,
+      "text": "## Pasal 38"
+    },
+    {
+      "sourceLine": 726,
+      "text": ""
+    },
+    {
+      "sourceLine": 727,
+      "text": "Pengendali Data Pribadi wajib melindungi Data Pribadi dari pemrosesan yang tidak sah."
+    },
+    {
+      "sourceLine": 728,
+      "text": "## Pasal 39"
+    },
+    {
+      "sourceLine": 729,
+      "text": ""
+    },
+    {
+      "sourceLine": 730,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 731,
+      "text": ""
+    },
+    {
+      "sourceLine": 732,
+      "text": "Pengendali Data Pribadi wajib mencegah Data Pribadi diakses secara tidak sah."
+    },
+    {
+      "sourceLine": 733,
+      "text": ""
+    },
+    {
+      "sourceLine": 734,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 735,
+      "text": ""
+    },
+    {
+      "sourceLine": 736,
+      "text": "Pencegahan sebagaimana dimaksud pada ayat (1) dilakukan dengan menggunakan sistem keamanan terhadap Data Pribadi yang diproses dan/atau memproses Data Pribadi menggunakan sistem elektronik secara andal, aman, dan bertanggung jawab."
+    },
+    {
+      "sourceLine": 737,
+      "text": ""
+    },
+    {
+      "sourceLine": 738,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 739,
+      "text": ""
+    },
+    {
+      "sourceLine": 740,
+      "text": "Pencegahan sebagaimana dimaksud pada ayat (2) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 741,
+      "text": "## Pasal 40"
+    },
+    {
+      "sourceLine": 742,
+      "text": ""
+    },
+    {
+      "sourceLine": 743,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 744,
+      "text": ""
+    },
+    {
+      "sourceLine": 745,
+      "text": "Pengendali Data Pribadi wajib menghentikan pemrosesan Data Pribadi dalam hal Subjek Data Pribadi menarik kembali persetujuan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 746,
+      "text": ""
+    },
+    {
+      "sourceLine": 747,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 748,
+      "text": ""
+    },
+    {
+      "sourceLine": 749,
+      "text": "Penghentian pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan penarikan kembali persetujuan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 750,
+      "text": "## Pasal 41"
+    },
+    {
+      "sourceLine": 751,
+      "text": ""
+    },
+    {
+      "sourceLine": 752,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 753,
+      "text": ""
+    },
+    {
+      "sourceLine": 754,
+      "text": "Pengendali Data Pribadi wajib melakukan penundaan dan pembatasan pemrosesan Data Pribadi baik sebagian maupun seluruhnya paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan penundaan dan pembatasan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 755,
+      "text": ""
+    },
+    {
+      "sourceLine": 756,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 757,
+      "text": ""
+    },
+    {
+      "sourceLine": 758,
+      "text": "Penundaan dan pembatasan pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dikecualikan dalam hal:"
+    },
+    {
+      "sourceLine": 759,
+      "text": ""
+    },
+    {
+      "sourceLine": 760,
+      "text": "a."
+    },
+    {
+      "sourceLine": 761,
+      "text": "terdapat ketentuan peraturan perundang- undangan yang tidak memungkinkan dilakukan penundaan dan pembatasan pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 762,
+      "text": ""
+    },
+    {
+      "sourceLine": 763,
+      "text": "b."
+    },
+    {
+      "sourceLine": 764,
+      "text": ""
+    },
+    {
+      "sourceLine": 765,
+      "text": "dapat membahayakan keselamatan pihak lain; dan/atau"
+    },
+    {
+      "sourceLine": 766,
+      "text": ""
+    },
+    {
+      "sourceLine": 767,
+      "text": "c."
+    },
+    {
+      "sourceLine": 768,
+      "text": ""
+    },
+    {
+      "sourceLine": 769,
+      "text": "Subjek Data Pribadi terikat perjanjian tertulis dengan Pengendali Data Pribadi yang tidak memungkinkan dilakukan penundaan dan pembatasan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 770,
+      "text": ""
+    },
+    {
+      "sourceLine": 771,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 772,
+      "text": "Pengendali Data Pribadi wajib memberitahukan telah dilaksanakan penundaan dan pembatasan pemrosesan Data Pribadi kepada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 773,
+      "text": "## Pasal 42"
+    },
+    {
+      "sourceLine": 774,
+      "text": ""
+    },
+    {
+      "sourceLine": 775,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 776,
+      "text": ""
+    },
+    {
+      "sourceLine": 777,
+      "text": "Pengendali Data Pribadi wajib mengakhiri pemrosesan Data Pribadi dalam hal:"
+    },
+    {
+      "sourceLine": 778,
+      "text": ""
+    },
+    {
+      "sourceLine": 779,
+      "text": "a."
+    },
+    {
+      "sourceLine": 780,
+      "text": ""
+    },
+    {
+      "sourceLine": 781,
+      "text": "telah mencapai masa retensi;"
+    },
+    {
+      "sourceLine": 782,
+      "text": ""
+    },
+    {
+      "sourceLine": 783,
+      "text": "b."
+    },
+    {
+      "sourceLine": 784,
+      "text": ""
+    },
+    {
+      "sourceLine": 785,
+      "text": "tujuan pemrosesan Data Pribadi telah tercapai; atau"
+    },
+    {
+      "sourceLine": 786,
+      "text": ""
+    },
+    {
+      "sourceLine": 787,
+      "text": "c."
+    },
+    {
+      "sourceLine": 788,
+      "text": ""
+    },
+    {
+      "sourceLine": 789,
+      "text": "terdapat permintaan dari Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 790,
+      "text": ""
+    },
+    {
+      "sourceLine": 791,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 792,
+      "text": ""
+    },
+    {
+      "sourceLine": 793,
+      "text": "Pengakhiran pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 794,
+      "text": "## Pasal 43"
+    },
+    {
+      "sourceLine": 795,
+      "text": ""
+    },
+    {
+      "sourceLine": 796,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 797,
+      "text": ""
+    },
+    {
+      "sourceLine": 798,
+      "text": "Pengendali Data Pribadi wajib menghapus Data Pribadi dalam hal:"
+    },
+    {
+      "sourceLine": 799,
+      "text": ""
+    },
+    {
+      "sourceLine": 800,
+      "text": "a."
+    },
+    {
+      "sourceLine": 801,
+      "text": ""
+    },
+    {
+      "sourceLine": 802,
+      "text": "Data Pribadi tidak lagi diperlukan untuk pencapaian tujuan pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 803,
+      "text": ""
+    },
+    {
+      "sourceLine": 804,
+      "text": "b."
+    },
+    {
+      "sourceLine": 805,
+      "text": ""
+    },
+    {
+      "sourceLine": 806,
+      "text": "Subjek Data Pribadi telah melakukan penarikan kembali persetujuan pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 807,
+      "text": ""
+    },
+    {
+      "sourceLine": 808,
+      "text": "c."
+    },
+    {
+      "sourceLine": 809,
+      "text": ""
+    },
+    {
+      "sourceLine": 810,
+      "text": "terdapat permintaan dari Subjek Data Pribadi; atau"
+    },
+    {
+      "sourceLine": 811,
+      "text": ""
+    },
+    {
+      "sourceLine": 812,
+      "text": "d."
+    },
+    {
+      "sourceLine": 813,
+      "text": ""
+    },
+    {
+      "sourceLine": 814,
+      "text": "Data Pribadi diperoleh dan/atau diproses dengan cara melawan hukum."
+    },
+    {
+      "sourceLine": 815,
+      "text": ""
+    },
+    {
+      "sourceLine": 816,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 817,
+      "text": "Penghapusan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 818,
+      "text": "## Pasal 44"
+    },
+    {
+      "sourceLine": 819,
+      "text": ""
+    },
+    {
+      "sourceLine": 820,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 821,
+      "text": ""
+    },
+    {
+      "sourceLine": 822,
+      "text": "Pengendali Data Pribadi wajib memusnahkan Data Pribadi dalam hal:"
+    },
+    {
+      "sourceLine": 823,
+      "text": ""
+    },
+    {
+      "sourceLine": 824,
+      "text": "a."
+    },
+    {
+      "sourceLine": 825,
+      "text": ""
+    },
+    {
+      "sourceLine": 826,
+      "text": "telah habis masa retensinya dan berketerangan dimusnahkan berdasarkan jadwal retensi arsip;"
+    },
+    {
+      "sourceLine": 827,
+      "text": ""
+    },
+    {
+      "sourceLine": 828,
+      "text": "b."
+    },
+    {
+      "sourceLine": 829,
+      "text": ""
+    },
+    {
+      "sourceLine": 830,
+      "text": "terdapat permintaan dari Subjek Data Pribadi;"
+    },
+    {
+      "sourceLine": 831,
+      "text": ""
+    },
+    {
+      "sourceLine": 832,
+      "text": "c."
+    },
+    {
+      "sourceLine": 833,
+      "text": ""
+    },
+    {
+      "sourceLine": 834,
+      "text": "tidak berkaitan dengan penyelesaian proses hukum suatu perkara; dan/atau"
+    },
+    {
+      "sourceLine": 835,
+      "text": ""
+    },
+    {
+      "sourceLine": 836,
+      "text": "d."
+    },
+    {
+      "sourceLine": 837,
+      "text": ""
+    },
+    {
+      "sourceLine": 838,
+      "text": "Data Pribadi diperoleh dan/atau diproses dengan cara melawan hukum."
+    },
+    {
+      "sourceLine": 839,
+      "text": ""
+    },
+    {
+      "sourceLine": 840,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 841,
+      "text": "Pemusnahan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 842,
+      "text": "## Pasal 45"
+    },
+    {
+      "sourceLine": 843,
+      "text": ""
+    },
+    {
+      "sourceLine": 844,
+      "text": "Pengendali Data Pribadi wajib memberitahukan penghapusan dan/atau pemusnahan Data Pribadi kepada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 845,
+      "text": "## Pasal 46"
+    },
+    {
+      "sourceLine": 846,
+      "text": ""
+    },
+    {
+      "sourceLine": 847,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 848,
+      "text": ""
+    },
+    {
+      "sourceLine": 849,
+      "text": "Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib menyampaikan pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada:"
+    },
+    {
+      "sourceLine": 850,
+      "text": ""
+    },
+    {
+      "sourceLine": 851,
+      "text": "a."
+    },
+    {
+      "sourceLine": 852,
+      "text": ""
+    },
+    {
+      "sourceLine": 853,
+      "text": "Subjek Data Pribadi; dan"
+    },
+    {
+      "sourceLine": 854,
+      "text": ""
+    },
+    {
+      "sourceLine": 855,
+      "text": "b."
+    },
+    {
+      "sourceLine": 856,
+      "text": ""
+    },
+    {
+      "sourceLine": 857,
+      "text": "lembaga."
+    },
+    {
+      "sourceLine": 858,
+      "text": ""
+    },
+    {
+      "sourceLine": 859,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 860,
+      "text": ""
+    },
+    {
+      "sourceLine": 861,
+      "text": "Pemberitahuan tertulis sebagaimana dimaksud pada ayat (1) minimal memuat:"
+    },
+    {
+      "sourceLine": 862,
+      "text": ""
+    },
+    {
+      "sourceLine": 863,
+      "text": "a."
+    },
+    {
+      "sourceLine": 864,
+      "text": ""
+    },
+    {
+      "sourceLine": 865,
+      "text": "Data Pribadi yang terungkap;"
+    },
+    {
+      "sourceLine": 866,
+      "text": ""
+    },
+    {
+      "sourceLine": 867,
+      "text": "b."
+    },
+    {
+      "sourceLine": 868,
+      "text": ""
+    },
+    {
+      "sourceLine": 869,
+      "text": "kapan dan bagaimana Data Pribadi terungkap; dan"
+    },
+    {
+      "sourceLine": 870,
+      "text": ""
+    },
+    {
+      "sourceLine": 871,
+      "text": "c."
+    },
+    {
+      "sourceLine": 872,
+      "text": "upaya penanganan dan pemulihan atas terungkapnya Data Pribadi oleh Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 873,
+      "text": ""
+    },
+    {
+      "sourceLine": 874,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 875,
+      "text": ""
+    },
+    {
+      "sourceLine": 876,
+      "text": "Dalam hal tertentu, Pengendali Data Pribadi wajib memberitahukan kepada masyarakat mengenai kegagalan Pelindungan Data Pribadi."
+    },
+    {
+      "sourceLine": 877,
+      "text": "## Pasal 47"
+    },
+    {
+      "sourceLine": 878,
+      "text": ""
+    },
+    {
+      "sourceLine": 879,
+      "text": "Pengendali Data Pribadi wajib bertanggung jawab atas pemrosesan Data Pribadi dan menunjukkan pertanggungjawaban dalam pemenuhan kewajiban pelaksanaan prinsip Pelindungan Data Pribadi."
+    },
+    {
+      "sourceLine": 880,
+      "text": "## Pasal 48"
+    },
+    {
+      "sourceLine": 881,
+      "text": ""
+    },
+    {
+      "sourceLine": 882,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 883,
+      "text": ""
+    },
+    {
+      "sourceLine": 884,
+      "text": "Pengendali Data Pribadi berbentuk badan hukum yang melakukan penggabungan, pemisahan, pengambilalihan, peleburan, atau pembubaran badan hukum wajib menyampaikan pemberitahuan pengalihan Data Pribadi kepada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 885,
+      "text": ""
+    },
+    {
+      "sourceLine": 886,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 887,
+      "text": ""
+    },
+    {
+      "sourceLine": 888,
+      "text": "Pemberitahuan pengalihan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sebelum dan sesudah penggabungan, pemisahan, pengambilalihan, peleburan, atau pembubaran badan hukum."
+    },
+    {
+      "sourceLine": 889,
+      "text": ""
+    },
+    {
+      "sourceLine": 890,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 891,
+      "text": "Dalam hal Pengendali Data Pribadi berbentuk badan hukum melakukan pembubaran atau dibubarkan, penyimpanan, pentransferan, penghapusan, atau pemusnahan Data Pribadi dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 892,
+      "text": ""
+    },
+    {
+      "sourceLine": 893,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 894,
+      "text": ""
+    },
+    {
+      "sourceLine": 895,
+      "text": "Penyimpanan, pentransferan, penghapusan, atau pemusnahan Data Pribadi sebagaimana dimaksud pada ayat (3) diberitahukan kepada Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 896,
+      "text": ""
+    },
+    {
+      "sourceLine": 897,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 898,
+      "text": "Ketentuan lebih lanjut mengenai tata cara pemberitahuan sebagaimana dimaksud pada ayat (1), ayat (2), dan ayat (4) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 899,
+      "text": "## Pasal 49"
+    },
+    {
+      "sourceLine": 900,
+      "text": ""
+    },
+    {
+      "sourceLine": 901,
+      "text": "Pengendali Data Pribadi dan/atau Prosesor Data Pribadi wajib melaksanakan perintah lembaga dalam rangka penyelenggaraan Pelindungan Data Pribadi sesuai dengan Undang-Undang ini."
+    },
+    {
+      "sourceLine": 902,
+      "text": "## Pasal 50"
+    },
+    {
+      "sourceLine": 903,
+      "text": ""
+    },
+    {
+      "sourceLine": 904,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 905,
+      "text": ""
+    },
+    {
+      "sourceLine": 906,
+      "text": "Kewajiban Pengendali Data Pribadi sebagaimana dimaksud dalam Pasal 30, Pasal 32, Pasal 36, Pasal 42, Pasal 43 ayat (1) huruf a sampai dengan huruf c, Pasal 44 ayat (1) huruf b, Pasal 45, dan Pasal 46 ayat (1) huruf a, dikecualikan untuk:"
+    },
+    {
+      "sourceLine": 907,
+      "text": ""
+    },
+    {
+      "sourceLine": 908,
+      "text": "a."
+    },
+    {
+      "sourceLine": 909,
+      "text": ""
+    },
+    {
+      "sourceLine": 910,
+      "text": "kepentingan pertahanan dan keamanan nasional;"
+    },
+    {
+      "sourceLine": 911,
+      "text": ""
+    },
+    {
+      "sourceLine": 912,
+      "text": "b."
+    },
+    {
+      "sourceLine": 913,
+      "text": ""
+    },
+    {
+      "sourceLine": 914,
+      "text": "kepentingan proses penegakan hukum;"
+    },
+    {
+      "sourceLine": 915,
+      "text": ""
+    },
+    {
+      "sourceLine": 916,
+      "text": "c."
+    },
+    {
+      "sourceLine": 917,
+      "text": ""
+    },
+    {
+      "sourceLine": 918,
+      "text": "kepentingan umum dalam rangka penyelenggaraan negara; atau"
+    },
+    {
+      "sourceLine": 919,
+      "text": ""
+    },
+    {
+      "sourceLine": 920,
+      "text": "d."
+    },
+    {
+      "sourceLine": 921,
+      "text": "kepentingan pengawasan sektor jasa keuangan, moneter, sistem pembayaran, dan stabilitas sistem keuangan yang dilakukan dalam rangka penyelenggaraan negara."
+    },
+    {
+      "sourceLine": 922,
+      "text": ""
+    },
+    {
+      "sourceLine": 923,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 924,
+      "text": ""
+    },
+    {
+      "sourceLine": 925,
+      "text": "Pengecualian sebagaimana dimaksud pada ayat (1) dilaksanakan hanya dalam rangka pelaksanaan ketentuan Undang-Undang."
+    },
+    {
+      "sourceLine": 926,
+      "text": ""
+    },
+    {
+      "sourceLine": 927,
+      "text": "Bagian Ketiga"
+    },
+    {
+      "sourceLine": 928,
+      "text": "Kewajiban Prosesor Data Pribadi"
+    },
+    {
+      "sourceLine": 929,
+      "text": "## Pasal 51"
+    },
+    {
+      "sourceLine": 930,
+      "text": ""
+    },
+    {
+      "sourceLine": 931,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 932,
+      "text": ""
+    },
+    {
+      "sourceLine": 933,
+      "text": "Dalam hal Pengendali Data Pribadi menunjuk Prosesor Data Pribadi, Prosesor Data Pribadi wajib melakukan pemrosesan Data Pribadi berdasarkan perintah Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 934,
+      "text": ""
+    },
+    {
+      "sourceLine": 935,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 936,
+      "text": ""
+    },
+    {
+      "sourceLine": 937,
+      "text": "Pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1), dilaksanakan sesuai ketentuan yang diatur dalam Undang-Undang ini."
+    },
+    {
+      "sourceLine": 938,
+      "text": ""
+    },
+    {
+      "sourceLine": 939,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 940,
+      "text": ""
+    },
+    {
+      "sourceLine": 941,
+      "text": "Pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) termasuk dalam tanggung jawab Pengendali Data Pribadi."
+    },
+    {
+      "sourceLine": 942,
+      "text": ""
+    },
+    {
+      "sourceLine": 943,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 944,
+      "text": "Prosesor Data Pribadi dapat melibatkan Prosesor Data Pribadi lain dalam melakukan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 945,
+      "text": ""
+    },
+    {
+      "sourceLine": 946,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 947,
+      "text": ""
+    },
+    {
+      "sourceLine": 948,
+      "text": "Prosesor Data Pribadi wajib mendapatkan persetujuan tertulis dari Pengendali Data Pribadi sebelum melibatkan Prosesor Data Pribadi lain sebagaimana dimaksud pada ayat (4)."
+    },
+    {
+      "sourceLine": 949,
+      "text": ""
+    },
+    {
+      "sourceLine": 950,
+      "text": "(6)"
+    },
+    {
+      "sourceLine": 951,
+      "text": ""
+    },
+    {
+      "sourceLine": 952,
+      "text": "Dalam hal Prosesor Data Pribadi melakukan pemrosesan Data Pribadi di luar perintah dan tujuan yang ditetapkan Pengendali Data Pribadi, pemrosesan Data Pribadi menjadi tanggung jawab Prosesor Data Pribadi."
+    },
+    {
+      "sourceLine": 953,
+      "text": "## Pasal 52"
+    },
+    {
+      "sourceLine": 954,
+      "text": ""
+    },
+    {
+      "sourceLine": 955,
+      "text": "Ketentuan mengenai kewajiban Pengendali Data Pribadi sebagaimana dimaksud dalam Pasal 29, Pasal 31, Pasal 35, Pasal 36, Pasal 37, Pasal 38, dan Pasal 39 berlaku juga terhadap Prosesor Data Pribadi."
+    },
+    {
+      "sourceLine": 956,
+      "text": ""
+    },
+    {
+      "sourceLine": 957,
+      "text": "Bagian Keempat"
+    },
+    {
+      "sourceLine": 958,
+      "text": "Pejabat atau Petugas yang Melaksanakan Fungsi Pelindungan Data Pribadi"
+    },
+    {
+      "sourceLine": 959,
+      "text": "## Pasal 53"
+    },
+    {
+      "sourceLine": 960,
+      "text": ""
+    },
+    {
+      "sourceLine": 961,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 962,
+      "text": ""
+    },
+    {
+      "sourceLine": 963,
+      "text": "Pengendali Data Pribadi dan Prosesor Data Pribadi wajib menunjuk pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi dalam hal:"
+    },
+    {
+      "sourceLine": 964,
+      "text": ""
+    },
+    {
+      "sourceLine": 965,
+      "text": "a."
+    },
+    {
+      "sourceLine": 966,
+      "text": ""
+    },
+    {
+      "sourceLine": 967,
+      "text": "pemrosesan Data Pribadi untuk kepentingan pelayanan publik;"
+    },
+    {
+      "sourceLine": 968,
+      "text": ""
+    },
+    {
+      "sourceLine": 969,
+      "text": "b."
+    },
+    {
+      "sourceLine": 970,
+      "text": ""
+    },
+    {
+      "sourceLine": 971,
+      "text": "kegiatan inti Pengendali Data Pribadi memiliki sifat, ruang lingkup, dan/atau tujuan yang memerlukan pemantauan secara teratur dan sistematis atas Data Pribadi dengan skala besar; dan"
+    },
+    {
+      "sourceLine": 972,
+      "text": ""
+    },
+    {
+      "sourceLine": 973,
+      "text": "c."
+    },
+    {
+      "sourceLine": 974,
+      "text": "kegiatan inti Pengendali Data Pribadi terdiri dari pemrosesan Data Pribadi dalam skala besar untuk Data Pribadi yang bersifat spesifik dan/atau Data Pribadi yang berkaitan dengan tindak pidana."
+    },
+    {
+      "sourceLine": 975,
+      "text": ""
+    },
+    {
+      "sourceLine": 976,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 977,
+      "text": ""
+    },
+    {
+      "sourceLine": 978,
+      "text": "Pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi sebagaimana dimaksud pada ayat (1) ditunjuk berdasarkan profesionalitas, pengetahuan mengenai hukum, praktik Pelindungan Data Pribadi, dan kemampuan untuk memenuhi tugas-tugasnya."
+    },
+    {
+      "sourceLine": 979,
+      "text": ""
+    },
+    {
+      "sourceLine": 980,
+      "text": "(3)."
+    },
+    {
+      "sourceLine": 981,
+      "text": "Pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi sebagaimana dimaksud pada ayat (2) dapat berasal dari dalam dan/atau luar Pengendali Data Pribadi atau Prosesor Data Pribadi."
+    },
+    {
+      "sourceLine": 982,
+      "text": "## Pasal 54"
+    },
+    {
+      "sourceLine": 983,
+      "text": ""
+    },
+    {
+      "sourceLine": 984,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 985,
+      "text": ""
+    },
+    {
+      "sourceLine": 986,
+      "text": "Pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi memiliki tugas paling sedikit:"
+    },
+    {
+      "sourceLine": 987,
+      "text": ""
+    },
+    {
+      "sourceLine": 988,
+      "text": "a."
+    },
+    {
+      "sourceLine": 989,
+      "text": ""
+    },
+    {
+      "sourceLine": 990,
+      "text": "menginformasikan dan memberikan saran kepada Pengendali Data Pribadi atau Prosesor Data Pribadi agar mematuhi ketentuan dalam Undang-Undang ini;"
+    },
+    {
+      "sourceLine": 991,
+      "text": ""
+    },
+    {
+      "sourceLine": 992,
+      "text": "b."
+    },
+    {
+      "sourceLine": 993,
+      "text": ""
+    },
+    {
+      "sourceLine": 994,
+      "text": "memantau dan memastikan kepatuhan terhadap Undang-Undang ini dan kebijakan Pengendali Data Pribadi atau Prosesor Data Pribadi;"
+    },
+    {
+      "sourceLine": 995,
+      "text": ""
+    },
+    {
+      "sourceLine": 996,
+      "text": "c."
+    },
+    {
+      "sourceLine": 997,
+      "text": "memberikan saran mengenai penilaian dampak Pelindungan Data Pribadi dan memantau kinerja Pengendali Data Pribadi dan Prosesor Data Pribadi; dan"
+    },
+    {
+      "sourceLine": 998,
+      "text": ""
+    },
+    {
+      "sourceLine": 999,
+      "text": "d."
+    },
+    {
+      "sourceLine": 1000,
+      "text": ""
+    },
+    {
+      "sourceLine": 1001,
+      "text": "berkoordinasi dan bertindak sebagai narahubung untuk isu yang berkaitan dengan pemrosesan Data Pribadi."
+    },
+    {
+      "sourceLine": 1002,
+      "text": ""
+    },
+    {
+      "sourceLine": 1003,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1004,
+      "text": "Dalam melaksanakan tugas sebagaimana dimaksud pada ayat (1), pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi memperhatikan risiko terkait pemrosesan Data Pribadi, dengan mempertimbangkan sifat, ruang lingkup, konteks, dan tujuan pemrosesan."
+    },
+    {
+      "sourceLine": 1005,
+      "text": ""
+    },
+    {
+      "sourceLine": 1006,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1007,
+      "text": ""
+    },
+    {
+      "sourceLine": 1008,
+      "text": "Ketentuan lebih lanjut mengenai pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 1009,
+      "text": ""
+    },
+    {
+      "sourceLine": 1010,
+      "text": "BAB VII"
+    },
+    {
+      "sourceLine": 1011,
+      "text": "TRANSFER DATA PRIBADI"
+    },
+    {
+      "sourceLine": 1012,
+      "text": "Bagian Kesatu"
+    },
+    {
+      "sourceLine": 1013,
+      "text": "Transfer Data Pribadi Dalam Wilayah Hukum Negara Republik Indonesia"
+    },
+    {
+      "sourceLine": 1014,
+      "text": "## Pasal 55"
+    },
+    {
+      "sourceLine": 1015,
+      "text": ""
+    },
+    {
+      "sourceLine": 1016,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1017,
+      "text": ""
+    },
+    {
+      "sourceLine": 1018,
+      "text": "Pengendali Data Pribadi dapat melakukan transfer Data Pribadi kepada Pengendali Data Pribadi lainnya dalam wilayah hukum Negara Republik Indonesia."
+    },
+    {
+      "sourceLine": 1019,
+      "text": ""
+    },
+    {
+      "sourceLine": 1020,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1021,
+      "text": ""
+    },
+    {
+      "sourceLine": 1022,
+      "text": "Pengendali Data Pribadi yang melakukan transfer Data Pribadi dan yang menerima transfer Data Pribadi wajib melakukan Pelindungan Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini."
+    },
+    {
+      "sourceLine": 1023,
+      "text": ""
+    },
+    {
+      "sourceLine": 1024,
+      "text": "Bagian Kedua"
+    },
+    {
+      "sourceLine": 1025,
+      "text": "Transfer Data Pribadi ke Luar Wilayah Hukum Negara Republik Indonesia"
+    },
+    {
+      "sourceLine": 1026,
+      "text": "## Pasal 56"
+    },
+    {
+      "sourceLine": 1027,
+      "text": ""
+    },
+    {
+      "sourceLine": 1028,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1029,
+      "text": ""
+    },
+    {
+      "sourceLine": 1030,
+      "text": "Pengendali Data Pribadi dapat melakukan transfer Data Pribadi kepada Pengendali Data Pribadi dan/atau Prosesor Data Pribadi di luar wilayah hukum Negara Republik Indonesia sesuai dengan ketentuan yang diatur dalam Undang-Undang ini."
+    },
+    {
+      "sourceLine": 1031,
+      "text": ""
+    },
+    {
+      "sourceLine": 1032,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1033,
+      "text": "Dalam melakukan transfer Data Pribadi sebagaimana dimaksud pada ayat (1), Pengendali Data Pribadi wajib memastikan negara tempat kedudukan Pengendali Data Pribadi dan/atau Prosesor Data Pribadi yang menerima transfer Data Pribadi memiliki tingkat Pelindungan Data Pribadi yang setara atau lebih tinggi dari yang diatur dalam Undang-Undang ini."
+    },
+    {
+      "sourceLine": 1034,
+      "text": ""
+    },
+    {
+      "sourceLine": 1035,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1036,
+      "text": "Dalam hal ketentuan sebagaimana dimaksud pada ayat (2) tidak terpenuhi, Pengendali Data Pribadi wajib memastikan terdapat Pelindungan Data Pribadi yang memadai dan bersifat mengikat."
+    },
+    {
+      "sourceLine": 1037,
+      "text": ""
+    },
+    {
+      "sourceLine": 1038,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1039,
+      "text": ""
+    },
+    {
+      "sourceLine": 1040,
+      "text": "Dalam hal ketentuan sebagaimana dimaksud pada ayat (2) dan ayat (3) tidak terpenuhi, Pengendali Data Pribadi wajib mendapatkan persetujuan Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 1041,
+      "text": ""
+    },
+    {
+      "sourceLine": 1042,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 1043,
+      "text": ""
+    },
+    {
+      "sourceLine": 1044,
+      "text": "Ketentuan lebih lanjut mengenai transfer Data Pribadi diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 1045,
+      "text": ""
+    },
+    {
+      "sourceLine": 1046,
+      "text": "BAB VIII"
+    },
+    {
+      "sourceLine": 1047,
+      "text": "SANKSI ADMINISTRATIF"
+    },
+    {
+      "sourceLine": 1048,
+      "text": "## Pasal 57"
+    },
+    {
+      "sourceLine": 1049,
+      "text": ""
+    },
+    {
+      "sourceLine": 1050,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1051,
+      "text": "Pelanggaran terhadap ketentuan Pasal 20 ayat (1), Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26 ayat (3), Pasal 27, Pasal 28, Pasal 29, Pasal 30, Pasal 31, Pasal 32 ayat (1), Pasal 33, Pasal 34 ayat (1), Pasal 35, Pasal 36, Pasal 37, Pasal 38, Pasal 39 ayat (1), Pasal 40 ayat (1), Pasal 41 ayat (1) dan ayat (3), Pasal 42 ayat (1), Pasal 43 ayat (1), Pasal 44 ayat (1), Pasal 45, Pasal 46 ayat (1) dan ayat (3), Pasal 47, Pasal 48 ayat (1), Pasal 49, Pasal 51 ayat (1) dan ayat (5), Pasal 52, Pasal 53 ayat (1), Pasal 55 ayat (2), dan Pasal 56 ayat (2) sampai dengan ayat (4) dikenai sanksi administratif."
+    },
+    {
+      "sourceLine": 1052,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1053,
+      "text": ""
+    },
+    {
+      "sourceLine": 1054,
+      "text": "Sanksi administratif sebagaimana dimaksud pada ayat (1) berupa:"
+    },
+    {
+      "sourceLine": 1055,
+      "text": ""
+    },
+    {
+      "sourceLine": 1056,
+      "text": "a."
+    },
+    {
+      "sourceLine": 1057,
+      "text": ""
+    },
+    {
+      "sourceLine": 1058,
+      "text": "peringatan tertulis;"
+    },
+    {
+      "sourceLine": 1059,
+      "text": ""
+    },
+    {
+      "sourceLine": 1060,
+      "text": "b."
+    },
+    {
+      "sourceLine": 1061,
+      "text": ""
+    },
+    {
+      "sourceLine": 1062,
+      "text": "penghentian sementara kegiatan pemrosesan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1063,
+      "text": ""
+    },
+    {
+      "sourceLine": 1064,
+      "text": "c."
+    },
+    {
+      "sourceLine": 1065,
+      "text": ""
+    },
+    {
+      "sourceLine": 1066,
+      "text": "penghapusan atau pemusnahan Data Pribadi; dan/atau"
+    },
+    {
+      "sourceLine": 1067,
+      "text": ""
+    },
+    {
+      "sourceLine": 1068,
+      "text": "d."
+    },
+    {
+      "sourceLine": 1069,
+      "text": ""
+    },
+    {
+      "sourceLine": 1070,
+      "text": "denda administratif."
+    },
+    {
+      "sourceLine": 1071,
+      "text": ""
+    },
+    {
+      "sourceLine": 1072,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1073,
+      "text": ""
+    },
+    {
+      "sourceLine": 1074,
+      "text": "Sanksi administratif berupa denda administratif sebagaimana dimaksud pada ayat (2) huruf d paling tinggi 2 (dua) persen dari pendapatan tahunan atau penerimaan tahunan terhadap variabel pelanggaran."
+    },
+    {
+      "sourceLine": 1075,
+      "text": ""
+    },
+    {
+      "sourceLine": 1076,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1077,
+      "text": "Penjatuhan sanksi administratif sebagaimana dimaksud pada ayat (2) diberikan oleh lembaga."
+    },
+    {
+      "sourceLine": 1078,
+      "text": ""
+    },
+    {
+      "sourceLine": 1079,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 1080,
+      "text": ""
+    },
+    {
+      "sourceLine": 1081,
+      "text": "Ketentuan lebih lanjut mengenai tata cara pengenaan sanksi administratif sebagaimana dimaksud pada ayat (3) diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 1082,
+      "text": ""
+    },
+    {
+      "sourceLine": 1083,
+      "text": "BAB IX"
+    },
+    {
+      "sourceLine": 1084,
+      "text": "KELEMBAGAAN"
+    },
+    {
+      "sourceLine": 1085,
+      "text": "## Pasal 58"
+    },
+    {
+      "sourceLine": 1086,
+      "text": ""
+    },
+    {
+      "sourceLine": 1087,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1088,
+      "text": ""
+    },
+    {
+      "sourceLine": 1089,
+      "text": "Pemerintah berperan dalam mewujudkan penyelenggaraan Pelindungan Data Pribadi sesuai dengan ketentuan Undang-Undang ini."
+    },
+    {
+      "sourceLine": 1090,
+      "text": ""
+    },
+    {
+      "sourceLine": 1091,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1092,
+      "text": ""
+    },
+    {
+      "sourceLine": 1093,
+      "text": "Penyelenggaraan Pelindungan Data Pribadi sebagaimana dimaksud pada ayat (1) dilaksanakan oleh lembaga."
+    },
+    {
+      "sourceLine": 1094,
+      "text": ""
+    },
+    {
+      "sourceLine": 1095,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1096,
+      "text": ""
+    },
+    {
+      "sourceLine": 1097,
+      "text": "Lembaga sebagaimana dimaksud pada ayat (2) ditetapkan oleh Presiden."
+    },
+    {
+      "sourceLine": 1098,
+      "text": ""
+    },
+    {
+      "sourceLine": 1099,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1100,
+      "text": ""
+    },
+    {
+      "sourceLine": 1101,
+      "text": "Lembaga sebagaimana dimaksud pada ayat (2) bertanggung jawab kepada Presiden."
+    },
+    {
+      "sourceLine": 1102,
+      "text": ""
+    },
+    {
+      "sourceLine": 1103,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 1104,
+      "text": "Ketentuan lebih lanjut mengenai lembaga sebagaimana dimaksud pada ayat (2) diatur dengan Peraturan Presiden."
+    },
+    {
+      "sourceLine": 1105,
+      "text": "## Pasal 59"
+    },
+    {
+      "sourceLine": 1106,
+      "text": ""
+    },
+    {
+      "sourceLine": 1107,
+      "text": "Lembaga sebagaimana dimaksud dalam Pasal 58 ayat (2) melaksanakan:"
+    },
+    {
+      "sourceLine": 1108,
+      "text": ""
+    },
+    {
+      "sourceLine": 1109,
+      "text": "a."
+    },
+    {
+      "sourceLine": 1110,
+      "text": ""
+    },
+    {
+      "sourceLine": 1111,
+      "text": "perumusan dan penetapan kebijakan dan strategi Pelindungan Data Pribadi yang menjadi panduan bagi Subjek Data Pribadi, Pengendali Data Pribadi, dan Prosesor Data Pribadi;"
+    },
+    {
+      "sourceLine": 1112,
+      "text": ""
+    },
+    {
+      "sourceLine": 1113,
+      "text": "b."
+    },
+    {
+      "sourceLine": 1114,
+      "text": ""
+    },
+    {
+      "sourceLine": 1115,
+      "text": "pengawasan terhadap penyelenggaraan Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1116,
+      "text": ""
+    },
+    {
+      "sourceLine": 1117,
+      "text": "c."
+    },
+    {
+      "sourceLine": 1118,
+      "text": ""
+    },
+    {
+      "sourceLine": 1119,
+      "text": "penegakan hukum administratif terhadap pelanggaran Undang-Undang ini; dan"
+    },
+    {
+      "sourceLine": 1120,
+      "text": ""
+    },
+    {
+      "sourceLine": 1121,
+      "text": "d."
+    },
+    {
+      "sourceLine": 1122,
+      "text": ""
+    },
+    {
+      "sourceLine": 1123,
+      "text": "fasilitasi penyelesaian sengketa di luar pengadilan."
+    },
+    {
+      "sourceLine": 1124,
+      "text": "## Pasal 60"
+    },
+    {
+      "sourceLine": 1125,
+      "text": ""
+    },
+    {
+      "sourceLine": 1126,
+      "text": "Lembaga sebagaimana dimaksud dalam Pasal 58 ayat (2) berwenang:"
+    },
+    {
+      "sourceLine": 1127,
+      "text": ""
+    },
+    {
+      "sourceLine": 1128,
+      "text": "a."
+    },
+    {
+      "sourceLine": 1129,
+      "text": ""
+    },
+    {
+      "sourceLine": 1130,
+      "text": "merumuskan dan menetapkan kebijakan di bidang Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1131,
+      "text": ""
+    },
+    {
+      "sourceLine": 1132,
+      "text": "b."
+    },
+    {
+      "sourceLine": 1133,
+      "text": ""
+    },
+    {
+      "sourceLine": 1134,
+      "text": "melakukan pengawasan  terhadap kepatuhan Pengendali Data Pribadi;"
+    },
+    {
+      "sourceLine": 1135,
+      "text": ""
+    },
+    {
+      "sourceLine": 1136,
+      "text": "c."
+    },
+    {
+      "sourceLine": 1137,
+      "text": ""
+    },
+    {
+      "sourceLine": 1138,
+      "text": "menjatuhkan sanksi administratif atas pelanggaran Pelindungan Data Pribadi yang dilakukan Pengendali Data Pribadi dan/atau Prosesor Data Pribadi;"
+    },
+    {
+      "sourceLine": 1139,
+      "text": ""
+    },
+    {
+      "sourceLine": 1140,
+      "text": "d."
+    },
+    {
+      "sourceLine": 1141,
+      "text": "membantu aparat penegak hukum dalam penanganan dugaan tindak pidana Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini;"
+    },
+    {
+      "sourceLine": 1142,
+      "text": ""
+    },
+    {
+      "sourceLine": 1143,
+      "text": "e."
+    },
+    {
+      "sourceLine": 1144,
+      "text": ""
+    },
+    {
+      "sourceLine": 1145,
+      "text": "bekerja sama dengan lembaga Pelindungan Data Pribadi negara lain dalam rangka penyelesaian dugaan pelanggaran Pelindungan Data Pribadi lintas negara;"
+    },
+    {
+      "sourceLine": 1146,
+      "text": ""
+    },
+    {
+      "sourceLine": 1147,
+      "text": "f."
+    },
+    {
+      "sourceLine": 1148,
+      "text": ""
+    },
+    {
+      "sourceLine": 1149,
+      "text": "melakukan penilaian terhadap pemenuhan persyaratan transfer Data Pribadi ke luar wilayah hukum Negara Republik Indonesia;"
+    },
+    {
+      "sourceLine": 1150,
+      "text": ""
+    },
+    {
+      "sourceLine": 1151,
+      "text": "g."
+    },
+    {
+      "sourceLine": 1152,
+      "text": "memberikan perintah dalam rangka tindak lanjut hasil pengawasan kepada Pengendali Data Pribadi dan/atau Prosesor D&.ta Pribadi;"
+    },
+    {
+      "sourceLine": 1153,
+      "text": ""
+    },
+    {
+      "sourceLine": 1154,
+      "text": "h."
+    },
+    {
+      "sourceLine": 1155,
+      "text": ""
+    },
+    {
+      "sourceLine": 1156,
+      "text": "melakukan publikasi hasil pelaksanaan pengawasan Pelindungan Data Pribadi sesuai dengan ketentuan peraturan perundang-undangan;"
+    },
+    {
+      "sourceLine": 1157,
+      "text": ""
+    },
+    {
+      "sourceLine": 1158,
+      "text": "i."
+    },
+    {
+      "sourceLine": 1159,
+      "text": ""
+    },
+    {
+      "sourceLine": 1160,
+      "text": "menerima aduan dan/atau laporan tentang dugaan terjadinya pelanggaran Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1161,
+      "text": ""
+    },
+    {
+      "sourceLine": 1162,
+      "text": "j."
+    },
+    {
+      "sourceLine": 1163,
+      "text": "melakukan pemeriksaan dan penelusuran atas pengaduan, laporan, dan/atau hasil pengawasan terhadap dugaan terjadinya pelanggaran Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1164,
+      "text": ""
+    },
+    {
+      "sourceLine": 1165,
+      "text": "k."
+    },
+    {
+      "sourceLine": 1166,
+      "text": ""
+    },
+    {
+      "sourceLine": 1167,
+      "text": "memanggil dan menghadirkan Setiap Orang dan/atau Badan Publik yang terkait dengan dugaan pelanggaran Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1168,
+      "text": ""
+    },
+    {
+      "sourceLine": 1169,
+      "text": "l."
+    },
+    {
+      "sourceLine": 1170,
+      "text": ""
+    },
+    {
+      "sourceLine": 1171,
+      "text": "meminta keterangan, data, Informasi, dan dokumen dari Setiap Orang dan/atau Badan Publik terkait dugaan pelanggaran Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1172,
+      "text": ""
+    },
+    {
+      "sourceLine": 1173,
+      "text": "m."
+    },
+    {
+      "sourceLine": 1174,
+      "text": "memanggil dan menghadirkan ahli yang diperlukan dalam pemeriksaan dan penelusuran terkait dugaan pelanggaran Pelindungan Data Pribadi;"
+    },
+    {
+      "sourceLine": 1175,
+      "text": ""
+    },
+    {
+      "sourceLine": 1176,
+      "text": "n."
+    },
+    {
+      "sourceLine": 1177,
+      "text": ""
+    },
+    {
+      "sourceLine": 1178,
+      "text": "melakukan pemeriksaan dan penelusuran terhadap sistem elektronik, sarana, ruang, dan/atau tempat yang digunakan Pengendali Data Pribadi dan/atau Prosesor Data Pribadi, termasuk memperoleh akses terhadap data dan/atau menunjuk pihak ketiga; dan"
+    },
+    {
+      "sourceLine": 1179,
+      "text": ""
+    },
+    {
+      "sourceLine": 1180,
+      "text": "o."
+    },
+    {
+      "sourceLine": 1181,
+      "text": ""
+    },
+    {
+      "sourceLine": 1182,
+      "text": "meminta bantuan hukum kepada kejaksaan dalam penyelesaian sengketa Pelindungan Data Pribadi."
+    },
+    {
+      "sourceLine": 1183,
+      "text": "## Pasal 61"
+    },
+    {
+      "sourceLine": 1184,
+      "text": ""
+    },
+    {
+      "sourceLine": 1185,
+      "text": "Ketentuan mengenai tata cara pelaksanaan wewenang lembaga sebagaimana dimaksud dalam Pasal 60 diatur dalam Peraturan Pemerintah."
+    },
+    {
+      "sourceLine": 1186,
+      "text": ""
+    },
+    {
+      "sourceLine": 1187,
+      "text": "BABX"
+    },
+    {
+      "sourceLine": 1188,
+      "text": "KERJA SAMA INTERNASIONAL"
+    },
+    {
+      "sourceLine": 1189,
+      "text": "## Pasal 62"
+    },
+    {
+      "sourceLine": 1190,
+      "text": ""
+    },
+    {
+      "sourceLine": 1191,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1192,
+      "text": ""
+    },
+    {
+      "sourceLine": 1193,
+      "text": "Kerja sama internasional dilakukan oleh Pemerintah dengan pemerintah negara lain atau Organisasi Internasional terkait dengan Pelindungan Data Pribadi."
+    },
+    {
+      "sourceLine": 1194,
+      "text": ""
+    },
+    {
+      "sourceLine": 1195,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1196,
+      "text": ""
+    },
+    {
+      "sourceLine": 1197,
+      "text": "Kerja sama internasional dalam rangka pelaksanaan Undang-Undang ini dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan dan prinsip hukum internasional."
+    },
+    {
+      "sourceLine": 1198,
+      "text": ""
+    },
+    {
+      "sourceLine": 1199,
+      "text": "BAB XI"
+    },
+    {
+      "sourceLine": 1200,
+      "text": "PARTISIPASI MASYARAKAT"
+    },
+    {
+      "sourceLine": 1201,
+      "text": "## Pasal 63"
+    },
+    {
+      "sourceLine": 1202,
+      "text": ""
+    },
+    {
+      "sourceLine": 1203,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1204,
+      "text": ""
+    },
+    {
+      "sourceLine": 1205,
+      "text": "Masyarakat dapat berperan baik secara langsung maupun tidak langsung dalam mendukung terselenggaranya Pelindungan Data Pribadi."
+    },
+    {
+      "sourceLine": 1206,
+      "text": ""
+    },
+    {
+      "sourceLine": 1207,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1208,
+      "text": ""
+    },
+    {
+      "sourceLine": 1209,
+      "text": "Pelaksanaan peran sebagaimana dimaksud pada ayat (1) dapat dilakukan melalui pendidikan, pelatihan, advokasi, sosialisasi, dan/atau pengawasan sesuai dengan ketentuan peraturan perundang­ undangan."
+    },
+    {
+      "sourceLine": 1210,
+      "text": ""
+    },
+    {
+      "sourceLine": 1211,
+      "text": "BAB XII"
+    },
+    {
+      "sourceLine": 1212,
+      "text": "PENYELESAIAN SENGKETA DAN HUKUM ACARA"
+    },
+    {
+      "sourceLine": 1213,
+      "text": "## Pasal 64"
+    },
+    {
+      "sourceLine": 1214,
+      "text": ""
+    },
+    {
+      "sourceLine": 1215,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1216,
+      "text": ""
+    },
+    {
+      "sourceLine": 1217,
+      "text": "Penyelesaian sengketa Pelindungan Data Pribadi dilakukan melalui arbitrase, pengadilan, atau lembaga penyelesaian sengketa alternatif lainnya sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 1218,
+      "text": ""
+    },
+    {
+      "sourceLine": 1219,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1220,
+      "text": ""
+    },
+    {
+      "sourceLine": 1221,
+      "text": "Hukum acara yang berlaku dalam penyelesaian sengketa dan/atau proses peradilan Pelindungan Data Pribadi sebagaimana dimaksud pada ayat (1) dilaksanakan berdasarkan hukum acara yang berlaku sesuai dengan ketentuan peraturan perundang­ undangan."
+    },
+    {
+      "sourceLine": 1222,
+      "text": ""
+    },
+    {
+      "sourceLine": 1223,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1224,
+      "text": "Alat bukti yang sah dalam Undang-Undang ini meliputi:"
+    },
+    {
+      "sourceLine": 1225,
+      "text": ""
+    },
+    {
+      "sourceLine": 1226,
+      "text": "a."
+    },
+    {
+      "sourceLine": 1227,
+      "text": ""
+    },
+    {
+      "sourceLine": 1228,
+      "text": "alat bukti sebagaimana dimaksud dalam hukum acara; dan"
+    },
+    {
+      "sourceLine": 1229,
+      "text": ""
+    },
+    {
+      "sourceLine": 1230,
+      "text": "b."
+    },
+    {
+      "sourceLine": 1231,
+      "text": ""
+    },
+    {
+      "sourceLine": 1232,
+      "text": "alat bukti lain berupa informasi elektronik dan/atau dokumen elektronik sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "sourceLine": 1233,
+      "text": ""
+    },
+    {
+      "sourceLine": 1234,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1235,
+      "text": ""
+    },
+    {
+      "sourceLine": 1236,
+      "text": "Dalam hal diperlukan untuk melindungi Data Pribadi, proses persidangan dilakukan secara tertutup."
+    },
+    {
+      "sourceLine": 1237,
+      "text": ""
+    },
+    {
+      "sourceLine": 1238,
+      "text": "BAB XIII"
+    },
+    {
+      "sourceLine": 1239,
+      "text": "LARANGAN DALAM PENGGUNAAN DATA PRIBADI"
+    },
+    {
+      "sourceLine": 1240,
+      "text": "## Pasal 65"
+    },
+    {
+      "sourceLine": 1241,
+      "text": ""
+    },
+    {
+      "sourceLine": 1242,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1243,
+      "text": ""
+    },
+    {
+      "sourceLine": 1244,
+      "text": "Setiap Orang dilarang secara melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi."
+    },
+    {
+      "sourceLine": 1245,
+      "text": ""
+    },
+    {
+      "sourceLine": 1246,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1247,
+      "text": ""
+    },
+    {
+      "sourceLine": 1248,
+      "text": "Setiap Orang dilarang secara melawan hukum mengungkapkan Data Pribadi yang bukan miliknya."
+    },
+    {
+      "sourceLine": 1249,
+      "text": ""
+    },
+    {
+      "sourceLine": 1250,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1251,
+      "text": ""
+    },
+    {
+      "sourceLine": 1252,
+      "text": "Setiap Orang dilarang secara melawan hukum menggunakan Data Pribadi yang bukan miliknya."
+    },
+    {
+      "sourceLine": 1253,
+      "text": "## Pasal 66"
+    },
+    {
+      "sourceLine": 1254,
+      "text": ""
+    },
+    {
+      "sourceLine": 1255,
+      "text": "Setiap Orang dilarang membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain."
+    },
+    {
+      "sourceLine": 1256,
+      "text": ""
+    },
+    {
+      "sourceLine": 1257,
+      "text": "BAB XIV"
+    },
+    {
+      "sourceLine": 1258,
+      "text": "KETENTUAN PIDANA"
+    },
+    {
+      "sourceLine": 1259,
+      "text": "## Pasal 67"
+    },
+    {
+      "sourceLine": 1260,
+      "text": ""
+    },
+    {
+      "sourceLine": 1261,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1262,
+      "text": ""
+    },
+    {
+      "sourceLine": 1263,
+      "text": "Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah)."
+    },
+    {
+      "sourceLine": 1264,
+      "text": ""
+    },
+    {
+      "sourceLine": 1265,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1266,
+      "text": "Setiap Orang yang dengan sengaja dan melawan hukum mengungkapkan Data Pribadi yang bukan miliknya sebagaimana dimaksud dalam Pasal 65 ayat (2) dipidana dengan pidana penjara paling lama 4 (empat) tahun dan/atau pidana denda paling banyak Rp4.000.000.000,00 (empat miliar rupiah)."
+    },
+    {
+      "sourceLine": 1267,
+      "text": ""
+    },
+    {
+      "sourceLine": 1268,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1269,
+      "text": "Setiap Orang yang dengan sengaja dan melawan hukum menggunakan Data Pribadi yang bukan miliknya sebagaimana dimaksud dalam Pasal 65 ayat (3) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah)."
+    },
+    {
+      "sourceLine": 1270,
+      "text": "## Pasal 68"
+    },
+    {
+      "sourceLine": 1271,
+      "text": ""
+    },
+    {
+      "sourceLine": 1272,
+      "text": "Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 dipidana dengan pidana penjara paling lama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.000.000.000,00 (enam miliar rupiah)."
+    },
+    {
+      "sourceLine": 1273,
+      "text": "## Pasal 69"
+    },
+    {
+      "sourceLine": 1274,
+      "text": ""
+    },
+    {
+      "sourceLine": 1275,
+      "text": "Selain dijatuhi pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 juga dapat dijatuhi pidana tambahan berupa perampasan keuntungan dan/atau harta kekayaan yang diperoleh atau hasil dari tindak pidana dan pembayaran ganti kerugian."
+    },
+    {
+      "sourceLine": 1276,
+      "text": "## Pasal 70"
+    },
+    {
+      "sourceLine": 1277,
+      "text": ""
+    },
+    {
+      "sourceLine": 1278,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1279,
+      "text": ""
+    },
+    {
+      "sourceLine": 1280,
+      "text": "Dalam hal tindak pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 dilakukan oleh Korporasi, pidana dapat dijatuhkan kepada pengurus, pemegang kendali, pemberi perintah, pemilik manfaat, dan/atau Korporasi."
+    },
+    {
+      "sourceLine": 1281,
+      "text": ""
+    },
+    {
+      "sourceLine": 1282,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1283,
+      "text": ""
+    },
+    {
+      "sourceLine": 1284,
+      "text": "Pidana yang dapat dijatuhkan terhadap Korporasi hanya pidana denda."
+    },
+    {
+      "sourceLine": 1285,
+      "text": ""
+    },
+    {
+      "sourceLine": 1286,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1287,
+      "text": ""
+    },
+    {
+      "sourceLine": 1288,
+      "text": "Pidana denda yang dijatuhkan kepada Korporasi paling banyak 10 (sepuluh) kali dari maksimal pidana denda yang diancamkan."
+    },
+    {
+      "sourceLine": 1289,
+      "text": ""
+    },
+    {
+      "sourceLine": 1290,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1291,
+      "text": "Selain dijatuhi pidana denda sebagaimana dimaksud pada ayat (2), Korporasi dapat dijatuhi pidana tambahan berupa:"
+    },
+    {
+      "sourceLine": 1292,
+      "text": ""
+    },
+    {
+      "sourceLine": 1293,
+      "text": "a."
+    },
+    {
+      "sourceLine": 1294,
+      "text": ""
+    },
+    {
+      "sourceLine": 1295,
+      "text": "perampasan keuntungan dan/atau harta kekayaan yang diperoleh atau hasil dari tindak pidana;"
+    },
+    {
+      "sourceLine": 1296,
+      "text": ""
+    },
+    {
+      "sourceLine": 1297,
+      "text": "b."
+    },
+    {
+      "sourceLine": 1298,
+      "text": ""
+    },
+    {
+      "sourceLine": 1299,
+      "text": "pembekuan seluruh atau sebagian usaha Korporasi;"
+    },
+    {
+      "sourceLine": 1300,
+      "text": ""
+    },
+    {
+      "sourceLine": 1301,
+      "text": "c."
+    },
+    {
+      "sourceLine": 1302,
+      "text": ""
+    },
+    {
+      "sourceLine": 1303,
+      "text": "pelarangan permanen melakukan perbuatan tertentu;"
+    },
+    {
+      "sourceLine": 1304,
+      "text": ""
+    },
+    {
+      "sourceLine": 1305,
+      "text": "d."
+    },
+    {
+      "sourceLine": 1306,
+      "text": ""
+    },
+    {
+      "sourceLine": 1307,
+      "text": "penutupan seluruh atau sebagian tempat usaha dan/atau kegiatan Korporasi;"
+    },
+    {
+      "sourceLine": 1308,
+      "text": ""
+    },
+    {
+      "sourceLine": 1309,
+      "text": "e."
+    },
+    {
+      "sourceLine": 1310,
+      "text": ""
+    },
+    {
+      "sourceLine": 1311,
+      "text": "melaksanakan kewajiban yang telah dilalaikan;"
+    },
+    {
+      "sourceLine": 1312,
+      "text": ""
+    },
+    {
+      "sourceLine": 1313,
+      "text": "f."
+    },
+    {
+      "sourceLine": 1314,
+      "text": ""
+    },
+    {
+      "sourceLine": 1315,
+      "text": "pembayaran ganti kerugian;"
+    },
+    {
+      "sourceLine": 1316,
+      "text": ""
+    },
+    {
+      "sourceLine": 1317,
+      "text": "g."
+    },
+    {
+      "sourceLine": 1318,
+      "text": "pencabutan izin; dan/atau"
+    },
+    {
+      "sourceLine": 1319,
+      "text": ""
+    },
+    {
+      "sourceLine": 1320,
+      "text": "h."
+    },
+    {
+      "sourceLine": 1321,
+      "text": ""
+    },
+    {
+      "sourceLine": 1322,
+      "text": "pembubaran Korporasi."
+    },
+    {
+      "sourceLine": 1323,
+      "text": "## Pasal 71"
+    },
+    {
+      "sourceLine": 1324,
+      "text": ""
+    },
+    {
+      "sourceLine": 1325,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1326,
+      "text": ""
+    },
+    {
+      "sourceLine": 1327,
+      "text": "Dalam hal pengadilan menjatuhkan putusan pidana denda, terpidana diberikan jangka waktu 1 (satu) bulan sejak putusan telah memperoleh kekuatan hukum tetap untuk membayar denda tersebut."
+    },
+    {
+      "sourceLine": 1328,
+      "text": ""
+    },
+    {
+      "sourceLine": 1329,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1330,
+      "text": ""
+    },
+    {
+      "sourceLine": 1331,
+      "text": "Dalam hal terdapat alasan kuat, jangka waktu sebagaimana dimaksud pada ayat (1) dapat diperpanjang untuk waktu paling lama 1 (satu) bulan."
+    },
+    {
+      "sourceLine": 1332,
+      "text": ""
+    },
+    {
+      "sourceLine": 1333,
+      "text": "(3)"
+    },
+    {
+      "sourceLine": 1334,
+      "text": "Dalam hal terpidana tidak membayar pidana denda dalam jangka waktu sebagaimana dimaksud pada ayat (1) atau ayat (2) maka harta kekayaan atau pendapatan terpidana dapat disita dan dilelang oleh jaksa untuk melunasi pidana denda yang tidak dibayar."
+    },
+    {
+      "sourceLine": 1335,
+      "text": ""
+    },
+    {
+      "sourceLine": 1336,
+      "text": "(4)"
+    },
+    {
+      "sourceLine": 1337,
+      "text": "Dalam hal penyitaan dan pelelangan harta kekayaan atau pendapatan sebagaimana dimaksud pada ayat (3) tidak cukup atau tidak memungkinkan untuk dilaksanakan, pidana denda yang tidak dibayar diganti dengan pidana penjara paling lama sebagaimana diancamkan untuk tindak pidana yang bersangkutan."
+    },
+    {
+      "sourceLine": 1338,
+      "text": ""
+    },
+    {
+      "sourceLine": 1339,
+      "text": "(5)"
+    },
+    {
+      "sourceLine": 1340,
+      "text": ""
+    },
+    {
+      "sourceLine": 1341,
+      "text": "Lamanya pidana penjara sebagaimana dimaksud pada ayat (4) yang ditentukan oleh hakim, dicantumkan dalam putusan pengadilan."
+    },
+    {
+      "sourceLine": 1342,
+      "text": "## Pasal 72"
+    },
+    {
+      "sourceLine": 1343,
+      "text": ""
+    },
+    {
+      "sourceLine": 1344,
+      "text": "(1)"
+    },
+    {
+      "sourceLine": 1345,
+      "text": ""
+    },
+    {
+      "sourceLine": 1346,
+      "text": "Dalam hal penyitaan dan pelelangan harta kekayaan atau pendapatan sebagaimana dimaksud dalam Pasal 71 ayat (4) dilakukan terhadap terpidana Korporasi dan tidak cukup untuk melunasi pidana denda, Korporasi dikenakan pidana pengganti berupa pembekuan sebagian atau seluruh kegiatan usaha Korporasi untuk jangka waktu paling lama 5 (lima) tahun."
+    },
+    {
+      "sourceLine": 1347,
+      "text": ""
+    },
+    {
+      "sourceLine": 1348,
+      "text": "(2)"
+    },
+    {
+      "sourceLine": 1349,
+      "text": "Lamanya pembekuan sebagian atau seluruh kegiatan usaha Korporasi sebagaimana dimaksud pada ayat (1) yang ditentukan oleh hakim, dicantumkan dalam putusan pengadilan."
+    },
+    {
+      "sourceLine": 1350,
+      "text": "## Pasal 73"
+    },
+    {
+      "sourceLine": 1351,
+      "text": ""
+    },
+    {
+      "sourceLine": 1352,
+      "text": "Ketentuan sebagaimana dimaksud dalam Pasal 71 dan Pasal 72 juga berlaku dalam hal penjatuhan pidana tambahan berupa pembayaran ganti kerugian."
+    },
+    {
+      "sourceLine": 1353,
+      "text": ""
+    },
+    {
+      "sourceLine": 1354,
+      "text": "BAB XV"
+    },
+    {
+      "sourceLine": 1355,
+      "text": "KETENTUAN PERALIHAN"
+    },
+    {
+      "sourceLine": 1356,
+      "text": "## Pasal 74"
+    },
+    {
+      "sourceLine": 1357,
+      "text": ""
+    },
+    {
+      "sourceLine": 1358,
+      "text": "Pada saat Undang-Undang ini mulai berlaku, Pengendali Data Pribadi, Prosesor Data Pribadi, dan pihak lain yang terkait dengan pemrosesan Data Pribadi, wajib menyesuaikan dengan ketentuan pemrosesan Data Pribadi berdasarkan Undang-Undang ini paling lama 2 (dua) tahun sejak Undang-Undang ini diundangkan."
+    },
+    {
+      "sourceLine": 1359,
+      "text": "## Pasal 75"
+    },
+    {
+      "sourceLine": 1360,
+      "text": ""
+    },
+    {
+      "sourceLine": 1361,
+      "text": "Pada saat Undang-Undang ini mulai berlaku, semua ketentuan peraturan perundang-undangan yang mengatur mengenai Pelindungan Data Pribadi, dinyatakan masih tetap berlaku sepanjang tidak bertentangan dengan ketentuan dalam Undang-Undang ini."
+    },
+    {
+      "sourceLine": 1362,
+      "text": ""
+    },
+    {
+      "sourceLine": 1363,
+      "text": "BAB XVI"
+    },
+    {
+      "sourceLine": 1364,
+      "text": "KETENTUAN PENUTUP"
+    },
+    {
+      "sourceLine": 1365,
+      "text": "## Pasal 76"
+    },
+    {
+      "sourceLine": 1366,
+      "text": ""
+    },
+    {
+      "sourceLine": 1367,
+      "text": "Undang-Undang ini mulai berlaku pada tanggal diundangkan."
+    },
+    {
+      "sourceLine": 1368,
+      "text": ""
+    },
+    {
+      "sourceLine": 1369,
+      "text": "Agar setiap orang mengetahuinya, memerintahkan pengundangan Undang-Undang ini dengan penempatannya dalam Lembaran Negara Republik Indonesia."
+    },
+    {
+      "sourceLine": 1370,
+      "text": ""
+    },
+    {
+      "sourceLine": 1371,
+      "text": "Disahkan di Jakarta"
+    },
+    {
+      "sourceLine": 1372,
+      "text": "pada tanggal 17 Oktober 2022"
+    },
+    {
+      "sourceLine": 1373,
+      "text": "PRESIDEN REPUBLIK INDONESIA,"
+    },
+    {
+      "sourceLine": 1374,
+      "text": "ttd."
+    },
+    {
+      "sourceLine": 1375,
+      "text": "JOKO WIDODO"
+    },
+    {
+      "sourceLine": 1376,
+      "text": ""
+    },
+    {
+      "sourceLine": 1377,
+      "text": "Diundangkan di Jakarta"
+    },
+    {
+      "sourceLine": 1378,
+      "text": "pada tanggal 17 Oktober 2022"
+    },
+    {
+      "sourceLine": 1379,
+      "text": "ttd."
+    },
+    {
+      "sourceLine": 1380,
+      "text": "PRATIKNO"
+    },
+    {
+      "sourceLine": 1381,
+      "text": ""
+    },
+    {
+      "sourceLine": 1382,
+      "text": "LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2022 NOMOR 196"
+    }
+  ]
+}
+

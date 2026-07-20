@@ -1,11 +1,27 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
+/*
+ * Historical bootstrap only. The current repository contains version-locked
+ * complete corpora whose provision IDs supersede many of the grouped anchors
+ * produced below. Running this writer during normal maintenance would recreate
+ * duplicates and stale relation endpoints.
+ */
+if (process.env.COMPLIANCE_COMPASS_ALLOW_LEGACY_EXPANSION !== "1") {
+  throw new Error(
+    "expand-global-corpus.mjs is a legacy bootstrap and is disabled for normal maintenance. Rebuild source-audit and provision-concepts instead. Set COMPLIANCE_COMPASS_ALLOW_LEGACY_EXPANSION=1 only when intentionally reproducing the historical bootstrap dataset.",
+  );
+}
+
 const root = resolve(import.meta.dirname, "..");
 const dataRoot = resolve(root, "data/v2");
 const snapshotDate = "2026-07-19";
 
-const source = (url, label) => ({ url, label, accessedOn: snapshotDate });
+const source = (url, label, accessedOn = snapshotDate) => ({
+  url,
+  label,
+  accessedOn,
+});
 const dates = ({
   adoptedOn = null,
   publishedOn = null,
@@ -46,7 +62,7 @@ const newInstruments = [
     hierarchyLevel: "national-statute",
     legalForce: "binding",
     lifecycleStatus: "in-force-amended",
-    statusAsOf: snapshotDate,
+    statusAsOf: "2026-07-20",
     dates: dates({
       adoptedOn: "2012-10-15",
       publishedOn: "2012-12-03",
@@ -54,7 +70,7 @@ const newInstruments = [
       generalApplicationFrom: "2014-07-02",
       latestAmendmentEffectiveFrom: "2025-12-05",
     }),
-    version: "2020 Revised Edition, legal version effective 5 December 2025; currency verified 19 July 2026",
+    version: "2020 Revised Edition, legal version effective 5 December 2025; SSO currency verified 20 July 2026",
     parentInstrumentId: null,
     topicIds: [
       "lawfulness-consent-choice",
@@ -69,12 +85,22 @@ const newInstruments = [
     source: source(
       "https://sso.agc.gov.sg/Act/PDPA2012/",
       "Singapore Statutes Online, Attorney-General's Chambers",
+      "2026-07-20",
     ),
-    textAvailability: linkedText(
-      "official-current-full-text-linked",
-      "en",
-      "The complete current English statutory text and provision timeline are linked; this repository indexes selected provisions and does not store the whole Act.",
-    ),
+    coverage: {
+      unit: "section-and-schedule",
+      first: 1,
+      last: 68,
+      count: 106,
+      completeness:
+        "complete-current-government-consolidation-with-repealed-placeholders",
+    },
+    textAvailability: {
+      mode: "separate-government-consolidated-reference-import",
+      stored: true,
+      language: "en-SG",
+      note: "All 95 current section slots and 11 Schedules are stored from the Singapore Statutes Online consolidation as at 20 July 2026. SSO states that its consolidated reproduction is unofficial and not authoritative. Reproduction attribution and latest-version checking conditions are preserved in the corpus metadata.",
+    },
   },
   {
     id: "sg-model-ai-governance-framework-2020",
@@ -256,7 +282,7 @@ const newInstruments = [
     category: "law",
     hierarchyLevel: "federal-statute",
     legalForce: "binding",
-    lifecycleStatus: "in-force-amended",
+    lifecycleStatus: "in-force-with-scheduled-amendment",
     statusAsOf: snapshotDate,
     dates: dates({
       adoptedOn: "1988-12-14",
@@ -276,10 +302,14 @@ const newInstruments = [
       "cross-border-transfer",
     ],
     summary: "Australia's federal privacy statute, including the Australian Privacy Principles, credit-reporting rules, notifiable data-breach scheme, and sector- and entity-scope limitations.",
-    statusNote: "The official latest compilation is the source of record. Proposed and enacted reforms must be tracked by commencement date rather than described as one undifferentiated reform package.",
+    statusNote: "Compilation No. 104 is the current source of record. The enacted APP 1.7–1.9 automated-decision transparency requirements are scheduled for 10 December 2026 and are not current duties at this snapshot; unrelated reform proposals remain separate.",
     source: source(
       "https://www.legislation.gov.au/C2004A03712/latest",
       "Federal Register of Legislation, Australia",
+    ),
+    amendmentSource: source(
+      "https://www.legislation.gov.au/C2024A00128/latest",
+      "Federal Register of Legislation — Privacy and Other Legislation Amendment Act 2024",
     ),
     textAvailability: linkedText(
       "official-current-compilation-linked",
@@ -549,8 +579,8 @@ const newInstruments = [
     legalForce: "non-binding-guidance",
     lifecycleStatus: "published-guidance",
     statusAsOf: snapshotDate,
-    dates: dates({ publishedOn: null }),
-    version: "2023 English guide",
+    dates: dates({ publishedOn: "2023-04-01" }),
+    version: "2023 official Arabic and English guide editions",
     parentInstrumentId: null,
     topicIds: [
       "ai-risk-management",
@@ -612,6 +642,10 @@ const newInstruments = [
       "https://uqn.gov.sa/details?p=21671",
       "Umm Al-Qura Official Gazette — 2023 amendments",
     ),
+    supportingSource: source(
+      "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
+      "SDAIA Data Governance Platform — official Arabic Implementing Regulations",
+    ),
     referenceTranslationSource: source(
       "https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf",
       "SDAIA official English text",
@@ -634,7 +668,7 @@ const newInstruments = [
     legalForce: "mixed-or-unclear-framework-effect",
     lifecycleStatus: "government-framework-active",
     statusAsOf: snapshotDate,
-    dates: dates({ publishedOn: null }),
+    dates: dates({ publishedOn: "2023-09-01" }),
     version: "Version 1.0, September 2023",
     parentInstrumentId: null,
     topicIds: [
@@ -858,9 +892,9 @@ const newInstruments = [
       "Privacy Commissioner for Personal Data, Hong Kong",
     ),
     textAvailability: linkedText(
-      "official-bilingual-framework-linked",
+      "official-english-framework-linked",
       "en",
-      "The official framework PDF and release are linked. The graph stores framework components as editorial navigation nodes rather than reproducing the publication.",
+      "The verified official English framework PDF and release are linked. A Chinese edition is not claimed without a separately evidenced official publication; the graph stores editorial navigation nodes rather than reproducing the document.",
     ),
   },
   {
@@ -2047,6 +2081,7 @@ const existingInstrumentPatches = [
   },
   {
     id: "jp-appi",
+    lifecycleStatus: "in-force-with-promulgated-future-amendment",
     dates: {
       lastAmendedOn: "2026-07-17",
     },
@@ -2135,6 +2170,56 @@ const existingInstrumentPatches = [
       "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
       "National People's Congress — authoritative Chinese text",
     ),
+    supportingSource: source(
+      "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "Cyberspace Administration of China — official republication used by the Article importer",
+    ),
+    statusNote:
+      "The complete official Chinese text is stored by Article and controls. Five selected Articles retain separately labelled non-official English reference translations; all other English reader views are editorial coverage notices, not translations.",
+    coverage: {
+      unit: "article",
+      first: 1,
+      last: 74,
+      count: 74,
+      completeness: "complete-official-original-text",
+    },
+    textAvailability: linkedText(
+      "separate-official-original-import",
+      "zh-CN",
+      "All 74 Articles are generated separately from the official Chinese publication in cn-pipl-articles.json. Five selected Articles retain non-official English reference translations in provisions.json.",
+    ),
+  },
+  {
+    id: "cn-network-data-regulations",
+    statusNote:
+      "The complete official Chinese regulation is stored by Article and controls. Articles 9, 35, 36, 37, 38 and 44 retain separately labelled non-official English reference translations; all other English reader views are editorial coverage notices, not translations.",
+    coverage: {
+      unit: "article",
+      first: 1,
+      last: 64,
+      count: 64,
+      completeness: "complete-official-original-text",
+    },
+    textAvailability: linkedText(
+      "separate-official-original-import",
+      "zh-CN",
+      "All 64 Articles of State Council Order No. 790 are generated separately from the official Chinese publication in cn-network-data-regulations-articles.json. Six selected Articles retain non-official English reference translations in provisions.json.",
+    ),
+  },
+  {
+    id: "cn-generative-ai-measures",
+    coverage: {
+      unit: "article",
+      first: 1,
+      last: 24,
+      count: 24,
+      completeness: "complete-official-original-text",
+    },
+    textAvailability: linkedText(
+      "separate-official-original-import",
+      "zh-CN",
+      "All 24 Articles of Order No. 15 are generated separately from the official Chinese publication in cn-generative-ai-measures-articles.json. Articles 4, 7, and 17 retain non-official English reference translations in provisions.json.",
+    ),
   },
   {
     id: "ca-directive-automated-decision-making",
@@ -2149,6 +2234,11 @@ const existingInstrumentPatches = [
     ),
     statusNote:
       "Advisory report rather than a UN treaty, resolution, or binding legal instrument. The UN supplies Arabic, Chinese, English, French, Russian and Spanish editions; later UN governance initiatives are separate instruments, not amendments to this report.",
+    textAvailability: linkedText(
+      "official-report-linked",
+      "en",
+      "The UN record links Arabic, Chinese, English, French, Russian and Spanish publication editions. The local index and editorial summaries use English; that local choice is not a claim that English controls the other editions.",
+    ),
   },
   {
     id: "int-bletchley-declaration-2023",

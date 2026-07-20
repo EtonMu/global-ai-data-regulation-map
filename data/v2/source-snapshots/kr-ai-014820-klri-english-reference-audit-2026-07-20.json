@@ -1,0 +1,36 @@
+{
+  "instrumentId": "kr-ai-framework-act-2025",
+  "retrievedOn": "2026-07-20",
+  "source": {
+    "publisher": "Korea Legislation Research Institute",
+    "database": "Statutes of the Republic of Korea",
+    "url": "https://elaw.klri.re.kr/eng_mobile/viewer.do?hseq=73499&key=54&type=sogan",
+    "hseq": "73499",
+    "observedTitle": "FRAMEWORK ACT ON THE DEVELOPMENT OF ARTIFICIAL INTELLIGENCE AND THE CREATION OF A FOUNDATION FOR TRUST",
+    "observedEnactment": "Act No. 20676, Jan. 21, 2025",
+    "observedLatestAmendment": "Act No. 21311, Jan. 20, 2026",
+    "remoteResponseBytes": 152040,
+    "remoteResponseSha256": "798bbcca9ccd3b8e3b41bf62e87a39af0692d08fbbfce5fc0d9d86727b51ff64"
+  },
+  "articleAudit": {
+    "observedArticleHeadingCount": 46,
+    "articleNumberSequenceSha256": "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
+    "currentEffectiveKoreanMainArticleCountOn2026-07-20": 44,
+    "futureEffectiveKoreanMainArticleCountOn2026-07-21": 46,
+    "alignment": "the-46-English-article-headings-align-with-the-2026-07-21-future-effective-Korean-phase-not-the-2026-07-20-current-phase",
+    "scheduledTextIncluded": [
+      "Article 17-2",
+      "Article 22-3",
+      "other Act No. 21311 changes commencing 2026-07-21"
+    ]
+  },
+  "authorityBoundary": {
+    "originalLanguage": "ko",
+    "controllingText": "The promulgated Korean text controls.",
+    "englishLegalEffect": "KLRI states that the database is reference material and has no legal or official authority.",
+    "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do",
+    "redistributionDecision": "external-link-and-version-metadata-only",
+    "currentLanguageToggleEligibleOn2026-07-20": false,
+    "reason": "The KLRI page represents the fully phased Act No. 21311 text, including provisions scheduled for 2026-07-21, while the current Korean consolidation on 2026-07-20 has 44 main articles. KLRI also prohibits unauthorized reproduction or distribution, so the translation body is neither vendored nor attached as current text."
+  }
+}

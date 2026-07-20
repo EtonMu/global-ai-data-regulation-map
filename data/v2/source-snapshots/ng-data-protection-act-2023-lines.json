@@ -1,0 +1,6546 @@
+{
+  "instrumentId": "ng-data-protection-act-2023",
+  "source": "https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf",
+  "sourceLandingPage": "https://ndpc.gov.ng/download/nigeria-data-protection-act-2023",
+  "retrievedOn": "2026-07-20",
+  "extractionScope": "Official Gazette text from title and arrangement through section 66 and the complete Schedule; certification pages and explanatory memorandum are outside the per-unit corpus.",
+  "lines": [
+    {
+      "sourceLine": 14,
+      "text": "NIGERIA DATA PROTECTION ACT, 2023"
+    },
+    {
+      "sourceLine": 15,
+      "text": "\\"
+    },
+    {
+      "sourceLine": 16,
+      "text": "ARRANGEMENT OF SECTIONS"
+    },
+    {
+      "sourceLine": 17,
+      "text": "Section :"
+    },
+    {
+      "sourceLine": 18,
+      "text": "PART I—OBJECTIVES AND APPLICATION"
+    },
+    {
+      "sourceLine": 19,
+      "text": "1. Objectives"
+    },
+    {
+      "sourceLine": 20,
+      "text": "2. Application"
+    },
+    {
+      "sourceLine": 21,
+      "text": "3. Exemption of application"
+    },
+    {
+      "sourceLine": 22,
+      "text": "PART II — ESTABLISHMENT OF THE NIGERIA DATA PROTECTION COMMISSION,"
+    },
+    {
+      "sourceLine": 23,
+      "text": "AND ITS GOVERNING COUNCIL"
+    },
+    {
+      "sourceLine": 24,
+      "text": "4. Establishment of the Nigeria Data Protection Commission"
+    },
+    {
+      "sourceLine": 25,
+      "text": "5. Functions of the Commission"
+    },
+    {
+      "sourceLine": 26,
+      "text": "6. Powers of the Commission"
+    },
+    {
+      "sourceLine": 27,
+      "text": "7. Independence of the Commission"
+    },
+    {
+      "sourceLine": 28,
+      "text": "8. Establishment of the Governing Council of the Commission"
+    },
+    {
+      "sourceLine": 29,
+      "text": "9. Appointment of members of the Council"
+    },
+    {
+      "sourceLine": 30,
+      "text": "10. Tenure of members of the Council"
+    },
+    {
+      "sourceLine": 31,
+      "text": "11. Cessation of membership"
+    },
+    {
+      "sourceLine": 32,
+      "text": "12. Functions and powers of the Council"
+    },
+    {
+      "sourceLine": 33,
+      "text": "13. Conflict of interest"
+    },
+    {
+      "sourceLine": 34,
+      "text": "PART III — APPOINTMENT OF THE NATIONAL COMMISSIONER, AND OTHER"
+    },
+    {
+      "sourceLine": 35,
+      "text": "STAFF OF THE COMMISSION"
+    },
+    {
+      "sourceLine": 36,
+      "text": "14. Appointment of the National Commissioner for the Commission"
+    },
+    {
+      "sourceLine": 37,
+      "text": "15. Secretary to the Council"
+    },
+    {
+      "sourceLine": 38,
+      "text": "16. Staff of the Commission"
+    },
+    {
+      "sourceLine": 39,
+      "text": "17. Staff regulations and discipline"
+    },
+    {
+      "sourceLine": 40,
+      "text": "18. Pension"
+    },
+    {
+      "sourceLine": 41,
+      "text": "PART IV — FINANCIAL PROVISIONS"
+    },
+    {
+      "sourceLine": 42,
+      "text": "19. Funds of the Commission"
+    },
+    {
+      "sourceLine": 43,
+      "text": "20. Expenditure of the Fund"
+    },
+    {
+      "sourceLine": 44,
+      "text": "21. Power to borrow and accept gifts"
+    },
+    {
+      "sourceLine": 45,
+      "text": "22. Account and audit"
+    },
+    {
+      "sourceLine": 46,
+      "text": "23. Annual reports and estimatesA 720 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 47,
+      "text": "PART V — PRINCIPLES AND LAWFUL BASIS GOVERNING PROCESSING"
+    },
+    {
+      "sourceLine": 48,
+      "text": "OF PERSONAL DATA"
+    },
+    {
+      "sourceLine": 49,
+      "text": "24. Principles of personal data processing"
+    },
+    {
+      "sourceLine": 50,
+      "text": "25. Lawful basis of personal data processing"
+    },
+    {
+      "sourceLine": 51,
+      "text": "26. Consent"
+    },
+    {
+      "sourceLine": 52,
+      "text": "27. Provision of information to the data subject"
+    },
+    {
+      "sourceLine": 53,
+      "text": "28. Data privacy impact assessment"
+    },
+    {
+      "sourceLine": 54,
+      "text": "29. Obligations of the data controller and data processor"
+    },
+    {
+      "sourceLine": 55,
+      "text": "30. Sensitive personal data"
+    },
+    {
+      "sourceLine": 56,
+      "text": "31. Children or persons lacking the legal capacity to consent"
+    },
+    {
+      "sourceLine": 57,
+      "text": "32. Data Protection Officers"
+    },
+    {
+      "sourceLine": 58,
+      "text": "33. Data protection compliance services"
+    },
+    {
+      "sourceLine": 59,
+      "text": "PART VI — RIGHTS OF A DATA SUBJECT"
+    },
+    {
+      "sourceLine": 60,
+      "text": "34. Rights of a data subject"
+    },
+    {
+      "sourceLine": 61,
+      "text": "35. Withdrawal of consent"
+    },
+    {
+      "sourceLine": 62,
+      "text": "36. Right to object"
+    },
+    {
+      "sourceLine": 63,
+      "text": "37. Automated decision making"
+    },
+    {
+      "sourceLine": 64,
+      "text": "38. Data portability"
+    },
+    {
+      "sourceLine": 65,
+      "text": "PART VII — DATA SECURITY"
+    },
+    {
+      "sourceLine": 66,
+      "text": "39. Security, integrity, and confidentiality"
+    },
+    {
+      "sourceLine": 67,
+      "text": "40. Personal data breaches"
+    },
+    {
+      "sourceLine": 68,
+      "text": "PART VIII — CROSS-BORDER TRANSFERS OF PERSONAL DATA"
+    },
+    {
+      "sourceLine": 69,
+      "text": "41. Basis for cross-border transfer of personal data"
+    },
+    {
+      "sourceLine": 70,
+      "text": "42. Adequacy of protection"
+    },
+    {
+      "sourceLine": 71,
+      "text": "43. Other bases for transfer of personal data outside Nigeria"
+    },
+    {
+      "sourceLine": 72,
+      "text": "PART IX — REGISTRATION AND FEES"
+    },
+    {
+      "sourceLine": 73,
+      "text": "44. Registration of data controllers and data processors of major importance"
+    },
+    {
+      "sourceLine": 74,
+      "text": "45. Fees and levies"
+    },
+    {
+      "sourceLine": 75,
+      "text": "PART X — ENFORCEMENT"
+    },
+    {
+      "sourceLine": 76,
+      "text": "46. Complaints and investigations"
+    },
+    {
+      "sourceLine": 77,
+      "text": "47. Compliance orders"
+    },
+    {
+      "sourceLine": 78,
+      "text": "48. Enforcement orders"
+    },
+    {
+      "sourceLine": 79,
+      "text": "49. Offences and penalties"
+    },
+    {
+      "sourceLine": 80,
+      "text": "50. Judicial review"
+    },
+    {
+      "sourceLine": 81,
+      "text": "51. Civil remedies"
+    },
+    {
+      "sourceLine": 82,
+      "text": "52. Forfeiture"
+    },
+    {
+      "sourceLine": 83,
+      "text": "53. Joint and vicarious liabilityNigeria Data Protection Act, 2023 2022 No. 37 A 721"
+    },
+    {
+      "sourceLine": 84,
+      "text": "PART XI — LEGAL PROCEEDINGS"
+    },
+    {
+      "sourceLine": 85,
+      "text": "54. Limitation of suits against the Commission"
+    },
+    {
+      "sourceLine": 86,
+      "text": "55. Service of documents"
+    },
+    {
+      "sourceLine": 87,
+      "text": "56. Restriction on execution against property of the Commission"
+    },
+    {
+      "sourceLine": 88,
+      "text": "57. Indemnity of staff, members, and employees of the Commission"
+    },
+    {
+      "sourceLine": 89,
+      "text": "58. Power of arrest, search, and seizure"
+    },
+    {
+      "sourceLine": 90,
+      "text": "59. Right to appear in court"
+    },
+    {
+      "sourceLine": 91,
+      "text": "PART XII — MISCELLANEOUS PROVISIONS"
+    },
+    {
+      "sourceLine": 92,
+      "text": "60. Directives by the Minister"
+    },
+    {
+      "sourceLine": 93,
+      "text": "61. Regulations"
+    },
+    {
+      "sourceLine": 94,
+      "text": "62. Directives, codes, and guidelines"
+    },
+    {
+      "sourceLine": 95,
+      "text": "63. Priority of the Act"
+    },
+    {
+      "sourceLine": 96,
+      "text": "64. Transitional provisions"
+    },
+    {
+      "sourceLine": 97,
+      "text": "65. Interpretation"
+    },
+    {
+      "sourceLine": 98,
+      "text": "66. Citation"
+    },
+    {
+      "sourceLine": 99,
+      "text": "SCHEDULEA 722 2023 No. 37 Nigeria Data Protection Act, 2023Nigeria Data Protection Act, 2023 2022 No. 37 A 723"
+    },
+    {
+      "sourceLine": 100,
+      "text": "Commence\u0002ment."
+    },
+    {
+      "sourceLine": 101,
+      "text": "Objectives"
+    },
+    {
+      "sourceLine": 102,
+      "text": "NIGERIA DATA PROTECTION ACT, 2023"
+    },
+    {
+      "sourceLine": 103,
+      "text": "ACT No. 37"
+    },
+    {
+      "sourceLine": 104,
+      "text": "AN ACT TO PROVIDE A LEGAL FRAMEWORK FOR THE PROTECTION OF PERSONAL"
+    },
+    {
+      "sourceLine": 105,
+      "text": "INFORMATION, AND ESTABLISH THE NIGERIA DATA PROTECTION COMMISSION FOR THE"
+    },
+    {
+      "sourceLine": 106,
+      "text": "REGULATION OF THE PROCESSING OF PERSONAL INFORMATION ;"
+    },
+    {
+      "sourceLine": 107,
+      "text": "AND FOR RELATED MATTERS"
+    },
+    {
+      "sourceLine": 108,
+      "text": "[12th Day of June, 2023]"
+    },
+    {
+      "sourceLine": 109,
+      "text": "ENACTED by the National Assembly of the Federal Republic of Nigeria—"
+    },
+    {
+      "sourceLine": 110,
+      "text": "PART I—OBJECTIVES AND APPLICATION"
+    },
+    {
+      "sourceLine": 111,
+      "text": "1.—(1) The objectives of this Act are to —"
+    },
+    {
+      "sourceLine": 112,
+      "text": "(a) safeguard the fundamental rights and freedoms, and the interests of"
+    },
+    {
+      "sourceLine": 113,
+      "text": "data subjects, as guaranteed under the Constitution of the Federal Republic"
+    },
+    {
+      "sourceLine": 114,
+      "text": "of Nigeria, 1999 ;"
+    },
+    {
+      "sourceLine": 115,
+      "text": "(b) provide for the regulation of processing of personal data ;"
+    },
+    {
+      "sourceLine": 116,
+      "text": "(c) promote data processing practices that safeguard the security of"
+    },
+    {
+      "sourceLine": 117,
+      "text": "personal data and privacy of data subjects ;"
+    },
+    {
+      "sourceLine": 118,
+      "text": "(d) ensure that personal data is processed in a fair, lawful and accountable"
+    },
+    {
+      "sourceLine": 119,
+      "text": "manner ;"
+    },
+    {
+      "sourceLine": 120,
+      "text": "(e) protect data subjects’ rights, and provide means of recourse and"
+    },
+    {
+      "sourceLine": 121,
+      "text": "remedies, in the event of the breach of the data subject’s rights ;"
+    },
+    {
+      "sourceLine": 122,
+      "text": "(f ) ensure that data controllers and data processors fulfil their obligations"
+    },
+    {
+      "sourceLine": 123,
+      "text": "to data subjects ;"
+    },
+    {
+      "sourceLine": 124,
+      "text": "(g) establish an impartial, independent, and effective regulatory"
+    },
+    {
+      "sourceLine": 125,
+      "text": "Commission to superintend over data protection and privacy issues, and"
+    },
+    {
+      "sourceLine": 126,
+      "text": "supervise data controllers and data processors ; and"
+    },
+    {
+      "sourceLine": 127,
+      "text": "(h) strengthen the legal foundations of the national digital economy and"
+    },
+    {
+      "sourceLine": 128,
+      "text": "guarantee the participation of Nigeria in the regional and global economies"
+    },
+    {
+      "sourceLine": 129,
+      "text": "through the beneficial and trusted use of personal data."
+    },
+    {
+      "sourceLine": 130,
+      "text": "2.—(1) This Act shall apply to the processing of personal data, whether"
+    },
+    {
+      "sourceLine": 131,
+      "text": "by automated means or not."
+    },
+    {
+      "sourceLine": 132,
+      "text": "(2) This Act shall apply, where the —"
+    },
+    {
+      "sourceLine": 133,
+      "text": "(a) data controller or data processor is domiciled in, resident in, or"
+    },
+    {
+      "sourceLine": 134,
+      "text": "operating in Nigeria ;"
+    },
+    {
+      "sourceLine": 135,
+      "text": "(b) processing of personal data occurs within Nigeria ; or"
+    },
+    {
+      "sourceLine": 136,
+      "text": "(c) the data controller or the data processor is not domiciled in, resident"
+    },
+    {
+      "sourceLine": 137,
+      "text": "in, or operating in Nigeria, but is processing personal data of a data subject"
+    },
+    {
+      "sourceLine": 138,
+      "text": "in Nigeria."
+    },
+    {
+      "sourceLine": 139,
+      "text": "ApplicationA 724 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 140,
+      "text": "3.—(1) This Act shall not apply to the processing of personal data"
+    },
+    {
+      "sourceLine": 141,
+      "text": "carried out by one or more persons solely for personal or household purposes:"
+    },
+    {
+      "sourceLine": 142,
+      "text": "Provided that such processing for personal or household purposes does not"
+    },
+    {
+      "sourceLine": 143,
+      "text": "constitute a violation of fundamental right to privacy of a data subject."
+    },
+    {
+      "sourceLine": 144,
+      "text": "(2) Subject to the rights and freedoms under the Constitution and the"
+    },
+    {
+      "sourceLine": 145,
+      "text": "limitations, the obligations under Part V, other than sections 24, 25, 32, and 40"
+    },
+    {
+      "sourceLine": 146,
+      "text": "of this Act, shall not apply to a data controller or data processor if the processing"
+    },
+    {
+      "sourceLine": 147,
+      "text": "of personal data is —"
+    },
+    {
+      "sourceLine": 148,
+      "text": "(a) carried out by a competent authority for the purposes of the"
+    },
+    {
+      "sourceLine": 149,
+      "text": "prevention, investigation, detection, prosecution, or adjudication of a criminal"
+    },
+    {
+      "sourceLine": 150,
+      "text": "offence or the execution of a criminal penalty, in accordance with any"
+    },
+    {
+      "sourceLine": 151,
+      "text": "applicable law ;"
+    },
+    {
+      "sourceLine": 152,
+      "text": "(b) carried out by a competent authority for the purposes of prevention"
+    },
+    {
+      "sourceLine": 153,
+      "text": "or control of a national public health emergency ;"
+    },
+    {
+      "sourceLine": 154,
+      "text": "(c) carried out by a competent authority, as is necessary for national"
+    },
+    {
+      "sourceLine": 155,
+      "text": "security ;"
+    },
+    {
+      "sourceLine": 156,
+      "text": "(d) in respect of publication in the public interest, for journalism,"
+    },
+    {
+      "sourceLine": 157,
+      "text": "educational, artistic and literary purposes to the extent that such obligations"
+    },
+    {
+      "sourceLine": 158,
+      "text": "and rights are incompatible with such purposes ; or"
+    },
+    {
+      "sourceLine": 159,
+      "text": "(e) necessary for the establishment, exercise, or defense of legal claims,"
+    },
+    {
+      "sourceLine": 160,
+      "text": "whether in court proceedings, or in an administrative or out-of-court"
+    },
+    {
+      "sourceLine": 161,
+      "text": "procedure."
+    },
+    {
+      "sourceLine": 162,
+      "text": "(3) The Commission may by regulation prescribe types of personal data"
+    },
+    {
+      "sourceLine": 163,
+      "text": "and processing that may be exempted from application of this Act."
+    },
+    {
+      "sourceLine": 164,
+      "text": "(4) Notwithstanding the provisions of this Act, the Commission may"
+    },
+    {
+      "sourceLine": 165,
+      "text": "issue a guidance notice containing legal safeguards and best practices to a"
+    },
+    {
+      "sourceLine": 166,
+      "text": "data controller or processor, in respect of any aspect of data processing"
+    },
+    {
+      "sourceLine": 167,
+      "text": "exempted under this section where in the opinion of the Commission, such"
+    },
+    {
+      "sourceLine": 168,
+      "text": "processing violates or is likely to violate sections 24 and 25 of this Act."
+    },
+    {
+      "sourceLine": 169,
+      "text": "PART II — ESTABLISHMENT OF THE NIGERIA DATA PROTECTION"
+    },
+    {
+      "sourceLine": 170,
+      "text": "COMMISSION, AND ITS GOVERNING COUNCIL"
+    },
+    {
+      "sourceLine": 171,
+      "text": "4.—(1) There is established the Nigeria Data Protection Commission"
+    },
+    {
+      "sourceLine": 172,
+      "text": "(in this Act, referred to as “the Commission”)."
+    },
+    {
+      "sourceLine": 173,
+      "text": "(2) The Commission —"
+    },
+    {
+      "sourceLine": 174,
+      "text": "(a) shall be a body corporate, with perpetual succession and a"
+    },
+    {
+      "sourceLine": 175,
+      "text": "common seal ;"
+    },
+    {
+      "sourceLine": 176,
+      "text": "(b) may sue or be sued in its corporate name ; and"
+    },
+    {
+      "sourceLine": 177,
+      "text": "(c) may acquire, hold and dispose of its property."
+    },
+    {
+      "sourceLine": 178,
+      "text": "Exemption"
+    },
+    {
+      "sourceLine": 179,
+      "text": "of"
+    },
+    {
+      "sourceLine": 180,
+      "text": "application"
+    },
+    {
+      "sourceLine": 181,
+      "text": "Establishment"
+    },
+    {
+      "sourceLine": 182,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 183,
+      "text": "Nigeria Data"
+    },
+    {
+      "sourceLine": 184,
+      "text": "Protection"
+    },
+    {
+      "sourceLine": 185,
+      "text": "CommissionNigeria Data Protection Act, 2023 2022 No. 37 A 725"
+    },
+    {
+      "sourceLine": 186,
+      "text": "(3) The Commission —"
+    },
+    {
+      "sourceLine": 187,
+      "text": "(a) shall have its head office in the Federal Capital Territory ; and"
+    },
+    {
+      "sourceLine": 188,
+      "text": "(b) may maintain other offices, in any part of Nigeria, for the purposes"
+    },
+    {
+      "sourceLine": 189,
+      "text": "of achieving the objects of the Commission."
+    },
+    {
+      "sourceLine": 190,
+      "text": "(4) Subject to the approval of the Council, the National Commissioner"
+    },
+    {
+      "sourceLine": 191,
+      "text": "may acquire other offices and premises for the use of the Commission."
+    },
+    {
+      "sourceLine": 192,
+      "text": "5. The Commission shall —"
+    },
+    {
+      "sourceLine": 193,
+      "text": "(a) regulate the deployment of technological and organisational measures"
+    },
+    {
+      "sourceLine": 194,
+      "text": "to enhance personal data protection ;"
+    },
+    {
+      "sourceLine": 195,
+      "text": "(b) foster the development of personal data protection technologies, in"
+    },
+    {
+      "sourceLine": 196,
+      "text": "accordance with recognised international best practices and applicable"
+    },
+    {
+      "sourceLine": 197,
+      "text": "international law ;"
+    },
+    {
+      "sourceLine": 198,
+      "text": "(c) where necessary, accredit, license, and register suitable persons to"
+    },
+    {
+      "sourceLine": 199,
+      "text": "provide data protection compliance services ;"
+    },
+    {
+      "sourceLine": 200,
+      "text": "(d) register data controllers and data processors of major importance ;"
+    },
+    {
+      "sourceLine": 201,
+      "text": "(e) promote awareness on the obligation of data controllers and data"
+    },
+    {
+      "sourceLine": 202,
+      "text": "processors under this Act ;"
+    },
+    {
+      "sourceLine": 203,
+      "text": "(f ) promote public awareness and understanding of personal data"
+    },
+    {
+      "sourceLine": 204,
+      "text": "protection, rights and obligations imposed under this Act, and the risks to"
+    },
+    {
+      "sourceLine": 205,
+      "text": "personal data ;"
+    },
+    {
+      "sourceLine": 206,
+      "text": "(g) receive complaints relating to violations of this Act or subsidiary"
+    },
+    {
+      "sourceLine": 207,
+      "text": "legislation made under this Act ;"
+    },
+    {
+      "sourceLine": 208,
+      "text": "(h) collaborate with any relevant ministry, department, agency, body,"
+    },
+    {
+      "sourceLine": 209,
+      "text": "company, firm, or person for the attainment of the objectives of this Act ;"
+    },
+    {
+      "sourceLine": 210,
+      "text": "(i) ensure compliance with national and international personal data"
+    },
+    {
+      "sourceLine": 211,
+      "text": "protection obligations and best practice ;"
+    },
+    {
+      "sourceLine": 212,
+      "text": "(j) participate in international fora and engage with national and regional"
+    },
+    {
+      "sourceLine": 213,
+      "text": "authorities responsible for data protection with a view to developing efficient"
+    },
+    {
+      "sourceLine": 214,
+      "text": "strategies for the regulation of cross-border transfers of personal data ;"
+    },
+    {
+      "sourceLine": 215,
+      "text": "(k) determine whether countries, regions, business sectors, binding"
+    },
+    {
+      "sourceLine": 216,
+      "text": "corporate rules, contractual clauses, codes of conduct, or certification"
+    },
+    {
+      "sourceLine": 217,
+      "text": "mechanisms, afford adequate personal data protection standards for cross\u0002border transfers ;"
+    },
+    {
+      "sourceLine": 218,
+      "text": "(l) collect and publish information with respect to personal data"
+    },
+    {
+      "sourceLine": 219,
+      "text": "protection, including personal data breaches ;"
+    },
+    {
+      "sourceLine": 220,
+      "text": "(m) advise government on policy issues relating to data protection and"
+    },
+    {
+      "sourceLine": 221,
+      "text": "privacy ;"
+    },
+    {
+      "sourceLine": 222,
+      "text": "(n) submit legislative proposals to the Minister necessary for strengthening"
+    },
+    {
+      "sourceLine": 223,
+      "text": "personal data protection in Nigeria ; and"
+    },
+    {
+      "sourceLine": 224,
+      "text": "(o) carry out other legal actions as are necessary for the performance"
+    },
+    {
+      "sourceLine": 225,
+      "text": "of the functions of the Commission."
+    },
+    {
+      "sourceLine": 226,
+      "text": "Functions of"
+    },
+    {
+      "sourceLine": 227,
+      "text": "the"
+    },
+    {
+      "sourceLine": 228,
+      "text": "CommissionA 726 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 229,
+      "text": "6. The Commission shall have powers to —"
+    },
+    {
+      "sourceLine": 230,
+      "text": "(a) oversee the implementation of the provisions of this Act ;"
+    },
+    {
+      "sourceLine": 231,
+      "text": "(b) prescribe fees payable by data controllers and data processors in"
+    },
+    {
+      "sourceLine": 232,
+      "text": "accordance with data processing activities ;"
+    },
+    {
+      "sourceLine": 233,
+      "text": "(c) issue regulations, rules, directives and guidance under this Act ;"
+    },
+    {
+      "sourceLine": 234,
+      "text": "(d) prescribe the manner and frequency of filing, and content of"
+    },
+    {
+      "sourceLine": 235,
+      "text": "compliance returns by data controllers and data processors of major"
+    },
+    {
+      "sourceLine": 236,
+      "text": "importance to the Commission ;"
+    },
+    {
+      "sourceLine": 237,
+      "text": "(e) call for information from a person, or inspect any documents with"
+    },
+    {
+      "sourceLine": 238,
+      "text": "respect to any thing done under this Act ;"
+    },
+    {
+      "sourceLine": 239,
+      "text": "(f ) conduct investigations into any violation of a requirement under this"
+    },
+    {
+      "sourceLine": 240,
+      "text": "Act or subsidiary legislation made under this Act by a data controller or a"
+    },
+    {
+      "sourceLine": 241,
+      "text": "data processor ;"
+    },
+    {
+      "sourceLine": 242,
+      "text": "(g) impose penalties in respect of any violation of the provisions of this"
+    },
+    {
+      "sourceLine": 243,
+      "text": "Act or subsidiary legislation made under this Act ;"
+    },
+    {
+      "sourceLine": 244,
+      "text": "(h) acquire assets, and sell, let, lease, or dispose of any of its property ; and"
+    },
+    {
+      "sourceLine": 245,
+      "text": "(i) perform such other acts as are necessary to give effect to the functions"
+    },
+    {
+      "sourceLine": 246,
+      "text": "of the Commission."
+    },
+    {
+      "sourceLine": 247,
+      "text": "7. The Commission shall be independent in the performance of its"
+    },
+    {
+      "sourceLine": 248,
+      "text": "functions under this Act."
+    },
+    {
+      "sourceLine": 249,
+      "text": "8.—(1) There shall be for the Commission, a Governing Council (in this"
+    },
+    {
+      "sourceLine": 250,
+      "text": "Act referred to as “the Council”), which shall consist of —"
+    },
+    {
+      "sourceLine": 251,
+      "text": "(a) a part-time Chairman, who shall be a retired judge of Nigeria ;"
+    },
+    {
+      "sourceLine": 252,
+      "text": "(b) the National Commissioner ;"
+    },
+    {
+      "sourceLine": 253,
+      "text": "(c) a representative, not below the rank of a Director or its equivalent,"
+    },
+    {
+      "sourceLine": 254,
+      "text": "from —"
+    },
+    {
+      "sourceLine": 255,
+      "text": "(i) the Federal Ministry responsible for Justice,"
+    },
+    {
+      "sourceLine": 256,
+      "text": "(ii) the Federal Ministry responsible for communications and digital"
+    },
+    {
+      "sourceLine": 257,
+      "text": "economy,"
+    },
+    {
+      "sourceLine": 258,
+      "text": "(iii) the Central Bank of Nigeria, and"
+    },
+    {
+      "sourceLine": 259,
+      "text": "(iv) a law enforcement agency ; and"
+    },
+    {
+      "sourceLine": 260,
+      "text": "(d) one representative from the private sector."
+    },
+    {
+      "sourceLine": 261,
+      "text": "(2) Members of the Council other than the National Commissioner shall"
+    },
+    {
+      "sourceLine": 262,
+      "text": "be paid such allowances as may be determined, in collaboration with the"
+    },
+    {
+      "sourceLine": 263,
+      "text": "Revenue Mobilisation Allocation and Fiscal Commission."
+    },
+    {
+      "sourceLine": 264,
+      "text": "(3) The supplementary provisions set out in the Schedule to this Act"
+    },
+    {
+      "sourceLine": 265,
+      "text": "shall apply with respect to the proceedings of the Council, and other matters"
+    },
+    {
+      "sourceLine": 266,
+      "text": "contained in it."
+    },
+    {
+      "sourceLine": 267,
+      "text": "Powers of"
+    },
+    {
+      "sourceLine": 268,
+      "text": "the"
+    },
+    {
+      "sourceLine": 269,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 270,
+      "text": "Independence"
+    },
+    {
+      "sourceLine": 271,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 272,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 273,
+      "text": "Establishment"
+    },
+    {
+      "sourceLine": 274,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 275,
+      "text": "Governing"
+    },
+    {
+      "sourceLine": 276,
+      "text": "Council of"
+    },
+    {
+      "sourceLine": 277,
+      "text": "the"
+    },
+    {
+      "sourceLine": 278,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 279,
+      "text": "ScheduleNigeria Data Protection Act, 2023 2022 No. 37 A 727"
+    },
+    {
+      "sourceLine": 280,
+      "text": "9.—(1) The Chairman and non-ex-officio members of the Council shall"
+    },
+    {
+      "sourceLine": 281,
+      "text": "be appointed by the President, on the recommendation of the Minister."
+    },
+    {
+      "sourceLine": 282,
+      "text": "(2) A member appointed to the Council under section 8 of this Act"
+    },
+    {
+      "sourceLine": 283,
+      "text": "from—"
+    },
+    {
+      "sourceLine": 284,
+      "text": "(a) the private sector shall be a Nigerian and possess not less than five"
+    },
+    {
+      "sourceLine": 285,
+      "text": "years cognate experience and proficiency in data protection and privacy;"
+    },
+    {
+      "sourceLine": 286,
+      "text": "and"
+    },
+    {
+      "sourceLine": 287,
+      "text": "(b) government, under section 8(1)(c) of this Act, may have proficiency"
+    },
+    {
+      "sourceLine": 288,
+      "text": "in data protection and privacy."
+    },
+    {
+      "sourceLine": 289,
+      "text": "10.—(1) Members of the Council other than the National Commissioner"
+    },
+    {
+      "sourceLine": 290,
+      "text": "shall be part-time members."
+    },
+    {
+      "sourceLine": 291,
+      "text": "(2) The Chairman and non-ex-officio members of the Council shall hold"
+    },
+    {
+      "sourceLine": 292,
+      "text": "office —"
+    },
+    {
+      "sourceLine": 293,
+      "text": "(a) for a term of four years, and may be eligible for re-appointment for"
+    },
+    {
+      "sourceLine": 294,
+      "text": "another term of four years, and no more ; and"
+    },
+    {
+      "sourceLine": 295,
+      "text": "(b) on such terms and conditions, as may be specified in their letters of"
+    },
+    {
+      "sourceLine": 296,
+      "text": "appointment."
+    },
+    {
+      "sourceLine": 297,
+      "text": "11.—(1) A person shall cease to be a member of the Council, where the"
+    },
+    {
+      "sourceLine": 298,
+      "text": "person —"
+    },
+    {
+      "sourceLine": 299,
+      "text": "(a) dies ;"
+    },
+    {
+      "sourceLine": 300,
+      "text": "(b) becomes bankrupt or compounds with his creditors ;"
+    },
+    {
+      "sourceLine": 301,
+      "text": "(c) is convicted of a felony or any offence involving dishonesty or fraud ;"
+    },
+    {
+      "sourceLine": 302,
+      "text": "(d) is disqualified from professional qualification ;"
+    },
+    {
+      "sourceLine": 303,
+      "text": "(e) is guilty of a serious misconduct with regard to the discharge of the"
+    },
+    {
+      "sourceLine": 304,
+      "text": "person’s duties ;"
+    },
+    {
+      "sourceLine": 305,
+      "text": "(f ) under section 8(1)(c) of this Act, ceases to occupy the office by"
+    },
+    {
+      "sourceLine": 306,
+      "text": "virtue of which he became a member of the Council ; or"
+    },
+    {
+      "sourceLine": 307,
+      "text": "(g) resigns from appointment by giving at least two months’ notice, in"
+    },
+    {
+      "sourceLine": 308,
+      "text": "writing, addressed to the President."
+    },
+    {
+      "sourceLine": 309,
+      "text": "(2) The President, on the recommendation of the Minister, may remove"
+    },
+    {
+      "sourceLine": 310,
+      "text": "a member of the Council, where satisfied that it is not in the interest of the"
+    },
+    {
+      "sourceLine": 311,
+      "text": "Commission or the public that the member continues in that office."
+    },
+    {
+      "sourceLine": 312,
+      "text": "(3) Where a member of the Council ceases to hold office before the"
+    },
+    {
+      "sourceLine": 313,
+      "text": "expiration of the term, the President shall appoint a person to fill the vacancy,"
+    },
+    {
+      "sourceLine": 314,
+      "text": "and the person so appointed shall hold office for the remainder of the term of"
+    },
+    {
+      "sourceLine": 315,
+      "text": "office of that member."
+    },
+    {
+      "sourceLine": 316,
+      "text": "Tenure of"
+    },
+    {
+      "sourceLine": 317,
+      "text": "members of"
+    },
+    {
+      "sourceLine": 318,
+      "text": "the Council"
+    },
+    {
+      "sourceLine": 319,
+      "text": "Appointment"
+    },
+    {
+      "sourceLine": 320,
+      "text": "of members"
+    },
+    {
+      "sourceLine": 321,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 322,
+      "text": "Council"
+    },
+    {
+      "sourceLine": 323,
+      "text": "Cessation of"
+    },
+    {
+      "sourceLine": 324,
+      "text": "membershipA 728 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 325,
+      "text": "12.—(1) The functions of the Council are to —"
+    },
+    {
+      "sourceLine": 326,
+      "text": "(a) formulate and provide overall policy direction of the affairs of the"
+    },
+    {
+      "sourceLine": 327,
+      "text": "Commission ;"
+    },
+    {
+      "sourceLine": 328,
+      "text": "(b) approve strategic plans, action plans and budget support programmes"
+    },
+    {
+      "sourceLine": 329,
+      "text": "submitted by the National Commissioner ;"
+    },
+    {
+      "sourceLine": 330,
+      "text": "(c) approve annual reports and financial reports submitted by the National"
+    },
+    {
+      "sourceLine": 331,
+      "text": "Commissioner ;"
+    },
+    {
+      "sourceLine": 332,
+      "text": "(d) approve the terms and conditions of service of the employees of the"
+    },
+    {
+      "sourceLine": 333,
+      "text": "Commission, including remuneration, allowances and pension benefits in"
+    },
+    {
+      "sourceLine": 334,
+      "text": "accordance with the Pension Reform Act ;"
+    },
+    {
+      "sourceLine": 335,
+      "text": "(e) approve staff regulations for the appointment, promotion and discipline"
+    },
+    {
+      "sourceLine": 336,
+      "text": "of staff of the Commission ;"
+    },
+    {
+      "sourceLine": 337,
+      "text": "(f ) provide advice and counsel to the National Commissioner;"
+    },
+    {
+      "sourceLine": 338,
+      "text": "(g) assist the National Commissioner in matters relating to compliance"
+    },
+    {
+      "sourceLine": 339,
+      "text": "by ministries, departments and agencies of government with this Act ; and"
+    },
+    {
+      "sourceLine": 340,
+      "text": "(h) handle such other matters, as may be prescribed by any other"
+    },
+    {
+      "sourceLine": 341,
+      "text": "provision of this Act."
+    },
+    {
+      "sourceLine": 342,
+      "text": "(2) The Council shall have the power to delegate any of its functions"
+    },
+    {
+      "sourceLine": 343,
+      "text": "under this Act to a committee set up by it, in accordance with the provisions of"
+    },
+    {
+      "sourceLine": 344,
+      "text": "this Act."
+    },
+    {
+      "sourceLine": 345,
+      "text": "13.—(1) A member of the Council shall —"
+    },
+    {
+      "sourceLine": 346,
+      "text": "(a) ensure that personal interest shall not conflict with the member’s"
+    },
+    {
+      "sourceLine": 347,
+      "text": "duties under this Act ;"
+    },
+    {
+      "sourceLine": 348,
+      "text": "(b) not make secret profit in the course of discharging official duties ;"
+    },
+    {
+      "sourceLine": 349,
+      "text": "(c) fully disclose to the Council any personal, commercial, financial, or"
+    },
+    {
+      "sourceLine": 350,
+      "text": "other interest, which may directly or indirectly hold or be connected with"
+    },
+    {
+      "sourceLine": 351,
+      "text": "the business of the Commission or becomes the subject of consideration by"
+    },
+    {
+      "sourceLine": 352,
+      "text": "the Council ;"
+    },
+    {
+      "sourceLine": 353,
+      "text": "(d) subject to subsection (3), be ineligible to participate in any Council"
+    },
+    {
+      "sourceLine": 354,
+      "text": "deliberation and voting-related matter ; and"
+    },
+    {
+      "sourceLine": 355,
+      "text": "(e) not accept any gift or advantage in whatever form or manner, for"
+    },
+    {
+      "sourceLine": 356,
+      "text": "anything done or likely to be done with respect to the responsibilities of the"
+    },
+    {
+      "sourceLine": 357,
+      "text": "Council."
+    },
+    {
+      "sourceLine": 358,
+      "text": "(2) A member of the Council, who contravenes the provisions of"
+    },
+    {
+      "sourceLine": 359,
+      "text": "paragraphs (b) and (e), commits an offence and is liable on conviction to —"
+    },
+    {
+      "sourceLine": 360,
+      "text": "(a) in the case of a contravention of paragraph (b), a fine of at"
+    },
+    {
+      "sourceLine": 361,
+      "text": "least N10,000,000 or imprisonment for a term not more than three"
+    },
+    {
+      "sourceLine": 362,
+      "text": "years, or both ; or"
+    },
+    {
+      "sourceLine": 363,
+      "text": "(b) in the case of a contravention of paragraph (d), a fine of at least"
+    },
+    {
+      "sourceLine": 364,
+      "text": "N5,000,000, or imprisonment for a term not more than two years, or both."
+    },
+    {
+      "sourceLine": 365,
+      "text": "Functions"
+    },
+    {
+      "sourceLine": 366,
+      "text": "and powers"
+    },
+    {
+      "sourceLine": 367,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 368,
+      "text": "Council"
+    },
+    {
+      "sourceLine": 369,
+      "text": "Act No. 4,"
+    },
+    {
+      "sourceLine": 370,
+      "text": "2014"
+    },
+    {
+      "sourceLine": 371,
+      "text": "Conflict of"
+    },
+    {
+      "sourceLine": 372,
+      "text": "interestNigeria Data Protection Act, 2023 2022 No. 37 A 729"
+    },
+    {
+      "sourceLine": 373,
+      "text": "PART III — APPOINTMENT OF THE NATIONAL COMMISSIONER, AND OTHER"
+    },
+    {
+      "sourceLine": 374,
+      "text": "STAFF OF THE COMMISSION"
+    },
+    {
+      "sourceLine": 375,
+      "text": "14.—(1) There shall be for the Commission, a National Commissioner,"
+    },
+    {
+      "sourceLine": 376,
+      "text": "who shall be —"
+    },
+    {
+      "sourceLine": 377,
+      "text": "(a) appointed by the President, on the recommendation of the Minister ;"
+    },
+    {
+      "sourceLine": 378,
+      "text": "(b) the chief executive and accounting officer of the Commission; and"
+    },
+    {
+      "sourceLine": 379,
+      "text": "(c) responsible for the execution of the policies and administration of"
+    },
+    {
+      "sourceLine": 380,
+      "text": "the affairs of the Commission."
+    },
+    {
+      "sourceLine": 381,
+      "text": "(2) The National Commissioner shall —"
+    },
+    {
+      "sourceLine": 382,
+      "text": "(a) hold a certification in data protection from a training body which is"
+    },
+    {
+      "sourceLine": 383,
+      "text": "duly accredited in line with international best practices ; and"
+    },
+    {
+      "sourceLine": 384,
+      "text": "(b) possess at least 10 years cognate experience, at a senior management"
+    },
+    {
+      "sourceLine": 385,
+      "text": "level, in data protection, cybersecurity management, information and"
+    },
+    {
+      "sourceLine": 386,
+      "text": "communication technology, law, consumer protection, management science,"
+    },
+    {
+      "sourceLine": 387,
+      "text": "or other relevant disciplines."
+    },
+    {
+      "sourceLine": 388,
+      "text": "(3) A person appointed as the National Commissioner shall not hold any"
+    },
+    {
+      "sourceLine": 389,
+      "text": "other management position in a Ministry, Department, or Agency of"
+    },
+    {
+      "sourceLine": 390,
+      "text": "Government, corporation, company, or any other business establishment."
+    },
+    {
+      "sourceLine": 391,
+      "text": "(4) The National Commissioner shall hold office —"
+    },
+    {
+      "sourceLine": 392,
+      "text": "(a) for a term of five years, and may be re-appointed for another term"
+    },
+    {
+      "sourceLine": 393,
+      "text": "of five years, and no more ; and"
+    },
+    {
+      "sourceLine": 394,
+      "text": "(b) on such other terms and conditions as may be specified in the letter"
+    },
+    {
+      "sourceLine": 395,
+      "text": "of appointment."
+    },
+    {
+      "sourceLine": 396,
+      "text": "15. The National Commissioner shall be the Secretary to the Council,"
+    },
+    {
+      "sourceLine": 397,
+      "text": "and —"
+    },
+    {
+      "sourceLine": 398,
+      "text": "(a) be responsible to the Council;"
+    },
+    {
+      "sourceLine": 399,
+      "text": "(b) keep the Council’s records;"
+    },
+    {
+      "sourceLine": 400,
+      "text": "(c) conduct the Council’s correspondence ; and"
+    },
+    {
+      "sourceLine": 401,
+      "text": "(d) discharge such other duties, as the Council may determine."
+    },
+    {
+      "sourceLine": 402,
+      "text": "16. The Commission shall, subject to the approval of the Council, recruit"
+    },
+    {
+      "sourceLine": 403,
+      "text": "directly or by secondment from the Public Service of the Federation, such"
+    },
+    {
+      "sourceLine": 404,
+      "text": "number of staff, as it deems necessary and expedient —"
+    },
+    {
+      "sourceLine": 405,
+      "text": "(a) for the proper and efficient performance of its functions ; and"
+    },
+    {
+      "sourceLine": 406,
+      "text": "(b) on such terms and conditions, with remunerations, allowances, and"
+    },
+    {
+      "sourceLine": 407,
+      "text": "benefits."
+    },
+    {
+      "sourceLine": 408,
+      "text": "Appointment"
+    },
+    {
+      "sourceLine": 409,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 410,
+      "text": "National"
+    },
+    {
+      "sourceLine": 411,
+      "text": "Commissioner"
+    },
+    {
+      "sourceLine": 412,
+      "text": "for the"
+    },
+    {
+      "sourceLine": 413,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 414,
+      "text": "Secretary to"
+    },
+    {
+      "sourceLine": 415,
+      "text": "the Council"
+    },
+    {
+      "sourceLine": 416,
+      "text": "Staff of the"
+    },
+    {
+      "sourceLine": 417,
+      "text": "CommissionA 730 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 418,
+      "text": "17.—(1) The Commission may make staff regulations relating"
+    },
+    {
+      "sourceLine": 419,
+      "text": "generally to the conditions of service of the staff, and such regulations"
+    },
+    {
+      "sourceLine": 420,
+      "text": "may provide for —"
+    },
+    {
+      "sourceLine": 421,
+      "text": "(a) the appointment, promotion, and disciplinary control of staff of the"
+    },
+    {
+      "sourceLine": 422,
+      "text": "Commission ; and"
+    },
+    {
+      "sourceLine": 423,
+      "text": "(b) appeals by staff against dismissal or other disciplinary measures :"
+    },
+    {
+      "sourceLine": 424,
+      "text": "Provided that pending the making of such staff regulations, any instrument"
+    },
+    {
+      "sourceLine": 425,
+      "text": "relating to conditions of service in the Public Service of the Federation shall"
+    },
+    {
+      "sourceLine": 426,
+      "text": "be applicable, with such modifications, as may be necessary to the staff of the"
+    },
+    {
+      "sourceLine": 427,
+      "text": "Commission."
+    },
+    {
+      "sourceLine": 428,
+      "text": "(2) The staff regulations made under subsection (1) shall not have effect"
+    },
+    {
+      "sourceLine": 429,
+      "text": "until approved by the Council."
+    },
+    {
+      "sourceLine": 430,
+      "text": "18.—(1) Staff of the Commission shall be entitled to pension and other"
+    },
+    {
+      "sourceLine": 431,
+      "text": "retirement benefits, as prescribed under the Pension Reform Act."
+    },
+    {
+      "sourceLine": 432,
+      "text": "(2) Without prejudice to the provisions of subsection (1), nothing in this"
+    },
+    {
+      "sourceLine": 433,
+      "text": "Act shall prevent the appointment of a person to any office on conditions,"
+    },
+    {
+      "sourceLine": 434,
+      "text": "which preclude the grant of pension and other retirement benefits in respect"
+    },
+    {
+      "sourceLine": 435,
+      "text": "of that office."
+    },
+    {
+      "sourceLine": 436,
+      "text": "(3) For the application of the provisions of the Pension Reform Act, any"
+    },
+    {
+      "sourceLine": 437,
+      "text": "power exercisable by a Minister or other authority of the Federal Government,"
+    },
+    {
+      "sourceLine": 438,
+      "text": "other than the power to make regulations under the Pension Reform Act, shall"
+    },
+    {
+      "sourceLine": 439,
+      "text": "be vested in, and exercisable by the Council."
+    },
+    {
+      "sourceLine": 440,
+      "text": "PART IV — FINANCIAL PROVISIONS"
+    },
+    {
+      "sourceLine": 441,
+      "text": "19.—(1) The Commission shall establish a Fund (in this Act referred to"
+    },
+    {
+      "sourceLine": 442,
+      "text": "as “the Fund”) for the performance of its functions under this Act."
+    },
+    {
+      "sourceLine": 443,
+      "text": "(2) There shall be paid into the Fund established under subsection (1) —"
+    },
+    {
+      "sourceLine": 444,
+      "text": "(a) a take-off grant as may be appropriated by the National Assembly"
+    },
+    {
+      "sourceLine": 445,
+      "text": "which shall be drawn in the following manner —"
+    },
+    {
+      "sourceLine": 446,
+      "text": " (i) 20% of the take-off grant shall be from the Consolidated Revenue"
+    },
+    {
+      "sourceLine": 447,
+      "text": "Fund of the Federation,"
+    },
+    {
+      "sourceLine": 448,
+      "text": "(ii) 40% of the take-off grant shall be from the Nigerian"
+    },
+    {
+      "sourceLine": 449,
+      "text": "Communications Commission, and"
+    },
+    {
+      "sourceLine": 450,
+      "text": "(iii) 40% of the take-off grant shall be from the National Information"
+    },
+    {
+      "sourceLine": 451,
+      "text": "Technology Development Agency ;"
+    },
+    {
+      "sourceLine": 452,
+      "text": "(b) donations, gifts, loans, grants, aids, endowments, and voluntary"
+    },
+    {
+      "sourceLine": 453,
+      "text": "contributions ;"
+    },
+    {
+      "sourceLine": 454,
+      "text": "(c) returns on investments of the Commission ;"
+    },
+    {
+      "sourceLine": 455,
+      "text": "(d) levies, fees, penalties, and fines collected by the Commission ; and"
+    },
+    {
+      "sourceLine": 456,
+      "text": "(e) such other money or assets that may accrue to the Commission."
+    },
+    {
+      "sourceLine": 457,
+      "text": "Staff"
+    },
+    {
+      "sourceLine": 458,
+      "text": "regulations"
+    },
+    {
+      "sourceLine": 459,
+      "text": "and"
+    },
+    {
+      "sourceLine": 460,
+      "text": "discipline"
+    },
+    {
+      "sourceLine": 461,
+      "text": "Pension"
+    },
+    {
+      "sourceLine": 462,
+      "text": "Act No. 4,"
+    },
+    {
+      "sourceLine": 463,
+      "text": "2014"
+    },
+    {
+      "sourceLine": 464,
+      "text": "Fund of the"
+    },
+    {
+      "sourceLine": 465,
+      "text": "CommissionNigeria Data Protection Act, 2023 2022 No. 37 A 731"
+    },
+    {
+      "sourceLine": 466,
+      "text": "(3) 50% of the total amount of the take-off grant shall be provided to the"
+    },
+    {
+      "sourceLine": 467,
+      "text": "Commission on the commencement of this Act, and the remaining 50% of the"
+    },
+    {
+      "sourceLine": 468,
+      "text": "take-off grant shall be provided on the anniversary of the date on which this"
+    },
+    {
+      "sourceLine": 469,
+      "text": "Act commences."
+    },
+    {
+      "sourceLine": 470,
+      "text": "(4) Subject to any applicable law, the Commission may borrow such"
+    },
+    {
+      "sourceLine": 471,
+      "text": "sums of money, as may be required in the performance of its functions under"
+    },
+    {
+      "sourceLine": 472,
+      "text": "to this Act."
+    },
+    {
+      "sourceLine": 473,
+      "text": "20.—(1) There shall be chargeable to the Fund —"
+    },
+    {
+      "sourceLine": 474,
+      "text": "(a) the cost of administration of the Commission ;"
+    },
+    {
+      "sourceLine": 475,
+      "text": "(b) allowances and remuneration payable to members of the Council ;"
+    },
+    {
+      "sourceLine": 476,
+      "text": "(c) remunerations, allowances, retiring benefits, such as pensions and"
+    },
+    {
+      "sourceLine": 477,
+      "text": "gratuities, and such other money payable to the staff of the Commission ;"
+    },
+    {
+      "sourceLine": 478,
+      "text": "(d) the payment for consultancies and contracts, including mobilisation,"
+    },
+    {
+      "sourceLine": 479,
+      "text": "fluctuations, variations, and legal fees ;"
+    },
+    {
+      "sourceLine": 480,
+      "text": "(e) expenses necessary to meet capital expenditure, such as, for the"
+    },
+    {
+      "sourceLine": 481,
+      "text": "purchase, acquisition, or maintenance of property or other equipment of the"
+    },
+    {
+      "sourceLine": 482,
+      "text": "Commission ;"
+    },
+    {
+      "sourceLine": 483,
+      "text": "(f ) repayment of funds borrowed by the Commission, including interest"
+    },
+    {
+      "sourceLine": 484,
+      "text": "on such borrowed funds ; and"
+    },
+    {
+      "sourceLine": 485,
+      "text": "(g) any other expenditure, approved by the Council, for the purposes of"
+    },
+    {
+      "sourceLine": 486,
+      "text": "performing the functions of the Commission under this Act."
+    },
+    {
+      "sourceLine": 487,
+      "text": "(2) The Fund of the Commission shall be managed in accordance with"
+    },
+    {
+      "sourceLine": 488,
+      "text": "the rules made by the Council."
+    },
+    {
+      "sourceLine": 489,
+      "text": "21.—(1) Subject to any applicable law, the Commission may borrow"
+    },
+    {
+      "sourceLine": 490,
+      "text": "such sums of money, as may be required in the performance of the functions"
+    },
+    {
+      "sourceLine": 491,
+      "text": "of the Commission under this Act."
+    },
+    {
+      "sourceLine": 492,
+      "text": "(2) The Commission may accept gifts, grants of money, aids, or other"
+    },
+    {
+      "sourceLine": 493,
+      "text": "assets, provided that the terms and conditions of the acceptance are consistent"
+    },
+    {
+      "sourceLine": 494,
+      "text": "with the objectives and functions of the Commission under this Act."
+    },
+    {
+      "sourceLine": 495,
+      "text": "22.—(1) The Commission shall keep and maintain proper accounts and"
+    },
+    {
+      "sourceLine": 496,
+      "text": "records, including records of —"
+    },
+    {
+      "sourceLine": 497,
+      "text": "(a) receipts, payments, assets, and liabilities ; and"
+    },
+    {
+      "sourceLine": 498,
+      "text": "(b) income and expenditure, in a form which conforms with existing"
+    },
+    {
+      "sourceLine": 499,
+      "text": "laws on accounts and audit."
+    },
+    {
+      "sourceLine": 500,
+      "text": "(2) The Commission shall cause the accounts to be audited, not later"
+    },
+    {
+      "sourceLine": 501,
+      "text": "than six months after the end of each year, by auditors appointed from the list"
+    },
+    {
+      "sourceLine": 502,
+      "text": "maintained by the Auditor-General for the Federation, and in accordance with"
+    },
+    {
+      "sourceLine": 503,
+      "text": "the guidelines provided by the Auditor-General for the Federation."
+    },
+    {
+      "sourceLine": 504,
+      "text": "Expenditure"
+    },
+    {
+      "sourceLine": 505,
+      "text": "of the Fund"
+    },
+    {
+      "sourceLine": 506,
+      "text": "Power to"
+    },
+    {
+      "sourceLine": 507,
+      "text": "borrow and"
+    },
+    {
+      "sourceLine": 508,
+      "text": "accept gifts"
+    },
+    {
+      "sourceLine": 509,
+      "text": "Account"
+    },
+    {
+      "sourceLine": 510,
+      "text": "and auditA 732 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 511,
+      "text": "(3) An auditor appointed under subsection (2) shall have full and free"
+    },
+    {
+      "sourceLine": 512,
+      "text": "access to all account records, documents, and papers of the Commission."
+    },
+    {
+      "sourceLine": 513,
+      "text": "(4) For the purpose of this section, the financial year of the Commission"
+    },
+    {
+      "sourceLine": 514,
+      "text": "shall be from 1 January to 31 December of every year, or such other period,"
+    },
+    {
+      "sourceLine": 515,
+      "text": "as may be determined by the Council."
+    },
+    {
+      "sourceLine": 516,
+      "text": "23.—(1) The Commission shall, not later than six months after the end of"
+    },
+    {
+      "sourceLine": 517,
+      "text": "each financial year, submit to the National Assembly through the Minister —"
+    },
+    {
+      "sourceLine": 518,
+      "text": "(a) a report of its activities during the preceding year, including the"
+    },
+    {
+      "sourceLine": 519,
+      "text": "audited accounts of the Commission ; and"
+    },
+    {
+      "sourceLine": 520,
+      "text": "(b) an estimate of the expenditure and income for the next succeeding"
+    },
+    {
+      "sourceLine": 521,
+      "text": "year."
+    },
+    {
+      "sourceLine": 522,
+      "text": "(2) Notwithstanding the provisions of subsection (1), the Commission"
+    },
+    {
+      "sourceLine": 523,
+      "text": "may, in any financial year, submit supplementary or adjusted statements of"
+    },
+    {
+      "sourceLine": 524,
+      "text": "estimated income and expenditure to the National Assembly."
+    },
+    {
+      "sourceLine": 525,
+      "text": "PART V — PRINCIPLES AND LAWFUL BASIS GOVERNING"
+    },
+    {
+      "sourceLine": 526,
+      "text": "PROCESSING OF PERSONAL DATA"
+    },
+    {
+      "sourceLine": 527,
+      "text": "24.—(1) A data controller or data processor shall ensure that personal"
+    },
+    {
+      "sourceLine": 528,
+      "text": "data is —"
+    },
+    {
+      "sourceLine": 529,
+      "text": "(a) processed in a fair, lawful and transparent manner ;"
+    },
+    {
+      "sourceLine": 530,
+      "text": "(b) collected for specified, explicit, and legitimate purposes, and not to"
+    },
+    {
+      "sourceLine": 531,
+      "text": "be further processed in a way incompatible with these purposes ;"
+    },
+    {
+      "sourceLine": 532,
+      "text": "(c) adequate, relevant, and limited to the minimum necessary for the"
+    },
+    {
+      "sourceLine": 533,
+      "text": "purposes for which the personal data was collected or further processed ;"
+    },
+    {
+      "sourceLine": 534,
+      "text": "(d) retained for not longer than is necessary to achieve the lawful bases"
+    },
+    {
+      "sourceLine": 535,
+      "text": "for which the personal data was collected or further processed ;"
+    },
+    {
+      "sourceLine": 536,
+      "text": "(e) accurate, complete, not misleading, and, where necessary, kept up"
+    },
+    {
+      "sourceLine": 537,
+      "text": "to date having regard to the purposes for which the personal data is collected"
+    },
+    {
+      "sourceLine": 538,
+      "text": "or is further processed ; and"
+    },
+    {
+      "sourceLine": 539,
+      "text": "(f ) processed in a manner that ensures appropriate security of personal"
+    },
+    {
+      "sourceLine": 540,
+      "text": "data, including protection against unauthorised or unlawful processing,"
+    },
+    {
+      "sourceLine": 541,
+      "text": "access, loss, destruction, damage, or any form of data breach."
+    },
+    {
+      "sourceLine": 542,
+      "text": "(2) A data controller and data processor shall use appropriate technical"
+    },
+    {
+      "sourceLine": 543,
+      "text": "and organisational measures to ensure confidentiality, integrity, and availability"
+    },
+    {
+      "sourceLine": 544,
+      "text": "of personal data."
+    },
+    {
+      "sourceLine": 545,
+      "text": "(3) Notwithstanding anything to the contrary in this Act or any other"
+    },
+    {
+      "sourceLine": 546,
+      "text": "law, a data controller or data processor owes a duty of care, in respect of data"
+    },
+    {
+      "sourceLine": 547,
+      "text": "processing, and shall demonstrate accountability, in respect of the principles"
+    },
+    {
+      "sourceLine": 548,
+      "text": "contained in this Act."
+    },
+    {
+      "sourceLine": 549,
+      "text": "Principles of"
+    },
+    {
+      "sourceLine": 550,
+      "text": "personal"
+    },
+    {
+      "sourceLine": 551,
+      "text": "data"
+    },
+    {
+      "sourceLine": 552,
+      "text": "processing"
+    },
+    {
+      "sourceLine": 553,
+      "text": "Annual"
+    },
+    {
+      "sourceLine": 554,
+      "text": "reports and"
+    },
+    {
+      "sourceLine": 555,
+      "text": "estimatesNigeria Data Protection Act, 2023 2022 No. 37 A 733"
+    },
+    {
+      "sourceLine": 556,
+      "text": "(4) For the purposes of subsection (1) (b) —"
+    },
+    {
+      "sourceLine": 557,
+      "text": "(a) compatibility of further processing shall be assessed considering —"
+    },
+    {
+      "sourceLine": 558,
+      "text": "(i) the relationship between the original purpose and the purpose of"
+    },
+    {
+      "sourceLine": 559,
+      "text": "the intended further processing,"
+    },
+    {
+      "sourceLine": 560,
+      "text": "(ii) the nature of the personal data concerned,"
+    },
+    {
+      "sourceLine": 561,
+      "text": "(iii) the consequences of further processing,"
+    },
+    {
+      "sourceLine": 562,
+      "text": "(iv) how the personal data has been collected, and"
+    },
+    {
+      "sourceLine": 563,
+      "text": "(v) the existence of appropriate safeguards ; and"
+    },
+    {
+      "sourceLine": 564,
+      "text": "(b) further processing for archiving purposes in the public interest,"
+    },
+    {
+      "sourceLine": 565,
+      "text": "scientific, historical research purposes, or statistical purposes shall not be"
+    },
+    {
+      "sourceLine": 566,
+      "text": "considered to be incompatible with the initial purposes."
+    },
+    {
+      "sourceLine": 567,
+      "text": "25.—(1) Without prejudice to the principles set out in this Act, data"
+    },
+    {
+      "sourceLine": 568,
+      "text": "processing shall be lawful, where —"
+    },
+    {
+      "sourceLine": 569,
+      "text": "(a) the data subject has given and not withdrawn consent for the specific"
+    },
+    {
+      "sourceLine": 570,
+      "text": "purpose or purposes for which personal data is to be processed ; or"
+    },
+    {
+      "sourceLine": 571,
+      "text": "(b) the processing is necessary —"
+    },
+    {
+      "sourceLine": 572,
+      "text": "(i) for the performance of a contract to which the data subject is a"
+    },
+    {
+      "sourceLine": 573,
+      "text": "party or to take steps at the request of the data subject prior to entering"
+    },
+    {
+      "sourceLine": 574,
+      "text": "into a contract,"
+    },
+    {
+      "sourceLine": 575,
+      "text": "(ii) for compliance with a legal obligation to which the data controller"
+    },
+    {
+      "sourceLine": 576,
+      "text": "or data processor is subject,"
+    },
+    {
+      "sourceLine": 577,
+      "text": "(iii) to protect the vital interest of the data subject or another person,"
+    },
+    {
+      "sourceLine": 578,
+      "text": "(iv) for the performance of a task carried out in the public interest or"
+    },
+    {
+      "sourceLine": 579,
+      "text": "in the exercise of official authority vested in the data controller or data"
+    },
+    {
+      "sourceLine": 580,
+      "text": "processor, or"
+    },
+    {
+      "sourceLine": 581,
+      "text": "(v) for the purposes of the legitimate interests pursued by the data"
+    },
+    {
+      "sourceLine": 582,
+      "text": "controller or data processor, or by a third party to whom the data is"
+    },
+    {
+      "sourceLine": 583,
+      "text": "disclosed."
+    },
+    {
+      "sourceLine": 584,
+      "text": "(2) Interests in personal data processing shall not be legitimate for the"
+    },
+    {
+      "sourceLine": 585,
+      "text": "purposes of subsection (1)(b)(v), where —"
+    },
+    {
+      "sourceLine": 586,
+      "text": "(a) they override the fundamental rights, freedoms and the interests of"
+    },
+    {
+      "sourceLine": 587,
+      "text": "the data subject ;"
+    },
+    {
+      "sourceLine": 588,
+      "text": "(b) they are incompatible with other lawful basis of processing under"
+    },
+    {
+      "sourceLine": 589,
+      "text": "subsection (1)(b) (i)-(iv) ; or"
+    },
+    {
+      "sourceLine": 590,
+      "text": "(c) the data subject would not have a reasonable expectation that the"
+    },
+    {
+      "sourceLine": 591,
+      "text": "personal data would be processed in the manner envisaged."
+    },
+    {
+      "sourceLine": 592,
+      "text": "26.—(1) A data controller shall bear the burden of proof for establishing"
+    },
+    {
+      "sourceLine": 593,
+      "text": "a data subject’s consent."
+    },
+    {
+      "sourceLine": 594,
+      "text": "Lawful basis"
+    },
+    {
+      "sourceLine": 595,
+      "text": "of personal"
+    },
+    {
+      "sourceLine": 596,
+      "text": "data"
+    },
+    {
+      "sourceLine": 597,
+      "text": "processing"
+    },
+    {
+      "sourceLine": 598,
+      "text": "ConsentA 734 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 599,
+      "text": "(2) In determining whether consent was freely and intentionally given,"
+    },
+    {
+      "sourceLine": 600,
+      "text": "account shall be taken of whether, the performance of a contract, including"
+    },
+    {
+      "sourceLine": 601,
+      "text": "the provision of a service, is conditional on consent to the processing of personal"
+    },
+    {
+      "sourceLine": 602,
+      "text": "data that is not necessary for the performance of that contract."
+    },
+    {
+      "sourceLine": 603,
+      "text": "(3) Silence or inactivity of the data subject shall not constitute consent."
+    },
+    {
+      "sourceLine": 604,
+      "text": "(4) Where the processing of personal data is based on the consent of"
+    },
+    {
+      "sourceLine": 605,
+      "text": "the data subject, the data subject shall be informed of the right to withdraw"
+    },
+    {
+      "sourceLine": 606,
+      "text": "consent, prior to the granting of consent."
+    },
+    {
+      "sourceLine": 607,
+      "text": "(5) The withdrawal of consent under subsection (4) shall not affect the"
+    },
+    {
+      "sourceLine": 608,
+      "text": "lawfulness of data processing that occurred before the withdrawal of the"
+    },
+    {
+      "sourceLine": 609,
+      "text": "consent."
+    },
+    {
+      "sourceLine": 610,
+      "text": "(6) A request for consent shall be in clear and simple language and"
+    },
+    {
+      "sourceLine": 611,
+      "text": "accessible format."
+    },
+    {
+      "sourceLine": 612,
+      "text": "(7) Consent —"
+    },
+    {
+      "sourceLine": 613,
+      "text": "(a) shall be in the affirmative, and not based on a pre-selected"
+    },
+    {
+      "sourceLine": 614,
+      "text": "confirmation ; and"
+    },
+    {
+      "sourceLine": 615,
+      "text": "(b) may be provided in writing, orally, or through electronic means."
+    },
+    {
+      "sourceLine": 616,
+      "text": "27.—(1) Before a data controller collects personal data directly from a"
+    },
+    {
+      "sourceLine": 617,
+      "text": "data subject, the data controller shall inform the data subject of the —"
+    },
+    {
+      "sourceLine": 618,
+      "text": "(a) identity, residence or place of business of, and means of"
+    },
+    {
+      "sourceLine": 619,
+      "text": "communication with the data controller and its representatives, where"
+    },
+    {
+      "sourceLine": 620,
+      "text": "necessary ;"
+    },
+    {
+      "sourceLine": 621,
+      "text": "(b) specific lawful basis of processing under section 25(1) or 30(1) of"
+    },
+    {
+      "sourceLine": 622,
+      "text": "this Act, and the purposes of the processing for which the personal data are"
+    },
+    {
+      "sourceLine": 623,
+      "text": "intended ;"
+    },
+    {
+      "sourceLine": 624,
+      "text": "(c) recipients or categories of recipients of the personal data, if any ;"
+    },
+    {
+      "sourceLine": 625,
+      "text": "(d) existence of the rights of the data subject under Part VI ;"
+    },
+    {
+      "sourceLine": 626,
+      "text": "(e) retention period for the personal data ;"
+    },
+    {
+      "sourceLine": 627,
+      "text": "(f ) right to lodge a complaint with the Commission in accordance with"
+    },
+    {
+      "sourceLine": 628,
+      "text": "section 46 (1) of this Act ; and"
+    },
+    {
+      "sourceLine": 629,
+      "text": "(g) existence of automated decision-making, including profiling, the"
+    },
+    {
+      "sourceLine": 630,
+      "text": "significance and envisaged consequences of such processing for the data"
+    },
+    {
+      "sourceLine": 631,
+      "text": "subject, and the right to object to and challenge such processing."
+    },
+    {
+      "sourceLine": 632,
+      "text": "(2) Before a data controller collects personal data, other than directly"
+    },
+    {
+      "sourceLine": 633,
+      "text": "from the data subject, the data controller shall inform the data subject of the"
+    },
+    {
+      "sourceLine": 634,
+      "text": "matters set out in subsection (1), except where the —"
+    },
+    {
+      "sourceLine": 635,
+      "text": "(a) data subject already has been provided with such information ; or"
+    },
+    {
+      "sourceLine": 636,
+      "text": "(b) provision of such information is impossible or would involve a"
+    },
+    {
+      "sourceLine": 637,
+      "text": "disproportionate effort or expense."
+    },
+    {
+      "sourceLine": 638,
+      "text": "Provision of"
+    },
+    {
+      "sourceLine": 639,
+      "text": "information"
+    },
+    {
+      "sourceLine": 640,
+      "text": "to the data"
+    },
+    {
+      "sourceLine": 641,
+      "text": "subjectNigeria Data Protection Act, 2023 2022 No. 37 A 735"
+    },
+    {
+      "sourceLine": 642,
+      "text": "(3) The information referred to in subsection (1) shall be contained in a"
+    },
+    {
+      "sourceLine": 643,
+      "text": "privacy policy and expressed in clear, concise, transparent, intelligible, and"
+    },
+    {
+      "sourceLine": 644,
+      "text": "easily accessible format, taking into consideration the class of data subjects"
+    },
+    {
+      "sourceLine": 645,
+      "text": "targeted by the data processing."
+    },
+    {
+      "sourceLine": 646,
+      "text": "28.—(1) Where the processing of personal data may likely result in"
+    },
+    {
+      "sourceLine": 647,
+      "text": "high risk to the rights and freedoms of a data subject by virtue of its nature,"
+    },
+    {
+      "sourceLine": 648,
+      "text": "scope, context, and purposes, a data controller shall, prior to the processing,"
+    },
+    {
+      "sourceLine": 649,
+      "text": "carry out a data privacy impact assessment."
+    },
+    {
+      "sourceLine": 650,
+      "text": "(2) The data controller shall consult the Commission prior to the processing"
+    },
+    {
+      "sourceLine": 651,
+      "text": "if, notwithstanding the measures envisaged under this section, the data"
+    },
+    {
+      "sourceLine": 652,
+      "text": "protection impact assessment indicates that the processing of the data would"
+    },
+    {
+      "sourceLine": 653,
+      "text": "result in a high risk to the rights and freedoms of a data subject."
+    },
+    {
+      "sourceLine": 654,
+      "text": "(3) The Commission may make regulations or issue directives with"
+    },
+    {
+      "sourceLine": 655,
+      "text": "regards to this section, including the categories of processing and persons"
+    },
+    {
+      "sourceLine": 656,
+      "text": "subject to the requirement for the conduct of a data privacy impact assessment."
+    },
+    {
+      "sourceLine": 657,
+      "text": "(4) For purposes of this section, a “data privacy impact assessment” is"
+    },
+    {
+      "sourceLine": 658,
+      "text": "a process designed to identify the risks and impact of the envisaged processing"
+    },
+    {
+      "sourceLine": 659,
+      "text": "of personal data, and it comprises —"
+    },
+    {
+      "sourceLine": 660,
+      "text": "(a) a systematic description of the envisaged processing and its purpose,"
+    },
+    {
+      "sourceLine": 661,
+      "text": "including the legitimate interest pursued by the data controller, data processor,"
+    },
+    {
+      "sourceLine": 662,
+      "text": "or third party ;"
+    },
+    {
+      "sourceLine": 663,
+      "text": "(b) an assessment of the necessity and proportionality of the processing"
+    },
+    {
+      "sourceLine": 664,
+      "text": "in relation to the purposes for which the personal data would be processed ;"
+    },
+    {
+      "sourceLine": 665,
+      "text": "(c) an assessment of the risks to the rights and freedoms of a data"
+    },
+    {
+      "sourceLine": 666,
+      "text": "subject ; and"
+    },
+    {
+      "sourceLine": 667,
+      "text": "(d) the measures envisaged to address the risks, safeguards, security"
+    },
+    {
+      "sourceLine": 668,
+      "text": "measures and mechanisms to ensure the protection of personal data, taking"
+    },
+    {
+      "sourceLine": 669,
+      "text": "into account the rights and legitimate interests of a data subject and other"
+    },
+    {
+      "sourceLine": 670,
+      "text": "persons concerned."
+    },
+    {
+      "sourceLine": 671,
+      "text": "29.—(1) Where a data controller engages the services of a data"
+    },
+    {
+      "sourceLine": 672,
+      "text": "processor, or a data processor engages the services of another data processor,"
+    },
+    {
+      "sourceLine": 673,
+      "text": "the data controller or data processor engaging another shall ensure that the"
+    },
+    {
+      "sourceLine": 674,
+      "text": "engaged data processor —"
+    },
+    {
+      "sourceLine": 675,
+      "text": "(a) complies with the principles and obligations set out in this Act as"
+    },
+    {
+      "sourceLine": 676,
+      "text": "applicable to the data controller ;"
+    },
+    {
+      "sourceLine": 677,
+      "text": "(b) assists the data controller or data processor, as the case may be, by"
+    },
+    {
+      "sourceLine": 678,
+      "text": "the use of appropriate technical and organisational measures, in the fulfilment"
+    },
+    {
+      "sourceLine": 679,
+      "text": "of the data controller’s obligations to honour the rights of a data subject"
+    },
+    {
+      "sourceLine": 680,
+      "text": "under Part VI ;"
+    },
+    {
+      "sourceLine": 681,
+      "text": "Obligations"
+    },
+    {
+      "sourceLine": 682,
+      "text": "of the data"
+    },
+    {
+      "sourceLine": 683,
+      "text": "controller"
+    },
+    {
+      "sourceLine": 684,
+      "text": "and data"
+    },
+    {
+      "sourceLine": 685,
+      "text": "processor"
+    },
+    {
+      "sourceLine": 686,
+      "text": "Data privacy"
+    },
+    {
+      "sourceLine": 687,
+      "text": "impact"
+    },
+    {
+      "sourceLine": 688,
+      "text": "assessment.A 736 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 689,
+      "text": "(c) implements appropriate technical and organisational measures to"
+    },
+    {
+      "sourceLine": 690,
+      "text": "ensure the security, integrity, and confidentiality of personal data as required"
+    },
+    {
+      "sourceLine": 691,
+      "text": "in Part VII ;"
+    },
+    {
+      "sourceLine": 692,
+      "text": "(d) provides the data controller or engaging data processor, where"
+    },
+    {
+      "sourceLine": 693,
+      "text": "applicable, with information reasonably required to comply and demonstrate"
+    },
+    {
+      "sourceLine": 694,
+      "text": "compliance with this Act ; and"
+    },
+    {
+      "sourceLine": 695,
+      "text": "(e) notifies the data controller or engaging data processor, where"
+    },
+    {
+      "sourceLine": 696,
+      "text": "applicable, when a new data processor is engaged."
+    },
+    {
+      "sourceLine": 697,
+      "text": "(2) The measures under subsection (1) include a written agreement"
+    },
+    {
+      "sourceLine": 698,
+      "text": "between the data controllers and the data processor, or between data"
+    },
+    {
+      "sourceLine": 699,
+      "text": "processors, as the case may be."
+    },
+    {
+      "sourceLine": 700,
+      "text": "30.—(1) Without prejudice to the principles set out in this Act, a data"
+    },
+    {
+      "sourceLine": 701,
+      "text": "controller or data processor shall not process, or permit a data processor to"
+    },
+    {
+      "sourceLine": 702,
+      "text": "process on its behalf, sensitive personal data, unless the —"
+    },
+    {
+      "sourceLine": 703,
+      "text": "(a) data subject has given and not withdrawn consent to the processing"
+    },
+    {
+      "sourceLine": 704,
+      "text": "for the specific purpose or purposes for which it will be processed ;"
+    },
+    {
+      "sourceLine": 705,
+      "text": "(b) processing is necessary for the purposes of performing the"
+    },
+    {
+      "sourceLine": 706,
+      "text": "obligations of the data controller or exercising rights of the data subject"
+    },
+    {
+      "sourceLine": 707,
+      "text": "under employment or social security laws or any other similar laws ;"
+    },
+    {
+      "sourceLine": 708,
+      "text": "(c) processing is necessary to protect the vital interests of the data"
+    },
+    {
+      "sourceLine": 709,
+      "text": "subject or of another person, where the data subject is physically or legally"
+    },
+    {
+      "sourceLine": 710,
+      "text": "incapable of giving consent ;"
+    },
+    {
+      "sourceLine": 711,
+      "text": "(d) processing is carried out in the course of its legitimate activities,"
+    },
+    {
+      "sourceLine": 712,
+      "text": "with appropriate safeguards, by a foundation, association, or such other"
+    },
+    {
+      "sourceLine": 713,
+      "text": "non-profit organisation with charitable, educational, literary, artistic,"
+    },
+    {
+      "sourceLine": 714,
+      "text": "philosophical, religious, or trade union purposes, and the —"
+    },
+    {
+      "sourceLine": 715,
+      "text": "(i) processing relates solely to the members or former members of"
+    },
+    {
+      "sourceLine": 716,
+      "text": "the entity, or to persons, who have regular contact with it in connection"
+    },
+    {
+      "sourceLine": 717,
+      "text": "with its purposes, and"
+    },
+    {
+      "sourceLine": 718,
+      "text": "(ii) sensitive personal data is not disclosed outside of the entity without"
+    },
+    {
+      "sourceLine": 719,
+      "text": "the explicit consent of the data subject ;"
+    },
+    {
+      "sourceLine": 720,
+      "text": "(e) processing is necessary for the establishment, exercise, or defense"
+    },
+    {
+      "sourceLine": 721,
+      "text": "of a legal claim, obtaining legal advice, or conduct of a legal proceeding ;"
+    },
+    {
+      "sourceLine": 722,
+      "text": "(f ) processing is necessary for reasons of substantial public interest, on"
+    },
+    {
+      "sourceLine": 723,
+      "text": "the basis of a law, which shall be proportionate to the aim pursued, and"
+    },
+    {
+      "sourceLine": 724,
+      "text": "provides for suitable and specific measures to safeguard the fundamental"
+    },
+    {
+      "sourceLine": 725,
+      "text": "rights, freedoms and interests of the data subject ;"
+    },
+    {
+      "sourceLine": 726,
+      "text": "(g) processing is carried out for purposes of medical care or community"
+    },
+    {
+      "sourceLine": 727,
+      "text": "welfare, and undertaken by or under the responsibility of a professional or"
+    },
+    {
+      "sourceLine": 728,
+      "text": "similar service provider owing a duty of confidentiality ;"
+    },
+    {
+      "sourceLine": 729,
+      "text": "Sensitive"
+    },
+    {
+      "sourceLine": 730,
+      "text": "personal"
+    },
+    {
+      "sourceLine": 731,
+      "text": "dataNigeria Data Protection Act, 2023 2022 No. 37 A 737"
+    },
+    {
+      "sourceLine": 732,
+      "text": "(h) processing is necessary for reasons of public health and provides"
+    },
+    {
+      "sourceLine": 733,
+      "text": "for suitable and specific measures to safeguard the fundamental rights,"
+    },
+    {
+      "sourceLine": 734,
+      "text": "freedoms and interests of the data subject ; or"
+    },
+    {
+      "sourceLine": 735,
+      "text": "(i) processing is necessary for archiving purposes in the public interest,"
+    },
+    {
+      "sourceLine": 736,
+      "text": "or historical, statistical, or scientific research, in each case on the basis of a"
+    },
+    {
+      "sourceLine": 737,
+      "text": "law, which shall be proportionate to the aim pursued, and provides for suitable"
+    },
+    {
+      "sourceLine": 738,
+      "text": "and specific measures to safeguard the fundamental rights and freedoms"
+    },
+    {
+      "sourceLine": 739,
+      "text": "and the interests of the data subject."
+    },
+    {
+      "sourceLine": 740,
+      "text": "(2) The Commission may make regulations or issue directives"
+    },
+    {
+      "sourceLine": 741,
+      "text": "prescribing —"
+    },
+    {
+      "sourceLine": 742,
+      "text": "(a) further categories of personal data that may be classified as sensitive"
+    },
+    {
+      "sourceLine": 743,
+      "text": "personal data ;"
+    },
+    {
+      "sourceLine": 744,
+      "text": "(b) further grounds on which such personal data may be processed ; and"
+    },
+    {
+      "sourceLine": 745,
+      "text": "(c) safeguards that may apply."
+    },
+    {
+      "sourceLine": 746,
+      "text": "(3) The Commission shall, in making regulations or issuing directives"
+    },
+    {
+      "sourceLine": 747,
+      "text": "under subsection (2), have regard to the —"
+    },
+    {
+      "sourceLine": 748,
+      "text": "(a) risk of significant harm that may be caused to a data subject or a class"
+    },
+    {
+      "sourceLine": 749,
+      "text": "of data subjects by the processing of such category of personal data ;"
+    },
+    {
+      "sourceLine": 750,
+      "text": "(b) reasonable expectation of confidentiality attached to such category"
+    },
+    {
+      "sourceLine": 751,
+      "text": "of personal data ; and"
+    },
+    {
+      "sourceLine": 752,
+      "text": "(c) adequacy of protection afforded to personal data generally."
+    },
+    {
+      "sourceLine": 753,
+      "text": "31.—(1) Where a data subject is a child or a person lacking the legal"
+    },
+    {
+      "sourceLine": 754,
+      "text": "capacity to consent, a data controller shall obtain the consent of the parent or"
+    },
+    {
+      "sourceLine": 755,
+      "text": "legal guardian, as applicable, to rely on consent under this Act."
+    },
+    {
+      "sourceLine": 756,
+      "text": "(2) A data controller shall apply appropriate mechanisms to verify age"
+    },
+    {
+      "sourceLine": 757,
+      "text": "and consent, taking into consideration available technology."
+    },
+    {
+      "sourceLine": 758,
+      "text": "(3) For the purposes of subsection (2), presentation of any government"
+    },
+    {
+      "sourceLine": 759,
+      "text": "approved identification documents shall be an appropriate mechanism."
+    },
+    {
+      "sourceLine": 760,
+      "text": "(4) subsection (1) shall not apply, where the processing is —"
+    },
+    {
+      "sourceLine": 761,
+      "text": "(a) necessary to protect the vital interests of the child or person lacking"
+    },
+    {
+      "sourceLine": 762,
+      "text": "the legal capacity to consent ;"
+    },
+    {
+      "sourceLine": 763,
+      "text": "(b) carried out for purposes of education, medical, or social care, and"
+    },
+    {
+      "sourceLine": 764,
+      "text": "undertaken by or under the responsibility of a professional or similar service"
+    },
+    {
+      "sourceLine": 765,
+      "text": "provider owing a duty of confidentiality ; or"
+    },
+    {
+      "sourceLine": 766,
+      "text": "(c) necessary for proceedings before a court relating to the individual."
+    },
+    {
+      "sourceLine": 767,
+      "text": "(5) Where the circumstance relates to the processing of personal data"
+    },
+    {
+      "sourceLine": 768,
+      "text": "of a child of 13 years and above in relation to the provision of information and"
+    },
+    {
+      "sourceLine": 769,
+      "text": "services by electronic means at the specific request of the child, the Commission"
+    },
+    {
+      "sourceLine": 770,
+      "text": "shall make regulations in accordance with the objectives of this Act."
+    },
+    {
+      "sourceLine": 771,
+      "text": "Children or"
+    },
+    {
+      "sourceLine": 772,
+      "text": "persons"
+    },
+    {
+      "sourceLine": 773,
+      "text": "lacking the"
+    },
+    {
+      "sourceLine": 774,
+      "text": "legal"
+    },
+    {
+      "sourceLine": 775,
+      "text": "capacity to"
+    },
+    {
+      "sourceLine": 776,
+      "text": "consentA 738 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 777,
+      "text": "(6) Nothing in this Act shall be construed as authorising data processing"
+    },
+    {
+      "sourceLine": 778,
+      "text": "in respect of a child in a manner that is inconsistent with the provisions of the"
+    },
+    {
+      "sourceLine": 779,
+      "text": "Child’s Right Act."
+    },
+    {
+      "sourceLine": 780,
+      "text": "32.—(1) A data controller of major importance shall designate a Data"
+    },
+    {
+      "sourceLine": 781,
+      "text": "Protection Officer with expert knowledge of data protection law and practices,"
+    },
+    {
+      "sourceLine": 782,
+      "text": "and the ability to carry out the tasks prescribed under this Act and subsidiary"
+    },
+    {
+      "sourceLine": 783,
+      "text": "legislation made under it."
+    },
+    {
+      "sourceLine": 784,
+      "text": "(2) The Data Protection Officer may be an employee of a data controller"
+    },
+    {
+      "sourceLine": 785,
+      "text": "or engaged by a service contract."
+    },
+    {
+      "sourceLine": 786,
+      "text": "(3) The Data Protection Officer shall —"
+    },
+    {
+      "sourceLine": 787,
+      "text": "(a) advise the data controller or the data processor, and their employees,"
+    },
+    {
+      "sourceLine": 788,
+      "text": "who carry out processing made under this Act ;"
+    },
+    {
+      "sourceLine": 789,
+      "text": "(b) monitor compliance with this Act and related policies of the data"
+    },
+    {
+      "sourceLine": 790,
+      "text": "controller or data processor ; and"
+    },
+    {
+      "sourceLine": 791,
+      "text": "(c) act as the contact point for the Commission on issues relating to data"
+    },
+    {
+      "sourceLine": 792,
+      "text": "processing."
+    },
+    {
+      "sourceLine": 793,
+      "text": "33. The Commission may license a person having a requisite level of"
+    },
+    {
+      "sourceLine": 794,
+      "text": "expertise, in relation to data protection and this Act, to monitor, audit and"
+    },
+    {
+      "sourceLine": 795,
+      "text": "report on compliance by data controllers and data processors with —"
+    },
+    {
+      "sourceLine": 796,
+      "text": "(a) this Act ; and"
+    },
+    {
+      "sourceLine": 797,
+      "text": "(b) regulations, guidelines, directives, and codes of conduct issued by"
+    },
+    {
+      "sourceLine": 798,
+      "text": "the Commission made under the provisions of this Act."
+    },
+    {
+      "sourceLine": 799,
+      "text": "PART VI — RIGHTS OF A DATA SUBJECT"
+    },
+    {
+      "sourceLine": 800,
+      "text": "34.—(1) A data subject has the right to obtain from a data controller,"
+    },
+    {
+      "sourceLine": 801,
+      "text": "without constraint or unreasonable delay —"
+    },
+    {
+      "sourceLine": 802,
+      "text": "(a) confirmation as to whether the data controller or a data processor"
+    },
+    {
+      "sourceLine": 803,
+      "text": "operating on its behalf, is storing or otherwise processing personal data"
+    },
+    {
+      "sourceLine": 804,
+      "text": "relating to the data subject, and where that is the case —"
+    },
+    {
+      "sourceLine": 805,
+      "text": "(i) the purposes of the processing,"
+    },
+    {
+      "sourceLine": 806,
+      "text": "(ii) the categories of personal data concerned,"
+    },
+    {
+      "sourceLine": 807,
+      "text": "(iii) the recipients or categories of recipient to whom the personal data"
+    },
+    {
+      "sourceLine": 808,
+      "text": "have been or will be disclosed, particularly recipients in third countries or"
+    },
+    {
+      "sourceLine": 809,
+      "text": "international organisations,"
+    },
+    {
+      "sourceLine": 810,
+      "text": "(iv) where possible, the period for which the personal data will be stored,"
+    },
+    {
+      "sourceLine": 811,
+      "text": "or, if not possible, the criteria used to determine that period,"
+    },
+    {
+      "sourceLine": 812,
+      "text": "(v) the existence of the right to request from the data controller"
+    },
+    {
+      "sourceLine": 813,
+      "text": "rectification or erasure of personal data, or restriction of processing of"
+    },
+    {
+      "sourceLine": 814,
+      "text": "personal data concerning the data subject or to object to such processing,"
+    },
+    {
+      "sourceLine": 815,
+      "text": "Act No. 26,"
+    },
+    {
+      "sourceLine": 816,
+      "text": "2003"
+    },
+    {
+      "sourceLine": 817,
+      "text": "Data"
+    },
+    {
+      "sourceLine": 818,
+      "text": "Protection"
+    },
+    {
+      "sourceLine": 819,
+      "text": "Officers"
+    },
+    {
+      "sourceLine": 820,
+      "text": "Data"
+    },
+    {
+      "sourceLine": 821,
+      "text": "protection"
+    },
+    {
+      "sourceLine": 822,
+      "text": "compliance"
+    },
+    {
+      "sourceLine": 823,
+      "text": "services"
+    },
+    {
+      "sourceLine": 824,
+      "text": "Rights of a"
+    },
+    {
+      "sourceLine": 825,
+      "text": "data subjectNigeria Data Protection Act, 2023 2022 No. 37 A 739"
+    },
+    {
+      "sourceLine": 826,
+      "text": "(vi) the right to lodge a complaint with the Commission,"
+    },
+    {
+      "sourceLine": 827,
+      "text": "(vii) where the personal data is not collected from the data subject, any"
+    },
+    {
+      "sourceLine": 828,
+      "text": "available information as to their source, and"
+    },
+    {
+      "sourceLine": 829,
+      "text": "(viii) the existence of automated decision-making, including profiling,"
+    },
+    {
+      "sourceLine": 830,
+      "text": "the significance and envisaged consequences for the data subject ;"
+    },
+    {
+      "sourceLine": 831,
+      "text": "(b) a copy of data subject’s personal data in a commonly used electronic"
+    },
+    {
+      "sourceLine": 832,
+      "text": "format, except to the extent that providing such data would impose"
+    },
+    {
+      "sourceLine": 833,
+      "text": "unreasonable costs on the data controller, in which case the data subject"
+    },
+    {
+      "sourceLine": 834,
+      "text": "may be required by the data controller to bear some or all of such costs ;"
+    },
+    {
+      "sourceLine": 835,
+      "text": "(c) the correction or, if correction is not feasible or suitable, deletion of"
+    },
+    {
+      "sourceLine": 836,
+      "text": "the data subject’s personal data that is inaccurate, out of date, incomplete,"
+    },
+    {
+      "sourceLine": 837,
+      "text": "or misleading ;"
+    },
+    {
+      "sourceLine": 838,
+      "text": "(d) the erasure of personal data concerning the data subject, without"
+    },
+    {
+      "sourceLine": 839,
+      "text": "undue delay ; and"
+    },
+    {
+      "sourceLine": 840,
+      "text": "(e) restriction of data processing pending —"
+    },
+    {
+      "sourceLine": 841,
+      "text": "(i) the resolution of a request,"
+    },
+    {
+      "sourceLine": 842,
+      "text": "(ii) objection by the data subject under this Act, or"
+    },
+    {
+      "sourceLine": 843,
+      "text": "(iii) the establishment, exercise, or defense of legal claims."
+    },
+    {
+      "sourceLine": 844,
+      "text": "(2) A data controller shall erase personal data without undue delay,"
+    },
+    {
+      "sourceLine": 845,
+      "text": "where —"
+    },
+    {
+      "sourceLine": 846,
+      "text": "(a) the personal data is no longer necessary, in relation to the purposes"
+    },
+    {
+      "sourceLine": 847,
+      "text": "for which it was collected or processed, or"
+    },
+    {
+      "sourceLine": 848,
+      "text": "(b) the data controller has no other lawful basis to retain the personal"
+    },
+    {
+      "sourceLine": 849,
+      "text": "data."
+    },
+    {
+      "sourceLine": 850,
+      "text": "35.—(1) A data subject shall have the right to withdraw, at any time,"
+    },
+    {
+      "sourceLine": 851,
+      "text": "consent to the processing of personal data under this Act."
+    },
+    {
+      "sourceLine": 852,
+      "text": "(2) The data controller shall ensure that it is as easy for the data subject"
+    },
+    {
+      "sourceLine": 853,
+      "text": "to withdraw, as to give consent."
+    },
+    {
+      "sourceLine": 854,
+      "text": "36.—(1) A data subject shall have the right to object to the processing"
+    },
+    {
+      "sourceLine": 855,
+      "text": "of personal data relating to the data subject."
+    },
+    {
+      "sourceLine": 856,
+      "text": "(2) A data controller shall discontinue the processing of personal data,"
+    },
+    {
+      "sourceLine": 857,
+      "text": "unless the data controller demonstrates a public interest or other legitimate"
+    },
+    {
+      "sourceLine": 858,
+      "text": "grounds, which overrides the fundamental rights and freedoms, and the interests"
+    },
+    {
+      "sourceLine": 859,
+      "text": "of the data subject."
+    },
+    {
+      "sourceLine": 860,
+      "text": "(3) Where personal data is processed for direct marketing purposes, the"
+    },
+    {
+      "sourceLine": 861,
+      "text": "data subject shall have the right to object, at any time, to the processing of"
+    },
+    {
+      "sourceLine": 862,
+      "text": "personal data concerning the data subject, which includes profiling to the extent"
+    },
+    {
+      "sourceLine": 863,
+      "text": "that it is related to such direct marketing."
+    },
+    {
+      "sourceLine": 864,
+      "text": "Withdrawal"
+    },
+    {
+      "sourceLine": 865,
+      "text": "of consent"
+    },
+    {
+      "sourceLine": 866,
+      "text": "Right to"
+    },
+    {
+      "sourceLine": 867,
+      "text": "objectA 740 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 868,
+      "text": "(4) Where the data subject objects to processing for direct marketing"
+    },
+    {
+      "sourceLine": 869,
+      "text": "purposes, the personal data shall no longer be processed for such purposes."
+    },
+    {
+      "sourceLine": 870,
+      "text": "37.—(1) A data subject shall have the right not to be subject to a decision"
+    },
+    {
+      "sourceLine": 871,
+      "text": "based solely on automated processing of personal data, including profiling,"
+    },
+    {
+      "sourceLine": 872,
+      "text": "which produces legal or similar significant effects concerning the data subject."
+    },
+    {
+      "sourceLine": 873,
+      "text": "(2) Subsection (1) shall not apply, where the decision is —"
+    },
+    {
+      "sourceLine": 874,
+      "text": "(a) necessary for entering into or the performance of a contract between"
+    },
+    {
+      "sourceLine": 875,
+      "text": "the data subject and a data controller ;"
+    },
+    {
+      "sourceLine": 876,
+      "text": "(b) authorised by a written law, which establishes suitable measures to"
+    },
+    {
+      "sourceLine": 877,
+      "text": "safeguard the fundamental rights and freedoms, and the interests of the"
+    },
+    {
+      "sourceLine": 878,
+      "text": "data subject ; or"
+    },
+    {
+      "sourceLine": 879,
+      "text": "(c) authorised by the consent of the data subject."
+    },
+    {
+      "sourceLine": 880,
+      "text": "(3) The data controller shall implement suitable measures to safeguard"
+    },
+    {
+      "sourceLine": 881,
+      "text": "the data subject’s fundamental rights, freedoms and interests, including the"
+    },
+    {
+      "sourceLine": 882,
+      "text": "rights to —"
+    },
+    {
+      "sourceLine": 883,
+      "text": "(a) obtain human intervention on the part of the data controller ;"
+    },
+    {
+      "sourceLine": 884,
+      "text": "(b) express the data subject’s point of view ; and"
+    },
+    {
+      "sourceLine": 885,
+      "text": "(c) contest the decision."
+    },
+    {
+      "sourceLine": 886,
+      "text": "38.—(1) The Commission may make regulations establishing a right of"
+    },
+    {
+      "sourceLine": 887,
+      "text": "personal data portability."
+    },
+    {
+      "sourceLine": 888,
+      "text": "(2) Right of data portability under this Act shall entitle the data"
+    },
+    {
+      "sourceLine": 889,
+      "text": "subject to —"
+    },
+    {
+      "sourceLine": 890,
+      "text": "(a) receive, without undue delay from a data controller, personal data"
+    },
+    {
+      "sourceLine": 891,
+      "text": "concerning the data subject in a structured, commonly used, and machine\u0002readable format ;"
+    },
+    {
+      "sourceLine": 892,
+      "text": "(b) transmit the personal data obtained under paragraph (a) to another"
+    },
+    {
+      "sourceLine": 893,
+      "text": "data controller without any hindrance ; and"
+    },
+    {
+      "sourceLine": 894,
+      "text": "(c) where technically possible, have the personal data transmitted directly"
+    },
+    {
+      "sourceLine": 895,
+      "text": "from one data controller to another."
+    },
+    {
+      "sourceLine": 896,
+      "text": "(3) The Commission may prescribe —"
+    },
+    {
+      "sourceLine": 897,
+      "text": " (a) circumstances and conditions on which the data subject may exercise"
+    },
+    {
+      "sourceLine": 898,
+      "text": "the right of data portability ; and"
+    },
+    {
+      "sourceLine": 899,
+      "text": "(b) the obligations it would impose on a data controller or data processor,"
+    },
+    {
+      "sourceLine": 900,
+      "text": "or categories of data controllers or data processors, including in relation to"
+    },
+    {
+      "sourceLine": 901,
+      "text": "costs and timing."
+    },
+    {
+      "sourceLine": 902,
+      "text": "Automated"
+    },
+    {
+      "sourceLine": 903,
+      "text": "decision"
+    },
+    {
+      "sourceLine": 904,
+      "text": "making"
+    },
+    {
+      "sourceLine": 905,
+      "text": "Data"
+    },
+    {
+      "sourceLine": 906,
+      "text": "portabilityNigeria Data Protection Act, 2023 2022 No. 37 A 741"
+    },
+    {
+      "sourceLine": 907,
+      "text": "PART VII — DATA SECURITY"
+    },
+    {
+      "sourceLine": 908,
+      "text": "39.—(1) A data controller and data processor shall implement appropriate"
+    },
+    {
+      "sourceLine": 909,
+      "text": "technical and organisational measures to ensure the security, integrity and"
+    },
+    {
+      "sourceLine": 910,
+      "text": "confidentiality of personal data in its possession or under its control, including"
+    },
+    {
+      "sourceLine": 911,
+      "text": "protections against accidental or unlawful destruction, loss, misuse, alteration,"
+    },
+    {
+      "sourceLine": 912,
+      "text": "unauthorised disclosure, or access, taking into account —"
+    },
+    {
+      "sourceLine": 913,
+      "text": "(a) the amount and sensitivity of the personal data ;"
+    },
+    {
+      "sourceLine": 914,
+      "text": "(b) the nature, degree and likelihood of harm to a data subject that could"
+    },
+    {
+      "sourceLine": 915,
+      "text": "result from the loss, disclosure, or other misuse of the personal data ;"
+    },
+    {
+      "sourceLine": 916,
+      "text": "(c) the extent of the processing ;"
+    },
+    {
+      "sourceLine": 917,
+      "text": "(d) the period of data retention ; and"
+    },
+    {
+      "sourceLine": 918,
+      "text": "(e) the availability and cost of any technologies, tools, or other measures"
+    },
+    {
+      "sourceLine": 919,
+      "text": "to be implemented relative to the size of the data controller or data processor."
+    },
+    {
+      "sourceLine": 920,
+      "text": "(2) Measures implemented under subsection (1) may include —"
+    },
+    {
+      "sourceLine": 921,
+      "text": "(a) pseudonymisation or other methods of de-identification of personal"
+    },
+    {
+      "sourceLine": 922,
+      "text": "data ;"
+    },
+    {
+      "sourceLine": 923,
+      "text": "(b) encryption of personal data ;"
+    },
+    {
+      "sourceLine": 924,
+      "text": "(c) processes to ensure security, integrity, confidentiality, availability"
+    },
+    {
+      "sourceLine": 925,
+      "text": "and resilience of processing systems and services ;"
+    },
+    {
+      "sourceLine": 926,
+      "text": "(d) processes to restore availability of and access to personal data in a"
+    },
+    {
+      "sourceLine": 927,
+      "text": "timely manner, in the event of a physical or technical incident ;"
+    },
+    {
+      "sourceLine": 928,
+      "text": "(e) periodic assessments of risks to processing systems and services,"
+    },
+    {
+      "sourceLine": 929,
+      "text": "including where the processing involves the transmission of data over an"
+    },
+    {
+      "sourceLine": 930,
+      "text": "electronic communications network ;"
+    },
+    {
+      "sourceLine": 931,
+      "text": "(f ) regular testing, assessing, and evaluation of the effectiveness of the"
+    },
+    {
+      "sourceLine": 932,
+      "text": "measures implemented against current and evolving risks identified ; and"
+    },
+    {
+      "sourceLine": 933,
+      "text": "(g) regular updating of the measures and introduction of new measures"
+    },
+    {
+      "sourceLine": 934,
+      "text": "to address shortcomings in effectiveness, and accommodate evolving risks."
+    },
+    {
+      "sourceLine": 935,
+      "text": "40.—(1) Where a personal data breach has occurred with respect to"
+    },
+    {
+      "sourceLine": 936,
+      "text": "personal data being stored or processed by a data processor, the data processor"
+    },
+    {
+      "sourceLine": 937,
+      "text": "shall, on becoming aware of the breach —"
+    },
+    {
+      "sourceLine": 938,
+      "text": "(a) notify the data controller or data processor that engaged it,"
+    },
+    {
+      "sourceLine": 939,
+      "text": "describing the nature of the personal data breach including, where possible,"
+    },
+    {
+      "sourceLine": 940,
+      "text": "the categories and approximate numbers of data subjects and personal"
+    },
+    {
+      "sourceLine": 941,
+      "text": "data records concerned ; and"
+    },
+    {
+      "sourceLine": 942,
+      "text": "(b) respond to all information requests from the data controller or data"
+    },
+    {
+      "sourceLine": 943,
+      "text": "processor that engaged it, as they may require to comply with their obligations"
+    },
+    {
+      "sourceLine": 944,
+      "text": "under this section."
+    },
+    {
+      "sourceLine": 945,
+      "text": "Personal"
+    },
+    {
+      "sourceLine": 946,
+      "text": "data"
+    },
+    {
+      "sourceLine": 947,
+      "text": "breaches"
+    },
+    {
+      "sourceLine": 948,
+      "text": "Security,"
+    },
+    {
+      "sourceLine": 949,
+      "text": "integrity,"
+    },
+    {
+      "sourceLine": 950,
+      "text": "a n d"
+    },
+    {
+      "sourceLine": 951,
+      "text": "confidentialityA 742 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 952,
+      "text": "(2) A data controller shall, within 72 hours of becoming aware of a"
+    },
+    {
+      "sourceLine": 953,
+      "text": "breach which is likely to result in a risk to the rights and freedoms of individuals,"
+    },
+    {
+      "sourceLine": 954,
+      "text": "notify the Commission of the breach and, where feasible, describe the nature"
+    },
+    {
+      "sourceLine": 955,
+      "text": "of the personal data breach including the categories and approximate numbers"
+    },
+    {
+      "sourceLine": 956,
+      "text": "of data subjects and personal data records concerned."
+    },
+    {
+      "sourceLine": 957,
+      "text": "(3) Where a personal data breach is likely to result in a high risk to the"
+    },
+    {
+      "sourceLine": 958,
+      "text": "rights and freedoms of a data subject the data controller shall immediately"
+    },
+    {
+      "sourceLine": 959,
+      "text": "communicate the personal data breach to the data subject in plain and clear"
+    },
+    {
+      "sourceLine": 960,
+      "text": "language, including advice about measures the data subject could take to"
+    },
+    {
+      "sourceLine": 961,
+      "text": "mitigate effectively the possible adverse effects of the data breach and if a"
+    },
+    {
+      "sourceLine": 962,
+      "text": "direct communication to the data subject would involve disproportionate effort"
+    },
+    {
+      "sourceLine": 963,
+      "text": "or expense, or is otherwise not feasible, the data controller may instead make"
+    },
+    {
+      "sourceLine": 964,
+      "text": "a public communication in one or more widely used media sources such that"
+    },
+    {
+      "sourceLine": 965,
+      "text": "the data subject is likely to be informed."
+    },
+    {
+      "sourceLine": 966,
+      "text": "(4) The notifications and communications referred to in subsections (1),"
+    },
+    {
+      "sourceLine": 967,
+      "text": "(2) and (3) shall, in addition to the requirements of those subsections —"
+    },
+    {
+      "sourceLine": 968,
+      "text": "(a) communicate the name and contact details of a point of contact of"
+    },
+    {
+      "sourceLine": 969,
+      "text": "the data controller, where more information can be obtained ;"
+    },
+    {
+      "sourceLine": 970,
+      "text": "(b) describe the likely consequences of the personal data breach ; and"
+    },
+    {
+      "sourceLine": 971,
+      "text": "(c) describe the measures taken or proposed to be taken to address the"
+    },
+    {
+      "sourceLine": 972,
+      "text": "personal data breach, including, where appropriate, measures to mitigate"
+    },
+    {
+      "sourceLine": 973,
+      "text": "its possible adverse effects."
+    },
+    {
+      "sourceLine": 974,
+      "text": "(5) The Commission may, at any time, make a public communication"
+    },
+    {
+      "sourceLine": 975,
+      "text": "about a personal data breach notified to it under subsection (2), where it"
+    },
+    {
+      "sourceLine": 976,
+      "text": "considers the steps of the data controller to inform data subjects inadequate."
+    },
+    {
+      "sourceLine": 977,
+      "text": "(6) The Commission shall issue and publish regulations on the steps to"
+    },
+    {
+      "sourceLine": 978,
+      "text": "be taken by a data controller to adequately inform data subjects of a personal"
+    },
+    {
+      "sourceLine": 979,
+      "text": "data breach for purposes of subsection (3)."
+    },
+    {
+      "sourceLine": 980,
+      "text": "(7) In evaluating whether a personal data breach is likely to result in a"
+    },
+    {
+      "sourceLine": 981,
+      "text": "risk to the rights and freedoms of a data subject under subsection (3), a data"
+    },
+    {
+      "sourceLine": 982,
+      "text": "controller and the Commission may take into account —"
+    },
+    {
+      "sourceLine": 983,
+      "text": "(a) the likely effectiveness of any technical and administrative measures"
+    },
+    {
+      "sourceLine": 984,
+      "text": "implemented to mitigate the likely harm resulting from the personal data breach,"
+    },
+    {
+      "sourceLine": 985,
+      "text": "including any encryption or de-identification of the data ;"
+    },
+    {
+      "sourceLine": 986,
+      "text": "(b) any subsequent measures taken by the data controller to mitigate"
+    },
+    {
+      "sourceLine": 987,
+      "text": "such risk ; and"
+    },
+    {
+      "sourceLine": 988,
+      "text": "(c) the nature, scope and sensitivity of the personal data involved.Nigeria Data Protection Act, 2023 2022 No. 37 A 743"
+    },
+    {
+      "sourceLine": 989,
+      "text": "(8) A data controller and data processor shall keep a record of all personal"
+    },
+    {
+      "sourceLine": 990,
+      "text": "data breaches, comprising the facts relating to the personal data breach, its"
+    },
+    {
+      "sourceLine": 991,
+      "text": "effects and the remedial action taken in a manner that enables the Commission"
+    },
+    {
+      "sourceLine": 992,
+      "text": "to verify compliance with this section."
+    },
+    {
+      "sourceLine": 993,
+      "text": "(9) Where it is not possible to provide information under this section at"
+    },
+    {
+      "sourceLine": 994,
+      "text": "the same time, the information may be provided in phases without undue delay."
+    },
+    {
+      "sourceLine": 995,
+      "text": "PART VIII — CROSS-BORDER TRANSFERS OF PERSONAL DATA"
+    },
+    {
+      "sourceLine": 996,
+      "text": "41.—(1) A data controller or data processor shall not transfer or permit"
+    },
+    {
+      "sourceLine": 997,
+      "text": "personal data to be transferred from Nigeria to another country, unless —"
+    },
+    {
+      "sourceLine": 998,
+      "text": "(a) the recipient of the personal data is subject to a law, binding corporate"
+    },
+    {
+      "sourceLine": 999,
+      "text": "rules, contractual clauses, code of conduct, or certification mechanism that"
+    },
+    {
+      "sourceLine": 1000,
+      "text": "affords an adequate level of protection with respect to the personal data in"
+    },
+    {
+      "sourceLine": 1001,
+      "text": "accordance with this Act ; or"
+    },
+    {
+      "sourceLine": 1002,
+      "text": "(b) one of the conditions set out in section 43 of this Act applies."
+    },
+    {
+      "sourceLine": 1003,
+      "text": "(2) A data controller or data processor shall record the basis for transfer"
+    },
+    {
+      "sourceLine": 1004,
+      "text": "of personal data to another country under subsection (1) and the adequacy of"
+    },
+    {
+      "sourceLine": 1005,
+      "text": "protection under section 42 of this Act."
+    },
+    {
+      "sourceLine": 1006,
+      "text": "(3) The Commission may make regulations requiring data controllers"
+    },
+    {
+      "sourceLine": 1007,
+      "text": "and data processors to notify it of the measures in place under subsection (1)"
+    },
+    {
+      "sourceLine": 1008,
+      "text": "and to explain their adequacy in terms of section 42 of this Act."
+    },
+    {
+      "sourceLine": 1009,
+      "text": "(4) The Commission may, by regulations, designate categories of personal"
+    },
+    {
+      "sourceLine": 1010,
+      "text": "data that are subject to additional specified restrictions on transfer to another"
+    },
+    {
+      "sourceLine": 1011,
+      "text": "country based on the nature of such personal data and risks to data subjects."
+    },
+    {
+      "sourceLine": 1012,
+      "text": "42.—(1) A level of protection is adequate for the purposes of this section"
+    },
+    {
+      "sourceLine": 1013,
+      "text": "if it upholds principles that are substantially similar to the conditions for"
+    },
+    {
+      "sourceLine": 1014,
+      "text": "processing of the personal data provided for in this Act."
+    },
+    {
+      "sourceLine": 1015,
+      "text": "(2) The adequacy of protection referred to in subsection (1) shall be"
+    },
+    {
+      "sourceLine": 1016,
+      "text": "assessed taking into account the —"
+    },
+    {
+      "sourceLine": 1017,
+      "text": "(a) availability of enforceable data subject rights, the ability of a data"
+    },
+    {
+      "sourceLine": 1018,
+      "text": "subject to enforce such rights through administrative or judicial redress,"
+    },
+    {
+      "sourceLine": 1019,
+      "text": "and the rule of law ;"
+    },
+    {
+      "sourceLine": 1020,
+      "text": "(b) existence of any appropriate instrument between the Commission"
+    },
+    {
+      "sourceLine": 1021,
+      "text": "and a competent authority in the recipient jurisdiction that ensures adequate"
+    },
+    {
+      "sourceLine": 1022,
+      "text": "data protection ;"
+    },
+    {
+      "sourceLine": 1023,
+      "text": "(c) access of a public authority to personal data ;"
+    },
+    {
+      "sourceLine": 1024,
+      "text": "(d) existence of an effective data protection law ;"
+    },
+    {
+      "sourceLine": 1025,
+      "text": "(e) existence and functioning of an independent, competent data"
+    },
+    {
+      "sourceLine": 1026,
+      "text": "protection, or similar supervisory authority with adequate enforcement"
+    },
+    {
+      "sourceLine": 1027,
+      "text": "powers ; and"
+    },
+    {
+      "sourceLine": 1028,
+      "text": "Basis for"
+    },
+    {
+      "sourceLine": 1029,
+      "text": "cross-border"
+    },
+    {
+      "sourceLine": 1030,
+      "text": "transfer of"
+    },
+    {
+      "sourceLine": 1031,
+      "text": "personal"
+    },
+    {
+      "sourceLine": 1032,
+      "text": "data"
+    },
+    {
+      "sourceLine": 1033,
+      "text": "Adequacy of"
+    },
+    {
+      "sourceLine": 1034,
+      "text": "protectionA 744 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1035,
+      "text": "(f ) international commitments and conventions binding on the relevant"
+    },
+    {
+      "sourceLine": 1036,
+      "text": "country and its membership of any multilateral or regional organisations."
+    },
+    {
+      "sourceLine": 1037,
+      "text": "(3) The Commission shall issue guidelines as to the assessment of"
+    },
+    {
+      "sourceLine": 1038,
+      "text": "adequacy and the factors set out under subsection (2)."
+    },
+    {
+      "sourceLine": 1039,
+      "text": "(4) The Commission may determine whether a country, region or specified"
+    },
+    {
+      "sourceLine": 1040,
+      "text": "sector within a country, or standard contractual clauses, affords an adequate"
+    },
+    {
+      "sourceLine": 1041,
+      "text": "level of protection under subsection (1)."
+    },
+    {
+      "sourceLine": 1042,
+      "text": "(5) The Commission may approve binding corporate rules, codes of conduct,"
+    },
+    {
+      "sourceLine": 1043,
+      "text": "certification mechanisms or similar instruments for data transfer proposed to it,"
+    },
+    {
+      "sourceLine": 1044,
+      "text": "where the Commission is satisfied that such instruments meet appropriate"
+    },
+    {
+      "sourceLine": 1045,
+      "text": "standards of data protection in accordance with the objectives of this Act."
+    },
+    {
+      "sourceLine": 1046,
+      "text": "(6) The absence of a determination by the Commission under subsection"
+    },
+    {
+      "sourceLine": 1047,
+      "text": "(4) or (5) with respect to a country, territory, sector, binding corporate rules,"
+    },
+    {
+      "sourceLine": 1048,
+      "text": "contractual clause, code of conduct, or certification mechanism shall not imply"
+    },
+    {
+      "sourceLine": 1049,
+      "text": "the adequacy of the protections afforded by it."
+    },
+    {
+      "sourceLine": 1050,
+      "text": "(7) The Commission may make a determination under subsection (4)"
+    },
+    {
+      "sourceLine": 1051,
+      "text": "based on adequacy decision made by a competent authority of other"
+    },
+    {
+      "sourceLine": 1052,
+      "text": "jurisdictions, where such decision have taken into account factors similar to"
+    },
+    {
+      "sourceLine": 1053,
+      "text": "those listed in this section."
+    },
+    {
+      "sourceLine": 1054,
+      "text": "43.—(1) In the absence of adequacy of protection under section ż42 of"
+    },
+    {
+      "sourceLine": 1055,
+      "text": "this Act, a data controller or data processor shall only transfer personal data"
+    },
+    {
+      "sourceLine": 1056,
+      "text": "from Nigeria to another country if the—"
+    },
+    {
+      "sourceLine": 1057,
+      "text": "(a) data subject has provided and not withdrawn consent to such transfer"
+    },
+    {
+      "sourceLine": 1058,
+      "text": "after having been informed of the possible risks of such transfers for the data"
+    },
+    {
+      "sourceLine": 1059,
+      "text": "subject due to the absence of adequate protections ;"
+    },
+    {
+      "sourceLine": 1060,
+      "text": "(b) transfer is necessary for the performance of a contract to which a"
+    },
+    {
+      "sourceLine": 1061,
+      "text": "data subject is a party or in order to take steps at the request of a data subject,"
+    },
+    {
+      "sourceLine": 1062,
+      "text": "prior to entering into a contract ;"
+    },
+    {
+      "sourceLine": 1063,
+      "text": "(c) transfer is for the sole benefit of a data subject and —"
+    },
+    {
+      "sourceLine": 1064,
+      "text": "(i) it is not reasonably practicable to obtain the consent of the data subject"
+    },
+    {
+      "sourceLine": 1065,
+      "text": "to that transfer, and"
+    },
+    {
+      "sourceLine": 1066,
+      "text": "(ii) if it were reasonably practicable to obtain such consent, the data"
+    },
+    {
+      "sourceLine": 1067,
+      "text": "subject would likely give it ;"
+    },
+    {
+      "sourceLine": 1068,
+      "text": "(d) transfer is necessary for important reasons of public interest ;"
+    },
+    {
+      "sourceLine": 1069,
+      "text": "(e) transfer is necessary for the establishment, exercise, or defense of"
+    },
+    {
+      "sourceLine": 1070,
+      "text": "legal claims ; or"
+    },
+    {
+      "sourceLine": 1071,
+      "text": "(f ) transfer is necessary to protect the vital interests of a data subject"
+    },
+    {
+      "sourceLine": 1072,
+      "text": "or of other persons, where a data subject is physically or legally incapable of"
+    },
+    {
+      "sourceLine": 1073,
+      "text": "giving consent."
+    },
+    {
+      "sourceLine": 1074,
+      "text": "Other bases"
+    },
+    {
+      "sourceLine": 1075,
+      "text": "for transfer"
+    },
+    {
+      "sourceLine": 1076,
+      "text": "of personal"
+    },
+    {
+      "sourceLine": 1077,
+      "text": "data outside"
+    },
+    {
+      "sourceLine": 1078,
+      "text": "NigeriaNigeria Data Protection Act, 2023 2022 No. 37 A 745"
+    },
+    {
+      "sourceLine": 1079,
+      "text": "(2) Without prejudice to any provision of this Act, no specific international,"
+    },
+    {
+      "sourceLine": 1080,
+      "text": "multi-national cross border data transfer codes, rules or certification"
+    },
+    {
+      "sourceLine": 1081,
+      "text": "mechanisms shall be adopted as Federal Republic of Nigeria standard for the"
+    },
+    {
+      "sourceLine": 1082,
+      "text": "protection of data subject or data sovereignty without approval of the National"
+    },
+    {
+      "sourceLine": 1083,
+      "text": "Assembly."
+    },
+    {
+      "sourceLine": 1084,
+      "text": "PART IX — REGISTRATION AND FEES"
+    },
+    {
+      "sourceLine": 1085,
+      "text": "44.—(1) Data controllers and data processors of major importance"
+    },
+    {
+      "sourceLine": 1086,
+      "text": "shall register with the Commission within six months after the commencement"
+    },
+    {
+      "sourceLine": 1087,
+      "text": "of the Act or on becoming a data controller or data processor of major"
+    },
+    {
+      "sourceLine": 1088,
+      "text": "importance."
+    },
+    {
+      "sourceLine": 1089,
+      "text": "(2) Registration under subsection (1) shall be made by notifying the"
+    },
+    {
+      "sourceLine": 1090,
+      "text": "Commission of —"
+    },
+    {
+      "sourceLine": 1091,
+      "text": "(a) the name and address of the data controller or data processor, and"
+    },
+    {
+      "sourceLine": 1092,
+      "text": "name and address of the data protection officer of the data controller or"
+    },
+    {
+      "sourceLine": 1093,
+      "text": "data processor ;"
+    },
+    {
+      "sourceLine": 1094,
+      "text": "(b) a description of personal data and the categories and number of"
+    },
+    {
+      "sourceLine": 1095,
+      "text": "data subjects to which the personal data relate ;"
+    },
+    {
+      "sourceLine": 1096,
+      "text": "(c) the purposes for which personal data is processed ;"
+    },
+    {
+      "sourceLine": 1097,
+      "text": "(d) the categories of recipients to whom the data controller or data"
+    },
+    {
+      "sourceLine": 1098,
+      "text": "processor intends or is likely to disclose personal data ;"
+    },
+    {
+      "sourceLine": 1099,
+      "text": "(e) the name and address, or name and address of any representative of"
+    },
+    {
+      "sourceLine": 1100,
+      "text": "any data processor operating directly or indirectly on its behalf ;"
+    },
+    {
+      "sourceLine": 1101,
+      "text": "(f ) the country to which the data controller or data processor intends,"
+    },
+    {
+      "sourceLine": 1102,
+      "text": "directly or indirectly to transfer the personal data ;"
+    },
+    {
+      "sourceLine": 1103,
+      "text": "(g) a general description of the risks, safeguards, security measures"
+    },
+    {
+      "sourceLine": 1104,
+      "text": "and mechanisms to ensure the protection of the personal data ; and"
+    },
+    {
+      "sourceLine": 1105,
+      "text": "(h) any other information required by the Commission."
+    },
+    {
+      "sourceLine": 1106,
+      "text": "(3) A data controller or data processor of major importance shall notify"
+    },
+    {
+      "sourceLine": 1107,
+      "text": "the Commission of any significant change to the information submitted under"
+    },
+    {
+      "sourceLine": 1108,
+      "text": "subsection (2) within 60 days after such change."
+    },
+    {
+      "sourceLine": 1109,
+      "text": "(4) The Commission shall maintain and publish on its website a register"
+    },
+    {
+      "sourceLine": 1110,
+      "text": "of duly registered data controllers and data processors of major importance."
+    },
+    {
+      "sourceLine": 1111,
+      "text": "(5) A data controller or data processor shall be removed from the register"
+    },
+    {
+      "sourceLine": 1112,
+      "text": "of the Commission, where it notifies the Commission that it has ceased to"
+    },
+    {
+      "sourceLine": 1113,
+      "text": "operate as a data controller or data processor of major importance."
+    },
+    {
+      "sourceLine": 1114,
+      "text": "(6) The Commission may exempt a class of data controllers or data"
+    },
+    {
+      "sourceLine": 1115,
+      "text": "processors of major importance from the registration requirements of this"
+    },
+    {
+      "sourceLine": 1116,
+      "text": "section, where it considers such requirement to be unnecessary or"
+    },
+    {
+      "sourceLine": 1117,
+      "text": "disproportionate."
+    },
+    {
+      "sourceLine": 1118,
+      "text": "Registration"
+    },
+    {
+      "sourceLine": 1119,
+      "text": "of data"
+    },
+    {
+      "sourceLine": 1120,
+      "text": "controllers"
+    },
+    {
+      "sourceLine": 1121,
+      "text": "and data"
+    },
+    {
+      "sourceLine": 1122,
+      "text": "processors"
+    },
+    {
+      "sourceLine": 1123,
+      "text": "of major"
+    },
+    {
+      "sourceLine": 1124,
+      "text": "importanceA 746 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1125,
+      "text": "45. The Commission may prescribe fees or levies to be paid by data"
+    },
+    {
+      "sourceLine": 1126,
+      "text": "controllers and data processors of major importance."
+    },
+    {
+      "sourceLine": 1127,
+      "text": "PART X — ENFORCEMENT"
+    },
+    {
+      "sourceLine": 1128,
+      "text": "46.—(1) A data subject, who is aggrieved by the decision, action, or"
+    },
+    {
+      "sourceLine": 1129,
+      "text": "inaction of a data controller or data processor in violation of this Act, or subsidiary"
+    },
+    {
+      "sourceLine": 1130,
+      "text": "legislation made under this Act may lodge a complaint with the Commission."
+    },
+    {
+      "sourceLine": 1131,
+      "text": "(2) The Commission may investigate any complaint referred to it, where"
+    },
+    {
+      "sourceLine": 1132,
+      "text": "it appears to the Commission that the complaint is not frivolous or vexatious."
+    },
+    {
+      "sourceLine": 1133,
+      "text": "(3) The Commission may initiate an investigation of its own accord where"
+    },
+    {
+      "sourceLine": 1134,
+      "text": "it has reason to believe a data controller or data processor has violated or is"
+    },
+    {
+      "sourceLine": 1135,
+      "text": "likely to violate this Act or any subsidiary legislation made under this Act."
+    },
+    {
+      "sourceLine": 1136,
+      "text": "(4) The Commission may, for the purpose of an investigation, order a"
+    },
+    {
+      "sourceLine": 1137,
+      "text": "person to —"
+    },
+    {
+      "sourceLine": 1138,
+      "text": "(a) attend at a specific time and place for the purpose of being examined"
+    },
+    {
+      "sourceLine": 1139,
+      "text": "orally in relation to a complaint ;"
+    },
+    {
+      "sourceLine": 1140,
+      "text": "(b) produce such document, record, or article, as may be required with"
+    },
+    {
+      "sourceLine": 1141,
+      "text": "respect to any matter relevant to the investigation, which the person is not"
+    },
+    {
+      "sourceLine": 1142,
+      "text": "prevented by any other written law from disclosing ; or"
+    },
+    {
+      "sourceLine": 1143,
+      "text": "(c) furnish a statement in writing made under oath or an affirmation"
+    },
+    {
+      "sourceLine": 1144,
+      "text": "setting out all information, which may be required under the order."
+    },
+    {
+      "sourceLine": 1145,
+      "text": "(5) Where any material to which an investigation relates, consists of"
+    },
+    {
+      "sourceLine": 1146,
+      "text": "information stored in any document, record, minutes, mechanical or electronic"
+    },
+    {
+      "sourceLine": 1147,
+      "text": "device, the Commission may require the person named to produce such material"
+    },
+    {
+      "sourceLine": 1148,
+      "text": "or give access to the Commission to conduct an inspection on the material."
+    },
+    {
+      "sourceLine": 1149,
+      "text": "(6) For the purposes of subsection (5), the person shall ensure that the"
+    },
+    {
+      "sourceLine": 1150,
+      "text": "information relating to the material under investigation is visible and legible, in"
+    },
+    {
+      "sourceLine": 1151,
+      "text": "a structured, commonly used and machine-readable format."
+    },
+    {
+      "sourceLine": 1152,
+      "text": "(7) The Commission may, where necessary, make representations to —"
+    },
+    {
+      "sourceLine": 1153,
+      "text": "(a) the data controller or data processor on behalf of a complainant ; or"
+    },
+    {
+      "sourceLine": 1154,
+      "text": "(b) a complainant on behalf of the data controller or data processor."
+    },
+    {
+      "sourceLine": 1155,
+      "text": "(8) The Commission shall —"
+    },
+    {
+      "sourceLine": 1156,
+      "text": "(a) establish a unit to receive and follow up on complaints from data"
+    },
+    {
+      "sourceLine": 1157,
+      "text": "subjects and conduct investigations ; and"
+    },
+    {
+      "sourceLine": 1158,
+      "text": "(b) adopt rules and procedures on handling complaints and conducting"
+    },
+    {
+      "sourceLine": 1159,
+      "text": "investigations referred to it under this Act."
+    },
+    {
+      "sourceLine": 1160,
+      "text": "Fees and"
+    },
+    {
+      "sourceLine": 1161,
+      "text": "levies"
+    },
+    {
+      "sourceLine": 1162,
+      "text": "Complaints"
+    },
+    {
+      "sourceLine": 1163,
+      "text": "and"
+    },
+    {
+      "sourceLine": 1164,
+      "text": "investigationsNigeria Data Protection Act, 2023 2022 No. 37 A 747"
+    },
+    {
+      "sourceLine": 1165,
+      "text": "47.—(1) Where the Commission is satisfied that a data controller or"
+    },
+    {
+      "sourceLine": 1166,
+      "text": "data processor has violated or is likely to violate any requirement under this"
+    },
+    {
+      "sourceLine": 1167,
+      "text": "Act or subsidiary legislation made under this Act, the Commission may make"
+    },
+    {
+      "sourceLine": 1168,
+      "text": "an appropriate compliance order against that data controller or data processor."
+    },
+    {
+      "sourceLine": 1169,
+      "text": "(2) The order made by the Commission under subsection (1) may"
+    },
+    {
+      "sourceLine": 1170,
+      "text": "include a —"
+    },
+    {
+      "sourceLine": 1171,
+      "text": "(a) warning that certain act or omission is likely to be a violation of one"
+    },
+    {
+      "sourceLine": 1172,
+      "text": "or more provisions under this Act or any subsidiary legislation or orders"
+    },
+    {
+      "sourceLine": 1173,
+      "text": "issued under it ;"
+    },
+    {
+      "sourceLine": 1174,
+      "text": "(b) requirement that the data controller or data processor complies with"
+    },
+    {
+      "sourceLine": 1175,
+      "text": "such provisions, including complying with the requests of a data subject to"
+    },
+    {
+      "sourceLine": 1176,
+      "text": "exercise one or more rights under this Act ; or"
+    },
+    {
+      "sourceLine": 1177,
+      "text": "(c) cease and desist order requiring the data controller or data processor"
+    },
+    {
+      "sourceLine": 1178,
+      "text": "to stop or refrain from doing an act, which is in violation of this Act, including"
+    },
+    {
+      "sourceLine": 1179,
+      "text": "stopping or refraining from processing personal data that is the subject of"
+    },
+    {
+      "sourceLine": 1180,
+      "text": "the order."
+    },
+    {
+      "sourceLine": 1181,
+      "text": "(3) An order made under this section shall be in writing and shall"
+    },
+    {
+      "sourceLine": 1182,
+      "text": "specify —"
+    },
+    {
+      "sourceLine": 1183,
+      "text": "(a) the provisions of this Act that the Commission is satisfied the data"
+    },
+    {
+      "sourceLine": 1184,
+      "text": "controller or data processor has violated ;"
+    },
+    {
+      "sourceLine": 1185,
+      "text": "(b) specific measures to be taken by the data controller or data processor to"
+    },
+    {
+      "sourceLine": 1186,
+      "text": "avoid, remedy, or eliminate the situation which has resulted in the violation ;"
+    },
+    {
+      "sourceLine": 1187,
+      "text": "(c) a period within which to implement such measures ; and"
+    },
+    {
+      "sourceLine": 1188,
+      "text": "(d) a right to judicial review under section 50 of this Act."
+    },
+    {
+      "sourceLine": 1189,
+      "text": "48.—(1) Notwithstanding any criminal sanctions under this Act, if the"
+    },
+    {
+      "sourceLine": 1190,
+      "text": "Commission, after completing an investigation under section 46 of this Act, is"
+    },
+    {
+      "sourceLine": 1191,
+      "text": "satisfied that a data controller or data processor has violated any provision of"
+    },
+    {
+      "sourceLine": 1192,
+      "text": "this Act or subsidiary legislation made under this Act, it —"
+    },
+    {
+      "sourceLine": 1193,
+      "text": "(a) may make any appropriate enforcement order or impose a sanction"
+    },
+    {
+      "sourceLine": 1194,
+      "text": "on the data controller or data processor ; and"
+    },
+    {
+      "sourceLine": 1195,
+      "text": "(b) shall inform the data controller or data processor, and if applicable,"
+    },
+    {
+      "sourceLine": 1196,
+      "text": "any data subject who lodged a complaint leading to the investigation, in"
+    },
+    {
+      "sourceLine": 1197,
+      "text": "writing of its decision."
+    },
+    {
+      "sourceLine": 1198,
+      "text": "(2) An enforcement order made or sanction imposed under subsection"
+    },
+    {
+      "sourceLine": 1199,
+      "text": "(1) shall include —"
+    },
+    {
+      "sourceLine": 1200,
+      "text": "(a) requiring the data controller or data processor to remedy the violation ;"
+    },
+    {
+      "sourceLine": 1201,
+      "text": "(b) ordering the data controller or data processor to pay compensation"
+    },
+    {
+      "sourceLine": 1202,
+      "text": "to a data subject, who has suffered injury, loss, or harm as a result of a"
+    },
+    {
+      "sourceLine": 1203,
+      "text": "violation ;"
+    },
+    {
+      "sourceLine": 1204,
+      "text": "Compliance"
+    },
+    {
+      "sourceLine": 1205,
+      "text": "orders"
+    },
+    {
+      "sourceLine": 1206,
+      "text": "Enforcement"
+    },
+    {
+      "sourceLine": 1207,
+      "text": "ordersA 748 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1208,
+      "text": "(c) ordering the data controller or data processor to account for the"
+    },
+    {
+      "sourceLine": 1209,
+      "text": "profits realised from the violation ; or"
+    },
+    {
+      "sourceLine": 1210,
+      "text": "(d) ordering the data controller or data processor to pay a penalty or"
+    },
+    {
+      "sourceLine": 1211,
+      "text": "remedial fee."
+    },
+    {
+      "sourceLine": 1212,
+      "text": "(3) A penalty or remedial fee under subsection (2)(d) may be an amount"
+    },
+    {
+      "sourceLine": 1213,
+      "text": "up to the —"
+    },
+    {
+      "sourceLine": 1214,
+      "text": "(a) higher maximum amount, in the case of a data controller or data"
+    },
+    {
+      "sourceLine": 1215,
+      "text": "processor of major importance ; or"
+    },
+    {
+      "sourceLine": 1216,
+      "text": "(b) standard maximum amount, in the case of a data controller or data"
+    },
+    {
+      "sourceLine": 1217,
+      "text": "processor not of major importance."
+    },
+    {
+      "sourceLine": 1218,
+      "text": "(4) The “higher maximum amount” shall be the greater of —"
+    },
+    {
+      "sourceLine": 1219,
+      "text": "(a) N10,000,000, and"
+    },
+    {
+      "sourceLine": 1220,
+      "text": "(b) 2% of its annual gross revenue in the preceding financial year."
+    },
+    {
+      "sourceLine": 1221,
+      "text": "(5) The “standard maximum amount” shall be the greater of —"
+    },
+    {
+      "sourceLine": 1222,
+      "text": "(a) N2,000,000, and"
+    },
+    {
+      "sourceLine": 1223,
+      "text": "(b) 2% of its annual gross revenue in the preceding financial year."
+    },
+    {
+      "sourceLine": 1224,
+      "text": "(6) The Commission shall, in determining the sanctions, take into"
+    },
+    {
+      "sourceLine": 1225,
+      "text": "consideration the —"
+    },
+    {
+      "sourceLine": 1226,
+      "text": "(a) nature, gravity, and duration of the infringement ;"
+    },
+    {
+      "sourceLine": 1227,
+      "text": "(b) purpose of the processing ;"
+    },
+    {
+      "sourceLine": 1228,
+      "text": "(c) number of data subjects involved ;"
+    },
+    {
+      "sourceLine": 1229,
+      "text": "(d) level of damage and damage mitigation measures implemented ;"
+    },
+    {
+      "sourceLine": 1230,
+      "text": "(e) intent or negligence ;"
+    },
+    {
+      "sourceLine": 1231,
+      "text": "(f ) degree of cooperation with the Commission ; and"
+    },
+    {
+      "sourceLine": 1232,
+      "text": "(g) types of personal data involved."
+    },
+    {
+      "sourceLine": 1233,
+      "text": "49.—(1) A data controller or data processor, who fails to comply with"
+    },
+    {
+      "sourceLine": 1234,
+      "text": "orders made under section 47 of this Act commits an offence and is liable on"
+    },
+    {
+      "sourceLine": 1235,
+      "text": "conviction to —"
+    },
+    {
+      "sourceLine": 1236,
+      "text": "(a) a fine of up to the —"
+    },
+    {
+      "sourceLine": 1237,
+      "text": "(i) higher maximum amount, in the case of a data controller or data"
+    },
+    {
+      "sourceLine": 1238,
+      "text": "processor of major importance, or"
+    },
+    {
+      "sourceLine": 1239,
+      "text": "(ii) standard maximum amount, in the case of a data controller or"
+    },
+    {
+      "sourceLine": 1240,
+      "text": "data processor not of major importance ; or"
+    },
+    {
+      "sourceLine": 1241,
+      "text": "(b) imprisonment for a term not more than one year or both."
+    },
+    {
+      "sourceLine": 1242,
+      "text": "50. A person who is not satisfied with an order of the Commission, may"
+    },
+    {
+      "sourceLine": 1243,
+      "text": "apply to the court for judicial review within 30 days after the order was made."
+    },
+    {
+      "sourceLine": 1244,
+      "text": "Offences"
+    },
+    {
+      "sourceLine": 1245,
+      "text": "and"
+    },
+    {
+      "sourceLine": 1246,
+      "text": "penalties"
+    },
+    {
+      "sourceLine": 1247,
+      "text": "Judicial"
+    },
+    {
+      "sourceLine": 1248,
+      "text": "reviewNigeria Data Protection Act, 2023 2022 No. 37 A 749"
+    },
+    {
+      "sourceLine": 1249,
+      "text": "51. A data subject, who suffers injury, loss, or harm as a result of a"
+    },
+    {
+      "sourceLine": 1250,
+      "text": "violation of this Act by a data controller or data processor, may recover"
+    },
+    {
+      "sourceLine": 1251,
+      "text": "damages from such data controller or data processor in civil proceedings."
+    },
+    {
+      "sourceLine": 1252,
+      "text": "52. Notwithstanding anything to the contrary, the Court may make an"
+    },
+    {
+      "sourceLine": 1253,
+      "text": "order of forfeiture against a convicted data controller, data processor, or"
+    },
+    {
+      "sourceLine": 1254,
+      "text": "individual in accordance with the Proceeds of Crime (Recovery and"
+    },
+    {
+      "sourceLine": 1255,
+      "text": "Management) Act."
+    },
+    {
+      "sourceLine": 1256,
+      "text": "53.—(1) Where an offence has been committed by a body corporate or"
+    },
+    {
+      "sourceLine": 1257,
+      "text": "firm, the body corporate or firm, as well as principal officers of the body"
+    },
+    {
+      "sourceLine": 1258,
+      "text": "corporate or firm shall be deemed culpable, unless the principal officers prove"
+    },
+    {
+      "sourceLine": 1259,
+      "text": "that —"
+    },
+    {
+      "sourceLine": 1260,
+      "text": "(a) the offence was committed without their consent or connivance ; and"
+    },
+    {
+      "sourceLine": 1261,
+      "text": "(b) they exercised diligence to prevent the commission of the offence."
+    },
+    {
+      "sourceLine": 1262,
+      "text": "(2) A data controller and data processor shall be vicariously liable for"
+    },
+    {
+      "sourceLine": 1263,
+      "text": "the acts or omissions of its agent or employees, in so far as the acts or omissions"
+    },
+    {
+      "sourceLine": 1264,
+      "text": "relate to its business."
+    },
+    {
+      "sourceLine": 1265,
+      "text": "PART XI — LEGAL PROCEEDINGS"
+    },
+    {
+      "sourceLine": 1266,
+      "text": "54.—(1) A suit shall not be instituted against the Commission, a member"
+    },
+    {
+      "sourceLine": 1267,
+      "text": "of the Council, or staff of the Commission for an act done under or in execution"
+    },
+    {
+      "sourceLine": 1268,
+      "text": "of this Act, or any public duty of the Commission, unless —"
+    },
+    {
+      "sourceLine": 1269,
+      "text": "(a) it is commenced within three months after the act, neglect, or default"
+    },
+    {
+      "sourceLine": 1270,
+      "text": "complained of ; or"
+    },
+    {
+      "sourceLine": 1271,
+      "text": "(b) in the case of continued damage or injury, within three months after"
+    },
+    {
+      "sourceLine": 1272,
+      "text": "the ceasing of such act, neglect or default complained of."
+    },
+    {
+      "sourceLine": 1273,
+      "text": "(2) A suit shall not be commenced against the Commission, a member"
+    },
+    {
+      "sourceLine": 1274,
+      "text": "of the Council, or staff of the Commission before the expiration of one month"
+    },
+    {
+      "sourceLine": 1275,
+      "text": "after written notice of intention to commence the suit is served on the"
+    },
+    {
+      "sourceLine": 1276,
+      "text": "Commission, a member, or staff of the Commission by the intending plaintiff"
+    },
+    {
+      "sourceLine": 1277,
+      "text": "or plaintiff’s agent."
+    },
+    {
+      "sourceLine": 1278,
+      "text": "(3) The notice referred to in subsection (2) shall clearly state the —"
+    },
+    {
+      "sourceLine": 1279,
+      "text": "(a) cause of action ;"
+    },
+    {
+      "sourceLine": 1280,
+      "text": "(b) particulars of the claim ;"
+    },
+    {
+      "sourceLine": 1281,
+      "text": "(c) name and place of abode of the intending plaintiff ; and"
+    },
+    {
+      "sourceLine": 1282,
+      "text": "(d) relief sought."
+    },
+    {
+      "sourceLine": 1283,
+      "text": "(4) Subject to the provisions of this Act, the provisions of the Public"
+    },
+    {
+      "sourceLine": 1284,
+      "text": "Officers Protection Act, shall apply in relation to any suit instituted against an"
+    },
+    {
+      "sourceLine": 1285,
+      "text": "official or employee of the Commission."
+    },
+    {
+      "sourceLine": 1286,
+      "text": "Civil"
+    },
+    {
+      "sourceLine": 1287,
+      "text": "remedies"
+    },
+    {
+      "sourceLine": 1288,
+      "text": "Forfeiture"
+    },
+    {
+      "sourceLine": 1289,
+      "text": "Act No. 16,"
+    },
+    {
+      "sourceLine": 1290,
+      "text": "2022"
+    },
+    {
+      "sourceLine": 1291,
+      "text": "Joint and"
+    },
+    {
+      "sourceLine": 1292,
+      "text": "vicarious"
+    },
+    {
+      "sourceLine": 1293,
+      "text": "liability"
+    },
+    {
+      "sourceLine": 1294,
+      "text": "Limitation of"
+    },
+    {
+      "sourceLine": 1295,
+      "text": "suits against"
+    },
+    {
+      "sourceLine": 1296,
+      "text": "the"
+    },
+    {
+      "sourceLine": 1297,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 1298,
+      "text": "Cap. P41,"
+    },
+    {
+      "sourceLine": 1299,
+      "text": "LFN, 2004A 750 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1300,
+      "text": "55. A notice, summons, process, or document, required or authorised to"
+    },
+    {
+      "sourceLine": 1301,
+      "text": "be served on the Commission under the provisions of this Act or any other law"
+    },
+    {
+      "sourceLine": 1302,
+      "text": "or enactment, may be served by delivering it to the National Commissioner at"
+    },
+    {
+      "sourceLine": 1303,
+      "text": "the head office of the Commission."
+    },
+    {
+      "sourceLine": 1304,
+      "text": "56.—(1) An execution or attachment process shall not be issued against"
+    },
+    {
+      "sourceLine": 1305,
+      "text": "the property of the Commission, in respect of an action or suit against the"
+    },
+    {
+      "sourceLine": 1306,
+      "text": "Commission."
+    },
+    {
+      "sourceLine": 1307,
+      "text": "(2) A sum of money which may be the judgment of any court awarded"
+    },
+    {
+      "sourceLine": 1308,
+      "text": "against the Commission shall be paid from the Fund of the Commission."
+    },
+    {
+      "sourceLine": 1309,
+      "text": "57. The National Commissioner, a member of Council, staff of the"
+    },
+    {
+      "sourceLine": 1310,
+      "text": "Commission, or other persons engaged by the Commission shall be indemnified"
+    },
+    {
+      "sourceLine": 1311,
+      "text": "out of the assets of the Commission against —"
+    },
+    {
+      "sourceLine": 1312,
+      "text": "(a) losses, charges, claims, expenses, and liabilities incurred in the"
+    },
+    {
+      "sourceLine": 1313,
+      "text": "discharge of official duties, or"
+    },
+    {
+      "sourceLine": 1314,
+      "text": "(b) liability incurred in defending criminal or civil proceedings, where"
+    },
+    {
+      "sourceLine": 1315,
+      "text": "the —"
+    },
+    {
+      "sourceLine": 1316,
+      "text": "(i) judgement is given in favour of the National Commissioner, a"
+    },
+    {
+      "sourceLine": 1317,
+      "text": "member of the Council, or staff of the Commission,"
+    },
+    {
+      "sourceLine": 1318,
+      "text": "(ii) National Commissioner, a member of the Council, or staff of the"
+    },
+    {
+      "sourceLine": 1319,
+      "text": "Commission is otherwise acquitted,"
+    },
+    {
+      "sourceLine": 1320,
+      "text": "(iii) proceedings are otherwise disposed of without any finding or"
+    },
+    {
+      "sourceLine": 1321,
+      "text": "admission of any material breach of duty, or"
+    },
+    {
+      "sourceLine": 1322,
+      "text": "(iv) court grants the National Commissioner, a member of the Council,"
+    },
+    {
+      "sourceLine": 1323,
+      "text": "or staff of the Commission relief from liability for negligence, default,"
+    },
+    {
+      "sourceLine": 1324,
+      "text": "breach of duty, or breach of trust in relation to the Commission."
+    },
+    {
+      "sourceLine": 1325,
+      "text": "58.—(1) The Commission shall apply ex-parte to a Judge in Chambers"
+    },
+    {
+      "sourceLine": 1326,
+      "text": "for the issuance of a warrant for the purpose of obtaining evidence in relation"
+    },
+    {
+      "sourceLine": 1327,
+      "text": "to an investigation."
+    },
+    {
+      "sourceLine": 1328,
+      "text": "(2) A Judge may issue a warrant under subsection (1) on the satisfaction"
+    },
+    {
+      "sourceLine": 1329,
+      "text": "that —"
+    },
+    {
+      "sourceLine": 1330,
+      "text": "(a) a person has engaged, is engaging, or is likely to engage in a conduct"
+    },
+    {
+      "sourceLine": 1331,
+      "text": "that contravenes the provisions of this Act ;"
+    },
+    {
+      "sourceLine": 1332,
+      "text": "(b) the warrant is sought to prevent the commission of an offence under"
+    },
+    {
+      "sourceLine": 1333,
+      "text": "this Act ;"
+    },
+    {
+      "sourceLine": 1334,
+      "text": "(c) the warrant is sought to prevent interference with investigative"
+    },
+    {
+      "sourceLine": 1335,
+      "text": "process under this Act ;"
+    },
+    {
+      "sourceLine": 1336,
+      "text": "(d) the warrant is for the purpose of investigating data security breaches"
+    },
+    {
+      "sourceLine": 1337,
+      "text": "and data privacy breaches, or obtaining electronic evidence ; or"
+    },
+    {
+      "sourceLine": 1338,
+      "text": "(e) the person named in the warrant is preparing to commit an offence"
+    },
+    {
+      "sourceLine": 1339,
+      "text": "under this Act."
+    },
+    {
+      "sourceLine": 1340,
+      "text": "Service of"
+    },
+    {
+      "sourceLine": 1341,
+      "text": "documents"
+    },
+    {
+      "sourceLine": 1342,
+      "text": "Restriction"
+    },
+    {
+      "sourceLine": 1343,
+      "text": "on execution"
+    },
+    {
+      "sourceLine": 1344,
+      "text": "against"
+    },
+    {
+      "sourceLine": 1345,
+      "text": "property of"
+    },
+    {
+      "sourceLine": 1346,
+      "text": "the"
+    },
+    {
+      "sourceLine": 1347,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 1348,
+      "text": "Indemnity of"
+    },
+    {
+      "sourceLine": 1349,
+      "text": "staff,"
+    },
+    {
+      "sourceLine": 1350,
+      "text": "members,"
+    },
+    {
+      "sourceLine": 1351,
+      "text": "and"
+    },
+    {
+      "sourceLine": 1352,
+      "text": "employees"
+    },
+    {
+      "sourceLine": 1353,
+      "text": "of the"
+    },
+    {
+      "sourceLine": 1354,
+      "text": "Commission"
+    },
+    {
+      "sourceLine": 1355,
+      "text": "Power of"
+    },
+    {
+      "sourceLine": 1356,
+      "text": "arrest,"
+    },
+    {
+      "sourceLine": 1357,
+      "text": "search, and"
+    },
+    {
+      "sourceLine": 1358,
+      "text": "seizureNigeria Data Protection Act, 2023 2022 No. 37 A 751"
+    },
+    {
+      "sourceLine": 1359,
+      "text": "(3) A warrant issued under subsection (2) shall authorise the Commission"
+    },
+    {
+      "sourceLine": 1360,
+      "text": "to —"
+    },
+    {
+      "sourceLine": 1361,
+      "text": "(a) in the company of a law enforcement officer, enter and search any"
+    },
+    {
+      "sourceLine": 1362,
+      "text": "premises, where —"
+    },
+    {
+      "sourceLine": 1363,
+      "text": "(i) an offence under this Act is being committed,"
+    },
+    {
+      "sourceLine": 1364,
+      "text": "(ii) there is evidence of the commission of an offence under this Act"
+    },
+    {
+      "sourceLine": 1365,
+      "text": "or other relevant law,"
+    },
+    {
+      "sourceLine": 1366,
+      "text": "(iii) there is an urgent need to prevent the commission of an offence"
+    },
+    {
+      "sourceLine": 1367,
+      "text": "under this Act or other relevant law, or"
+    },
+    {
+      "sourceLine": 1368,
+      "text": "(iv) where there is reasonable suspicion that a crime under this Act is"
+    },
+    {
+      "sourceLine": 1369,
+      "text": "or about to be committed ;"
+    },
+    {
+      "sourceLine": 1370,
+      "text": "(b) stop and search any person found on such premises ;"
+    },
+    {
+      "sourceLine": 1371,
+      "text": "(c) enter and search any conveyance found on the premises ;"
+    },
+    {
+      "sourceLine": 1372,
+      "text": "(d) seize, seal, remove, or detain anything which is, or contains evidence"
+    },
+    {
+      "sourceLine": 1373,
+      "text": "of the commission of an offence under this Act ;"
+    },
+    {
+      "sourceLine": 1374,
+      "text": "(e) use or cause to be used a computer or other devices to search any"
+    },
+    {
+      "sourceLine": 1375,
+      "text": "data contained in or available to any computer system or computer network;"
+    },
+    {
+      "sourceLine": 1376,
+      "text": "(f ) use any technology to decode or decrypt any coded or encrypted data"
+    },
+    {
+      "sourceLine": 1377,
+      "text": "contained in a computer into readable text or comprehensible format ; or"
+    },
+    {
+      "sourceLine": 1378,
+      "text": "(g) require any person having charge of or conversant with the operation"
+    },
+    {
+      "sourceLine": 1379,
+      "text": "of a computer or electronic device in connection with an offence under this"
+    },
+    {
+      "sourceLine": 1380,
+      "text": "Act to produce such computer or electronic device."
+    },
+    {
+      "sourceLine": 1381,
+      "text": "59. A legal officer of the Commission or a private legal practitioner"
+    },
+    {
+      "sourceLine": 1382,
+      "text": "engaged by the Commission may represent the Commission in civil proceedings,"
+    },
+    {
+      "sourceLine": 1383,
+      "text": "in respect of matters relating to the business or operations of the Commission."
+    },
+    {
+      "sourceLine": 1384,
+      "text": "PART XII — MISCELLANEOUS PROVISIONS"
+    },
+    {
+      "sourceLine": 1385,
+      "text": "60. Subject to the provisions of this Act, the Minister may give to the"
+    },
+    {
+      "sourceLine": 1386,
+      "text": "Commission directives of a general nature or relating generally to matters of"
+    },
+    {
+      "sourceLine": 1387,
+      "text": "policy with respect to the objectives and functions of the Commission, and the"
+    },
+    {
+      "sourceLine": 1388,
+      "text": "Commission shall comply with the directives."
+    },
+    {
+      "sourceLine": 1389,
+      "text": "61.—(1) The Commission may make regulations for carrying out its"
+    },
+    {
+      "sourceLine": 1390,
+      "text": "objectives under this Act."
+    },
+    {
+      "sourceLine": 1391,
+      "text": "(2) Without prejudice to subsection (1), the regulations may provide for —"
+    },
+    {
+      "sourceLine": 1392,
+      "text": "(a) the financial management of the affairs of the Commission ;"
+    },
+    {
+      "sourceLine": 1393,
+      "text": "(b) the protection of personal data and data subjects ;"
+    },
+    {
+      "sourceLine": 1394,
+      "text": "(c) the manner in which the Commission may exercise any power,"
+    },
+    {
+      "sourceLine": 1395,
+      "text": "discharge any duty or perform any function under this Act ;"
+    },
+    {
+      "sourceLine": 1396,
+      "text": "(d) any matter that under this Act is required or permitted to be"
+    },
+    {
+      "sourceLine": 1397,
+      "text": "prescribed ;"
+    },
+    {
+      "sourceLine": 1398,
+      "text": "Right to"
+    },
+    {
+      "sourceLine": 1399,
+      "text": "appear in"
+    },
+    {
+      "sourceLine": 1400,
+      "text": "court"
+    },
+    {
+      "sourceLine": 1401,
+      "text": "Directives"
+    },
+    {
+      "sourceLine": 1402,
+      "text": "by the"
+    },
+    {
+      "sourceLine": 1403,
+      "text": "Minister"
+    },
+    {
+      "sourceLine": 1404,
+      "text": "RegulationsA 752 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1405,
+      "text": "(e) the forms of applications and related documents required for the"
+    },
+    {
+      "sourceLine": 1406,
+      "text": "purposes of this Act ;"
+    },
+    {
+      "sourceLine": 1407,
+      "text": "(f ) the procedures to be followed under this Act in the submission of"
+    },
+    {
+      "sourceLine": 1408,
+      "text": "complaints to the Commission ;"
+    },
+    {
+      "sourceLine": 1409,
+      "text": "(g) frequency of filing and content of compliance returns by data"
+    },
+    {
+      "sourceLine": 1410,
+      "text": "controllers and data processors of major importance to the Commission ;"
+    },
+    {
+      "sourceLine": 1411,
+      "text": "(h) fees, fines, and charges prescribed under this Act and such related"
+    },
+    {
+      "sourceLine": 1412,
+      "text": "matters ; and"
+    },
+    {
+      "sourceLine": 1413,
+      "text": "(i) any matter that the Commission considers necessary or expedient to"
+    },
+    {
+      "sourceLine": 1414,
+      "text": "give effect to the objectives of this Act."
+    },
+    {
+      "sourceLine": 1415,
+      "text": "(3) The regulations made under this Act may —"
+    },
+    {
+      "sourceLine": 1416,
+      "text": "(a) create offences in respect of any contravention of the regulations ; and"
+    },
+    {
+      "sourceLine": 1417,
+      "text": "(b) impose penalty not more than that prescribed in this Act."
+    },
+    {
+      "sourceLine": 1418,
+      "text": "(4) The Commission may, prior to making any regulation under this Act,"
+    },
+    {
+      "sourceLine": 1419,
+      "text": "publish on its website, a draft regulation and a notice inviting comments to be"
+    },
+    {
+      "sourceLine": 1420,
+      "text": "submitted on the proposed regulation within a stipulated time."
+    },
+    {
+      "sourceLine": 1421,
+      "text": "62. The Commission may, where necessary, issue directives, codes, or"
+    },
+    {
+      "sourceLine": 1422,
+      "text": "guidelines on the —"
+    },
+    {
+      "sourceLine": 1423,
+      "text": "(a) conduct of the business and operations of the Commission in a"
+    },
+    {
+      "sourceLine": 1424,
+      "text": "manner that —"
+    },
+    {
+      "sourceLine": 1425,
+      "text": "(i) fosters accountability, ensures transparency and consistency with"
+    },
+    {
+      "sourceLine": 1426,
+      "text": "the highest ethical standards, and"
+    },
+    {
+      "sourceLine": 1427,
+      "text": "(ii) ensures compliance with international best practices, as it relates"
+    },
+    {
+      "sourceLine": 1428,
+      "text": "to the regulation of data protection and privacy ;"
+    },
+    {
+      "sourceLine": 1429,
+      "text": "(b) budgeting and expenditure of the Commission in accordance with"
+    },
+    {
+      "sourceLine": 1430,
+      "text": "the provisions of this Act ;"
+    },
+    {
+      "sourceLine": 1431,
+      "text": "(c) governance code for the Commission ; and"
+    },
+    {
+      "sourceLine": 1432,
+      "text": "(d) any other matter relevant to the operations of the Commission."
+    },
+    {
+      "sourceLine": 1433,
+      "text": "63. Where the provisions of any other law or enactment, in so far as"
+    },
+    {
+      "sourceLine": 1434,
+      "text": "they provide or relate directly or indirectly to the processing of personal data,"
+    },
+    {
+      "sourceLine": 1435,
+      "text": "are inconsistent with any of the provisions of this Act, the provisions of this"
+    },
+    {
+      "sourceLine": 1436,
+      "text": "Act shall prevail."
+    },
+    {
+      "sourceLine": 1437,
+      "text": "64.—(1) A reference to the Nigeria Data Protection Bureau (in this"
+    },
+    {
+      "sourceLine": 1438,
+      "text": "section referred to as “the Bureau”) existing before the commencement of"
+    },
+    {
+      "sourceLine": 1439,
+      "text": "this Act, or a document issued in the name of the Bureau, shall be read as a"
+    },
+    {
+      "sourceLine": 1440,
+      "text": "reference to the Commission established under this Act, and all persons engaged"
+    },
+    {
+      "sourceLine": 1441,
+      "text": "by the Commission shall have the same rights, powers and remedies as existed"
+    },
+    {
+      "sourceLine": 1442,
+      "text": "in the Bureau before the commencement of this Act."
+    },
+    {
+      "sourceLine": 1443,
+      "text": "Directives,"
+    },
+    {
+      "sourceLine": 1444,
+      "text": "codes, and"
+    },
+    {
+      "sourceLine": 1445,
+      "text": "guidelines"
+    },
+    {
+      "sourceLine": 1446,
+      "text": "Priority of"
+    },
+    {
+      "sourceLine": 1447,
+      "text": "the Act"
+    },
+    {
+      "sourceLine": 1448,
+      "text": "Transitional"
+    },
+    {
+      "sourceLine": 1449,
+      "text": "provisionsNigeria Data Protection Act, 2023 2022 No. 37 A 753"
+    },
+    {
+      "sourceLine": 1450,
+      "text": "(2) For the purpose of subsection (1) —"
+    },
+    {
+      "sourceLine": 1451,
+      "text": "(a) a person who, prior to the commencement of this Act, was an"
+    },
+    {
+      "sourceLine": 1452,
+      "text": "officer, employee or member of staff of the Bureau shall continue in office,"
+    },
+    {
+      "sourceLine": 1453,
+      "text": "and be deemed to have been appointed under this Act on such terms and"
+    },
+    {
+      "sourceLine": 1454,
+      "text": "conditions not less favourable than that enjoyed prior to the transfer of"
+    },
+    {
+      "sourceLine": 1455,
+      "text": "service ;"
+    },
+    {
+      "sourceLine": 1456,
+      "text": "(b) all existing agreements and contracts currently in effect by the"
+    },
+    {
+      "sourceLine": 1457,
+      "text": "Bureau, as it relates to the provisions of this Act shall continue ;"
+    },
+    {
+      "sourceLine": 1458,
+      "text": "(c) all records and equipment previously belonging to or allocated for"
+    },
+    {
+      "sourceLine": 1459,
+      "text": "use to the Bureau shall become, on the effective date of this Act, part of"
+    },
+    {
+      "sourceLine": 1460,
+      "text": "the records and equipment of the Commission ;"
+    },
+    {
+      "sourceLine": 1461,
+      "text": "(d) properties held immediately before the commencement of this Act"
+    },
+    {
+      "sourceLine": 1462,
+      "text": "on behalf of the Bureau shall on the commencement of this Act, be vested"
+    },
+    {
+      "sourceLine": 1463,
+      "text": "in the Commission established under this Act ;"
+    },
+    {
+      "sourceLine": 1464,
+      "text": "(e) any proceeding or cause of action pending or existing immediately"
+    },
+    {
+      "sourceLine": 1465,
+      "text": "before the commencement of this Act by or against the Bureau, in respect"
+    },
+    {
+      "sourceLine": 1466,
+      "text": "of any right, interest, obligation or liability may be commenced or continued,"
+    },
+    {
+      "sourceLine": 1467,
+      "text": "as the case may be by the Commission ; and"
+    },
+    {
+      "sourceLine": 1468,
+      "text": "(f ) all orders, rules, regulations, decisions, directions, licences,"
+    },
+    {
+      "sourceLine": 1469,
+      "text": "authorisations, certificates, consents, approvals, declarations, permits,"
+    },
+    {
+      "sourceLine": 1470,
+      "text": "registrations, rates or other documents that are in effect before the coming"
+    },
+    {
+      "sourceLine": 1471,
+      "text": "into effect of this Act and that are made or issued by the National Information"
+    },
+    {
+      "sourceLine": 1472,
+      "text": "Technology Development Agency or the Bureau shall continue in effect as"
+    },
+    {
+      "sourceLine": 1473,
+      "text": "if they were made or issued by the Commission until they expire or are"
+    },
+    {
+      "sourceLine": 1474,
+      "text": "repealed, replaced, reassembled or altered."
+    },
+    {
+      "sourceLine": 1475,
+      "text": "65. In this Act —"
+    },
+    {
+      "sourceLine": 1476,
+      "text": "“automated decision-making” means a decision based solely on automated"
+    },
+    {
+      "sourceLine": 1477,
+      "text": "processing by automated means, without any human involvement ;"
+    },
+    {
+      "sourceLine": 1478,
+      "text": "“applicable law” means any law enacted by the National Assembly or"
+    },
+    {
+      "sourceLine": 1479,
+      "text": "House of Assembly of any State in Nigeria ;"
+    },
+    {
+      "sourceLine": 1480,
+      "text": "“binding corporate rules” means personal data protection policies and"
+    },
+    {
+      "sourceLine": 1481,
+      "text": "procedures adhered to by the members of a group of firms under common"
+    },
+    {
+      "sourceLine": 1482,
+      "text": "control with respect to the transfer of personal data among such members"
+    },
+    {
+      "sourceLine": 1483,
+      "text": "and containing provisions for the protection of such personal data ;"
+    },
+    {
+      "sourceLine": 1484,
+      "text": "“biometric data” means personal data resulting from specific technical"
+    },
+    {
+      "sourceLine": 1485,
+      "text": "processing relating to the physical, physiological, or behavioural"
+    },
+    {
+      "sourceLine": 1486,
+      "text": "characteristics of an individual, which allow or confirm the unique"
+    },
+    {
+      "sourceLine": 1487,
+      "text": "identification of that individual, including without limitation by physical"
+    },
+    {
+      "sourceLine": 1488,
+      "text": "measurements, facial images, blood typing, fingerprinting, retinal scanning,"
+    },
+    {
+      "sourceLine": 1489,
+      "text": "voice recognition and deoxyribonucleic acid (DNA) analysis ;"
+    },
+    {
+      "sourceLine": 1490,
+      "text": "InterpretationA 754 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1491,
+      "text": "“certification mechanism” means certification by an official or"
+    },
+    {
+      "sourceLine": 1492,
+      "text": "professional third-party entity that evaluates the personal data protection"
+    },
+    {
+      "sourceLine": 1493,
+      "text": "policies and procedures of data controllers and data processors according"
+    },
+    {
+      "sourceLine": 1494,
+      "text": "to best practices ;"
+    },
+    {
+      "sourceLine": 1495,
+      "text": "“child” has the meaning ascribed in the Child’s Right Act, No. 26, 2003 ;"
+    },
+    {
+      "sourceLine": 1496,
+      "text": "“Commission” means the Nigeria Data Protection Commission"
+    },
+    {
+      "sourceLine": 1497,
+      "text": "established under this Act ;"
+    },
+    {
+      "sourceLine": 1498,
+      "text": "“consent” means any freely given, specific, informed, and unambiguous"
+    },
+    {
+      "sourceLine": 1499,
+      "text": "indication, whether by a written or oral statement or an affirmative action,"
+    },
+    {
+      "sourceLine": 1500,
+      "text": "of an individual’s agreement to the processing of personal data relating to"
+    },
+    {
+      "sourceLine": 1501,
+      "text": "him or to another individual on whose behalf he has the permission to"
+    },
+    {
+      "sourceLine": 1502,
+      "text": "provide such consent ;"
+    },
+    {
+      "sourceLine": 1503,
+      "text": "“Council” means the Governing Council of the Commission established"
+    },
+    {
+      "sourceLine": 1504,
+      "text": "under this Act ;"
+    },
+    {
+      "sourceLine": 1505,
+      "text": "“competent authority” includes —"
+    },
+    {
+      "sourceLine": 1506,
+      "text": "(a) the Government of the Federal Republic of Nigeria or any foreign"
+    },
+    {
+      "sourceLine": 1507,
+      "text": "government ; or"
+    },
+    {
+      "sourceLine": 1508,
+      "text": "(b) any state government, statutory authority, government authority,"
+    },
+    {
+      "sourceLine": 1509,
+      "text": "institution, agency, department, board, commission, or organisation within"
+    },
+    {
+      "sourceLine": 1510,
+      "text": "or outside Nigeria, exercising executive, legislative, judicial, investigative,"
+    },
+    {
+      "sourceLine": 1511,
+      "text": "regulatory, or administrative functions ;"
+    },
+    {
+      "sourceLine": 1512,
+      "text": "“court” means any court of competent jurisdiction ;"
+    },
+    {
+      "sourceLine": 1513,
+      "text": "“data controller” means an individual, private entity, public Commission,"
+    },
+    {
+      "sourceLine": 1514,
+      "text": "agency or any other body who, alone or jointly with others, determines the"
+    },
+    {
+      "sourceLine": 1515,
+      "text": "purposes and means of processing of personal data ;"
+    },
+    {
+      "sourceLine": 1516,
+      "text": "“data controller or data processor of major importance” means a"
+    },
+    {
+      "sourceLine": 1517,
+      "text": "data controller or data processor that is domiciled, resident in, or operating in"
+    },
+    {
+      "sourceLine": 1518,
+      "text": "Nigeria and processes or intends to process personal data of more than such"
+    },
+    {
+      "sourceLine": 1519,
+      "text": "number of data subjects who are within Nigeria, as the Commission may"
+    },
+    {
+      "sourceLine": 1520,
+      "text": "prescribe, or such other class of data controller or data processor that is"
+    },
+    {
+      "sourceLine": 1521,
+      "text": "processing personal data of particular value or significance to the economy,"
+    },
+    {
+      "sourceLine": 1522,
+      "text": "society or security of Nigeria as the Commission may designate ;"
+    },
+    {
+      "sourceLine": 1523,
+      "text": "“data processor” means an individual, private entity, public authority, or"
+    },
+    {
+      "sourceLine": 1524,
+      "text": "any other body, who processes personal data on behalf of or at the direction"
+    },
+    {
+      "sourceLine": 1525,
+      "text": "of a data controller or another data processor ;"
+    },
+    {
+      "sourceLine": 1526,
+      "text": "“data subject” means an individual to whom personal data relates ;"
+    },
+    {
+      "sourceLine": 1527,
+      "text": "“Minister” means the Minister responsible for matters relating to"
+    },
+    {
+      "sourceLine": 1528,
+      "text": "communications and digital economy ;"
+    },
+    {
+      "sourceLine": 1529,
+      "text": "“National Commissioner” means the National Commissioner of the"
+    },
+    {
+      "sourceLine": 1530,
+      "text": "Nigeria Data Protection Commission ;"
+    },
+    {
+      "sourceLine": 1531,
+      "text": "“personal data” means any information relating to an individual, who"
+    },
+    {
+      "sourceLine": 1532,
+      "text": "can be identified or is identifiable, directly or indirectly, by reference to anNigeria Data Protection Act, 2023 2022 No. 37 A 755"
+    },
+    {
+      "sourceLine": 1533,
+      "text": "identifier such as a name, an identification number, location data, an online"
+    },
+    {
+      "sourceLine": 1534,
+      "text": "identifier or one or more factors specific to the physical, physiological, genetic,"
+    },
+    {
+      "sourceLine": 1535,
+      "text": "psychological, cultural, social, or economic identity of that individual ;"
+    },
+    {
+      "sourceLine": 1536,
+      "text": "“personal data breach” means a breach of security of a data controller"
+    },
+    {
+      "sourceLine": 1537,
+      "text": "or data processor leading to or likely to lead to the accidental or unlawful"
+    },
+    {
+      "sourceLine": 1538,
+      "text": "destruction, loss, alteration, unauthorised disclosure of, or access to, personal"
+    },
+    {
+      "sourceLine": 1539,
+      "text": "data transmitted, stored, or otherwise processed ;"
+    },
+    {
+      "sourceLine": 1540,
+      "text": "“President” means the President of the Federal Republic of Nigeria ;"
+    },
+    {
+      "sourceLine": 1541,
+      "text": "“processing” means any operation or set of operations which is"
+    },
+    {
+      "sourceLine": 1542,
+      "text": "performed on personal data, whether or not by automated means, such as"
+    },
+    {
+      "sourceLine": 1543,
+      "text": "collection, recording, organisation, structuring, storage, adaptation, alteration,"
+    },
+    {
+      "sourceLine": 1544,
+      "text": "retrieval, consultation, use, disclosure by transmission, dissemination or"
+    },
+    {
+      "sourceLine": 1545,
+      "text": "otherwise making available, alignment, combination, restriction, erasure or"
+    },
+    {
+      "sourceLine": 1546,
+      "text": "destruction and does not include the mere transit of data originating outside"
+    },
+    {
+      "sourceLine": 1547,
+      "text": "Nigeria ;"
+    },
+    {
+      "sourceLine": 1548,
+      "text": "“pseudonymisation” means the processing of personal data in such a"
+    },
+    {
+      "sourceLine": 1549,
+      "text": "manner that the personal data can no longer be attributed to a specific data"
+    },
+    {
+      "sourceLine": 1550,
+      "text": "subject without the use of additional information, provided that such"
+    },
+    {
+      "sourceLine": 1551,
+      "text": "additional information is kept separately and is subject to technical and"
+    },
+    {
+      "sourceLine": 1552,
+      "text": "organisational measures to ensure that the personal data are not attributed"
+    },
+    {
+      "sourceLine": 1553,
+      "text": "to an identified or identifiable natural person ;"
+    },
+    {
+      "sourceLine": 1554,
+      "text": "“sensitive personal data” means personal data relating to an individual’s —"
+    },
+    {
+      "sourceLine": 1555,
+      "text": "(a) genetic and biometric data, for the purpose of uniquely identifying"
+    },
+    {
+      "sourceLine": 1556,
+      "text": "a natural person,"
+    },
+    {
+      "sourceLine": 1557,
+      "text": "(b) race or ethnic origin,"
+    },
+    {
+      "sourceLine": 1558,
+      "text": "(c) religious or similar beliefs, such as those reflecting conscience or"
+    },
+    {
+      "sourceLine": 1559,
+      "text": "philosophy,"
+    },
+    {
+      "sourceLine": 1560,
+      "text": "(d) health status,"
+    },
+    {
+      "sourceLine": 1561,
+      "text": "(e) sex life,"
+    },
+    {
+      "sourceLine": 1562,
+      "text": "(f ) political opinions or affiliations,"
+    },
+    {
+      "sourceLine": 1563,
+      "text": "(g) trade union memberships, or"
+    },
+    {
+      "sourceLine": 1564,
+      "text": "(h) other information prescribed by the Commission, as sensitive"
+    },
+    {
+      "sourceLine": 1565,
+      "text": "personal data under section 30 (2), and"
+    },
+    {
+      "sourceLine": 1566,
+      "text": "“social security laws” means “the Employee Compensation Act, Pension"
+    },
+    {
+      "sourceLine": 1567,
+      "text": "Reform Act, National Health Insurance Authority Act, National Housing Fund"
+    },
+    {
+      "sourceLine": 1568,
+      "text": "Act, Nigeria Social Insurance Trust Fund Act, Industrial Trust Fund Act or"
+    },
+    {
+      "sourceLine": 1569,
+      "text": "any other similar law."
+    },
+    {
+      "sourceLine": 1570,
+      "text": "66. This Act may be cited as the Nigeria Data Protection Act, 2023. CitationA 756 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1571,
+      "text": "SCHEDULE Section 8(3)"
+    },
+    {
+      "sourceLine": 1572,
+      "text": "SUPPLEMENTARY PROVISIONS RELATING TO PROCEEDINGS"
+    },
+    {
+      "sourceLine": 1573,
+      "text": "OF THE COUNCIL"
+    },
+    {
+      "sourceLine": 1574,
+      "text": "Council to Regulate Proceedings"
+    },
+    {
+      "sourceLine": 1575,
+      "text": "1. Subject to the provisions of this Act, the Council may make standing"
+    },
+    {
+      "sourceLine": 1576,
+      "text": "orders regulating the proceedings of the Council and set up any committee"
+    },
+    {
+      "sourceLine": 1577,
+      "text": "and the Council shall meet once in a quarter of a year."
+    },
+    {
+      "sourceLine": 1578,
+      "text": "Presiding Officer"
+    },
+    {
+      "sourceLine": 1579,
+      "text": "2. Every meeting of the Council shall be presided over by the Chairman,"
+    },
+    {
+      "sourceLine": 1580,
+      "text": "and where the Chairman is absent, the members present at the meeting shall"
+    },
+    {
+      "sourceLine": 1581,
+      "text": "elect one of their members to preside at the meeting."
+    },
+    {
+      "sourceLine": 1582,
+      "text": "Quorum"
+    },
+    {
+      "sourceLine": 1583,
+      "text": "3. The quorum at a meeting of the Council shall be the Chairman, or in"
+    },
+    {
+      "sourceLine": 1584,
+      "text": "an appropriate case, the person presiding at the meeting under paragraph 2 of"
+    },
+    {
+      "sourceLine": 1585,
+      "text": "this Schedule, and four other members."
+    },
+    {
+      "sourceLine": 1586,
+      "text": "4. The quorum of any committee of Council shall be determined by the"
+    },
+    {
+      "sourceLine": 1587,
+      "text": "Council."
+    },
+    {
+      "sourceLine": 1588,
+      "text": "Voting"
+    },
+    {
+      "sourceLine": 1589,
+      "text": "5. At a meeting of the Council, each member present shall be entitled to"
+    },
+    {
+      "sourceLine": 1590,
+      "text": "one vote and any question on which a vote is required shall be determined by"
+    },
+    {
+      "sourceLine": 1591,
+      "text": "a majority of votes of members present and voting but, in the case of an equal"
+    },
+    {
+      "sourceLine": 1592,
+      "text": "division of votes, the Chairman or the member presiding over the meeting"
+    },
+    {
+      "sourceLine": 1593,
+      "text": "shall have a casting vote."
+    },
+    {
+      "sourceLine": 1594,
+      "text": "6. Where the Council seeks the advice of any person on a particular"
+    },
+    {
+      "sourceLine": 1595,
+      "text": "nature, the Council may invite that person to attend for such period as it deems"
+    },
+    {
+      "sourceLine": 1596,
+      "text": "fit, but the person, who is invited shall not be entitled to vote at any meeting of"
+    },
+    {
+      "sourceLine": 1597,
+      "text": "the Council and shall not count towards the quorum."
+    },
+    {
+      "sourceLine": 1598,
+      "text": "Teleconference meeting"
+    },
+    {
+      "sourceLine": 1599,
+      "text": "7. In addition to meeting with all participants physically present, the Council"
+    },
+    {
+      "sourceLine": 1600,
+      "text": "may hold or continue a meeting by the use of any means of communication by"
+    },
+    {
+      "sourceLine": 1601,
+      "text": "which all the participants can hear and be heard at the same time and such a"
+    },
+    {
+      "sourceLine": 1602,
+      "text": "meeting is referred to in this item as a “teleconference meeting”."
+    },
+    {
+      "sourceLine": 1603,
+      "text": "8. A member of the Council, who participates in a teleconference"
+    },
+    {
+      "sourceLine": 1604,
+      "text": "meeting shall be taken for all purposes to have been present at the meeting."
+    },
+    {
+      "sourceLine": 1605,
+      "text": "9. The Council may establish procedure for teleconference meetings"
+    },
+    {
+      "sourceLine": 1606,
+      "text": "(including recording the minutes of such meetings) in its minutes book.Nigeria Data Protection Act, 2023 2022 No. 37 A 757"
+    },
+    {
+      "sourceLine": 1607,
+      "text": "Committees of the Council"
+    },
+    {
+      "sourceLine": 1608,
+      "text": "10. Subject to standing orders made by the Council under this Act, the"
+    },
+    {
+      "sourceLine": 1609,
+      "text": "Council may appoint such number of standing and ad- hoc committees, as it"
+    },
+    {
+      "sourceLine": 1610,
+      "text": "deems fit to consider and report on any matter with which the Council is"
+    },
+    {
+      "sourceLine": 1611,
+      "text": "concerned."
+    },
+    {
+      "sourceLine": 1612,
+      "text": "11. Every committee appointed under the provisions of paragraph 10"
+    },
+    {
+      "sourceLine": 1613,
+      "text": "shall be presided over by a member of the Council, and shall be made up of"
+    },
+    {
+      "sourceLine": 1614,
+      "text": "such number of persons, as the Council may determine in each case."
+    },
+    {
+      "sourceLine": 1615,
+      "text": "12. The decision of a committee shall have no effect until it is approved"
+    },
+    {
+      "sourceLine": 1616,
+      "text": "or ratified by the Council."
+    },
+    {
+      "sourceLine": 1617,
+      "text": "Seal of the Commission"
+    },
+    {
+      "sourceLine": 1618,
+      "text": "13. The affixing of the seal of the Commission shall be done and"
+    },
+    {
+      "sourceLine": 1619,
+      "text": "authenticated by the signature of the National Commissioner or such other"
+    },
+    {
+      "sourceLine": 1620,
+      "text": "member authorised by the Council to act for that purpose."
+    },
+    {
+      "sourceLine": 1621,
+      "text": "14. A contract or instrument which, if made by a person not being a"
+    },
+    {
+      "sourceLine": 1622,
+      "text": "body corporate, shall not be required to be under seal, may be made or executed"
+    },
+    {
+      "sourceLine": 1623,
+      "text": "by the National Commissioner or by any other officer or staff specifically"
+    },
+    {
+      "sourceLine": 1624,
+      "text": "authorised by the National Commissioner to act for that purpose."
+    },
+    {
+      "sourceLine": 1625,
+      "text": "15. A document purporting to be a contract, an instrument, or other"
+    },
+    {
+      "sourceLine": 1626,
+      "text": "document signed or sealed on behalf of the Commission shall be received in"
+    },
+    {
+      "sourceLine": 1627,
+      "text": "evidence and shall, unless the contrary is proved, be presumed, without further"
+    },
+    {
+      "sourceLine": 1628,
+      "text": "proof, to have been so signed and sealed."
+    },
+    {
+      "sourceLine": 1629,
+      "text": "Miscellaneous"
+    },
+    {
+      "sourceLine": 1630,
+      "text": "16. The validity of a proceeding of the Council or its committee is not"
+    },
+    {
+      "sourceLine": 1631,
+      "text": "adversely affected by —"
+    },
+    {
+      "sourceLine": 1632,
+      "text": "(a) any vacancy in the membership of the Council ;"
+    },
+    {
+      "sourceLine": 1633,
+      "text": "(b) any defect in the appointment of a member of the Council, staff, or"
+    },
+    {
+      "sourceLine": 1634,
+      "text": "committee ; or"
+    },
+    {
+      "sourceLine": 1635,
+      "text": "(c) reason that a person not entitled to do so took part in the proceeding."
+    },
+    {
+      "sourceLine": 1636,
+      "text": "17. A member of the Council or any of its committees, who has a"
+    },
+    {
+      "sourceLine": 1637,
+      "text": "personal interest in any contract or arrangement entered into or proposed to"
+    },
+    {
+      "sourceLine": 1638,
+      "text": "be considered by the Commission shall —"
+    },
+    {
+      "sourceLine": 1639,
+      "text": "(a) disclose to the members of the Council the nature of the interest, in"
+    },
+    {
+      "sourceLine": 1640,
+      "text": "advance of any consideration of the matter ;"
+    },
+    {
+      "sourceLine": 1641,
+      "text": "(b) not influence or seek to influence a decision to be made in relation to"
+    },
+    {
+      "sourceLine": 1642,
+      "text": "the matter ;A 758 2023 No. 37 Nigeria Data Protection Act, 2023"
+    },
+    {
+      "sourceLine": 1643,
+      "text": "(c) take no part in any consideration of the matter ; and"
+    },
+    {
+      "sourceLine": 1644,
+      "text": "(d) be absent from the meeting or that part of the meeting during which"
+    },
+    {
+      "sourceLine": 1645,
+      "text": "the matter is discussed."
+    },
+    {
+      "sourceLine": 1646,
+      "text": "18. If a member of the Council discloses an interest under paragraph"
+    },
+    {
+      "sourceLine": 1647,
+      "text": "17, the disclosure shall be recorded in the minutes of the meeting of the Council."
+    }
+  ]
+}
+

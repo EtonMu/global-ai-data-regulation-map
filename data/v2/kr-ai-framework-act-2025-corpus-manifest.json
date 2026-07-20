@@ -1,0 +1,146 @@
+{
+  "instrumentId": "kr-ai-framework-act-2025",
+  "lawId": "014820",
+  "officialTitle": "인공지능 발전과 신뢰 기반 조성 등에 관한 기본법",
+  "referenceEnglishTitle": "FRAMEWORK ACT ON THE DEVELOPMENT OF ARTIFICIAL INTELLIGENCE AND THE CREATION OF A FOUNDATION FOR TRUST",
+  "retrievedOn": "2026-07-20",
+  "hashAlgorithm": "SHA-256",
+  "enactment": {
+    "actNumber": "20676",
+    "promulgatedOn": "2025-01-21",
+    "generalEffectiveFrom": "2026-01-22",
+    "formalStatus": "enacted-binding-framework-statute"
+  },
+  "interveningAmendment": {
+    "actNumber": "21065",
+    "promulgatedOn": "2025-10-01",
+    "type": "consequential-government-organization-amendment",
+    "effectiveWithThisActFrom": "2026-01-22"
+  },
+  "currentVersion": {
+    "asOf": "2026-07-20",
+    "masterSequence": "282791",
+    "promulgationNumber": "21311",
+    "promulgatedOn": "2026-01-20",
+    "effectivePhaseDate": "2026-01-22",
+    "lifecycleStatus": "in-force-with-final-amendment-phase-scheduled-next-day",
+    "textStatus": "current-effective-Korean-only",
+    "futureEffectiveTextIncluded": false,
+    "verification": "The MOLEG effective-date index classifies MST 282791 / 2026-01-22 as 현행 and the 2026-07-21 phase as 시행예정 on 2026-07-20."
+  },
+  "corpus": {
+    "path": "data/v2/kr-ai-framework-act-2025-current-articles.json",
+    "nodeCount": 47,
+    "mainArticleCount": 44,
+    "supplementaryProvisionBlockCount": 3,
+    "structuralHeadingCount": 7,
+    "statutoryArticleTextFieldCount": 402,
+    "articleSourceNoteCount": 3,
+    "normalizedFullTextCharacterCount": 25282,
+    "completeSourceCoverageVerified": true,
+    "contentSha256": "db4d1a8533733a0defedeb6b2b5e31395799d08d6e4aa07021aa2af5e5807786",
+    "fileSha256": "076bc322726944dd792f437d899a0d35e5254ba72fd9ffc627648e6df22277ef"
+  },
+  "promulgatedFuturePhases": [
+    {
+      "amendingActNumber": "21311",
+      "promulgatedOn": "2026-01-20",
+      "masterSequence": "282791",
+      "effectiveOn": "2026-07-21",
+      "mainArticleCount": 46,
+      "structuralHeadingCount": 7,
+      "supplementaryProvisionBlockCount": 3,
+      "articleNumberSequenceSha256": "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
+      "sourceDocumentSha256": "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
+      "includedInCurrentCorpus": false,
+      "phaseNote": "Final Act No. 21311 phase. It adds Articles 17-2 and 22-3 and commences specified changes in Articles 3, 6, 16, 18, and 35."
+    }
+  ],
+  "translation": {
+    "language": "en",
+    "availability": "external-link-only",
+    "title": "FRAMEWORK ACT ON THE DEVELOPMENT OF ARTIFICIAL INTELLIGENCE AND THE CREATION OF A FOUNDATION FOR TRUST",
+    "source": "https://elaw.klri.re.kr/eng_mobile/viewer.do?hseq=73499&key=54&type=sogan",
+    "sourceLabel": "KLRI Statutes of the Republic of Korea — reference English",
+    "sourceVersion": "Act No. 20676 as amended by Act No. 21311",
+    "versionAlignment": "46-English-article-headings-align-with-the-2026-07-21-future-effective-Korean-phase-not-the-44-Article-current-phase",
+    "legalEffect": "reference-only-no-legal-or-official-authority",
+    "currentLanguageToggleEligible": false,
+    "reasonNotAttached": "The English reference includes the 2026-07-21 scheduled phase and is not the 2026-07-20 current consolidation. KLRI also prohibits unauthorized reproduction or distribution of its translation material.",
+    "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do",
+    "MOLEGEnglishIndexBoundary": {
+      "masterSequence": "268543",
+      "promulgationNumber": "20676",
+      "promulgatedOn": "2025-01-21",
+      "status": "original-enactment-only-outdated-after-Act-No-21311"
+    },
+    "KLRIReferenceBoundary": {
+      "latestAmendment": "Act No. 21311, Jan. 20, 2026",
+      "referenceMainArticleCount": 46,
+      "referenceArticleNumberSequenceSha256": "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
+      "alignment": "future-effective-2026-07-21-phase"
+    },
+    "bodyStored": false,
+    "authorityNote": "MOLEG states that foreign-language statute information has no official effect and that Korean prevails in case of discrepancy."
+  },
+  "rights": {
+    "primaryKoreanText": {
+      "reuseStatus": "korean-statutory-text-not-copyright-protected",
+      "basis": "Republic of Korea Copyright Act Article 7(1)",
+      "publicDataPolicy": "https://www.law.go.kr/LSW/lawPetitionForm.do?menuId=13&subMenuId=79"
+    },
+    "referenceTranslation": {
+      "reuseStatus": "external-link-only-no-redistribution",
+      "copyrightOwner": "Korea Legislation Research Institute",
+      "copyrightPolicy": "https://elaw.klri.re.kr/eng_service/askCopyright.do"
+    }
+  },
+  "sourceSnapshots": [
+    {
+      "path": "data/v2/source-snapshots/kr-ai-014820-current-effective-2026-07-20.xml",
+      "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=282791&efYd=20260122&type=XML",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "current-effective-text",
+      "sha256": "a05b63d5021be2ce30076f674213d3e9d04afbd5137966a5ac1e7db50992c27d",
+      "rightsProfile": "moleg-open-data-statutory-text"
+    },
+    {
+      "path": "data/v2/source-snapshots/kr-ai-014820-effective-date-index-2026-07-20.xml",
+      "sourceUrl": "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=eflaw&type=XML&query=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%20%EB%B0%9C%EC%A0%84%EA%B3%BC%20%EC%8B%A0%EB%A2%B0%20%EA%B8%B0%EB%B0%98%20%EC%A1%B0%EC%84%B1%20%EB%93%B1%EC%97%90%20%EA%B4%80%ED%95%9C%20%EA%B8%B0%EB%B3%B8%EB%B2%95&display=100",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "effective-date-version-index",
+      "sha256": "acf472c8691c8aaedf78f92692744b2fefbd1e32f820ffd1a742ccb07e8863ca",
+      "rightsProfile": "moleg-open-data"
+    },
+    {
+      "path": "data/v2/source-snapshots/kr-ai-014820-future-2026-07-21.xml",
+      "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=282791&efYd=20260721&type=XML",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "promulgated-future-phase-2026-07-21",
+      "sha256": "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
+      "rightsProfile": "moleg-open-data-statutory-text"
+    },
+    {
+      "path": "data/v2/source-snapshots/kr-ai-014820-english-reference-index-2026-07-20.xml",
+      "sourceUrl": "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=elaw&type=XML&query=FRAMEWORK%20ACT%20ON%20THE%20DEVELOPMENT%20OF%20ARTIFICIAL%20INTELLIGENCE&display=100",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "official-English-reference-version-index",
+      "sha256": "01d7b8b5fa07c34e94cdaebf306dbe19c14c503ffd9082a966c8ef7064b87b27",
+      "rightsProfile": "moleg-open-data-metadata"
+    },
+    {
+      "path": "data/v2/source-snapshots/kr-ai-014820-klri-english-reference-audit-2026-07-20.json",
+      "sourceUrl": "https://elaw.klri.re.kr/eng_mobile/viewer.do?hseq=73499&key=54&type=sogan",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/json",
+      "role": "English-reference-version-and-rights-audit-no-translation-text",
+      "sha256": "0edecc47016ffc1d9256e384b146065f4c7f57664303a6e1c9c764883884917a",
+      "rightsProfile": "audit-metadata-only"
+    }
+  ],
+  "manifestContentBasisSha256": "539b06b68506d2f274f1d2582ea01f381a4d6296c5e06b5d8c385f2ee76a8d28"
+}

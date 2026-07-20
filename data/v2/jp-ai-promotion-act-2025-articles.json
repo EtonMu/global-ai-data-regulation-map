@@ -1,0 +1,2704 @@
+[
+  {
+    "id": "jp-ai-promotion-act-2025-art-1",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "1",
+    "label": "Article 1",
+    "originalLabel": "第一条",
+    "title": "Purpose",
+    "originalTitle": "第一条（目的）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第一条　この法律は、人工知能関連技術が我が国の経済社会の発展の基盤となる技術であることに鑑み、人工知能関連技術の研究開発及び活用の推進に関する施策について、基本理念並びに人工知能関連技術の研究開発及び活用の推進に関する基本的な計画の策定その他の施策の基本となる事項を定めるとともに、人工知能戦略本部を設置することにより、科学技術・イノベーション基本法（平成七年法律第百三十号）及びデジタル社会形成基本法（令和三年法律第三十五号）その他の関係法律による施策と相まって、人工知能関連技術の研究開発及び活用の推進に関する施策の総合的かつ計画的な推進を図り、もって国民生活の向上及び国民経済の健全な発展に寄与することを目的とする。"
+    ],
+    "fullText": "（目的）\n\n第一条　この法律は、人工知能関連技術が我が国の経済社会の発展の基盤となる技術であることに鑑み、人工知能関連技術の研究開発及び活用の推進に関する施策について、基本理念並びに人工知能関連技術の研究開発及び活用の推進に関する基本的な計画の策定その他の施策の基本となる事項を定めるとともに、人工知能戦略本部を設置することにより、科学技術・イノベーション基本法（平成七年法律第百三十号）及びデジタル社会形成基本法（令和三年法律第三十五号）その他の関係法律による施策と相まって、人工知能関連技術の研究開発及び活用の推進に関する施策の総合的かつ計画的な推進を図り、もって国民生活の向上及び国民経済の健全な発展に寄与することを目的とする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Purpose",
+        "paragraphs": [
+          "Article 1 The purpose of this Act is, in light of the fact that artificial intelligence-related technology constitutes a fundamental technology for the development of Japan's economy and society, with regard to measures for promotion of research and development, and utilization of artificial intelligence-related technology, to specify the basic principles, the basic plan for promoting research and development, and utilization of artificial intelligence-related technology and the basic matters that form the basis of other measures, as well as to achieve comprehensive and systematic promotion of measures for the promotion of research and development, and utilization of artificial intelligence-related technology by establishing an artificial intelligence strategic headquarters, in conjunction with measures under the Basic Act on Science, Technology and Innovation (Act No. 130, of 1995) , the Basic Act on the Formation of a Digital Society (Act No. 35, of 2021) and other related laws, and to contribute to the improvement the lives of the citizens and the sound development of the national economy."
+        ],
+        "fullText": "(Purpose)\n\nArticle 1 The purpose of this Act is, in light of the fact that artificial intelligence-related technology constitutes a fundamental technology for the development of Japan's economy and society, with regard to measures for promotion of research and development, and utilization of artificial intelligence-related technology, to specify the basic principles, the basic plan for promoting research and development, and utilization of artificial intelligence-related technology and the basic matters that form the basis of other measures, as well as to achieve comprehensive and systematic promotion of measures for the promotion of research and development, and utilization of artificial intelligence-related technology by establishing an artificial intelligence strategic headquarters, in conjunction with measures under the Basic Act on Science, Technology and Innovation (Act No. 130, of 1995) , the Basic Act on the Formation of a Digital Society (Act No. 35, of 2021) and other related laws, and to contribute to the improvement the lives of the citizens and the sound development of the national economy.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='1']",
+        "sourceNodeSha256": "2d1cddeac39342872e03ee232a893c2dfee8279a43679390e04b95bcf1cd894e",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "934166cf80c13c9cbd429c0209b49c57756726bf7cf5df5645210fa7587a3def",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_1",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='1']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "2a0a9b0a3f802abdc0347ed20cd5d02356086ac39a31a49d6cd03e151e8256fb",
+    "contentSha256": "344eee119eeae6545a034ef52fadc530be1fbcd4781259ce2bf4cbee32d1b75e",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-2",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "2",
+    "label": "Article 2",
+    "originalLabel": "第二条",
+    "title": "Definition",
+    "originalTitle": "第二条（定義）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二条　この法律において、「人工知能関連技術」とは、人工的な方法により人間の認知、推論及び判断に係る知的な能力を代替する機能を実現するために必要な技術並びに入力された情報を当該技術を利用して処理し、その結果を出力する機能を実現するための情報処理システムに関する技術をいう。"
+    ],
+    "fullText": "（定義）\n\n第二条　この法律において、「人工知能関連技術」とは、人工的な方法により人間の認知、推論及び判断に係る知的な能力を代替する機能を実現するために必要な技術並びに入力された情報を当該技術を利用して処理し、その結果を出力する機能を実現するための情報処理システムに関する技術をいう。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Definition",
+        "paragraphs": [
+          "Article 2 The term \"artificial intelligence-related technology\" as used in this Act means technology necessary for realizing the function to substitute intellectual abilities for human cognition, inference and judgement by artificial means, and technology relating to information processing systems for realizing the function to process the input information and output that result by using the technology."
+        ],
+        "fullText": "(Definition)\n\nArticle 2 The term \"artificial intelligence-related technology\" as used in this Act means technology necessary for realizing the function to substitute intellectual abilities for human cognition, inference and judgement by artificial means, and technology relating to information processing systems for realizing the function to process the input information and output that result by using the technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='2']",
+        "sourceNodeSha256": "0e39a4f2186c043b4ac2992b1ac9cd89ef81d6f317411cb4f26500812fb7bd35",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "5115710880956e22c240c9a49cb964012e8ed03899283f6193181fdecd1e71d1",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_2",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='2']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "3b094167bfe46e9895ec1eaabd5b2ebe5be13ed20905b869f24c62d68f44171b",
+    "contentSha256": "98e4809a43d40edf2c90e64624b1dc1f5f5b3c052d91973e88c3fd0ec0f5e07b",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-3",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "3",
+    "label": "Article 3",
+    "originalLabel": "第三条",
+    "title": "Basic Principles",
+    "originalTitle": "第三条（基本理念）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第三条　人工知能関連技術の研究開発及び活用の推進は、科学技術・イノベーション基本法第三条に定める科学技術・イノベーション創出の振興に関する方針及びデジタル社会形成基本法第二章に定める基本理念のほか、この条に定める基本理念に基づいて行うものとする。",
+      "２人工知能関連技術の研究開発及び活用の推進は、人工知能関連技術が、その適正かつ効果的な活用によって行政事務及び民間の事業活動の著しい効率化及び高度化並びに新産業の創出をもたらすものとして経済社会の発展の基盤となる技術であるとともに、安全保障の観点からも重要な技術であることに鑑み、我が国において人工知能関連技術の研究開発を行う能力を保持するとともに、人工知能関連技術に関する産業の国際競争力を向上させることを旨として、行うものとする。",
+      "３人工知能関連技術の研究開発及び活用の推進は、人工知能関連技術の基礎研究から国民生活及び経済活動における活用に至るまでの各段階の関係者による取組が相互に密接な関連を有することに鑑み、これらの取組を総合的かつ計画的に推進することを旨として、行うものとする。",
+      "４人工知能関連技術の研究開発及び活用は、不正な目的又は不適切な方法で行われた場合には、犯罪への利用、個人情報の漏えい、著作権の侵害その他の国民生活の平穏及び国民の権利利益が害される事態を助長するおそれがあることに鑑み、その適正な実施を図るため、人工知能関連技術の研究開発及び活用の過程の透明性の確保その他の必要な施策が講じられなければならない。",
+      "５人工知能関連技術の研究開発及び活用は、我が国及び国際社会の平和と発展に寄与するものとなるよう、国際的協調の下に推進することを旨とし、我が国が人工知能関連技術の研究開発及び活用に関する国際協力において主導的な役割を果たすよう努めるものとする。"
+    ],
+    "fullText": "（基本理念）\n\n第三条　人工知能関連技術の研究開発及び活用の推進は、科学技術・イノベーション基本法第三条に定める科学技術・イノベーション創出の振興に関する方針及びデジタル社会形成基本法第二章に定める基本理念のほか、この条に定める基本理念に基づいて行うものとする。\n\n２人工知能関連技術の研究開発及び活用の推進は、人工知能関連技術が、その適正かつ効果的な活用によって行政事務及び民間の事業活動の著しい効率化及び高度化並びに新産業の創出をもたらすものとして経済社会の発展の基盤となる技術であるとともに、安全保障の観点からも重要な技術であることに鑑み、我が国において人工知能関連技術の研究開発を行う能力を保持するとともに、人工知能関連技術に関する産業の国際競争力を向上させることを旨として、行うものとする。\n\n３人工知能関連技術の研究開発及び活用の推進は、人工知能関連技術の基礎研究から国民生活及び経済活動における活用に至るまでの各段階の関係者による取組が相互に密接な関連を有することに鑑み、これらの取組を総合的かつ計画的に推進することを旨として、行うものとする。\n\n４人工知能関連技術の研究開発及び活用は、不正な目的又は不適切な方法で行われた場合には、犯罪への利用、個人情報の漏えい、著作権の侵害その他の国民生活の平穏及び国民の権利利益が害される事態を助長するおそれがあることに鑑み、その適正な実施を図るため、人工知能関連技術の研究開発及び活用の過程の透明性の確保その他の必要な施策が講じられなければならない。\n\n５人工知能関連技術の研究開発及び活用は、我が国及び国際社会の平和と発展に寄与するものとなるよう、国際的協調の下に推進することを旨とし、我が国が人工知能関連技術の研究開発及び活用に関する国際協力において主導的な役割を果たすよう努めるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Basic Principles",
+        "paragraphs": [
+          "Article 3 (1)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented based on policy for advancement of science, technology and creating innovation specified in Article 3 of the Basic Act on Science, Technology and Innovation, the basic principles specified in Chapter II of the Basic Act on Forming a Digital Society, and the basic principles specified in this article.",
+          "(2)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of keeping the ability of researching and developing artificial intelligence-related technology in Japan as well as enhancing international competitiveness of industries relating to artificial intelligence-related technology, in light of artificial intelligence-related technology being a technology of basis on development of economy and society as its appropriate and effective utilization generates increased efficiency and advancement of administrative affairs and private-sector business activities, and creation of new industries, as well as being an important technology from the perspective of national security.",
+          "(3)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of promoting these initiatives comprehensively and systematically, in light of initiatives by persons concerned in each phase from basic research of artificial intelligence-related technology to utilization in the lives of the citizens and economic activities that are closely interrelated.",
+          "(4)If research and development, and utilization of artificial intelligence-related technology are implemented for wrong purposes or in inappropriate methods, in light of the fact that they possibly facilitate use for crimes, leak of personal information, copyright infringement, and other issues harming citizens' peaceful daily lives, and their rights and interests, for achieving appropriate implementation, ensuring transparency in the process of research and development, and utilization of artificial intelligence-related technology and other necessary measures must be implemented.",
+          "(5)Research and development, and utilization of artificial intelligence-related technology are to be with the objective to be promoted under international cooperation so that they can contribute to peace and development of Japan and the international community, and Japan is to endeavor to play a leading role in the international cooperation on research and development, and utilization of artificial intelligence-related technology."
+        ],
+        "fullText": "(Basic Principles)\n\nArticle 3 (1)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented based on policy for advancement of science, technology and creating innovation specified in Article 3 of the Basic Act on Science, Technology and Innovation, the basic principles specified in Chapter II of the Basic Act on Forming a Digital Society, and the basic principles specified in this article.\n\n(2)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of keeping the ability of researching and developing artificial intelligence-related technology in Japan as well as enhancing international competitiveness of industries relating to artificial intelligence-related technology, in light of artificial intelligence-related technology being a technology of basis on development of economy and society as its appropriate and effective utilization generates increased efficiency and advancement of administrative affairs and private-sector business activities, and creation of new industries, as well as being an important technology from the perspective of national security.\n\n(3)Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of promoting these initiatives comprehensively and systematically, in light of initiatives by persons concerned in each phase from basic research of artificial intelligence-related technology to utilization in the lives of the citizens and economic activities that are closely interrelated.\n\n(4)If research and development, and utilization of artificial intelligence-related technology are implemented for wrong purposes or in inappropriate methods, in light of the fact that they possibly facilitate use for crimes, leak of personal information, copyright infringement, and other issues harming citizens' peaceful daily lives, and their rights and interests, for achieving appropriate implementation, ensuring transparency in the process of research and development, and utilization of artificial intelligence-related technology and other necessary measures must be implemented.\n\n(5)Research and development, and utilization of artificial intelligence-related technology are to be with the objective to be promoted under international cooperation so that they can contribute to peace and development of Japan and the international community, and Japan is to endeavor to play a leading role in the international cooperation on research and development, and utilization of artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='3']",
+        "sourceNodeSha256": "9a2b565f20a229d90e74bd2068e72ae36639e846a19a511be159e68d3bc1c4c3",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "61891e97d2293678d5cd855790193bbc08a51c726624c16cab6ac50f3fbc7e9c",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_3",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='3']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "8654ae63387827acd72e96c2d1b34392ba984349735fde01c8f2e1ef86a08cd0",
+    "contentSha256": "f380f6c366379ca9b8d6f2bf88b33cfb73fd7dec3d69af84a4aec2c8dc19b768",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-4",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "4",
+    "label": "Article 4",
+    "originalLabel": "第四条",
+    "title": "Responsibilities of the National Government",
+    "originalTitle": "第四条（国の責務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第四条　国は、前条に定める基本理念（以下「基本理念」という。）にのっとり、人工知能関連技術の研究開発及び活用の推進に関する施策を総合的かつ計画的に策定し、及び実施する責務を有する。",
+      "２国は、行政事務の効率化及び高度化を図るため、国の行政機関における人工知能関連技術の積極的な活用を進めるものとする。"
+    ],
+    "fullText": "（国の責務）\n\n第四条　国は、前条に定める基本理念（以下「基本理念」という。）にのっとり、人工知能関連技術の研究開発及び活用の推進に関する施策を総合的かつ計画的に策定し、及び実施する責務を有する。\n\n２国は、行政事務の効率化及び高度化を図るため、国の行政機関における人工知能関連技術の積極的な活用を進めるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Responsibilities of the National Government",
+        "paragraphs": [
+          "Article 4 (1)The national government is responsible for formulating and implementing comprehensively and systematically measures concerning promotion of research and development, and utilization of artificial intelligence-related technology in accordance with the basic principles specified in the preceding Article (referred to below as \"basic principles\").",
+          "(2)The national government is to promote positive utilization of artificial intelligence-related technology in an administrative body to improve efficiency and advancement of administrative affairs."
+        ],
+        "fullText": "(Responsibilities of the National Government)\n\nArticle 4 (1)The national government is responsible for formulating and implementing comprehensively and systematically measures concerning promotion of research and development, and utilization of artificial intelligence-related technology in accordance with the basic principles specified in the preceding Article (referred to below as \"basic principles\").\n\n(2)The national government is to promote positive utilization of artificial intelligence-related technology in an administrative body to improve efficiency and advancement of administrative affairs.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='4']",
+        "sourceNodeSha256": "2ad28849f008449aefde308ef1c099fad98cefa977959af38c8ddc62f1b8abdd",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "3d45ef812c3c5a4603c3e211f5cf1ed0b270b9a460060cb877fde8d3cfb2563b",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_4",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='4']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "a5417a572e3c096e7dc1dde9ee6371634398feb52a5dceee987d081f7a28f0b5",
+    "contentSha256": "1e569935fd6fd0369f0d5d05941f7b05e380abd50b23005da3b4d75fa84c8706",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-5",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "5",
+    "label": "Article 5",
+    "originalLabel": "第五条",
+    "title": "Responsibilities of Local Governments",
+    "originalTitle": "第五条（地方公共団体の責務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第五条　地方公共団体は、基本理念にのっとり、人工知能関連技術の研究開発及び活用の推進に関し、国との適切な役割分担の下、地方公共団体が実施すべき施策として、その地方公共団体の区域の特性を生かした自主的な施策を策定し、及び実施する責務を有する。"
+    ],
+    "fullText": "（地方公共団体の責務）\n\n第五条　地方公共団体は、基本理念にのっとり、人工知能関連技術の研究開発及び活用の推進に関し、国との適切な役割分担の下、地方公共団体が実施すべき施策として、その地方公共団体の区域の特性を生かした自主的な施策を策定し、及び実施する責務を有する。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Responsibilities of Local Governments",
+        "paragraphs": [
+          "Article 5 A local governments is responsible for formulating and implementing independent measures that reflect distinctive characteristics of their respective areas of the relevant local government, in accordance with the basic principles, as measures to be implemented by the local government, with an appropriate sharing of roles with the national government regarding the promotion of research and development, and utilization of artificial intelligence-related technology."
+        ],
+        "fullText": "(Responsibilities of Local Governments)\n\nArticle 5 A local governments is responsible for formulating and implementing independent measures that reflect distinctive characteristics of their respective areas of the relevant local government, in accordance with the basic principles, as measures to be implemented by the local government, with an appropriate sharing of roles with the national government regarding the promotion of research and development, and utilization of artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='5']",
+        "sourceNodeSha256": "719a8d174a0d6d1ed3a6249a756905f18b4d5d8022a7ca3e956c99fb7e7d0061",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "d832763be1db1b494fc5bdfa68a013300061667f6952964cf7828ab3f0cb965a",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_5",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='5']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "ad6551fda6d1730ec8fe312fc4b646f5b8c3e994b939311962135e5b57b913fc",
+    "contentSha256": "a562b381a744474b3e81651bce96e5738f83c08e051770c14a6f224d6351ebb4",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-6",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "6",
+    "label": "Article 6",
+    "originalLabel": "第六条",
+    "title": "Responsibilities of Research and Development Institutes",
+    "originalTitle": "第六条（研究開発機関の責務等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第六条　大学、科学技術・イノベーション創出の活性化に関する法律（平成二十年法律第六十三号）第二条第九項に規定する研究開発法人その他の人工知能関連技術の研究開発を行う機関（以下「研究開発機関」という。）は、基本理念にのっとり、人工知能関連技術の研究開発及びその成果の普及並びに専門的かつ幅広い知識を有する人材の育成に積極的に努めるとともに、第四条の規定に基づき国が実施する施策及び前条の規定に基づき地方公共団体が実施する施策に協力するよう努めるものとする。",
+      "２国及び地方公共団体は、人工知能関連技術の研究開発及び活用の推進に関する施策で大学に係るものを策定し、及び実施するに当たっては、大学における研究活動の活性化を図るよう努めるとともに、研究者の自主性の尊重その他の大学における研究の特性に配慮しなければならない。",
+      "３研究開発機関は、人工知能関連技術の研究開発を効果的に進めるに当たっては、人文科学及び自然科学に関する多様な分野の知見を総合的に活用することが必要であることに鑑み、学際的又は総合的な研究開発に努めるものとする。"
+    ],
+    "fullText": "（研究開発機関の責務等）\n\n第六条　大学、科学技術・イノベーション創出の活性化に関する法律（平成二十年法律第六十三号）第二条第九項に規定する研究開発法人その他の人工知能関連技術の研究開発を行う機関（以下「研究開発機関」という。）は、基本理念にのっとり、人工知能関連技術の研究開発及びその成果の普及並びに専門的かつ幅広い知識を有する人材の育成に積極的に努めるとともに、第四条の規定に基づき国が実施する施策及び前条の規定に基づき地方公共団体が実施する施策に協力するよう努めるものとする。\n\n２国及び地方公共団体は、人工知能関連技術の研究開発及び活用の推進に関する施策で大学に係るものを策定し、及び実施するに当たっては、大学における研究活動の活性化を図るよう努めるとともに、研究者の自主性の尊重その他の大学における研究の特性に配慮しなければならない。\n\n３研究開発機関は、人工知能関連技術の研究開発を効果的に進めるに当たっては、人文科学及び自然科学に関する多様な分野の知見を総合的に活用することが必要であることに鑑み、学際的又は総合的な研究開発に努めるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Responsibilities of Research and Development Institutes",
+        "paragraphs": [
+          "Article 6 (1)A university, a research and development corporation prescribed in Article 2, paragraph (9) of the Act for Activation of Science, Technology and Innovation Creation (Act No. 63 of 2008), and other institutes that research and develop artificial intelligence-related technology (referred to below as a \"research and development institute\") are to endeavor positively to research and develop artificial intelligence-related technology, to disseminate their results, and to develop human resources that have expert and broad knowledge as well as endeavor to cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of the preceding Article, in accordance with the basic principles.",
+          "(2)In establishing and implementing measures for promoting research and development, and utilization of artificial intelligence-related technology which involve a university, the national government and a local government must endeavor to enhance research activities at a university and must respect the independence of a researcher and give due consideration to the other characteristics of research conducted at a university.",
+          "(3)In promoting effectively research and development of artificial intelligence-related technology, a research and development institute is to endeavor to conduct interdisciplinary or comprehensive research and development, in light of the necessity to comprehensively utilize knowledge in various fields in humanities and natural sciences."
+        ],
+        "fullText": "(Responsibilities of Research and Development Institutes)\n\nArticle 6 (1)A university, a research and development corporation prescribed in Article 2, paragraph (9) of the Act for Activation of Science, Technology and Innovation Creation (Act No. 63 of 2008), and other institutes that research and develop artificial intelligence-related technology (referred to below as a \"research and development institute\") are to endeavor positively to research and develop artificial intelligence-related technology, to disseminate their results, and to develop human resources that have expert and broad knowledge as well as endeavor to cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of the preceding Article, in accordance with the basic principles.\n\n(2)In establishing and implementing measures for promoting research and development, and utilization of artificial intelligence-related technology which involve a university, the national government and a local government must endeavor to enhance research activities at a university and must respect the independence of a researcher and give due consideration to the other characteristics of research conducted at a university.\n\n(3)In promoting effectively research and development of artificial intelligence-related technology, a research and development institute is to endeavor to conduct interdisciplinary or comprehensive research and development, in light of the necessity to comprehensively utilize knowledge in various fields in humanities and natural sciences.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='6']",
+        "sourceNodeSha256": "94de763c2ee1501501c3698e6b596d222e2c3ecf970e283256f906f65b08f906",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "a0138cfdcf3a93a05ae4794aa985d1342b91a754a1b82736801faec4c50e5c08",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_6",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='6']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "cb30b9ab2c82d96388eafcf519c3af0c222ec81175fca42e0bef76419779ba8f",
+    "contentSha256": "9464be0734fa82c5f293d572e32a1e42bebe2d6bae40b99d89e10b8080d90456",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-7",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "7",
+    "label": "Article 7",
+    "originalLabel": "第七条",
+    "title": "Responsibilities of Utilization Business Operators",
+    "originalTitle": "第七条（活用事業者の責務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第七条　人工知能関連技術を活用した製品又はサービスの開発又は提供をしようとする者その他の人工知能関連技術を事業活動において活用しようとする者（以下「活用事業者」という。）は、基本理念にのっとり、自ら積極的な人工知能関連技術の活用により事業活動の効率化及び高度化並びに新産業の創出に努めるとともに、第四条の規定に基づき国が実施する施策及び第五条の規定に基づき地方公共団体が実施する施策に協力しなければならない。"
+    ],
+    "fullText": "（活用事業者の責務）\n\n第七条　人工知能関連技術を活用した製品又はサービスの開発又は提供をしようとする者その他の人工知能関連技術を事業活動において活用しようとする者（以下「活用事業者」という。）は、基本理念にのっとり、自ら積極的な人工知能関連技術の活用により事業活動の効率化及び高度化並びに新産業の創出に努めるとともに、第四条の規定に基づき国が実施する施策及び第五条の規定に基づき地方公共団体が実施する施策に協力しなければならない。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Responsibilities of Utilization Business Operators",
+        "paragraphs": [
+          "Article 7 Any person who intends to develop or provide products or services that utilize artificial intelligence-related technology, or other persons who intend to utilize other artificial intelligence-related technology in their business activities (referred to below as a \"utilization business operator\"), is to endeavor to enhance the efficiency and advancement of business activities and create new industries through active utilization of artificial intelligence-related technology, and must cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of Article 5, in accordance with the basic principles."
+        ],
+        "fullText": "(Responsibilities of Utilization Business Operators)\n\nArticle 7 Any person who intends to develop or provide products or services that utilize artificial intelligence-related technology, or other persons who intend to utilize other artificial intelligence-related technology in their business activities (referred to below as a \"utilization business operator\"), is to endeavor to enhance the efficiency and advancement of business activities and create new industries through active utilization of artificial intelligence-related technology, and must cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of Article 5, in accordance with the basic principles.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='7']",
+        "sourceNodeSha256": "194543cf008842a46f5d4c5f26ff1b5ee5cd73b5062cb21d023d06cc49d84050",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "f5199745decc18606fbafa146af2512b20238f53c64ed040d8ade6ed5e85db7f",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_7",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='7']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "1b2eee38f8abcd960fa5ab73b923662bdbd274ceeefd83bfd696b82865a28a90",
+    "contentSha256": "a19a3a5b956585798cdb4ea573c996bf03722c123752d23d8ce8beaf2fbaf4ca",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-8",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "8",
+    "label": "Article 8",
+    "originalLabel": "第八条",
+    "title": "Responsibilities of Citizens",
+    "originalTitle": "第八条（国民の責務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第八条　国民は、基本理念にのっとり、人工知能関連技術に対する理解と関心を深めるとともに、第四条の規定に基づき国が実施する施策及び第五条の規定に基づき地方公共団体が実施する施策に協力するよう努めるものとする。"
+    ],
+    "fullText": "（国民の責務）\n\n第八条　国民は、基本理念にのっとり、人工知能関連技術に対する理解と関心を深めるとともに、第四条の規定に基づき国が実施する施策及び第五条の規定に基づき地方公共団体が実施する施策に協力するよう努めるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Responsibilities of Citizens",
+        "paragraphs": [
+          "Article 8 In accordance with the basic principles, the citizens are to endeavor to deepen their understanding and interest in artificial intelligence-related technology and to cooperate with the measures implemented by the national government under the provisions of Article 4 and by local governments under the provisions of Article 5."
+        ],
+        "fullText": "(Responsibilities of Citizens)\n\nArticle 8 In accordance with the basic principles, the citizens are to endeavor to deepen their understanding and interest in artificial intelligence-related technology and to cooperate with the measures implemented by the national government under the provisions of Article 4 and by local governments under the provisions of Article 5.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='8']",
+        "sourceNodeSha256": "cd9057230876bfa733ccc1db4109caa42d9f74f7d4b97b57c594325dc5ae1f23",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "3266f981aa03612c6dea6335f8ba150670c13a7e440c44cdc83a1dbc34743d81",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_8",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='8']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "96bd1ade41d5af0568dbced1719637c9d6b8aa0b716f7b82b520e8e5931b5f17",
+    "contentSha256": "cc325a8ac27ba9fa46d3132b8ed8748a6e6726f952c3b43dc9320f8c8a6693c1",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-9",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "9",
+    "label": "Article 9",
+    "originalLabel": "第九条",
+    "title": "Strengthening of Coordination",
+    "originalTitle": "第九条（連携の強化）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第九条　国は、国、地方公共団体、研究開発機関及び活用事業者が相互に連携を図りながら協力することにより人工知能関連技術の研究開発及び活用の推進が図られることに鑑み、これらの者の間の連携の強化に必要な施策を講ずるものとする。"
+    ],
+    "fullText": "（連携の強化）\n\n第九条　国は、国、地方公共団体、研究開発機関及び活用事業者が相互に連携を図りながら協力することにより人工知能関連技術の研究開発及び活用の推進が図られることに鑑み、これらの者の間の連携の強化に必要な施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Strengthening of Coordination",
+        "paragraphs": [
+          "Article 9 In light of the fact that mutual coordination and cooperation among the national government, a local government, a research and development institute and a utilization business operator can effectively achieve the promotion of research and development, and utilization of artificial intelligence-related technology, the national government is to take necessary measures to strengthen the coordination among them."
+        ],
+        "fullText": "(Strengthening of Coordination)\n\nArticle 9 In light of the fact that mutual coordination and cooperation among the national government, a local government, a research and development institute and a utilization business operator can effectively achieve the promotion of research and development, and utilization of artificial intelligence-related technology, the national government is to take necessary measures to strengthen the coordination among them.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='9']",
+        "sourceNodeSha256": "c46a41d4212ea3efa30c783ead230602654b0102c9d894ae6d567ba75fc01ac6",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "99cfa8c79ef6f068bb510264eb5e775dbc64b1ea00bb9454dcb05978c632f652",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_9",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='9']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "bd51df7fc7ab00729a2290563cc4c8f0ee38452a3f8a1b6e2e8695352d331c67",
+    "contentSha256": "c44e9b6ccbbfaa7ffb29f2ba90b878d30bcfdcb99a7d55a1c28639939f0425ed",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-10",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "10",
+    "label": "Article 10",
+    "originalLabel": "第十条",
+    "title": "Legislative Measures",
+    "originalTitle": "第十条（法制上の措置等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-1",
+      "label": "第一章 総則",
+      "title": "第一章 総則",
+      "originalTitle": "第一章 総則"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十条　国は、人工知能関連技術の研究開発及び活用の推進に関する施策を実施するため必要な法制上又は財政上の措置その他の措置を講ずるものとする。"
+    ],
+    "fullText": "（法制上の措置等）\n\n第十条　国は、人工知能関連技術の研究開発及び活用の推進に関する施策を実施するため必要な法制上又は財政上の措置その他の措置を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Legislative Measures",
+        "paragraphs": [
+          "Article 10 The national government is to take necessary legislative, or financial measures, and other measures to implement measures for promoting research and development, and utilization of artificial intelligence-related technology."
+        ],
+        "fullText": "(Legislative Measures)\n\nArticle 10 The national government is to take necessary legislative, or financial measures, and other measures to implement measures for promoting research and development, and utilization of artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='10']",
+        "sourceNodeSha256": "f8c0a7ca54e375b38594da3f5ca8952f6368481f726df70f94bd476819c9d444",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "19522e194e19091fd130b25fcb6833b99b4e7ab14a6c910b872db7a14cc2d53f",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_10",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='10']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "8a7653e45cb85c9c436bbb4970bbe1d048dc4ff7a54f3b8d7e0dc8336fd238fd",
+    "contentSha256": "24fb1a4cea724edbdbc55ac72533cf2e1b34d269953339de1d12f6f0d49d7c54",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-11",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "11",
+    "label": "Article 11",
+    "originalLabel": "第十一条",
+    "title": "Promoting Research and Development",
+    "originalTitle": "第十一条（研究開発の推進等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十一条　国は、人工知能関連技術の基礎研究から実用化のための研究開発に至るまでの一貫した研究開発の推進、研究開発機関における研究開発の成果の移転のための体制の整備、研究開発の成果に係る情報の提供その他の施策を講ずるものとする。"
+    ],
+    "fullText": "（研究開発の推進等）\n\n第十一条　国は、人工知能関連技術の基礎研究から実用化のための研究開発に至るまでの一貫した研究開発の推進、研究開発機関における研究開発の成果の移転のための体制の整備、研究開発の成果に係る情報の提供その他の施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Promoting Research and Development",
+        "paragraphs": [
+          "Article 11 The national government is to promote integrated research and development activities, in artificial intelligence-related technology from basic research of it to research and development for its practical application, establish a system for transferring the results of research and development at a research and development institute, provide information on the results of research and development, and take other measures."
+        ],
+        "fullText": "(Promoting Research and Development)\n\nArticle 11 The national government is to promote integrated research and development activities, in artificial intelligence-related technology from basic research of it to research and development for its practical application, establish a system for transferring the results of research and development at a research and development institute, provide information on the results of research and development, and take other measures.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='11']",
+        "sourceNodeSha256": "aedc00061b9248bdbd39ffea553d37e2b31c24ed8903a1cc871ebae07bc7a9a4",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "a5a989756987ff9a838375780ee262b66b78da40996c1b65c30dc6eb179eec20",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_11",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='11']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "ee5128cc992c63efe62b4d6a9e40919f410dffd281bb1009f64694f38ef15210",
+    "contentSha256": "28e1d56e91797cafe452da72431670a9e9039555a2ac96ee65c0dfa87529720b",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-12",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "12",
+    "label": "Article 12",
+    "originalLabel": "第十二条",
+    "title": "Promoting the Development and Sharing of Facilities and Equipment",
+    "originalTitle": "第十二条（施設及び設備等の整備及び共用の促進）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十二条　国は、人工知能関連技術の研究開発及び活用に当たって必要となる大規模な情報処理、情報通信、電磁的記録（電子的方式、磁気的方式その他人の知覚によっては認識することができない方式で作られる記録であって、電子計算機による情報処理の用に供されるものをいう。）の保管等に係る施設及び設備並びにデータセット（特定の目的をもって収集した情報の集合物をいう。）その他の知的基盤（科学技術・イノベーション創出の活性化に関する法律第二十四条の四に規定する知的基盤をいう。以下この条において同じ。）を研究開発機関及び活用事業者が広く利用できるようにするため、これらの施設及び設備並びに知的基盤の整備及び共用の促進のために必要な施策を講ずるものとする。"
+    ],
+    "fullText": "（施設及び設備等の整備及び共用の促進）\n\n第十二条　国は、人工知能関連技術の研究開発及び活用に当たって必要となる大規模な情報処理、情報通信、電磁的記録（電子的方式、磁気的方式その他人の知覚によっては認識することができない方式で作られる記録であって、電子計算機による情報処理の用に供されるものをいう。）の保管等に係る施設及び設備並びにデータセット（特定の目的をもって収集した情報の集合物をいう。）その他の知的基盤（科学技術・イノベーション創出の活性化に関する法律第二十四条の四に規定する知的基盤をいう。以下この条において同じ。）を研究開発機関及び活用事業者が広く利用できるようにするため、これらの施設及び設備並びに知的基盤の整備及び共用の促進のために必要な施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Promoting the Development and Sharing of Facilities and Equipment",
+        "paragraphs": [
+          "Article 12 The national government is to take necessary measures to promote the expansion and shared use of facilities and equipment related to large-scale information processing, information and communications, storage of electromagnetic records (meaning a record in the electronic form, magnetic form, or any other form not recognizable to human senses, and those used for information processing by electronic computer), as well as data set (meaning collection of the information collected for specific purposes) and other intellectual foundation (meaning an intellectual foundation as provided for in Article 24-4 of the Act for Activation of Science, Technology, and Creation Innovation; the same applies below in this Article), which are necessary for the research and development, and utilization of artificial intelligence-related technology, in order to make such facilities and equipment widely available to a research and development institution and a utilization business operator."
+        ],
+        "fullText": "(Promoting the Development and Sharing of Facilities and Equipment)\n\nArticle 12 The national government is to take necessary measures to promote the expansion and shared use of facilities and equipment related to large-scale information processing, information and communications, storage of electromagnetic records (meaning a record in the electronic form, magnetic form, or any other form not recognizable to human senses, and those used for information processing by electronic computer), as well as data set (meaning collection of the information collected for specific purposes) and other intellectual foundation (meaning an intellectual foundation as provided for in Article 24-4 of the Act for Activation of Science, Technology, and Creation Innovation; the same applies below in this Article), which are necessary for the research and development, and utilization of artificial intelligence-related technology, in order to make such facilities and equipment widely available to a research and development institution and a utilization business operator.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='12']",
+        "sourceNodeSha256": "9505167a491da99559400d5573659f3d7dcfca06c9f7f8e6ce0ade7ee7100579",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "9efe79adfcffc3555a12ee288c4007fb98c109be324b0208f37d35f559a2c009",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_12",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='12']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "e4b4b084ba41dac905e06c5014ad6010ee711ab4bf02291f7bbcedc0f21e5c68",
+    "contentSha256": "56d35bd44d98d2f6af745fcab5b9ae2ddf3640bcf9d7fde64382f392533c79a9",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-13",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "13",
+    "label": "Article 13",
+    "originalLabel": "第十三条",
+    "title": "Ensuring Appropriateness",
+    "originalTitle": "第十三条（適正性の確保）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十三条　国は、人工知能関連技術の研究開発及び活用の適正な実施を図るため、国際的な規範の趣旨に即した指針の整備その他の必要な施策を講ずるものとする。"
+    ],
+    "fullText": "（適正性の確保）\n\n第十三条　国は、人工知能関連技術の研究開発及び活用の適正な実施を図るため、国際的な規範の趣旨に即した指針の整備その他の必要な施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Ensuring Appropriateness",
+        "paragraphs": [
+          "Article 13 The national government is to establish guidelines in accordance with the purport of the international norms and take other necessary measures in order to ensure the appropriate implementation of research and development, and utilization of artificial intelligence-related technology."
+        ],
+        "fullText": "(Ensuring Appropriateness)\n\nArticle 13 The national government is to establish guidelines in accordance with the purport of the international norms and take other necessary measures in order to ensure the appropriate implementation of research and development, and utilization of artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='13']",
+        "sourceNodeSha256": "b08e65f0432dbda4f0516438144ba8c468e3dfb632f4fff76d987fdbbc78af96",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "791e83ad2efcc1ae22b343ebc121734c00e5d4c12e30044bdeba474008f6ef0c",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_13",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='13']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "cc4f982c12055507ecb53c2252c9696e265a4e9cad78c89e9c8b196316a72d20",
+    "contentSha256": "9ba5a2d341dfb403696a3596750cb4c51cdf14d19318d4a6fb2812516dc43fde",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-14",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "14",
+    "label": "Article 14",
+    "originalLabel": "第十四条",
+    "title": "Securing Human Resources",
+    "originalTitle": "第十四条（人材の確保等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十四条　国は、地方公共団体、研究開発機関及び活用事業者と緊密な連携協力を図りながら、人工知能関連技術の基礎研究から国民生活及び経済活動における活用に至るまでの各段階において必要となる専門的かつ幅広い知識を有する多様な分野の人材の確保、養成及び資質の向上に必要な施策を講ずるものとする。"
+    ],
+    "fullText": "（人材の確保等）\n\n第十四条　国は、地方公共団体、研究開発機関及び活用事業者と緊密な連携協力を図りながら、人工知能関連技術の基礎研究から国民生活及び経済活動における活用に至るまでの各段階において必要となる専門的かつ幅広い知識を有する多様な分野の人材の確保、養成及び資質の向上に必要な施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Securing Human Resources",
+        "paragraphs": [
+          "Article 14 The national government is to take necessary measures to secure and develop human resources in various fields who have expert and broad knowledge which is necessary in each phase from basic research on artificial intelligence-related technology to its utilization in the citizens' lives and in economic activities, as well as to improve their qualities, in close coordination and cooperation with a local government, a research and development institute and a utilization business operator."
+        ],
+        "fullText": "(Securing Human Resources)\n\nArticle 14 The national government is to take necessary measures to secure and develop human resources in various fields who have expert and broad knowledge which is necessary in each phase from basic research on artificial intelligence-related technology to its utilization in the citizens' lives and in economic activities, as well as to improve their qualities, in close coordination and cooperation with a local government, a research and development institute and a utilization business operator.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='14']",
+        "sourceNodeSha256": "2bb9e59521e39130370bedcf434099d533420f0ec12ac52791e2d600be97b62e",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "ef756128583d038028437e3e0389c671f6a8fc899a60acc80611a6d510b76523",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_14",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='14']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "b2fca8d8c729f6192eb1279908c43708ce78ff043f0ebb242a65bfa56176e88a",
+    "contentSha256": "7076a70449ff32683a94ac317ee65f958da8883c894288e3086323f058bab10c",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-15",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "15",
+    "label": "Article 15",
+    "originalLabel": "第十五条",
+    "title": "Promoting Education",
+    "originalTitle": "第十五条（教育の振興等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十五条　国は、国民が広く人工知能関連技術に対する理解と関心を深めるよう、人工知能関連技術に関する教育及び学習の振興、広報活動の充実その他の必要な施策を講ずるものとする。"
+    ],
+    "fullText": "（教育の振興等）\n\n第十五条　国は、国民が広く人工知能関連技術に対する理解と関心を深めるよう、人工知能関連技術に関する教育及び学習の振興、広報活動の充実その他の必要な施策を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Promoting Education",
+        "paragraphs": [
+          "Article 15 The national government is to promote education and learning, enhance public relations activities and take necessary measures on artificial intelligence-related technology so that the citizens can broadly deepen their understanding and interest in artificial intelligence-related technology."
+        ],
+        "fullText": "(Promoting Education)\n\nArticle 15 The national government is to promote education and learning, enhance public relations activities and take necessary measures on artificial intelligence-related technology so that the citizens can broadly deepen their understanding and interest in artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='15']",
+        "sourceNodeSha256": "4ce9999fcadbbd3d434ab1b023489513a9b198afc18731a0c67fce1d4031b801",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "88151a9f4e68830f3cca4858d2359a16eebb6cba4d62f06666d73797e0de2880",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_15",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='15']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "c456917e43c9842c28c1fe334a643e92d2847e400d32b40d91765479f73ee5fe",
+    "contentSha256": "0569229bca9f759ff7e0b327094088436b12da851ba7c84fc3e9d92f9e354dc6",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-16",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "16",
+    "label": "Article 16",
+    "originalLabel": "第十六条",
+    "title": "Research and Study",
+    "originalTitle": "第十六条（調査研究等）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十六条　国は、国内外の人工知能関連技術の研究開発及び活用の動向に関する情報の収集、不正な目的又は不適切な方法による人工知能関連技術の研究開発又は活用に伴って国民の権利利益の侵害が生じた事案の分析及びそれに基づく対策の検討その他の人工知能関連技術の研究開発及び活用の推進に資する調査及び研究を行い、その結果に基づいて、研究開発機関、活用事業者その他の者に対する指導、助言、情報の提供その他の必要な措置を講ずるものとする。"
+    ],
+    "fullText": "（調査研究等）\n\n第十六条　国は、国内外の人工知能関連技術の研究開発及び活用の動向に関する情報の収集、不正な目的又は不適切な方法による人工知能関連技術の研究開発又は活用に伴って国民の権利利益の侵害が生じた事案の分析及びそれに基づく対策の検討その他の人工知能関連技術の研究開発及び活用の推進に資する調査及び研究を行い、その結果に基づいて、研究開発機関、活用事業者その他の者に対する指導、助言、情報の提供その他の必要な措置を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Research and Study",
+        "paragraphs": [
+          "Article 16 The national government is to collect information on trends of research and development, and utilization of artificial intelligence-related technology both domestically and internationally, analyze cases where the citizens' rights and interests are infringed due to research and development, or utilization of artificial intelligence-related technology by wrongful purposes or inappropriate methods, consider measures based on the analyzation, and conduct other research and studies contributing to promotion of research and development, and utilization of artificial intelligence-related technology, and the national government based on the results, is to give guidance, advice to a research and development institute, a utilization business operator and other people, and provide information for them, or take other necessary measures."
+        ],
+        "fullText": "(Research and Study)\n\nArticle 16 The national government is to collect information on trends of research and development, and utilization of artificial intelligence-related technology both domestically and internationally, analyze cases where the citizens' rights and interests are infringed due to research and development, or utilization of artificial intelligence-related technology by wrongful purposes or inappropriate methods, consider measures based on the analyzation, and conduct other research and studies contributing to promotion of research and development, and utilization of artificial intelligence-related technology, and the national government based on the results, is to give guidance, advice to a research and development institute, a utilization business operator and other people, and provide information for them, or take other necessary measures.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='16']",
+        "sourceNodeSha256": "16b64bba7b3aa036b424cf8a1169eeebd6c4698b0bcc4e53b0ff6f004cf912bb",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "935ce7a70ea7987b08941809f795ab64350c14c87f8bb4f4020b34f9653ea826",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_16",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='16']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "f9c5f962aba97797e75c36f5ad888e36868a6f1acf6f4e9e08caf4026bca1426",
+    "contentSha256": "b4ce5194d264f8911864608981447156270aae0c112425113f28bf05cbc03e99",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-17",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "17",
+    "label": "Article 17",
+    "originalLabel": "第十七条",
+    "title": "International Cooperation",
+    "originalTitle": "第十七条（国際協力）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-2",
+      "label": "第二章 基本的施策",
+      "title": "第二章 基本的施策",
+      "originalTitle": "第二章 基本的施策"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十七条　国は、人工知能関連技術の研究開発及び活用に関する国際協力を推進するとともに、国際的な規範の策定に積極的に参画するものとする。"
+    ],
+    "fullText": "（国際協力）\n\n第十七条　国は、人工知能関連技術の研究開発及び活用に関する国際協力を推進するとともに、国際的な規範の策定に積極的に参画するものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "International Cooperation",
+        "paragraphs": [
+          "Article 17 The national government is to promote international cooperation on research and development, and utilization of artificial intelligence-related technology as well as actively participate in formulating international norms."
+        ],
+        "fullText": "(International Cooperation)\n\nArticle 17 The national government is to promote international cooperation on research and development, and utilization of artificial intelligence-related technology as well as actively participate in formulating international norms.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='17']",
+        "sourceNodeSha256": "b5bfdc34a17e79223ca484fedba8e9181801f772cc7fadb84b10395399278f1d",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "926e392f34243725b80f33aebff9aa95f3a00a5561ed49e5ae8f228510a58540",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_17",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='17']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "cf644657626495010f433eca376a92be5c657d84cb1285ef6cb6ec007f18a7a4",
+    "contentSha256": "66ae299210023c9e69c532eb008d30ec25bee0a751e95995b6728f9c98cca94f",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-18",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "18",
+    "label": "Article 18",
+    "originalLabel": "第十八条",
+    "title": "Article 18",
+    "originalTitle": "第十八条",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-3",
+      "label": "第三章 人工知能基本計画",
+      "title": "第三章 人工知能基本計画",
+      "originalTitle": "第三章 人工知能基本計画"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十八条　政府は、基本理念にのっとり、前章に定める基本的施策を踏まえ、人工知能関連技術の研究開発及び活用の推進に関する基本的な計画（以下「人工知能基本計画」という。）を定めるものとする。",
+      "２人工知能基本計画は、次に掲げる事項について定めるものとする。",
+      "一人工知能関連技術の研究開発及び活用の推進に関する施策についての基本的な方針",
+      "二人工知能関連技術の研究開発及び活用の推進に関し、政府が総合的かつ計画的に講ずべき施策",
+      "三前二号に掲げるもののほか、人工知能関連技術の研究開発及び活用の推進に関する施策を政府が総合的かつ計画的に推進するために必要な事項",
+      "３内閣総理大臣は、人工知能戦略本部の作成した人工知能基本計画の案について閣議の決定を求めるものとする。",
+      "４内閣総理大臣は、前項の閣議の決定があったときは、遅滞なく、人工知能基本計画を公表するものとする。",
+      "５前二項の規定は、人工知能基本計画の変更について準用する。"
+    ],
+    "fullText": "第十八条　政府は、基本理念にのっとり、前章に定める基本的施策を踏まえ、人工知能関連技術の研究開発及び活用の推進に関する基本的な計画（以下「人工知能基本計画」という。）を定めるものとする。\n\n２人工知能基本計画は、次に掲げる事項について定めるものとする。\n\n一人工知能関連技術の研究開発及び活用の推進に関する施策についての基本的な方針\n\n二人工知能関連技術の研究開発及び活用の推進に関し、政府が総合的かつ計画的に講ずべき施策\n\n三前二号に掲げるもののほか、人工知能関連技術の研究開発及び活用の推進に関する施策を政府が総合的かつ計画的に推進するために必要な事項\n\n３内閣総理大臣は、人工知能戦略本部の作成した人工知能基本計画の案について閣議の決定を求めるものとする。\n\n４内閣総理大臣は、前項の閣議の決定があったときは、遅滞なく、人工知能基本計画を公表するものとする。\n\n５前二項の規定は、人工知能基本計画の変更について準用する。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Article 18",
+        "paragraphs": [
+          "Article 18 (1)The government is to establish a basic plan for the promotion of research and development, and utilization of artificial intelligence-related technology (referred to below as \"artificial intelligence basic plan\") in accordance with the basic principles, and based on basic measures specified in the preceding chapter.",
+          "(2)An artificial intelligence basic plan is to specify the following matters :",
+          "(i) the basic policy on measures for promoting research and development, and utilization of artificial intelligence-related technology;",
+          "(ii) measures that the government should take comprehensively and systematically for promoting research and development, and utilization of artificial intelligence-related technology; and",
+          "(iii) in addition to the matters stated in the preceding two items, matters necessary for the government to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology.",
+          "(3)The Prime Minister is to seek a cabinet decision on the draft of artificial intelligence basic plan prepared by an artificial intelligence strategic headquarters.",
+          "(4)If a cabinet decision under the preceding paragraph has been made, the Prime Minister is to make public the artificial intelligence basic plan without delay.",
+          "(5)The provisions of the preceding two paragraphs apply mutatis mutandis to changes in the artificial intelligence basic plan."
+        ],
+        "fullText": "Article 18 (1)The government is to establish a basic plan for the promotion of research and development, and utilization of artificial intelligence-related technology (referred to below as \"artificial intelligence basic plan\") in accordance with the basic principles, and based on basic measures specified in the preceding chapter.\n\n(2)An artificial intelligence basic plan is to specify the following matters :\n\n(i) the basic policy on measures for promoting research and development, and utilization of artificial intelligence-related technology;\n\n(ii) measures that the government should take comprehensively and systematically for promoting research and development, and utilization of artificial intelligence-related technology; and\n\n(iii) in addition to the matters stated in the preceding two items, matters necessary for the government to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology.\n\n(3)The Prime Minister is to seek a cabinet decision on the draft of artificial intelligence basic plan prepared by an artificial intelligence strategic headquarters.\n\n(4)If a cabinet decision under the preceding paragraph has been made, the Prime Minister is to make public the artificial intelligence basic plan without delay.\n\n(5)The provisions of the preceding two paragraphs apply mutatis mutandis to changes in the artificial intelligence basic plan.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='18']",
+        "sourceNodeSha256": "641f92abaf89d79cb6c53e422432240ccf32888942f28ecac693078f1666c38a",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "de111f82bfae4f958494238ed0853555e24e8c48e493acde2efcbd6768d37d97",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_18",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='18']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "ce5103941905f1efd68831b8849dfb7f87d635bb699f701c8c54889db96903b0",
+    "contentSha256": "9cc67d6144fa0d49ae15c9a89f482a10aa4b4949ae1c18f5875c12c26667c63e",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-19",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "19",
+    "label": "Article 19",
+    "originalLabel": "第十九条",
+    "title": "Establishment",
+    "originalTitle": "第十九条（設置）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第十九条　人工知能関連技術の研究開発及び活用の推進に関する施策を総合的かつ計画的に推進するため、内閣に、人工知能戦略本部（以下「本部」という。）を置く。"
+    ],
+    "fullText": "（設置）\n\n第十九条　人工知能関連技術の研究開発及び活用の推進に関する施策を総合的かつ計画的に推進するため、内閣に、人工知能戦略本部（以下「本部」という。）を置く。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Establishment",
+        "paragraphs": [
+          "Article 19 An artificial intelligence strategic headquarters (referred to below as the \"headquarters\") is established under the Cabinet to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology."
+        ],
+        "fullText": "(Establishment)\n\nArticle 19 An artificial intelligence strategic headquarters (referred to below as the \"headquarters\") is established under the Cabinet to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='19']",
+        "sourceNodeSha256": "adc6462ca8abbf1fb870969ecb2c376b4379fcbf908653932b69def018e90c8f",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "1d831fc78333cc8d45e322e3c66ff1150558af634385ed9a7cb493c89e24fa4e",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_19",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='19']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "808438cb19627703467f1684d1213db531589c73e5164b96f500491b8a1417a1",
+    "contentSha256": "74cbc25c4416ffce3ac3a4848174470265aba688f03459e4bb99ba4bffe49692",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-20",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "20",
+    "label": "Article 20",
+    "originalLabel": "第二十条",
+    "title": "Affairs under Jurisdiction of the Headquarters",
+    "originalTitle": "第二十条（所掌事務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十条　本部は、次に掲げる事務をつかさどる。",
+      "一人工知能基本計画の案の作成及び実施の推進に関すること。",
+      "二前号に掲げるもののほか、人工知能関連技術の研究開発及び活用の推進に関する施策で重要なものの企画及び立案並びに総合調整に関すること。"
+    ],
+    "fullText": "（所掌事務）\n\n第二十条　本部は、次に掲げる事務をつかさどる。\n\n一人工知能基本計画の案の作成及び実施の推進に関すること。\n\n二前号に掲げるもののほか、人工知能関連技術の研究開発及び活用の推進に関する施策で重要なものの企画及び立案並びに総合調整に関すること。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Affairs under Jurisdiction of the Headquarters",
+        "paragraphs": [
+          "Article 20 The headquarters is responsible for the following affairs:",
+          "(i) preparing a draft of the artificial intelligence basic plan and promoting its implementation; and",
+          "(ii) in addition to the matters stated in the preceding item, matters concerning planning and proposing important measures on promoting research and development, and utilization of artificial intelligence-related technology, and carrying out overall coordination."
+        ],
+        "fullText": "(Affairs under Jurisdiction of the Headquarters)\n\nArticle 20 The headquarters is responsible for the following affairs:\n\n(i) preparing a draft of the artificial intelligence basic plan and promoting its implementation; and\n\n(ii) in addition to the matters stated in the preceding item, matters concerning planning and proposing important measures on promoting research and development, and utilization of artificial intelligence-related technology, and carrying out overall coordination.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='20']",
+        "sourceNodeSha256": "af8053dd5a1813cfa56554f5119b1a18f4905671826a9b511630b30c423f42cc",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "9f6963a19ff4cacdc00005dc8e5222706cb8ce65ddbdb278ad711cfd54a35d90",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_20",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='20']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "2ff3619055b5553fa26f1bbbeb3e3f52972ce4cc78244e101204a6dd82d279e7",
+    "contentSha256": "4fb5958cf3a206be464adce941fee550ea2bcb3b593d66b998d4b88f61eb52cc",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-21",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "21",
+    "label": "Article 21",
+    "originalLabel": "第二十一条",
+    "title": "Organizations",
+    "originalTitle": "第二十一条（組織）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十一条　本部は、人工知能戦略本部長、人工知能戦略副本部長及び人工知能戦略本部員をもって組織する。"
+    ],
+    "fullText": "（組織）\n\n第二十一条　本部は、人工知能戦略本部長、人工知能戦略副本部長及び人工知能戦略本部員をもって組織する。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Organizations",
+        "paragraphs": [
+          "Article 21 A headquarters consists of the chairperson of the artificial intelligence strategic headquarters, the deputy chairperson of the artificial intelligence strategic headquarters, and the members of the artificial intelligence strategic headquarters."
+        ],
+        "fullText": "(Organizations)\n\nArticle 21 A headquarters consists of the chairperson of the artificial intelligence strategic headquarters, the deputy chairperson of the artificial intelligence strategic headquarters, and the members of the artificial intelligence strategic headquarters.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='21']",
+        "sourceNodeSha256": "c155bf2ac5f28442acf3091e40f6c2efd5768e13180bd7a368435ea886e36a02",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "0a5b40d67c52ed7d81e5e62fefe42b6fe4e0c06c9442b53a7371a56a196fe328",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_21",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='21']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "cbef8c6c4b0b600b93173c9634f26d751d0d501e80b0ca9406ecc34bd030f3a3",
+    "contentSha256": "6a90934215617e2e05eb78cd91d9a1893ba81c396e6b7257fad1d8f976d06207",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-22",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "22",
+    "label": "Article 22",
+    "originalLabel": "第二十二条",
+    "title": "Chairperson of the Artificial Intelligence Strategic Headquarters",
+    "originalTitle": "第二十二条（人工知能戦略本部長）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十二条　本部の長は、人工知能戦略本部長（以下「本部長」という。）とし、内閣総理大臣をもって充てる。",
+      "２本部長は、本部の事務を総括し、所部の職員を指揮監督する。"
+    ],
+    "fullText": "（人工知能戦略本部長）\n\n第二十二条　本部の長は、人工知能戦略本部長（以下「本部長」という。）とし、内閣総理大臣をもって充てる。\n\n２本部長は、本部の事務を総括し、所部の職員を指揮監督する。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Chairperson of the Artificial Intelligence Strategic Headquarters",
+        "paragraphs": [
+          "Article 22 (1)The person in charge of the headquarters is referred to as the chairperson of the artificial intelligence strategic headquarters (referred to below as the \"chairperson\"), and the Prime Minister serves in that capacity.",
+          "(2)A chairperson engages in the overall management of headquarters' affairs and directs and supervises personnel of the headquarters."
+        ],
+        "fullText": "(Chairperson of the Artificial Intelligence Strategic Headquarters)\n\nArticle 22 (1)The person in charge of the headquarters is referred to as the chairperson of the artificial intelligence strategic headquarters (referred to below as the \"chairperson\"), and the Prime Minister serves in that capacity.\n\n(2)A chairperson engages in the overall management of headquarters' affairs and directs and supervises personnel of the headquarters.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='22']",
+        "sourceNodeSha256": "5a4ee9e628a58e7fd3eb40981e2fc881a09ad4b6c2ea20036d12dd279105ddef",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "51452980959f51f7561146f72bd4be586b8272af3805ac4cd30a70d652ff4135",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_22",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='22']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "8d10da379968a846540734995ec90d2b1aaad19770cf066652570908745e288a",
+    "contentSha256": "ef94e39f35135abfaf75bce35447fb653525442e49b1a182c46e06eeeb8a0eca",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-23",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "23",
+    "label": "Article 23",
+    "originalLabel": "第二十三条",
+    "title": "Deputy Chairperson of the Artificial Intelligence Strategic Headquarters",
+    "originalTitle": "第二十三条（人工知能戦略副本部長）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十三条　本部に、人工知能戦略副本部長（次項及び次条第二項において「副本部長」という。）を置き、内閣官房長官及び人工知能戦略担当大臣（内閣総理大臣の命を受けて、人工知能関連技術の研究開発及び活用の総合的かつ計画的な推進に関し内閣総理大臣を助けることをその職務とする国務大臣をいう。）をもって充てる。",
+      "２副本部長は、本部長の職務を助ける。"
+    ],
+    "fullText": "（人工知能戦略副本部長）\n\n第二十三条　本部に、人工知能戦略副本部長（次項及び次条第二項において「副本部長」という。）を置き、内閣官房長官及び人工知能戦略担当大臣（内閣総理大臣の命を受けて、人工知能関連技術の研究開発及び活用の総合的かつ計画的な推進に関し内閣総理大臣を助けることをその職務とする国務大臣をいう。）をもって充てる。\n\n２副本部長は、本部長の職務を助ける。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Deputy Chairperson of the Artificial Intelligence Strategic Headquarters",
+        "paragraphs": [
+          "Article 23 (1)The deputy chairperson of the artificial intelligence strategic headquarters (referred to below as the \"deputy chairperson\" in the following paragraph and paragraph (2) of the following Article) is assigned to the headquarters, and the Chief Cabinet Secretary and the Minister for Artificial Intelligence Strategy (meaning the Minister of State duty is to assist the Prime Minister concerning comprehensive and systematic promotion of research and development, and utilization of artificial intelligence-related technology, as ordered by the Prime Minister) serve in that capacity.",
+          "(2)The deputy chairperson assists the chairperson's duties."
+        ],
+        "fullText": "(Deputy Chairperson of the Artificial Intelligence Strategic Headquarters)\n\nArticle 23 (1)The deputy chairperson of the artificial intelligence strategic headquarters (referred to below as the \"deputy chairperson\" in the following paragraph and paragraph (2) of the following Article) is assigned to the headquarters, and the Chief Cabinet Secretary and the Minister for Artificial Intelligence Strategy (meaning the Minister of State duty is to assist the Prime Minister concerning comprehensive and systematic promotion of research and development, and utilization of artificial intelligence-related technology, as ordered by the Prime Minister) serve in that capacity.\n\n(2)The deputy chairperson assists the chairperson's duties.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='23']",
+        "sourceNodeSha256": "029ee0e3ed7e52330a912b87f784089cdd68879f6ec77790ea964eeb38bd0321",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "0b4fa3f5c7a5ee3f4e10ddc64efa713170d6e7aa0d14bf4a36849282fcec75be",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_23",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='23']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "9138177ccc3fafe9d49b94614a5a6fb8fa85391663dda44700b6dedbce09976c",
+    "contentSha256": "39c661c4dce11f14981a236ad4c960f8b7a6f891f132611e76203a294dcddee8",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-24",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "24",
+    "label": "Article 24",
+    "originalLabel": "第二十四条",
+    "title": "Members of the Artificial Intelligence Strategic Headquarters",
+    "originalTitle": "第二十四条（人工知能戦略本部員）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十四条　本部に、人工知能戦略本部員（次項において「本部員」という。）を置く。",
+      "２本部員は、本部長及び副本部長以外の全ての国務大臣をもって充てる。"
+    ],
+    "fullText": "（人工知能戦略本部員）\n\n第二十四条　本部に、人工知能戦略本部員（次項において「本部員」という。）を置く。\n\n２本部員は、本部長及び副本部長以外の全ての国務大臣をもって充てる。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Members of the Artificial Intelligence Strategic Headquarters",
+        "paragraphs": [
+          "Article 24 (1)The members of an artificial intelligence strategic headquarters are assigned to the headquarters (referred to as the \"headquarters members\" in the following paragraph).",
+          "(2)The headquarters members are appointed from all the Ministers of State other than the chairperson and the deputy chairperson."
+        ],
+        "fullText": "(Members of the Artificial Intelligence Strategic Headquarters)\n\nArticle 24 (1)The members of an artificial intelligence strategic headquarters are assigned to the headquarters (referred to as the \"headquarters members\" in the following paragraph).\n\n(2)The headquarters members are appointed from all the Ministers of State other than the chairperson and the deputy chairperson.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='24']",
+        "sourceNodeSha256": "c3a1a3774b188fd3cfd0136666276031c533efc30308757096cad1ebfde2898d",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "3dd1e512a31aa450fe60a3fa4642b190713ab5ebd28d6c4086eb0785e9efbe24",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_24",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='24']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "0c1d781fb98feac5fadac1b0e49e5e8ee21cb5ee07d93274da52cc383a44b620",
+    "contentSha256": "db471b907dbdbb5f7d687aea1ae3c58a433357b329fab6e0dbaefa4113fc18fa",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-25",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "25",
+    "label": "Article 25",
+    "originalLabel": "第二十五条",
+    "title": "Submission of Materials and Other Forms of Cooperation",
+    "originalTitle": "第二十五条（資料の提出その他の協力）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十五条　本部は、その所掌事務を遂行するため必要があると認めるときは、関係行政機関、地方公共団体、独立行政法人（独立行政法人通則法（平成十一年法律第百三号）第二条第一項に規定する独立行政法人をいう。）及び地方独立行政法人（地方独立行政法人法（平成十五年法律第百十八号）第二条第一項に規定する地方独立行政法人をいう。）の長並びに特殊法人（法律により直接に設立された法人又は特別の法律により特別の設立行為をもって設立された法人であって、総務省設置法（平成十一年法律第九十一号）第四条第一項第八号の規定の適用を受けるものをいう。）の代表者に対して、資料の提出、意見の表明、説明その他必要な協力を求めることができる。",
+      "２本部は、その所掌事務を遂行するために特に必要があると認めるときは、前項に規定する者以外の者に対しても、必要な協力を依頼することができる。"
+    ],
+    "fullText": "（資料の提出その他の協力）\n\n第二十五条　本部は、その所掌事務を遂行するため必要があると認めるときは、関係行政機関、地方公共団体、独立行政法人（独立行政法人通則法（平成十一年法律第百三号）第二条第一項に規定する独立行政法人をいう。）及び地方独立行政法人（地方独立行政法人法（平成十五年法律第百十八号）第二条第一項に規定する地方独立行政法人をいう。）の長並びに特殊法人（法律により直接に設立された法人又は特別の法律により特別の設立行為をもって設立された法人であって、総務省設置法（平成十一年法律第九十一号）第四条第一項第八号の規定の適用を受けるものをいう。）の代表者に対して、資料の提出、意見の表明、説明その他必要な協力を求めることができる。\n\n２本部は、その所掌事務を遂行するために特に必要があると認めるときは、前項に規定する者以外の者に対しても、必要な協力を依頼することができる。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Submission of Materials and Other Forms of Cooperation",
+        "paragraphs": [
+          "Article 25 (1)If the headquarters finds it necessary for performing the affairs under their jurisdiction, they may request the heads of a relevant administrative body, local government, incorporated administrative agency (meaning the incorporated administrative agency prescribed in Article 2, paragraph (1) of Act on General Rules for Incorporated Administrative Agencies (Act No. 103 of 1999)) and local incorporated administrative agency (meaning the local incorporated administrative agency prescribed in Article 2, paragraph (1) of the Local Independent Administrative Agency Act (Act No. 118 of 2003)), and the representative of a special corporation (meaning the corporation directly incorporated by law or corporation incorporated by a special act of incorporation pursuant to a special law, to which the provisions of Article 4, paragraph (1), item (viii) of the Act for Establishment of the Ministry of Internal Affairs and Communications (Act No. 91 of 1999) apply) to submit materials, express opinions, give explanations and provide other necessary cooperation.",
+          "(2)If the headquarters finds it particularly necessary for performing the affairs under their jurisdiction, they may ask for necessary cooperation from a person other than those prescribed in the preceding paragraph."
+        ],
+        "fullText": "(Submission of Materials and Other Forms of Cooperation)\n\nArticle 25 (1)If the headquarters finds it necessary for performing the affairs under their jurisdiction, they may request the heads of a relevant administrative body, local government, incorporated administrative agency (meaning the incorporated administrative agency prescribed in Article 2, paragraph (1) of Act on General Rules for Incorporated Administrative Agencies (Act No. 103 of 1999)) and local incorporated administrative agency (meaning the local incorporated administrative agency prescribed in Article 2, paragraph (1) of the Local Independent Administrative Agency Act (Act No. 118 of 2003)), and the representative of a special corporation (meaning the corporation directly incorporated by law or corporation incorporated by a special act of incorporation pursuant to a special law, to which the provisions of Article 4, paragraph (1), item (viii) of the Act for Establishment of the Ministry of Internal Affairs and Communications (Act No. 91 of 1999) apply) to submit materials, express opinions, give explanations and provide other necessary cooperation.\n\n(2)If the headquarters finds it particularly necessary for performing the affairs under their jurisdiction, they may ask for necessary cooperation from a person other than those prescribed in the preceding paragraph.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='25']",
+        "sourceNodeSha256": "8d810dd388fa86a94dbb18a63cee77673fa164fcd79d745ff2db35089312a3bd",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "c2cc0cd1b66709ca11fe380d4445c6ec427f2a9b31e67cb6a725f4d3b11e170b",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_25",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='25']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "c83a6b319fa5de8991891c3aa16f02b938b076f7307ecfd89094dde7f06b34cc",
+    "contentSha256": "8ae0f6f57194d86eaa23d5ff57f6f18129ad8dc6be6abf1ae8d09286a43273e4",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-26",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "26",
+    "label": "Article 26",
+    "originalLabel": "第二十六条",
+    "title": "Affairs",
+    "originalTitle": "第二十六条（事務）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十六条　本部に関する事務は、内閣府において処理する。"
+    ],
+    "fullText": "（事務）\n\n第二十六条　本部に関する事務は、内閣府において処理する。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Affairs",
+        "paragraphs": [
+          "Article 26 Affairs concerning the headquarters are handled by the Cabinet Office."
+        ],
+        "fullText": "(Affairs)\n\nArticle 26 Affairs concerning the headquarters are handled by the Cabinet Office.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='26']",
+        "sourceNodeSha256": "0065c0b36aadc955c6db755524bbd7bd8e3817d91163620fb0334022e6dfac35",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "f073ab398a16ba12634297933df7a7b1f7f59ed0e50b9a89f5616f27a0184eb5",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_26",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='26']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "7ce9a84b84fd666d43566329c4ab636e94528b2ebd065faf22840b0ba86cc559",
+    "contentSha256": "4b0c43e7146fdb961b4a6ee49fae83f2a4de92c7020a273073808db07afdff3b",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-27",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "27",
+    "label": "Article 27",
+    "originalLabel": "第二十七条",
+    "title": "Competent Minister",
+    "originalTitle": "第二十七条（主任の大臣）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十七条　本部に係る事項については、内閣法（昭和二十二年法律第五号）にいう主任の大臣は、内閣総理大臣とする。"
+    ],
+    "fullText": "（主任の大臣）\n\n第二十七条　本部に係る事項については、内閣法（昭和二十二年法律第五号）にいう主任の大臣は、内閣総理大臣とする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Competent Minister",
+        "paragraphs": [
+          "Article 27 For matters concerning the headquarters, the Prime Minister is to be the competent minister as referred to in the Cabinet Act (Act No. 5 of 1947)."
+        ],
+        "fullText": "(Competent Minister)\n\nArticle 27 For matters concerning the headquarters, the Prime Minister is to be the competent minister as referred to in the Cabinet Act (Act No. 5 of 1947).",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='27']",
+        "sourceNodeSha256": "f8bda442c5a706062628cf9dc6c06e3a941e072dca1edc6895bcfbfcd95ba24e",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "20d005b64da0145249f9593daed6b6fdbe74a754c7776346580c6aeebc5bc035",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_27",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='27']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "649d9a46cebefc69a862111f798400d0122725312bbde80c10072475a88d6de7",
+    "contentSha256": "1ca35fc232319d17f9cb961c88fddb6b5c3fbdc0c27b9e7ac4a5fc7df76c1e33",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-art-28",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "article",
+    "articleNumber": "28",
+    "label": "Article 28",
+    "originalLabel": "第二十八条",
+    "title": "Delegation to Cabinet Order",
+    "originalTitle": "第二十八条（政令への委任）",
+    "chapter": {
+      "id": "jp-ai-promotion-act-2025-chapter-4",
+      "label": "第四章 人工知能戦略本部",
+      "title": "第四章 人工知能戦略本部",
+      "originalTitle": "第四章 人工知能戦略本部"
+    },
+    "section": null,
+    "subsection": null,
+    "paragraphs": [
+      "第二十八条　この法律に定めるもののほか、本部に関し必要な事項は、政令で定める。"
+    ],
+    "fullText": "（政令への委任）\n\n第二十八条　この法律に定めるもののほか、本部に関し必要な事項は、政令で定める。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Delegation to Cabinet Order",
+        "paragraphs": [
+          "Article 28 In addition to what is specified in this Act, necessary matters concerning the headquarters are specified by Cabinet Order."
+        ],
+        "fullText": "(Delegation to Cabinet Order)\n\nArticle 28 In addition to what is specified in this Act, necessary matters concerning the headquarters are specified by Cabinet Order.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "MainProvision/Article[@Num='28']",
+        "sourceNodeSha256": "02ae114394ae4afa3cc84b0afba995989d82646f392c99826d27e31f1a4f1b87",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "940a4ee87d7f6e0c526b32702c1575473b6e7c9c740183605a07b224b31d2d97",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "article",
+      "status": "government-source-number-aligned",
+      "originalUnitCount": 28,
+      "englishUnitCount": 28,
+      "note": "No translation was generated; both government source files use Articles 1 through 28."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force",
+    "appliesFrom": "2025-09-01",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720#Mp-At_28",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "MainProvision/Article[@Num='28']",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "a91ff64a50ddf74d9fc4e2d84283acfc97216b4502b3a452f28e4dbb6b248180",
+    "contentSha256": "acb9213660eaa2d85be2645de338e2544683daf7f087a39931c6d5a8d5b1bb0c",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  },
+  {
+    "id": "jp-ai-promotion-act-2025-supplementary-provisions",
+    "instrumentId": "jp-ai-promotion-act-2025",
+    "unitType": "supplementary-provision-block",
+    "label": "Supplementary Provisions",
+    "originalLabel": "附則",
+    "title": "Supplementary Provisions",
+    "originalTitle": "附則",
+    "paragraphs": [
+      "（施行期日）\n\n第一条　この法律は、公布の日から施行する。ただし、第三章及び第四章並びに附則第三条及び第四条の規定は、公布の日から起算して三月を超えない範囲内において政令で定める日から施行する。",
+      "（検討）\n\n第二条　政府は、人工知能関連技術の研究開発及び活用の推進に関する諸施策についての国際的動向その他の社会経済情勢の変化を勘案しつつ、この法律の施行の状況について検討を加え、必要があると認めるときは、その結果に基づいて所要の措置を講ずるものとする。"
+    ],
+    "fullText": "附 則\n\n（施行期日）\n\n第一条　この法律は、公布の日から施行する。ただし、第三章及び第四章並びに附則第三条及び第四条の規定は、公布の日から起算して三月を超えない範囲内において政令で定める日から施行する。\n\n（検討）\n\n第二条　政府は、人工知能関連技術の研究開発及び活用の推進に関する諸施策についての国際的動向その他の社会経済情勢の変化を勘案しつつ、この法律の施行の状況について検討を加え、必要があると認めるときは、その結果に基づいて所要の措置を講ずるものとする。",
+    "language": "ja-JP",
+    "translations": {
+      "en": {
+        "title": "Supplementary Provisions",
+        "paragraphs": [
+          "(Effective Date)\n\nArticle 1 This Act comes into effect on the date of promulgation; provided, however, that the provisions of Chapters III and IV, and Article 3 and Article 4 of the Supplementary Provisions come into effect on the day specified by Cabinet Order within a period not exceeding three months from the date of promulgation.",
+          "(Review)\n\nArticle 2 The government is to review the extent to which this Act is in effect, while taking into consideration of international trend concerning policies on promoting research and development and utilization of artificial intelligence-related technology, and other social and economic changes, and to take required measures based on the results of its review if it finds them to be necessary."
+        ],
+        "fullText": "Supplementary Provisions\n\n(Effective Date)\n\nArticle 1 This Act comes into effect on the date of promulgation; provided, however, that the provisions of Chapters III and IV, and Article 3 and Article 4 of the Supplementary Provisions come into effect on the day specified by Cabinet Order within a period not exceeding three months from the date of promulgation.\n\n(Review)\n\nArticle 2 The government is to review the extent to which this Act is in effect, while taking into consideration of international trend concerning policies on promoting research and development and utilization of artificial intelligence-related technology, and other social and economic changes, and to take required measures based on the results of its review if it finds them to be necessary.",
+        "language": "en",
+        "status": "government-reference-translation-no-legal-effect",
+        "authorityNote": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text.",
+        "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+        "sourceLabel": "Japanese Law Translation Database — government reference",
+        "sourceXmlPath": "LawBody/SupplProvision/Article[1..2]",
+        "sourceNodeSha256": "e87106024482d1959fe056b88122b487d72635777899c03d8770ff7aea0e8942",
+        "sourceVersion": {
+          "sourceDocumentSha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+          "translationHistorySha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+          "translatedOn": "2025-08-22",
+          "publishedOnDatabase": "2026-01-30",
+          "dictionaryVersion": "18.0",
+          "currentJapaneseRevisionId": "507AC0000000053_20250901_000000000000000",
+          "versionAlignment": "same-enactment-no-subsequent-amendment"
+        },
+        "contentSha256": "02a795ace779107d03ecd3b2c349647fbc3fef1012ad4dccdfd3d959ed306dd7",
+        "rights": {
+          "reuseStatus": "public-data-license-1.0",
+          "license": "Public Data License (Version 1.0)",
+          "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+          "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+        }
+      }
+    },
+    "alignment": {
+      "level": "current-supplementary-extract",
+      "status": "government-current-operative-units-aligned",
+      "originalUnitCount": 2,
+      "englishAlignedUnitCount": 2,
+      "englishSourceOriginalUnitCount": 5,
+      "note": "The current e-Gov extract retains Supplementary Articles 1 and 2. The translation source also preserves spent enactment-only amending and adjustment provisions; those extra source-original nodes are not presented as current Japanese law."
+    },
+    "textAvailability": "full-japanese-with-current-government-english-reference",
+    "legalEffectStatus": "in-force-current-consolidation",
+    "appliesFrom": "2025-06-04",
+    "versionAsOf": "2026-07-20",
+    "source": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceFragment": "https://laws.e-gov.go.jp/law/507AC0000000053?occasion_date=20260720",
+    "sourceLabel": "e-Gov Law Search — current Japanese consolidation",
+    "sourceXmlPath": "LawBody/SupplProvision[1]",
+    "retrievedOn": "2026-07-20",
+    "sourceVersion": {
+      "lawId": "507AC0000000053",
+      "lawNumber": "令和七年法律第五十三号",
+      "promulgatedOn": "2025-06-04",
+      "asOf": "2026-07-20",
+      "revisionId": "507AC0000000053_20250901_000000000000000",
+      "fullyEffectiveFrom": "2025-09-01",
+      "sourceDocumentSha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "revisionHistorySha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "competentAuthoritySnapshotSha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "textState": "current-effective-consolidation",
+      "normalization": "XML indentation is removed; statutory characters and source order are preserved. Captions, paragraphs, and direct list items are separated for display."
+    },
+    "sourceNodeSha256": "d2e8f634df16a88b1c382f95630f8670b8260c5f4a58cc915e75ccc6b913d84d",
+    "contentSha256": "64ce0acafc695cbefb1ea13f40e10aff6f5c97ecfd5ed6aa6bd51c7cba539d36",
+    "rights": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    }
+  }
+]

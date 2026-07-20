@@ -1,0 +1,2392 @@
+[
+  {
+    "id": "cn-network-data-reg-art-1",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "1",
+    "label": "Article 1",
+    "originalTitle": "第一条",
+    "title": "Article 1",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "为了规范网络数据处理活动，保障网络数据安全，促进网络数据依法合理有效利用，保护个人、组织的合法权益，维护国家安全和公共利益，根据《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律，制定本条例。"
+    ],
+    "fullText": "为了规范网络数据处理活动，保障网络数据安全，促进网络数据依法合理有效利用，保护个人、组织的合法权益，维护国家安全和公共利益，根据《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律，制定本条例。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "31f8f66ae0921776e23f4c13cf4b1460f4677b0ae7d7cb8224ea949e067da1fa"
+  },
+  {
+    "id": "cn-network-data-reg-art-2",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "2",
+    "label": "Article 2",
+    "originalTitle": "第二条",
+    "title": "Article 2",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "在中华人民共和国境内开展网络数据处理活动及其安全监督管理，适用本条例。",
+      "在中华人民共和国境外处理中华人民共和国境内自然人个人信息的活动，符合《中华人民共和国个人信息保护法》第三条第二款规定情形的，也适用本条例。",
+      "在中华人民共和国境外开展网络数据处理活动，损害中华人民共和国国家安全、公共利益或者公民、组织合法权益的，依法追究法律责任。"
+    ],
+    "fullText": "在中华人民共和国境内开展网络数据处理活动及其安全监督管理，适用本条例。\n\n在中华人民共和国境外处理中华人民共和国境内自然人个人信息的活动，符合《中华人民共和国个人信息保护法》第三条第二款规定情形的，也适用本条例。\n\n在中华人民共和国境外开展网络数据处理活动，损害中华人民共和国国家安全、公共利益或者公民、组织合法权益的，依法追究法律责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "920769fba7f439ceb735fd1012ea064ea63cd256c9a59a22db6865bec735abef"
+  },
+  {
+    "id": "cn-network-data-reg-art-3",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "3",
+    "label": "Article 3",
+    "originalTitle": "第三条",
+    "title": "Article 3",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据安全管理工作坚持中国共产党的领导，贯彻总体国家安全观，统筹促进网络数据开发利用与保障网络数据安全。"
+    ],
+    "fullText": "网络数据安全管理工作坚持中国共产党的领导，贯彻总体国家安全观，统筹促进网络数据开发利用与保障网络数据安全。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "e7950cead99e8b71b8429bd6f21cd31c83ddd7c15093038b38b8d9bbeb7d3d23"
+  },
+  {
+    "id": "cn-network-data-reg-art-4",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "4",
+    "label": "Article 4",
+    "originalTitle": "第四条",
+    "title": "Article 4",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家鼓励网络数据在各行业、各领域的创新应用，加强网络数据安全防护能力建设，支持网络数据相关技术、产品、服务创新，开展网络数据安全宣传教育和人才培养，促进网络数据开发利用和产业发展。"
+    ],
+    "fullText": "国家鼓励网络数据在各行业、各领域的创新应用，加强网络数据安全防护能力建设，支持网络数据相关技术、产品、服务创新，开展网络数据安全宣传教育和人才培养，促进网络数据开发利用和产业发展。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "99760c7ab6f3f6a8467a5da884352a34889c34c9d266a120ea5ccb85e487ac64"
+  },
+  {
+    "id": "cn-network-data-reg-art-5",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "5",
+    "label": "Article 5",
+    "originalTitle": "第五条",
+    "title": "Article 5",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家根据网络数据在经济社会发展中的重要程度，以及一旦遭到篡改、破坏、泄露或者非法获取、非法利用，对国家安全、公共利益或者个人、组织合法权益造成的危害程度，对网络数据实行分类分级保护。"
+    ],
+    "fullText": "国家根据网络数据在经济社会发展中的重要程度，以及一旦遭到篡改、破坏、泄露或者非法获取、非法利用，对国家安全、公共利益或者个人、组织合法权益造成的危害程度，对网络数据实行分类分级保护。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "6d28e18fd84fc10efaca9902f63b5db93e34a6a4c6c052ec33d3ba814f8b470a"
+  },
+  {
+    "id": "cn-network-data-reg-art-6",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "6",
+    "label": "Article 6",
+    "originalTitle": "第六条",
+    "title": "Article 6",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家积极参与网络数据安全相关国际规则和标准的制定，促进国际交流与合作。"
+    ],
+    "fullText": "国家积极参与网络数据安全相关国际规则和标准的制定，促进国际交流与合作。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "702ad660f5a684b168eb22524472c3bdab0fc7fb1124e868d37d95f8bcfd2b28"
+  },
+  {
+    "id": "cn-network-data-reg-art-7",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "7",
+    "label": "Article 7",
+    "originalTitle": "第七条",
+    "title": "Article 7",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家支持相关行业组织按照章程，制定网络数据安全行为规范，加强行业自律，指导会员加强网络数据安全保护，提高网络数据安全保护水平，促进行业健康发展。"
+    ],
+    "fullText": "国家支持相关行业组织按照章程，制定网络数据安全行为规范，加强行业自律，指导会员加强网络数据安全保护，提高网络数据安全保护水平，促进行业健康发展。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ae6fc5e020e200fe94f48341db9449e3f1af40f72f27bd58c89a3e48509a4cf6"
+  },
+  {
+    "id": "cn-network-data-reg-art-8",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "8",
+    "label": "Article 8",
+    "originalTitle": "第八条",
+    "title": "Article 8",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "任何个人、组织不得利用网络数据从事非法活动，不得从事窃取或者以其他非法方式获取网络数据、非法出售或者非法向他人提供网络数据等非法网络数据处理活动。",
+      "任何个人、组织不得提供专门用于从事前款非法活动的程序、工具；明知他人从事前款非法活动的，不得为其提供互联网接入、服务器托管、网络存储、通讯传输等技术支持，或者提供广告推广、支付结算等帮助。"
+    ],
+    "fullText": "任何个人、组织不得利用网络数据从事非法活动，不得从事窃取或者以其他非法方式获取网络数据、非法出售或者非法向他人提供网络数据等非法网络数据处理活动。\n\n任何个人、组织不得提供专门用于从事前款非法活动的程序、工具；明知他人从事前款非法活动的，不得为其提供互联网接入、服务器托管、网络存储、通讯传输等技术支持，或者提供广告推广、支付结算等帮助。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "a83dfbc0af29cd4b4dd425af6a6d2d4fb68432f5104eb72065ec55ccd045a802"
+  },
+  {
+    "id": "cn-network-data-reg-art-9",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "9",
+    "label": "Article 9",
+    "originalTitle": "第九条",
+    "title": "Article 9",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者应当依照法律、行政法规的规定和国家标准的强制性要求，在网络安全等级保护的基础上，加强网络数据安全防护，建立健全网络数据安全管理制度，采取加密、备份、访问控制、安全认证等技术措施和其他必要措施，保护网络数据免遭篡改、破坏、泄露或者非法获取、非法利用，处置网络数据安全事件，防范针对和利用网络数据实施的违法犯罪活动，并对所处理网络数据的安全承担主体责任。"
+    ],
+    "fullText": "网络数据处理者应当依照法律、行政法规的规定和国家标准的强制性要求，在网络安全等级保护的基础上，加强网络数据安全防护，建立健全网络数据安全管理制度，采取加密、备份、访问控制、安全认证等技术措施和其他必要措施，保护网络数据免遭篡改、破坏、泄露或者非法获取、非法利用，处置网络数据安全事件，防范针对和利用网络数据实施的违法犯罪活动，并对所处理网络数据的安全承担主体责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "f45b5625c9c01a7733d160ab705eaddcfdcbee8bcbf1207153216ee70de1af3f"
+  },
+  {
+    "id": "cn-network-data-reg-art-10",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "10",
+    "label": "Article 10",
+    "originalTitle": "第十条",
+    "title": "Article 10",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者提供的网络产品、服务应当符合相关国家标准的强制性要求；发现网络产品、服务存在安全缺陷、漏洞等风险时，应当立即采取补救措施，按照规定及时告知用户并向有关主管部门报告；涉及危害国家安全、公共利益的，网络数据处理者还应当在24小时内向有关主管部门报告。"
+    ],
+    "fullText": "网络数据处理者提供的网络产品、服务应当符合相关国家标准的强制性要求；发现网络产品、服务存在安全缺陷、漏洞等风险时，应当立即采取补救措施，按照规定及时告知用户并向有关主管部门报告；涉及危害国家安全、公共利益的，网络数据处理者还应当在24小时内向有关主管部门报告。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "04508226318b1967eb9e1bd6b5622ceb3e809a50c0d61317707e8df964d793ab"
+  },
+  {
+    "id": "cn-network-data-reg-art-11",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "11",
+    "label": "Article 11",
+    "originalTitle": "第十一条",
+    "title": "Article 11",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者应当建立健全网络数据安全事件应急预案，发生网络数据安全事件时，应当立即启动预案，采取措施防止危害扩大，消除安全隐患，并按照规定向有关主管部门报告。",
+      "网络数据安全事件对个人、组织合法权益造成危害的，网络数据处理者应当及时将安全事件和风险情况、危害后果、已经采取的补救措施等，以电话、短信、即时通信工具、电子邮件或者公告等方式通知利害关系人；法律、行政法规规定可以不通知的，从其规定。网络数据处理者在处置网络数据安全事件过程中发现涉嫌违法犯罪线索的，应当按照规定向公安机关、国家安全机关报案，并配合开展侦查、调查和处置工作。"
+    ],
+    "fullText": "网络数据处理者应当建立健全网络数据安全事件应急预案，发生网络数据安全事件时，应当立即启动预案，采取措施防止危害扩大，消除安全隐患，并按照规定向有关主管部门报告。\n\n网络数据安全事件对个人、组织合法权益造成危害的，网络数据处理者应当及时将安全事件和风险情况、危害后果、已经采取的补救措施等，以电话、短信、即时通信工具、电子邮件或者公告等方式通知利害关系人；法律、行政法规规定可以不通知的，从其规定。网络数据处理者在处置网络数据安全事件过程中发现涉嫌违法犯罪线索的，应当按照规定向公安机关、国家安全机关报案，并配合开展侦查、调查和处置工作。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "b29c7018b1b749f64bd763ac94a0e1030c62ad61fca730dd2b9c168cd53d1462"
+  },
+  {
+    "id": "cn-network-data-reg-art-12",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "12",
+    "label": "Article 12",
+    "originalTitle": "第十二条",
+    "title": "Article 12",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者向其他网络数据处理者提供、委托处理个人信息和重要数据的，应当通过合同等与网络数据接收方约定处理目的、方式、范围以及安全保护义务等，并对网络数据接收方履行义务的情况进行监督。向其他网络数据处理者提供、委托处理个人信息和重要数据的处理情况记录，应当至少保存3年。",
+      "网络数据接收方应当履行网络数据安全保护义务，并按照约定的目的、方式、范围等处理个人信息和重要数据。",
+      "两个以上的网络数据处理者共同决定个人信息和重要数据的处理目的和处理方式的，应当约定各自的权利和义务。"
+    ],
+    "fullText": "网络数据处理者向其他网络数据处理者提供、委托处理个人信息和重要数据的，应当通过合同等与网络数据接收方约定处理目的、方式、范围以及安全保护义务等，并对网络数据接收方履行义务的情况进行监督。向其他网络数据处理者提供、委托处理个人信息和重要数据的处理情况记录，应当至少保存3年。\n\n网络数据接收方应当履行网络数据安全保护义务，并按照约定的目的、方式、范围等处理个人信息和重要数据。\n\n两个以上的网络数据处理者共同决定个人信息和重要数据的处理目的和处理方式的，应当约定各自的权利和义务。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "f2e1d6cbc2ae6282c2087a1c93cc57d471b798773cb08ff6a3685fcaa0ae82fa"
+  },
+  {
+    "id": "cn-network-data-reg-art-13",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "13",
+    "label": "Article 13",
+    "originalTitle": "第十三条",
+    "title": "Article 13",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者开展网络数据处理活动，影响或者可能影响国家安全的，应当按照国家有关规定进行国家安全审查。"
+    ],
+    "fullText": "网络数据处理者开展网络数据处理活动，影响或者可能影响国家安全的，应当按照国家有关规定进行国家安全审查。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "d2fbb63a5b5db6b80ab84dcd7e7ca52972d1198e418c8c48dabe3e8dbb874597"
+  },
+  {
+    "id": "cn-network-data-reg-art-14",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "14",
+    "label": "Article 14",
+    "originalTitle": "第十四条",
+    "title": "Article 14",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者因合并、分立、解散、破产等原因需要转移网络数据的，网络数据接收方应当继续履行网络数据安全保护义务。"
+    ],
+    "fullText": "网络数据处理者因合并、分立、解散、破产等原因需要转移网络数据的，网络数据接收方应当继续履行网络数据安全保护义务。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "480d98daf718bf618d3046cb9125bdf8e1802e6fac169e93f69822948bd69f63"
+  },
+  {
+    "id": "cn-network-data-reg-art-15",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "15",
+    "label": "Article 15",
+    "originalTitle": "第十五条",
+    "title": "Article 15",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家机关委托他人建设、运行、维护电子政务系统，存储、加工政务数据，应当按照国家有关规定经过严格的批准程序，明确受托方的网络数据处理权限、保护责任等，监督受托方履行网络数据安全保护义务。"
+    ],
+    "fullText": "国家机关委托他人建设、运行、维护电子政务系统，存储、加工政务数据，应当按照国家有关规定经过严格的批准程序，明确受托方的网络数据处理权限、保护责任等，监督受托方履行网络数据安全保护义务。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "c0121fb93527d26507f2149a272ddc7f3f9df110eb2e29738af1597446007205"
+  },
+  {
+    "id": "cn-network-data-reg-art-16",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "16",
+    "label": "Article 16",
+    "originalTitle": "第十六条",
+    "title": "Article 16",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者为国家机关、关键信息基础设施运营者提供服务，或者参与其他公共基础设施、公共服务系统建设、运行、维护的，应当依照法律、法规的规定和合同约定履行网络数据安全保护义务，提供安全、稳定、持续的服务。",
+      "前款规定的网络数据处理者未经委托方同意，不得访问、获取、留存、使用、泄露或者向他人提供网络数据，不得对网络数据进行关联分析。"
+    ],
+    "fullText": "网络数据处理者为国家机关、关键信息基础设施运营者提供服务，或者参与其他公共基础设施、公共服务系统建设、运行、维护的，应当依照法律、法规的规定和合同约定履行网络数据安全保护义务，提供安全、稳定、持续的服务。\n\n前款规定的网络数据处理者未经委托方同意，不得访问、获取、留存、使用、泄露或者向他人提供网络数据，不得对网络数据进行关联分析。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ab14e3a2777be3755328c48d7f6fe25ac1ef6030b931b71d1250811490a279cf"
+  },
+  {
+    "id": "cn-network-data-reg-art-17",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "17",
+    "label": "Article 17",
+    "originalTitle": "第十七条",
+    "title": "Article 17",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "为国家机关提供服务的信息系统应当参照电子政务系统的管理要求加强网络数据安全管理，保障网络数据安全。"
+    ],
+    "fullText": "为国家机关提供服务的信息系统应当参照电子政务系统的管理要求加强网络数据安全管理，保障网络数据安全。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "fd570201eff67e72678ab9f7862693c710d2411cfc3864a45ec626d5a7526d88"
+  },
+  {
+    "id": "cn-network-data-reg-art-18",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "18",
+    "label": "Article 18",
+    "originalTitle": "第十八条",
+    "title": "Article 18",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者使用自动化工具访问、收集网络数据，应当评估对网络服务带来的影响，不得非法侵入他人网络，不得干扰网络服务正常运行。"
+    ],
+    "fullText": "网络数据处理者使用自动化工具访问、收集网络数据，应当评估对网络服务带来的影响，不得非法侵入他人网络，不得干扰网络服务正常运行。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "b1e1bfa0e0dfd60e02914510fd1c86c118e72ff61397dae6cb470a6aa1f1af29"
+  },
+  {
+    "id": "cn-network-data-reg-art-19",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "19",
+    "label": "Article 19",
+    "originalTitle": "第十九条",
+    "title": "Article 19",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "提供生成式人工智能服务的网络数据处理者应当加强对训练数据和训练数据处理活动的安全管理，采取有效措施防范和处置网络数据安全风险。"
+    ],
+    "fullText": "提供生成式人工智能服务的网络数据处理者应当加强对训练数据和训练数据处理活动的安全管理，采取有效措施防范和处置网络数据安全风险。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "6814a03605e6f6fe559ed057695e8a0ed941424c2bea9f46e14f8e77f0ff66f8"
+  },
+  {
+    "id": "cn-network-data-reg-art-20",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "20",
+    "label": "Article 20",
+    "originalTitle": "第二十条",
+    "title": "Article 20",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-2",
+      "label": "Chapter II",
+      "title": "General Requirements"
+    },
+    "section": null,
+    "paragraphs": [
+      "面向社会提供产品、服务的网络数据处理者应当接受社会监督，建立便捷的网络数据安全投诉、举报渠道，公布投诉、举报方式等信息，及时受理并处理网络数据安全投诉、举报。"
+    ],
+    "fullText": "面向社会提供产品、服务的网络数据处理者应当接受社会监督，建立便捷的网络数据安全投诉、举报渠道，公布投诉、举报方式等信息，及时受理并处理网络数据安全投诉、举报。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "16b222c3fdd597a22f32096b1542c5569a12ba49fd35c2a7d6da122eebcb9cdd"
+  },
+  {
+    "id": "cn-network-data-reg-art-21",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "21",
+    "label": "Article 21",
+    "originalTitle": "第二十一条",
+    "title": "Article 21",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者在处理个人信息前，通过制定个人信息处理规则的方式依法向个人告知的，个人信息处理规则应当集中公开展示、易于访问并置于醒目位置，内容明确具体、清晰易懂，包括但不限于下列内容：",
+      "（一）网络数据处理者的名称或者姓名和联系方式；",
+      "（二）处理个人信息的目的、方式、种类，处理敏感个人信息的必要性以及对个人权益的影响；",
+      "（三）个人信息保存期限和到期后的处理方式，保存期限难以确定的，应当明确保存期限的确定方法；",
+      "（四）个人查阅、复制、转移、更正、补充、删除、限制处理个人信息以及注销账号、撤回同意的方法和途径等。",
+      "网络数据处理者按照前款规定向个人告知收集和向其他网络数据处理者提供个人信息的目的、方式、种类以及网络数据接收方信息的，应当以清单等形式予以列明。网络数据处理者处理不满十四周岁未成年人个人信息的，还应当制定专门的个人信息处理规则。"
+    ],
+    "fullText": "网络数据处理者在处理个人信息前，通过制定个人信息处理规则的方式依法向个人告知的，个人信息处理规则应当集中公开展示、易于访问并置于醒目位置，内容明确具体、清晰易懂，包括但不限于下列内容：\n\n（一）网络数据处理者的名称或者姓名和联系方式；\n\n（二）处理个人信息的目的、方式、种类，处理敏感个人信息的必要性以及对个人权益的影响；\n\n（三）个人信息保存期限和到期后的处理方式，保存期限难以确定的，应当明确保存期限的确定方法；\n\n（四）个人查阅、复制、转移、更正、补充、删除、限制处理个人信息以及注销账号、撤回同意的方法和途径等。\n\n网络数据处理者按照前款规定向个人告知收集和向其他网络数据处理者提供个人信息的目的、方式、种类以及网络数据接收方信息的，应当以清单等形式予以列明。网络数据处理者处理不满十四周岁未成年人个人信息的，还应当制定专门的个人信息处理规则。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "4c07db6941c2140b368591dc84e707278be1f7aaded57bc2e15b8e1c1c0f503a"
+  },
+  {
+    "id": "cn-network-data-reg-art-22",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "22",
+    "label": "Article 22",
+    "originalTitle": "第二十二条",
+    "title": "Article 22",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者基于个人同意处理个人信息的，应当遵守下列规定：",
+      "（一）收集个人信息为提供产品或者服务所必需，不得超范围收集个人信息，不得通过误导、欺诈、胁迫等方式取得个人同意；",
+      "（二）处理生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹等敏感个人信息的，应当取得个人的单独同意；",
+      "（三）处理不满十四周岁未成年人个人信息的，应当取得未成年人的父母或者其他监护人的同意；",
+      "（四）不得超出个人同意的个人信息处理目的、方式、种类、保存期限处理个人信息；",
+      "（五）不得在个人明确表示不同意处理其个人信息后，频繁征求同意；",
+      "（六）个人信息的处理目的、方式、种类发生变更的，应当重新取得个人同意。",
+      "法律、行政法规规定处理敏感个人信息应当取得书面同意的，从其规定。"
+    ],
+    "fullText": "网络数据处理者基于个人同意处理个人信息的，应当遵守下列规定：\n\n（一）收集个人信息为提供产品或者服务所必需，不得超范围收集个人信息，不得通过误导、欺诈、胁迫等方式取得个人同意；\n\n（二）处理生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹等敏感个人信息的，应当取得个人的单独同意；\n\n（三）处理不满十四周岁未成年人个人信息的，应当取得未成年人的父母或者其他监护人的同意；\n\n（四）不得超出个人同意的个人信息处理目的、方式、种类、保存期限处理个人信息；\n\n（五）不得在个人明确表示不同意处理其个人信息后，频繁征求同意；\n\n（六）个人信息的处理目的、方式、种类发生变更的，应当重新取得个人同意。\n\n法律、行政法规规定处理敏感个人信息应当取得书面同意的，从其规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "6496d86e56397573410c7e8f858a83cbe5307725cab78d29375bcd3e2f571e10"
+  },
+  {
+    "id": "cn-network-data-reg-art-23",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "23",
+    "label": "Article 23",
+    "originalTitle": "第二十三条",
+    "title": "Article 23",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人请求查阅、复制、更正、补充、删除、限制处理其个人信息，或者个人注销账号、撤回同意的，网络数据处理者应当及时受理，并提供便捷的支持个人行使权利的方法和途径，不得设置不合理条件限制个人的合理请求。"
+    ],
+    "fullText": "个人请求查阅、复制、更正、补充、删除、限制处理其个人信息，或者个人注销账号、撤回同意的，网络数据处理者应当及时受理，并提供便捷的支持个人行使权利的方法和途径，不得设置不合理条件限制个人的合理请求。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "98bbbf96ddb82f3eadab5405b11b6cf8445e8a345994a9afafddf1357153c7e7"
+  },
+  {
+    "id": "cn-network-data-reg-art-24",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "24",
+    "label": "Article 24",
+    "originalTitle": "第二十四条",
+    "title": "Article 24",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "因使用自动化采集技术等无法避免采集到非必要个人信息或者未依法取得个人同意的个人信息，以及个人注销账号的，网络数据处理者应当删除个人信息或者进行匿名化处理。法律、行政法规规定的保存期限未届满，或者删除、匿名化处理个人信息从技术上难以实现的，网络数据处理者应当停止除存储和采取必要的安全保护措施之外的处理。"
+    ],
+    "fullText": "因使用自动化采集技术等无法避免采集到非必要个人信息或者未依法取得个人同意的个人信息，以及个人注销账号的，网络数据处理者应当删除个人信息或者进行匿名化处理。法律、行政法规规定的保存期限未届满，或者删除、匿名化处理个人信息从技术上难以实现的，网络数据处理者应当停止除存储和采取必要的安全保护措施之外的处理。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "48672c5f70a4e78ebefad60dc24211e636addb49fff973290d1d930fbd8a7904"
+  },
+  {
+    "id": "cn-network-data-reg-art-25",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "25",
+    "label": "Article 25",
+    "originalTitle": "第二十五条",
+    "title": "Article 25",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "对符合下列条件的个人信息转移请求，网络数据处理者应当为个人指定的其他网络数据处理者访问、获取有关个人信息提供途径：",
+      "（一）能够验证请求人的真实身份；",
+      "（二）请求转移的是本人同意提供的或者基于合同收集的个人信息；",
+      "（三）转移个人信息具备技术可行性；",
+      "（四）转移个人信息不损害他人合法权益。",
+      "请求转移个人信息次数等明显超出合理范围的，网络数据处理者可以根据转移个人信息的成本收取必要费用。"
+    ],
+    "fullText": "对符合下列条件的个人信息转移请求，网络数据处理者应当为个人指定的其他网络数据处理者访问、获取有关个人信息提供途径：\n\n（一）能够验证请求人的真实身份；\n\n（二）请求转移的是本人同意提供的或者基于合同收集的个人信息；\n\n（三）转移个人信息具备技术可行性；\n\n（四）转移个人信息不损害他人合法权益。\n\n请求转移个人信息次数等明显超出合理范围的，网络数据处理者可以根据转移个人信息的成本收取必要费用。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "35a4855a0432c5b5edb004907e43ec9ad045edeec10f68c54813a118138590ba"
+  },
+  {
+    "id": "cn-network-data-reg-art-26",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "26",
+    "label": "Article 26",
+    "originalTitle": "第二十六条",
+    "title": "Article 26",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "中华人民共和国境外网络数据处理者处理境内自然人个人信息，依照《中华人民共和国个人信息保护法》第五十三条规定在境内设立专门机构或者指定代表的，应当将有关机构的名称或者代表的姓名、联系方式等报送所在地设区的市级网信部门；网信部门应当及时通报同级有关主管部门。"
+    ],
+    "fullText": "中华人民共和国境外网络数据处理者处理境内自然人个人信息，依照《中华人民共和国个人信息保护法》第五十三条规定在境内设立专门机构或者指定代表的，应当将有关机构的名称或者代表的姓名、联系方式等报送所在地设区的市级网信部门；网信部门应当及时通报同级有关主管部门。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "aee8ea4c87ad3982857800fe8284eae462984215aba95a4cc8c6cbe7b2770146"
+  },
+  {
+    "id": "cn-network-data-reg-art-27",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "27",
+    "label": "Article 27",
+    "originalTitle": "第二十七条",
+    "title": "Article 27",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者应当定期自行或者委托专业机构对其处理个人信息遵守法律、行政法规的情况进行合规审计。"
+    ],
+    "fullText": "网络数据处理者应当定期自行或者委托专业机构对其处理个人信息遵守法律、行政法规的情况进行合规审计。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "2b6b658f9d1de0ce25c54b28adcfa26acfe6d9679b21c5cc29c62d6d93a338b3"
+  },
+  {
+    "id": "cn-network-data-reg-art-28",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "28",
+    "label": "Article 28",
+    "originalTitle": "第二十八条",
+    "title": "Article 28",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-3",
+      "label": "Chapter III",
+      "title": "Personal Information Protection"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者处理1000万人以上个人信息的，还应当遵守本条例第三十条、第三十二条对处理重要数据的网络数据处理者（以下简称重要数据的处理者）作出的规定。"
+    ],
+    "fullText": "网络数据处理者处理1000万人以上个人信息的，还应当遵守本条例第三十条、第三十二条对处理重要数据的网络数据处理者（以下简称重要数据的处理者）作出的规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "05eb7f297a8e3e69b96d745a552aa9273023a4e59d100118ced6f390cc0d668a"
+  },
+  {
+    "id": "cn-network-data-reg-art-29",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "29",
+    "label": "Article 29",
+    "originalTitle": "第二十九条",
+    "title": "Article 29",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-4",
+      "label": "Chapter IV",
+      "title": "Important Data Security"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家数据安全工作协调机制统筹协调有关部门制定重要数据目录，加强对重要数据的保护。各地区、各部门应当按照数据分类分级保护制度，确定本地区、本部门以及相关行业、领域的重要数据具体目录，对列入目录的网络数据进行重点保护。",
+      "网络数据处理者应当按照国家有关规定识别、申报重要数据。对确认为重要数据的，相关地区、部门应当及时向网络数据处理者告知或者公开发布。网络数据处理者应当履行网络数据安全保护责任。",
+      "国家鼓励网络数据处理者使用数据标签标识等技术和产品，提高重要数据安全管理水平。"
+    ],
+    "fullText": "国家数据安全工作协调机制统筹协调有关部门制定重要数据目录，加强对重要数据的保护。各地区、各部门应当按照数据分类分级保护制度，确定本地区、本部门以及相关行业、领域的重要数据具体目录，对列入目录的网络数据进行重点保护。\n\n网络数据处理者应当按照国家有关规定识别、申报重要数据。对确认为重要数据的，相关地区、部门应当及时向网络数据处理者告知或者公开发布。网络数据处理者应当履行网络数据安全保护责任。\n\n国家鼓励网络数据处理者使用数据标签标识等技术和产品，提高重要数据安全管理水平。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ef4989b52d99fd915be626bef0b5110bd246b9562036289dff2e8dda69024e10"
+  },
+  {
+    "id": "cn-network-data-reg-art-30",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "30",
+    "label": "Article 30",
+    "originalTitle": "第三十条",
+    "title": "Article 30",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-4",
+      "label": "Chapter IV",
+      "title": "Important Data Security"
+    },
+    "section": null,
+    "paragraphs": [
+      "重要数据的处理者应当明确网络数据安全负责人和网络数据安全管理机构。网络数据安全管理机构应当履行下列网络数据安全保护责任：",
+      "（一）制定实施网络数据安全管理制度、操作规程和网络数据安全事件应急预案；",
+      "（二）定期组织开展网络数据安全风险监测、风险评估、应急演练、宣传教育培训等活动，及时处置网络数据安全风险和事件；",
+      "（三）受理并处理网络数据安全投诉、举报。",
+      "网络数据安全负责人应当具备网络数据安全专业知识和相关管理工作经历，由网络数据处理者管理层成员担任，有权直接向有关主管部门报告网络数据安全情况。",
+      "掌握有关主管部门规定的特定种类、规模的重要数据的网络数据处理者，应当对网络数据安全负责人和关键岗位的人员进行安全背景审查，加强相关人员培训。审查时，可以申请公安机关、国家安全机关协助。"
+    ],
+    "fullText": "重要数据的处理者应当明确网络数据安全负责人和网络数据安全管理机构。网络数据安全管理机构应当履行下列网络数据安全保护责任：\n\n（一）制定实施网络数据安全管理制度、操作规程和网络数据安全事件应急预案；\n\n（二）定期组织开展网络数据安全风险监测、风险评估、应急演练、宣传教育培训等活动，及时处置网络数据安全风险和事件；\n\n（三）受理并处理网络数据安全投诉、举报。\n\n网络数据安全负责人应当具备网络数据安全专业知识和相关管理工作经历，由网络数据处理者管理层成员担任，有权直接向有关主管部门报告网络数据安全情况。\n\n掌握有关主管部门规定的特定种类、规模的重要数据的网络数据处理者，应当对网络数据安全负责人和关键岗位的人员进行安全背景审查，加强相关人员培训。审查时，可以申请公安机关、国家安全机关协助。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "2da7b0407b66717f4cca98fb43f364d9afade876a14077b47534dad2f577b919"
+  },
+  {
+    "id": "cn-network-data-reg-art-31",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "31",
+    "label": "Article 31",
+    "originalTitle": "第三十一条",
+    "title": "Article 31",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-4",
+      "label": "Chapter IV",
+      "title": "Important Data Security"
+    },
+    "section": null,
+    "paragraphs": [
+      "重要数据的处理者提供、委托处理、共同处理重要数据前，应当进行风险评估，但是属于履行法定职责或者法定义务的除外。",
+      "风险评估应当重点评估下列内容：",
+      "（一）提供、委托处理、共同处理网络数据，以及网络数据接收方处理网络数据的目的、方式、范围等是否合法、正当、必要；",
+      "（二）提供、委托处理、共同处理的网络数据遭到篡改、破坏、泄露或者非法获取、非法利用的风险，以及对国家安全、公共利益或者个人、组织合法权益带来的风险；",
+      "（三）网络数据接收方的诚信、守法等情况；",
+      "（四）与网络数据接收方订立或者拟订立的相关合同中关于网络数据安全的要求能否有效约束网络数据接收方履行网络数据安全保护义务；",
+      "（五）采取或者拟采取的技术和管理措施等能否有效防范网络数据遭到篡改、破坏、泄露或者非法获取、非法利用等风险；",
+      "（六）有关主管部门规定的其他评估内容。"
+    ],
+    "fullText": "重要数据的处理者提供、委托处理、共同处理重要数据前，应当进行风险评估，但是属于履行法定职责或者法定义务的除外。\n\n风险评估应当重点评估下列内容：\n\n（一）提供、委托处理、共同处理网络数据，以及网络数据接收方处理网络数据的目的、方式、范围等是否合法、正当、必要；\n\n（二）提供、委托处理、共同处理的网络数据遭到篡改、破坏、泄露或者非法获取、非法利用的风险，以及对国家安全、公共利益或者个人、组织合法权益带来的风险；\n\n（三）网络数据接收方的诚信、守法等情况；\n\n（四）与网络数据接收方订立或者拟订立的相关合同中关于网络数据安全的要求能否有效约束网络数据接收方履行网络数据安全保护义务；\n\n（五）采取或者拟采取的技术和管理措施等能否有效防范网络数据遭到篡改、破坏、泄露或者非法获取、非法利用等风险；\n\n（六）有关主管部门规定的其他评估内容。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "01e4a22533268bc0566a99f5203483541e1b44c5d07e9dfe4355e81ca6f70995"
+  },
+  {
+    "id": "cn-network-data-reg-art-32",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "32",
+    "label": "Article 32",
+    "originalTitle": "第三十二条",
+    "title": "Article 32",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-4",
+      "label": "Chapter IV",
+      "title": "Important Data Security"
+    },
+    "section": null,
+    "paragraphs": [
+      "重要数据的处理者因合并、分立、解散、破产等可能影响重要数据安全的，应当采取措施保障网络数据安全，并向省级以上有关主管部门报告重要数据处置方案、接收方的名称或者姓名和联系方式等；主管部门不明确的，应当向省级以上数据安全工作协调机制报告。"
+    ],
+    "fullText": "重要数据的处理者因合并、分立、解散、破产等可能影响重要数据安全的，应当采取措施保障网络数据安全，并向省级以上有关主管部门报告重要数据处置方案、接收方的名称或者姓名和联系方式等；主管部门不明确的，应当向省级以上数据安全工作协调机制报告。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ac7cde0819ec9a970d60c1c2737c36ab9fc2993e8f3b681fd717f579a662c26e"
+  },
+  {
+    "id": "cn-network-data-reg-art-33",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "33",
+    "label": "Article 33",
+    "originalTitle": "第三十三条",
+    "title": "Article 33",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-4",
+      "label": "Chapter IV",
+      "title": "Important Data Security"
+    },
+    "section": null,
+    "paragraphs": [
+      "重要数据的处理者应当每年度对其网络数据处理活动开展风险评估，并向省级以上有关主管部门报送风险评估报告，有关主管部门应当及时通报同级网信部门、公安机关。",
+      "风险评估报告应当包括下列内容：",
+      "（一）网络数据处理者基本信息、网络数据安全管理机构信息、网络数据安全负责人姓名和联系方式等；",
+      "（二）处理重要数据的目的、种类、数量、方式、范围、存储期限、存储地点等，开展网络数据处理活动的情况，不包括网络数据内容本身；",
+      "（三）网络数据安全管理制度及实施情况，加密、备份、标签标识、访问控制、安全认证等技术措施和其他必要措施及其有效性；",
+      "（四）发现的网络数据安全风险，发生的网络数据安全事件及处置情况；",
+      "（五）提供、委托处理、共同处理重要数据的风险评估情况；",
+      "（六）网络数据出境情况；",
+      "（七）有关主管部门规定的其他报告内容。",
+      "处理重要数据的大型网络平台服务提供者报送的风险评估报告，除包括前款规定的内容外，还应当充分说明关键业务和供应链网络数据安全等情况。",
+      "重要数据的处理者存在可能危害国家安全的重要数据处理活动的，省级以上有关主管部门应当责令其采取整改或者停止处理重要数据等措施。重要数据的处理者应当按照有关要求立即采取措施。"
+    ],
+    "fullText": "重要数据的处理者应当每年度对其网络数据处理活动开展风险评估，并向省级以上有关主管部门报送风险评估报告，有关主管部门应当及时通报同级网信部门、公安机关。\n\n风险评估报告应当包括下列内容：\n\n（一）网络数据处理者基本信息、网络数据安全管理机构信息、网络数据安全负责人姓名和联系方式等；\n\n（二）处理重要数据的目的、种类、数量、方式、范围、存储期限、存储地点等，开展网络数据处理活动的情况，不包括网络数据内容本身；\n\n（三）网络数据安全管理制度及实施情况，加密、备份、标签标识、访问控制、安全认证等技术措施和其他必要措施及其有效性；\n\n（四）发现的网络数据安全风险，发生的网络数据安全事件及处置情况；\n\n（五）提供、委托处理、共同处理重要数据的风险评估情况；\n\n（六）网络数据出境情况；\n\n（七）有关主管部门规定的其他报告内容。\n\n处理重要数据的大型网络平台服务提供者报送的风险评估报告，除包括前款规定的内容外，还应当充分说明关键业务和供应链网络数据安全等情况。\n\n重要数据的处理者存在可能危害国家安全的重要数据处理活动的，省级以上有关主管部门应当责令其采取整改或者停止处理重要数据等措施。重要数据的处理者应当按照有关要求立即采取措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "0bce90225e1b7b7d71f07e176fc8bd4ccf25b867b41834d0cb52b158583d4e04"
+  },
+  {
+    "id": "cn-network-data-reg-art-34",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "34",
+    "label": "Article 34",
+    "originalTitle": "第三十四条",
+    "title": "Article 34",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家网信部门统筹协调有关部门建立国家数据出境安全管理专项工作机制，研究制定国家网络数据出境安全管理相关政策，协调处理网络数据出境安全重大事项。"
+    ],
+    "fullText": "国家网信部门统筹协调有关部门建立国家数据出境安全管理专项工作机制，研究制定国家网络数据出境安全管理相关政策，协调处理网络数据出境安全重大事项。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "d78c94b5b2725cd54335a48dea47c76d9a0463cc38181c1908422e6ec34c29eb"
+  },
+  {
+    "id": "cn-network-data-reg-art-35",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "35",
+    "label": "Article 35",
+    "originalTitle": "第三十五条",
+    "title": "Article 35",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "符合下列条件之一的，网络数据处理者可以向境外提供个人信息：",
+      "（一）通过国家网信部门组织的数据出境安全评估；",
+      "（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；",
+      "（三）符合国家网信部门制定的关于个人信息出境标准合同的规定；",
+      "（四）为订立、履行个人作为一方当事人的合同，确需向境外提供个人信息；",
+      "（五）按照依法制定的劳动规章制度和依法签订的集体合同实施跨境人力资源管理，确需向境外提供员工个人信息；",
+      "（六）为履行法定职责或者法定义务，确需向境外提供个人信息；",
+      "（七）紧急情况下为保护自然人的生命健康和财产安全，确需向境外提供个人信息;",
+      "（八）法律、行政法规或者国家网信部门规定的其他条件。"
+    ],
+    "fullText": "符合下列条件之一的，网络数据处理者可以向境外提供个人信息：\n\n（一）通过国家网信部门组织的数据出境安全评估；\n\n（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；\n\n（三）符合国家网信部门制定的关于个人信息出境标准合同的规定；\n\n（四）为订立、履行个人作为一方当事人的合同，确需向境外提供个人信息；\n\n（五）按照依法制定的劳动规章制度和依法签订的集体合同实施跨境人力资源管理，确需向境外提供员工个人信息；\n\n（六）为履行法定职责或者法定义务，确需向境外提供个人信息；\n\n（七）紧急情况下为保护自然人的生命健康和财产安全，确需向境外提供个人信息;\n\n（八）法律、行政法规或者国家网信部门规定的其他条件。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "f7372e2d5d115cb1d2213db24497f2a680559a3e38b047d5159af43e6971d53d"
+  },
+  {
+    "id": "cn-network-data-reg-art-36",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "36",
+    "label": "Article 36",
+    "originalTitle": "第三十六条",
+    "title": "Article 36",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。"
+    ],
+    "fullText": "中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "035b7ce640f6f152eb4c687fef739a42fba559b1980cb7e1eeb0de5599d7ec34"
+  },
+  {
+    "id": "cn-network-data-reg-art-37",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "37",
+    "label": "Article 37",
+    "originalTitle": "第三十七条",
+    "title": "Article 37",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者在中华人民共和国境内运营中收集和产生的重要数据确需向境外提供的，应当通过国家网信部门组织的数据出境安全评估。网络数据处理者按照国家有关规定识别、申报重要数据，但未被相关地区、部门告知或者公开发布为重要数据的，不需要将其作为重要数据申报数据出境安全评估。"
+    ],
+    "fullText": "网络数据处理者在中华人民共和国境内运营中收集和产生的重要数据确需向境外提供的，应当通过国家网信部门组织的数据出境安全评估。网络数据处理者按照国家有关规定识别、申报重要数据，但未被相关地区、部门告知或者公开发布为重要数据的，不需要将其作为重要数据申报数据出境安全评估。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "d9be60487e1e5e39c9b862f3ff41e57188c950991a1f58f029793a50b96f4d0e"
+  },
+  {
+    "id": "cn-network-data-reg-art-38",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "38",
+    "label": "Article 38",
+    "originalTitle": "第三十八条",
+    "title": "Article 38",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "通过数据出境安全评估后，网络数据处理者向境外提供个人信息和重要数据的，不得超出评估时明确的数据出境目的、方式、范围和种类、规模等。"
+    ],
+    "fullText": "通过数据出境安全评估后，网络数据处理者向境外提供个人信息和重要数据的，不得超出评估时明确的数据出境目的、方式、范围和种类、规模等。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ba66fe6702c03c2abcd2c811ad7c16e7b7132d13cccdf5e7ef61589d47d96a75"
+  },
+  {
+    "id": "cn-network-data-reg-art-39",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "39",
+    "label": "Article 39",
+    "originalTitle": "第三十九条",
+    "title": "Article 39",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-5",
+      "label": "Chapter V",
+      "title": "Cross-border Network Data Security Management"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家采取措施，防范、处置网络数据跨境安全风险和威胁。任何个人、组织不得提供专门用于破坏、避开技术措施的程序、工具等；明知他人从事破坏、避开技术措施等活动的，不得为其提供技术支持或者帮助。"
+    ],
+    "fullText": "国家采取措施，防范、处置网络数据跨境安全风险和威胁。任何个人、组织不得提供专门用于破坏、避开技术措施的程序、工具等；明知他人从事破坏、避开技术措施等活动的，不得为其提供技术支持或者帮助。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "f0a1c1819b4659d1e2e099d6ef125b1154ff9c440317e55fbddb262800804419"
+  },
+  {
+    "id": "cn-network-data-reg-art-40",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "40",
+    "label": "Article 40",
+    "originalTitle": "第四十条",
+    "title": "Article 40",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络平台服务提供者应当通过平台规则或者合同等明确接入其平台的第三方产品和服务提供者的网络数据安全保护义务，督促第三方产品和服务提供者加强网络数据安全管理。",
+      "预装应用程序的智能终端等设备生产者，适用前款规定。",
+      "第三方产品和服务提供者违反法律、行政法规的规定或者平台规则、合同约定开展网络数据处理活动，对用户造成损害的，网络平台服务提供者、第三方产品和服务提供者、预装应用程序的智能终端等设备生产者应当依法承担相应责任。",
+      "国家鼓励保险公司开发网络数据损害赔偿责任险种，鼓励网络平台服务提供者、预装应用程序的智能终端等设备生产者投保。"
+    ],
+    "fullText": "网络平台服务提供者应当通过平台规则或者合同等明确接入其平台的第三方产品和服务提供者的网络数据安全保护义务，督促第三方产品和服务提供者加强网络数据安全管理。\n\n预装应用程序的智能终端等设备生产者，适用前款规定。\n\n第三方产品和服务提供者违反法律、行政法规的规定或者平台规则、合同约定开展网络数据处理活动，对用户造成损害的，网络平台服务提供者、第三方产品和服务提供者、预装应用程序的智能终端等设备生产者应当依法承担相应责任。\n\n国家鼓励保险公司开发网络数据损害赔偿责任险种，鼓励网络平台服务提供者、预装应用程序的智能终端等设备生产者投保。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "3df903bf1d2b78e79ff1dc8884f36f0964179c8ff689225eeb990a26b4e9e193"
+  },
+  {
+    "id": "cn-network-data-reg-art-41",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "41",
+    "label": "Article 41",
+    "originalTitle": "第四十一条",
+    "title": "Article 41",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "提供应用程序分发服务的网络平台服务提供者，应当建立应用程序核验规则并开展网络数据安全相关核验。发现待分发或者已分发的应用程序不符合法律、行政法规的规定或者国家标准的强制性要求的，应当采取警示、不予分发、暂停分发或者终止分发等措施。"
+    ],
+    "fullText": "提供应用程序分发服务的网络平台服务提供者，应当建立应用程序核验规则并开展网络数据安全相关核验。发现待分发或者已分发的应用程序不符合法律、行政法规的规定或者国家标准的强制性要求的，应当采取警示、不予分发、暂停分发或者终止分发等措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "6baf724faab2b59af641199e05e3611335d5b7ab591022b14912211dc48d64ae"
+  },
+  {
+    "id": "cn-network-data-reg-art-42",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "42",
+    "label": "Article 42",
+    "originalTitle": "第四十二条",
+    "title": "Article 42",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络平台服务提供者通过自动化决策方式向个人进行信息推送的，应当设置易于理解、便于访问和操作的个性化推荐关闭选项，为用户提供拒绝接收推送信息、删除针对其个人特征的用户标签等功能。"
+    ],
+    "fullText": "网络平台服务提供者通过自动化决策方式向个人进行信息推送的，应当设置易于理解、便于访问和操作的个性化推荐关闭选项，为用户提供拒绝接收推送信息、删除针对其个人特征的用户标签等功能。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ed48f9b9c324b6c8d5a1a0c64bd92bbbbd10ac8d1cefddaab357b1a19dc6e578"
+  },
+  {
+    "id": "cn-network-data-reg-art-43",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "43",
+    "label": "Article 43",
+    "originalTitle": "第四十三条",
+    "title": "Article 43",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家推进网络身份认证公共服务建设，按照政府引导、用户自愿原则进行推广应用。",
+      "鼓励网络平台服务提供者支持用户使用国家网络身份认证公共服务登记、核验真实身份信息。"
+    ],
+    "fullText": "国家推进网络身份认证公共服务建设，按照政府引导、用户自愿原则进行推广应用。\n\n鼓励网络平台服务提供者支持用户使用国家网络身份认证公共服务登记、核验真实身份信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "b4caf7197c36bb023013d0e4b1cadc050465323e6a40d5bd378c9af980f2e7fe"
+  },
+  {
+    "id": "cn-network-data-reg-art-44",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "44",
+    "label": "Article 44",
+    "originalTitle": "第四十四条",
+    "title": "Article 44",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "大型网络平台服务提供者应当每年度发布个人信息保护社会责任报告，报告内容包括但不限于个人信息保护措施和成效、个人行使权利的申请受理情况、主要由外部成员组成的个人信息保护监督机构履行职责情况等。"
+    ],
+    "fullText": "大型网络平台服务提供者应当每年度发布个人信息保护社会责任报告，报告内容包括但不限于个人信息保护措施和成效、个人行使权利的申请受理情况、主要由外部成员组成的个人信息保护监督机构履行职责情况等。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "cef309302cc7043b34b4103f3da0d5da4f68fd1dffcb1e484e62c06c55f2aca3"
+  },
+  {
+    "id": "cn-network-data-reg-art-45",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "45",
+    "label": "Article 45",
+    "originalTitle": "第四十五条",
+    "title": "Article 45",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "大型网络平台服务提供者跨境提供网络数据，应当遵守国家数据跨境安全管理要求，健全相关技术和管理措施，防范网络数据跨境安全风险。"
+    ],
+    "fullText": "大型网络平台服务提供者跨境提供网络数据，应当遵守国家数据跨境安全管理要求，健全相关技术和管理措施，防范网络数据跨境安全风险。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "bcd3e8a37fc3359420bcb4f62799bdd926c72efa28e0d6b821c024ae1a752efe"
+  },
+  {
+    "id": "cn-network-data-reg-art-46",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "46",
+    "label": "Article 46",
+    "originalTitle": "第四十六条",
+    "title": "Article 46",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-6",
+      "label": "Chapter VI",
+      "title": "Obligations of Network Platform Service Providers"
+    },
+    "section": null,
+    "paragraphs": [
+      "大型网络平台服务提供者不得利用网络数据、算法以及平台规则等从事下列活动：",
+      "（一）通过误导、欺诈、胁迫等方式处理用户在平台上产生的网络数据；",
+      "（二）无正当理由限制用户访问、使用其在平台上产生的网络数据；",
+      "（三）对用户实施不合理的差别待遇，损害用户合法权益；",
+      "（四）法律、行政法规禁止的其他活动。"
+    ],
+    "fullText": "大型网络平台服务提供者不得利用网络数据、算法以及平台规则等从事下列活动：\n\n（一）通过误导、欺诈、胁迫等方式处理用户在平台上产生的网络数据；\n\n（二）无正当理由限制用户访问、使用其在平台上产生的网络数据；\n\n（三）对用户实施不合理的差别待遇，损害用户合法权益；\n\n（四）法律、行政法规禁止的其他活动。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "56df89171f06f3d38a8798b054214abcc01a057405624aa87a5ba3cdce47b7ee"
+  },
+  {
+    "id": "cn-network-data-reg-art-47",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "47",
+    "label": "Article 47",
+    "originalTitle": "第四十七条",
+    "title": "Article 47",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家网信部门负责统筹协调网络数据安全和相关监督管理工作。",
+      "公安机关、国家安全机关依照有关法律、行政法规和本条例的规定，在各自职责范围内承担网络数据安全监督管理职责，依法防范和打击危害网络数据安全的违法犯罪活动。",
+      "国家数据管理部门在具体承担数据管理工作中履行相应的网络数据安全职责。",
+      "各地区、各部门对本地区、本部门工作中收集和产生的网络数据及网络数据安全负责。"
+    ],
+    "fullText": "国家网信部门负责统筹协调网络数据安全和相关监督管理工作。\n\n公安机关、国家安全机关依照有关法律、行政法规和本条例的规定，在各自职责范围内承担网络数据安全监督管理职责，依法防范和打击危害网络数据安全的违法犯罪活动。\n\n国家数据管理部门在具体承担数据管理工作中履行相应的网络数据安全职责。\n\n各地区、各部门对本地区、本部门工作中收集和产生的网络数据及网络数据安全负责。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "5ca7e5664a22f4ad5ac7ea7229cdc9b9f33e951f454894987874b0d46129fcae"
+  },
+  {
+    "id": "cn-network-data-reg-art-48",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "48",
+    "label": "Article 48",
+    "originalTitle": "第四十八条",
+    "title": "Article 48",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "各有关主管部门承担本行业、本领域网络数据安全监督管理职责，应当明确本行业、本领域网络数据安全保护工作机构，统筹制定并组织实施本行业、本领域网络数据安全事件应急预案，定期组织开展本行业、本领域网络数据安全风险评估，对网络数据处理者履行网络数据安全保护义务情况进行监督检查，指导督促网络数据处理者及时对存在的风险隐患进行整改。"
+    ],
+    "fullText": "各有关主管部门承担本行业、本领域网络数据安全监督管理职责，应当明确本行业、本领域网络数据安全保护工作机构，统筹制定并组织实施本行业、本领域网络数据安全事件应急预案，定期组织开展本行业、本领域网络数据安全风险评估，对网络数据处理者履行网络数据安全保护义务情况进行监督检查，指导督促网络数据处理者及时对存在的风险隐患进行整改。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "6e7e4bb2494d26f22c882d5cd196d5e3b49bd5fe5f49a82ecae16b26fed48ffd"
+  },
+  {
+    "id": "cn-network-data-reg-art-49",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "49",
+    "label": "Article 49",
+    "originalTitle": "第四十九条",
+    "title": "Article 49",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家网信部门统筹协调有关主管部门及时汇总、研判、共享、发布网络数据安全风险相关信息，加强网络数据安全信息共享、网络数据安全风险和威胁监测预警以及网络数据安全事件应急处置工作。"
+    ],
+    "fullText": "国家网信部门统筹协调有关主管部门及时汇总、研判、共享、发布网络数据安全风险相关信息，加强网络数据安全信息共享、网络数据安全风险和威胁监测预警以及网络数据安全事件应急处置工作。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "2c114d10c05d93a713a3b9481c05ebb6468b1e6cfa2adfd7261c3249e445c80b"
+  },
+  {
+    "id": "cn-network-data-reg-art-50",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "50",
+    "label": "Article 50",
+    "originalTitle": "第五十条",
+    "title": "Article 50",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "有关主管部门可以采取下列措施对网络数据安全进行监督检查：",
+      "（一）要求网络数据处理者及其相关人员就监督检查事项作出说明；",
+      "（二）查阅、复制与网络数据安全有关的文件、记录；",
+      "（三）检查网络数据安全措施运行情况；",
+      "（四）检查与网络数据处理活动有关的设备、物品；",
+      "（五）法律、行政法规规定的其他必要措施。",
+      "网络数据处理者应当对有关主管部门依法开展的网络数据安全监督检查予以配合。"
+    ],
+    "fullText": "有关主管部门可以采取下列措施对网络数据安全进行监督检查：\n\n（一）要求网络数据处理者及其相关人员就监督检查事项作出说明；\n\n（二）查阅、复制与网络数据安全有关的文件、记录；\n\n（三）检查网络数据安全措施运行情况；\n\n（四）检查与网络数据处理活动有关的设备、物品；\n\n（五）法律、行政法规规定的其他必要措施。\n\n网络数据处理者应当对有关主管部门依法开展的网络数据安全监督检查予以配合。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "bab4a38201c4bc4e61d099f337c3ca49bbeae73d75f60557abe1b1b9dea7100f"
+  },
+  {
+    "id": "cn-network-data-reg-art-51",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "51",
+    "label": "Article 51",
+    "originalTitle": "第五十一条",
+    "title": "Article 51",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "有关主管部门开展网络数据安全监督检查，应当客观公正，不得向被检查单位收取费用。",
+      "有关主管部门在网络数据安全监督检查中不得访问、收集与网络数据安全无关的业务信息，获取的信息只能用于维护网络数据安全的需要，不得用于其他用途。",
+      "有关主管部门发现网络数据处理者的网络数据处理活动存在较大安全风险的，可以按照规定的权限和程序要求网络数据处理者暂停相关服务、修改平台规则、完善技术措施等，消除网络数据安全隐患。"
+    ],
+    "fullText": "有关主管部门开展网络数据安全监督检查，应当客观公正，不得向被检查单位收取费用。\n\n有关主管部门在网络数据安全监督检查中不得访问、收集与网络数据安全无关的业务信息，获取的信息只能用于维护网络数据安全的需要，不得用于其他用途。\n\n有关主管部门发现网络数据处理者的网络数据处理活动存在较大安全风险的，可以按照规定的权限和程序要求网络数据处理者暂停相关服务、修改平台规则、完善技术措施等，消除网络数据安全隐患。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ab25aaed8f20bab44d84aaba6c06273a42a641ceb742a968a7d1199770204005"
+  },
+  {
+    "id": "cn-network-data-reg-art-52",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "52",
+    "label": "Article 52",
+    "originalTitle": "第五十二条",
+    "title": "Article 52",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "有关主管部门在开展网络数据安全监督检查时，应当加强协同配合、信息沟通，合理确定检查频次和检查方式，避免不必要的检查和交叉重复检查。",
+      "个人信息保护合规审计、重要数据风险评估、重要数据出境安全评估等应当加强衔接，避免重复评估、审计。重要数据风险评估和网络安全等级测评的内容重合的，相关结果可以互相采信。"
+    ],
+    "fullText": "有关主管部门在开展网络数据安全监督检查时，应当加强协同配合、信息沟通，合理确定检查频次和检查方式，避免不必要的检查和交叉重复检查。\n\n个人信息保护合规审计、重要数据风险评估、重要数据出境安全评估等应当加强衔接，避免重复评估、审计。重要数据风险评估和网络安全等级测评的内容重合的，相关结果可以互相采信。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "080029c7fd688e5e84fff039eae443a5cc51f8b5d77ee14ee51ae00972bf6e1b"
+  },
+  {
+    "id": "cn-network-data-reg-art-53",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "53",
+    "label": "Article 53",
+    "originalTitle": "第五十三条",
+    "title": "Article 53",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "有关主管部门及其工作人员对在履行职责中知悉的个人隐私、个人信息、商业秘密、保密商务信息等网络数据应当依法予以保密，不得泄露或者非法向他人提供。"
+    ],
+    "fullText": "有关主管部门及其工作人员对在履行职责中知悉的个人隐私、个人信息、商业秘密、保密商务信息等网络数据应当依法予以保密，不得泄露或者非法向他人提供。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "bed82437d73101046fc2f6d013a3d97d3101b602053cd6fd1ac453c112f073c2"
+  },
+  {
+    "id": "cn-network-data-reg-art-54",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "54",
+    "label": "Article 54",
+    "originalTitle": "第五十四条",
+    "title": "Article 54",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-7",
+      "label": "Chapter VII",
+      "title": "Supervision and Administration"
+    },
+    "section": null,
+    "paragraphs": [
+      "境外的组织、个人从事危害中华人民共和国国家安全、公共利益，或者侵害中华人民共和国公民的个人信息权益的网络数据处理活动的，国家网信部门会同有关主管部门可以依法采取相应的必要措施。"
+    ],
+    "fullText": "境外的组织、个人从事危害中华人民共和国国家安全、公共利益，或者侵害中华人民共和国公民的个人信息权益的网络数据处理活动的，国家网信部门会同有关主管部门可以依法采取相应的必要措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "0b4418376efd178a040971c1a8f13420fdd361d60ca111da0f7a7794aad55412"
+  },
+  {
+    "id": "cn-network-data-reg-art-55",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "55",
+    "label": "Article 55",
+    "originalTitle": "第五十五条",
+    "title": "Article 55",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本条例第十二条、第十六条至第二十条、第二十二条、第四十条第一款和第二款、第四十一条、第四十二条规定的，由网信、电信、公安等主管部门依据各自职责责令改正，给予警告，没收违法所得；拒不改正或者情节严重的，处100万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款。"
+    ],
+    "fullText": "违反本条例第十二条、第十六条至第二十条、第二十二条、第四十条第一款和第二款、第四十一条、第四十二条规定的，由网信、电信、公安等主管部门依据各自职责责令改正，给予警告，没收违法所得；拒不改正或者情节严重的，处100万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "8bbfc290293a6f8a6e3c51634063898f1b1326c98efefe67ded18b183b6c1013"
+  },
+  {
+    "id": "cn-network-data-reg-art-56",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "56",
+    "label": "Article 56",
+    "originalTitle": "第五十六条",
+    "title": "Article 56",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本条例第十三条规定的，由网信、电信、公安、国家安全等主管部门依据各自职责责令改正，给予警告，可以并处10万元以上100万元以下罚款，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款；拒不改正或者情节严重的，处100万元以上1000万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员处10万元以上100万元以下罚款。"
+    ],
+    "fullText": "违反本条例第十三条规定的，由网信、电信、公安、国家安全等主管部门依据各自职责责令改正，给予警告，可以并处10万元以上100万元以下罚款，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款；拒不改正或者情节严重的，处100万元以上1000万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员处10万元以上100万元以下罚款。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ce8d48bba86ee3a5e7c31cff609c29ffdf94f0c0fa28623f1cd61329a7ae7658"
+  },
+  {
+    "id": "cn-network-data-reg-art-57",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "57",
+    "label": "Article 57",
+    "originalTitle": "第五十七条",
+    "title": "Article 57",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本条例第二十九条第二款、第三十条第二款和第三款、第三十一条、第三十二条规定的，由网信、电信、公安等主管部门依据各自职责责令改正，给予警告，可以并处5万元以上50万元以下罚款，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款；拒不改正或者造成大量数据泄露等严重后果的，处50万元以上200万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员处5万元以上20万元以下罚款。"
+    ],
+    "fullText": "违反本条例第二十九条第二款、第三十条第二款和第三款、第三十一条、第三十二条规定的，由网信、电信、公安等主管部门依据各自职责责令改正，给予警告，可以并处5万元以上50万元以下罚款，对直接负责的主管人员和其他直接责任人员可以处1万元以上10万元以下罚款；拒不改正或者造成大量数据泄露等严重后果的，处50万元以上200万元以下罚款，并可以责令暂停相关业务、停业整顿、吊销相关业务许可证或者吊销营业执照，对直接负责的主管人员和其他直接责任人员处5万元以上20万元以下罚款。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "8460729560952ef758972f39e7a3b068b86abbe931ab470ae94ef73cf76ac05e"
+  },
+  {
+    "id": "cn-network-data-reg-art-58",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "58",
+    "label": "Article 58",
+    "originalTitle": "第五十八条",
+    "title": "Article 58",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本条例其他有关规定的，由有关主管部门依照《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律的有关规定追究法律责任。"
+    ],
+    "fullText": "违反本条例其他有关规定的，由有关主管部门依照《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律的有关规定追究法律责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "27b0eb773cd43671676528fb1a918ec6a5932451bcb45e4e647792e9abf0dc1c"
+  },
+  {
+    "id": "cn-network-data-reg-art-59",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "59",
+    "label": "Article 59",
+    "originalTitle": "第五十九条",
+    "title": "Article 59",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "网络数据处理者存在主动消除或者减轻违法行为危害后果、违法行为轻微并及时改正且没有造成危害后果或者初次违法且危害后果轻微并及时改正等情形的，依照《中华人民共和国行政处罚法》的规定从轻、减轻或者不予行政处罚。"
+    ],
+    "fullText": "网络数据处理者存在主动消除或者减轻违法行为危害后果、违法行为轻微并及时改正且没有造成危害后果或者初次违法且危害后果轻微并及时改正等情形的，依照《中华人民共和国行政处罚法》的规定从轻、减轻或者不予行政处罚。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "9dd01b685a351b66b165760db2d58f2a23964d204f77e160ac6b6df34d428116"
+  },
+  {
+    "id": "cn-network-data-reg-art-60",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "60",
+    "label": "Article 60",
+    "originalTitle": "第六十条",
+    "title": "Article 60",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家机关不履行本条例规定的网络数据安全保护义务的，由其上级机关或者有关主管部门责令改正；对直接负责的主管人员和其他直接责任人员依法给予处分。"
+    ],
+    "fullText": "国家机关不履行本条例规定的网络数据安全保护义务的，由其上级机关或者有关主管部门责令改正；对直接负责的主管人员和其他直接责任人员依法给予处分。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "136bdec2976b4615a69d0430827a998aad46f753b8741521917db24d84f13f72"
+  },
+  {
+    "id": "cn-network-data-reg-art-61",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "61",
+    "label": "Article 61",
+    "originalTitle": "第六十一条",
+    "title": "Article 61",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本条例规定，给他人造成损害的，依法承担民事责任；构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。"
+    ],
+    "fullText": "违反本条例规定，给他人造成损害的，依法承担民事责任；构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "c27be28e69a3b7d78c1c5b2379c659b5f7101386cb8a295c430882a6c965a10f"
+  },
+  {
+    "id": "cn-network-data-reg-art-62",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "62",
+    "label": "Article 62",
+    "originalTitle": "第六十二条",
+    "title": "Article 62",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-9",
+      "label": "Chapter IX",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "本条例下列用语的含义：",
+      "（一）网络数据，是指通过网络处理和产生的各种电子数据。",
+      "（二）网络数据处理活动，是指网络数据的收集、存储、使用、加工、传输、提供、公开、删除等活动。",
+      "（三）网络数据处理者，是指在网络数据处理活动中自主决定处理目的和处理方式的个人、组织。",
+      "（四）重要数据，是指特定领域、特定群体、特定区域或者达到一定精度和规模，一旦遭到篡改、破坏、泄露或者非法获取、非法利用，可能直接危害国家安全、经济运行、社会稳定、公共健康和安全的数据。",
+      "（五）委托处理，是指网络数据处理者委托个人、组织按照约定的目的和方式开展的网络数据处理活动。",
+      "（六）共同处理，是指两个以上的网络数据处理者共同决定网络数据的处理目的和处理方式的网络数据处理活动。",
+      "（七）单独同意，是指个人针对其个人信息进行特定处理而专门作出具体、明确的同意。",
+      "（八）大型网络平台，是指注册用户5000万以上或者月活跃用户1000万以上，业务类型复杂，网络数据处理活动对国家安全、经济运行、国计民生等具有重要影响的网络平台。"
+    ],
+    "fullText": "本条例下列用语的含义：\n\n（一）网络数据，是指通过网络处理和产生的各种电子数据。\n\n（二）网络数据处理活动，是指网络数据的收集、存储、使用、加工、传输、提供、公开、删除等活动。\n\n（三）网络数据处理者，是指在网络数据处理活动中自主决定处理目的和处理方式的个人、组织。\n\n（四）重要数据，是指特定领域、特定群体、特定区域或者达到一定精度和规模，一旦遭到篡改、破坏、泄露或者非法获取、非法利用，可能直接危害国家安全、经济运行、社会稳定、公共健康和安全的数据。\n\n（五）委托处理，是指网络数据处理者委托个人、组织按照约定的目的和方式开展的网络数据处理活动。\n\n（六）共同处理，是指两个以上的网络数据处理者共同决定网络数据的处理目的和处理方式的网络数据处理活动。\n\n（七）单独同意，是指个人针对其个人信息进行特定处理而专门作出具体、明确的同意。\n\n（八）大型网络平台，是指注册用户5000万以上或者月活跃用户1000万以上，业务类型复杂，网络数据处理活动对国家安全、经济运行、国计民生等具有重要影响的网络平台。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "09bc58418100df845d1b52e0733b7e085722ac8ca2c1fa532b738f6caba172b0"
+  },
+  {
+    "id": "cn-network-data-reg-art-63",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "63",
+    "label": "Article 63",
+    "originalTitle": "第六十三条",
+    "title": "Article 63",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-9",
+      "label": "Chapter IX",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "开展核心数据的网络数据处理活动，按照国家有关规定执行。",
+      "自然人因个人或者家庭事务处理个人信息的，不适用本条例。",
+      "开展涉及国家秘密、工作秘密的网络数据处理活动，适用《中华人民共和国保守国家秘密法》等法律、行政法规的规定。"
+    ],
+    "fullText": "开展核心数据的网络数据处理活动，按照国家有关规定执行。\n\n自然人因个人或者家庭事务处理个人信息的，不适用本条例。\n\n开展涉及国家秘密、工作秘密的网络数据处理活动，适用《中华人民共和国保守国家秘密法》等法律、行政法规的规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "4b701ac2e47b84ec24ca1dfdecd85444f489cb835b3b5c1c339f97ea815dc327"
+  },
+  {
+    "id": "cn-network-data-reg-art-64",
+    "instrumentId": "cn-network-data-regulations",
+    "articleNumber": "64",
+    "label": "Article 64",
+    "originalTitle": "第六十四条",
+    "title": "Article 64",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-network-data-regulations-chapter-9",
+      "label": "Chapter IX",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "本条例自2025年1月1日起施行。"
+    ],
+    "fullText": "本条例自2025年1月1日起施行。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceFragment": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "canonicalSource": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+    "sourceLabel": "State Council of the People's Republic of China",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2025-01-01",
+    "sourceVersion": {
+      "officialTitle": "网络数据安全管理条例",
+      "instrumentNumber": "中华人民共和国国务院令第790号",
+      "adoptedOn": "2024-08-30",
+      "publishedOn": "2024-09-24",
+      "effectiveFrom": "2025-01-01",
+      "versionNote": "State Council Order No. 790, adopted 30 August 2024, promulgated 24 September 2024, effective 1 January 2025."
+    },
+    "contentSha256": "ce62856a82bf46d9099828c9d8cc46c1c7a9182e51e6a1b45c3d229c300d6a36"
+  }
+]

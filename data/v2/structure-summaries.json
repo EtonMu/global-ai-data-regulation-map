@@ -682,9 +682,9 @@
     }
   },
   {
-    "id": "us-nist-ai-rmf-1-0::us-nist-ai-rmf-map",
+    "id": "us-nist-ai-rmf-1-0::us-nist-ai-rmf-1-0-section-5-2",
     "instrumentId": "us-nist-ai-rmf-1-0",
-    "structureId": "us-nist-ai-rmf-map",
+    "structureId": "us-nist-ai-rmf-1-0-section-5-2",
     "level": "hierarchy-root",
     "label": "MAP function",
     "title": "Establish context and identify risks",
@@ -694,13 +694,13 @@
       {
         "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
         "label": "NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
-        "provisionIds": ["us-nist-ai-rmf-map", "us-nist-ai-rmf-map-2-2"]
+        "provisionIds": ["us-nist-ai-rmf-1-0-section-5-2", "us-nist-ai-rmf-1-0-core-map-2-2"]
       }
     ],
     "editorial": {
       "reviewStatus": "editorial-high-level-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "Voluntary-framework orientation only; this summary does not convert outcomes into legal duties or reproduce the complete framework."
+      "reviewedOn": "2026-07-20",
+      "note": "Voluntary-framework orientation only; this summary does not convert outcomes into legal duties. Its anchors resolve to the complete NIST AI RMF 1.0 corpus."
     }
   },
   {

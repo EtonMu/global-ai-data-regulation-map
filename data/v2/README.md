@@ -5,19 +5,21 @@ This directory is the time-aware, multi-jurisdiction seed for the current visual
 1. What does this instrument or provision say and what is its legal status on a given date?
 2. What other provisions address a similar regulatory function, and where does that comparison break down?
 
-The dataset snapshot is verified through **2026-07-19**. It is a research aid, not legal advice, a complete legal corpus, or a compliance determination.
+The dataset snapshot is verified through **2026-07-20**. It is a research aid, not legal advice or a compliance determination.
 
 ## Snapshot scope
 
-The current seed contains **30 jurisdiction or issuing-context records, 55 instruments, 308 curated provision records, 499 merged provision nodes, 67 qualified relations, 112 lifecycle events, 55 source-audit records, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision count overlays 99 imported GDPR Articles and 113 imported EU AI Act Articles with the curated file and de-duplicates shared EU anchor IDs; it is not the raw length of `provisions.json`.
+The current seed contains **30 jurisdiction or issuing-context records, 58 instruments, 218 curated source-linked anchors, 2,873 merged provision/framework nodes, 74 qualified relations, 116 lifecycle events, 58 source-audit records, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged count overlays 37 version-locked imported corpus files with `provisions.json` and de-duplicates stable IDs; it is not the raw length of any one file.
 
-Complete locally stored Article coverage currently includes the GDPR (99 Articles), the enacted 2024 EU AI Act text (113 Articles), and the current consolidated Chinese text of China's Cybersecurity Law (81 Articles, amended on 28 October 2025 and effective from 1 January 2026). Other instruments provide selected source-text records or source-linked editorial provision anchors. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
+Thirty-eight instruments have a complete, version-locked local corpus within their documented language, lifecycle and redistribution boundary. Coverage includes the principal indexed statutes and regulations, selected historical enactments and bills, and NIST AI RMF 1.0. The remaining twenty records are framework, guidance, proposal or historical indexes with selected source text or source-linked editorial anchors. “Complete” is version-specific: it does not turn a vetoed bill into law, a voluntary framework into a duty, or a non-authoritative translation into controlling text.
 
 ## Files
 
 - `jurisdictions.json`: countries, supranational systems, subnational systems, and international institutional contexts.
 - `instruments.json`: laws, regulations, executive orders, bills, rules, mandatory internal directives, voluntary frameworks, standards, soft law, declarations, and advisory reports.
-- `provisions.json`: the complete current Chinese Cybersecurity Law corpus, representative provision-level nodes for other instruments, and curated metadata for high-value EU provisions.
+- `provisions.json`: curated source-linked anchors and analytical metadata that are not supplied by a complete imported node with the same stable ID.
+- `provision-concepts.json`: one relevance review per merged node, including highlight state, Core Concept IDs, rationale and review date.
+- `*-articles.json` and `*-provisions.json`: version-locked complete corpora with source, language, lifecycle and reuse metadata.
 - `concept-themes.json`: stable, ordered learning themes used to organize the core-concept browser.
 - `concepts.json`: a sourced controlled vocabulary used both for concept-led learning and to connect differently worded legal duties.
 - `structure-summaries.json`: project-authored, high-level orientation summaries for rendered sections and framework roots, with source basis and editorial review metadata.
@@ -113,7 +115,7 @@ Each provision contains:
 - `supportingSources`: optional provision-specific evidence, such as a court decision or companion implementation document.
 - `editorial`: review status, review date, and a caveat.
 
-The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English editorial summaries, and English reference translations remain separate fields. All 81 Articles of the current consolidated Chinese Cybersecurity Law are stored from the official Chinese publication. The other indexed Chinese laws contain selected verified Articles rather than complete Acts. The Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, distinguish a stored extract from a complete provision, and mark every `reference` translation as non-official.
+The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text, English editorial summaries, and English reference translations remain separate fields. Complete official Chinese Article corpora are stored for the current Cybersecurity Law (81 Articles), PIPL (74 Articles), Network Data Security Management Regulations (64 Articles), and Interim Generative AI Measures (24 Articles). The Cybersecurity Law has a complete non-official English reference translation; PIPL and the two regulations retain only expressly identified selected English reference translations. A separate 120-node UK GDPR corpus stores the current revised legislation.gov.uk Articles as at 19 June 2026 and is not treated as identical to EU GDPR. The Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, distinguish a stored extract from a complete provision, and mark every `reference` translation as non-official.
 
 ## `source-audit.json`
 
@@ -121,11 +123,12 @@ Every instrument has exactly one audit companion containing:
 
 - `reviewedOn` and `reviewLevel`;
 - `lifecycleFinding` and `versionFinding`;
-- `authoritativeLanguage` and `englishAvailability`;
+- `authoritativeLanguage` and `englishAvailability`, with translation-coverage metadata where selected and complete reference translations must be distinguished;
+- optional `localIndexLanguage` when a local presentation language must be kept separate from a multilingual publication record;
 - `localCoverage`;
 - official `sources` and instrument-specific `caveats`.
 
-The current coverage distribution is three complete Article corpora, five selected-source-text-and-index records, and 47 selected-provision indexes based on editorial summaries and official links. All 55 audit records use `primary-source-metadata-and-anchor-review`: lifecycle, version metadata, selected anchors, and cited official sources were reviewed. This does not mean that all 55 instruments received complete clause-by-clause transcription, translation, or expert legal opinion.
+The current coverage distribution is 38 complete corpora, one selected-source-text-and-index record, and 19 selected-provision indexes based on editorial summaries and official links. Coverage modes distinguish complete verified imports from metadata and selected-anchor review; none represents expert legal advice or silently upgrades an English summary into a translation. A complete corpus may still be historical, vetoed, pending, voluntary, non-authoritative in translation, or subject to phased commencement.
 
 ## `concepts.json`
 
@@ -241,28 +244,29 @@ The seed currently uses these modes:
 ## Suggested UI merge order
 
 1. Load `jurisdictions.json`, `concept-themes.json`, `concepts.json`, and `instruments.json`.
-2. Load generated `gdpr-articles.json` and `eu-ai-act-articles.json`.
+2. Load the version-locked complete corpus files declared by the application.
 3. Load `provisions.json` and merge records by `id`:
    - preserve imported official text and structural hierarchy;
    - overlay curated summaries, tags, provision status, and editorial notes only where the fields are intentionally curated;
    - never replace official text with a summary.
 4. Load `structure-summaries.json`, validate each `instrumentId`, `structureId`, concept, and source-basis provision reference, and attach it to the matching rendered structural node.
 5. Resolve all relation endpoints against the combined instrument/provision graph.
-6. Load `source-audit.json` and attach each audit to its instrument without treating the audit record as source text.
-7. Apply `status-events.json` to the selected timeline date.
-8. Render legal force, lifecycle status, language authority, local coverage, source, rationale, and limits as first-class visual information.
+6. Load `provision-concepts.json`; use it to highlight substantive nodes and connect them to Core Concepts without treating classifications as legal equivalence.
+7. Load `source-audit.json` and attach each audit to its instrument without treating the audit record as source text.
+8. Apply `status-events.json` to the selected timeline date.
+9. Render legal force, lifecycle status, language authority, local coverage, source, rationale, and limits as first-class visual information.
 
 ## Reproducible maintenance
 
-After changing reviewed expansion metadata, rebuild derived records in order:
+After changing corpus or reviewed metadata, rebuild derived records in order:
 
 ```bash
-node scripts/expand-global-corpus.mjs
+node scripts/build-provision-concepts.mjs
 node scripts/build-source-audit.mjs
 pnpm validate:data
 ```
 
-The scripts reproduce reviewed data; they do not browse, independently determine current law, prove translation accuracy, or replace expert legal review. Structural validation checks IDs, references, dates, coverage declarations, lifecycle events, relation vocabulary, graph coverage, and audit companions.
+`expand-global-corpus.mjs` is a disabled historical bootstrap and must not be used for ordinary maintenance because it would recreate superseded grouped anchors. The active builders reproduce reviewed data; they do not browse, independently determine current law, prove translation accuracy, or replace expert legal review. Structural validation checks IDs, references, dates, coverage declarations, lifecycle events, relation vocabulary, graph coverage, rights boundaries and audit companions.
 
 ## Contribution checks
 

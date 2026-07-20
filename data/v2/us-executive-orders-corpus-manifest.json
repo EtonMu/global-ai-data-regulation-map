@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-07-20",
+  "corpus": {
+    "path": "data/v2/us-executive-orders-provisions.json",
+    "nodeCount": 37,
+    "countsByInstrument": {
+      "us-eo-14110": 30,
+      "us-eo-14179": 7
+    },
+    "sha256": "e84e04e9a48ed03c7d338685381c46ddfaff741cf7c06139977adea67270fe70"
+  },
+  "lifecycleBoundary": {
+    "us-eo-14110": "Revoked in full by EO 14148 on 20 January 2025; retained solely as historical text.",
+    "us-eo-14179": "In force within executive-branch scope as verified on 20 July 2026."
+  },
+  "sourceMethod": "FederalRegister.gov XML supplies stable paragraph structure. The corresponding GovInfo PDF is pinned as the official electronic edition. The interface and metadata retain this authority distinction.",
+  "snapshots": [
+    {
+      "instrumentId": "us-eo-14110",
+      "role": "structured-extraction-source",
+      "path": "data/v2/source-snapshots/us-eo-14110-2023-24283.xml",
+      "url": "https://www.federalregister.gov/documents/full_text/xml/2023/11/01/2023-24283.xml",
+      "sha256": "095aab510c7b4b66b4b36403553669859046dd02814abb21ee0ef65333f6cb63",
+      "legalStatus": "FederalRegister.gov XML rendition; verify against the official GovInfo edition"
+    },
+    {
+      "instrumentId": "us-eo-14110",
+      "role": "official-electronic-edition",
+      "path": "data/v2/source-snapshots/us-eo-14110-2023-24283-official.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+      "sha256": "46739dfc1af256961458d3b73fa4d6f4b447b38eaa72efd80966463818be68ab",
+      "legalStatus": "Official electronic Federal Register edition on GovInfo"
+    },
+    {
+      "instrumentId": "us-eo-14179",
+      "role": "structured-extraction-source",
+      "path": "data/v2/source-snapshots/us-eo-14179-2025-02172.xml",
+      "url": "https://www.federalregister.gov/documents/full_text/xml/2025/01/31/2025-02172.xml",
+      "sha256": "d117ea0df07b7139f47ee7c8722d5cca13adad4f8f53e879aa9766e496905b5e",
+      "legalStatus": "FederalRegister.gov XML rendition; verify against the official GovInfo edition"
+    },
+    {
+      "instrumentId": "us-eo-14179",
+      "role": "official-electronic-edition",
+      "path": "data/v2/source-snapshots/us-eo-14179-2025-02172-official.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02172.pdf",
+      "sha256": "332b46f8cf4f4e7ed120a8092f14389640ada7538c65debc6fb3733298a5959e",
+      "legalStatus": "Official electronic Federal Register edition on GovInfo"
+    },
+    {
+      "instrumentId": "us-eo-14110",
+      "role": "revocation-record-structured-source",
+      "path": "data/v2/source-snapshots/us-eo-14148-2025-01901.xml",
+      "url": "https://www.federalregister.gov/documents/full_text/xml/2025/01/28/2025-01901.xml",
+      "sha256": "2c0f95d3c55235bdd2b0885824961f3639b0bf83c0d318be7ac784b8912bdfbc",
+      "legalStatus": "FederalRegister.gov XML rendition"
+    },
+    {
+      "instrumentId": "us-eo-14110",
+      "role": "revocation-record-official-edition",
+      "path": "data/v2/source-snapshots/us-eo-14148-2025-01901-official.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-28/pdf/2025-01901.pdf",
+      "sha256": "d658f5158a27f6d4a220ce2ec854bdbd596ecc841fb16884954a2e2ee39ab072",
+      "legalStatus": "Official electronic Federal Register edition on GovInfo"
+    }
+  ],
+  "rights": {
+    "reuseStatus": "public-domain-us-government-work",
+    "basis": "17 U.S.C. § 105",
+    "url": "https://www.govinfo.gov/about/policies#copyright"
+  }
+}

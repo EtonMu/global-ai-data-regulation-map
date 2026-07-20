@@ -1,0 +1,3463 @@
+{
+  "instrumentId": "vn-personal-data-protection-law-2025",
+  "source": "https://congbaocdn.chinhphu.vn/CongBaoCP/CongBao/2025/7/45574/57723-1-971-972.pdf",
+  "sourceRole": "official-gazette-searchable-text-verification",
+  "retrievedOn": "2026-07-20",
+  "sourceDocumentSha256": "abf363a09236d032df97e7b629ee2c0368cf2c8972262f2eb10eac5b587b2d2e",
+  "sourceDocumentPageCount": 96,
+  "gazetteIssue": "Công Báo Nos. 971-972, 24 July 2025",
+  "coverage": "Exact searchable Gazette wording for Articles 1-39",
+  "extractionDisclosure": "Gazette running headers, embedded digital-signature metadata, Chapter/Section headings between Articles, and the final instrument-closing mark are excluded from Article comparison. Every remaining non-whitespace character exactly matches the clean Article transcription.",
+  "articles": [
+    {
+      "articleNumber": "1",
+      "lines": [
+        {
+          "sourceLine": 385,
+          "text": "Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng"
+        },
+        {
+          "sourceLine": 386,
+          "text": "1. Luật này quy định về dữ liệu cá nhân, bảo vệ dữ liệu cá nhân và quyền,"
+        },
+        {
+          "sourceLine": 387,
+          "text": "nghĩa vụ, trách nhiệm của cơ quan, tổ chức, cá nhân có liên quan."
+        },
+        {
+          "sourceLine": 388,
+          "text": "2. Luật này áp dụng đối với:"
+        },
+        {
+          "sourceLine": 389,
+          "text": "a) Cơ quan, tổ chức, cá nhân Việt Nam;"
+        },
+        {
+          "sourceLine": 390,
+          "text": "b) Cơ quan, tổ chức, cá nhân nước ngoài tại Việt Nam;"
+        },
+        {
+          "sourceLine": 391,
+          "text": "c) Cơ quan, tổ chức, cá nhân nước ngoài trực tiếp tham gia hoặc có liên quan"
+        },
+        {
+          "sourceLine": 392,
+          "text": "đến hoạt động xử lý dữ liệu cá nhân của công dân Việt Nam và người gốc Việt"
+        },
+        {
+          "sourceLine": 393,
+          "text": "Nam chưa xác định được quốc tịch đang sinh sống tại Việt Nam đã được cấp giấy"
+        },
+        {
+          "sourceLine": 394,
+          "text": "chứng nhận căn cước."
+        }
+      ],
+      "compactTextSha256": "0218aca839753d94155dee2f01bbbe1be1633bdf360b9cfb98abf308ffeefbad"
+    },
+    {
+      "articleNumber": "2",
+      "lines": [
+        {
+          "sourceLine": 395,
+          "text": "Điều 2. Giải thích từ ngữ"
+        },
+        {
+          "sourceLine": 396,
+          "text": "Trong Luật này, các từ ngữ dưới đây được hiểu như sau:"
+        },
+        {
+          "sourceLine": 397,
+          "text": "1. Dữ liệu cá nhân là dữ liệu số hoặc thông tin dưới dạng khác xác định hoặc"
+        },
+        {
+          "sourceLine": 398,
+          "text": "giúp xác định một con người cụ thể, bao gồm: dữ liệu cá nhân cơ bản và dữ liệu"
+        },
+        {
+          "sourceLine": 399,
+          "text": "cá nhân nhạy cảm. Dữ liệu cá nhân sau khi khử nhận dạng không còn là dữ liệu"
+        },
+        {
+          "sourceLine": 400,
+          "text": "cá nhân."
+        },
+        {
+          "sourceLine": 401,
+          "text": "2. Dữ liệu cá nhân cơ bản là dữ liệu cá nhân phản ánh các yếu tố nhân thân, lai"
+        },
+        {
+          "sourceLine": 402,
+          "text": "lịch phổ biến, thường xuyên sử dụng trong các giao dịch, quan hệ xã hội, thuộc"
+        },
+        {
+          "sourceLine": 403,
+          "text": "danh mục do Chính phủ ban hành."
+        },
+        {
+          "sourceLine": 404,
+          "text": "3. Dữ liệu cá nhân nhạy cảm là dữ liệu cá nhân gắn liền với quyền riêng tư của"
+        },
+        {
+          "sourceLine": 405,
+          "text": "cá nhân, khi bị xâm phạm sẽ gây ảnh hưởng trực tiếp đến quyền, lợi ích hợp pháp"
+        },
+        {
+          "sourceLine": 406,
+          "text": "của cơ quan, tổ chức, cá nhân, thuộc danh mục do Chính phủ ban hành."
+        },
+        {
+          "sourceLine": 413,
+          "text": "4. Bảo vệ dữ liệu cá nhân là việc cơ quan, tổ chức, cá nhân sử dụng lực lượng,"
+        },
+        {
+          "sourceLine": 414,
+          "text": "phương tiện, biện pháp để phòng, chống hoạt động xâm phạm dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 415,
+          "text": "5. Chủ thể dữ liệu cá nhân là người được dữ liệu cá nhân phản ánh."
+        },
+        {
+          "sourceLine": 416,
+          "text": "6. Xử lý dữ liệu cá nhân là hoạt động tác động đến dữ liệu cá nhân, bao gồm"
+        },
+        {
+          "sourceLine": 417,
+          "text": "một hoặc nhiều hoạt động như sau: thu thập, phân tích, tổng hợp, mã hóa, giải mã,"
+        },
+        {
+          "sourceLine": 418,
+          "text": "chỉnh sửa, xóa, hủy, khử nhận dạng, cung cấp, công khai, chuyển giao dữ liệu cá"
+        },
+        {
+          "sourceLine": 419,
+          "text": "nhân và hoạt động khác tác động đến dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 420,
+          "text": "7. Bên kiểm soát dữ liệu cá nhân là cơ quan, tổ chức, cá nhân quyết định mục"
+        },
+        {
+          "sourceLine": 421,
+          "text": "đích và phương tiện xử lý dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 422,
+          "text": "8. Bên xử lý dữ liệu cá nhân là cơ quan, tổ chức, cá nhân thực hiện việc xử lý"
+        },
+        {
+          "sourceLine": 423,
+          "text": "dữ liệu cá nhân theo yêu cầu của bên kiểm soát dữ liệu cá nhân hoặc bên kiểm soát"
+        },
+        {
+          "sourceLine": 424,
+          "text": "và xử lý dữ liệu cá nhân thông qua hợp đồng."
+        },
+        {
+          "sourceLine": 425,
+          "text": "9. Bên kiểm soát và xử lý dữ liệu cá nhân là cơ quan, tổ chức, cá nhân quyết"
+        },
+        {
+          "sourceLine": 426,
+          "text": "định mục đích, phương tiện và trực tiếp xử lý dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 427,
+          "text": "10. Bên thứ ba là tổ chức, cá nhân ngoài chủ thể dữ liệu cá nhân, bên kiểm soát"
+        },
+        {
+          "sourceLine": 428,
+          "text": "dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 429,
+          "text": "tham gia vào việc xử lý dữ liệu cá nhân theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 430,
+          "text": "11. Khử nhận dạng dữ liệu cá nhân là quá trình thay đổi hoặc xóa thông tin để"
+        },
+        {
+          "sourceLine": 431,
+          "text": "tạo ra dữ liệu mới không thể xác định hoặc không thể giúp xác định được một con"
+        },
+        {
+          "sourceLine": 432,
+          "text": "người cụ thể."
+        },
+        {
+          "sourceLine": 433,
+          "text": "12. Đánh giá tác động xử lý dữ liệu cá nhân là việc phân tích, đánh giá rủi ro"
+        },
+        {
+          "sourceLine": 434,
+          "text": "có thể xảy ra trong quá trình xử lý dữ liệu cá nhân để áp dụng các biện pháp giảm"
+        },
+        {
+          "sourceLine": 435,
+          "text": "thiểu rủi ro, bảo vệ dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "062a722c7e7f5ed80d7e925b8f3b3247d7e25ec3706877cd399b264a199bb820"
+    },
+    {
+      "articleNumber": "3",
+      "lines": [
+        {
+          "sourceLine": 436,
+          "text": "Điều 3. Nguyên tắc bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 437,
+          "text": "1. Tuân thủ quy định của Hiến pháp, quy định của Luật này và quy định khác"
+        },
+        {
+          "sourceLine": 438,
+          "text": "của pháp luật có liên quan."
+        },
+        {
+          "sourceLine": 439,
+          "text": "2. Chỉ được thu thập, xử lý dữ liệu cá nhân đúng phạm vi, mục đích cụ thể, rõ"
+        },
+        {
+          "sourceLine": 440,
+          "text": "ràng, bảo đảm tuân thủ quy định của pháp luật."
+        },
+        {
+          "sourceLine": 441,
+          "text": "3. Bảo đảm tính chính xác của dữ liệu cá nhân và được chỉnh sửa, cập nhật, bổ"
+        },
+        {
+          "sourceLine": 442,
+          "text": "sung khi cần thiết; được lưu trữ trong khoảng thời gian phù hợp với mục đích xử lý"
+        },
+        {
+          "sourceLine": 443,
+          "text": "dữ liệu cá nhân, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "sourceLine": 444,
+          "text": "4. Thực hiện đồng bộ có hiệu quả các biện pháp, giải pháp về thể chế, kỹ thuật,"
+        },
+        {
+          "sourceLine": 445,
+          "text": "con người phù hợp để bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 448,
+          "text": "5. Chủ động phòng ngừa, phát hiện, ngăn chặn, đấu tranh, xử lý kịp thời, nghiêm"
+        },
+        {
+          "sourceLine": 449,
+          "text": "minh mọi hành vi vi phạm pháp luật về bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 450,
+          "text": "6. Bảo vệ dữ liệu cá nhân gắn với bảo vệ lợi ích quốc gia, dân tộc, phục vụ"
+        },
+        {
+          "sourceLine": 451,
+          "text": "phát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh và đối ngoại; bảo đảm hài"
+        },
+        {
+          "sourceLine": 452,
+          "text": "hòa giữa bảo vệ dữ liệu cá nhân với bảo vệ quyền, lợi ích hợp pháp của cơ quan, tổ"
+        },
+        {
+          "sourceLine": 453,
+          "text": "chức, cá nhân."
+        }
+      ],
+      "compactTextSha256": "bf28a9c4505747be90281b9f970caef3df736405e08402468c6e0913f3922a40"
+    },
+    {
+      "articleNumber": "4",
+      "lines": [
+        {
+          "sourceLine": 454,
+          "text": "Điều 4. Quyền và nghĩa vụ của chủ thể dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 455,
+          "text": "1. Quyền của chủ thể dữ liệu cá nhân bao gồm:"
+        },
+        {
+          "sourceLine": 456,
+          "text": "a) Được biết về hoạt động xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 457,
+          "text": "b) Đồng ý hoặc không đồng ý, yêu cầu rút lại sự đồng ý cho phép xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 458,
+          "text": "cá nhân;"
+        },
+        {
+          "sourceLine": 459,
+          "text": "c) Xem, chỉnh sửa hoặc yêu cầu chỉnh sửa dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 460,
+          "text": "d) Yêu cầu cung cấp, xóa, hạn chế xử lý dữ liệu cá nhân; gửi yêu cầu phản đối"
+        },
+        {
+          "sourceLine": 461,
+          "text": "xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 462,
+          "text": "đ) Khiếu nại, tố cáo, khởi kiện, yêu cầu bồi thường thiệt hại theo quy định của"
+        },
+        {
+          "sourceLine": 463,
+          "text": "pháp luật;"
+        },
+        {
+          "sourceLine": 464,
+          "text": "e) Yêu cầu cơ quan có thẩm quyền hoặc cơ quan, tổ chức, cá nhân liên quan"
+        },
+        {
+          "sourceLine": 465,
+          "text": "đến xử lý dữ liệu cá nhân thực hiện các biện pháp, giải pháp bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 466,
+          "text": "của mình theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 467,
+          "text": "2. Nghĩa vụ của chủ thể dữ liệu cá nhân bao gồm:"
+        },
+        {
+          "sourceLine": 468,
+          "text": "a) Tự bảo vệ dữ liệu cá nhân của mình;"
+        },
+        {
+          "sourceLine": 469,
+          "text": "b) Tôn trọng, bảo vệ dữ liệu cá nhân của người khác;"
+        },
+        {
+          "sourceLine": 470,
+          "text": "c) Cung cấp đầy đủ, chính xác dữ liệu cá nhân của mình theo quy định của pháp"
+        },
+        {
+          "sourceLine": 471,
+          "text": "luật, theo hợp đồng hoặc khi đồng ý cho phép xử lý dữ liệu cá nhân của mình;"
+        },
+        {
+          "sourceLine": 472,
+          "text": "d) Chấp hành pháp luật về bảo vệ dữ liệu cá nhân và tham gia phòng, chống"
+        },
+        {
+          "sourceLine": 473,
+          "text": "hoạt động xâm phạm dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 474,
+          "text": "3. Chủ thể dữ liệu cá nhân khi thực hiện quyền và nghĩa vụ của mình phải tuân"
+        },
+        {
+          "sourceLine": 475,
+          "text": "thủ đầy đủ các nguyên tắc sau đây:"
+        },
+        {
+          "sourceLine": 476,
+          "text": "a) Thực hiện theo quy định của pháp luật; tuân thủ nghĩa vụ của chủ thể dữ"
+        },
+        {
+          "sourceLine": 477,
+          "text": "liệu cá nhân theo hợp đồng. Việc thực hiện quyền và nghĩa vụ của chủ thể dữ liệu"
+        },
+        {
+          "sourceLine": 478,
+          "text": "cá nhân phải nhằm mục đích bảo vệ quyền, lợi ích hợp pháp của chính chủ thể dữ"
+        },
+        {
+          "sourceLine": 479,
+          "text": "liệu cá nhân đó;"
+        },
+        {
+          "sourceLine": 482,
+          "text": "b) Không được gây khó khăn, cản trở việc thực hiện quyền, nghĩa vụ pháp lý"
+        },
+        {
+          "sourceLine": 483,
+          "text": "của bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên xử"
+        },
+        {
+          "sourceLine": 484,
+          "text": "lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 485,
+          "text": "c) Không được xâm phạm đến quyền, lợi ích hợp pháp của Nhà nước, cơ quan,"
+        },
+        {
+          "sourceLine": 486,
+          "text": "tổ chức, cá nhân khác."
+        },
+        {
+          "sourceLine": 487,
+          "text": "4. Cơ quan, tổ chức, cá nhân có trách nhiệm tạo điều kiện thuận lợi, không"
+        },
+        {
+          "sourceLine": 488,
+          "text": "được gây khó khăn, cản trở việc thực hiện quyền và nghĩa vụ của chủ thể dữ liệu"
+        },
+        {
+          "sourceLine": 489,
+          "text": "cá nhân theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 490,
+          "text": "5. Khi nhận được yêu cầu của chủ thể dữ liệu cá nhân để thực hiện quyền của"
+        },
+        {
+          "sourceLine": 491,
+          "text": "chủ thể dữ liệu cá nhân quy định tại khoản 1 Điều này, bên kiểm soát dữ liệu cá"
+        },
+        {
+          "sourceLine": 492,
+          "text": "nhân, bên kiểm soát và xử lý dữ liệu cá nhân phải kịp thời thực hiện trong thời hạn"
+        },
+        {
+          "sourceLine": 493,
+          "text": "theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 494,
+          "text": "Chính phủ quy định chi tiết khoản này."
+        }
+      ],
+      "compactTextSha256": "3fe03e1ade4e90e4329c3d108d011d56a0d7ab464e8fb0347ce772b1e5df1d59"
+    },
+    {
+      "articleNumber": "5",
+      "lines": [
+        {
+          "sourceLine": 495,
+          "text": "Điều 5. Áp dụng pháp luật về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 496,
+          "text": "1. Hoạt động bảo vệ dữ liệu cá nhân trên lãnh thổ nước Cộng hòa xã hội chủ"
+        },
+        {
+          "sourceLine": 497,
+          "text": "nghĩa Việt Nam thực hiện theo quy định của Luật này và quy định khác của pháp"
+        },
+        {
+          "sourceLine": 498,
+          "text": "luật có liên quan."
+        },
+        {
+          "sourceLine": 499,
+          "text": "2. Trường hợp luật, nghị quyết của Quốc hội ban hành trước ngày Luật này có"
+        },
+        {
+          "sourceLine": 500,
+          "text": "hiệu lực thi hành có quy định cụ thể về bảo vệ dữ liệu cá nhân mà không trái với"
+        },
+        {
+          "sourceLine": 501,
+          "text": "nguyên tắc bảo vệ dữ liệu cá nhân theo quy định của Luật này thì áp dụng quy định"
+        },
+        {
+          "sourceLine": 502,
+          "text": "của luật, nghị quyết đó."
+        },
+        {
+          "sourceLine": 503,
+          "text": "3. Trường hợp luật, nghị quyết của Quốc hội ban hành sau ngày Luật này có"
+        },
+        {
+          "sourceLine": 504,
+          "text": "hiệu lực thi hành có quy định về bảo vệ dữ liệu cá nhân khác với quy định của Luật"
+        },
+        {
+          "sourceLine": 505,
+          "text": "này thì phải quy định cụ thể nội dung thực hiện hoặc không thực hiện theo quy"
+        },
+        {
+          "sourceLine": 506,
+          "text": "định của Luật này, nội dung thực hiện theo quy định của luật, nghị quyết đó."
+        },
+        {
+          "sourceLine": 507,
+          "text": "4. Trường hợp cơ quan, tổ chức, cá nhân thực hiện việc đánh giá tác động xử"
+        },
+        {
+          "sourceLine": 508,
+          "text": "lý dữ liệu cá nhân, đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới theo"
+        },
+        {
+          "sourceLine": 509,
+          "text": "quy định của Luật này thì không phải thực hiện đánh giá rủi ro xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 510,
+          "text": "nhân, đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới theo quy định của"
+        },
+        {
+          "sourceLine": 511,
+          "text": "pháp luật về dữ liệu."
+        }
+      ],
+      "compactTextSha256": "12db267a73e444ba635530959827e654e9bd4d81170f5f369142d3897e7ba047"
+    },
+    {
+      "articleNumber": "6",
+      "lines": [
+        {
+          "sourceLine": 512,
+          "text": "Điều 6. Hợp tác quốc tế về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 513,
+          "text": "1. Tuân thủ pháp luật Việt Nam, điều ước quốc tế mà nước Cộng hòa xã hội"
+        },
+        {
+          "sourceLine": 514,
+          "text": "chủ nghĩa Việt Nam là thành viên và thỏa thuận quốc tế về bảo vệ dữ liệu cá"
+        },
+        {
+          "sourceLine": 515,
+          "text": "nhân trên cơ sở bình đẳng, cùng có lợi, tôn trọng độc lập, chủ quyền và toàn vẹn"
+        },
+        {
+          "sourceLine": 516,
+          "text": "lãnh thổ."
+        },
+        {
+          "sourceLine": 519,
+          "text": "2. Nội dung hợp tác quốc tế về bảo vệ dữ liệu cá nhân bao gồm:"
+        },
+        {
+          "sourceLine": 520,
+          "text": "a) Xây dựng cơ chế hợp tác quốc tế để tạo điều kiện cho việc thực thi có hiệu"
+        },
+        {
+          "sourceLine": 521,
+          "text": "quả pháp luật về bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 522,
+          "text": "b) Tham gia tương trợ tư pháp về bảo vệ dữ liệu cá nhân của quốc gia khác;"
+        },
+        {
+          "sourceLine": 523,
+          "text": "c) Phòng ngừa, đấu tranh với các hành vi xâm phạm dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 524,
+          "text": "d) Đào tạo nguồn nhân lực, nghiên cứu khoa học, ứng dụng khoa học và công"
+        },
+        {
+          "sourceLine": 525,
+          "text": "nghệ trong bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 526,
+          "text": "đ) Trao đổi kinh nghiệm xây dựng và thực hiện pháp luật về bảo vệ dữ liệu"
+        },
+        {
+          "sourceLine": 527,
+          "text": "cá nhân;"
+        },
+        {
+          "sourceLine": 528,
+          "text": "e) Chuyển giao công nghệ phục vụ bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 529,
+          "text": "3. Chính phủ quy định trách nhiệm thực hiện hợp tác quốc tế về bảo vệ dữ liệu"
+        },
+        {
+          "sourceLine": 530,
+          "text": "cá nhân."
+        }
+      ],
+      "compactTextSha256": "5965e0fcce967ca464a4c6866ea83ad41ca10665c587e6d034fe065f6036ce27"
+    },
+    {
+      "articleNumber": "7",
+      "lines": [
+        {
+          "sourceLine": 531,
+          "text": "Điều 7. Hành vi bị nghiêm cấm"
+        },
+        {
+          "sourceLine": 532,
+          "text": "1. Xử lý dữ liệu cá nhân nhằm chống lại Nhà nước Cộng hòa xã hội chủ nghĩa"
+        },
+        {
+          "sourceLine": 533,
+          "text": "Việt Nam, gây ảnh hưởng đến quốc phòng, an ninh quốc gia, trật tự, an toàn xã"
+        },
+        {
+          "sourceLine": 534,
+          "text": "hội, quyền, lợi ích hợp pháp của cơ quan, tổ chức, cá nhân."
+        },
+        {
+          "sourceLine": 535,
+          "text": "2. Cản trở hoạt động bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 536,
+          "text": "3. Lợi dụng hoạt động bảo vệ dữ liệu cá nhân để thực hiện hành vi vi phạm"
+        },
+        {
+          "sourceLine": 537,
+          "text": "pháp luật."
+        },
+        {
+          "sourceLine": 538,
+          "text": "4. Xử lý dữ liệu cá nhân trái quy định của pháp luật."
+        },
+        {
+          "sourceLine": 539,
+          "text": "5. Sử dụng dữ liệu cá nhân của người khác, cho người khác sử dụng dữ liệu cá"
+        },
+        {
+          "sourceLine": 540,
+          "text": "nhân của mình để thực hiện hành vi trái quy định của pháp luật."
+        },
+        {
+          "sourceLine": 541,
+          "text": "6. Mua, bán dữ liệu cá nhân, trừ trường hợp luật có quy định khác."
+        },
+        {
+          "sourceLine": 542,
+          "text": "7. Chiếm đoạt, cố ý làm lộ, làm mất dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "786eb04724a4f0c5e2d0383a40808432a605666aa006718f0942bd16b2e96120"
+    },
+    {
+      "articleNumber": "8",
+      "lines": [
+        {
+          "sourceLine": 543,
+          "text": "Điều 8. Xử lý vi phạm pháp luật về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 544,
+          "text": "1. Tổ chức, cá nhân có hành vi vi phạm quy định của Luật này và quy định"
+        },
+        {
+          "sourceLine": 545,
+          "text": "khác của pháp luật có liên quan đến bảo vệ dữ liệu cá nhân thì tùy theo tính chất,"
+        },
+        {
+          "sourceLine": 546,
+          "text": "mức độ, hậu quả của hành vi vi phạm có thể bị xử phạt hành chính hoặc bị truy"
+        },
+        {
+          "sourceLine": 547,
+          "text": "cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của"
+        },
+        {
+          "sourceLine": 548,
+          "text": "pháp luật."
+        },
+        {
+          "sourceLine": 549,
+          "text": "2. Việc xử phạt vi phạm hành chính trong lĩnh vực bảo vệ dữ liệu cá nhân thực"
+        },
+        {
+          "sourceLine": 550,
+          "text": "hiện theo quy định tại các khoản 3, 4, 5, 6 và 7 Điều này và pháp luật về xử lý vi"
+        },
+        {
+          "sourceLine": 551,
+          "text": "phạm hành chính."
+        },
+        {
+          "sourceLine": 554,
+          "text": "3. Mức phạt tiền tối đa trong xử phạt vi phạm hành chính đối với hành vi mua,"
+        },
+        {
+          "sourceLine": 555,
+          "text": "bán dữ liệu cá nhân là 10 lần khoản thu có được từ hành vi vi phạm; trường hợp"
+        },
+        {
+          "sourceLine": 556,
+          "text": "không có khoản thu từ hành vi vi phạm hoặc mức phạt tính theo khoản thu có được"
+        },
+        {
+          "sourceLine": 557,
+          "text": "từ hành vi vi phạm thấp hơn mức phạt tiền tối đa quy định tại khoản 5 Điều này thì"
+        },
+        {
+          "sourceLine": 558,
+          "text": "áp dụng mức phạt tiền theo quy định tại khoản 5 Điều này."
+        },
+        {
+          "sourceLine": 559,
+          "text": "4. Mức phạt tiền tối đa trong xử phạt vi phạm hành chính đối với tổ chức có"
+        },
+        {
+          "sourceLine": 560,
+          "text": "hành vi vi phạm quy định chuyển dữ liệu cá nhân xuyên biên giới là 5% doanh thu"
+        },
+        {
+          "sourceLine": 561,
+          "text": "của năm trước liền kề của tổ chức đó; trường hợp không có doanh thu của năm"
+        },
+        {
+          "sourceLine": 562,
+          "text": "trước liền kề hoặc mức phạt tính theo doanh thu thấp hơn mức phạt tiền tối đa theo"
+        },
+        {
+          "sourceLine": 563,
+          "text": "quy định tại khoản 5 Điều này thì áp dụng mức phạt tiền theo quy định tại khoản 5"
+        },
+        {
+          "sourceLine": 564,
+          "text": "Điều này."
+        },
+        {
+          "sourceLine": 565,
+          "text": "5. Mức phạt tiền tối đa trong xử phạt vi phạm hành chính đối với các hành vi"
+        },
+        {
+          "sourceLine": 566,
+          "text": "vi phạm khác trong lĩnh vực bảo vệ dữ liệu cá nhân là 03 tỷ đồng."
+        },
+        {
+          "sourceLine": 567,
+          "text": "6. Mức phạt tiền tối đa quy định tại các khoản 3, 4 và 5 Điều này được áp dụng"
+        },
+        {
+          "sourceLine": 568,
+          "text": "đối với tổ chức; cá nhân thực hiện cùng hành vi vi phạm thì mức phạt tiền tối đa"
+        },
+        {
+          "sourceLine": 569,
+          "text": "bằng một phần hai mức phạt tiền đối với tổ chức."
+        },
+        {
+          "sourceLine": 570,
+          "text": "7. Chính phủ quy định phương pháp tính khoản thu có được từ việc thực hiện"
+        },
+        {
+          "sourceLine": 571,
+          "text": "hành vi vi phạm pháp luật về bảo vệ dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "265b4be74dfdbe5145119f6c79b823774b4024e0415448a13eacdd5963762985"
+    },
+    {
+      "articleNumber": "9",
+      "lines": [
+        {
+          "sourceLine": 577,
+          "text": "Điều 9. Sự đồng ý của chủ thể dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 578,
+          "text": "1. Sự đồng ý của chủ thể dữ liệu cá nhân là việc chủ thể dữ liệu cá nhân cho"
+        },
+        {
+          "sourceLine": 579,
+          "text": "phép xử lý dữ liệu cá nhân của mình, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "sourceLine": 580,
+          "text": "2. Sự đồng ý của chủ thể dữ liệu cá nhân chỉ có hiệu lực khi dựa trên sự tự"
+        },
+        {
+          "sourceLine": 581,
+          "text": "nguyện và biết rõ các thông tin sau đây:"
+        },
+        {
+          "sourceLine": 582,
+          "text": "a) Loại dữ liệu cá nhân được xử lý, mục đích xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 583,
+          "text": "b) Bên kiểm soát dữ liệu cá nhân hoặc bên kiểm soát và xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 584,
+          "text": "c) Các quyền, nghĩa vụ của chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 587,
+          "text": "3. Sự đồng ý của chủ thể dữ liệu cá nhân được thể hiện bằng phương thức rõ"
+        },
+        {
+          "sourceLine": 588,
+          "text": "ràng, cụ thể, có thể in, sao chép bằng văn bản, bao gồm cả dưới dạng điện tử hoặc"
+        },
+        {
+          "sourceLine": 589,
+          "text": "định dạng kiểm chứng được."
+        },
+        {
+          "sourceLine": 590,
+          "text": "4. Sự đồng ý của chủ thể dữ liệu cá nhân phải bảo đảm các nguyên tắc sau đây:"
+        },
+        {
+          "sourceLine": 591,
+          "text": "a) Thể hiện sự đồng ý đối với từng mục đích;"
+        },
+        {
+          "sourceLine": 592,
+          "text": "b) Không được kèm theo điều kiện bắt buộc phải đồng ý với các mục đích"
+        },
+        {
+          "sourceLine": 593,
+          "text": "khác với nội dung thỏa thuận;"
+        },
+        {
+          "sourceLine": 594,
+          "text": "c) Sự đồng ý có hiệu lực cho đến khi chủ thể dữ liệu cá nhân thay đổi sự đồng"
+        },
+        {
+          "sourceLine": 595,
+          "text": "ý đó hoặc theo quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 596,
+          "text": "d) Sự im lặng hoặc không phản hồi không được coi là sự đồng ý."
+        },
+        {
+          "sourceLine": 597,
+          "text": "5. Chính phủ quy định chi tiết khoản 3 Điều này."
+        }
+      ],
+      "compactTextSha256": "74c37422c38194300549a5ed4d27d4e7e3a46dd26b74c581ef610611ae10c728"
+    },
+    {
+      "articleNumber": "10",
+      "lines": [
+        {
+          "sourceLine": 598,
+          "text": "Điều 10. Yêu cầu rút lại sự đồng ý, yêu cầu hạn chế xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 599,
+          "text": "1. Chủ thể dữ liệu cá nhân có quyền yêu cầu rút lại sự đồng ý cho phép xử lý"
+        },
+        {
+          "sourceLine": 600,
+          "text": "dữ liệu cá nhân, yêu cầu hạn chế xử lý dữ liệu cá nhân của mình khi có nghi ngờ"
+        },
+        {
+          "sourceLine": 601,
+          "text": "phạm vi, mục đích xử lý dữ liệu cá nhân hoặc tính chính xác của dữ liệu cá nhân,"
+        },
+        {
+          "sourceLine": 602,
+          "text": "trừ trường hợp quy định tại Điều 19 của Luật này hoặc trường hợp pháp luật có"
+        },
+        {
+          "sourceLine": 603,
+          "text": "quy định khác."
+        },
+        {
+          "sourceLine": 604,
+          "text": "2. Yêu cầu rút lại sự đồng ý, yêu cầu hạn chế xử lý dữ liệu cá nhân của chủ thể"
+        },
+        {
+          "sourceLine": 605,
+          "text": "dữ liệu cá nhân phải được thể hiện bằng văn bản, bao gồm cả dạng điện tử hoặc"
+        },
+        {
+          "sourceLine": 606,
+          "text": "định dạng kiểm chứng được và được gửi cho bên kiểm soát dữ liệu cá nhân, bên"
+        },
+        {
+          "sourceLine": 607,
+          "text": "kiểm soát và xử lý dữ liệu cá nhân. Yêu cầu rút lại sự đồng ý, yêu cầu hạn chế xử"
+        },
+        {
+          "sourceLine": 608,
+          "text": "lý dữ liệu cá nhân của chủ thể dữ liệu cá nhân được thực hiện theo quy định của"
+        },
+        {
+          "sourceLine": 609,
+          "text": "pháp luật và theo thỏa thuận giữa các bên."
+        },
+        {
+          "sourceLine": 610,
+          "text": "3. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân tiếp"
+        },
+        {
+          "sourceLine": 611,
+          "text": "nhận, thực hiện và yêu cầu bên xử lý dữ liệu cá nhân thực hiện yêu cầu rút lại sự"
+        },
+        {
+          "sourceLine": 612,
+          "text": "đồng ý, hạn chế xử lý dữ liệu cá nhân của chủ thể dữ liệu cá nhân trong thời gian"
+        },
+        {
+          "sourceLine": 613,
+          "text": "theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 614,
+          "text": "4. Việc thực hiện yêu cầu rút lại sự đồng ý, yêu cầu hạn chế xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 615,
+          "text": "nhân không áp dụng đối với hoạt động xử lý dữ liệu cá nhân trước thời điểm chủ"
+        },
+        {
+          "sourceLine": 616,
+          "text": "thể dữ liệu cá nhân yêu cầu rút lại sự đồng ý hoặc yêu cầu hạn chế xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 617,
+          "text": "cá nhân."
+        }
+      ],
+      "compactTextSha256": "4918609ed24056164dc1a613a0d0d92b83b74fb41abfbfb664eb660f872feeaf"
+    },
+    {
+      "articleNumber": "11",
+      "lines": [
+        {
+          "sourceLine": 618,
+          "text": "Điều 11. Thu thập, phân tích, tổng hợp dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 619,
+          "text": "1. Dữ liệu cá nhân được thu thập phải được sự đồng ý của chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 620,
+          "text": "nhân trước khi thu thập, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "sourceLine": 623,
+          "text": "2. Cơ quan Đảng, Nhà nước có thẩm quyền được phân tích, tổng hợp dữ liệu"
+        },
+        {
+          "sourceLine": 624,
+          "text": "cá nhân từ nguồn dữ liệu tự thu thập hoặc được chia sẻ, cung cấp, chuyển giao,"
+        },
+        {
+          "sourceLine": 625,
+          "text": "khai thác, sử dụng để phục vụ công tác lãnh đạo, chỉ đạo, quản lý nhà nước, phát"
+        },
+        {
+          "sourceLine": 626,
+          "text": "triển kinh tế - xã hội theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 627,
+          "text": "3. Cơ quan, tổ chức, cá nhân không thuộc quy định tại khoản 2 Điều này được"
+        },
+        {
+          "sourceLine": 628,
+          "text": "phân tích, tổng hợp dữ liệu cá nhân từ nguồn dữ liệu cá nhân được phép xử lý theo"
+        },
+        {
+          "sourceLine": 629,
+          "text": "quy định của pháp luật."
+        }
+      ],
+      "compactTextSha256": "ae3d945ed77d9b45696246640d5637978f82bb064569a44e2b0cef7d3eb21a00"
+    },
+    {
+      "articleNumber": "12",
+      "lines": [
+        {
+          "sourceLine": 630,
+          "text": "Điều 12. Mã hóa, giải mã dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 631,
+          "text": "1. Mã hóa dữ liệu cá nhân là việc chuyển đổi dữ liệu cá nhân sang dạng không"
+        },
+        {
+          "sourceLine": 632,
+          "text": "nhận biết được dữ liệu cá nhân nếu không được giải mã; dữ liệu cá nhân sau khi"
+        },
+        {
+          "sourceLine": 633,
+          "text": "được mã hóa vẫn là dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 634,
+          "text": "2. Dữ liệu cá nhân là bí mật nhà nước phải được mã hóa, giải mã theo quy định"
+        },
+        {
+          "sourceLine": 635,
+          "text": "của pháp luật về bảo vệ bí mật nhà nước và pháp luật về cơ yếu."
+        },
+        {
+          "sourceLine": 636,
+          "text": "3. Cơ quan, tổ chức, cá nhân quyết định việc mã hóa, giải mã dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 637,
+          "text": "phù hợp với hoạt động xử lý dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "a12d8283e13e3e9530266329c453620deba633a60c456fe221df38ca1a070824"
+    },
+    {
+      "articleNumber": "13",
+      "lines": [
+        {
+          "sourceLine": 638,
+          "text": "Điều 13. Chỉnh sửa dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 639,
+          "text": "1. Chủ thể dữ liệu cá nhân được tự mình chỉnh sửa dữ liệu cá nhân của mình"
+        },
+        {
+          "sourceLine": 640,
+          "text": "đối với một số loại dữ liệu cá nhân theo thỏa thuận với bên kiểm soát dữ liệu cá"
+        },
+        {
+          "sourceLine": 641,
+          "text": "nhân, bên kiểm soát và xử lý dữ liệu cá nhân; đề nghị bên kiểm soát dữ liệu cá"
+        },
+        {
+          "sourceLine": 642,
+          "text": "nhân, bên kiểm soát và xử lý dữ liệu cá nhân chỉnh sửa dữ liệu cá nhân của mình."
+        },
+        {
+          "sourceLine": 643,
+          "text": "2. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân chỉnh"
+        },
+        {
+          "sourceLine": 644,
+          "text": "sửa dữ liệu cá nhân sau khi chủ thể dữ liệu cá nhân yêu cầu hoặc chỉnh sửa dữ liệu"
+        },
+        {
+          "sourceLine": 645,
+          "text": "cá nhân theo quy định của pháp luật; yêu cầu bên xử lý dữ liệu cá nhân, bên thứ ba"
+        },
+        {
+          "sourceLine": 646,
+          "text": "chỉnh sửa dữ liệu cá nhân của chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 647,
+          "text": "3. Việc chỉnh sửa dữ liệu cá nhân phải bảo đảm tính chính xác. Trường hợp"
+        },
+        {
+          "sourceLine": 648,
+          "text": "không thể chỉnh sửa dữ liệu cá nhân vì lý do chính đáng, bên kiểm soát dữ liệu cá"
+        },
+        {
+          "sourceLine": 649,
+          "text": "nhân, bên kiểm soát và xử lý dữ liệu cá nhân phải thông báo để cơ quan, tổ chức,"
+        },
+        {
+          "sourceLine": 650,
+          "text": "cá nhân yêu cầu biết."
+        }
+      ],
+      "compactTextSha256": "9068baa301bbbe065e5eab78290eda6da143007fc4ad5e5ee2ff28022bc3ec33"
+    },
+    {
+      "articleNumber": "14",
+      "lines": [
+        {
+          "sourceLine": 651,
+          "text": "Điều 14. Xóa, hủy, khử nhận dạng dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 652,
+          "text": "1. Việc xóa, hủy dữ liệu cá nhân được thực hiện trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 653,
+          "text": "a) Chủ thể dữ liệu cá nhân có yêu cầu và chấp nhận các rủi ro, thiệt hại có thể"
+        },
+        {
+          "sourceLine": 654,
+          "text": "xảy ra đối với mình. Yêu cầu của chủ thể dữ liệu cá nhân trong trường hợp này"
+        },
+        {
+          "sourceLine": 655,
+          "text": "phải tuân thủ đầy đủ các nguyên tắc quy định tại khoản 3 Điều 4 của Luật này;"
+        },
+        {
+          "sourceLine": 656,
+          "text": "b) Đã hoàn thành mục đích xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 659,
+          "text": "c) Hết thời hạn lưu trữ theo quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 660,
+          "text": "d) Thực hiện theo quyết định của cơ quan nhà nước có thẩm quyền;"
+        },
+        {
+          "sourceLine": 661,
+          "text": "đ) Thực hiện theo thỏa thuận;"
+        },
+        {
+          "sourceLine": 662,
+          "text": "e) Trường hợp khác theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 663,
+          "text": "2. Không thực hiện yêu cầu của chủ thể dữ liệu cá nhân về việc xóa, hủy dữ"
+        },
+        {
+          "sourceLine": 664,
+          "text": "liệu cá nhân trong các trường hợp quy định tại Điều 19 của Luật này hoặc việc xóa,"
+        },
+        {
+          "sourceLine": 665,
+          "text": "hủy dữ liệu cá nhân vi phạm quy định tại khoản 3 Điều 4 của Luật này."
+        },
+        {
+          "sourceLine": 666,
+          "text": "3. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân xóa,"
+        },
+        {
+          "sourceLine": 667,
+          "text": "hủy dữ liệu cá nhân trong các trường hợp quy định tại khoản 1 Điều này hoặc yêu"
+        },
+        {
+          "sourceLine": 668,
+          "text": "cầu bên xử lý dữ liệu cá nhân, bên thứ ba xóa, hủy dữ liệu cá nhân của chủ thể dữ"
+        },
+        {
+          "sourceLine": 669,
+          "text": "liệu cá nhân. Việc xóa, hủy dữ liệu cá nhân phải được thực hiện bằng các biện"
+        },
+        {
+          "sourceLine": 670,
+          "text": "pháp an toàn; ngăn chặn hoạt động xâm nhập và khôi phục trái phép dữ liệu cá"
+        },
+        {
+          "sourceLine": 671,
+          "text": "nhân đã bị xóa, hủy."
+        },
+        {
+          "sourceLine": 672,
+          "text": "4. Cơ quan, tổ chức, cá nhân không được cố ý khôi phục trái phép dữ liệu cá"
+        },
+        {
+          "sourceLine": 673,
+          "text": "nhân đã bị xóa, hủy."
+        },
+        {
+          "sourceLine": 674,
+          "text": "5. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên"
+        },
+        {
+          "sourceLine": 675,
+          "text": "xử lý dữ liệu cá nhân có trách nhiệm tuân thủ quy định của Luật này. Trường hợp"
+        },
+        {
+          "sourceLine": 676,
+          "text": "không thể xóa, hủy dữ liệu cá nhân vì lý do chính đáng sau khi nhận được yêu cầu"
+        },
+        {
+          "sourceLine": 677,
+          "text": "của chủ thể dữ liệu cá nhân, bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý"
+        },
+        {
+          "sourceLine": 678,
+          "text": "dữ liệu cá nhân phải thông báo để chủ thể dữ liệu cá nhân biết."
+        },
+        {
+          "sourceLine": 679,
+          "text": "6. Việc khử nhận dạng dữ liệu cá nhân được quy định như sau:"
+        },
+        {
+          "sourceLine": 680,
+          "text": "a) Cơ quan, tổ chức, cá nhân khử nhận dạng dữ liệu cá nhân có trách nhiệm"
+        },
+        {
+          "sourceLine": 681,
+          "text": "kiểm soát và giám sát chặt chẽ quá trình khử nhận dạng dữ liệu cá nhân; ngăn chặn"
+        },
+        {
+          "sourceLine": 682,
+          "text": "việc truy cập trái phép, sao chép, chiếm đoạt, làm lộ, làm mất dữ liệu cá nhân trong"
+        },
+        {
+          "sourceLine": 683,
+          "text": "quá trình khử nhận dạng;"
+        },
+        {
+          "sourceLine": 684,
+          "text": "b) Không được tái nhận dạng dữ liệu cá nhân sau khi đã được khử nhận dạng,"
+        },
+        {
+          "sourceLine": 685,
+          "text": "trừ trường hợp pháp luật có quy định khác;"
+        },
+        {
+          "sourceLine": 686,
+          "text": "c) Việc khử nhận dạng dữ liệu cá nhân tuân thủ quy định của Luật này và quy"
+        },
+        {
+          "sourceLine": 687,
+          "text": "định khác của pháp luật có liên quan."
+        }
+      ],
+      "compactTextSha256": "c39cb4d25945daf4034bd20fa14ef2d67548e9c17d1a172e0403f64969c817b6"
+    },
+    {
+      "articleNumber": "15",
+      "lines": [
+        {
+          "sourceLine": 688,
+          "text": "Điều 15. Cung cấp dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 689,
+          "text": "1. Chủ thể dữ liệu cá nhân cung cấp dữ liệu cá nhân cho cơ quan, tổ chức, cá"
+        },
+        {
+          "sourceLine": 690,
+          "text": "nhân theo quy định của pháp luật hoặc theo thỏa thuận với cơ quan, tổ chức, cá"
+        },
+        {
+          "sourceLine": 691,
+          "text": "nhân đó."
+        },
+        {
+          "sourceLine": 694,
+          "text": "2. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân cung"
+        },
+        {
+          "sourceLine": 695,
+          "text": "cấp dữ liệu cá nhân trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 696,
+          "text": "a) Cung cấp cho chủ thể dữ liệu cá nhân theo yêu cầu của chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 697,
+          "text": "nhân phù hợp quy định của pháp luật, thỏa thuận với chủ thể dữ liệu, trừ trường"
+        },
+        {
+          "sourceLine": 698,
+          "text": "hợp việc cung cấp đó có thể gây tổn hại đến quốc phòng, an ninh quốc gia, trật tự,"
+        },
+        {
+          "sourceLine": 699,
+          "text": "an toàn xã hội hoặc xâm phạm đến tính mạng, sức khỏe, tài sản của người khác;"
+        },
+        {
+          "sourceLine": 700,
+          "text": "b) Cung cấp cho cơ quan, tổ chức, cá nhân khác khi được chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 701,
+          "text": "nhân đồng ý, trừ trường hợp pháp luật có quy định khác."
+        }
+      ],
+      "compactTextSha256": "876427812c226426560339220dad28c094b456319c23b60152345d82e3f77ca2"
+    },
+    {
+      "articleNumber": "16",
+      "lines": [
+        {
+          "sourceLine": 702,
+          "text": "Điều 16. Công khai dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 703,
+          "text": "1. Dữ liệu cá nhân chỉ được công khai với mục đích cụ thể. Phạm vi công khai,"
+        },
+        {
+          "sourceLine": 704,
+          "text": "loại dữ liệu cá nhân được công khai phải phù hợp với mục đích công khai. Việc"
+        },
+        {
+          "sourceLine": 705,
+          "text": "công khai dữ liệu cá nhân không được xâm phạm đến quyền, lợi ích hợp pháp của"
+        },
+        {
+          "sourceLine": 706,
+          "text": "chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 707,
+          "text": "2. Dữ liệu cá nhân chỉ được công khai trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 708,
+          "text": "a) Khi có sự đồng ý của chủ thể dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 709,
+          "text": "b) Thực hiện theo quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 710,
+          "text": "c) Trường hợp quy định tại điểm b khoản 1 Điều 19 của Luật này;"
+        },
+        {
+          "sourceLine": 711,
+          "text": "d) Thực hiện nghĩa vụ theo hợp đồng."
+        },
+        {
+          "sourceLine": 712,
+          "text": "3. Dữ liệu cá nhân công khai phải bảo đảm phản ánh đúng dữ liệu cá nhân từ"
+        },
+        {
+          "sourceLine": 713,
+          "text": "nguồn dữ liệu gốc và tạo thuận lợi cho cơ quan, tổ chức, cá nhân trong việc tiếp"
+        },
+        {
+          "sourceLine": 714,
+          "text": "cận, khai thác, sử dụng."
+        },
+        {
+          "sourceLine": 715,
+          "text": "4. Hình thức công khai dữ liệu cá nhân, bao gồm: đăng tải dữ liệu trên trang"
+        },
+        {
+          "sourceLine": 716,
+          "text": "thông tin điện tử, cổng thông tin điện tử, phương tiện thông tin đại chúng và các"
+        },
+        {
+          "sourceLine": 717,
+          "text": "hình thức khác theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 718,
+          "text": "5. Cơ quan, tổ chức, cá nhân công khai dữ liệu cá nhân phải kiểm soát và giám"
+        },
+        {
+          "sourceLine": 719,
+          "text": "sát chặt chẽ việc công khai dữ liệu cá nhân để bảo đảm tuân thủ đúng mục đích,"
+        },
+        {
+          "sourceLine": 720,
+          "text": "phạm vi và quy định của pháp luật; ngăn chặn việc truy cập, sử dụng, tiết lộ, sao"
+        },
+        {
+          "sourceLine": 721,
+          "text": "chép, sửa đổi, xóa, hủy hoặc các hành vi xử lý trái phép khác đối với dữ liệu cá"
+        },
+        {
+          "sourceLine": 722,
+          "text": "nhân đã công khai trong khả năng, điều kiện của mình."
+        }
+      ],
+      "compactTextSha256": "4da56483cd6d276341607c6958832a186676204c6ce333d069a0234d445dfdbe"
+    },
+    {
+      "articleNumber": "17",
+      "lines": [
+        {
+          "sourceLine": 723,
+          "text": "Điều 17. Chuyển giao dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 724,
+          "text": "1. Việc chuyển giao dữ liệu cá nhân được thực hiện trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 725,
+          "text": "a) Chuyển giao dữ liệu cá nhân khi có sự đồng ý của chủ thể dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 726,
+          "text": "b) Chia sẻ dữ liệu cá nhân giữa các bộ phận trong cùng một cơ quan, tổ chức"
+        },
+        {
+          "sourceLine": 727,
+          "text": "để xử lý dữ liệu cá nhân phù hợp với mục đích xử lý đã xác lập;"
+        },
+        {
+          "sourceLine": 730,
+          "text": "c) Chuyển giao dữ liệu cá nhân để tiếp tục xử lý dữ liệu cá nhân trong trường"
+        },
+        {
+          "sourceLine": 731,
+          "text": "hợp chia, tách, sáp nhập cơ quan, tổ chức, đơn vị hành chính và tổ chức lại, chuyển"
+        },
+        {
+          "sourceLine": 732,
+          "text": "đổi hình thức sở hữu doanh nghiệp nhà nước; chia, tách, sáp nhập, hợp nhất, kết"
+        },
+        {
+          "sourceLine": 733,
+          "text": "thúc hoạt động đơn vị, tổ chức; đơn vị, tổ chức được thành lập trên cơ sở kết thúc"
+        },
+        {
+          "sourceLine": 734,
+          "text": "hoạt động của đơn vị, tổ chức khác;"
+        },
+        {
+          "sourceLine": 735,
+          "text": "d) Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 736,
+          "text": "chuyển giao dữ liệu cá nhân cho bên xử lý dữ liệu cá nhân, bên thứ ba để xử lý dữ"
+        },
+        {
+          "sourceLine": 737,
+          "text": "liệu cá nhân theo quy định;"
+        },
+        {
+          "sourceLine": 738,
+          "text": "đ) Chuyển giao dữ liệu cá nhân theo yêu cầu của cơ quan nhà nước có"
+        },
+        {
+          "sourceLine": 739,
+          "text": "thẩm quyền;"
+        },
+        {
+          "sourceLine": 740,
+          "text": "e) Chuyển giao dữ liệu cá nhân trong các trường hợp quy định tại khoản 1"
+        },
+        {
+          "sourceLine": 741,
+          "text": "Điều 19 của Luật này."
+        },
+        {
+          "sourceLine": 742,
+          "text": "2. Việc chuyển giao dữ liệu cá nhân trong các trường hợp quy định tại khoản 1"
+        },
+        {
+          "sourceLine": 743,
+          "text": "Điều này có thu phí hoặc không thu phí thì không được xác định là mua, bán dữ"
+        },
+        {
+          "sourceLine": 744,
+          "text": "liệu cá nhân."
+        },
+        {
+          "sourceLine": 745,
+          "text": "3. Chính phủ quy định chi tiết Điều này."
+        }
+      ],
+      "compactTextSha256": "dbb809a717b295987d885bab4b00edb72353dbb0be86b8d56119c8a17f740a2a"
+    },
+    {
+      "articleNumber": "18",
+      "lines": [
+        {
+          "sourceLine": 746,
+          "text": "Điều 18. Các hoạt động khác trong xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 747,
+          "text": "1. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên"
+        },
+        {
+          "sourceLine": 748,
+          "text": "xử lý dữ liệu cá nhân, bên thứ ba lưu trữ dữ liệu cá nhân theo hình thức phù hợp"
+        },
+        {
+          "sourceLine": 749,
+          "text": "với hoạt động của mình và có biện pháp bảo vệ dữ liệu cá nhân trong quá trình lưu"
+        },
+        {
+          "sourceLine": 750,
+          "text": "trữ theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 751,
+          "text": "2. Việc lưu trữ, truy cập, truy xuất, kết nối, điều phối, xác nhận, xác thực dữ"
+        },
+        {
+          "sourceLine": 752,
+          "text": "liệu cá nhân, hoạt động khác tác động đến dữ liệu cá nhân thực hiện theo quy định"
+        },
+        {
+          "sourceLine": 753,
+          "text": "của Luật này, pháp luật về dữ liệu, các quy định khác của pháp luật có liên quan và"
+        },
+        {
+          "sourceLine": 754,
+          "text": "theo thỏa thuận giữa các bên."
+        },
+        {
+          "sourceLine": 755,
+          "text": "3. Ưu tiên khai thác, sử dụng dữ liệu cá nhân vào hoạt động phục vụ quản lý"
+        },
+        {
+          "sourceLine": 756,
+          "text": "nhà nước, hoạt động của các đơn vị sự nghiệp công lập để phục vụ thí điểm một số"
+        },
+        {
+          "sourceLine": 757,
+          "text": "cơ chế, chính sách đặc biệt tạo đột phá phát triển khoa học, công nghệ, đổi mới"
+        },
+        {
+          "sourceLine": 758,
+          "text": "sáng tạo và chuyển đổi số quốc gia."
+        }
+      ],
+      "compactTextSha256": "daed0a539e1b886b81d188cace04b7b7880eaf2391f061a9c017f6f72cc61c7c"
+    },
+    {
+      "articleNumber": "19",
+      "lines": [
+        {
+          "sourceLine": 759,
+          "text": "Điều 19. Xử lý dữ liệu cá nhân trong trường hợp không cần sự đồng ý của"
+        },
+        {
+          "sourceLine": 760,
+          "text": "chủ thể dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 761,
+          "text": "1. Các trường hợp xử lý dữ liệu cá nhân không cần sự đồng ý của chủ thể dữ"
+        },
+        {
+          "sourceLine": 762,
+          "text": "liệu cá nhân bao gồm:"
+        },
+        {
+          "sourceLine": 763,
+          "text": "a) Để bảo vệ tính mạng, sức khỏe, danh dự, nhân phẩm, quyền, lợi ích hợp"
+        },
+        {
+          "sourceLine": 764,
+          "text": "pháp của chủ thể dữ liệu cá nhân hoặc người khác trong trường hợp cấp bách; bảo"
+        },
+        {
+          "sourceLine": 767,
+          "text": "vệ quyền hoặc lợi ích chính đáng của mình, của người khác hoặc lợi ích của Nhà"
+        },
+        {
+          "sourceLine": 768,
+          "text": "nước, của cơ quan tổ chức một cách cần thiết trước hành vi xâm phạm lợi ích nói"
+        },
+        {
+          "sourceLine": 769,
+          "text": "trên. Bên kiểm soát dữ liệu cá nhân, bên xử lý dữ liệu cá nhân, bên kiểm soát và xử"
+        },
+        {
+          "sourceLine": 770,
+          "text": "lý dữ liệu cá nhân, bên thứ ba có trách nhiệm chứng minh trường hợp này;"
+        },
+        {
+          "sourceLine": 771,
+          "text": "b) Để giải quyết tình trạng khẩn cấp; nguy cơ đe dọa an ninh quốc gia nhưng"
+        },
+        {
+          "sourceLine": 772,
+          "text": "chưa đến mức ban bố tình trạng khẩn cấp; phòng, chống bạo loạn, khủng bố,"
+        },
+        {
+          "sourceLine": 773,
+          "text": "phòng, chống tội phạm và vi phạm pháp luật;"
+        },
+        {
+          "sourceLine": 774,
+          "text": "c) Phục vụ hoạt động của cơ quan nhà nước, hoạt động quản lý nhà nước theo"
+        },
+        {
+          "sourceLine": 775,
+          "text": "quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 776,
+          "text": "d) Thực hiện thỏa thuận của chủ thể dữ liệu cá nhân với cơ quan, tổ chức, cá"
+        },
+        {
+          "sourceLine": 777,
+          "text": "nhân có liên quan theo quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 778,
+          "text": "đ) Trường hợp khác theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 779,
+          "text": "2. Cơ quan, tổ chức, cá nhân có liên quan phải thiết lập cơ chế giám sát khi xử"
+        },
+        {
+          "sourceLine": 780,
+          "text": "lý dữ liệu cá nhân trong trường hợp không cần sự đồng ý của chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 781,
+          "text": "nhân bao gồm:"
+        },
+        {
+          "sourceLine": 782,
+          "text": "a) Thiết lập quy trình, quy định xử lý dữ liệu cá nhân và xác định trách nhiệm"
+        },
+        {
+          "sourceLine": 783,
+          "text": "của cơ quan, tổ chức, cá nhân trong quá trình xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 784,
+          "text": "b) Triển khai các biện pháp bảo vệ dữ liệu cá nhân phù hợp; thường xuyên"
+        },
+        {
+          "sourceLine": 785,
+          "text": "đánh giá rủi ro có thể xảy ra trong quá trình xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 786,
+          "text": "c) Thực hiện kiểm tra, đánh giá định kỳ việc tuân thủ quy định của pháp luật,"
+        },
+        {
+          "sourceLine": 787,
+          "text": "quy trình, quy định xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 788,
+          "text": "d) Có cơ chế tiếp nhận và xử lý phản ánh, kiến nghị từ cơ quan, tổ chức, cá"
+        },
+        {
+          "sourceLine": 789,
+          "text": "nhân có liên quan."
+        }
+      ],
+      "compactTextSha256": "722312cb9d1bc6085d36c16e662a2c485a4bb0192aaab0081b43508ca9fa7a43"
+    },
+    {
+      "articleNumber": "20",
+      "lines": [
+        {
+          "sourceLine": 790,
+          "text": "Điều 20. Chuyển dữ liệu cá nhân xuyên biên giới"
+        },
+        {
+          "sourceLine": 791,
+          "text": "1. Các trường hợp chuyển dữ liệu cá nhân xuyên biên giới bao gồm:"
+        },
+        {
+          "sourceLine": 792,
+          "text": "a) Chuyển dữ liệu cá nhân đang lưu trữ tại Việt Nam đến hệ thống lưu trữ dữ"
+        },
+        {
+          "sourceLine": 793,
+          "text": "liệu đặt ngoài lãnh thổ nước Cộng hòa xã hội chủ nghĩa Việt Nam;"
+        },
+        {
+          "sourceLine": 794,
+          "text": "b) Cơ quan, tổ chức, cá nhân tại Việt Nam chuyển dữ liệu cá nhân cho tổ chức,"
+        },
+        {
+          "sourceLine": 795,
+          "text": "cá nhân ở nước ngoài;"
+        },
+        {
+          "sourceLine": 796,
+          "text": "c) Cơ quan, tổ chức, cá nhân tại Việt Nam hoặc ở nước ngoài sử dụng nền tảng"
+        },
+        {
+          "sourceLine": 797,
+          "text": "ở ngoài lãnh thổ nước Cộng hòa xã hội chủ nghĩa Việt Nam để xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 798,
+          "text": "nhân được thu thập tại Việt Nam."
+        },
+        {
+          "sourceLine": 799,
+          "text": "2. Cơ quan, tổ chức, cá nhân chuyển dữ liệu cá nhân xuyên biên giới thực hiện"
+        },
+        {
+          "sourceLine": 800,
+          "text": "các hoạt động quy định tại khoản 1 Điều này phải lập hồ sơ đánh giá tác động"
+        },
+        {
+          "sourceLine": 803,
+          "text": "chuyển dữ liệu cá nhân xuyên biên giới và gửi 01 bản chính cho cơ quan chuyên"
+        },
+        {
+          "sourceLine": 804,
+          "text": "trách bảo vệ dữ liệu cá nhân trong thời gian 60 ngày kể từ ngày đầu tiên chuyển dữ"
+        },
+        {
+          "sourceLine": 805,
+          "text": "liệu cá nhân xuyên biên giới, trừ trường hợp quy định tại khoản 6 Điều này."
+        },
+        {
+          "sourceLine": 806,
+          "text": "3. Đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới được thực hiện"
+        },
+        {
+          "sourceLine": 807,
+          "text": "01 lần cho suốt thời gian hoạt động của cơ quan, tổ chức, cá nhân đó và được cập"
+        },
+        {
+          "sourceLine": 808,
+          "text": "nhật theo quy định tại Điều 22 của Luật này."
+        },
+        {
+          "sourceLine": 809,
+          "text": "4. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân quyết định việc kiểm tra"
+        },
+        {
+          "sourceLine": 810,
+          "text": "chuyển dữ liệu cá nhân xuyên biên giới định kỳ không quá 01 lần trong năm hoặc"
+        },
+        {
+          "sourceLine": 811,
+          "text": "kiểm tra đột xuất khi phát hiện hành vi vi phạm quy định của pháp luật về bảo vệ"
+        },
+        {
+          "sourceLine": 812,
+          "text": "dữ liệu cá nhân hoặc khi xảy ra sự cố lộ, mất dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 813,
+          "text": "5. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân quyết định yêu cầu ngừng"
+        },
+        {
+          "sourceLine": 814,
+          "text": "chuyển dữ liệu cá nhân xuyên biên giới của cơ quan, tổ chức, cá nhân khi phát hiện"
+        },
+        {
+          "sourceLine": 815,
+          "text": "dữ liệu cá nhân được chuyển để sử dụng vào hoạt động có thể gây tổn hại đến quốc"
+        },
+        {
+          "sourceLine": 816,
+          "text": "phòng, an ninh quốc gia."
+        },
+        {
+          "sourceLine": 817,
+          "text": "6. Các trường hợp không phải thực hiện quy định về đánh giá tác động chuyển"
+        },
+        {
+          "sourceLine": 818,
+          "text": "dữ liệu cá nhân xuyên biên giới bao gồm:"
+        },
+        {
+          "sourceLine": 819,
+          "text": "a) Việc chuyển dữ liệu cá nhân xuyên biên giới của cơ quan nhà nước có"
+        },
+        {
+          "sourceLine": 820,
+          "text": "thẩm quyền;"
+        },
+        {
+          "sourceLine": 821,
+          "text": "b) Cơ quan, tổ chức lưu trữ dữ liệu cá nhân của người lao động thuộc cơ quan,"
+        },
+        {
+          "sourceLine": 822,
+          "text": "tổ chức đó trên dịch vụ điện toán đám mây;"
+        },
+        {
+          "sourceLine": 823,
+          "text": "c) Chủ thể dữ liệu cá nhân tự chuyển dữ liệu cá nhân của mình xuyên biên giới;"
+        },
+        {
+          "sourceLine": 824,
+          "text": "d) Các trường hợp khác theo quy định của Chính phủ."
+        },
+        {
+          "sourceLine": 825,
+          "text": "7. Chính phủ quy định chi tiết các khoản 1, 5 và 6 Điều này; quy định thành"
+        },
+        {
+          "sourceLine": 826,
+          "text": "phần hồ sơ, điều kiện, trình tự, thủ tục đánh giá tác động chuyển dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 827,
+          "text": "xuyên biên giới."
+        }
+      ],
+      "compactTextSha256": "1fe186940934e41a53fcc7989cfea9dce18cfb7e99ac68a877219f69fb2ea849"
+    },
+    {
+      "articleNumber": "21",
+      "lines": [
+        {
+          "sourceLine": 828,
+          "text": "Điều 21. Đánh giá tác động xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 829,
+          "text": "1. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân lập,"
+        },
+        {
+          "sourceLine": 830,
+          "text": "lưu trữ hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và gửi 01 bản chính cho cơ"
+        },
+        {
+          "sourceLine": 831,
+          "text": "quan chuyên trách bảo vệ dữ liệu cá nhân trong thời gian 60 ngày kể từ ngày đầu"
+        },
+        {
+          "sourceLine": 832,
+          "text": "tiên xử lý dữ liệu cá nhân, trừ trường hợp quy định tại khoản 6 Điều này."
+        },
+        {
+          "sourceLine": 833,
+          "text": "2. Đánh giá tác động xử lý dữ liệu cá nhân được thực hiện 01 lần cho suốt thời"
+        },
+        {
+          "sourceLine": 834,
+          "text": "gian hoạt động của bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 835,
+          "text": "cá nhân và được cập nhật theo quy định tại Điều 22 của Luật này."
+        },
+        {
+          "sourceLine": 838,
+          "text": "3. Bên xử lý dữ liệu cá nhân lập và lưu trữ hồ sơ đánh giá tác động xử lý dữ"
+        },
+        {
+          "sourceLine": 839,
+          "text": "liệu cá nhân theo thỏa thuận với bên kiểm soát dữ liệu cá nhân, bên kiểm soát và"
+        },
+        {
+          "sourceLine": 840,
+          "text": "xử lý dữ liệu cá nhân, trừ trường hợp quy định tại khoản 6 Điều này."
+        },
+        {
+          "sourceLine": 841,
+          "text": "4. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân đánh giá, yêu cầu bên kiểm"
+        },
+        {
+          "sourceLine": 842,
+          "text": "soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 843,
+          "text": "nhân hoàn thiện hồ sơ đánh giá tác động xử lý dữ liệu cá nhân trong trường hợp hồ"
+        },
+        {
+          "sourceLine": 844,
+          "text": "sơ chưa đầy đủ và đúng quy định."
+        },
+        {
+          "sourceLine": 845,
+          "text": "5. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên"
+        },
+        {
+          "sourceLine": 846,
+          "text": "xử lý dữ liệu cá nhân cập nhật, bổ sung hồ sơ đánh giá tác động xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 847,
+          "text": "nhân khi có sự thay đổi về nội dung hồ sơ đã gửi cho cơ quan chuyên trách bảo vệ"
+        },
+        {
+          "sourceLine": 848,
+          "text": "dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 849,
+          "text": "6. Cơ quan nhà nước có thẩm quyền không phải thực hiện quy định về đánh"
+        },
+        {
+          "sourceLine": 850,
+          "text": "giá tác động xử lý dữ liệu cá nhân quy định tại Điều này."
+        },
+        {
+          "sourceLine": 851,
+          "text": "7. Chính phủ quy định thành phần hồ sơ, điều kiện, trình tự, thủ tục đánh giá"
+        },
+        {
+          "sourceLine": 852,
+          "text": "tác động xử lý dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "fec0a74cca39ecc81abd00ce71df8f9e985ba5e534c97d9c5551f782d6555078"
+    },
+    {
+      "articleNumber": "22",
+      "lines": [
+        {
+          "sourceLine": 853,
+          "text": "Điều 22. Cập nhật hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và hồ sơ"
+        },
+        {
+          "sourceLine": 854,
+          "text": "đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới"
+        },
+        {
+          "sourceLine": 855,
+          "text": "1. Hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và hồ sơ đánh giá tác động"
+        },
+        {
+          "sourceLine": 856,
+          "text": "chuyển dữ liệu cá nhân xuyên biên giới được cập nhật định kỳ 06 tháng khi có sự"
+        },
+        {
+          "sourceLine": 857,
+          "text": "thay đổi hoặc cập nhật ngay trong các trường hợp quy định tại khoản 2 Điều này."
+        },
+        {
+          "sourceLine": 858,
+          "text": "2. Các trường hợp thay đổi cần cập nhật ngay bao gồm:"
+        },
+        {
+          "sourceLine": 859,
+          "text": "a) Khi cơ quan, tổ chức, đơn vị được tổ chức lại, chấm dứt hoạt động, giải thể,"
+        },
+        {
+          "sourceLine": 860,
+          "text": "phá sản theo quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 861,
+          "text": "b) Khi có sự thay đổi thông tin về tổ chức, cá nhân cung cấp dịch vụ bảo vệ dữ"
+        },
+        {
+          "sourceLine": 862,
+          "text": "liệu cá nhân;"
+        },
+        {
+          "sourceLine": 863,
+          "text": "c) Khi phát sinh hoặc thay đổi ngành, nghề, dịch vụ kinh doanh liên quan đến"
+        },
+        {
+          "sourceLine": 864,
+          "text": "xử lý dữ liệu cá nhân đã đăng ký trong hồ sơ đánh giá tác động xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 865,
+          "text": "nhân, hồ sơ đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới."
+        },
+        {
+          "sourceLine": 866,
+          "text": "3. Việc cập nhật hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và hồ sơ đánh"
+        },
+        {
+          "sourceLine": 867,
+          "text": "giá tác động chuyển dữ liệu cá nhân xuyên biên giới được thực hiện trên Cổng"
+        },
+        {
+          "sourceLine": 868,
+          "text": "thông tin quốc gia về bảo vệ dữ liệu cá nhân hoặc tại cơ quan chuyên trách bảo vệ"
+        },
+        {
+          "sourceLine": 869,
+          "text": "dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 870,
+          "text": "4. Chính phủ quy định chi tiết Điều này."
+        }
+      ],
+      "compactTextSha256": "ef0613c6efa0f049cfce43f27f195698a1d8546ea39cb3c8cb86be3417aa9e33"
+    },
+    {
+      "articleNumber": "23",
+      "lines": [
+        {
+          "sourceLine": 873,
+          "text": "Điều 23. Thông báo vi phạm quy định về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 874,
+          "text": "1. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên"
+        },
+        {
+          "sourceLine": 875,
+          "text": "thứ ba phát hiện vi phạm quy định về bảo vệ dữ liệu cá nhân có thể gây tổn hại đến"
+        },
+        {
+          "sourceLine": 876,
+          "text": "quốc phòng, an ninh quốc gia, trật tự, an toàn xã hội hoặc xâm phạm đến tính"
+        },
+        {
+          "sourceLine": 877,
+          "text": "mạng, sức khỏe, danh dự, nhân phẩm, tài sản của chủ thể dữ liệu cá nhân thì phải"
+        },
+        {
+          "sourceLine": 878,
+          "text": "thông báo cho cơ quan chuyên trách bảo vệ dữ liệu cá nhân chậm nhất là 72 giờ kể"
+        },
+        {
+          "sourceLine": 879,
+          "text": "từ khi phát hiện hành vi vi phạm. Trường hợp bên xử lý dữ liệu cá nhân phát hiện"
+        },
+        {
+          "sourceLine": 880,
+          "text": "hành vi vi phạm phải thông báo kịp thời cho bên kiểm soát dữ liệu cá nhân hoặc"
+        },
+        {
+          "sourceLine": 881,
+          "text": "bên kiểm soát và xử lý dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 882,
+          "text": "2. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân phải"
+        },
+        {
+          "sourceLine": 883,
+          "text": "lập biên bản xác nhận về việc xảy ra hành vi vi phạm quy định về bảo vệ dữ liệu"
+        },
+        {
+          "sourceLine": 884,
+          "text": "cá nhân, phối hợp với cơ quan chuyên trách bảo vệ dữ liệu cá nhân xử lý hành vi"
+        },
+        {
+          "sourceLine": 885,
+          "text": "vi phạm."
+        },
+        {
+          "sourceLine": 886,
+          "text": "3. Cơ quan, tổ chức, cá nhân thông báo cho cơ quan chuyên trách bảo vệ dữ"
+        },
+        {
+          "sourceLine": 887,
+          "text": "liệu cá nhân trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 888,
+          "text": "a) Phát hiện hành vi vi phạm quy định về bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 889,
+          "text": "b) Dữ liệu cá nhân bị xử lý sai mục đích, không đúng thỏa thuận giữa chủ thể"
+        },
+        {
+          "sourceLine": 890,
+          "text": "dữ liệu cá nhân với bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 891,
+          "text": "cá nhân;"
+        },
+        {
+          "sourceLine": 892,
+          "text": "c) Không bảo đảm quyền hoặc thực hiện không đúng quyền của chủ thể dữ"
+        },
+        {
+          "sourceLine": 893,
+          "text": "liệu cá nhân;"
+        },
+        {
+          "sourceLine": 894,
+          "text": "d) Trường hợp khác theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 895,
+          "text": "4. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân có trách nhiệm tiếp nhận thông"
+        },
+        {
+          "sourceLine": 896,
+          "text": "báo, xử lý hành vi vi phạm quy định về bảo vệ dữ liệu cá nhân. Bên kiểm soát dữ"
+        },
+        {
+          "sourceLine": 897,
+          "text": "liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân, bên thứ ba và cơ quan, tổ"
+        },
+        {
+          "sourceLine": 898,
+          "text": "chức, cá nhân có liên quan có trách nhiệm ngăn chặn hành vi vi phạm, khắc phục"
+        },
+        {
+          "sourceLine": 899,
+          "text": "hậu quả xảy ra và phối hợp cơ quan chuyên trách bảo vệ dữ liệu cá nhân trong xử"
+        },
+        {
+          "sourceLine": 900,
+          "text": "lý hành vi vi phạm quy định về bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 901,
+          "text": "5. Chính phủ quy định nội dung thông báo vi phạm quy định về bảo vệ dữ liệu"
+        },
+        {
+          "sourceLine": 902,
+          "text": "cá nhân."
+        }
+      ],
+      "compactTextSha256": "cf1063c8c3c6efdf167cd99794adf9d1cf21f1ee81cb6ef7eca126fca80c6151"
+    },
+    {
+      "articleNumber": "24",
+      "lines": [
+        {
+          "sourceLine": 905,
+          "text": "Điều 24. Bảo vệ dữ liệu cá nhân của trẻ em, người bị mất hoặc hạn chế"
+        },
+        {
+          "sourceLine": 906,
+          "text": "năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi"
+        },
+        {
+          "sourceLine": 909,
+          "text": "1. Bảo vệ dữ liệu cá nhân của trẻ em, người bị mất hoặc hạn chế năng lực hành"
+        },
+        {
+          "sourceLine": 910,
+          "text": "vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi thực hiện theo quy"
+        },
+        {
+          "sourceLine": 911,
+          "text": "định của Luật này."
+        },
+        {
+          "sourceLine": 912,
+          "text": "2. Đối với trẻ em, người bị mất hoặc hạn chế năng lực hành vi dân sự hoặc"
+        },
+        {
+          "sourceLine": 913,
+          "text": "người có khó khăn trong nhận thức, làm chủ hành vi thì người đại diện theo"
+        },
+        {
+          "sourceLine": 914,
+          "text": "pháp luật thay mặt thực hiện các quyền của chủ thể dữ liệu cá nhân, trừ các"
+        },
+        {
+          "sourceLine": 915,
+          "text": "trường hợp quy định tại khoản 1 Điều 19 của Luật này. Việc xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 916,
+          "text": "nhân của trẻ em nhằm công bố, tiết lộ thông tin về đời sống riêng tư, bí mật cá"
+        },
+        {
+          "sourceLine": 917,
+          "text": "nhân của trẻ em từ đủ 07 tuổi trở lên thì phải có sự đồng ý của trẻ em và người"
+        },
+        {
+          "sourceLine": 918,
+          "text": "đại diện theo pháp luật."
+        },
+        {
+          "sourceLine": 919,
+          "text": "3. Ngừng xử lý dữ liệu cá nhân của trẻ em, người bị mất hoặc hạn chế năng lực"
+        },
+        {
+          "sourceLine": 920,
+          "text": "hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi trong trường"
+        },
+        {
+          "sourceLine": 921,
+          "text": "hợp sau đây:"
+        },
+        {
+          "sourceLine": 922,
+          "text": "a) Người đã đồng ý quy định tại khoản 2 Điều này rút lại sự đồng ý cho phép"
+        },
+        {
+          "sourceLine": 923,
+          "text": "xử lý dữ liệu cá nhân của trẻ em, người bị mất hoặc hạn chế năng lực hành vi dân"
+        },
+        {
+          "sourceLine": 924,
+          "text": "sự, người có khó khăn trong nhận thức, làm chủ hành vi, trừ trường hợp pháp luật"
+        },
+        {
+          "sourceLine": 925,
+          "text": "có quy định khác;"
+        },
+        {
+          "sourceLine": 926,
+          "text": "b) Theo yêu cầu của cơ quan có thẩm quyền khi có đủ căn cứ chứng minh việc"
+        },
+        {
+          "sourceLine": 927,
+          "text": "xử lý dữ liệu cá nhân có thể xâm phạm đến quyền, lợi ích hợp pháp của trẻ em,"
+        },
+        {
+          "sourceLine": 928,
+          "text": "người bị mất hoặc hạn chế năng lực hành vi dân sự, người có khó khăn trong nhận"
+        },
+        {
+          "sourceLine": 929,
+          "text": "thức, làm chủ hành vi, trừ trường hợp pháp luật có quy định khác."
+        }
+      ],
+      "compactTextSha256": "42bcb4cb96b5233699afae75b0a2f82ea0b2b5ebfea3ac69fd243474c1ad9c51"
+    },
+    {
+      "articleNumber": "25",
+      "lines": [
+        {
+          "sourceLine": 930,
+          "text": "Điều 25. Bảo vệ dữ liệu cá nhân trong tuyển dụng, quản lý, sử dụng người"
+        },
+        {
+          "sourceLine": 931,
+          "text": "lao động"
+        },
+        {
+          "sourceLine": 932,
+          "text": "1. Trách nhiệm bảo vệ dữ liệu cá nhân của cơ quan, tổ chức, cá nhân trong"
+        },
+        {
+          "sourceLine": 933,
+          "text": "tuyển dụng lao động được quy định như sau:"
+        },
+        {
+          "sourceLine": 934,
+          "text": "a) Chỉ được yêu cầu cung cấp các thông tin phục vụ cho mục đích tuyển dụng"
+        },
+        {
+          "sourceLine": 935,
+          "text": "của cơ quan, tổ chức, cá nhân tuyển dụng phù hợp với quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 936,
+          "text": "thông tin được cung cấp chỉ được sử dụng vào mục đích tuyển dụng và mục đích"
+        },
+        {
+          "sourceLine": 937,
+          "text": "khác theo thỏa thuận phù hợp với quy định của pháp luật;"
+        },
+        {
+          "sourceLine": 938,
+          "text": "b) Thông tin cung cấp phải được xử lý theo quy định của pháp luật và phải"
+        },
+        {
+          "sourceLine": 939,
+          "text": "được sự đồng ý của người dự tuyển;"
+        },
+        {
+          "sourceLine": 940,
+          "text": "c) Phải xóa, hủy thông tin đã cung cấp của người dự tuyển trong trường hợp"
+        },
+        {
+          "sourceLine": 941,
+          "text": "không tuyển dụng, trừ trường hợp có thỏa thuận khác với người đã dự tuyển;"
+        },
+        {
+          "sourceLine": 942,
+          "text": "2. Trách nhiệm bảo vệ dữ liệu cá nhân của cơ quan, tổ chức, cá nhân trong"
+        },
+        {
+          "sourceLine": 943,
+          "text": "quản lý, sử dụng người lao động được quy định như sau:"
+        },
+        {
+          "sourceLine": 946,
+          "text": "a) Tuân thủ quy định của Luật này, pháp luật về lao động, việc làm, pháp luật"
+        },
+        {
+          "sourceLine": 947,
+          "text": "về dữ liệu và quy định khác của pháp luật có liên quan;"
+        },
+        {
+          "sourceLine": 948,
+          "text": "b) Dữ liệu cá nhân của người lao động phải lưu trữ trong thời hạn theo quy"
+        },
+        {
+          "sourceLine": 949,
+          "text": "định của pháp luật hoặc theo thỏa thuận;"
+        },
+        {
+          "sourceLine": 950,
+          "text": "c) Phải xóa, hủy dữ liệu cá nhân của người lao động khi chấm dứt hợp đồng,"
+        },
+        {
+          "sourceLine": 951,
+          "text": "trừ trường hợp theo thỏa thuận hoặc pháp luật có quy định khác."
+        },
+        {
+          "sourceLine": 952,
+          "text": "3. Việc xử lý dữ liệu cá nhân của người lao động được thu thập bằng biện pháp"
+        },
+        {
+          "sourceLine": 953,
+          "text": "công nghệ, kỹ thuật trong quản lý người lao động được quy định như sau:"
+        },
+        {
+          "sourceLine": 954,
+          "text": "a) Chỉ được áp dụng các biện pháp công nghệ, kỹ thuật phù hợp với quy định"
+        },
+        {
+          "sourceLine": 955,
+          "text": "của pháp luật và bảo đảm quyền, lợi ích của chủ thể dữ liệu cá nhân, trên cơ sở"
+        },
+        {
+          "sourceLine": 956,
+          "text": "người lao động biết rõ biện pháp đó;"
+        },
+        {
+          "sourceLine": 957,
+          "text": "b) Không được xử lý, sử dụng dữ liệu cá nhân thu thập từ các biện pháp công"
+        },
+        {
+          "sourceLine": 958,
+          "text": "nghệ, kỹ thuật trái quy định của pháp luật."
+        }
+      ],
+      "compactTextSha256": "6f33281f05bdc70fcc5f8497260cd32d4a8e5ef6f415aa33772511d4c5a93500"
+    },
+    {
+      "articleNumber": "26",
+      "lines": [
+        {
+          "sourceLine": 959,
+          "text": "Điều 26. Bảo vệ dữ liệu cá nhân đối với thông tin sức khỏe và trong hoạt"
+        },
+        {
+          "sourceLine": 960,
+          "text": "động kinh doanh bảo hiểm"
+        },
+        {
+          "sourceLine": 961,
+          "text": "1. Việc bảo vệ dữ liệu cá nhân đối với các thông tin sức khỏe và trong hoạt"
+        },
+        {
+          "sourceLine": 962,
+          "text": "động kinh doanh bảo hiểm được quy định như sau:"
+        },
+        {
+          "sourceLine": 963,
+          "text": "a) Phải có sự đồng ý của chủ thể dữ liệu cá nhân trong quá trình thu thập, xử lý"
+        },
+        {
+          "sourceLine": 964,
+          "text": "dữ liệu cá nhân, trừ trường hợp quy định tại khoản 1 Điều 19 của Luật này;"
+        },
+        {
+          "sourceLine": 965,
+          "text": "b) Áp dụng đầy đủ quy định về bảo vệ dữ liệu cá nhân, quy định khác của pháp"
+        },
+        {
+          "sourceLine": 966,
+          "text": "luật có liên quan."
+        },
+        {
+          "sourceLine": 967,
+          "text": "2. Cơ quan, tổ chức, cá nhân hoạt động trong lĩnh vực sức khỏe không cung"
+        },
+        {
+          "sourceLine": 968,
+          "text": "cấp dữ liệu cá nhân cho bên thứ ba là tổ chức cung cấp dịch vụ chăm sóc sức khỏe"
+        },
+        {
+          "sourceLine": 969,
+          "text": "hoặc dịch vụ bảo hiểm sức khỏe, bảo hiểm nhân thọ, trừ trường hợp có yêu cầu"
+        },
+        {
+          "sourceLine": 970,
+          "text": "bằng văn bản của chủ thể dữ liệu cá nhân hoặc trường hợp quy định tại khoản 1"
+        },
+        {
+          "sourceLine": 971,
+          "text": "Điều 19 của Luật này."
+        },
+        {
+          "sourceLine": 972,
+          "text": "3. Tổ chức, cá nhân phát triển ứng dụng về y tế, ứng dụng về kinh doanh bảo"
+        },
+        {
+          "sourceLine": 973,
+          "text": "hiểm phải tuân thủ đầy đủ quy định về bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 974,
+          "text": "4. Trường hợp doanh nghiệp kinh doanh tái bảo hiểm, nhượng tái bảo hiểm và có"
+        },
+        {
+          "sourceLine": 975,
+          "text": "chuyển dữ liệu cá nhân cho đối tác cần được nêu rõ trong hợp đồng với khách hàng."
+        }
+      ],
+      "compactTextSha256": "ada074baa61f360ad350f071aa4337e2d14f0bb97a79ef6d6aecfbab5a87eb09"
+    },
+    {
+      "articleNumber": "27",
+      "lines": [
+        {
+          "sourceLine": 976,
+          "text": "Điều 27. Bảo vệ dữ liệu cá nhân trong hoạt động tài chính, ngân hàng,"
+        },
+        {
+          "sourceLine": 977,
+          "text": "hoạt động thông tin tín dụng"
+        },
+        {
+          "sourceLine": 978,
+          "text": "1. Tổ chức, cá nhân hoạt động trong lĩnh vực tài chính, ngân hàng, hoạt động"
+        },
+        {
+          "sourceLine": 979,
+          "text": "thông tin tín dụng có trách nhiệm sau đây:"
+        },
+        {
+          "sourceLine": 982,
+          "text": "a) Thực hiện đầy đủ quy định về bảo vệ dữ liệu cá nhân nhạy cảm, các tiêu"
+        },
+        {
+          "sourceLine": 983,
+          "text": "chuẩn an toàn, bảo mật trong hoạt động tài chính, ngân hàng theo quy định của"
+        },
+        {
+          "sourceLine": 984,
+          "text": "pháp luật;"
+        },
+        {
+          "sourceLine": 985,
+          "text": "b) Không sử dụng thông tin tín dụng của chủ thể dữ liệu cá nhân để chấm"
+        },
+        {
+          "sourceLine": 986,
+          "text": "điểm, xếp hạng tín dụng, đánh giá thông tin tín dụng, đánh giá mức độ tín nhiệm"
+        },
+        {
+          "sourceLine": 987,
+          "text": "về tín dụng của chủ thể dữ liệu cá nhân khi chưa có sự đồng ý của chủ thể dữ liệu"
+        },
+        {
+          "sourceLine": 988,
+          "text": "cá nhân;"
+        },
+        {
+          "sourceLine": 989,
+          "text": "c) Chỉ thu thập những dữ liệu cá nhân cần thiết phục vụ cho hoạt động thông"
+        },
+        {
+          "sourceLine": 990,
+          "text": "tin tín dụng từ các nguồn phù hợp với quy định của Luật này và các quy định khác"
+        },
+        {
+          "sourceLine": 991,
+          "text": "của pháp luật có liên quan;"
+        },
+        {
+          "sourceLine": 992,
+          "text": "d) Thông báo cho chủ thể dữ liệu cá nhân trong trường hợp lộ, mất thông tin về"
+        },
+        {
+          "sourceLine": 993,
+          "text": "tài khoản ngân hàng, tài chính, tín dụng, thông tin tín dụng."
+        },
+        {
+          "sourceLine": 994,
+          "text": "2. Tổ chức, cá nhân thực hiện hoạt động thông tin tín dụng có trách nhiệm tuân"
+        },
+        {
+          "sourceLine": 995,
+          "text": "thủ quy định của Luật này; áp dụng các biện pháp phòng, chống truy cập, sử dụng,"
+        },
+        {
+          "sourceLine": 996,
+          "text": "tiết lộ, chỉnh sửa trái phép dữ liệu cá nhân của khách hàng; có giải pháp khôi phục"
+        },
+        {
+          "sourceLine": 997,
+          "text": "dữ liệu cá nhân của khách hàng trong trường hợp bị mất; bảo mật trong quá trình"
+        },
+        {
+          "sourceLine": 998,
+          "text": "thu thập, cung cấp, xử lý dữ liệu cá nhân của khách hàng phục vụ đánh giá thông"
+        },
+        {
+          "sourceLine": 999,
+          "text": "tin tín dụng."
+        },
+        {
+          "sourceLine": 1000,
+          "text": "3. Chính phủ quy định chi tiết Điều này."
+        }
+      ],
+      "compactTextSha256": "2a61c605550ab72cf3000edf927389b6dece1529984869aaa37de0fa89e09f2e"
+    },
+    {
+      "articleNumber": "28",
+      "lines": [
+        {
+          "sourceLine": 1001,
+          "text": "Điều 28. Bảo vệ dữ liệu cá nhân trong kinh doanh dịch vụ quảng cáo"
+        },
+        {
+          "sourceLine": 1002,
+          "text": "1. Tổ chức, cá nhân kinh doanh dịch vụ quảng cáo chỉ được sử dụng dữ liệu cá"
+        },
+        {
+          "sourceLine": 1003,
+          "text": "nhân của khách hàng được bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý"
+        },
+        {
+          "sourceLine": 1004,
+          "text": "dữ liệu cá nhân chuyển giao theo thỏa thuận hoặc thu thập qua hoạt động kinh"
+        },
+        {
+          "sourceLine": 1005,
+          "text": "doanh của mình để kinh doanh dịch vụ quảng cáo. Việc thu thập, sử dụng, chuyển"
+        },
+        {
+          "sourceLine": 1006,
+          "text": "giao dữ liệu cá nhân phải bảo đảm quyền của chủ thể dữ liệu cá nhân quy định tại"
+        },
+        {
+          "sourceLine": 1007,
+          "text": "Điều 4 của Luật này."
+        },
+        {
+          "sourceLine": 1008,
+          "text": "2. Bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân chỉ"
+        },
+        {
+          "sourceLine": 1009,
+          "text": "được chuyển dữ liệu cá nhân cho tổ chức, cá nhân kinh doanh dịch vụ quảng cáo"
+        },
+        {
+          "sourceLine": 1010,
+          "text": "theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 1011,
+          "text": "3. Việc xử lý dữ liệu cá nhân của khách hàng để kinh doanh dịch vụ quảng cáo"
+        },
+        {
+          "sourceLine": 1012,
+          "text": "phải được sự đồng ý của khách hàng, trên cơ sở khách hàng biết rõ nội dung,"
+        },
+        {
+          "sourceLine": 1013,
+          "text": "phương thức, hình thức, tần suất giới thiệu sản phẩm; cung cấp phương thức cho"
+        },
+        {
+          "sourceLine": 1014,
+          "text": "khách hàng để có thể từ chối nhận các thông tin quảng cáo."
+        },
+        {
+          "sourceLine": 1015,
+          "text": "4. Việc sử dụng dữ liệu cá nhân để quảng cáo phải phù hợp với quy định của"
+        },
+        {
+          "sourceLine": 1016,
+          "text": "pháp luật về phòng, chống tin nhắn rác, thư điện tử rác, cuộc gọi rác và quy định"
+        },
+        {
+          "sourceLine": 1017,
+          "text": "của pháp luật về quảng cáo."
+        },
+        {
+          "sourceLine": 1020,
+          "text": "5. Chủ thể dữ liệu cá nhân có quyền yêu cầu ngừng nhận thông tin từ dịch vụ"
+        },
+        {
+          "sourceLine": 1021,
+          "text": "quảng cáo. Tổ chức, cá nhân kinh doanh dịch vụ quảng cáo phải cung cấp cơ chế"
+        },
+        {
+          "sourceLine": 1022,
+          "text": "và ngừng quảng cáo theo yêu cầu của chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1023,
+          "text": "6. Tổ chức, cá nhân kinh doanh dịch vụ quảng cáo không được thuê lại hoặc"
+        },
+        {
+          "sourceLine": 1024,
+          "text": "thỏa thuận để tổ chức, cá nhân khác thay mặt mình thực hiện toàn bộ dịch vụ"
+        },
+        {
+          "sourceLine": 1025,
+          "text": "quảng cáo có sử dụng dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1026,
+          "text": "7. Tổ chức, cá nhân kinh doanh dịch vụ quảng cáo có trách nhiệm chứng minh"
+        },
+        {
+          "sourceLine": 1027,
+          "text": "việc sử dụng dữ liệu cá nhân của khách hàng để quảng cáo; tuân thủ quy định tại"
+        },
+        {
+          "sourceLine": 1028,
+          "text": "các khoản 1, 2, 3, 4 Điều này và quy định của pháp luật về quảng cáo."
+        },
+        {
+          "sourceLine": 1029,
+          "text": "8. Tổ chức, cá nhân khi sử dụng dữ liệu cá nhân để quảng cáo theo hành vi"
+        },
+        {
+          "sourceLine": 1030,
+          "text": "hoặc có mục tiêu cụ thể hoặc cá nhân hóa quảng cáo phải tuân thủ quy định tại"
+        },
+        {
+          "sourceLine": 1031,
+          "text": "Điều này và các quy định sau đây:"
+        },
+        {
+          "sourceLine": 1032,
+          "text": "a) Chỉ được thu thập dữ liệu cá nhân thông qua việc theo dõi trang thông tin điện"
+        },
+        {
+          "sourceLine": 1033,
+          "text": "tử, cổng thông tin điện tử, ứng dụng khi có sự đồng ý của chủ thể dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1034,
+          "text": "b) Phải thiết lập phương thức cho phép chủ thể dữ liệu cá nhân từ chối chia sẻ"
+        },
+        {
+          "sourceLine": 1035,
+          "text": "dữ liệu; xác định thời gian lưu trữ; xóa, hủy dữ liệu khi không còn cần thiết."
+        }
+      ],
+      "compactTextSha256": "176a200ed5bfdb7127c155dfd8b5860a28dcc1930c5f4a0399dc215fc522682f"
+    },
+    {
+      "articleNumber": "29",
+      "lines": [
+        {
+          "sourceLine": 1036,
+          "text": "Điều 29. Bảo vệ dữ liệu cá nhân đối với các nền tảng mạng xã hội, dịch vụ"
+        },
+        {
+          "sourceLine": 1037,
+          "text": "truyền thông trực tuyến"
+        },
+        {
+          "sourceLine": 1038,
+          "text": "Tổ chức, cá nhân cung cấp dịch vụ mạng xã hội, dịch vụ truyền thông trực"
+        },
+        {
+          "sourceLine": 1039,
+          "text": "tuyến có trách nhiệm sau đây:"
+        },
+        {
+          "sourceLine": 1040,
+          "text": "1. Thông báo rõ ràng nội dung dữ liệu cá nhân thu thập khi chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 1041,
+          "text": "nhân cài đặt và sử dụng mạng xã hội, dịch vụ truyền thông trực tuyến; không thu"
+        },
+        {
+          "sourceLine": 1042,
+          "text": "thập trái phép dữ liệu cá nhân và ngoài phạm vi theo thỏa thuận với khách hàng;"
+        },
+        {
+          "sourceLine": 1043,
+          "text": "2. Không được yêu cầu cung cấp hình ảnh, video chứa nội dung đầy đủ hoặc"
+        },
+        {
+          "sourceLine": 1044,
+          "text": "một phần giấy tờ tùy thân làm yếu tố xác thực tài khoản;"
+        },
+        {
+          "sourceLine": 1045,
+          "text": "3. Cung cấp lựa chọn cho phép người dùng từ chối thu thập và chia sẻ tệp dữ"
+        },
+        {
+          "sourceLine": 1046,
+          "text": "liệu (gọi là cookies);"
+        },
+        {
+          "sourceLine": 1047,
+          "text": "4. Cung cấp lựa chọn “không theo dõi” hoặc chỉ được theo dõi hoạt động sử dụng"
+        },
+        {
+          "sourceLine": 1048,
+          "text": "mạng xã hội, dịch vụ truyền thông trực tuyến khi có sự đồng ý của người sử dụng;"
+        },
+        {
+          "sourceLine": 1049,
+          "text": "5. Không nghe lén, nghe trộm hoặc ghi âm cuộc gọi và đọc tin nhắn văn bản"
+        },
+        {
+          "sourceLine": 1050,
+          "text": "khi không có sự đồng ý của chủ thể dữ liệu cá nhân, trừ trường hợp pháp luật có"
+        },
+        {
+          "sourceLine": 1051,
+          "text": "quy định khác;"
+        },
+        {
+          "sourceLine": 1052,
+          "text": "6. Công khai chính sách bảo mật, giải thích rõ cách thức thu thập, sử dụng và"
+        },
+        {
+          "sourceLine": 1053,
+          "text": "chia sẻ dữ liệu cá nhân; cung cấp cho người dùng cơ chế truy cập, chỉnh sửa, xóa"
+        },
+        {
+          "sourceLine": 1056,
+          "text": "dữ liệu và thiết lập quyền riêng tư cho dữ liệu cá nhân, báo cáo các vi phạm về bảo"
+        },
+        {
+          "sourceLine": 1057,
+          "text": "mật và quyền riêng tư; bảo vệ dữ liệu cá nhân của công dân Việt Nam khi chuyển"
+        },
+        {
+          "sourceLine": 1058,
+          "text": "dữ liệu xuyên biên giới; xây dựng quy trình xử lý vi phạm về bảo vệ dữ liệu cá"
+        },
+        {
+          "sourceLine": 1059,
+          "text": "nhân nhanh chóng và hiệu quả."
+        }
+      ],
+      "compactTextSha256": "057a2ae03e231d3563aa6ce1e4416383a9a418e8f95e76d4918991fb531f36fd"
+    },
+    {
+      "articleNumber": "30",
+      "lines": [
+        {
+          "sourceLine": 1060,
+          "text": "Điều 30. Bảo vệ dữ liệu cá nhân trong xử lý dữ liệu lớn, trí tuệ nhân tạo,"
+        },
+        {
+          "sourceLine": 1061,
+          "text": "chuỗi khối, vũ trụ ảo, điện toán đám mây"
+        },
+        {
+          "sourceLine": 1062,
+          "text": "1. Dữ liệu cá nhân trong môi trường dữ liệu lớn, trí tuệ nhân tạo, chuỗi khối,"
+        },
+        {
+          "sourceLine": 1063,
+          "text": "vũ trụ ảo và điện toán đám mây phải được xử lý đúng mục đích và giới hạn trong"
+        },
+        {
+          "sourceLine": 1064,
+          "text": "phạm vi cần thiết, bảo đảm quyền, lợi ích hợp pháp của chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1065,
+          "text": "2. Việc xử lý dữ liệu cá nhân trong môi trường dữ liệu lớn, trí tuệ nhân tạo,"
+        },
+        {
+          "sourceLine": 1066,
+          "text": "chuỗi khối, vũ trụ ảo và điện toán đám mây phải tuân thủ quy định của Luật này và"
+        },
+        {
+          "sourceLine": 1067,
+          "text": "quy định khác của pháp luật có liên quan; phù hợp với chuẩn mực đạo đức, thuần"
+        },
+        {
+          "sourceLine": 1068,
+          "text": "phong mỹ tục của Việt Nam."
+        },
+        {
+          "sourceLine": 1069,
+          "text": "3. Hệ thống và dịch vụ sử dụng dữ liệu lớn, trí tuệ nhân tạo, chuỗi khối, vũ trụ"
+        },
+        {
+          "sourceLine": 1070,
+          "text": "ảo và điện toán đám mây phải được tích hợp các biện pháp bảo mật dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1071,
+          "text": "phù hợp; phải sử dụng phương thức xác thực, định danh phù hợp và phân quyền"
+        },
+        {
+          "sourceLine": 1072,
+          "text": "truy cập để xử lý dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1073,
+          "text": "4. Việc xử lý dữ liệu cá nhân bằng trí tuệ nhân tạo phải thực hiện phân loại"
+        },
+        {
+          "sourceLine": 1074,
+          "text": "theo mức độ rủi ro để có biện pháp bảo vệ dữ liệu cá nhân phù hợp."
+        },
+        {
+          "sourceLine": 1075,
+          "text": "5. Không sử dụng, phát triển hệ thống xử lý dữ liệu lớn, trí tuệ nhân tạo, chuỗi"
+        },
+        {
+          "sourceLine": 1076,
+          "text": "khối, vũ trụ ảo, điện toán đám mây có sử dụng dữ liệu cá nhân để gây tổn hại đến"
+        },
+        {
+          "sourceLine": 1077,
+          "text": "quốc phòng, an ninh quốc gia, trật tự, an toàn xã hội hoặc xâm phạm đến tính"
+        },
+        {
+          "sourceLine": 1078,
+          "text": "mạng, sức khỏe, danh dự, nhân phẩm, tài sản của người khác."
+        },
+        {
+          "sourceLine": 1079,
+          "text": "6. Chính phủ quy định chi tiết Điều này."
+        }
+      ],
+      "compactTextSha256": "77e0e420b45f55545a6141836d9ba4fc1697bdfcb6abb78443d5a370f1cbde64"
+    },
+    {
+      "articleNumber": "31",
+      "lines": [
+        {
+          "sourceLine": 1080,
+          "text": "Điều 31. Bảo vệ dữ liệu cá nhân đối với dữ liệu vị trí cá nhân, dữ liệu sinh"
+        },
+        {
+          "sourceLine": 1081,
+          "text": "trắc học"
+        },
+        {
+          "sourceLine": 1082,
+          "text": "1. Dữ liệu vị trí cá nhân là dữ liệu được xác định thông qua công nghệ định vị"
+        },
+        {
+          "sourceLine": 1083,
+          "text": "để biết vị trí và giúp xác định con người cụ thể."
+        },
+        {
+          "sourceLine": 1084,
+          "text": "2. Dữ liệu sinh trắc học là dữ liệu về thuộc tính vật lý, đặc điểm sinh học cá"
+        },
+        {
+          "sourceLine": 1085,
+          "text": "biệt và ổn định của một người để xác định người đó."
+        },
+        {
+          "sourceLine": 1086,
+          "text": "3. Việc bảo vệ dữ liệu cá nhân đối với dữ liệu vị trí cá nhân được quy định"
+        },
+        {
+          "sourceLine": 1087,
+          "text": "như sau:"
+        },
+        {
+          "sourceLine": 1088,
+          "text": "a) Không áp dụng việc theo dõi định vị qua thẻ nhận dạng tần số vô tuyến và"
+        },
+        {
+          "sourceLine": 1089,
+          "text": "các công nghệ khác, trừ trường hợp có sự đồng ý của chủ thể dữ liệu cá nhân hoặc"
+        },
+        {
+          "sourceLine": 1090,
+          "text": "trường hợp có yêu cầu của cơ quan có thẩm quyền theo quy định của pháp luật"
+        },
+        {
+          "sourceLine": 1091,
+          "text": "hoặc trường hợp pháp luật có quy định khác;"
+        },
+        {
+          "sourceLine": 1094,
+          "text": "b) Tổ chức, cá nhân cung cấp nền tảng ứng dụng di động phải thông báo cho"
+        },
+        {
+          "sourceLine": 1095,
+          "text": "người sử dụng về việc sử dụng dữ liệu vị trí cá nhân; có biện pháp ngăn chặn việc"
+        },
+        {
+          "sourceLine": 1096,
+          "text": "thu thập dữ liệu vị trí cá nhân của tổ chức, cá nhân không liên quan; cung cấp cho"
+        },
+        {
+          "sourceLine": 1097,
+          "text": "người sử dụng các tùy chọn theo dõi vị trí cá nhân."
+        },
+        {
+          "sourceLine": 1098,
+          "text": "4. Việc bảo vệ dữ liệu sinh trắc học quy định như sau:"
+        },
+        {
+          "sourceLine": 1099,
+          "text": "a) Cơ quan, tổ chức, cá nhân thu thập và xử lý dữ liệu sinh trắc học phải có"
+        },
+        {
+          "sourceLine": 1100,
+          "text": "biện pháp bảo mật vật lý đối với thiết bị lưu trữ và truyền tải dữ liệu sinh trắc học"
+        },
+        {
+          "sourceLine": 1101,
+          "text": "của mình; hạn chế quyền truy cập vào dữ liệu sinh trắc học; có hệ thống theo dõi"
+        },
+        {
+          "sourceLine": 1102,
+          "text": "để phòng ngừa, phát hiện hành vi xâm phạm dữ liệu sinh trắc học; tuân thủ quy"
+        },
+        {
+          "sourceLine": 1103,
+          "text": "định của pháp luật và tiêu chuẩn quốc tế có liên quan;"
+        },
+        {
+          "sourceLine": 1104,
+          "text": "b) Trường hợp xử lý dữ liệu sinh trắc học gây thiệt hại cho chủ thể dữ liệu cá"
+        },
+        {
+          "sourceLine": 1105,
+          "text": "nhân thì tổ chức, cá nhân thu thập và xử lý dữ liệu sinh trắc học phải thông báo cho"
+        },
+        {
+          "sourceLine": 1106,
+          "text": "chủ thể dữ liệu cá nhân đó theo quy định của Chính phủ."
+        }
+      ],
+      "compactTextSha256": "2b4f73f6c5d050707f35d7019487655df308022529f76ae275fc9dc82b457170"
+    },
+    {
+      "articleNumber": "32",
+      "lines": [
+        {
+          "sourceLine": 1107,
+          "text": "Điều 32. Bảo vệ dữ liệu cá nhân thu được từ hoạt động ghi âm, ghi hình"
+        },
+        {
+          "sourceLine": 1108,
+          "text": "tại nơi công cộng, hoạt động công cộng"
+        },
+        {
+          "sourceLine": 1109,
+          "text": "1. Cơ quan, tổ chức, cá nhân được ghi âm, ghi hình và xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1110,
+          "text": "thu được từ hoạt động ghi âm, ghi hình tại nơi công cộng, hoạt động công cộng mà"
+        },
+        {
+          "sourceLine": 1111,
+          "text": "không cần có sự đồng ý của chủ thể dữ liệu cá nhân trong các trường hợp sau đây:"
+        },
+        {
+          "sourceLine": 1112,
+          "text": "a) Để thực hiện nhiệm vụ quốc phòng, bảo vệ an ninh quốc gia, bảo đảm trật"
+        },
+        {
+          "sourceLine": 1113,
+          "text": "tự, an toàn xã hội, bảo vệ quyền, lợi ích hợp pháp của cơ quan, tổ chức, cá nhân;"
+        },
+        {
+          "sourceLine": 1114,
+          "text": "b) Âm thanh, hình ảnh, các thông tin nhận dạng khác thu được từ các hoạt"
+        },
+        {
+          "sourceLine": 1115,
+          "text": "động công cộng bao gồm hội nghị, hội thảo, hoạt động thi đấu thể thao, biểu diễn"
+        },
+        {
+          "sourceLine": 1116,
+          "text": "nghệ thuật và hoạt động công cộng khác mà không làm tổn hại đến danh dự, nhân"
+        },
+        {
+          "sourceLine": 1117,
+          "text": "phẩm, uy tín của chủ thể dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1118,
+          "text": "c) Trường hợp khác theo quy định của pháp luật."
+        },
+        {
+          "sourceLine": 1119,
+          "text": "2. Trường hợp ghi âm, ghi hình theo quy định tại khoản 1 Điều này, cơ quan,"
+        },
+        {
+          "sourceLine": 1120,
+          "text": "tổ chức, cá nhân có trách nhiệm thông báo hoặc bằng hình thức thông tin khác để"
+        },
+        {
+          "sourceLine": 1121,
+          "text": "chủ thể dữ liệu cá nhân biết được mình đang bị ghi âm, ghi hình, trừ trường hợp"
+        },
+        {
+          "sourceLine": 1122,
+          "text": "pháp luật có quy định khác."
+        },
+        {
+          "sourceLine": 1123,
+          "text": "3. Dữ liệu cá nhân thu được chỉ được xử lý, sử dụng phù hợp với mục đích xử"
+        },
+        {
+          "sourceLine": 1124,
+          "text": "lý, không được sử dụng vào các mục đích trái pháp luật hoặc xâm phạm đến"
+        },
+        {
+          "sourceLine": 1125,
+          "text": "quyền, lợi ích hợp pháp của chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1126,
+          "text": "4. Dữ liệu cá nhân thu được từ hoạt động ghi âm, ghi hình tại nơi công cộng,"
+        },
+        {
+          "sourceLine": 1127,
+          "text": "hoạt động công cộng chỉ được lưu trữ trong khoảng thời gian cần thiết để phục vụ"
+        },
+        {
+          "sourceLine": 1130,
+          "text": "mục đích thu thập, trừ trường hợp pháp luật có quy định khác. Khi hết thời hạn lưu"
+        },
+        {
+          "sourceLine": 1131,
+          "text": "trữ, dữ liệu cá nhân phải được xóa, hủy theo quy định của Luật này."
+        },
+        {
+          "sourceLine": 1132,
+          "text": "5. Cơ quan, tổ chức, cá nhân thực hiện ghi âm, ghi hình, xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1133,
+          "text": "thu được từ ghi âm, ghi hình trong các trường hợp quy định tại khoản 1 Điều này"
+        },
+        {
+          "sourceLine": 1134,
+          "text": "có trách nhiệm bảo vệ dữ liệu cá nhân theo quy định của Luật này và quy định"
+        },
+        {
+          "sourceLine": 1135,
+          "text": "khác của pháp luật có liên quan."
+        }
+      ],
+      "compactTextSha256": "7f4fb8c35313f306c37175b1a099b9f9863e0f7455b74cae68cd047eaf3d05b5"
+    },
+    {
+      "articleNumber": "33",
+      "lines": [
+        {
+          "sourceLine": 1138,
+          "text": "Điều 33. Lực lượng bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1139,
+          "text": "1. Lực lượng bảo vệ dữ liệu cá nhân bao gồm:"
+        },
+        {
+          "sourceLine": 1140,
+          "text": "a) Cơ quan chuyên trách bảo vệ dữ liệu cá nhân thuộc Bộ Công an;"
+        },
+        {
+          "sourceLine": 1141,
+          "text": "b) Bộ phận, nhân sự bảo vệ dữ liệu cá nhân trong cơ quan, tổ chức;"
+        },
+        {
+          "sourceLine": 1142,
+          "text": "c) Tổ chức, cá nhân cung cấp dịch vụ bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1143,
+          "text": "d) Tổ chức, cá nhân được huy động tham gia bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1144,
+          "text": "2. Cơ quan, tổ chức có trách nhiệm chỉ định bộ phận, nhân sự đủ điều kiện"
+        },
+        {
+          "sourceLine": 1145,
+          "text": "năng lực bảo vệ dữ liệu cá nhân hoặc thuê tổ chức, cá nhân cung cấp dịch vụ bảo"
+        },
+        {
+          "sourceLine": 1146,
+          "text": "vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1147,
+          "text": "3. Chính phủ quy định về điều kiện, nhiệm vụ của bộ phận, nhân sự bảo vệ dữ"
+        },
+        {
+          "sourceLine": 1148,
+          "text": "liệu cá nhân trong cơ quan, tổ chức; tổ chức, cá nhân cung cấp dịch vụ bảo vệ dữ"
+        },
+        {
+          "sourceLine": 1149,
+          "text": "liệu cá nhân; dịch vụ xử lý dữ liệu cá nhân."
+        }
+      ],
+      "compactTextSha256": "b3ef2e6c4fcc3815afe519b1a3a241ed489d1a3f3a7e29ebc0389bc1b7adf881"
+    },
+    {
+      "articleNumber": "34",
+      "lines": [
+        {
+          "sourceLine": 1150,
+          "text": "Điều 34. Tiêu chuẩn, quy chuẩn kỹ thuật về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1151,
+          "text": "1. Tiêu chuẩn về bảo vệ dữ liệu cá nhân gồm tiêu chuẩn đối với hệ thống thông"
+        },
+        {
+          "sourceLine": 1152,
+          "text": "tin, phần cứng, phần mềm, quản lý, vận hành, xử lý, bảo vệ dữ liệu cá nhân được"
+        },
+        {
+          "sourceLine": 1153,
+          "text": "công bố, thừa nhận áp dụng tại Việt Nam."
+        },
+        {
+          "sourceLine": 1154,
+          "text": "2. Quy chuẩn kỹ thuật về bảo vệ dữ liệu cá nhân gồm quy chuẩn kỹ thuật đối"
+        },
+        {
+          "sourceLine": 1155,
+          "text": "với hệ thống thông tin, phần cứng, phần mềm, quản lý, vận hành, xử lý, bảo vệ dữ"
+        },
+        {
+          "sourceLine": 1156,
+          "text": "liệu cá nhân được xây dựng, ban hành và áp dụng tại Việt Nam."
+        },
+        {
+          "sourceLine": 1157,
+          "text": "3. Việc ban hành tiêu chuẩn, quy chuẩn kỹ thuật về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1158,
+          "text": "thực hiện theo quy định của pháp luật về tiêu chuẩn và quy chuẩn kỹ thuật."
+        }
+      ],
+      "compactTextSha256": "16ae73d485eea24ebc9e1109c7dd11f377c6c35d67faf985fbb60660944a517f"
+    },
+    {
+      "articleNumber": "35",
+      "lines": [
+        {
+          "sourceLine": 1159,
+          "text": "Điều 35. Kiểm tra hoạt động bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1160,
+          "text": "Việc kiểm tra hoạt động bảo vệ dữ liệu cá nhân được thực hiện theo quy định"
+        },
+        {
+          "sourceLine": 1161,
+          "text": "của Luật này và theo quy định của Chính phủ."
+        }
+      ],
+      "compactTextSha256": "93e9e5bba7639916aacc29067ae9ce2235b1137fdbcf734f25d0cafdc1e7079f"
+    },
+    {
+      "articleNumber": "36",
+      "lines": [
+        {
+          "sourceLine": 1167,
+          "text": "Điều 36. Trách nhiệm quản lý nhà nước về bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1168,
+          "text": "1. Chính phủ thống nhất thực hiện quản lý nhà nước về bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1169,
+          "text": "2. Bộ Công an là cơ quan đầu mối chịu trách nhiệm trước Chính phủ thực hiện"
+        },
+        {
+          "sourceLine": 1170,
+          "text": "quản lý nhà nước về bảo vệ dữ liệu cá nhân, trừ nội dung thuộc phạm vi quản lý"
+        },
+        {
+          "sourceLine": 1171,
+          "text": "của Bộ Quốc phòng."
+        },
+        {
+          "sourceLine": 1172,
+          "text": "3. Bộ Quốc phòng chịu trách nhiệm trước Chính phủ thực hiện quản lý nhà"
+        },
+        {
+          "sourceLine": 1173,
+          "text": "nước về bảo vệ dữ liệu cá nhân thuộc phạm vi quản lý."
+        },
+        {
+          "sourceLine": 1174,
+          "text": "4. Bộ, cơ quan ngang Bộ, cơ quan thuộc Chính phủ thực hiện quản lý nhà nước"
+        },
+        {
+          "sourceLine": 1175,
+          "text": "về bảo vệ dữ liệu cá nhân đối với các ngành, lĩnh vực thuộc phạm vi quản lý theo"
+        },
+        {
+          "sourceLine": 1176,
+          "text": "quy định của pháp luật và chức năng, nhiệm vụ được giao."
+        },
+        {
+          "sourceLine": 1177,
+          "text": "5. Ủy ban nhân dân cấp tỉnh thực hiện quản lý nhà nước về bảo vệ dữ liệu cá"
+        },
+        {
+          "sourceLine": 1178,
+          "text": "nhân theo quy định của pháp luật và chức năng, nhiệm vụ được giao."
+        }
+      ],
+      "compactTextSha256": "34deed9c7522830747b0fc2cd6efd663ac6a9614a8434a1832ac0b332b7ac750"
+    },
+    {
+      "articleNumber": "37",
+      "lines": [
+        {
+          "sourceLine": 1179,
+          "text": "Điều 37. Trách nhiệm của bên kiểm soát dữ liệu cá nhân, bên xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 1180,
+          "text": "cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1181,
+          "text": "1. Trách nhiệm của bên kiểm soát dữ liệu cá nhân như sau:"
+        },
+        {
+          "sourceLine": 1182,
+          "text": "a) Nêu rõ trách nhiệm, quyền và nghĩa vụ phải tuân thủ của các bên trong thỏa"
+        },
+        {
+          "sourceLine": 1183,
+          "text": "thuận, hợp đồng có liên quan đến xử lý dữ liệu cá nhân theo quy định của Luật này"
+        },
+        {
+          "sourceLine": 1184,
+          "text": "và quy định khác của pháp luật có liên quan;"
+        },
+        {
+          "sourceLine": 1185,
+          "text": "b) Quyết định mục đích và phương tiện xử lý dữ liệu cá nhân tại các văn bản,"
+        },
+        {
+          "sourceLine": 1186,
+          "text": "thỏa thuận với chủ thể dữ liệu cá nhân, bảo đảm đúng nguyên tắc và nội dung theo"
+        },
+        {
+          "sourceLine": 1187,
+          "text": "quy định của Luật này;"
+        },
+        {
+          "sourceLine": 1188,
+          "text": "c) Thực hiện biện pháp quản lý, kỹ thuật phù hợp để bảo vệ dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1189,
+          "text": "theo quy định của pháp luật, rà soát và cập nhật các biện pháp này khi cần thiết;"
+        },
+        {
+          "sourceLine": 1190,
+          "text": "d) Thông báo hành vi vi phạm quy định về bảo vệ dữ liệu cá nhân theo quy"
+        },
+        {
+          "sourceLine": 1191,
+          "text": "định tại Điều 23 của Luật này;"
+        },
+        {
+          "sourceLine": 1192,
+          "text": "đ) Lựa chọn bên xử lý dữ liệu cá nhân phù hợp để xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1193,
+          "text": "e) Bảo đảm các quyền của chủ thể dữ liệu cá nhân theo quy định tại Điều 4 của"
+        },
+        {
+          "sourceLine": 1194,
+          "text": "Luật này;"
+        },
+        {
+          "sourceLine": 1195,
+          "text": "g) Chịu trách nhiệm trước chủ thể dữ liệu cá nhân về các thiệt hại do quá trình"
+        },
+        {
+          "sourceLine": 1196,
+          "text": "xử lý dữ liệu cá nhân gây ra;"
+        },
+        {
+          "sourceLine": 1199,
+          "text": "h) Ngăn chặn hoạt động thu thập dữ liệu cá nhân trái phép từ hệ thống, trang"
+        },
+        {
+          "sourceLine": 1200,
+          "text": "thiết bị, dịch vụ của mình;"
+        },
+        {
+          "sourceLine": 1201,
+          "text": "i) Phối hợp với Bộ Công an, cơ quan nhà nước có thẩm quyền trong bảo vệ dữ"
+        },
+        {
+          "sourceLine": 1202,
+          "text": "liệu cá nhân, cung cấp thông tin phục vụ điều tra, xử lý hành vi vi phạm pháp luật"
+        },
+        {
+          "sourceLine": 1203,
+          "text": "về bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1204,
+          "text": "k) Thực hiện các trách nhiệm khác theo quy định của Luật này và quy định"
+        },
+        {
+          "sourceLine": 1205,
+          "text": "khác của pháp luật có liên quan."
+        },
+        {
+          "sourceLine": 1206,
+          "text": "2. Trách nhiệm của bên xử lý dữ liệu cá nhân như sau:"
+        },
+        {
+          "sourceLine": 1207,
+          "text": "a) Chỉ được tiếp nhận dữ liệu cá nhân sau khi có thỏa thuận, hợp đồng về xử lý"
+        },
+        {
+          "sourceLine": 1208,
+          "text": "dữ liệu cá nhân với bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu"
+        },
+        {
+          "sourceLine": 1209,
+          "text": "cá nhân;"
+        },
+        {
+          "sourceLine": 1210,
+          "text": "b) Xử lý dữ liệu cá nhân theo đúng thỏa thuận, hợp đồng ký kết với bên kiểm"
+        },
+        {
+          "sourceLine": 1211,
+          "text": "soát dữ liệu cá nhân, bên kiểm soát và xử lý dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1212,
+          "text": "c) Thực hiện đầy đủ các biện pháp bảo vệ dữ liệu cá nhân theo quy định của"
+        },
+        {
+          "sourceLine": 1213,
+          "text": "Luật này và các quy định khác của pháp luật có liên quan;"
+        },
+        {
+          "sourceLine": 1214,
+          "text": "d) Chịu trách nhiệm trước bên kiểm soát dữ liệu cá nhân, bên kiểm soát và xử"
+        },
+        {
+          "sourceLine": 1215,
+          "text": "lý dữ liệu cá nhân về thiệt hại do quá trình xử lý dữ liệu cá nhân gây ra;"
+        },
+        {
+          "sourceLine": 1216,
+          "text": "đ) Ngăn chặn hoạt động thu thập dữ liệu cá nhân trái phép từ hệ thống, trang"
+        },
+        {
+          "sourceLine": 1217,
+          "text": "thiết bị, dịch vụ của mình;"
+        },
+        {
+          "sourceLine": 1218,
+          "text": "e) Phối hợp với Bộ Công an, cơ quan nhà nước có thẩm quyền trong bảo vệ dữ"
+        },
+        {
+          "sourceLine": 1219,
+          "text": "liệu cá nhân, cung cấp thông tin phục vụ điều tra, xử lý hành vi vi phạm pháp luật"
+        },
+        {
+          "sourceLine": 1220,
+          "text": "về bảo vệ dữ liệu cá nhân;"
+        },
+        {
+          "sourceLine": 1221,
+          "text": "g) Thực hiện các trách nhiệm khác theo quy định của Luật này và quy định"
+        },
+        {
+          "sourceLine": 1222,
+          "text": "khác của pháp luật có liên quan."
+        },
+        {
+          "sourceLine": 1223,
+          "text": "3. Bên kiểm soát và xử lý dữ liệu cá nhân có trách nhiệm thực hiện đầy đủ các"
+        },
+        {
+          "sourceLine": 1224,
+          "text": "quy định tại khoản 1 và khoản 2 Điều này."
+        }
+      ],
+      "compactTextSha256": "8bcd0945df0cb5eeaae9fc414b6ea7651a34cd6a5fc0ce1dc05f67edef44e958"
+    },
+    {
+      "articleNumber": "38",
+      "lines": [
+        {
+          "sourceLine": 1227,
+          "text": "Điều 38. Hiệu lực thi hành"
+        },
+        {
+          "sourceLine": 1228,
+          "text": "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2026."
+        },
+        {
+          "sourceLine": 1229,
+          "text": "2. Doanh nghiệp nhỏ, doanh nghiệp khởi nghiệp được quyền lựa chọn thực"
+        },
+        {
+          "sourceLine": 1230,
+          "text": "hiện hoặc không thực hiện quy định tại Điều 21, Điều 22 và khoản 2 Điều 33 của"
+        },
+        {
+          "sourceLine": 1231,
+          "text": "Luật này trong thời gian 05 năm kể từ ngày Luật này có hiệu lực thi hành, trừ"
+        },
+        {
+          "sourceLine": 1234,
+          "text": "doanh nghiệp nhỏ, doanh nghiệp khởi nghiệp kinh doanh dịch vụ xử lý dữ liệu cá"
+        },
+        {
+          "sourceLine": 1235,
+          "text": "nhân, trực tiếp xử lý dữ liệu cá nhân nhạy cảm hoặc xử lý dữ liệu cá nhân của số"
+        },
+        {
+          "sourceLine": 1236,
+          "text": "lượng lớn chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1237,
+          "text": "3. Hộ kinh doanh, doanh nghiệp siêu nhỏ không phải thực hiện quy định tại"
+        },
+        {
+          "sourceLine": 1238,
+          "text": "Điều 21, Điều 22 và khoản 2 Điều 33 của Luật này, trừ hộ kinh doanh, doanh nghiệp"
+        },
+        {
+          "sourceLine": 1239,
+          "text": "siêu nhỏ kinh doanh dịch vụ xử lý dữ liệu cá nhân, trực tiếp xử lý dữ liệu cá nhân"
+        },
+        {
+          "sourceLine": 1240,
+          "text": "nhạy cảm hoặc xử lý dữ liệu cá nhân của số lượng lớn chủ thể dữ liệu cá nhân."
+        },
+        {
+          "sourceLine": 1241,
+          "text": "4. Chính phủ quy định chi tiết khoản 2 và khoản 3 Điều này."
+        }
+      ],
+      "compactTextSha256": "06476869e0abaf53c0577f21a5887f52968ba948f0922ef8053f1357a02a211c"
+    },
+    {
+      "articleNumber": "39",
+      "lines": [
+        {
+          "sourceLine": 1242,
+          "text": "Điều 39. Quy định chuyển tiếp"
+        },
+        {
+          "sourceLine": 1243,
+          "text": "1. Hoạt động xử lý dữ liệu cá nhân đang thực hiện mà đã được chủ thể dữ liệu"
+        },
+        {
+          "sourceLine": 1244,
+          "text": "cá nhân đồng ý hoặc theo thỏa thuận theo quy định của Nghị định số 13/2023/NĐ-CP"
+        },
+        {
+          "sourceLine": 1245,
+          "text": "ngày 17 tháng 4 năm 2023 của Chính phủ trước ngày Luật này có hiệu lực thi hành"
+        },
+        {
+          "sourceLine": 1246,
+          "text": "thì tiếp tục thực hiện, không phải xin đồng ý lại hoặc thỏa thuận lại."
+        },
+        {
+          "sourceLine": 1247,
+          "text": "2. Hồ sơ đánh giá tác động xử lý dữ liệu cá nhân, hồ sơ đánh giá tác động"
+        },
+        {
+          "sourceLine": 1248,
+          "text": "chuyển dữ liệu cá nhân ra nước ngoài theo quy định của Nghị định số 13/2023/"
+        },
+        {
+          "sourceLine": 1249,
+          "text": "NĐ-CP ngày 17 tháng 4 năm 2023 của Chính phủ đã được cơ quan chuyên trách"
+        },
+        {
+          "sourceLine": 1250,
+          "text": "bảo vệ dữ liệu cá nhân tiếp nhận trước ngày Luật này có hiệu lực thi hành thì tiếp"
+        },
+        {
+          "sourceLine": 1251,
+          "text": "tục được sử dụng và không phải lập hồ sơ đánh giá tác động xử lý dữ liệu cá nhân,"
+        },
+        {
+          "sourceLine": 1252,
+          "text": "hồ sơ đánh giá tác động chuyển dữ liệu cá nhân xuyên biên giới theo quy định của"
+        },
+        {
+          "sourceLine": 1253,
+          "text": "Luật này; việc cập nhật các hồ sơ đã lập nêu trên sau ngày Luật này có hiệu lực thi"
+        },
+        {
+          "sourceLine": 1254,
+          "text": "hành thì thực hiện theo quy định của Luật này."
+        }
+      ],
+      "compactTextSha256": "c1c77ab1053a915b327336c8a68b59adc266f59d6811d771a5cd604630e5c5f5"
+    }
+  ]
+}

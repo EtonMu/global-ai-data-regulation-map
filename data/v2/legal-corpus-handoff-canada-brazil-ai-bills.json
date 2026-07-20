@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "1.0",
+  "handoffId": "canada-brazil-ai-bills-complete-legal-corpora-2026-07-20",
+  "reviewedAsOf": "2026-07-20",
+  "scope": {
+    "included": [
+      "Canada Bill C-27, clause 39, proposed Artificial Intelligence and Data Act: sections 1-41 in both official languages",
+      "Brazil PL 2338/2023: Articles 1-30 and 32-80 of the Senate-approved autograph transmitted to the Chamber of Deputies"
+    ],
+    "unitHashAlgorithm": "SHA-256 over UTF-8 fullText with no trailing newline",
+    "statusPolicy": "Proposed commencement clauses are preserved as bill text but never represented as operative law unless the parent bill was enacted.",
+    "englishDisplayPolicy": "AIDA defaults to the official English text and offers Parliament's co-published official French text. PL 2338/2023 remains Portuguese-only because no complete official English version was verified; its English headings are editorial navigation aids, not translations."
+  },
+  "corpora": [
+    {
+      "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+      "jurisdiction": "Canada",
+      "officialTitle": "Artificial Intelligence and Data Act",
+      "parentInstrument": "Bill C-27 (44th Parliament, 1st Session)",
+      "versionBoundary": {
+        "text": "First-reading text as introduced on 2022-06-16, contained in clause 39 of Bill C-27",
+        "reason": "Parliament's only formal text publication was First Reading. Committee consideration was not completed, no committee report or amended bill was adopted, and unadopted proposed committee amendments are excluded.",
+        "publishedOn": "2022-06-16"
+      },
+      "coverage": {
+        "unit": "section",
+        "expected": "proposed AIDA sections 1-41",
+        "expectedUnitCount": 41,
+        "actualUnitCount": 41,
+        "complete": true,
+        "languages": [
+          "English (en-CA, default)",
+          "French (fr-CA, official co-published text)"
+        ]
+      },
+      "output": {
+        "path": "data/v2/ca-aida-bill-c27-sections.json",
+        "sha256": "0aed64b85db522b77817698899567ae69ebd277b9d24b494f0a165ee7da9ee5b"
+      },
+      "generator": "scripts/import-canada-aida-bill-c27.py",
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/ca-c27-aida-first-reading-en.xml",
+          "sha256": "b86d6925c66e068681cf38c147349c610e9a9c1460e539697537d4bda960bc81",
+          "role": "official Parliament English first-reading XML"
+        },
+        {
+          "path": "data/v2/source-snapshots/ca-c27-aida-first-reading-fr.xml",
+          "sha256": "e006990ec8ad05315e01ce82ec7b58566aa65b3af8777465ec0ff89feb2de8c3",
+          "role": "official Parliament French first-reading XML"
+        },
+        {
+          "path": "data/v2/source-snapshots/ca-c27-legisinfo-2026-07-20.json",
+          "sha256": "abeef6e5653b6d0cc96921f67145bf34193f2d58f56ef83487b5f15a45869278",
+          "role": "official LEGISinfo stages, publications and non-assent record"
+        },
+        {
+          "path": "data/v2/source-snapshots/ca-house-procedure-prorogation-dissolution-2025.html",
+          "sha256": "6cd7136017803fbaa3870e5650305bc92514c1187b377466f91fbc37066ffb15",
+          "role": "official House procedure explaining that incomplete government bills die at prorogation and all business ends at dissolution"
+        },
+        {
+          "path": "data/v2/source-snapshots/ca-house-dissolution-2025-03-23.pdf",
+          "sha256": "ab79fd2741eb72a5663d52510866200d2371c4dfe87fb421fda536ba74b15f04",
+          "role": "official House notice confirming 2025-01-06 prorogation and 2025-03-23 dissolution"
+        }
+      ],
+      "officialSources": [
+        {
+          "role": "official first-reading bill viewer",
+          "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading"
+        },
+        {
+          "role": "official English XML",
+          "url": "https://www.parl.ca/Content/Bills/441/Government/C-27/C-27_1/C-27_E.xml",
+          "sha256": "b86d6925c66e068681cf38c147349c610e9a9c1460e539697537d4bda960bc81"
+        },
+        {
+          "role": "official French XML",
+          "url": "https://www.parl.ca/Content/Bills/441/Government/C-27/C-27_1/C-27_F.xml",
+          "sha256": "e006990ec8ad05315e01ce82ec7b58566aa65b3af8777465ec0ff89feb2de8c3"
+        },
+        {
+          "role": "official bilingual PDF cross-check",
+          "url": "https://www.parl.ca/Content/Bills/441/Government/C-27/C-27_1/C-27_1.PDF",
+          "sha256": "a219dfa522bf5a00e71c68145aad2adabae97a03a4e07103aa814d8c7291a702"
+        },
+        {
+          "role": "official legislative history",
+          "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27"
+        },
+        {
+          "role": "official House procedure on prorogation and dissolution",
+          "url": "https://www.ourcommons.ca/procedure/procedure-and-practice-4/ch08-7-e.html"
+        }
+      ],
+      "statusReview": {
+        "status": "failed-bill-never-enacted",
+        "introducedOn": "2022-06-16",
+        "secondReadingAndReferralOn": "2023-04-24",
+        "lastCommitteeMeetingOn": "2024-09-26",
+        "lapsedAtProrogationOn": "2025-01-06",
+        "reinstated": false,
+        "parliamentDissolvedOn": "2025-03-23",
+        "receivedRoyalAssent": false,
+        "effectiveFrom": null,
+        "reviewedOn": "2026-07-20",
+        "conclusion": "The proposed AIDA died with incomplete government business at prorogation, was not reinstated, and never became an Act or entered into force."
+      },
+      "reuse": {
+        "status": "permission-not-established-for-unenacted-bill",
+        "basis": "Parliament's Important Notices state that site content is covered by the Copyright Act and permission may be sought. The Reproduction of Federal Law Order applies to enactments, but this proposed AIDA never became an enactment; no open reproduction licence is asserted here.",
+        "source": "https://www.parl.ca/ImportantNotices-e.html"
+      }
+    },
+    {
+      "instrumentId": "br-pl-2338-2023-ai-bill",
+      "jurisdiction": "Brazil",
+      "officialTitle": "Projeto de Lei nº 2.338, de 2023",
+      "versionBoundary": {
+        "text": "Senate-approved substitute in the final autograph dated 2025-01-31 and transmitted to the Chamber of Deputies on 2025-03-17",
+        "reason": "This is the latest complete official legislative text adopted by the Senate and formally placed before the Chamber. Later procedural activity has not produced an enacted law or a later adopted complete text.",
+        "documentDate": "2025-01-31",
+        "receivedByChamberOn": "2025-03-17"
+      },
+      "coverage": {
+        "unit": "article",
+        "expected": "Articles 1-30 and 32-80 exactly as numbered in the controlling autograph",
+        "expectedUnitCount": 79,
+        "actualUnitCount": 79,
+        "complete": true,
+        "language": "Portuguese (pt-BR)",
+        "englishTranslation": "not supplied",
+        "numberingNotice": "The official Senate autograph itself jumps directly from Article 30 to Article 32; there is no Article 31 in the controlling text."
+      },
+      "output": {
+        "path": "data/v2/br-ai-bill-2338-2023-articles.json",
+        "sha256": "0f9712501443e2bc820b194b1acd9834522c2c4de076f9d64819bd1a940a78ee"
+      },
+      "generator": "scripts/import-brazil-ai-bill-2338.py",
+      "sourceSnapshotGenerator": "scripts/prepare-brazil-ai-bill-2338-snapshot.py",
+      "sourceSnapshots": [
+        {
+          "storedLocally": false,
+          "suggestedPath": "data/v2/source-snapshots/br-pl2338-2023-senate-approved-autograph.pdf",
+          "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=PL+2338%2F2023",
+          "sha256": "82e264056ab6622a58ce7cbb66e02d0c79c5d85ff76639841421ca415892c8ca",
+          "role": "external-only electronically authenticated Chamber copy of the Senate-approved autograph; layout, signatures and seals are not redistributed"
+        },
+        {
+          "path": "data/v2/source-snapshots/br-pl2338-2023-official-articles.json",
+          "sha256": "fefdaf54777ac6b79f1c3a1a7f6ec4e1641665c6d30fd9dea4ec1919280b3bd8",
+          "role": "complete article extraction with per-Article page ranges and compact-text hashes"
+        },
+        {
+          "path": "data/v2/source-snapshots/br-pl2338-2023-chamber-status-2026-07-20.json",
+          "sha256": "1471f8a6e5534412bb689aa20ae75b6941a12e37ad6e1b34a213b722535fa143",
+          "role": "official Chamber API bill status and absent final-law URN"
+        },
+        {
+          "path": "data/v2/source-snapshots/br-pl2338-2023-chamber-proceedings-2026-07-20.json",
+          "sha256": "2765489549dee2f525ab562d810ead90bbb90eaa530ccf33f539d18eedb1bdf2",
+          "role": "official Chamber API procedural history"
+        },
+        {
+          "path": "data/v2/source-snapshots/br-pl2338-2023-chamber-record-2026-07-20.html",
+          "sha256": "715059dd3af848dd352068ad17badebcabd633ca43cb2d7ab64dd9c33cac7c4a",
+          "role": "official Chamber record showing the current awaiting-rapporteur stage in the special committee"
+        }
+      ],
+      "officialSources": [
+        {
+          "role": "official Chamber full text of the authenticated Senate autograph",
+          "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=PL+2338%2F2023",
+          "sha256": "82e264056ab6622a58ce7cbb66e02d0c79c5d85ff76639841421ca415892c8ca"
+        },
+        {
+          "role": "official Senate matter record and voting history",
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233"
+        },
+        {
+          "role": "official Senate autograph scan cross-check",
+          "url": "https://legis.senado.leg.br/sdleg-getter/documento?disposition=inline&dm=9915448",
+          "sha256": "55420e3f8543562b0692d0b2414a5298634872618690d686a6f011f18b5df6af"
+        },
+        {
+          "role": "official Chamber legislative record",
+          "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao/?idProposicao=2487262"
+        },
+        {
+          "role": "official Chamber API status",
+          "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2487262"
+        }
+      ],
+      "transcriptionDisclosure": {
+        "authorityStatement": "The electronically authenticated Chamber copy of the Senate autograph controls.",
+        "method": "Born-digital PDF layout text was extracted in page order; page furniture was removed and visual line wraps were merged mechanically. Every substantive non-whitespace character was independently cross-checked against Poppler text extraction.",
+        "editorialEnglish": "Concise English Article headings are project-authored orientation metadata and are expressly separated from the operative Portuguese text."
+      },
+      "statusReview": {
+        "status": "pending-bill-not-enacted",
+        "senateSubstituteApprovedOn": "2024-12-10",
+        "autographDatedOn": "2025-01-31",
+        "transmittedToChamberOn": "2025-03-17",
+        "currentBody": "Comissão Especial sobre Inteligência Artificial (PL 2338/23)",
+        "currentStage": "Aguardando Parecer do(a) Relator(a)",
+        "finalLawUrn": null,
+        "effectiveFrom": null,
+        "reviewedOn": "2026-07-20",
+        "conclusion": "PL 2338/2023 remains under consideration in the Chamber of Deputies. It has not been enacted or published as a law, so Article 80's proposed commencement schedule has no present legal effect."
+      },
+      "reuse": {
+        "status": "government-edict",
+        "basis": "Article 8(IV) of Lei nº 9.610/1998 excludes treaty, convention, law, decree, regulation, judicial-decision and other official-act texts from copyright protection.",
+        "source": "https://www.planalto.gov.br/ccivil_03/leis/l9610.htm"
+      }
+    }
+  ],
+  "integration": {
+    "status": "not-performed-by-design",
+    "reason": "This handoff is a corpus-only deliverable. Application integration and shared aggregate files were outside this task's edit scope.",
+    "filesNotEdited": [
+      "app/regulation-explorer.tsx",
+      "app/globals.css",
+      "data/v2/instruments.json",
+      "data/v2/provisions.json",
+      "data/v2/source-audit.json",
+      "README.md"
+    ]
+  }
+}

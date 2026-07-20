@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-07-20",
+  "generatedBy": "scripts/import-us-state-ai-laws.py",
+  "corpora": {
+    "us-ca-sb-1047-2024": {
+      "path": "data/v2/us-ca-sb1047-2024-provisions.json",
+      "nodeCount": 18,
+      "sha256": "b3b2ad0573bd81f1079be90b5ff0b3b97fe577fc5aef4d3b07ad73e3331b3c87",
+      "sourceBodyCanonicalSha256": "527079a7df2fd4af95c0ccf9dd00fe726fb3292290a57f399a1a7b835acc8a78",
+      "orderedSourceUnitIds": [
+        "us-ca-sb1047-2024-enacting-formula",
+        "us-ca-sb1047-2024-sec-1",
+        "us-ca-sb1047-2024-sec-2",
+        "us-ca-sb1047-2024-sec-3-enacting",
+        "us-ca-sb1047-2024-proposed-bpc-22602",
+        "us-ca-sb1047-2024-proposed-bpc-22603",
+        "us-ca-sb1047-2024-proposed-bpc-22604",
+        "us-ca-sb1047-2024-proposed-bpc-22606",
+        "us-ca-sb1047-2024-proposed-bpc-22607",
+        "us-ca-sb1047-2024-proposed-bpc-22608",
+        "us-ca-sb1047-2024-proposed-bpc-22609",
+        "us-ca-sb1047-2024-sec-4-enacting",
+        "us-ca-sb1047-2024-proposed-gov-11547-6",
+        "us-ca-sb1047-2024-sec-5-enacting",
+        "us-ca-sb1047-2024-proposed-gov-11547-6-1",
+        "us-ca-sb1047-2024-sec-6",
+        "us-ca-sb1047-2024-sec-7",
+        "us-ca-sb1047-2024-sec-8"
+      ],
+      "billSectionCount": 8,
+      "proposedCodeSectionCount": 9,
+      "completeness": "All eight sections of the enrolled bill body, all nine proposed code sections, and the enacting formula are preserved once and in source order. The Legislative Counsel's digest remains frozen in the official source snapshot but is not misclassified as operative bill text."
+    },
+    "us-co-sb26-189-admt-2026": {
+      "path": "data/v2/us-co-ai-act-current-provisions.json",
+      "nodeCount": 18,
+      "sha256": "14196dfdc424f96903fa7673b79f3084b66dbec42cd9568734280ba74e9b0338",
+      "sourceBodyCanonicalSha256": "bdcfeadddb393c8ebbb77268039ff243fb5a17fccb0d2a65f356edd85406bc3c",
+      "orderedSourceUnitIds": [
+        "us-co-ai-act-2026-enacting-formula",
+        "us-co-ai-act-2026-sec-1-enacting",
+        "us-co-ai-act-current-6-1-1701",
+        "us-co-ai-act-current-6-1-1702",
+        "us-co-ai-act-current-6-1-1703",
+        "us-co-ai-act-current-6-1-1704",
+        "us-co-ai-act-current-6-1-1705",
+        "us-co-ai-act-current-6-1-1706",
+        "us-co-ai-act-current-6-1-1707",
+        "us-co-ai-act-current-6-1-1708",
+        "us-co-ai-act-current-6-1-1709",
+        "us-co-ai-act-2026-sec-2-enacting",
+        "us-co-ai-act-current-6-1-105-1-uuuu",
+        "us-co-ai-act-2026-sec-3-enacting",
+        "us-co-ai-act-current-10-3-1104-9-3-e",
+        "us-co-ai-act-2026-sec-4",
+        "us-co-ai-act-2026-sec-5",
+        "us-co-ai-act-2026-sec-6"
+      ],
+      "part17SectionCount": 9,
+      "additionalStatutoryProvisionCount": 2,
+      "sessionLawAdministrativeSectionCount": 3,
+      "enactingOrWrapperNodeCount": 4,
+      "minimumDualExtractionAlignmentRatio": 0.993915858,
+      "completeness": "The complete enacted body of SB 26-189 is represented from the enacting formula through the safety clause: all nine reenacted Part 17 sections, both additional statutory provisions, all administrative/effective-date sections, and the necessary enacting wrappers."
+    }
+  },
+  "lifecycleBoundary": {
+    "us-ca-sb-1047-2024": "Enrolled 3 September 2024, presented to the Governor 9 September 2024, vetoed 29 September 2024, and never enacted. Every node is historical-only and has appliesFrom=null.",
+    "us-co-sb26-189-admt-2026": "SB 24-205 was approved 17 May 2024; SB 25B-004 delayed its requirements; SB 26-189 was approved 14 May 2026 and repealed and reenacted Part 17. Specified subdivisions took effect on passage, while the Act generally takes effect and applies to consequential decisions on 1 January 2027."
+  },
+  "versionLineage": {
+    "us-co-sb26-189-admt-2026": [
+      {
+        "measure": "SB 24-205",
+        "chapter": "2024 Session Laws, chapter 198",
+        "approvedOn": "2024-05-17",
+        "actEffectiveOn": "2024-05-17",
+        "originalPrincipalDutyDate": "2026-02-01",
+        "versionRole": "original-enactment-historical-version"
+      },
+      {
+        "measure": "SB 25B-004",
+        "chapter": "2025 First Extraordinary Session Laws, chapter 3",
+        "approvedOn": "2025-08-28",
+        "actEffectiveOn": "2025-11-25",
+        "changedPrincipalDutyDateTo": "2026-06-30",
+        "versionRole": "delay-amendment-superseded-by-2026-reenactment"
+      },
+      {
+        "measure": "SB 26-189",
+        "chapter": "2026 Session Laws, chapter 131",
+        "approvedOn": "2026-05-14",
+        "actEffectiveDates": [
+          "2026-05-14",
+          "2027-01-01"
+        ],
+        "principalApplicabilityDate": "2027-01-01",
+        "versionRole": "current-repeal-and-reenactment-through-2026-07-20"
+      }
+    ]
+  },
+  "sourceMethod": {
+    "california": "Official California Legislative Information HTML provides the enrolled bill's block structure and complete bill body; the separately frozen official status page proves veto and retains the Governor's veto message.",
+    "colorado": "The official chapter 131 session-law PDF controls. Its embedded text-layer characters are retained, while independently frozen OCR supplies whitespace boundaries only. Historical signed and session-law PDFs document the version lineage."
+  },
+  "snapshots": [
+    {
+      "instrumentId": "us-ca-sb-1047-2024",
+      "role": "official-enrolled-bill-structured-source",
+      "path": "data/v2/source-snapshots/us-ca-sb1047-2024-enrolled.html",
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB1047&version=20230SB104788ENR",
+      "sha256": "d227db35f91a123dd0461b91fed474527250ea4ec7c064b38750fe497751c80a",
+      "legalStatus": "Official enrolled bill text"
+    },
+    {
+      "instrumentId": "us-ca-sb-1047-2024",
+      "role": "official-terminal-status-and-veto-message",
+      "path": "data/v2/source-snapshots/us-ca-sb1047-2024-official-status.html",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1047",
+      "sha256": "7ef92362a9a960dd92c03de3b4810784878f853865161ffa876a1aa9d57b6146",
+      "legalStatus": "Official veto record"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-original-signed-act-history",
+      "path": "data/v2/source-snapshots/us-co-sb24-205-signed-act.pdf",
+      "url": "https://leg.colorado.gov/bill_files/47770/download",
+      "sha256": "78e005452a2a05176618c4b84f2b772d14b47eb1b8e556414a40fe49fae98d77",
+      "legalStatus": "Historical signed act; superseded version"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-original-session-law-history",
+      "path": "data/v2/source-snapshots/us-co-sb24-205-ch198-session-law.pdf",
+      "url": "https://leg.colorado.gov/laws/session-laws/SB24-205/198/download",
+      "sha256": "2814096f203618c2f7e9aaff9e121af67df8efcd6edfa56c5cba22835c074138",
+      "legalStatus": "2024 Session Laws chapter 198; historical version"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-original-lifecycle-page",
+      "path": "data/v2/source-snapshots/us-co-sb24-205-official-bill-page.html",
+      "url": "https://leg.colorado.gov/bills/sb24-205",
+      "sha256": "b05762879e252c16a88dc2f34d45ec5e6743ac7fc248d6b4b83dff6dc5e35c39",
+      "legalStatus": "Approval and original effective-date record"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-delay-session-law-history",
+      "path": "data/v2/source-snapshots/us-co-sb25b-004-ch3-session-law.pdf",
+      "url": "https://leg.colorado.gov/laws/session-laws/SB25B-004/3/download",
+      "sha256": "6f4342c93258b78f67e69e63516489eb6f4b97aa5766ab0235d7fdb1a4138733",
+      "legalStatus": "2025 extraordinary-session delay; superseded by 2026 reenactment"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-delay-lifecycle-page",
+      "path": "data/v2/source-snapshots/us-co-sb25b-004-official-bill-page.html",
+      "url": "https://leg.colorado.gov/bills/sb25b-004",
+      "sha256": "17ef476efc54e2e470be0d022b8deb8664b381e030a25492b415d1c572af6511",
+      "legalStatus": "Approval and effective-date record"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-current-session-law",
+      "path": "data/v2/source-snapshots/us-co-sb26-189-ch131-session-law.pdf",
+      "url": "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download",
+      "sha256": "cba54050dcbe4b4da65868b218ff1bdb264d08e5856e6919b6713562a730a973",
+      "legalStatus": "Controlling enacted source through 20 July 2026"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "official-current-lifecycle-page",
+      "path": "data/v2/source-snapshots/us-co-sb26-189-official-bill-page.html",
+      "url": "https://leg.colorado.gov/bills/SB26-189",
+      "sha256": "a93fa1874d2af42b1ba2e2fed01d21cdfde50c16a21c35780b076bde435300ea",
+      "legalStatus": "Signed measure and current lifecycle record"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "derived-pdf-text-layer-snapshot",
+      "path": "data/v2/source-snapshots/us-co-sb26-189-ch131-pdftotext-raw.txt",
+      "url": "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download",
+      "sha256": "83a049df84c96939952760d098b43bc78e986c1eb9741d34062428f37740a78c",
+      "legalStatus": "Derived from controlling PDF with pdftotext -raw; character source"
+    },
+    {
+      "instrumentId": "us-co-sb26-189-admt-2026",
+      "role": "derived-independent-ocr-spacing-audit",
+      "path": "data/v2/source-snapshots/us-co-sb26-189-ch131-tesseract-ocr.txt",
+      "url": "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download",
+      "sha256": "58b5fc9b85803bb58e3f6092faf623dd94c286abf143fc43ad8f5713efde26d5",
+      "legalStatus": "Tesseract 5.5.1, 400 dpi, psm 3; whitespace evidence only"
+    }
+  ],
+  "rights": {
+    "us-ca-sb-1047-2024": {
+      "reuseStatus": "public-domain-california-legislative-information",
+      "basis": "California Government Code § 10248.5",
+      "basisUrl": "https://leginfo.legislature.ca.gov/",
+      "attribution": "Source: California Legislative Information, enrolled SB 1047 (2023-2024), version 20230SB104788ENR, and official bill-status record, retrieved 20 July 2026.",
+      "scopeNote": "The California Legislative Information site states that the information described in Government Code § 10248(a), including bill text, history, status, and veto messages, is in the public domain."
+    },
+    "us-co-sb26-189-admt-2026": {
+      "reuseStatus": "official-public-legislative-record-license-not-asserted",
+      "rightsHolder": "State of Colorado",
+      "license": null,
+      "attribution": "Source: Colorado General Assembly, Session Laws of Colorado 2026, chapter 131 (SB 26-189), with official legislative-history records for SB 24-205 and SB 25B-004, retrieved 20 July 2026.",
+      "conditionsNote": "This research corpus reproduces official public legislative records with source attribution. It makes no independent public-domain or open-license conclusion for Colorado state works."
+    }
+  }
+}

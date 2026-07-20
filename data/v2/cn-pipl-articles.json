@@ -1,0 +1,2789 @@
+[
+  {
+    "id": "cn-pipl-art-1",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "1",
+    "label": "Article 1",
+    "originalTitle": "第一条",
+    "title": "Article 1",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "为了保护个人信息权益，规范个人信息处理活动，促进个人信息合理利用，根据宪法，制定本法。"
+    ],
+    "fullText": "为了保护个人信息权益，规范个人信息处理活动，促进个人信息合理利用，根据宪法，制定本法。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "3a628f652a371f54b7724e6e96ed5215bff9157ec8906181a4e07d2297828a51"
+  },
+  {
+    "id": "cn-pipl-art-2",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "2",
+    "label": "Article 2",
+    "originalTitle": "第二条",
+    "title": "Article 2",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "自然人的个人信息受法律保护，任何组织、个人不得侵害自然人的个人信息权益。"
+    ],
+    "fullText": "自然人的个人信息受法律保护，任何组织、个人不得侵害自然人的个人信息权益。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "f707874ff20fe505f02483b153e5f5bda4e569a7c6c8b0875c793f40337bd9cb"
+  },
+  {
+    "id": "cn-pipl-art-3",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "3",
+    "label": "Article 3",
+    "originalTitle": "第三条",
+    "title": "Article 3",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "在中华人民共和国境内处理自然人个人信息的活动，适用本法。",
+      "在中华人民共和国境外处理中华人民共和国境内自然人个人信息的活动，有下列情形之一的，也适用本法：",
+      "（一）以向境内自然人提供产品或者服务为目的；",
+      "（二）分析、评估境内自然人的行为；",
+      "（三）法律、行政法规规定的其他情形。"
+    ],
+    "fullText": "在中华人民共和国境内处理自然人个人信息的活动，适用本法。\n\n在中华人民共和国境外处理中华人民共和国境内自然人个人信息的活动，有下列情形之一的，也适用本法：\n\n（一）以向境内自然人提供产品或者服务为目的；\n\n（二）分析、评估境内自然人的行为；\n\n（三）法律、行政法规规定的其他情形。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "da0503e132ca42e7b4611272b0fd6908a76c7ab8fadf88cf94957904fc1d56e0"
+  },
+  {
+    "id": "cn-pipl-art-4",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "4",
+    "label": "Article 4",
+    "originalTitle": "第四条",
+    "title": "Article 4",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息是以电子或者其他方式记录的与已识别或者可识别的自然人有关的各种信息，不包括匿名化处理后的信息。",
+      "个人信息的处理包括个人信息的收集、存储、使用、加工、传输、提供、公开、删除等。"
+    ],
+    "fullText": "个人信息是以电子或者其他方式记录的与已识别或者可识别的自然人有关的各种信息，不包括匿名化处理后的信息。\n\n个人信息的处理包括个人信息的收集、存储、使用、加工、传输、提供、公开、删除等。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "8c5313d77f811907fb5a6103115dc575bab5d8093423ce43a3bf54cb9fc11934"
+  },
+  {
+    "id": "cn-pipl-art-5",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "5",
+    "label": "Article 5",
+    "originalTitle": "第五条",
+    "title": "Article 5",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息应当遵循合法、正当、必要和诚信原则，不得通过误导、欺诈、胁迫等方式处理个人信息。"
+    ],
+    "fullText": "处理个人信息应当遵循合法、正当、必要和诚信原则，不得通过误导、欺诈、胁迫等方式处理个人信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "2613714c8bf5ac46f01e8c78ee8aff2a3b4af3575af688922f594d35adc3a60a"
+  },
+  {
+    "id": "cn-pipl-art-6",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "6",
+    "label": "Article 6",
+    "originalTitle": "第六条",
+    "title": "Article 6",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息应当具有明确、合理的目的，并应当与处理目的直接相关，采取对个人权益影响最小的方式。",
+      "收集个人信息，应当限于实现处理目的的最小范围，不得过度收集个人信息。"
+    ],
+    "fullText": "处理个人信息应当具有明确、合理的目的，并应当与处理目的直接相关，采取对个人权益影响最小的方式。\n\n收集个人信息，应当限于实现处理目的的最小范围，不得过度收集个人信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "17fc2f1b0215ca893c33648b90dcb7571c7cf88f4495db69d30e1afbb2649ca6"
+  },
+  {
+    "id": "cn-pipl-art-7",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "7",
+    "label": "Article 7",
+    "originalTitle": "第七条",
+    "title": "Article 7",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息应当遵循公开、透明原则，公开个人信息处理规则，明示处理的目的、方式和范围。"
+    ],
+    "fullText": "处理个人信息应当遵循公开、透明原则，公开个人信息处理规则，明示处理的目的、方式和范围。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "e05c115bf4c979349d8c6564d7f2669c4519b1cffa5c190cd930ef38e33855a3"
+  },
+  {
+    "id": "cn-pipl-art-8",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "8",
+    "label": "Article 8",
+    "originalTitle": "第八条",
+    "title": "Article 8",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息应当保证个人信息的质量，避免因个人信息不准确、不完整对个人权益造成不利影响。"
+    ],
+    "fullText": "处理个人信息应当保证个人信息的质量，避免因个人信息不准确、不完整对个人权益造成不利影响。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "5e3d5e3fd3203036a6eac1243bbd3752afc1c79242273d2c4e4c31628ccbb6af"
+  },
+  {
+    "id": "cn-pipl-art-9",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "9",
+    "label": "Article 9",
+    "originalTitle": "第九条",
+    "title": "Article 9",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者应当对其个人信息处理活动负责，并采取必要措施保障所处理的个人信息的安全。"
+    ],
+    "fullText": "个人信息处理者应当对其个人信息处理活动负责，并采取必要措施保障所处理的个人信息的安全。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "d1900714f17099c81fde629b70e32f290b484581d9be16b240b6aea5ef4e27ed"
+  },
+  {
+    "id": "cn-pipl-art-10",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "10",
+    "label": "Article 10",
+    "originalTitle": "第十条",
+    "title": "Article 10",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "任何组织、个人不得非法收集、使用、加工、传输他人个人信息，不得非法买卖、提供或者公开他人个人信息；不得从事危害国家安全、公共利益的个人信息处理活动。"
+    ],
+    "fullText": "任何组织、个人不得非法收集、使用、加工、传输他人个人信息，不得非法买卖、提供或者公开他人个人信息；不得从事危害国家安全、公共利益的个人信息处理活动。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "0b737fbb80240e564c0d04f2a6e68ea55fd7d199c96345a0fe7bd9c539daf041"
+  },
+  {
+    "id": "cn-pipl-art-11",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "11",
+    "label": "Article 11",
+    "originalTitle": "第十一条",
+    "title": "Article 11",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家建立健全个人信息保护制度，预防和惩治侵害个人信息权益的行为，加强个人信息保护宣传教育，推动形成政府、企业、相关社会组织、公众共同参与个人信息保护的良好环境。"
+    ],
+    "fullText": "国家建立健全个人信息保护制度，预防和惩治侵害个人信息权益的行为，加强个人信息保护宣传教育，推动形成政府、企业、相关社会组织、公众共同参与个人信息保护的良好环境。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "bd01990dcccb19ce8173bed51fb7739b57dbd1b90afa18a82b08a71525003c9f"
+  },
+  {
+    "id": "cn-pipl-art-12",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "12",
+    "label": "Article 12",
+    "originalTitle": "第十二条",
+    "title": "Article 12",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-1",
+      "label": "Chapter I",
+      "title": "General Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家积极参与个人信息保护国际规则的制定，促进个人信息保护方面的国际交流与合作，推动与其他国家、地区、国际组织之间的个人信息保护规则、标准等互认。"
+    ],
+    "fullText": "国家积极参与个人信息保护国际规则的制定，促进个人信息保护方面的国际交流与合作，推动与其他国家、地区、国际组织之间的个人信息保护规则、标准等互认。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "bafd610f1fab3e0f9976c9472d4dcb1d1960cc8c9e118a74e7ae326c0fdc877a"
+  },
+  {
+    "id": "cn-pipl-art-13",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "13",
+    "label": "Article 13",
+    "originalTitle": "第十三条",
+    "title": "Article 13",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "符合下列情形之一的，个人信息处理者方可处理个人信息：",
+      "（一）取得个人的同意；",
+      "（二）为订立、履行个人作为一方当事人的合同所必需，或者按照依法制定的劳动规章制度和依法签订的集体合同实施人力资源管理所必需；",
+      "（三）为履行法定职责或者法定义务所必需；",
+      "（四）为应对突发公共卫生事件，或者紧急情况下为保护自然人的生命健康和财产安全所必需；",
+      "（五）为公共利益实施新闻报道、舆论监督等行为，在合理的范围内处理个人信息；",
+      "（六）依照本法规定在合理的范围内处理个人自行公开或者其他已经合法公开的个人信息；",
+      "（七）法律、行政法规规定的其他情形。",
+      "依照本法其他有关规定，处理个人信息应当取得个人同意，但是有前款第二项至第七项规定情形的，不需取得个人同意。"
+    ],
+    "fullText": "符合下列情形之一的，个人信息处理者方可处理个人信息：\n\n（一）取得个人的同意；\n\n（二）为订立、履行个人作为一方当事人的合同所必需，或者按照依法制定的劳动规章制度和依法签订的集体合同实施人力资源管理所必需；\n\n（三）为履行法定职责或者法定义务所必需；\n\n（四）为应对突发公共卫生事件，或者紧急情况下为保护自然人的生命健康和财产安全所必需；\n\n（五）为公共利益实施新闻报道、舆论监督等行为，在合理的范围内处理个人信息；\n\n（六）依照本法规定在合理的范围内处理个人自行公开或者其他已经合法公开的个人信息；\n\n（七）法律、行政法规规定的其他情形。\n\n依照本法其他有关规定，处理个人信息应当取得个人同意，但是有前款第二项至第七项规定情形的，不需取得个人同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "300c4ac3ecc6582b385f54cc844e1e5ed7ca06b0c9d7bb9aacdce2e3b0d1a356"
+  },
+  {
+    "id": "cn-pipl-art-14",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "14",
+    "label": "Article 14",
+    "originalTitle": "第十四条",
+    "title": "Article 14",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "基于个人同意处理个人信息的，该同意应当由个人在充分知情的前提下自愿、明确作出。法律、行政法规规定处理个人信息应当取得个人单独同意或者书面同意的，从其规定。",
+      "个人信息的处理目的、处理方式和处理的个人信息种类发生变更的，应当重新取得个人同意。"
+    ],
+    "fullText": "基于个人同意处理个人信息的，该同意应当由个人在充分知情的前提下自愿、明确作出。法律、行政法规规定处理个人信息应当取得个人单独同意或者书面同意的，从其规定。\n\n个人信息的处理目的、处理方式和处理的个人信息种类发生变更的，应当重新取得个人同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "07630e013fa3eea8020c451aa52ffd4e40d93e394061406c7fc8265d35864e3f"
+  },
+  {
+    "id": "cn-pipl-art-15",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "15",
+    "label": "Article 15",
+    "originalTitle": "第十五条",
+    "title": "Article 15",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "基于个人同意处理个人信息的，个人有权撤回其同意。个人信息处理者应当提供便捷的撤回同意的方式。",
+      "个人撤回同意，不影响撤回前基于个人同意已进行的个人信息处理活动的效力。"
+    ],
+    "fullText": "基于个人同意处理个人信息的，个人有权撤回其同意。个人信息处理者应当提供便捷的撤回同意的方式。\n\n个人撤回同意，不影响撤回前基于个人同意已进行的个人信息处理活动的效力。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "127ea601676b6c22580c182c925de5b26c8f7a88194807bf1be21faf2c2f06a4"
+  },
+  {
+    "id": "cn-pipl-art-16",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "16",
+    "label": "Article 16",
+    "originalTitle": "第十六条",
+    "title": "Article 16",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者不得以个人不同意处理其个人信息或者撤回同意为由，拒绝提供产品或者服务；处理个人信息属于提供产品或者服务所必需的除外。"
+    ],
+    "fullText": "个人信息处理者不得以个人不同意处理其个人信息或者撤回同意为由，拒绝提供产品或者服务；处理个人信息属于提供产品或者服务所必需的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "b343a6f87ac04da801882e42af941b8d8c42ba603c055d479885973fbec79ee7"
+  },
+  {
+    "id": "cn-pipl-art-17",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "17",
+    "label": "Article 17",
+    "originalTitle": "第十七条",
+    "title": "Article 17",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者在处理个人信息前，应当以显著方式、清晰易懂的语言真实、准确、完整地向个人告知下列事项：",
+      "（一）个人信息处理者的名称或者姓名和联系方式；",
+      "（二）个人信息的处理目的、处理方式，处理的个人信息种类、保存期限；",
+      "（三）个人行使本法规定权利的方式和程序；",
+      "（四）法律、行政法规规定应当告知的其他事项。",
+      "前款规定事项发生变更的，应当将变更部分告知个人。",
+      "个人信息处理者通过制定个人信息处理规则的方式告知第一款规定事项的，处理规则应当公开，并且便于查阅和保存。"
+    ],
+    "fullText": "个人信息处理者在处理个人信息前，应当以显著方式、清晰易懂的语言真实、准确、完整地向个人告知下列事项：\n\n（一）个人信息处理者的名称或者姓名和联系方式；\n\n（二）个人信息的处理目的、处理方式，处理的个人信息种类、保存期限；\n\n（三）个人行使本法规定权利的方式和程序；\n\n（四）法律、行政法规规定应当告知的其他事项。\n\n前款规定事项发生变更的，应当将变更部分告知个人。\n\n个人信息处理者通过制定个人信息处理规则的方式告知第一款规定事项的，处理规则应当公开，并且便于查阅和保存。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "2236d5df7a22e692dea25e66a122bbe66d780e4867d3a2a88f9c2799722719fb"
+  },
+  {
+    "id": "cn-pipl-art-18",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "18",
+    "label": "Article 18",
+    "originalTitle": "第十八条",
+    "title": "Article 18",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者处理个人信息，有法律、行政法规规定应当保密或者不需要告知的情形的，可以不向个人告知前条第一款规定的事项。",
+      "紧急情况下为保护自然人的生命健康和财产安全无法及时向个人告知的，个人信息处理者应当在紧急情况消除后及时告知。"
+    ],
+    "fullText": "个人信息处理者处理个人信息，有法律、行政法规规定应当保密或者不需要告知的情形的，可以不向个人告知前条第一款规定的事项。\n\n紧急情况下为保护自然人的生命健康和财产安全无法及时向个人告知的，个人信息处理者应当在紧急情况消除后及时告知。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "6695eaa2ed62733d91a8c91bf04eb7b8fc43fa43b57ad8f9d0030b5105832478"
+  },
+  {
+    "id": "cn-pipl-art-19",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "19",
+    "label": "Article 19",
+    "originalTitle": "第十九条",
+    "title": "Article 19",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "除法律、行政法规另有规定外，个人信息的保存期限应当为实现处理目的所必要的最短时间。"
+    ],
+    "fullText": "除法律、行政法规另有规定外，个人信息的保存期限应当为实现处理目的所必要的最短时间。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "8a8a103c79d4caed0513a612658d2b167006e4498be3c8d79c6d15101fbd195e"
+  },
+  {
+    "id": "cn-pipl-art-20",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "20",
+    "label": "Article 20",
+    "originalTitle": "第二十条",
+    "title": "Article 20",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "两个以上的个人信息处理者共同决定个人信息的处理目的和处理方式的，应当约定各自的权利和义务。但是，该约定不影响个人向其中任何一个个人信息处理者要求行使本法规定的权利。",
+      "个人信息处理者共同处理个人信息，侵害个人信息权益造成损害的，应当依法承担连带责任。"
+    ],
+    "fullText": "两个以上的个人信息处理者共同决定个人信息的处理目的和处理方式的，应当约定各自的权利和义务。但是，该约定不影响个人向其中任何一个个人信息处理者要求行使本法规定的权利。\n\n个人信息处理者共同处理个人信息，侵害个人信息权益造成损害的，应当依法承担连带责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "071d80fe173421337550c10943450b59a8a7a8201eb7a01fd4c3549ef41229ec"
+  },
+  {
+    "id": "cn-pipl-art-21",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "21",
+    "label": "Article 21",
+    "originalTitle": "第二十一条",
+    "title": "Article 21",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者委托处理个人信息的，应当与受托人约定委托处理的目的、期限、处理方式、个人信息的种类、保护措施以及双方的权利和义务等，并对受托人的个人信息处理活动进行监督。",
+      "受托人应当按照约定处理个人信息，不得超出约定的处理目的、处理方式等处理个人信息；委托合同不生效、无效、被撤销或者终止的，受托人应当将个人信息返还个人信息处理者或者予以删除，不得保留。",
+      "未经个人信息处理者同意，受托人不得转委托他人处理个人信息。"
+    ],
+    "fullText": "个人信息处理者委托处理个人信息的，应当与受托人约定委托处理的目的、期限、处理方式、个人信息的种类、保护措施以及双方的权利和义务等，并对受托人的个人信息处理活动进行监督。\n\n受托人应当按照约定处理个人信息，不得超出约定的处理目的、处理方式等处理个人信息；委托合同不生效、无效、被撤销或者终止的，受托人应当将个人信息返还个人信息处理者或者予以删除，不得保留。\n\n未经个人信息处理者同意，受托人不得转委托他人处理个人信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "834fb41b8cddcc1d9e1b4c8256dffcd603d7cbc79fc4c86921eeb0ef792dc493"
+  },
+  {
+    "id": "cn-pipl-art-22",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "22",
+    "label": "Article 22",
+    "originalTitle": "第二十二条",
+    "title": "Article 22",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者因合并、分立、解散、被宣告破产等原因需要转移个人信息的，应当向个人告知接收方的名称或者姓名和联系方式。接收方应当继续履行个人信息处理者的义务。接收方变更原先的处理目的、处理方式的，应当依照本法规定重新取得个人同意。"
+    ],
+    "fullText": "个人信息处理者因合并、分立、解散、被宣告破产等原因需要转移个人信息的，应当向个人告知接收方的名称或者姓名和联系方式。接收方应当继续履行个人信息处理者的义务。接收方变更原先的处理目的、处理方式的，应当依照本法规定重新取得个人同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "5f952b833885f1abb4d734f75c0836f98f9f5dc73dd73623afd07ffa847f4f92"
+  },
+  {
+    "id": "cn-pipl-art-23",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "23",
+    "label": "Article 23",
+    "originalTitle": "第二十三条",
+    "title": "Article 23",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者向其他个人信息处理者提供其处理的个人信息的，应当向个人告知接收方的名称或者姓名、联系方式、处理目的、处理方式和个人信息的种类，并取得个人的单独同意。接收方应当在上述处理目的、处理方式和个人信息的种类等范围内处理个人信息。接收方变更原先的处理目的、处理方式的，应当依照本法规定重新取得个人同意。"
+    ],
+    "fullText": "个人信息处理者向其他个人信息处理者提供其处理的个人信息的，应当向个人告知接收方的名称或者姓名、联系方式、处理目的、处理方式和个人信息的种类，并取得个人的单独同意。接收方应当在上述处理目的、处理方式和个人信息的种类等范围内处理个人信息。接收方变更原先的处理目的、处理方式的，应当依照本法规定重新取得个人同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "d9b5c0284b26dab5574168348470cbf500bed1482b421d11f0cc6b23fea3f524"
+  },
+  {
+    "id": "cn-pipl-art-24",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "24",
+    "label": "Article 24",
+    "originalTitle": "第二十四条",
+    "title": "Article 24",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者利用个人信息进行自动化决策，应当保证决策的透明度和结果公平、公正，不得对个人在交易价格等交易条件上实行不合理的差别待遇。",
+      "通过自动化决策方式向个人进行信息推送、商业营销，应当同时提供不针对其个人特征的选项，或者向个人提供便捷的拒绝方式。",
+      "通过自动化决策方式作出对个人权益有重大影响的决定，个人有权要求个人信息处理者予以说明，并有权拒绝个人信息处理者仅通过自动化决策的方式作出决定。"
+    ],
+    "fullText": "个人信息处理者利用个人信息进行自动化决策，应当保证决策的透明度和结果公平、公正，不得对个人在交易价格等交易条件上实行不合理的差别待遇。\n\n通过自动化决策方式向个人进行信息推送、商业营销，应当同时提供不针对其个人特征的选项，或者向个人提供便捷的拒绝方式。\n\n通过自动化决策方式作出对个人权益有重大影响的决定，个人有权要求个人信息处理者予以说明，并有权拒绝个人信息处理者仅通过自动化决策的方式作出决定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "ae6b669451763b351aca9e28d22807746ad93f6ac548cb99916b8d06e0eb1354"
+  },
+  {
+    "id": "cn-pipl-art-25",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "25",
+    "label": "Article 25",
+    "originalTitle": "第二十五条",
+    "title": "Article 25",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者不得公开其处理的个人信息，取得个人单独同意的除外。"
+    ],
+    "fullText": "个人信息处理者不得公开其处理的个人信息，取得个人单独同意的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "fd84d70f2ee1e328209678e1490b96826ae2e4eb6a0075f2074d36238c932084"
+  },
+  {
+    "id": "cn-pipl-art-26",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "26",
+    "label": "Article 26",
+    "originalTitle": "第二十六条",
+    "title": "Article 26",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "在公共场所安装图像采集、个人身份识别设备，应当为维护公共安全所必需，遵守国家有关规定，并设置显著的提示标识。所收集的个人图像、身份识别信息只能用于维护公共安全的目的，不得用于其他目的；取得个人单独同意的除外。"
+    ],
+    "fullText": "在公共场所安装图像采集、个人身份识别设备，应当为维护公共安全所必需，遵守国家有关规定，并设置显著的提示标识。所收集的个人图像、身份识别信息只能用于维护公共安全的目的，不得用于其他目的；取得个人单独同意的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "1bc9f13e5f2273f45d7d5603b95b2261434da2b440d00683164ef9dcd50138a1"
+  },
+  {
+    "id": "cn-pipl-art-27",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "27",
+    "label": "Article 27",
+    "originalTitle": "第二十七条",
+    "title": "Article 27",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-1",
+      "label": "Section 1",
+      "title": "General Provisions"
+    },
+    "paragraphs": [
+      "个人信息处理者可以在合理的范围内处理个人自行公开或者其他已经合法公开的个人信息；个人明确拒绝的除外。个人信息处理者处理已公开的个人信息，对个人权益有重大影响的，应当依照本法规定取得个人同意。"
+    ],
+    "fullText": "个人信息处理者可以在合理的范围内处理个人自行公开或者其他已经合法公开的个人信息；个人明确拒绝的除外。个人信息处理者处理已公开的个人信息，对个人权益有重大影响的，应当依照本法规定取得个人同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "b3bd6409121b21a8cf5be56b483a724c3ccce2e4695c3c4bbb7154b2a64228be"
+  },
+  {
+    "id": "cn-pipl-art-28",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "28",
+    "label": "Article 28",
+    "originalTitle": "第二十八条",
+    "title": "Article 28",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-2",
+      "label": "Section 2",
+      "title": "Rules for Processing Sensitive Personal Information"
+    },
+    "paragraphs": [
+      "敏感个人信息是一旦泄露或者非法使用，容易导致自然人的人格尊严受到侵害或者人身、财产安全受到危害的个人信息，包括生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹等信息，以及不满十四周岁未成年人的个人信息。",
+      "只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，个人信息处理者方可处理敏感个人信息。"
+    ],
+    "fullText": "敏感个人信息是一旦泄露或者非法使用，容易导致自然人的人格尊严受到侵害或者人身、财产安全受到危害的个人信息，包括生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹等信息，以及不满十四周岁未成年人的个人信息。\n\n只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，个人信息处理者方可处理敏感个人信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "2a1bbdf67a2d188bc19cdc890fa72232cfad99fe8bee76af685c3156211306cf"
+  },
+  {
+    "id": "cn-pipl-art-29",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "29",
+    "label": "Article 29",
+    "originalTitle": "第二十九条",
+    "title": "Article 29",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-2",
+      "label": "Section 2",
+      "title": "Rules for Processing Sensitive Personal Information"
+    },
+    "paragraphs": [
+      "处理敏感个人信息应当取得个人的单独同意；法律、行政法规规定处理敏感个人信息应当取得书面同意的，从其规定。"
+    ],
+    "fullText": "处理敏感个人信息应当取得个人的单独同意；法律、行政法规规定处理敏感个人信息应当取得书面同意的，从其规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "ec341276fada70f962cd93c787960829db465411b60956df286fd67ef1ce80ca"
+  },
+  {
+    "id": "cn-pipl-art-30",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "30",
+    "label": "Article 30",
+    "originalTitle": "第三十条",
+    "title": "Article 30",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-2",
+      "label": "Section 2",
+      "title": "Rules for Processing Sensitive Personal Information"
+    },
+    "paragraphs": [
+      "个人信息处理者处理敏感个人信息的，除本法第十七条第一款规定的事项外，还应当向个人告知处理敏感个人信息的必要性以及对个人权益的影响；依照本法规定可以不向个人告知的除外。"
+    ],
+    "fullText": "个人信息处理者处理敏感个人信息的，除本法第十七条第一款规定的事项外，还应当向个人告知处理敏感个人信息的必要性以及对个人权益的影响；依照本法规定可以不向个人告知的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "258dba1527ad34d584b26a4670d82d692f2b41c812eb12b59a7c6f1b5435a15d"
+  },
+  {
+    "id": "cn-pipl-art-31",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "31",
+    "label": "Article 31",
+    "originalTitle": "第三十一条",
+    "title": "Article 31",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-2",
+      "label": "Section 2",
+      "title": "Rules for Processing Sensitive Personal Information"
+    },
+    "paragraphs": [
+      "个人信息处理者处理不满十四周岁未成年人个人信息的，应当取得未成年人的父母或者其他监护人的同意。",
+      "个人信息处理者处理不满十四周岁未成年人个人信息的，应当制定专门的个人信息处理规则。"
+    ],
+    "fullText": "个人信息处理者处理不满十四周岁未成年人个人信息的，应当取得未成年人的父母或者其他监护人的同意。\n\n个人信息处理者处理不满十四周岁未成年人个人信息的，应当制定专门的个人信息处理规则。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "103555f901f8992723d8479c98c28675b5556004fd5a97b22b94be2cd74d0857"
+  },
+  {
+    "id": "cn-pipl-art-32",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "32",
+    "label": "Article 32",
+    "originalTitle": "第三十二条",
+    "title": "Article 32",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-2",
+      "label": "Section 2",
+      "title": "Rules for Processing Sensitive Personal Information"
+    },
+    "paragraphs": [
+      "法律、行政法规对处理敏感个人信息规定应当取得相关行政许可或者作出其他限制的，从其规定。"
+    ],
+    "fullText": "法律、行政法规对处理敏感个人信息规定应当取得相关行政许可或者作出其他限制的，从其规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "282621248ca122d471eb9ae928aae98cb6c0ddc8960ac8e7774d8cba26ced03b"
+  },
+  {
+    "id": "cn-pipl-art-33",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "33",
+    "label": "Article 33",
+    "originalTitle": "第三十三条",
+    "title": "Article 33",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-3",
+      "label": "Section 3",
+      "title": "Special Provisions on Processing by State Organs"
+    },
+    "paragraphs": [
+      "国家机关处理个人信息的活动，适用本法；本节有特别规定的，适用本节规定。"
+    ],
+    "fullText": "国家机关处理个人信息的活动，适用本法；本节有特别规定的，适用本节规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "a982070de1a77ae35767ab105e697c76ce5426f50e4f9d9ed4534c982736001a"
+  },
+  {
+    "id": "cn-pipl-art-34",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "34",
+    "label": "Article 34",
+    "originalTitle": "第三十四条",
+    "title": "Article 34",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-3",
+      "label": "Section 3",
+      "title": "Special Provisions on Processing by State Organs"
+    },
+    "paragraphs": [
+      "国家机关为履行法定职责处理个人信息，应当依照法律、行政法规规定的权限、程序进行，不得超出履行法定职责所必需的范围和限度。"
+    ],
+    "fullText": "国家机关为履行法定职责处理个人信息，应当依照法律、行政法规规定的权限、程序进行，不得超出履行法定职责所必需的范围和限度。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "badafd1ca1c28815263eeb87bc0eaac8488e088d8c1c2cf60fe3acc43e39e143"
+  },
+  {
+    "id": "cn-pipl-art-35",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "35",
+    "label": "Article 35",
+    "originalTitle": "第三十五条",
+    "title": "Article 35",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-3",
+      "label": "Section 3",
+      "title": "Special Provisions on Processing by State Organs"
+    },
+    "paragraphs": [
+      "国家机关为履行法定职责处理个人信息，应当依照本法规定履行告知义务；有本法第十八条第一款规定的情形，或者告知将妨碍国家机关履行法定职责的除外。"
+    ],
+    "fullText": "国家机关为履行法定职责处理个人信息，应当依照本法规定履行告知义务；有本法第十八条第一款规定的情形，或者告知将妨碍国家机关履行法定职责的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "caf10de6e3aea0afcf18feb010cd8b603ff61f51f43eee6bd5d482a972968e85"
+  },
+  {
+    "id": "cn-pipl-art-36",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "36",
+    "label": "Article 36",
+    "originalTitle": "第三十六条",
+    "title": "Article 36",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-3",
+      "label": "Section 3",
+      "title": "Special Provisions on Processing by State Organs"
+    },
+    "paragraphs": [
+      "国家机关处理的个人信息应当在中华人民共和国境内存储；确需向境外提供的，应当进行安全评估。安全评估可以要求有关部门提供支持与协助。"
+    ],
+    "fullText": "国家机关处理的个人信息应当在中华人民共和国境内存储；确需向境外提供的，应当进行安全评估。安全评估可以要求有关部门提供支持与协助。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "a3ec73db9a254f15505f5b9995c13632803049f3c394c5d3ec27367a6b753437"
+  },
+  {
+    "id": "cn-pipl-art-37",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "37",
+    "label": "Article 37",
+    "originalTitle": "第三十七条",
+    "title": "Article 37",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-2",
+      "label": "Chapter II",
+      "title": "Rules for Processing Personal Information"
+    },
+    "section": {
+      "id": "cn-pipl-chapter-2-section-3",
+      "label": "Section 3",
+      "title": "Special Provisions on Processing by State Organs"
+    },
+    "paragraphs": [
+      "法律、法规授权的具有管理公共事务职能的组织为履行法定职责处理个人信息，适用本法关于国家机关处理个人信息的规定。"
+    ],
+    "fullText": "法律、法规授权的具有管理公共事务职能的组织为履行法定职责处理个人信息，适用本法关于国家机关处理个人信息的规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "cc8834ccd3e1e8dd5cf3f21e814dfb7a5c544dab096e8d6f70dd0e8b7195a725"
+  },
+  {
+    "id": "cn-pipl-art-38",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "38",
+    "label": "Article 38",
+    "originalTitle": "第三十八条",
+    "title": "Article 38",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者因业务等需要，确需向中华人民共和国境外提供个人信息的，应当具备下列条件之一：",
+      "（一）依照本法第四十条的规定通过国家网信部门组织的安全评估；",
+      "（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；",
+      "（三）按照国家网信部门制定的标准合同与境外接收方订立合同，约定双方的权利和义务；",
+      "（四）法律、行政法规或者国家网信部门规定的其他条件。",
+      "中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。",
+      "个人信息处理者应当采取必要措施，保障境外接收方处理个人信息的活动达到本法规定的个人信息保护标准。"
+    ],
+    "fullText": "个人信息处理者因业务等需要，确需向中华人民共和国境外提供个人信息的，应当具备下列条件之一：\n\n（一）依照本法第四十条的规定通过国家网信部门组织的安全评估；\n\n（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；\n\n（三）按照国家网信部门制定的标准合同与境外接收方订立合同，约定双方的权利和义务；\n\n（四）法律、行政法规或者国家网信部门规定的其他条件。\n\n中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。\n\n个人信息处理者应当采取必要措施，保障境外接收方处理个人信息的活动达到本法规定的个人信息保护标准。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "aef0316a07f41b5726997ce6bf8dc04af7bea1e88d87e2ab416f731396ad3204"
+  },
+  {
+    "id": "cn-pipl-art-39",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "39",
+    "label": "Article 39",
+    "originalTitle": "第三十九条",
+    "title": "Article 39",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者向中华人民共和国境外提供个人信息的，应当向个人告知境外接收方的名称或者姓名、联系方式、处理目的、处理方式、个人信息的种类以及个人向境外接收方行使本法规定权利的方式和程序等事项，并取得个人的单独同意。"
+    ],
+    "fullText": "个人信息处理者向中华人民共和国境外提供个人信息的，应当向个人告知境外接收方的名称或者姓名、联系方式、处理目的、处理方式、个人信息的种类以及个人向境外接收方行使本法规定权利的方式和程序等事项，并取得个人的单独同意。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "7618e2c66504dc4dc4daf062b5b2382e2763d0e5ee068a95337eab41787c9cd1"
+  },
+  {
+    "id": "cn-pipl-art-40",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "40",
+    "label": "Article 40",
+    "originalTitle": "第四十条",
+    "title": "Article 40",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "关键信息基础设施运营者和处理个人信息达到国家网信部门规定数量的个人信息处理者，应当将在中华人民共和国境内收集和产生的个人信息存储在境内。确需向境外提供的，应当通过国家网信部门组织的安全评估；法律、行政法规和国家网信部门规定可以不进行安全评估的，从其规定。"
+    ],
+    "fullText": "关键信息基础设施运营者和处理个人信息达到国家网信部门规定数量的个人信息处理者，应当将在中华人民共和国境内收集和产生的个人信息存储在境内。确需向境外提供的，应当通过国家网信部门组织的安全评估；法律、行政法规和国家网信部门规定可以不进行安全评估的，从其规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "dcd8b0542b5393bb2da2ffb6a48a9a02ed38485497b961b293eb503fb9a49200"
+  },
+  {
+    "id": "cn-pipl-art-41",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "41",
+    "label": "Article 41",
+    "originalTitle": "第四十一条",
+    "title": "Article 41",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "中华人民共和国主管机关根据有关法律和中华人民共和国缔结或者参加的国际条约、协定，或者按照平等互惠原则，处理外国司法或者执法机构关于提供存储于境内个人信息的请求。非经中华人民共和国主管机关批准，个人信息处理者不得向外国司法或者执法机构提供存储于中华人民共和国境内的个人信息。"
+    ],
+    "fullText": "中华人民共和国主管机关根据有关法律和中华人民共和国缔结或者参加的国际条约、协定，或者按照平等互惠原则，处理外国司法或者执法机构关于提供存储于境内个人信息的请求。非经中华人民共和国主管机关批准，个人信息处理者不得向外国司法或者执法机构提供存储于中华人民共和国境内的个人信息。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "dfa7b9188d1f1aa471b87f11eaa81056f1019a1f66d380845981de25f50d1ea0"
+  },
+  {
+    "id": "cn-pipl-art-42",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "42",
+    "label": "Article 42",
+    "originalTitle": "第四十二条",
+    "title": "Article 42",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "境外的组织、个人从事侵害中华人民共和国公民的个人信息权益，或者危害中华人民共和国国家安全、公共利益的个人信息处理活动的，国家网信部门可以将其列入限制或者禁止个人信息提供清单，予以公告，并采取限制或者禁止向其提供个人信息等措施。"
+    ],
+    "fullText": "境外的组织、个人从事侵害中华人民共和国公民的个人信息权益，或者危害中华人民共和国国家安全、公共利益的个人信息处理活动的，国家网信部门可以将其列入限制或者禁止个人信息提供清单，予以公告，并采取限制或者禁止向其提供个人信息等措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "403590c511c202df45f0fd121da9301f677ae86992d43b1f7d35d64679927fda"
+  },
+  {
+    "id": "cn-pipl-art-43",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "43",
+    "label": "Article 43",
+    "originalTitle": "第四十三条",
+    "title": "Article 43",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-3",
+      "label": "Chapter III",
+      "title": "Rules on the Cross-border Provision of Personal Information"
+    },
+    "section": null,
+    "paragraphs": [
+      "任何国家或者地区在个人信息保护方面对中华人民共和国采取歧视性的禁止、限制或者其他类似措施的，中华人民共和国可以根据实际情况对该国家或者地区对等采取措施。"
+    ],
+    "fullText": "任何国家或者地区在个人信息保护方面对中华人民共和国采取歧视性的禁止、限制或者其他类似措施的，中华人民共和国可以根据实际情况对该国家或者地区对等采取措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "c3ef074e539919bf219ec5ce8e9ceb9cf64eebdb1fd5335f6ca32f0be3b85472"
+  },
+  {
+    "id": "cn-pipl-art-44",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "44",
+    "label": "Article 44",
+    "originalTitle": "第四十四条",
+    "title": "Article 44",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人对其个人信息的处理享有知情权、决定权，有权限制或者拒绝他人对其个人信息进行处理；法律、行政法规另有规定的除外。"
+    ],
+    "fullText": "个人对其个人信息的处理享有知情权、决定权，有权限制或者拒绝他人对其个人信息进行处理；法律、行政法规另有规定的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "49b5dbed7ccbbb547e47e5cfb75e8835f8aa34496cdf6e747e5985c50578e255"
+  },
+  {
+    "id": "cn-pipl-art-45",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "45",
+    "label": "Article 45",
+    "originalTitle": "第四十五条",
+    "title": "Article 45",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人有权向个人信息处理者查阅、复制其个人信息；有本法第十八条第一款、第三十五条规定情形的除外。",
+      "个人请求查阅、复制其个人信息的，个人信息处理者应当及时提供。",
+      "个人请求将个人信息转移至其指定的个人信息处理者，符合国家网信部门规定条件的，个人信息处理者应当提供转移的途径。"
+    ],
+    "fullText": "个人有权向个人信息处理者查阅、复制其个人信息；有本法第十八条第一款、第三十五条规定情形的除外。\n\n个人请求查阅、复制其个人信息的，个人信息处理者应当及时提供。\n\n个人请求将个人信息转移至其指定的个人信息处理者，符合国家网信部门规定条件的，个人信息处理者应当提供转移的途径。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "1f872bc027506a1e148620bdc888d5ebd36a5fc259f0ec68288d5abafbbba288"
+  },
+  {
+    "id": "cn-pipl-art-46",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "46",
+    "label": "Article 46",
+    "originalTitle": "第四十六条",
+    "title": "Article 46",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人发现其个人信息不准确或者不完整的，有权请求个人信息处理者更正、补充。",
+      "个人请求更正、补充其个人信息的，个人信息处理者应当对其个人信息予以核实，并及时更正、补充。"
+    ],
+    "fullText": "个人发现其个人信息不准确或者不完整的，有权请求个人信息处理者更正、补充。\n\n个人请求更正、补充其个人信息的，个人信息处理者应当对其个人信息予以核实，并及时更正、补充。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "b14e98bcd46d97e7741cae64d42c8a07d32150c72bbfe6d7a3cf52cac60d6d42"
+  },
+  {
+    "id": "cn-pipl-art-47",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "47",
+    "label": "Article 47",
+    "originalTitle": "第四十七条",
+    "title": "Article 47",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "有下列情形之一的，个人信息处理者应当主动删除个人信息；个人信息处理者未删除的，个人有权请求删除：",
+      "（一）处理目的已实现、无法实现或者为实现处理目的不再必要；",
+      "（二）个人信息处理者停止提供产品或者服务，或者保存期限已届满；",
+      "（三）个人撤回同意；",
+      "（四）个人信息处理者违反法律、行政法规或者违反约定处理个人信息；",
+      "（五）法律、行政法规规定的其他情形。",
+      "法律、行政法规规定的保存期限未届满，或者删除个人信息从技术上难以实现的，个人信息处理者应当停止除存储和采取必要的安全保护措施之外的处理。"
+    ],
+    "fullText": "有下列情形之一的，个人信息处理者应当主动删除个人信息；个人信息处理者未删除的，个人有权请求删除：\n\n（一）处理目的已实现、无法实现或者为实现处理目的不再必要；\n\n（二）个人信息处理者停止提供产品或者服务，或者保存期限已届满；\n\n（三）个人撤回同意；\n\n（四）个人信息处理者违反法律、行政法规或者违反约定处理个人信息；\n\n（五）法律、行政法规规定的其他情形。\n\n法律、行政法规规定的保存期限未届满，或者删除个人信息从技术上难以实现的，个人信息处理者应当停止除存储和采取必要的安全保护措施之外的处理。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "d357810bf9cf6f534b7e80a9aa676c87efd68cb91bddcf65a1090de1e3adbd9e"
+  },
+  {
+    "id": "cn-pipl-art-48",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "48",
+    "label": "Article 48",
+    "originalTitle": "第四十八条",
+    "title": "Article 48",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人有权要求个人信息处理者对其个人信息处理规则进行解释说明。"
+    ],
+    "fullText": "个人有权要求个人信息处理者对其个人信息处理规则进行解释说明。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "7647126aadc3f8b0ba3c0eef10a4a3e968e42d24c4bd8805cacf4e6f7a2bd14c"
+  },
+  {
+    "id": "cn-pipl-art-49",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "49",
+    "label": "Article 49",
+    "originalTitle": "第四十九条",
+    "title": "Article 49",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "自然人死亡的，其近亲属为了自身的合法、正当利益，可以对死者的相关个人信息行使本章规定的查阅、复制、更正、删除等权利；死者生前另有安排的除外。"
+    ],
+    "fullText": "自然人死亡的，其近亲属为了自身的合法、正当利益，可以对死者的相关个人信息行使本章规定的查阅、复制、更正、删除等权利；死者生前另有安排的除外。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "c592bbd3c1087672cea401f68e7a2a3110074d489d95ae46508ff24312766bf8"
+  },
+  {
+    "id": "cn-pipl-art-50",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "50",
+    "label": "Article 50",
+    "originalTitle": "第五十条",
+    "title": "Article 50",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-4",
+      "label": "Chapter IV",
+      "title": "Rights of Individuals in Personal Information Processing Activities"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者应当建立便捷的个人行使权利的申请受理和处理机制。拒绝个人行使权利的请求的，应当说明理由。",
+      "个人信息处理者拒绝个人行使权利的请求的，个人可以依法向人民法院提起诉讼。"
+    ],
+    "fullText": "个人信息处理者应当建立便捷的个人行使权利的申请受理和处理机制。拒绝个人行使权利的请求的，应当说明理由。\n\n个人信息处理者拒绝个人行使权利的请求的，个人可以依法向人民法院提起诉讼。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "10bb9b36a556ad0338f772287bf8bec37debd581dcfe958ae709fff25f0401ac"
+  },
+  {
+    "id": "cn-pipl-art-51",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "51",
+    "label": "Article 51",
+    "originalTitle": "第五十一条",
+    "title": "Article 51",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者应当根据个人信息的处理目的、处理方式、个人信息的种类以及对个人权益的影响、可能存在的安全风险等，采取下列措施确保个人信息处理活动符合法律、行政法规的规定，并防止未经授权的访问以及个人信息泄露、篡改、丢失：",
+      "（一）制定内部管理制度和操作规程；",
+      "（二）对个人信息实行分类管理；",
+      "（三）采取相应的加密、去标识化等安全技术措施；",
+      "（四）合理确定个人信息处理的操作权限，并定期对从业人员进行安全教育和培训；",
+      "（五）制定并组织实施个人信息安全事件应急预案；",
+      "（六）法律、行政法规规定的其他措施。"
+    ],
+    "fullText": "个人信息处理者应当根据个人信息的处理目的、处理方式、个人信息的种类以及对个人权益的影响、可能存在的安全风险等，采取下列措施确保个人信息处理活动符合法律、行政法规的规定，并防止未经授权的访问以及个人信息泄露、篡改、丢失：\n\n（一）制定内部管理制度和操作规程；\n\n（二）对个人信息实行分类管理；\n\n（三）采取相应的加密、去标识化等安全技术措施；\n\n（四）合理确定个人信息处理的操作权限，并定期对从业人员进行安全教育和培训；\n\n（五）制定并组织实施个人信息安全事件应急预案；\n\n（六）法律、行政法规规定的其他措施。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "0886bc0b344db0fe9338744a7d6cf1ba47dce3cdf0a3f8b59cdc844179d8ad10"
+  },
+  {
+    "id": "cn-pipl-art-52",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "52",
+    "label": "Article 52",
+    "originalTitle": "第五十二条",
+    "title": "Article 52",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息达到国家网信部门规定数量的个人信息处理者应当指定个人信息保护负责人，负责对个人信息处理活动以及采取的保护措施等进行监督。",
+      "个人信息处理者应当公开个人信息保护负责人的联系方式，并将个人信息保护负责人的姓名、联系方式等报送履行个人信息保护职责的部门。"
+    ],
+    "fullText": "处理个人信息达到国家网信部门规定数量的个人信息处理者应当指定个人信息保护负责人，负责对个人信息处理活动以及采取的保护措施等进行监督。\n\n个人信息处理者应当公开个人信息保护负责人的联系方式，并将个人信息保护负责人的姓名、联系方式等报送履行个人信息保护职责的部门。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "44635a0e77de7782320546fc6b6edb52caa9ccbcc0da8834be93329fd1dcdcc7"
+  },
+  {
+    "id": "cn-pipl-art-53",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "53",
+    "label": "Article 53",
+    "originalTitle": "第五十三条",
+    "title": "Article 53",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "本法第三条第二款规定的中华人民共和国境外的个人信息处理者，应当在中华人民共和国境内设立专门机构或者指定代表，负责处理个人信息保护相关事务，并将有关机构的名称或者代表的姓名、联系方式等报送履行个人信息保护职责的部门。"
+    ],
+    "fullText": "本法第三条第二款规定的中华人民共和国境外的个人信息处理者，应当在中华人民共和国境内设立专门机构或者指定代表，负责处理个人信息保护相关事务，并将有关机构的名称或者代表的姓名、联系方式等报送履行个人信息保护职责的部门。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "174eb875fd1ba35ae8e1d1afca9b9c8fd80f55b2c0ed63d8214209c29a9edf74"
+  },
+  {
+    "id": "cn-pipl-art-54",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "54",
+    "label": "Article 54",
+    "originalTitle": "第五十四条",
+    "title": "Article 54",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者应当定期对其处理个人信息遵守法律、行政法规的情况进行合规审计。"
+    ],
+    "fullText": "个人信息处理者应当定期对其处理个人信息遵守法律、行政法规的情况进行合规审计。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "9120f56c0328d226ea6015bad469f5b0bb6483260a2782f24424e2447069b6d5"
+  },
+  {
+    "id": "cn-pipl-art-55",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "55",
+    "label": "Article 55",
+    "originalTitle": "第五十五条",
+    "title": "Article 55",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "有下列情形之一的，个人信息处理者应当事前进行个人信息保护影响评估，并对处理情况进行记录：",
+      "（一）处理敏感个人信息；",
+      "（二）利用个人信息进行自动化决策；",
+      "（三）委托处理个人信息、向其他个人信息处理者提供个人信息、公开个人信息；",
+      "（四）向境外提供个人信息；",
+      "（五）其他对个人权益有重大影响的个人信息处理活动。"
+    ],
+    "fullText": "有下列情形之一的，个人信息处理者应当事前进行个人信息保护影响评估，并对处理情况进行记录：\n\n（一）处理敏感个人信息；\n\n（二）利用个人信息进行自动化决策；\n\n（三）委托处理个人信息、向其他个人信息处理者提供个人信息、公开个人信息；\n\n（四）向境外提供个人信息；\n\n（五）其他对个人权益有重大影响的个人信息处理活动。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "bb68dcdba5d34da56a312fd8014ad14a1eaa57b4ed96b00e799ab65aaf04efaf"
+  },
+  {
+    "id": "cn-pipl-art-56",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "56",
+    "label": "Article 56",
+    "originalTitle": "第五十六条",
+    "title": "Article 56",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息保护影响评估应当包括下列内容：",
+      "（一）个人信息的处理目的、处理方式等是否合法、正当、必要；",
+      "（二）对个人权益的影响及安全风险；",
+      "（三）所采取的保护措施是否合法、有效并与风险程度相适应。",
+      "个人信息保护影响评估报告和处理情况记录应当至少保存三年。"
+    ],
+    "fullText": "个人信息保护影响评估应当包括下列内容：\n\n（一）个人信息的处理目的、处理方式等是否合法、正当、必要；\n\n（二）对个人权益的影响及安全风险；\n\n（三）所采取的保护措施是否合法、有效并与风险程度相适应。\n\n个人信息保护影响评估报告和处理情况记录应当至少保存三年。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "6666a3f90f2c45863ee6e39ff7ced449b7e3897450b761c4f2c4bac857c8edde"
+  },
+  {
+    "id": "cn-pipl-art-57",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "57",
+    "label": "Article 57",
+    "originalTitle": "第五十七条",
+    "title": "Article 57",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "发生或者可能发生个人信息泄露、篡改、丢失的，个人信息处理者应当立即采取补救措施，并通知履行个人信息保护职责的部门和个人。通知应当包括下列事项：",
+      "（一）发生或者可能发生个人信息泄露、篡改、丢失的信息种类、原因和可能造成的危害；",
+      "（二）个人信息处理者采取的补救措施和个人可以采取的减轻危害的措施；",
+      "（三）个人信息处理者的联系方式。",
+      "个人信息处理者采取措施能够有效避免信息泄露、篡改、丢失造成危害的，个人信息处理者可以不通知个人；履行个人信息保护职责的部门认为可能造成危害的，有权要求个人信息处理者通知个人。"
+    ],
+    "fullText": "发生或者可能发生个人信息泄露、篡改、丢失的，个人信息处理者应当立即采取补救措施，并通知履行个人信息保护职责的部门和个人。通知应当包括下列事项：\n\n（一）发生或者可能发生个人信息泄露、篡改、丢失的信息种类、原因和可能造成的危害；\n\n（二）个人信息处理者采取的补救措施和个人可以采取的减轻危害的措施；\n\n（三）个人信息处理者的联系方式。\n\n个人信息处理者采取措施能够有效避免信息泄露、篡改、丢失造成危害的，个人信息处理者可以不通知个人；履行个人信息保护职责的部门认为可能造成危害的，有权要求个人信息处理者通知个人。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "7785c1cca18db63fc227529c8792e1adc7fd7a96a1fd6facbdbd41768edd3bad"
+  },
+  {
+    "id": "cn-pipl-art-58",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "58",
+    "label": "Article 58",
+    "originalTitle": "第五十八条",
+    "title": "Article 58",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "提供重要互联网平台服务、用户数量巨大、业务类型复杂的个人信息处理者，应当履行下列义务：",
+      "（一）按照国家规定建立健全个人信息保护合规制度体系，成立主要由外部成员组成的独立机构对个人信息保护情况进行监督；",
+      "（二）遵循公开、公平、公正的原则，制定平台规则，明确平台内产品或者服务提供者处理个人信息的规范和保护个人信息的义务；",
+      "（三）对严重违反法律、行政法规处理个人信息的平台内的产品或者服务提供者，停止提供服务；",
+      "（四）定期发布个人信息保护社会责任报告，接受社会监督。"
+    ],
+    "fullText": "提供重要互联网平台服务、用户数量巨大、业务类型复杂的个人信息处理者，应当履行下列义务：\n\n（一）按照国家规定建立健全个人信息保护合规制度体系，成立主要由外部成员组成的独立机构对个人信息保护情况进行监督；\n\n（二）遵循公开、公平、公正的原则，制定平台规则，明确平台内产品或者服务提供者处理个人信息的规范和保护个人信息的义务；\n\n（三）对严重违反法律、行政法规处理个人信息的平台内的产品或者服务提供者，停止提供服务；\n\n（四）定期发布个人信息保护社会责任报告，接受社会监督。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "4956b32462847c6858012f78feb008211c56b7518234022efa9790540f890135"
+  },
+  {
+    "id": "cn-pipl-art-59",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "59",
+    "label": "Article 59",
+    "originalTitle": "第五十九条",
+    "title": "Article 59",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-5",
+      "label": "Chapter V",
+      "title": "Obligations of Personal Information Handlers"
+    },
+    "section": null,
+    "paragraphs": [
+      "接受委托处理个人信息的受托人，应当依照本法和有关法律、行政法规的规定，采取必要措施保障所处理的个人信息的安全，并协助个人信息处理者履行本法规定的义务。"
+    ],
+    "fullText": "接受委托处理个人信息的受托人，应当依照本法和有关法律、行政法规的规定，采取必要措施保障所处理的个人信息的安全，并协助个人信息处理者履行本法规定的义务。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "bd004bd7d27fb9bc9a98d85bd20652c4c26ed64b6c83d1c4967ecf16c3c7c75a"
+  },
+  {
+    "id": "cn-pipl-art-60",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "60",
+    "label": "Article 60",
+    "originalTitle": "第六十条",
+    "title": "Article 60",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家网信部门负责统筹协调个人信息保护工作和相关监督管理工作。国务院有关部门依照本法和有关法律、行政法规的规定，在各自职责范围内负责个人信息保护和监督管理工作。",
+      "县级以上地方人民政府有关部门的个人信息保护和监督管理职责，按照国家有关规定确定。",
+      "前两款规定的部门统称为履行个人信息保护职责的部门。"
+    ],
+    "fullText": "国家网信部门负责统筹协调个人信息保护工作和相关监督管理工作。国务院有关部门依照本法和有关法律、行政法规的规定，在各自职责范围内负责个人信息保护和监督管理工作。\n\n县级以上地方人民政府有关部门的个人信息保护和监督管理职责，按照国家有关规定确定。\n\n前两款规定的部门统称为履行个人信息保护职责的部门。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "a0c8e48cc1ce405c1e668da344fdd1b32dc6dc8195cc2c34ec6d3d326b10f3d8"
+  },
+  {
+    "id": "cn-pipl-art-61",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "61",
+    "label": "Article 61",
+    "originalTitle": "第六十一条",
+    "title": "Article 61",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "履行个人信息保护职责的部门履行下列个人信息保护职责：",
+      "（一）开展个人信息保护宣传教育，指导、监督个人信息处理者开展个人信息保护工作；",
+      "（二）接受、处理与个人信息保护有关的投诉、举报；",
+      "（三）组织对应用程序等个人信息保护情况进行测评，并公布测评结果；",
+      "（四）调查、处理违法个人信息处理活动；",
+      "（五）法律、行政法规规定的其他职责。"
+    ],
+    "fullText": "履行个人信息保护职责的部门履行下列个人信息保护职责：\n\n（一）开展个人信息保护宣传教育，指导、监督个人信息处理者开展个人信息保护工作；\n\n（二）接受、处理与个人信息保护有关的投诉、举报；\n\n（三）组织对应用程序等个人信息保护情况进行测评，并公布测评结果；\n\n（四）调查、处理违法个人信息处理活动；\n\n（五）法律、行政法规规定的其他职责。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "12383c8733e3afc051acc297acb85050ee8953b6747f3986d3e1540d318e09d6"
+  },
+  {
+    "id": "cn-pipl-art-62",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "62",
+    "label": "Article 62",
+    "originalTitle": "第六十二条",
+    "title": "Article 62",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家网信部门统筹协调有关部门依据本法推进下列个人信息保护工作：",
+      "（一）制定个人信息保护具体规则、标准；",
+      "（二）针对小型个人信息处理者、处理敏感个人信息以及人脸识别、人工智能等新技术、新应用，制定专门的个人信息保护规则、标准；",
+      "（三）支持研究开发和推广应用安全、方便的电子身份认证技术，推进网络身份认证公共服务建设；",
+      "（四）推进个人信息保护社会化服务体系建设，支持有关机构开展个人信息保护评估、认证服务；",
+      "（五）完善个人信息保护投诉、举报工作机制。"
+    ],
+    "fullText": "国家网信部门统筹协调有关部门依据本法推进下列个人信息保护工作：\n\n（一）制定个人信息保护具体规则、标准；\n\n（二）针对小型个人信息处理者、处理敏感个人信息以及人脸识别、人工智能等新技术、新应用，制定专门的个人信息保护规则、标准；\n\n（三）支持研究开发和推广应用安全、方便的电子身份认证技术，推进网络身份认证公共服务建设；\n\n（四）推进个人信息保护社会化服务体系建设，支持有关机构开展个人信息保护评估、认证服务；\n\n（五）完善个人信息保护投诉、举报工作机制。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "02267c56db55e1905755f2dc7d5cb91d5626a5ec268c9f36747448a3e71c95b0"
+  },
+  {
+    "id": "cn-pipl-art-63",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "63",
+    "label": "Article 63",
+    "originalTitle": "第六十三条",
+    "title": "Article 63",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "履行个人信息保护职责的部门履行个人信息保护职责，可以采取下列措施：",
+      "（一）询问有关当事人，调查与个人信息处理活动有关的情况；",
+      "（二）查阅、复制当事人与个人信息处理活动有关的合同、记录、账簿以及其他有关资料；",
+      "（三）实施现场检查，对涉嫌违法的个人信息处理活动进行调查；",
+      "（四）检查与个人信息处理活动有关的设备、物品；对有证据证明是用于违法个人信息处理活动的设备、物品，向本部门主要负责人书面报告并经批准，可以查封或者扣押。",
+      "履行个人信息保护职责的部门依法履行职责，当事人应当予以协助、配合，不得拒绝、阻挠。"
+    ],
+    "fullText": "履行个人信息保护职责的部门履行个人信息保护职责，可以采取下列措施：\n\n（一）询问有关当事人，调查与个人信息处理活动有关的情况；\n\n（二）查阅、复制当事人与个人信息处理活动有关的合同、记录、账簿以及其他有关资料；\n\n（三）实施现场检查，对涉嫌违法的个人信息处理活动进行调查；\n\n（四）检查与个人信息处理活动有关的设备、物品；对有证据证明是用于违法个人信息处理活动的设备、物品，向本部门主要负责人书面报告并经批准，可以查封或者扣押。\n\n履行个人信息保护职责的部门依法履行职责，当事人应当予以协助、配合，不得拒绝、阻挠。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "1ac4d6d5e373faf79521c9a455eeaae75ccb620af7dcee81e8f7d2b03de84212"
+  },
+  {
+    "id": "cn-pipl-art-64",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "64",
+    "label": "Article 64",
+    "originalTitle": "第六十四条",
+    "title": "Article 64",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "履行个人信息保护职责的部门在履行职责中，发现个人信息处理活动存在较大风险或者发生个人信息安全事件的，可以按照规定的权限和程序对该个人信息处理者的法定代表人或者主要负责人进行约谈，或者要求个人信息处理者委托专业机构对其个人信息处理活动进行合规审计。个人信息处理者应当按照要求采取措施，进行整改，消除隐患。",
+      "履行个人信息保护职责的部门在履行职责中，发现违法处理个人信息涉嫌犯罪的，应当及时移送公安机关依法处理。"
+    ],
+    "fullText": "履行个人信息保护职责的部门在履行职责中，发现个人信息处理活动存在较大风险或者发生个人信息安全事件的，可以按照规定的权限和程序对该个人信息处理者的法定代表人或者主要负责人进行约谈，或者要求个人信息处理者委托专业机构对其个人信息处理活动进行合规审计。个人信息处理者应当按照要求采取措施，进行整改，消除隐患。\n\n履行个人信息保护职责的部门在履行职责中，发现违法处理个人信息涉嫌犯罪的，应当及时移送公安机关依法处理。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "0e4224173609c393ff60aa8b888b876643a47c180d132ab6351422fde9233c65"
+  },
+  {
+    "id": "cn-pipl-art-65",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "65",
+    "label": "Article 65",
+    "originalTitle": "第六十五条",
+    "title": "Article 65",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-6",
+      "label": "Chapter VI",
+      "title": "Departments Performing Personal Information Protection Duties"
+    },
+    "section": null,
+    "paragraphs": [
+      "任何组织、个人有权对违法个人信息处理活动向履行个人信息保护职责的部门进行投诉、举报。收到投诉、举报的部门应当依法及时处理，并将处理结果告知投诉、举报人。",
+      "履行个人信息保护职责的部门应当公布接受投诉、举报的联系方式。"
+    ],
+    "fullText": "任何组织、个人有权对违法个人信息处理活动向履行个人信息保护职责的部门进行投诉、举报。收到投诉、举报的部门应当依法及时处理，并将处理结果告知投诉、举报人。\n\n履行个人信息保护职责的部门应当公布接受投诉、举报的联系方式。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "0d876e7327e5b58037e18089b572c8662d99c0d29ca9aeee1a63ce363c4f21ba"
+  },
+  {
+    "id": "cn-pipl-art-66",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "66",
+    "label": "Article 66",
+    "originalTitle": "第六十六条",
+    "title": "Article 66",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本法规定处理个人信息，或者处理个人信息未履行本法规定的个人信息保护义务的，由履行个人信息保护职责的部门责令改正，给予警告，没收违法所得，对违法处理个人信息的应用程序，责令暂停或者终止提供服务；拒不改正的，并处一百万元以下罚款；对直接负责的主管人员和其他直接责任人员处一万元以上十万元以下罚款。",
+      "有前款规定的违法行为，情节严重的，由省级以上履行个人信息保护职责的部门责令改正，没收违法所得，并处五千万元以下或者上一年度营业额百分之五以下罚款，并可以责令暂停相关业务或者停业整顿、通报有关主管部门吊销相关业务许可或者吊销营业执照；对直接负责的主管人员和其他直接责任人员处十万元以上一百万元以下罚款，并可以决定禁止其在一定期限内担任相关企业的董事、监事、高级管理人员和个人信息保护负责人。"
+    ],
+    "fullText": "违反本法规定处理个人信息，或者处理个人信息未履行本法规定的个人信息保护义务的，由履行个人信息保护职责的部门责令改正，给予警告，没收违法所得，对违法处理个人信息的应用程序，责令暂停或者终止提供服务；拒不改正的，并处一百万元以下罚款；对直接负责的主管人员和其他直接责任人员处一万元以上十万元以下罚款。\n\n有前款规定的违法行为，情节严重的，由省级以上履行个人信息保护职责的部门责令改正，没收违法所得，并处五千万元以下或者上一年度营业额百分之五以下罚款，并可以责令暂停相关业务或者停业整顿、通报有关主管部门吊销相关业务许可或者吊销营业执照；对直接负责的主管人员和其他直接责任人员处十万元以上一百万元以下罚款，并可以决定禁止其在一定期限内担任相关企业的董事、监事、高级管理人员和个人信息保护负责人。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "64356ec33be1057d0210488e1e48dcb01b667e902ef872687d729eafc2e45159"
+  },
+  {
+    "id": "cn-pipl-art-67",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "67",
+    "label": "Article 67",
+    "originalTitle": "第六十七条",
+    "title": "Article 67",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "有本法规定的违法行为的，依照有关法律、行政法规的规定记入信用档案，并予以公示。"
+    ],
+    "fullText": "有本法规定的违法行为的，依照有关法律、行政法规的规定记入信用档案，并予以公示。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "ba6949521f536ca35a8542a69a5fa236d0862f57343480d7abcfe589c5853e1a"
+  },
+  {
+    "id": "cn-pipl-art-68",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "68",
+    "label": "Article 68",
+    "originalTitle": "第六十八条",
+    "title": "Article 68",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "国家机关不履行本法规定的个人信息保护义务的，由其上级机关或者履行个人信息保护职责的部门责令改正；对直接负责的主管人员和其他直接责任人员依法给予处分。",
+      "履行个人信息保护职责的部门的工作人员玩忽职守、滥用职权、徇私舞弊，尚不构成犯罪的，依法给予处分。"
+    ],
+    "fullText": "国家机关不履行本法规定的个人信息保护义务的，由其上级机关或者履行个人信息保护职责的部门责令改正；对直接负责的主管人员和其他直接责任人员依法给予处分。\n\n履行个人信息保护职责的部门的工作人员玩忽职守、滥用职权、徇私舞弊，尚不构成犯罪的，依法给予处分。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "2d33c19c1ccefbc5d4a31e1c51c618911f9fca6c49c3f51be35b69b1e659d9ee"
+  },
+  {
+    "id": "cn-pipl-art-69",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "69",
+    "label": "Article 69",
+    "originalTitle": "第六十九条",
+    "title": "Article 69",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "处理个人信息侵害个人信息权益造成损害，个人信息处理者不能证明自己没有过错的，应当承担损害赔偿等侵权责任。",
+      "前款规定的损害赔偿责任按照个人因此受到的损失或者个人信息处理者因此获得的利益确定；个人因此受到的损失和个人信息处理者因此获得的利益难以确定的，根据实际情况确定赔偿数额。"
+    ],
+    "fullText": "处理个人信息侵害个人信息权益造成损害，个人信息处理者不能证明自己没有过错的，应当承担损害赔偿等侵权责任。\n\n前款规定的损害赔偿责任按照个人因此受到的损失或者个人信息处理者因此获得的利益确定；个人因此受到的损失和个人信息处理者因此获得的利益难以确定的，根据实际情况确定赔偿数额。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "d2e7d445ba1d3ee504b4e6efadf36feb663e2ea6abcfe32a8f3307565dad2c3f"
+  },
+  {
+    "id": "cn-pipl-art-70",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "70",
+    "label": "Article 70",
+    "originalTitle": "第七十条",
+    "title": "Article 70",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "个人信息处理者违反本法规定处理个人信息，侵害众多个人的权益的，人民检察院、法律规定的消费者组织和由国家网信部门确定的组织可以依法向人民法院提起诉讼。"
+    ],
+    "fullText": "个人信息处理者违反本法规定处理个人信息，侵害众多个人的权益的，人民检察院、法律规定的消费者组织和由国家网信部门确定的组织可以依法向人民法院提起诉讼。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "859c25866fa989b459dba6e4eb7327d876204ed47dd723aef1dcc2265d1d89e3"
+  },
+  {
+    "id": "cn-pipl-art-71",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "71",
+    "label": "Article 71",
+    "originalTitle": "第七十一条",
+    "title": "Article 71",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-7",
+      "label": "Chapter VII",
+      "title": "Legal Liability"
+    },
+    "section": null,
+    "paragraphs": [
+      "违反本法规定，构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。"
+    ],
+    "fullText": "违反本法规定，构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "fc289e03f01d3452d6d23345581f246bee973776dc5940d91df2bd02309a84bb"
+  },
+  {
+    "id": "cn-pipl-art-72",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "72",
+    "label": "Article 72",
+    "originalTitle": "第七十二条",
+    "title": "Article 72",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "自然人因个人或者家庭事务处理个人信息的，不适用本法。",
+      "法律对各级人民政府及其有关部门组织实施的统计、档案管理活动中的个人信息处理有规定的，适用其规定。"
+    ],
+    "fullText": "自然人因个人或者家庭事务处理个人信息的，不适用本法。\n\n法律对各级人民政府及其有关部门组织实施的统计、档案管理活动中的个人信息处理有规定的，适用其规定。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "e6c4312d3794680f027a9ecbffaa0dd5e914bf6b8f07e2b0c13065fa6fb3bb87"
+  },
+  {
+    "id": "cn-pipl-art-73",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "73",
+    "label": "Article 73",
+    "originalTitle": "第七十三条",
+    "title": "Article 73",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "本法下列用语的含义：",
+      "（一）个人信息处理者，是指在个人信息处理活动中自主决定处理目的、处理方式的组织、个人。",
+      "（二）自动化决策，是指通过计算机程序自动分析、评估个人的行为习惯、兴趣爱好或者经济、健康、信用状况等，并进行决策的活动。",
+      "（三）去标识化，是指个人信息经过处理，使其在不借助额外信息的情况下无法识别特定自然人的过程。",
+      "（四）匿名化，是指个人信息经过处理无法识别特定自然人且不能复原的过程。"
+    ],
+    "fullText": "本法下列用语的含义：\n\n（一）个人信息处理者，是指在个人信息处理活动中自主决定处理目的、处理方式的组织、个人。\n\n（二）自动化决策，是指通过计算机程序自动分析、评估个人的行为习惯、兴趣爱好或者经济、健康、信用状况等，并进行决策的活动。\n\n（三）去标识化，是指个人信息经过处理，使其在不借助额外信息的情况下无法识别特定自然人的过程。\n\n（四）匿名化，是指个人信息经过处理无法识别特定自然人且不能复原的过程。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "5876fd912cdf0af0f184d25d5725a3b4cb699bea3ded441619409a3dd23bd36c"
+  },
+  {
+    "id": "cn-pipl-art-74",
+    "instrumentId": "cn-pipl",
+    "articleNumber": "74",
+    "label": "Article 74",
+    "originalTitle": "第七十四条",
+    "title": "Article 74",
+    "summary": "The complete official Chinese Article text is stored. No English translation is supplied for this Article; the default English view is an editorial coverage notice, not a translation.",
+    "chapter": {
+      "id": "cn-pipl-chapter-8",
+      "label": "Chapter VIII",
+      "title": "Supplementary Provisions"
+    },
+    "section": null,
+    "paragraphs": [
+      "本法自2021年11月1日起施行。"
+    ],
+    "fullText": "本法自2021年11月1日起施行。",
+    "language": "zh-CN",
+    "textAvailability": "full",
+    "source": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "sourceFragment": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+    "canonicalSource": "https://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+    "sourceLabel": "Cyberspace Administration of China — official republication of the NPC text",
+    "retrievedOn": "2026-07-20",
+    "appliesFrom": "2021-11-01",
+    "sourceVersion": {
+      "officialTitle": "中华人民共和国个人信息保护法",
+      "adoptedOn": "2021-08-20",
+      "publishedOn": "2021-08-20",
+      "effectiveFrom": "2021-11-01",
+      "versionNote": "Text adopted by the 30th Session of the Standing Committee of the 13th National People's Congress on 20 August 2021; effective 1 November 2021."
+    },
+    "contentSha256": "e3ca3833f12d0f4a8b7f1b186d682ae99615ee290eb3a91b08f1e035cbba20a1"
+  }
+]

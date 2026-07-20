@@ -57,6 +57,41 @@ import statusEventsJson from "@/data/v2/status-events.json";
 import sourceAuditsJson from "@/data/v2/source-audit.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
+import ukGdprArticlesJson from "@/data/v2/uk-gdpr-articles.json";
+import piplArticlesJson from "@/data/v2/cn-pipl-articles.json";
+import networkDataArticlesJson from "@/data/v2/cn-network-data-regulations-articles.json";
+import generativeAiArticlesJson from "@/data/v2/cn-generative-ai-measures-articles.json";
+import pipedaProvisionsJson from "@/data/v2/canada-pipeda-provisions.json";
+import lgpdArticlesJson from "@/data/v2/brazil-lgpd-articles.json";
+import taiwanAiActArticlesJson from "@/data/v2/tw-ai-basic-act-2026-articles.json";
+import taiwanPdpaArticlesJson from "@/data/v2/tw-personal-data-protection-act-articles.json";
+import singaporePdpaProvisionsJson from "@/data/v2/sg-pdpa-provisions.json";
+import southAfricaPopiaSectionsJson from "@/data/v2/za-popia-sections.json";
+import nigeriaNdpaSectionsJson from "@/data/v2/ng-ndpa-2023-sections.json";
+import indonesiaPdpArticlesJson from "@/data/v2/id-pdp-law-2022-articles.json";
+import indiaDpdpActProvisionsJson from "@/data/v2/india-dpdp-act-2023-provisions.json";
+import indiaDpdpRulesProvisionsJson from "@/data/v2/india-dpdp-rules-2025-provisions.json";
+import uaePdplArticlesJson from "@/data/v2/uae-federal-pdpl-45-2021-articles.json";
+import saudiPdplArticlesJson from "@/data/v2/sa-pdpl-2021-amended-2023-articles.json";
+import saudiPdplImplementingArticlesJson from "@/data/v2/sa-pdpl-implementing-regulation-2023-articles.json";
+import saudiPdplTransferArticlesJson from "@/data/v2/sa-pdpl-transfer-regulation-2023-articles.json";
+import australiaPrivacyActProvisionsJson from "@/data/v2/au-privacy-act-1988-provisions.json";
+import japanAppiArticlesJson from "@/data/v2/jp-appi-current-articles.json";
+import japanAiPromotionActArticlesJson from "@/data/v2/jp-ai-promotion-act-2025-articles.json";
+import hongKongPdpoProvisionsJson from "@/data/v2/hk-pdpo-486-provisions.json";
+import swissFadpProvisionsJson from "@/data/v2/ch-fadp-2020-provisions.json";
+import vietnamPdplArticlesJson from "@/data/v2/vn-personal-data-protection-law-2025-articles.json";
+import vietnamDecree356ProvisionsJson from "@/data/v2/vn-decree-356-2025-provisions.json";
+import vietnamDecree13HistoricalProvisionsJson from "@/data/v2/vn-decree-13-2023-historical-provisions.json";
+import koreaPipaArticlesJson from "@/data/v2/kr-pipa-2011-current-articles.json";
+import koreaAiFrameworkArticlesJson from "@/data/v2/kr-ai-framework-act-2025-current-articles.json";
+import usExecutiveOrderProvisionsJson from "@/data/v2/us-executive-orders-provisions.json";
+import taiwanExecutiveYuanGenAiGuidelinesJson from "@/data/v2/tw-executive-yuan-generative-ai-guidelines-2023-points.json";
+import brazilAiBillArticlesJson from "@/data/v2/br-ai-bill-2338-2023-articles.json";
+import californiaSb1047ProvisionsJson from "@/data/v2/us-ca-sb1047-2024-provisions.json";
+import coloradoAiActProvisionsJson from "@/data/v2/us-co-ai-act-current-provisions.json";
+import nistAiRmfCorpusJson from "@/data/v2/us-nist-ai-rmf-1-0-corpus.json";
+import provisionConceptReviewsJson from "@/data/v2/provision-concepts.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
 import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import { ConceptConstellation } from "./concept-constellation";
@@ -133,6 +168,16 @@ type Editorial = {
   note?: string;
 };
 
+type LegalLanguageText = {
+  language: string;
+  title?: string;
+  paragraphs: string[];
+  fullText: string;
+  status: "official" | "reference";
+  note?: string;
+  source?: Source;
+};
+
 type SeedProvision = {
   id: string;
   instrumentId: string;
@@ -175,19 +220,51 @@ type SeedProvision = {
       source?: Source;
     };
   };
+  alternativeLanguageTexts?: LegalLanguageText[];
+  defaultLanguageStatus?: string;
+  languageAuthorityNote?: string;
+};
+
+type ImportedTranslationRecord = {
+  title?: string;
+  label?: string;
+  paragraphs: string[];
+  fullText: string;
+  language?: string;
+  status:
+    | "official"
+    | "reference"
+    | "official-reference-translation"
+    | "government-reference-translation-no-legal-effect"
+    | "official-co-authentic-equal-status"
+    | "official-authoritative-equal-status";
+  note?: string;
+  authorityNote?: string;
+  source?: Source | string;
+  sourceLabel?: string;
+  sourceRecord?: {
+    sourceExpression?: string;
+    sourceSubdivision?: string;
+  };
 };
 
 type ArticleRecord = {
   id: string;
   instrumentId: string;
+  unitType?: string;
+  provisionType?: string;
+  parentId?: string | null;
   articleNumber: string;
   label: string;
+  originalTitle?: string;
   title: string;
+  summary?: string;
   chapter: {
     id: string | null;
     label: string;
     title: string;
-  };
+    originalTitle?: string;
+  } | null;
   section?: {
     id: string;
     label: string;
@@ -198,8 +275,85 @@ type ArticleRecord = {
   language: string;
   textAvailability: string;
   source: string;
-  sourceFragment: string;
+  sourceFragment?: string;
+  sourceSubdivision?: string;
+  canonicalSource?: string;
   retrievedOn: string;
+  versionAsOf?: string | null;
+  sourceLabel?: string;
+  defaultLanguageStatus?: string;
+  authenticity?: {
+    authorityNote?: string;
+    englishStatus?: string;
+  };
+  appliesFrom?: string | null;
+  effectiveFrom?: string | null;
+  legalEffectStatus?: string;
+  applicability?: {
+    displayedVersion: string;
+    appliesFrom?: string | null;
+    promulgatedOn?: string;
+    commencementCondition?: string;
+    currentLawStatus: string;
+    historyNote?: string;
+  };
+  currentEffectiveVersion?: {
+    paragraphs: string[];
+    fullText: string;
+    language: string;
+    appliesFrom: string;
+    source: string;
+    sourceLabel: string;
+    sourceVersionAmendedOn: string;
+    englishTranslationAvailability: string;
+    contentSha256: string;
+  } | null;
+  currentOperativeText?: string;
+  currentOperativeSha256?: string;
+  hasEnactedFutureAmendment?: boolean;
+  futureAmendments?: Array<{
+    amendingItem?: string;
+    appliesFrom?: string;
+    note?: string;
+    includedInStoredText?: boolean;
+  }>;
+  translations?: Record<string, ImportedTranslationRecord> & {
+    en?: ImportedTranslationRecord;
+  };
+  sourceVersion?: {
+    officialTitle: string;
+    englishTitle?: string;
+    instrumentNumber?: string;
+    promulgationNumber?: string;
+    adoptedOn?: string;
+    publishedOn?: string;
+    promulgatedOn?: string;
+    effectiveFrom?: string;
+    latestAmendedOn?: string;
+    currentEffectiveBaselineAmendedOn?: string;
+    versionNote: string;
+  };
+  contentSha256?: string;
+  rights?: {
+    reuseStatus: string;
+    license: string;
+    licenseUrl: string;
+    attribution: string;
+  };
+};
+
+type ImportedArticleRecord = Omit<
+  ArticleRecord,
+  "articleNumber" | "chapter"
+> & {
+  articleNumber?: string;
+  sectionNumber?: string;
+  ruleNumber?: string;
+  unitType?: string;
+  chapter?: ArticleRecord["chapter"] | string;
+  chapterTitle?: string;
+  currentOperativeText?: string;
+  currentOperativeSha256?: string;
 };
 
 type Provision = SeedProvision & {
@@ -208,6 +362,19 @@ type Provision = SeedProvision & {
   chapter?: ArticleRecord["chapter"];
   section?: ArticleRecord["section"];
   articleNumber?: string;
+  applicability?: ArticleRecord["applicability"];
+  currentEffectiveVersion?: ArticleRecord["currentEffectiveVersion"];
+  sourceOrder?: number;
+  topicRelevance: ProvisionConceptReview;
+};
+
+type ProvisionConceptReview = {
+  provisionId: string;
+  relevance: "substantive-topic" | "structural-context";
+  conceptIds: string[];
+  rationale: string;
+  reviewStatus: "editorial-reviewed";
+  reviewedOn: string;
 };
 
 type StructureSummary = {
@@ -441,10 +608,97 @@ const relations = relationsJson as Relation[];
 const statusEvents = statusEventsJson as StatusEvent[];
 const sourceAudits = sourceAuditsJson as SourceAudit[];
 const structureSummaries = structureSummariesJson as StructureSummary[];
+
+function normalizeImportedArticle(
+  imported: ImportedArticleRecord,
+): ArticleRecord {
+  const instrumentId =
+    imported.instrumentId === "vn-decree-356-2025"
+      ? "vn-pdpl-implementing-decree-356-2025"
+      : imported.instrumentId === "vn-decree-13-2023"
+        ? "vn-personal-data-protection-decree-13-2023"
+        : imported.instrumentId;
+  const articleNumber =
+    imported.articleNumber ??
+    imported.sectionNumber ??
+    imported.ruleNumber ??
+    imported.label;
+  const chapter =
+    typeof imported.chapter === "string"
+      ? {
+          id: `${instrumentId}-${imported.chapter
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "")}`,
+          label: imported.chapter,
+          title: imported.chapterTitle ?? imported.chapter,
+        }
+      : imported.chapter ?? null;
+  const sourceLocator =
+    imported.sourceFragment ??
+    imported.sourceSubdivision ??
+    imported.canonicalSource ??
+    imported.source;
+  const sourceFragment = sourceLocator.startsWith("#")
+    ? `${imported.source}${sourceLocator}`
+    : sourceLocator;
+  const fullText = imported.currentOperativeText ?? imported.fullText;
+  const paragraphs = imported.currentOperativeText
+    ? imported.currentOperativeText.split(/\n\n+/)
+    : imported.paragraphs;
+
+  return {
+    ...imported,
+    instrumentId,
+    articleNumber,
+    chapter,
+    sourceFragment,
+    paragraphs,
+    fullText,
+  } as ArticleRecord;
+}
+
 const articleRecords = [
   ...(gdprArticlesJson as ArticleRecord[]),
   ...(euAiActArticlesJson as ArticleRecord[]),
-];
+  ...(ukGdprArticlesJson as ArticleRecord[]),
+  ...(piplArticlesJson as ArticleRecord[]),
+  ...(networkDataArticlesJson as ArticleRecord[]),
+  ...(generativeAiArticlesJson as ArticleRecord[]),
+  ...(pipedaProvisionsJson as ArticleRecord[]),
+  ...(lgpdArticlesJson as ArticleRecord[]),
+  ...(taiwanAiActArticlesJson as ArticleRecord[]),
+  ...(taiwanPdpaArticlesJson as ArticleRecord[]),
+  ...(singaporePdpaProvisionsJson as ArticleRecord[]),
+  ...(southAfricaPopiaSectionsJson as ArticleRecord[]),
+  ...(nigeriaNdpaSectionsJson as ArticleRecord[]),
+  ...(indonesiaPdpArticlesJson as ArticleRecord[]),
+  ...(indiaDpdpActProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(indiaDpdpRulesProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(uaePdplArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(saudiPdplArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(saudiPdplImplementingArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(saudiPdplTransferArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(australiaPrivacyActProvisionsJson as ArticleRecord[]),
+  ...(japanAppiArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(japanAiPromotionActArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(hongKongPdpoProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(swissFadpProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(vietnamPdplArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(vietnamDecree356ProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(vietnamDecree13HistoricalProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(koreaPipaArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(koreaAiFrameworkArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(usExecutiveOrderProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(taiwanExecutiveYuanGenAiGuidelinesJson as unknown as ImportedArticleRecord[]),
+  ...(brazilAiBillArticlesJson as unknown as ImportedArticleRecord[]),
+  ...(californiaSb1047ProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(coloradoAiActProvisionsJson as unknown as ImportedArticleRecord[]),
+  ...(nistAiRmfCorpusJson as unknown as ImportedArticleRecord[]),
+] as ImportedArticleRecord[];
+const normalizedArticleRecords = articleRecords.map(normalizeImportedArticle);
+const provisionConceptReviews =
+  provisionConceptReviewsJson as ProvisionConceptReview[];
 
 const jurisdictionById = new Map(
   jurisdictions.map((jurisdiction) => [jurisdiction.id, jurisdiction]),
@@ -470,65 +724,290 @@ const structureSummaryByKey = new Map(
 const sourceAuditByInstrument = new Map(
   sourceAudits.map((audit) => [audit.instrumentId, audit]),
 );
+const conceptReviewByProvisionId = new Map(
+  provisionConceptReviews.map((review) => [review.provisionId, review]),
+);
 
-function articleToProvision(article: ArticleRecord): Provision {
+function provisionWithConceptReview<T extends SeedProvision>(
+  provision: T,
+): T & { topicRelevance: ProvisionConceptReview } {
+  const storedReview = conceptReviewByProvisionId.get(provision.id);
+  const topicRelevance: ProvisionConceptReview = storedReview ?? {
+    provisionId: provision.id,
+    relevance: "substantive-topic",
+    conceptIds: provision.conceptIds,
+    rationale:
+      "This provision is a curated topical anchor in the research corpus.",
+    reviewStatus: "editorial-reviewed",
+    reviewedOn: provision.editorial.reviewedOn,
+  };
+  return {
+    ...provision,
+    conceptIds: Array.from(
+      new Set([...provision.conceptIds, ...topicRelevance.conceptIds]),
+    ),
+    topicRelevance,
+  };
+}
+
+function provisionTypeForRecord(article: ArticleRecord) {
+  if (article.provisionType) return article.provisionType;
+  if (article.instrumentId === "us-nist-ai-rmf-1-0") {
+    return "framework-unit";
+  }
+  if (article.unitType === "supplementary-provision-block") {
+    return "supplementary-provision";
+  }
+  if (article.unitType === "appended-table") return "schedule";
+  if (/^schedule\b/i.test(article.label)) return "schedule";
+  if (/^section\b/i.test(article.label)) return "section";
+  return "article";
+}
+
+function normalizedEnglishTranslation(
+  article: ArticleRecord,
+): SeedProvision["translations"] {
+  const translation = article.translations?.en;
+  if (!translation) return undefined;
+  const source =
+    typeof translation.source === "string"
+      ? {
+          url: translation.source,
+          label: translation.sourceLabel ?? "Official English reference text",
+          accessedOn: article.retrievedOn,
+        }
+      : translation.source;
+  const isCoAuthentic = translation.status === "official";
+  return {
+    en: {
+      title: translation.title,
+      paragraphs: translation.paragraphs,
+      fullText: translation.fullText,
+      status: isCoAuthentic ? "official" : "reference",
+      note:
+        translation.note ??
+        translation.authorityNote ??
+        (isCoAuthentic
+          ? "The English and original-language enactments are co-authentic official texts."
+          : "Government-published English reference translation; the original-language text controls."),
+      source,
+    },
+  };
+}
+
+function normalizedAlternativeLanguageTexts(
+  article: ArticleRecord,
+): SeedProvision["alternativeLanguageTexts"] {
+  if (!article.translations || !/^en(?:-|$)/i.test(article.language)) {
+    return undefined;
+  }
+  const texts = Object.entries(article.translations)
+    .filter(
+      ([language, translation]) =>
+        !/^en(?:-|$)/i.test(language) &&
+        !/^en(?:-|$)/i.test(translation.language ?? language),
+    )
+    .map(([languageKey, translation]) => {
+      const language = translation.language ?? languageKey;
+      const sourceUrl =
+        typeof translation.source === "string"
+          ? translation.source
+          : translation.source?.url ??
+            translation.sourceRecord?.sourceSubdivision ??
+            translation.sourceRecord?.sourceExpression;
+      const source = sourceUrl
+        ? typeof translation.source === "object" && translation.source
+          ? translation.source
+          : {
+              url: sourceUrl,
+              label:
+                translation.sourceLabel ??
+                `Official ${nativeLanguageLabel(language)} legal text`,
+              accessedOn: article.retrievedOn,
+            }
+        : undefined;
+      const isCoAuthentic =
+        translation.status === "official" ||
+        translation.status === "official-co-authentic-equal-status" ||
+        translation.status === "official-authoritative-equal-status";
+      return {
+        language,
+        title: translation.title,
+        paragraphs: translation.paragraphs,
+        fullText: translation.fullText,
+        status: isCoAuthentic ? ("official" as const) : ("reference" as const),
+        note:
+          translation.note ??
+          translation.authorityNote ??
+          article.authenticity?.authorityNote ??
+          (isCoAuthentic
+            ? "This language text is an authoritative official enactment."
+            : "Reference-language text; consult the source record for its authority status."),
+        source,
+      };
+    });
+  return texts.length ? texts : undefined;
+}
+
+function legalEffectStatusForRecord(article: ArticleRecord) {
+  if (article.legalEffectStatus) return article.legalEffectStatus;
+  if (article.instrumentId === "ca-pipeda") {
+    return /^\[(?:repealed|modifications)\]$/i.test(article.fullText.trim())
+      ? "structural-current-consolidation-placeholder"
+      : "in-force-current-text";
+  }
+  if (article.instrumentId === "br-lgpd-2018") {
+    if (/vetoed provision/i.test(article.title)) return "vetoed-placeholder";
+    if (/repealed provision/i.test(article.title)) return "repealed-placeholder";
+    return "in-force-current-text";
+  }
+  return article.language === "zh-CN"
+    ? "in-force"
+    : "instrument-status-only";
+}
+
+function articleToProvision(article: ArticleRecord, sourceOrder: number): Provision {
   const seed = seedProvisionById.get(article.id);
+  const isOfficialChineseImport = article.language === "zh-CN";
+  const isOriginalLanguage = !/^en(?:-|$)/i.test(article.language);
+  const translations = normalizedEnglishTranslation(article);
+  const alternativeLanguageTexts = normalizedAlternativeLanguageTexts(article);
+  const hasOfficialAlternativeText = Boolean(
+    alternativeLanguageTexts?.some((text) => text.status === "official"),
+  );
+  const defaultEnglishIsNonAuthoritative = Boolean(
+    /^en(?:-|$)/i.test(article.language) &&
+      article.defaultLanguageStatus?.includes("non-authoritative"),
+  );
+  const importedLegalEffectStatus = legalEffectStatusForRecord(article);
+  const importedAppliesFrom =
+    article.appliesFrom ?? article.effectiveFrom ?? null;
+  const importedVersion =
+    article.versionAsOf ??
+    article.sourceVersion?.effectiveFrom ??
+    article.retrievedOn;
   const base: SeedProvision = {
     id: article.id,
     instrumentId: article.instrumentId,
     locator: article.label,
+    originalTitle: article.originalTitle,
     title: article.title,
-    provisionType: "article",
-    parentId: article.section?.id ?? article.chapter.id,
+    provisionType: provisionTypeForRecord(article),
+    parentId:
+      article.parentId ?? article.section?.id ?? article.chapter?.id ?? null,
     summary:
+      article.summary ??
       article.paragraphs[0] ??
-      "Official article text is available from EUR-Lex.",
+      "Official Article text is available from the linked source.",
     conceptIds: [],
     actorTags: [],
     scopeTags: [],
-    legalEffectStatus: "instrument-status-only",
-    appliesFrom: null,
+    legalEffectStatus: importedLegalEffectStatus,
+    appliesFrom: importedAppliesFrom,
+    versionAsOf: importedVersion,
     textAvailability: {
-      mode: "full",
+      mode: isOfficialChineseImport
+        ? "official-original-text-stored"
+        : hasOfficialAlternativeText
+          ? "official-multilingual-full-text-stored"
+        : translations
+          ? translations.en?.status === "official"
+            ? "official-co-authentic-full-text-stored"
+            : "official-original-and-reference-translation-stored"
+          : isOriginalLanguage
+            ? "official-original-text-stored"
+            : "official-full-text-stored",
       stored: true,
       language: article.language,
-      note: "Official EUR-Lex text extracted from the published instrument.",
+      note: isOfficialChineseImport
+        ? "Complete official Chinese Article text extracted from the issuing government's publication. English is shown only where a separately labelled reference translation or editorial coverage notice exists."
+        : article.currentOperativeText
+          ? "The reader displays the current operative wording after the identified binding judicial interpretation. The generated source record separately preserves the promulgated text and the court overlay."
+        : article.hasEnactedFutureAmendment
+          ? "The reader displays only the authorised current compilation. Enacted amendments with a later commencement date are preserved as future metadata and are not inserted into the current text."
+        : defaultEnglishIsNonAuthoritative
+          ? "Complete authoritative original-language texts and an official non-authoritative English translation are stored with their distinct legal status."
+        : hasOfficialAlternativeText
+          ? "Complete official multilingual texts are stored from the official legislative publication."
+        : translations?.en?.status === "official"
+          ? "Complete co-authentic original-language and English texts are stored from the official legislative publication."
+          : translations
+            ? "Complete official original-language text and a government-published English reference translation are stored with authority labels."
+            : isOriginalLanguage
+              ? "Complete official original-language text is stored. The English interface uses an editorial summary where no current translation is incorporated."
+              : "Official provision text extracted from the cited public legal source; version metadata and reuse terms remain attached to the generated corpus.",
     },
     source: {
-      url: article.sourceFragment,
-      label: "EUR-Lex official text",
+      url: article.sourceFragment ?? article.source,
+      label: article.sourceLabel ?? "Official legal text",
       accessedOn: article.retrievedOn,
     },
     editorial: {
       reviewStatus: "source-verified",
       reviewedOn: article.retrievedOn,
-      note: "Hierarchy and text imported from official EUR-Lex XHTML.",
+      note: isOfficialChineseImport
+        ? "Article boundaries, hierarchy, and Chinese text were imported from official government HTML; no English translation was generated."
+        : article.currentOperativeText
+          ? "The source record preserves the promulgated wording; this reader renders the separately hashed current operative text required by the identified binding court decision."
+        : article.hasEnactedFutureAmendment
+          ? "This node is current compiled text only. Its source record separately identifies enacted future wording and confirms that the future text is not included in the displayed provision."
+        : defaultEnglishIsNonAuthoritative
+          ? "Hierarchy, three authoritative enactments, and the official non-authoritative English translation were aligned from Fedlex without changing their legal status."
+        : hasOfficialAlternativeText
+          ? "Hierarchy and official multilingual texts were imported from the official legislative publication."
+        : translations?.en?.status === "official"
+          ? "Hierarchy and both co-authentic language texts were imported from the official legislative publication."
+          : translations
+            ? "Hierarchy, original-language text, and the separately labelled government English reference translation were imported without machine translation."
+            : "Hierarchy and text imported from the instrument's official publication.",
     },
+    translations,
+    alternativeLanguageTexts,
+    defaultLanguageStatus: article.defaultLanguageStatus,
+    languageAuthorityNote: article.authenticity?.authorityNote,
   };
 
-  return {
+  return provisionWithConceptReview({
     ...base,
     ...seed,
     locator: seed?.locator ?? base.locator,
     title: seed?.title ?? base.title,
+    originalTitle: article.originalTitle ?? seed?.originalTitle,
+    provisionType: base.provisionType,
     summary: seed?.summary ?? base.summary,
+    legalEffectStatus: importedLegalEffectStatus,
+    appliesFrom: importedAppliesFrom,
+    versionAsOf: importedVersion,
     textAvailability: base.textAvailability,
     source: base.source,
+    translations: translations ?? seed?.translations,
+    alternativeLanguageTexts:
+      alternativeLanguageTexts ?? seed?.alternativeLanguageTexts,
+    defaultLanguageStatus:
+      article.defaultLanguageStatus ?? seed?.defaultLanguageStatus,
+    languageAuthorityNote:
+      article.authenticity?.authorityNote ?? seed?.languageAuthorityNote,
     paragraphs: article.paragraphs,
     fullText: article.fullText,
-    chapter: article.chapter,
+    chapter: article.chapter ?? undefined,
     section: article.section,
     articleNumber: article.articleNumber,
-  };
+    applicability: article.applicability,
+    currentEffectiveVersion: article.currentEffectiveVersion,
+    sourceOrder,
+  });
 }
 
 const provisionMap = new Map<string, Provision>();
-articleRecords.forEach((article) => {
-  provisionMap.set(article.id, articleToProvision(article));
+const sourceOrderByInstrument = new Map<string, number>();
+normalizedArticleRecords.forEach((article) => {
+  const sourceOrder = sourceOrderByInstrument.get(article.instrumentId) ?? 0;
+  sourceOrderByInstrument.set(article.instrumentId, sourceOrder + 1);
+  provisionMap.set(article.id, articleToProvision(article, sourceOrder));
 });
 seedProvisions.forEach((provision) => {
   if (!provisionMap.has(provision.id)) {
-    provisionMap.set(provision.id, provision);
+    provisionMap.set(provision.id, provisionWithConceptReview(provision));
   }
 });
 const provisions = Array.from(provisionMap.values());
@@ -542,6 +1021,12 @@ provisions.forEach((provision) => {
 
 for (const list of provisionsByInstrument.values()) {
   list.sort((left, right) => {
+    if (left.sourceOrder !== undefined || right.sourceOrder !== undefined) {
+      return (
+        (left.sourceOrder ?? Number.MAX_SAFE_INTEGER) -
+        (right.sourceOrder ?? Number.MAX_SAFE_INTEGER)
+      );
+    }
     const leftNumber = Number(left.articleNumber);
     const rightNumber = Number(right.articleNumber);
     if (Number.isFinite(leftNumber) && Number.isFinite(rightNumber)) {
@@ -740,6 +1225,9 @@ function nativeLanguageLabel(language: string) {
   if (/^zh(?:-|$)/i.test(language)) return "简体中文";
   if (/^ja(?:-|$)/i.test(language)) return "日本語";
   if (/^ko(?:-|$)/i.test(language)) return "한국어";
+  if (/^fr(?:-|$)/i.test(language)) return "Français";
+  if (/^de(?:-|$)/i.test(language)) return "Deutsch";
+  if (/^it(?:-|$)/i.test(language)) return "Italiano";
   if (/^pt(?:-|$)/i.test(language)) return "Português";
   if (/^ar(?:-|$)/i.test(language)) return "العربية";
   if (/^id(?:-|$)/i.test(language)) return "Bahasa Indonesia";
@@ -1115,8 +1603,8 @@ function groupProvisionSections(provisionList: Provision[]) {
       const key = provision.section?.id ?? "chapter-root";
       const group = groups.get(key) ?? {
         id: key,
-        label: provision.section?.label ?? "CHAPTER-LEVEL ARTICLES",
-        title: provision.section?.title ?? "Articles outside a named section",
+        label: provision.section?.label ?? "CHAPTER-LEVEL PROVISIONS",
+        title: provision.section?.title ?? "Provisions outside a named section",
         provisions: [],
       };
       group.provisions.push(provision);
@@ -1154,6 +1642,18 @@ function groupProvisionSections(provisionList: Provision[]) {
   });
 
   return Array.from(groups.values());
+}
+
+function provisionUnitLabel(
+  provisionList: Provision[],
+  { plural = true }: { plural?: boolean } = {},
+) {
+  const unitTypes = new Set(
+    provisionList.map((provision) => provision.provisionType),
+  );
+  const unit = unitTypes.size === 1 ? [...unitTypes][0] : "provision";
+  const label = unit.charAt(0).toUpperCase() + unit.slice(1);
+  return plural && provisionList.length !== 1 ? `${label}s` : label;
 }
 
 function sectionOverview(
@@ -1776,7 +2276,7 @@ function CorpusNavigator({
 
       <div className="navigator-foot">
         <span>SNAPSHOT</span>
-        <time dateTime="2026-07-19">2026.07.19</time>
+        <time dateTime="2026-07-20">2026.07.20</time>
       </div>
     </aside>
   );
@@ -2236,7 +2736,10 @@ function InstrumentGenome({
                   <p>{group.label}</p>
                   <h2>{group.title}</h2>
                 </div>
-                <small>{group.provisions.length} articles</small>
+                <small>
+                  {group.provisions.length}{" "}
+                  {provisionUnitLabel(group.provisions).toLowerCase()}
+                </small>
               </header>
               <div className="genome-sections">
                 {sections.map((section) => {
@@ -2267,19 +2770,30 @@ function InstrumentGenome({
                     </div>
                     <ol
                       className="provision-list"
-                      aria-label={section.title + " articles"}
+                      aria-label={
+                        section.title +
+                        " " +
+                        provisionUnitLabel(section.provisions).toLowerCase()
+                      }
                     >
                       {section.provisions.map((provision) => {
                         const mappingCount =
                           relationsByProvision.get(provision.id)?.length ?? 0;
+                        const conceptCount = provision.conceptIds.length;
+                        const isTopicRelevant =
+                          provision.topicRelevance.relevance ===
+                          "substantive-topic";
                         return (
                           <li key={provision.id}>
                           <button
                             type="button"
-                            className={
-                              mappingCount
-                                ? "provision-list-item has-mappings"
-                                : "provision-list-item"
+                            className={[
+                              "provision-list-item",
+                              mappingCount ? "has-mappings" : "",
+                              isTopicRelevant ? "is-topic-relevant" : "",
+                            ].filter(Boolean).join(" ")}
+                            data-topic-relevance={
+                              provision.topicRelevance.relevance
                             }
                             onClick={() => onOpenProvision(provision)}
                             aria-label={
@@ -2287,6 +2801,11 @@ function InstrumentGenome({
                               ", " +
                               provision.title +
                               ", " +
+                              (isTopicRelevant
+                                ? "topic relevant, " +
+                                  conceptCount +
+                                  " core concepts, "
+                                : "structural context, ") +
                               mappingCount +
                               " mapped provisions"
                             }
@@ -2303,12 +2822,17 @@ function InstrumentGenome({
                               )}
                               <small>{provision.summary}</small>
                             </span>
-                            <span
-                              className="provision-list-mappings"
-                              aria-hidden="true"
-                            >
-                              <Network aria-hidden="true" />
-                              {mappingCount}
+                            <span className="provision-list-signals" aria-hidden="true">
+                              {conceptCount > 0 && (
+                                <span className="provision-list-concepts">
+                                  <BrainCircuit aria-hidden="true" />
+                                  {conceptCount}
+                                </span>
+                              )}
+                              <span className="provision-list-mappings">
+                                <Network aria-hidden="true" />
+                                {mappingCount}
+                              </span>
                             </span>
                           </button>
                           </li>
@@ -2345,11 +2869,13 @@ function ConnectionCanvas({
   selectedRelationId,
   onOpenProvision,
   onOpenInstrument,
+  onOpenConcept,
 }: {
   anchor: Provision;
   selectedRelationId: string | null;
   onOpenProvision: (provision: Provision, relationId?: string) => void;
   onOpenInstrument: (instrumentId: string) => void;
+  onOpenConcept: (conceptId: string) => void;
 }) {
   const anchorInstrument = instrumentById.get(anchor.instrumentId)!;
   const connections = (relationsByProvision.get(anchor.id) ?? [])
@@ -2394,7 +2920,11 @@ function ConnectionCanvas({
           { numeric: true },
         );
     });
-  const visible = connections.slice(0, 8);
+  const visible = connections.slice(0, 6);
+  const conceptConnections = anchor.conceptIds
+    .map((conceptId) => conceptById.get(conceptId))
+    .filter((concept): concept is Concept => Boolean(concept));
+  const visibleConcepts = conceptConnections.slice(0, 4);
   const positions = visible.map((_, index) => {
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visible.length;
     return {
@@ -2404,6 +2934,15 @@ function ConnectionCanvas({
       svgY: 310 + Math.sin(angle) * 214,
     };
   });
+  const conceptPositions = visibleConcepts.map((_, index) => {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visibleConcepts.length;
+    return {
+      x: 50 + Math.cos(angle) * 25,
+      y: 50 + Math.sin(angle) * 26,
+      svgX: 500 + Math.cos(angle) * 250,
+      svgY: 310 + Math.sin(angle) * 160,
+    };
+  });
 
   return (
     <section className="connections-view" aria-labelledby="connections-title">
@@ -2411,7 +2950,10 @@ function ConnectionCanvas({
         <div>
           <p className="terminal-label">ONE_HOP_PROVISION_NEIGHBORHOOD</p>
           <h1 id="connections-title">
-            {anchorInstrument.shortTitle} {anchor.locator}
+            <span className="connection-title-instrument">
+              {anchorInstrument.shortTitle}
+            </span>
+            <span className="connection-title-locator">{anchor.locator}</span>
           </h1>
           <p>{anchor.title}</p>
         </div>
@@ -2429,7 +2971,7 @@ function ConnectionCanvas({
         </div>
       </div>
 
-      {visible.length ? (
+      {visible.length || visibleConcepts.length ? (
         <>
           <div
             className="connection-canvas"
@@ -2519,6 +3061,28 @@ function ConnectionCanvas({
                   </g>
                 );
               })}
+              {visibleConcepts.map((concept, index) => {
+                const position = conceptPositions[index];
+                const path =
+                  "M 500 310 L " + position.svgX + " " + position.svgY;
+                return (
+                  <g key={"concept-edge-" + concept.id}>
+                    <path
+                      d={path}
+                      pathLength={100}
+                      className="concept-relation-line"
+                      style={{ animationDelay: String(120 + index * 70) + "ms" }}
+                    />
+                    <circle
+                      className="concept-relation-terminal"
+                      cx={position.svgX}
+                      cy={position.svgY}
+                      r="4"
+                      style={{ animationDelay: String(520 + index * 70) + "ms" }}
+                    />
+                  </g>
+                );
+              })}
             </svg>
 
             <button
@@ -2550,6 +3114,34 @@ function ConnectionCanvas({
               <strong>{anchorInstrument.shortTitle}</strong>
               <small>{anchor.locator}</small>
             </button>
+
+            {visibleConcepts.map((concept, index) => {
+              const position = conceptPositions[index];
+              return (
+                <button
+                  type="button"
+                  key={"concept-" + concept.id}
+                  className="connection-node concept-connection-node"
+                  style={{
+                    left: String(position.x) + "%",
+                    top: String(position.y) + "%",
+                    animationDelay: String(340 + index * 65) + "ms",
+                  }}
+                  onClick={() => onOpenConcept(concept.id)}
+                  aria-label={
+                    "Core concept linked by topical classification: " +
+                    concept.label
+                  }
+                >
+                  <span className="connection-node-kicker">
+                    <ConceptIcon conceptId={concept.id} />
+                    <span>CORE CONCEPT</span>
+                  </span>
+                  <strong>{concept.label}</strong>
+                  <small>TOPIC_RELATION</small>
+                </button>
+              );
+            })}
 
             {visible.map((item, index) => {
               const instrument = item.relatedInstrument;
@@ -2619,6 +3211,12 @@ function ConnectionCanvas({
             <p className="graph-overflow">
               +{connections.length - visible.length} additional mappings
               collapsed to preserve legibility.
+            </p>
+          )}
+          {conceptConnections.length > visibleConcepts.length && (
+            <p className="graph-overflow">
+              +{conceptConnections.length - visibleConcepts.length} additional
+              core-concept links collapsed to preserve legibility.
             </p>
           )}
         </>
@@ -2759,6 +3357,10 @@ function CompareView({
               const jurisdiction = jurisdictionById.get(
                 instrument.jurisdictionId,
               );
+              const comparisonParagraphs = provision.translations?.en?.paragraphs ??
+                (!/^en(?:-|$)/i.test(provision.textAvailability.language)
+                  ? [provision.summary]
+                  : provision.paragraphs);
               return (
                 <article key={provision.id} className="compare-column">
                   <header>
@@ -2818,8 +3420,8 @@ function CompareView({
                     </div>
                   </dl>
                   <div className="compare-text">
-                    {provision.paragraphs?.length ? (
-                      provision.paragraphs.map((paragraph, index) => (
+                    {comparisonParagraphs?.length ? (
+                      comparisonParagraphs.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
                       ))
                     ) : (
@@ -2877,7 +3479,7 @@ function ProvisionReader({
   const readerRef = useRef<HTMLElement>(null);
   const [languageSelection, setLanguageSelection] = useState<{
     provisionId: string | null;
-    language: "original" | "en";
+    language: string;
   }>({ provisionId: null, language: "en" });
   const readerLanguage =
     languageSelection.provisionId === (provision?.id ?? null)
@@ -2887,7 +3489,7 @@ function ProvisionReader({
     readerRef.current?.scrollTo({ top: 0 });
   }, [instrument?.id, provision?.id]);
 
-  function setReaderLanguage(language: "original" | "en") {
+  function setReaderLanguage(language: string) {
     setLanguageSelection({
       provisionId: provision?.id ?? null,
       language,
@@ -3038,17 +3640,81 @@ function ProvisionReader({
   const originalLanguage = provision!.textAvailability.language;
   const isOriginalLanguage = !/^en(?:-|$)/i.test(originalLanguage);
   const englishTranslation = provision!.translations?.en;
-  const hasEnglishTranslation = Boolean(englishTranslation?.paragraphs.length);
-  const showLanguageSwitch = isOriginalLanguage && originalParagraphs.length > 0;
-  const showingEnglish = showLanguageSwitch && readerLanguage === "en";
-  const englishSummaryFallback = showingEnglish && !hasEnglishTranslation;
+  const alternativeLanguageTexts = provision!.alternativeLanguageTexts ?? [];
+  const hasEnglishTranslation =
+    !isOriginalLanguage || Boolean(englishTranslation?.paragraphs.length);
+  const languageChoices = isOriginalLanguage
+    ? [
+        {
+          value: "en",
+          label: hasEnglishTranslation ? "ENGLISH" : "ENGLISH SUMMARY",
+        },
+        {
+          value: "original",
+          label: nativeLanguageLabel(originalLanguage),
+        },
+      ]
+    : [
+        { value: "en", label: "ENGLISH" },
+        ...alternativeLanguageTexts.map((text) => ({
+          value: text.language,
+          label: nativeLanguageLabel(text.language),
+        })),
+      ];
+  const showLanguageSwitch = languageChoices.length > 1;
+  const showingEnglish = readerLanguage === "en";
+  const selectedAlternativeLanguageText = isOriginalLanguage
+    ? undefined
+    : alternativeLanguageTexts.find(
+        (text) => text.language === readerLanguage,
+      );
+  const englishSummaryFallback =
+    showingEnglish && isOriginalLanguage && !hasEnglishTranslation;
+  const mappedConceptLabels = provision!.conceptIds
+    .map((conceptId) => conceptById.get(conceptId)?.label)
+    .filter((label): label is string => Boolean(label));
+  const editorialEnglishSummary = mappedConceptLabels.length
+    ? `This ${humanize(provision!.provisionType)} is mapped to ${mappedConceptLabels
+        .slice(0, 4)
+        .join(", ")}. The complete official ${nativeLanguageLabel(
+        originalLanguage,
+      )} wording is available in the original-language view; this orientation is not a translation.`
+    : `This ${humanize(
+        provision!.provisionType,
+      )} supplies structural or lifecycle context. The complete official ${nativeLanguageLabel(
+        originalLanguage,
+      )} wording is available in the original-language view; this orientation is not a translation.`;
   const availableParagraphs = showingEnglish
-    ? hasEnglishTranslation
-      ? englishTranslation!.paragraphs
-      : [provision!.summary]
-    : originalParagraphs;
-  const displayedLanguage = showingEnglish ? "en" : originalLanguage;
+    ? isOriginalLanguage
+      ? hasEnglishTranslation
+        ? englishTranslation!.paragraphs
+        : [editorialEnglishSummary]
+      : originalParagraphs
+    : isOriginalLanguage
+      ? originalParagraphs
+      : selectedAlternativeLanguageText?.paragraphs ?? originalParagraphs;
+  const displayedLanguage = showingEnglish
+    ? "en"
+    : isOriginalLanguage
+      ? originalLanguage
+      : selectedAlternativeLanguageText?.language ?? originalLanguage;
+  const displayedSource =
+    !showingEnglish && selectedAlternativeLanguageText?.source
+      ? selectedAlternativeLanguageText.source
+      : showingEnglish && isOriginalLanguage && englishTranslation?.source
+        ? englishTranslation.source
+        : provision!.source;
+  const defaultEnglishIsNonAuthoritative = Boolean(
+    showingEnglish &&
+      !isOriginalLanguage &&
+      provision!.defaultLanguageStatus?.includes("non-authoritative"),
+  );
   const isStoredExcerpt = provision!.textAvailability.mode.includes("excerpt");
+  const applicability = provision!.applicability;
+  const currentEffectiveVersion = provision!.currentEffectiveVersion;
+  const isDisplayedTextUncommenced = Boolean(
+    applicability && applicability.currentLawStatus !== "in-force",
+  );
   const readerTabs: ReaderTab[] = ["text", "analysis", "sources"];
   const readerTabIcons: Record<ReaderTab, LucideIcon> = {
     text: BookOpenText,
@@ -3112,6 +3778,7 @@ function ProvisionReader({
         {provision!.appliesFrom && (
           <span>APPLIES::{formatDate(provision!.appliesFrom)}</span>
         )}
+        {isDisplayedTextUncommenced && <span>TEXT::NOT YET IN FORCE</span>}
         <span>{displayedLanguage.toUpperCase()}</span>
         <span>
           {provision!.textAvailability.stored ? "TEXT STORED" : "LINK ONLY"}
@@ -3141,20 +3808,16 @@ function ProvisionReader({
             <Languages aria-hidden="true" />
             TEXT LANGUAGE
           </span>
-          <button
-            type="button"
-            aria-pressed={readerLanguage === "en"}
-            onClick={() => setReaderLanguage("en")}
-          >
-            {hasEnglishTranslation ? "ENGLISH" : "ENGLISH SUMMARY"}
-          </button>
-          <button
-            type="button"
-            aria-pressed={readerLanguage === "original"}
-            onClick={() => setReaderLanguage("original")}
-          >
-            {nativeLanguageLabel(originalLanguage)}
-          </button>
+          {languageChoices.map((choice) => (
+            <button
+              type="button"
+              aria-pressed={readerLanguage === choice.value}
+              onClick={() => setReaderLanguage(choice.value)}
+              key={choice.value}
+            >
+              {choice.label}
+            </button>
+          ))}
         </div>
       )}
       <div className="reader-tabs" role="tablist" aria-label="Reader panels">
@@ -3198,6 +3861,38 @@ function ProvisionReader({
               <p>{activeStructureSummary.summary}</p>
             </div>
           )}
+          {isDisplayedTextUncommenced && applicability && (
+            <div className="restricted-text-note">
+              <strong>
+                COMMENCEMENT STATUS / {humanize(applicability.currentLawStatus)}
+              </strong>
+              <p>
+                This reader is showing the officially promulgated consolidated
+                text, which has not yet commenced. {applicability.commencementCondition}
+              </p>
+              {applicability.historyNote && <p>{applicability.historyNote}</p>}
+              {currentEffectiveVersion && (
+                <details>
+                  <summary>
+                    Current effective original-language text · effective{" "}
+                    {formatDate(currentEffectiveVersion.appliesFrom)}
+                  </summary>
+                  <div lang={currentEffectiveVersion.language}>
+                    {currentEffectiveVersion.paragraphs.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                  <a
+                    href={currentEffectiveVersion.source}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Verify current-effective source ↗
+                  </a>
+                </details>
+              )}
+            </div>
+          )}
           <div className="document-provenance">
             <span>
               <FileText aria-hidden="true" />
@@ -3208,6 +3903,12 @@ function ProvisionReader({
                     ? englishTranslation.status === "official"
                       ? "OFFICIAL ENGLISH TEXT"
                       : "ENGLISH REFERENCE TRANSLATION"
+                    : defaultEnglishIsNonAuthoritative
+                      ? "OFFICIAL ENGLISH TRANSLATION — NON-AUTHORITATIVE"
+                    : !showingEnglish && selectedAlternativeLanguageText
+                      ? selectedAlternativeLanguageText.status === "official"
+                        ? "OFFICIAL CO-AUTHENTIC TEXT"
+                        : "REFERENCE-LANGUAGE TEXT"
                     : isStoredExcerpt
                   ? isOriginalLanguage
                     ? "OFFICIAL ORIGINAL EXCERPT"
@@ -3217,11 +3918,7 @@ function ProvisionReader({
                     : "OFFICIAL TEXT"
                 : "EDITORIAL SUMMARY"}
             </span>
-            <span>
-              {showingEnglish && englishTranslation?.source
-                ? englishTranslation.source.label
-                : provision!.source.label}
-            </span>
+            <span>{displayedSource.label}</span>
           </div>
           {availableParagraphs.length ? (
             availableParagraphs.map((paragraph, index) => (
@@ -3258,6 +3955,22 @@ function ProvisionReader({
               <p>{englishTranslation.note}</p>
             </div>
           )}
+          {defaultEnglishIsNonAuthoritative && provision!.languageAuthorityNote && (
+            <div className="translation-status-note">
+              <strong>Official reference translation — no legal force</strong>
+              <p>{provision!.languageAuthorityNote}</p>
+            </div>
+          )}
+          {!showingEnglish && selectedAlternativeLanguageText?.note && (
+            <div className="translation-status-note">
+              <strong>
+                {selectedAlternativeLanguageText.status === "official"
+                  ? "Authoritative legal text"
+                  : "Reference-language text"}
+              </strong>
+              <p>{selectedAlternativeLanguageText.note}</p>
+            </div>
+          )}
         </div>
       )}
 
@@ -3268,6 +3981,22 @@ function ProvisionReader({
           role="tabpanel"
           aria-labelledby="reader-tab-analysis"
         >
+          <div
+            className={[
+              "topic-relevance-note",
+              provision!.topicRelevance.relevance === "substantive-topic"
+                ? "is-substantive"
+                : "is-structural",
+            ].join(" ")}
+          >
+            <span>
+              <BrainCircuit aria-hidden="true" />
+              {provision!.topicRelevance.relevance === "substantive-topic"
+                ? "TOPIC-RELEVANT PROVISION"
+                : "STRUCTURAL CONTEXT"}
+            </span>
+            <p>{provision!.topicRelevance.rationale}</p>
+          </div>
           <div className="concept-list">
             {provision!.conceptIds.map((conceptId) => (
               <button
@@ -4342,7 +5071,7 @@ export default function RegulationExplorer() {
 
       <div className="system-strip">
         <span><i className="system-dot" /> DATASET LOADED</span>
-        <span>SNAPSHOT 2026.07.19</span>
+        <span>SNAPSHOT 2026.07.20</span>
         <span>ACADEMIC RESEARCH EDITION / NOT LEGAL ADVICE</span>
       </div>
 
@@ -4536,6 +5265,7 @@ export default function RegulationExplorer() {
               selectedRelationId={effectiveRelation?.id ?? null}
               onOpenProvision={openProvision}
               onOpenInstrument={openInstrument}
+              onOpenConcept={openConcept}
             />
           )}
           {state.navigatorTab === "sources" && state.view === "timeline" && selectedInstrument && (

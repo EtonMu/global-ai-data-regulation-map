@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Law PUBLIC "-//JaLII//DTD J-STATUTE 1.0//EN" "jstatute.dtd">
+<Law OriginalPromulgateDate="June 4, 2025" LawType="Act" Lang="en" Year="07" Era="Reiwa" Num="053">
+	<LawNum>Act No. 53 of June 4, 2025</LawNum>
+	<LawBody>
+		<LawTitle>Act on Promotion of Research and Development, and Utilization of Artificial Intelligence-related Technology</LawTitle>
+		<TOC id="en_toc">
+			<TOCLabel>Table of Contents</TOCLabel>
+			<TOCChapter Num="1">
+				<ChapterTitle>Chapter I General Provisions</ChapterTitle>
+				<ArticleRange>(Article 1 through 10)</ArticleRange>
+			</TOCChapter>
+			<TOCChapter Num="2">
+				<ChapterTitle>Chapter II Basic Measures</ChapterTitle>
+				<ArticleRange>(Article 11 through 17)</ArticleRange>
+			</TOCChapter>
+			<TOCChapter Num="3">
+				<ChapterTitle>Chapter III Artificial Intelligence Basic Plan</ChapterTitle>
+				<ArticleRange>(Article 18)</ArticleRange>
+			</TOCChapter>
+			<TOCChapter Num="4">
+				<ChapterTitle>Chapter IV Artificial Intelligence Strategic Headquarters</ChapterTitle>
+				<ArticleRange>(Article 19 through 28)</ArticleRange>
+			</TOCChapter>
+			<TOCSupplProvision>
+				<SupplProvisionLabel>Supplementary Provisions</SupplProvisionLabel>
+			</TOCSupplProvision>
+		</TOC>
+		<MainProvision>
+			<Chapter Num="1" id="en_ch1">
+				<ChapterTitle>Chapter I General Provisions</ChapterTitle>
+				<Article Num="1" id="en_ch1at1">
+					<ArticleCaption>(Purpose)</ArticleCaption>
+					<ArticleTitle>Article 1</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at1cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The purpose of this Act is, in light of the fact that artificial intelligence-related technology constitutes a fundamental technology for the development of Japan's economy and society, with regard to measures for promotion of research and development, and utilization of artificial intelligence-related technology, to specify the basic principles, the basic plan for promoting research and development, and utilization of artificial intelligence-related technology and the basic matters that form the basis of other measures, as well as to achieve comprehensive and systematic promotion of measures for the promotion of research and development, and utilization of artificial intelligence-related technology by establishing an artificial intelligence strategic headquarters, in conjunction with measures under the Basic Act on Science, Technology and Innovation (Act No. 130, of 1995) , the Basic Act on the Formation of a Digital Society (Act No. 35, of 2021) and other related laws, and to contribute to the improvement the lives of the citizens and the sound development of the national economy.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="2" id="en_ch1at2">
+					<ArticleCaption>(Definition)</ArticleCaption>
+					<ArticleTitle>Article 2</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at2cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The term "artificial intelligence-related technology" as used in this Act means technology necessary for realizing the function to substitute intellectual abilities for human cognition, inference and judgement by artificial means, and technology relating to information processing systems for realizing the function to process the input information and output that result by using the technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="3" id="en_ch1at3">
+					<ArticleCaption>(Basic Principles)</ArticleCaption>
+					<ArticleTitle>Article 3</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at3cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented based on policy for advancement of science, technology and creating innovation specified in Article 3 of the Basic Act on Science, Technology and Innovation, the basic principles specified in Chapter II of the Basic Act on Forming a Digital Society, and the basic principles specified in this article.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch1at3cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of keeping the ability of researching and developing artificial intelligence-related technology in Japan as well as enhancing international competitiveness of industries relating to artificial intelligence-related technology, in light of artificial intelligence-related technology being a technology of basis on development of economy and society as its appropriate and effective utilization generates increased efficiency and advancement of administrative affairs and private-sector business activities, and creation of new industries, as well as being an important technology from the perspective of national security.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="3" id="en_ch1at3cl3">
+						<ParagraphNum>(3)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Promoting research and development, and utilization of artificial intelligence-related technology is to be implemented with the objective of promoting these initiatives comprehensively and systematically, in light of initiatives by persons concerned in each phase from basic research of artificial intelligence-related technology to utilization in the lives of the citizens and economic activities that are closely interrelated.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="4" id="en_ch1at3cl4">
+						<ParagraphNum>(4)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>If research and development, and utilization of artificial intelligence-related technology are implemented for wrong purposes or in inappropriate methods, in light of the fact that they possibly facilitate use for crimes, leak of personal information, copyright infringement, and other issues harming citizens' peaceful daily lives, and their rights and interests, for achieving appropriate implementation, ensuring transparency in the process of research and development, and utilization of artificial intelligence-related technology and other necessary measures must be implemented.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="5" id="en_ch1at3cl5">
+						<ParagraphNum>(5)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Research and development, and utilization of artificial intelligence-related technology are to be with the objective to be promoted under international cooperation so that they can contribute to peace and development of Japan and the international community, and Japan is to endeavor to play a leading role in the international cooperation on research and development, and utilization of artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="4" id="en_ch1at4">
+					<ArticleCaption>(Responsibilities of the National Government)</ArticleCaption>
+					<ArticleTitle>Article 4</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at4cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is responsible for formulating and implementing comprehensively and systematically measures concerning promotion of research and development, and utilization of artificial intelligence-related technology in accordance with the basic principles specified in the preceding Article (referred to below as "basic principles").</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch1at4cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to promote positive utilization of artificial intelligence-related technology in an administrative body to improve efficiency and advancement of administrative affairs.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="5" id="en_ch1at5">
+					<ArticleCaption>(Responsibilities of Local Governments)</ArticleCaption>
+					<ArticleTitle>Article 5</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at5cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>A local governments is responsible for formulating and implementing independent measures that reflect distinctive characteristics of their respective areas of the relevant local government, in accordance with the basic principles, as measures to be implemented by the local government, with an appropriate sharing of roles with the national government regarding the promotion of research and development, and utilization of artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="6" id="en_ch1at6">
+					<ArticleCaption>(Responsibilities of Research and Development Institutes)</ArticleCaption>
+					<ArticleTitle>Article 6</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at6cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>A university, a research and development corporation prescribed in Article 2, paragraph (9) of the Act for Activation of Science, Technology and Innovation Creation (Act No. 63 of 2008), and other institutes that research and develop artificial intelligence-related technology (referred to below as a "research and development institute") are to endeavor positively to research and develop artificial intelligence-related technology, to disseminate their results, and to develop human resources that have expert and broad knowledge as well as endeavor to cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of the preceding Article, in accordance with the basic principles.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch1at6cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>In establishing and implementing measures for promoting research and development, and utilization of artificial intelligence-related technology which involve a university, the national government and a local government must endeavor to enhance research activities at a university and must respect the independence of a researcher and give due consideration to the other characteristics of research conducted at a university.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="3" id="en_ch1at6cl3">
+						<ParagraphNum>(3)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>In promoting effectively research and development of artificial intelligence-related technology, a research and development institute is to endeavor to conduct interdisciplinary or comprehensive research and development, in light of the necessity to comprehensively utilize knowledge in various fields in humanities and natural sciences.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="7" id="en_ch1at7">
+					<ArticleCaption>(Responsibilities of Utilization Business Operators)</ArticleCaption>
+					<ArticleTitle>Article 7</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at7cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Any person who intends to develop or provide products or services that utilize artificial intelligence-related technology, or other persons who intend to utilize other artificial intelligence-related technology in their business activities (referred to below as a "utilization business operator"), is to endeavor to enhance the efficiency and advancement of business activities and create new industries through active utilization of artificial intelligence-related technology, and must cooperate with the measures implemented by the national government under the provisions of Article 4 and by a local government under the provisions of Article 5, in accordance with the basic principles.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="8" id="en_ch1at8">
+					<ArticleCaption>(Responsibilities of Citizens)</ArticleCaption>
+					<ArticleTitle>Article 8</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at8cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>In accordance with the basic principles, the citizens are to endeavor to deepen their understanding and interest in artificial intelligence-related technology and to cooperate with the measures implemented by the national government under the provisions of Article 4 and by local governments under the provisions of Article 5.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="9" id="en_ch1at9">
+					<ArticleCaption>(Strengthening of Coordination)</ArticleCaption>
+					<ArticleTitle>Article 9</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at9cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>In light of the fact that mutual coordination and cooperation among the national government, a local government, a research and development institute and a utilization business operator can effectively achieve the promotion of research and development, and utilization of artificial intelligence-related technology, the national government is to take necessary measures to strengthen the coordination among them.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="10" id="en_ch1at10">
+					<ArticleCaption>(Legislative Measures)</ArticleCaption>
+					<ArticleTitle>Article 10</ArticleTitle>
+					<Paragraph Num="1" id="en_ch1at10cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to take necessary legislative, or financial measures, and other measures to implement measures for promoting research and development, and utilization of artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+			</Chapter>
+			<Chapter Num="2" id="en_ch2">
+				<ChapterTitle>Chapter II Basic Measures</ChapterTitle>
+				<Article Num="11" id="en_ch2at1">
+					<ArticleCaption>(Promoting Research and Development)</ArticleCaption>
+					<ArticleTitle>Article 11</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at1cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to promote integrated research and development activities, in artificial intelligence-related technology from basic research of it to research and development for its practical application, establish a system for transferring the results of research and development at a research and development institute, provide information on the results of research and development, and take other measures.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="12" id="en_ch2at2">
+					<ArticleCaption>(Promoting the Development and Sharing of Facilities and Equipment)</ArticleCaption>
+					<ArticleTitle>Article 12</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at2cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to take necessary measures to promote the expansion and shared use of facilities and equipment related to large-scale information processing, information and communications, storage of electromagnetic records (meaning a record in the electronic form, magnetic form, or any other form not recognizable to human senses, and those used for information processing by electronic computer), as well as data set (meaning collection of the information collected for specific purposes) and other intellectual foundation (meaning an intellectual foundation as provided for in Article 24-4 of the Act for Activation of Science, Technology, and Creation Innovation; the same applies below in this Article), which are necessary for the research and development, and utilization of artificial intelligence-related technology, in order to make such facilities and equipment widely available to a research and development institution and a utilization business operator.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="13" id="en_ch2at3">
+					<ArticleCaption>(Ensuring Appropriateness)</ArticleCaption>
+					<ArticleTitle>Article 13</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at3cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to establish guidelines in accordance with the purport of the international norms and take other necessary measures in order to ensure the appropriate implementation of research and development, and utilization of artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="14" id="en_ch2at4">
+					<ArticleCaption>(Securing Human Resources)</ArticleCaption>
+					<ArticleTitle>Article 14</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at4cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to take necessary measures to secure and develop human resources in various fields who have expert and broad knowledge which is necessary in each phase from basic research on artificial intelligence-related technology to its utilization in the citizens' lives and in economic activities, as well as to improve their qualities, in close coordination and cooperation with a local government, a research and development institute and a utilization business operator.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="15" id="en_ch2at5">
+					<ArticleCaption>(Promoting Education)</ArticleCaption>
+					<ArticleTitle>Article 15</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at5cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to promote education and learning, enhance public relations activities and take necessary measures on artificial intelligence-related technology so that the citizens can broadly deepen their understanding and interest in artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="16" id="en_ch2at6">
+					<ArticleCaption>(Research and Study)</ArticleCaption>
+					<ArticleTitle>Article 16</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at6cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to collect information on trends of research and development, and utilization of artificial intelligence-related technology both domestically and internationally, analyze cases where the citizens' rights and interests are infringed due to research and development, or utilization of artificial intelligence-related technology by wrongful purposes or inappropriate methods, consider measures based on the analyzation, and conduct other research and studies contributing to promotion of research and development, and utilization of artificial intelligence-related technology, and the national government based on the results, is to give guidance, advice to a research and development institute, a utilization business operator and other people, and provide information for them, or take other necessary measures.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="17" id="en_ch2at7">
+					<ArticleCaption>(International Cooperation)</ArticleCaption>
+					<ArticleTitle>Article 17</ArticleTitle>
+					<Paragraph Num="1" id="en_ch2at7cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The national government is to promote international cooperation on research and development, and utilization of artificial intelligence-related technology as well as actively participate in formulating international norms.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+			</Chapter>
+			<Chapter Num="3" id="en_ch3">
+				<ChapterTitle>Chapter III Artificial Intelligence Basic Plan</ChapterTitle>
+				<Article Num="18" id="en_ch3at1">
+					<ArticleTitle>Article 18</ArticleTitle>
+					<Paragraph Num="1" id="en_ch3at1cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The government is to establish a basic plan for the promotion of research and development, and utilization of artificial intelligence-related technology (referred to below as "artificial intelligence basic plan") in accordance with the basic principles, and based on basic measures specified in the preceding chapter.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch3at1cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>An artificial intelligence basic plan is to specify the following matters :</Sentence>
+						</ParagraphSentence>
+						<Item Num="1">
+							<ItemTitle>(i)</ItemTitle>
+							<ItemSentence>
+								<Sentence>the basic policy on measures for promoting research and development, and utilization of artificial intelligence-related technology;</Sentence>
+							</ItemSentence>
+						</Item>
+						<Item Num="2">
+							<ItemTitle>(ii)</ItemTitle>
+							<ItemSentence>
+								<Sentence>measures that the government should take comprehensively and systematically for promoting research and development, and utilization of artificial intelligence-related technology; and</Sentence>
+							</ItemSentence>
+						</Item>
+						<Item Num="3">
+							<ItemTitle>(iii)</ItemTitle>
+							<ItemSentence>
+								<Sentence>in addition to the matters stated in the preceding two items, matters necessary for the government to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology.</Sentence>
+							</ItemSentence>
+						</Item>
+					</Paragraph>
+					<Paragraph Num="3" id="en_ch3at1cl3">
+						<ParagraphNum>(3)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The Prime Minister is to seek a cabinet decision on the draft of artificial intelligence basic plan prepared by an artificial intelligence strategic headquarters.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="4" id="en_ch3at1cl4">
+						<ParagraphNum>(4)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>If a cabinet decision under the preceding paragraph has been made, the Prime Minister is to make public the artificial intelligence basic plan without delay.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="5" id="en_ch3at1cl5">
+						<ParagraphNum>(5)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The provisions of the preceding two paragraphs apply mutatis mutandis to changes in the artificial intelligence basic plan.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+			</Chapter>
+			<Chapter Num="4" id="en_ch4">
+				<ChapterTitle>Chapter IV Artificial Intelligence Strategic Headquarters</ChapterTitle>
+				<Article Num="19" id="en_ch4at1">
+					<ArticleCaption>(Establishment)</ArticleCaption>
+					<ArticleTitle>Article 19</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at1cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>An artificial intelligence strategic headquarters (referred to below as the "headquarters") is established under the Cabinet to comprehensively and systematically advance measures for promoting research and development, and utilization of artificial intelligence-related technology.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="20" id="en_ch4at2">
+					<ArticleCaption>(Affairs under Jurisdiction of the Headquarters)</ArticleCaption>
+					<ArticleTitle>Article 20</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at2cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The headquarters is responsible for the following affairs:</Sentence>
+						</ParagraphSentence>
+						<Item Num="1">
+							<ItemTitle>(i)</ItemTitle>
+							<ItemSentence>
+								<Sentence>preparing a draft of the artificial intelligence basic plan and promoting its implementation; and</Sentence>
+							</ItemSentence>
+						</Item>
+						<Item Num="2">
+							<ItemTitle>(ii)</ItemTitle>
+							<ItemSentence>
+								<Sentence>in addition to the matters stated in the preceding item, matters concerning planning and proposing important measures on promoting research and development, and utilization of artificial intelligence-related technology, and carrying out overall coordination.</Sentence>
+							</ItemSentence>
+						</Item>
+					</Paragraph>
+				</Article>
+				<Article Num="21" id="en_ch4at3">
+					<ArticleCaption>(Organizations)</ArticleCaption>
+					<ArticleTitle>Article 21</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at3cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>A headquarters consists of the chairperson of the artificial intelligence strategic headquarters, the deputy chairperson of the artificial intelligence strategic headquarters, and the members of the artificial intelligence strategic headquarters.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="22" id="en_ch4at4">
+					<ArticleCaption>(Chairperson of the Artificial Intelligence Strategic Headquarters)</ArticleCaption>
+					<ArticleTitle>Article 22</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at4cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The person in charge of the headquarters is referred to as the chairperson of the artificial intelligence strategic headquarters (referred to below as the "chairperson"), and the Prime Minister serves in that capacity.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch4at4cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>A chairperson engages in the overall management of headquarters' affairs and directs and supervises personnel of the headquarters.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="23" id="en_ch4at5">
+					<ArticleCaption>(Deputy Chairperson of the Artificial Intelligence Strategic Headquarters)</ArticleCaption>
+					<ArticleTitle>Article 23</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at5cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The deputy chairperson of the artificial intelligence strategic headquarters (referred to below as the "deputy chairperson" in the following paragraph and paragraph (2) of the following Article) is assigned to the headquarters, and the Chief Cabinet Secretary and the Minister for Artificial Intelligence Strategy (meaning the Minister of State duty is to assist the Prime Minister concerning comprehensive and systematic promotion of research and development, and utilization of artificial intelligence-related technology, as ordered by the Prime Minister) serve in that capacity.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch4at5cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The deputy chairperson assists the chairperson's duties.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="24" id="en_ch4at6">
+					<ArticleCaption>(Members of the Artificial Intelligence Strategic Headquarters)</ArticleCaption>
+					<ArticleTitle>Article 24</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at6cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The members of an artificial intelligence strategic headquarters are assigned to the headquarters (referred to as the "headquarters members" in the following paragraph).</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch4at6cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>The headquarters members are appointed from all the Ministers of State other than the chairperson and the deputy chairperson.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="25" id="en_ch4at7">
+					<ArticleCaption>(Submission of Materials and Other Forms of Cooperation)</ArticleCaption>
+					<ArticleTitle>Article 25</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at7cl1">
+						<ParagraphNum>(1)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>If the headquarters finds it necessary for performing the affairs under their jurisdiction, they may request the heads of a relevant administrative body, local government, incorporated administrative agency (meaning the incorporated administrative agency prescribed in Article 2, paragraph (1) of Act on General Rules for Incorporated Administrative Agencies (Act No. 103 of 1999)) and local incorporated administrative agency (meaning the local incorporated administrative agency prescribed in Article 2, paragraph (1) of the Local Independent Administrative Agency Act (Act No. 118 of 2003)), and the representative of a special corporation (meaning the corporation directly incorporated by law or corporation incorporated by a special act of incorporation pursuant to a special law, to which the provisions of Article 4, paragraph (1), item (viii) of the Act for Establishment of the Ministry of Internal Affairs and Communications (Act No. 91 of 1999) apply) to submit materials, express opinions, give explanations and provide other necessary cooperation.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+					<Paragraph Num="2" id="en_ch4at7cl2">
+						<ParagraphNum>(2)</ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>If the headquarters finds it particularly necessary for performing the affairs under their jurisdiction, they may ask for necessary cooperation from a person other than those prescribed in the preceding paragraph.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="26" id="en_ch4at8">
+					<ArticleCaption>(Affairs)</ArticleCaption>
+					<ArticleTitle>Article 26</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at8cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>Affairs concerning the headquarters are handled by the Cabinet Office.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="27" id="en_ch4at9">
+					<ArticleCaption>(Competent Minister)</ArticleCaption>
+					<ArticleTitle>Article 27</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at9cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>For matters concerning the headquarters, the Prime Minister is to be the competent minister as referred to in the Cabinet Act (Act No. 5 of 1947).</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+				<Article Num="28" id="en_ch4at10">
+					<ArticleCaption>(Delegation to Cabinet Order)</ArticleCaption>
+					<ArticleTitle>Article 28</ArticleTitle>
+					<Paragraph Num="1" id="en_ch4at10cl1">
+						<ParagraphNum></ParagraphNum>
+						<ParagraphSentence>
+							<Sentence>In addition to what is specified in this Act, necessary matters concerning the headquarters are specified by Cabinet Order.</Sentence>
+						</ParagraphSentence>
+					</Paragraph>
+				</Article>
+			</Chapter>
+		</MainProvision>
+		<SupplProvision id="en_s1">
+			<SupplProvisionLabel>Supplementary Provisions</SupplProvisionLabel>
+			<Article Num="1" id="en_s1at1">
+				<ArticleCaption>(Effective Date)</ArticleCaption>
+				<ArticleTitle>Article 1</ArticleTitle>
+				<Paragraph Num="1" id="en_s1at1cl1">
+					<ParagraphNum></ParagraphNum>
+					<ParagraphSentence>
+						<Sentence Num="1" Function="Main">This Act comes into effect on the date of promulgation;</Sentence>
+						<Sentence Num="2" Function="Proviso">provided, however, that the provisions of Chapters III and IV, and Article 3 and Article 4 of the Supplementary Provisions come into effect on the day specified by Cabinet Order within a period not exceeding three months from the date of promulgation.</Sentence>
+					</ParagraphSentence>
+				</Paragraph>
+			</Article>
+			<Article Num="2" id="en_s1at2">
+				<ArticleCaption>(Review)</ArticleCaption>
+				<ArticleTitle>Article 2</ArticleTitle>
+				<Paragraph Num="1" id="en_s1at2cl1">
+					<ParagraphNum></ParagraphNum>
+					<ParagraphSentence>
+						<Sentence>The government is to review the extent to which this Act is in effect, while taking into consideration of international trend concerning policies on promoting research and development and utilization of artificial intelligence-related technology, and other social and economic changes, and to take required measures based on the results of its review if it finds them to be necessary.</Sentence>
+					</ParagraphSentence>
+				</Paragraph>
+			</Article>
+			<Article Num="3" id="en_s1at3">
+				<ArticleCaption>(Partial Amendment of the Act for Establishment of the Cabinet Office)</ArticleCaption>
+				<ArticleTitle>Article 3</ArticleTitle>
+				<Paragraph Num="1" id="en_s1at3cl1">
+					<ParagraphNum></ParagraphNum>
+					<ParagraphSentence>
+						<Sentence>The Act for Establishment of the Cabinet Office (Act No. 89 of 1999) is partially amended as follows:</Sentence>
+					</ParagraphSentence>
+					<AmendProvision>
+						<AmendProvisionSentence>
+							<Sentence>The following item is added after Article 4, paragraph (1), item(xvii).</Sentence>
+						</AmendProvisionSentence>
+						<NewProvision>
+							<Item Num="17_2">
+								<ItemTitle>(xvii)-2</ItemTitle>
+								<ItemSentence>
+									<Sentence>matters concerning the basic policies to comprehensively and systematically promote research and development, and utilization of artificial intelligence-related technology (refers to the provisions of Article 2 of the Act on Promotion of Research and Development, and Utilization of Artificial Intelligence-related Technology (Act No. 53 of 2025); the same applies in paragraph (3), item (vii)-9)</Sentence>
+								</ItemSentence>
+							</Item>
+						</NewProvision>
+					</AmendProvision>
+				</Paragraph>
+			</Article>
+			<Article Num="4" id="en_s1at4">
+				<ArticleTitle>Article 4</ArticleTitle>
+				<Paragraph Num="1" id="en_s1at4cl1">
+					<ParagraphNum></ParagraphNum>
+					<ParagraphSentence>
+						<Sentence>The item (vii)-9 in paragraph (3), is amended to the item (vii)-10, and the following item is added after the item (vii)-8.</Sentence>
+					</ParagraphSentence>
+            <AmendProvision>
+              <NewProvision>
+                <Item Num="7_9">
+                  <ItemTitle>(vii)-9</ItemTitle>
+                  <ItemSentence>
+                    <Sentence>matters concerning promotion of measures on research and development, and utilization of artificial intelligence-related technology.</Sentence>
+                  </ItemSentence>
+                </Item>
+              </NewProvision>
+            </AmendProvision>
+            <AmendProvision>
+              <AmendProvisionSentence>
+                <Sentence>The term "item (vii)-9" in Article 4, paragraph (3), item (xv) is amended to the term "item (vii)-10".</Sentence>
+              </AmendProvisionSentence>
+            </AmendProvision>
+            <AmendProvision>
+              <AmendProvisionSentence>
+                <Sentence>The term "item (vii)-9 of paragraph (3)" in Article 9-2 and Article 16-2, paragraph (2), is amended to the term "item (vii)-10 of paragraph (3)".</Sentence>
+              </AmendProvisionSentence>
+            </AmendProvision>
+            <AmendProvision>
+              <AmendProvisionSentence>
+                <Sentence>The term "and item (xvii)-2" is added after the term "through item (xvi)", and the term ", item (vii)-9" is added after the term "through item (vii)-3", in Article 40-4, paragraph (1).</Sentence>
+              </AmendProvisionSentence>
+            </AmendProvision>
+            <AmendProvision>
+              <AmendProvisionSentence>
+                <Sentence>The term "paragraph (3), item (vii)-9" in Article 2-2, paragraph (1) and paragraph (3) of the Supplementary Provisions is amended to the term "paragraph (3), item (vii)-10".</Sentence>
+              </AmendProvisionSentence>
+            </AmendProvision>
+          </Paragraph>
+			</Article>
+			<Article Num="4" id="en_s1at5">
+				<ArticleCaption>(Adjustment Provisions)</ArticleCaption>
+				<ArticleTitle>Article 4</ArticleTitle>
+				<Paragraph Num="1" id="en_s1at5cl1">
+					<ParagraphNum></ParagraphNum>
+					<ParagraphSentence>
+						<Sentence>When the date of the provisions prescribed in the proviso to Article 1 of the Supplementary Provisions comes into effect is before the date when the Act Partially Amending the Basic Act on Disaster Management and related Acts (Act No. 51, of 2025) comes into effect, in Article 6 of that Act, the term "paragraph (3), item (vii)-9" in the provisions amending to add one article after Article 16 of the Act for Establishment of the Cabinet Office is deemed to be replaced with the term "paragraph (3), item (vii)-10," and the provisions amending Article 16-2, paragraph (2) of the that Act in the preceding Article, do not apply.</Sentence>
+					</ParagraphSentence>
+				</Paragraph>
+			</Article>
+		</SupplProvision>
+	</LawBody>
+</Law>

@@ -1,0 +1,101 @@
+{
+  "instrumentId": "jp-ai-promotion-act-2025",
+  "lawId": "507AC0000000053",
+  "officialTitle": "人工知能関連技術の研究開発及び活用の推進に関する法律",
+  "englishReferenceTitle": "Act on Promotion of Research and Development, and Utilization of Artificial Intelligence-related Technology",
+  "retrievedOn": "2026-07-20",
+  "hashAlgorithm": "SHA-256",
+  "currentVersion": {
+    "asOf": "2026-07-20",
+    "revisionId": "507AC0000000053_20250901_000000000000000",
+    "promulgatedOn": "2025-06-04",
+    "partlyEffectiveFrom": "2025-06-04",
+    "fullyEffectiveFrom": "2025-09-01",
+    "status": "current-fully-in-force",
+    "futureRevisionTextIncluded": false,
+    "promulgatedFutureRevisionCount": 0
+  },
+  "corpus": {
+    "path": "data/v2/jp-ai-promotion-act-2025-articles.json",
+    "nodeCount": 29,
+    "mainArticleCount": 28,
+    "currentSupplementaryArticleCount": 2,
+    "supplementaryProvisionBlockCount": 1,
+    "contentSha256": "738cdfe7d67e14d5810b6f34058d917c789630e56d70214e3d0a06eb1abd9bba"
+  },
+  "promulgatedFutureRevisions": [],
+  "translation": {
+    "language": "en",
+    "status": "government-published-reference-current-no-legal-effect",
+    "source": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+    "translatedOn": "2025-08-22",
+    "publishedOnDatabase": "2026-01-30",
+    "dictionaryVersion": "18.0",
+    "mainArticleCount": 28,
+    "currentSupplementaryArticleCountAligned": 2,
+    "sourceOriginalSupplementaryArticleNodeCount": 5,
+    "versionDifference": "No later amendment exists. The English source translates the original enactment and preserves spent supplementary amendment provisions that the current e-Gov extract omits; current corpus alignment therefore uses the 28 main Articles and current Supplementary Articles 1 and 2 only.",
+    "legalEffect": "Government-published reference from the Japanese Law Translation Database. That database states that translations are not official texts and have no legal effect; consult the original Japanese text."
+  },
+  "rights": {
+    "primaryJapaneseText": {
+      "reuseStatus": "e-gov-secondary-use-unrestricted",
+      "license": "e-Gov Law Search reuse statement",
+      "licenseUrl": "https://laws.e-gov.go.jp/help",
+      "attribution": "Source: e-Gov Law Search, Digital Agency, Government of Japan. The original Japanese text alone has legal effect."
+    },
+    "referenceTranslation": {
+      "reuseStatus": "public-data-license-1.0",
+      "license": "Public Data License (Version 1.0)",
+      "licenseUrl": "https://www.japaneselawtranslation.go.jp/en/index/terms",
+      "attribution": "Japanese Law Translation Database System, Ministry of Justice, Japan."
+    }
+  },
+  "sourceSnapshots": [
+    {
+      "path": "data/v2/source-snapshots/jp-ai-promotion-act-507AC0000000053-current-2026-07-20.xml",
+      "sourceUrl": "https://laws.e-gov.go.jp/api/2/law_file/xml/507AC0000000053?asof=2026-07-20",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "current-effective-text",
+      "sha256": "d91cfc90de242947edab59bf44ae42541f7f5d03740acbc4f188d56839fb77cc",
+      "rightsProfile": "egov"
+    },
+    {
+      "path": "data/v2/source-snapshots/jp-ai-promotion-act-507AC0000000053-revisions-2026-07-20.json",
+      "sourceUrl": "https://laws.e-gov.go.jp/api/2/law_revisions/507AC0000000053",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/json",
+      "role": "revision-history",
+      "sha256": "79df2ad7f322debc7880c9c5dbc805ae5a63499007dad13a3895da55700f4953",
+      "rightsProfile": "egov"
+    },
+    {
+      "path": "data/v2/source-snapshots/jp-ai-promotion-act-government-en-reference.xml",
+      "sourceUrl": "https://www.japaneselawtranslation.go.jp/en/laws/download/5066/06/r07Aa000530105en18.0.xml",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "current-government-reference-translation",
+      "sha256": "98702751c2c56ccb185bf84eba939b27eaac94bd4e6aa4d047474c6d8cf1a17e",
+      "rightsProfile": "jlt-pdl-1.0"
+    },
+    {
+      "path": "data/v2/source-snapshots/jp-ai-promotion-act-government-en-reference-history.html",
+      "sourceUrl": "https://www.japaneselawtranslation.go.jp/en/laws/history/5066",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "translation-version-history",
+      "sha256": "7b0d07fd1fa7f24e1bace2b6dc347896991af02d8a09058c32bdc3de5d26a88c",
+      "rightsProfile": "jlt-pdl-1.0"
+    },
+    {
+      "path": "data/v2/source-snapshots/jp-ai-promotion-act-cao-status.html",
+      "sourceUrl": "https://www8.cao.go.jp/cstp/ai/ai_act/ai_act.html",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "competent-authority-commencement-status",
+      "sha256": "3bece32a8d9d9989a9098aa1efbdd84729d344d3bb2208669780d7d583c7cc12",
+      "rightsProfile": "audit-only"
+    }
+  ]
+}

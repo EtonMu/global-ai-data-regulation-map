@@ -23,23 +23,21 @@ The Global Atlas uses the documented display order **EU → US → China → UK 
 
 ## V2 corpus snapshot
 
-The legal-source and lifecycle snapshot is verified through **2026-07-19**. Relation records carry their own `verifiedOn` dates; analytical work does not silently advance the underlying legal-status cut-off.
+The legal-source and lifecycle snapshot is verified through **2026-07-20**. Relation records carry their own `verifiedOn` dates; analytical work does not silently advance the underlying legal-status cut-off.
 
 The runtime dataset contains:
 
 - **30 jurisdiction and issuing-context records**;
-- **55 instruments** spanning the EU, United States and its indexed state systems, China, the United Kingdom, Canada, Japan, India, Singapore, South Korea, Australia, Brazil, the UAE, Saudi Arabia, Taiwan, Hong Kong SAR, Indonesia, Vietnam, South Africa, Nigeria, Switzerland, and international or standards contexts;
-- **308 curated provision records**, producing **499 unique merged provision nodes** after overlaying the 99-Article GDPR and 113-Article EU AI Act imports and de-duplicating shared EU anchors;
-- **67 qualified relations**—44 candidate and 23 editorial-reviewed—plus **112 lifecycle events**;
-- **55 instrument-level source-audit records**, 23 controlled core concepts in 7 themes, and 34 curated structure summaries.
+- **58 instruments** spanning the EU, United States and its indexed state systems, China, the United Kingdom, Canada, Japan, India, Singapore, South Korea, Australia, Brazil, the UAE, Saudi Arabia, Taiwan, Hong Kong SAR, Indonesia, Vietnam, South Africa, Nigeria, Switzerland, and international or standards contexts;
+- **218 curated source-linked anchors** plus version-locked complete corpora, producing **2,873 unique merged provision and framework nodes** after stable-ID de-duplication;
+- **74 qualified relations**—46 candidate and 28 editorial-reviewed—plus **116 lifecycle events**;
+- **58 instrument-level source-audit records**, 23 controlled core concepts in 7 themes, 34 curated structure summaries, and **2,873 clause-level topic reviews** (2,333 substantive and 540 structural).
 
-Local text completeness is intentionally narrower than instrument breadth. Complete locally stored Article coverage is limited to:
+The repository now contains **38 version-locked complete corpora**. They cover the principal indexed binding laws and current/historical public-law texts across the EU, US, China, UK, Canada, Japan, India, Singapore, South Korea, Australia, Brazil, the Gulf states, Taiwan, Hong Kong SAR, Indonesia, Vietnam, South Africa, Nigeria and Switzerland. They also include the complete NIST AI RMF 1.0 hierarchy. Examples include GDPR (99), EU AI Act (113), China CSL (81), UK GDPR (120), Japan APPI (208), Australia Privacy Act (352), Singapore PDPA (106), Hong Kong PDPO (130 bilingual nodes), Swiss FADP (79 four-language nodes), and the current Colorado AI Act session-law corpus.
 
-- all 99 operative GDPR Articles from the official English EUR-Lex publication;
-- all 113 Articles of the enacted 2024 EU AI Act text from EUR-Lex;
-- all 81 Articles of the Chinese Cybersecurity Law consolidation effective 1 January 2026, stored in Chinese with aligned, expressly non-official English reference translations.
+“Complete corpus” means complete within the documented version, language, lifecycle and redistribution boundary. It does not imply that an instrument is currently in force or that every official source may be mirrored. Recitals, annexes, schedules, signatures, amendment instruments or appendices are included only where the relevant manifest expressly says so. Twenty framework, guidance, proposal or historical records remain selected-source indexes because of reuse restrictions, scope boundaries, or the absence of a verified redistributable edition. `source-audit.json` records the boundary separately for every instrument.
 
-“Complete Article coverage” does not include recitals, annexes, signatures, footnotes, amendment decisions, or every implementing instrument unless separately stated. Of the remaining instruments, some contain selected verified source-text records alongside an index; most contain selected source-linked provision or framework nodes expressed as editorial summaries. Those records support navigation and comparison and are not complete local reproductions. `source-audit.json` records the boundary separately for every instrument.
+Where a documented reuse basis permits redistribution, normalized source text is stored separately from project-authored metadata. Where permission has not been established, the interface provides project-authored summaries and authoritative links. In particular, the proposed Canadian AIDA text is not redistributed; Brazil PL 2338 remains a pending bill; NIST AI RMF is voluntary; and Colorado provisions retain version-specific commencement metadata.
 
 ## Why qualified mappings matter
 
@@ -90,9 +88,10 @@ data/geo/
 data/v2/
   jurisdictions.json         jurisdiction and institutional contexts
   instruments.json           legal force, lifecycle, dates, and official sources
-  provisions.json            curated provision metadata and summaries
-  gdpr-articles.json          generated official GDPR article corpus
-  eu-ai-act-articles.json     generated official EU AI Act article corpus
+  provisions.json            curated source-linked anchors and metadata
+  *-articles.json             version-locked complete Article corpora
+  *-provisions.json           complete Section/Rule/framework corpora
+  provision-concepts.json     clause-level relevance and concept review layer
   concept-themes.json        ordered learning themes for core concepts
   concepts.json              sourced core-concept vocabulary and summaries
   structure-summaries.json   curated section/framework orientation summaries
@@ -100,8 +99,9 @@ data/v2/
   status-events.json         auditable lifecycle events
   source-audit.json          one source and coverage audit per instrument
 scripts/
-  expand-global-corpus.mjs   reproduces the reviewed 32-instrument expansion
+  expand-global-corpus.mjs   disabled historical bootstrap (not normal maintenance)
   build-source-audit.mjs     rebuilds structured instrument audit companions
+  build-provision-concepts.mjs rebuilds clause-level highlight mappings
   import-eu-law.py           EUR-Lex XHTML article importer
   validate-data.mjs          dataset integrity checks
 research/
@@ -111,21 +111,21 @@ research/
   proposed-new-relations.json reviewed input for the expanded relation set
 ```
 
-At runtime the two generated EU corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, tags, status, and analytical metadata remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
+At runtime the version-locked corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, lifecycle metadata, tags and analytical reviews remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
 
 The frontend is built with React, TypeScript, D3 geographic primitives, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
 
 ## Reproducible corpus maintenance
 
-After changing reviewed expansion metadata, rebuild the derived files in this order:
+After changing corpus or reviewed metadata, rebuild the derived files in this order:
 
 ```bash
-node scripts/expand-global-corpus.mjs
+node scripts/build-provision-concepts.mjs
 node scripts/build-source-audit.mjs
 pnpm validate:data
 ```
 
-The expansion script does not browse the web or independently determine current law. The audit builder synchronizes reviewed metadata and coverage declarations; it is not an automated legal or clause-by-clause verifier. Validation checks structure, references, declared coverage, lifecycle-event presence, graph coverage, and audit completeness, but cannot prove legal accuracy or currentness.
+The historical expansion writer is deliberately disabled in normal maintenance because it would recreate superseded grouped anchors. The audit and concept builders synchronize already reviewed metadata; they do not browse the web or independently determine current law. Validation checks structure, references, declared coverage, lifecycle-event presence, graph coverage, source rights boundaries and audit completeness, but cannot prove legal accuracy or currentness.
 
 ## Run locally
 

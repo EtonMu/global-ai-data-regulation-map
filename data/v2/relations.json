@@ -271,7 +271,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-manage"
+      "id": "us-nist-ai-rmf-1-0-section-5-4"
     },
     "type": "future-operational-overlap",
     "directionality": "undirected",
@@ -303,7 +303,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-map-2-2"
+      "id": "us-nist-ai-rmf-1-0-core-map-2-2"
     },
     "type": "future-partial-overlap",
     "directionality": "undirected",
@@ -468,7 +468,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-ca-sb1047-enrolled-ch22-6"
+      "id": "us-ca-sb1047-2024-proposed-bpc-22603"
     },
     "type": "historical-policy-overlap",
     "directionality": "undirected",
@@ -528,11 +528,11 @@
     "id": "v2-rel-017",
     "source": {
       "type": "provision",
-      "id": "us-ca-sb1047-enrolled-ch22-6"
+      "id": "us-ca-sb1047-2024-proposed-bpc-22603"
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-manage"
+      "id": "us-nist-ai-rmf-1-0-section-5-4"
     },
     "type": "historical-operational-overlap",
     "directionality": "undirected",
@@ -709,7 +709,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-govern"
+      "id": "us-nist-ai-rmf-1-0-section-5-1"
     },
     "type": "soft-law-alignment",
     "directionality": "undirected",
@@ -838,7 +838,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-map"
+      "id": "us-nist-ai-rmf-1-0-section-5-2"
     },
     "type": "operationalizes",
     "directionality": "directed",
@@ -900,7 +900,7 @@
     "id": "v2-rel-028",
     "source": {
       "type": "provision",
-      "id": "in-dpdp-act-sec-8"
+      "id": "in-dpdp-act-2023-s8"
     },
     "target": {
       "type": "provision",
@@ -937,7 +937,7 @@
     "id": "v2-rel-029",
     "source": {
       "type": "provision",
-      "id": "in-dpdp-rules-rule-6"
+      "id": "in-dpdp-rules-2025-r6"
     },
     "target": {
       "type": "provision",
@@ -969,7 +969,7 @@
     "id": "v2-rel-030",
     "source": {
       "type": "provision",
-      "id": "in-dpdp-rules-rule-7"
+      "id": "in-dpdp-rules-2025-r7"
     },
     "target": {
       "type": "provision",
@@ -1136,7 +1136,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-govern"
+      "id": "us-nist-ai-rmf-1-0-section-5-1"
     },
     "type": "partial-overlap",
     "directionality": "undirected",
@@ -1275,7 +1275,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-govern"
+      "id": "us-nist-ai-rmf-1-0-section-5-1"
     },
     "type": "operational-alignment",
     "directionality": "undirected",
@@ -1342,7 +1342,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "us-nist-ai-rmf-manage"
+      "id": "us-nist-ai-rmf-1-0-section-5-4"
     },
     "type": "operational-alignment",
     "directionality": "undirected",
@@ -1438,11 +1438,11 @@
     "id": "v2-rel-044",
     "source": {
       "type": "provision",
-      "id": "sg-pdpa-2012-ss-26a-26e"
+      "id": "sg-pdpa-sec-26b"
     },
     "target": {
       "type": "provision",
-      "id": "au-privacy-act-1988-part-iiic"
+      "id": "au-privacy-act-1988-sec-26we"
     },
     "type": "partial-overlap",
     "directionality": "undirected",
@@ -1452,9 +1452,73 @@
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "current-enacted-text-comparison",
-    "rationale": "Singapore's breach-assessment and notification provisions and Australia's eligible-data-breach regime both require structured evaluation and notification responses after qualifying personal-data incidents.",
-    "limits": "The covered entities, breach thresholds, assessment periods, notification recipients, content requirements, exemptions and enforcement consequences differ; shared incident-response structure does not establish equivalent notification duties.",
-    "verifiedOn": "2026-07-19",
+    "rationale": "Singapore PDPA section 26B and Australian Privacy Act section 26WE each define the threshold at which a personal-data breach enters the statutory notification regime, including a harm-based trigger.",
+    "limits": "Singapore also uses significant scale as an independent trigger, while Australia addresses specified information holders and unauthorized access, disclosure or loss likely to cause serious harm; the tests, exclusions and affected entities are not equivalent.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://sso.agc.gov.sg/Act/PDPA2012/",
+        "label": "Personal Data Protection Act 2012 — Singapore Statutes Online"
+      },
+      {
+        "url": "https://www.legislation.gov.au/C2004A03712/latest",
+        "label": "Privacy Act 1988 — Federal Register of Legislation, Australia"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-070",
+    "source": {
+      "type": "provision",
+      "id": "sg-pdpa-sec-26c"
+    },
+    "target": {
+      "type": "provision",
+      "id": "au-privacy-act-1988-sec-26wh"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "incident-response"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "current-enacted-text-comparison",
+    "rationale": "Singapore PDPA section 26C and Australian Privacy Act section 26WH each require a reasonable and expeditious assessment when an organization or entity has reason to suspect that a covered breach may have occurred.",
+    "limits": "Australia specifies a 30-day completion objective and its own suspicion and eligibility tests; Singapore uses prescribed assessment requirements and separately addresses data-intermediary notice. The triggers, timing and actor rules differ.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://sso.agc.gov.sg/Act/PDPA2012/",
+        "label": "Personal Data Protection Act 2012 — Singapore Statutes Online"
+      },
+      {
+        "url": "https://www.legislation.gov.au/C2004A03712/latest",
+        "label": "Privacy Act 1988 — Federal Register of Legislation, Australia"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-071",
+    "source": {
+      "type": "provision",
+      "id": "sg-pdpa-sec-26d"
+    },
+    "target": {
+      "type": "provision",
+      "id": "au-privacy-act-1988-sec-26wl"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+    "conceptIds": [
+      "incident-response"
+    ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "current-enacted-text-comparison",
+    "rationale": "Singapore PDPA section 26D and Australian Privacy Act section 26WL each require individual-facing notification after the respective statutory breach threshold and procedural prerequisites are met.",
+    "limits": "Singapore separately requires Commission notice within three calendar days after assessment and limits individual notice to specified harm cases; Australia section 26WL concerns communicating a prepared section 26WK statement. Recipients, timing, content and exceptions differ.",
+    "verifiedOn": "2026-07-20",
     "sourceSupport": [
       {
         "url": "https://sso.agc.gov.sg/Act/PDPA2012/",
@@ -1607,7 +1671,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "br-lgpd-2018-art-6"
+      "id": "br-lgpd-art-6"
     },
     "type": "partial-overlap",
     "directionality": "undirected",
@@ -1734,25 +1798,123 @@
     "id": "v2-rel-053",
     "source": {
       "type": "provision",
-      "id": "vn-pdpl-implementing-decree-356-2025-arts-17-20"
+      "id": "vn-decree-356-2025-art-17"
     },
     "target": {
       "type": "provision",
-      "id": "vn-personal-data-protection-law-2025-arts-20-22"
+      "id": "vn-pdpl-2025-art-20"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "cross-border-transfer"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "express-implementing-decree-and-parent-law-reading",
+    "rationale": "Decree No. 356/2025/ND-CP Article 17 specifies cross-border-transfer scenarios and exclusions for the cross-border personal-data transfer regime established by Law No. 91/2025/QH15 Article 20.",
+    "limits": "Article 17 supplies implementing detail within the Decree's delegated scope; it does not replace Article 20 or exhaust every obligation that may apply to a cross-border transfer.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Decree No. 356/2025/ND-CP — Government of Viet Nam"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Law No. 91/2025/QH15 on Personal Data Protection — Government of Viet Nam"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-072",
+    "source": {
+      "type": "provision",
+      "id": "vn-decree-356-2025-art-18"
+    },
+    "target": {
+      "type": "provision",
+      "id": "vn-pdpl-2025-art-20"
     },
     "type": "implements",
     "directionality": "directed",
     "conceptIds": [
       "cross-border-transfer",
+      "impact-assessment"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "express-implementing-decree-and-parent-law-reading",
+    "rationale": "Decree No. 356/2025/ND-CP Article 18 supplies the conditions, procedure and dossier components for the cross-border personal-data transfer impact assessment required under Law No. 91/2025/QH15 Article 20.",
+    "limits": "The Decree operationalizes the statutory assessment mechanism but remains subordinate to the Law; article-specific exemptions, filing steps and deadlines must be read from the official text.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Decree No. 356/2025/ND-CP — Government of Viet Nam"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Law No. 91/2025/QH15 on Personal Data Protection — Government of Viet Nam"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-073",
+    "source": {
+      "type": "provision",
+      "id": "vn-decree-356-2025-art-19"
+    },
+    "target": {
+      "type": "provision",
+      "id": "vn-pdpl-2025-art-21"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
       "impact-assessment",
       "accountability-governance"
     ],
     "status": "editorial-reviewed",
     "confidence": "high",
     "evidenceBasis": "express-implementing-decree-and-parent-law-reading",
-    "rationale": "Decree No. 356/2025/ND-CP Articles 17–20 supply scenarios, dossier content, exemptions and update mechanics for the processing and cross-border assessment regime established by Law No. 91/2025/QH15 Articles 20–22.",
-    "limits": "The grouped nodes are editorial anchors and must not obscure article-specific conditions, exemptions, filing deadlines or update triggers; the Decree implements only the matters within its delegated scope and does not replace the parent Law.",
-    "verifiedOn": "2026-07-19",
+    "rationale": "Decree No. 356/2025/ND-CP Article 19 supplies the conditions, procedure and dossier components for the personal-data processing impact assessment established by Law No. 91/2025/QH15 Article 21.",
+    "limits": "The Decree provides procedural detail for the statutory assessment; it does not broaden the parent Law beyond the matters delegated for implementation.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Decree No. 356/2025/ND-CP — Government of Viet Nam"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Law No. 91/2025/QH15 on Personal Data Protection — Government of Viet Nam"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-074",
+    "source": {
+      "type": "provision",
+      "id": "vn-decree-356-2025-art-20"
+    },
+    "target": {
+      "type": "provision",
+      "id": "vn-pdpl-2025-art-22"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "impact-assessment",
+      "cross-border-transfer",
+      "accountability-governance"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "express-implementing-decree-and-parent-law-reading",
+    "rationale": "Decree No. 356/2025/ND-CP Article 20 operationalizes the dossier-update duties for processing and cross-border-transfer impact assessments established by Law No. 91/2025/QH15 Article 22.",
+    "limits": "The relationship is limited to update mechanics within the Decree's delegated scope; the statutory triggers and the Decree's article-specific update conditions must be applied together.",
+    "verifiedOn": "2026-07-20",
     "sourceSupport": [
       {
         "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
@@ -1803,7 +1965,7 @@
     "id": "v2-rel-055",
     "source": {
       "type": "provision",
-      "id": "vn-personal-data-protection-law-2025-art-23"
+      "id": "vn-pdpl-2025-art-23"
     },
     "target": {
       "type": "provision",
@@ -1835,7 +1997,7 @@
     "id": "v2-rel-056",
     "source": {
       "type": "provision",
-      "id": "br-lgpd-2018-art-6"
+      "id": "br-lgpd-art-6"
     },
     "target": {
       "type": "provision",
@@ -1869,7 +2031,7 @@
     "id": "v2-rel-057",
     "source": {
       "type": "provision",
-      "id": "br-pl-2338-2023-ai-bill-arts-25-28"
+      "id": "br-pl2338-art-25"
     },
     "target": {
       "type": "provision",
@@ -1878,14 +2040,14 @@
     "type": "historical-comparison",
     "directionality": "undirected",
     "conceptIds": [
-      "ai-risk-management"
+      "impact-assessment"
     ],
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "version-specific-official-bill-text-comparison",
-    "rationale": "Brazil's pending proposal and Canada's lapsed AIDA proposal both used risk-based organizational duties to identify, assess, mitigate or monitor AI-related harm and biased outcomes.",
-    "limits": "Neither endpoint is operative law: Brazil PL 2338 remains pending and may change, while Bill C-27 lapsed on 6 January 2025; their covered systems, actors, assessment forms, remedies and legislative versions differ materially.",
-    "verifiedOn": "2026-07-19",
+    "rationale": "Brazil PL 2338/2023 Article 25 would require a preliminary algorithmic impact assessment, while Canada's lapsed AIDA clauses 6–11 would have required persons responsible for high-impact systems to assess potential biased output and material harm and establish mitigation and monitoring measures.",
+    "limits": "Neither endpoint is operative law: Brazil PL 2338 remains pending and may change, while Bill C-27 lapsed on 6 January 2025. Brazil Article 25's preliminary assessment and AIDA's grouped high-impact-system duties differ in trigger, form, covered actors, consequences and legislative status.",
+    "verifiedOn": "2026-07-20",
     "sourceSupport": [
       {
         "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2868197&filename=Tramitacao-PL+2338%2F2023",
@@ -1909,11 +2071,11 @@
     "id": "v2-rel-058",
     "source": {
       "type": "provision",
-      "id": "ae-federal-pdpl-45-2021-art-21"
+      "id": "ae-federal-pdpl-45-2021-a21"
     },
     "target": {
       "type": "provision",
-      "id": "ng-data-protection-act-2023-s-28"
+      "id": "ng-ndpa-2023-s-28"
     },
     "type": "partial-overlap",
     "directionality": "undirected",
@@ -2009,11 +2171,11 @@
     "id": "v2-rel-061",
     "source": {
       "type": "provision",
-      "id": "sa-pdpl-2021-amended-2023-art-11"
+      "id": "sa-pdpl-2021-amended-2023-a11"
     },
     "target": {
       "type": "provision",
-      "id": "br-lgpd-2018-art-6"
+      "id": "br-lgpd-art-6"
     },
     "type": "partial-overlap",
     "directionality": "undirected",
@@ -2046,7 +2208,7 @@
     "id": "v2-rel-062",
     "source": {
       "type": "provision",
-      "id": "za-popia-4-2013-s-71"
+      "id": "za-popia-s-71"
     },
     "target": {
       "type": "provision",
@@ -2083,7 +2245,7 @@
     "id": "v2-rel-063",
     "source": {
       "type": "provision",
-      "id": "ng-data-protection-act-2023-s-28"
+      "id": "ng-ndpa-2023-s-28"
     },
     "target": {
       "type": "provision",
@@ -2150,7 +2312,7 @@
     "id": "v2-rel-065",
     "source": {
       "type": "provision",
-      "id": "us-co-sb26-189-admt-2026-developer-documentation"
+      "id": "us-co-ai-act-current-6-1-1702"
     },
     "target": {
       "type": "provision",
@@ -2187,7 +2349,7 @@
     "id": "v2-rel-066",
     "source": {
       "type": "provision",
-      "id": "us-co-sb26-189-admt-2026-access-review"
+      "id": "us-co-ai-act-current-6-1-1705"
     },
     "target": {
       "type": "provision",
@@ -2255,6 +2417,79 @@
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2016/679/art_25/oj",
         "label": "GDPR Article 25 — EUR-Lex"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-068",
+    "source": {
+      "type": "instrument",
+      "id": "sa-pdpl-implementing-regulation-2023"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "sa-pdpl-2021-amended-2023"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "security-controls",
+      "incident-response",
+      "impact-assessment",
+      "accountability-governance"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "official-regulation-and-parent-law",
+    "rationale": "The Implementing Regulation operationalizes expressly delegated PDPL requirements for rights requests, consent, minimization, controller and processor arrangements, safeguards, breach notice, impact assessment, DPOs, audit and complaints.",
+    "limits": "The regulation supplements rather than replaces the Law. Article-level duties must be read with the corresponding statutory authority, and this edge does not imply that every regulatory article maps one-to-one to one Law article.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
+        "label": "Saudi Data Governance Platform — Implementing Regulation"
+      },
+      {
+        "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
+        "label": "Saudi Data Governance Platform — Personal Data Protection Law"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-069",
+    "source": {
+      "type": "instrument",
+      "id": "sa-pdpl-transfer-regulation-2023"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "sa-pdpl-2021-amended-2023"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "cross-border-transfer",
+      "impact-assessment",
+      "third-party-supply-chain",
+      "continuous-assurance",
+      "accountability-governance"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "official-versioned-transfer-regulation-and-parent-law",
+    "rationale": "Version 2.0 operationalizes Saudi PDPL transfer requirements through purpose, adequacy, exemption, onward-transfer, revocation and transfer-risk-assessment rules.",
+    "limits": "This relationship does not supply an unverified Gazette publication date. The corpus leaves the regulation's applies-from date null where the verified official publication does not state it.",
+    "verifiedOn": "2026-07-20",
+    "sourceSupport": [
+      {
+        "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
+        "label": "Saudi Data Governance Platform — Transfer Regulation Version 2.0"
+      },
+      {
+        "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
+        "label": "Saudi Data Governance Platform — Personal Data Protection Law"
       }
     ]
   }

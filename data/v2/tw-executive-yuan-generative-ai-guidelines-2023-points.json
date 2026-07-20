@@ -1,0 +1,562 @@
+[
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-general-explanation",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "general-explanation",
+    "unitNumber": null,
+    "label": "總說明",
+    "officialLabel": "總說明",
+    "originalTitle": "總說明",
+    "title": "制定背景與治理原則",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "說明生成式AI帶來的行政效率與資訊、權利及機密風險，確立負責任、可信賴、安全、隱私、資料治理及問責等總體原則，並要求保留人員的自主權與控制權。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "近年來生成式AI快速發展，影響遍及全球產官學研各界。其中ChatGPT於2022年底發布後，更掀起全球熱潮，且功能極為多元，已被視為人工智慧之一項重大突破。參考歐盟之定義，生成式AI模型是一種電腦程式，旨在創建類似於人類製作（human-made）之新內容；其大量蒐集、學習與產出之資料，可能涉及智慧財產權、人權或業務機密之侵害，且其生成結果，因受限於所學習資料之品質與數量，有可能真偽難辨或創造不存在之資訊，須客觀且專業評估其產出資訊與風險。",
+      "考量行政院及所屬機關（構）（以下簡稱各機關）利用生成式AI協助執行業務或提供服務，有助於行政效率之提升，且為保持執行公務之機密性及專業性，並促使各機關使用生成式AI有一致之認知及基本原則，爰參考各國政府之審慎因應作法，研訂「行政院及所屬機關（構）使用生成式AI參考指引」（以下簡稱本參考指引），供各機關依循。各機關得視使用生成式AI之業務需求，參酌本參考指引另訂使用規範或內控管理措施。",
+      "衡酌AI發展具重要性且與資訊安全及國家安全息息相關，本參考指引明確揭示各機關人員使用生成式AI時，應秉持負責任及可信賴之態度，掌握自主權與控制權，並秉持安全性、隱私性與資料治理、問責等原則，不得恣意揭露未經公開之公務資訊、不得分享個人隱私資訊及不可完全信任生成資訊。因AI之發展日新月異，後續將觀察全球AI發展趨勢與因應作為，及各機關於人工智慧應用之推動情形，持續滾動修正本參考指引。",
+      "本參考指引共計十點如下："
+    ],
+    "fullText": "近年來生成式AI快速發展，影響遍及全球產官學研各界。其中ChatGPT於2022年底發布後，更掀起全球熱潮，且功能極為多元，已被視為人工智慧之一項重大突破。參考歐盟之定義，生成式AI模型是一種電腦程式，旨在創建類似於人類製作（human-made）之新內容；其大量蒐集、學習與產出之資料，可能涉及智慧財產權、人權或業務機密之侵害，且其生成結果，因受限於所學習資料之品質與數量，有可能真偽難辨或創造不存在之資訊，須客觀且專業評估其產出資訊與風險。\n\n考量行政院及所屬機關（構）（以下簡稱各機關）利用生成式AI協助執行業務或提供服務，有助於行政效率之提升，且為保持執行公務之機密性及專業性，並促使各機關使用生成式AI有一致之認知及基本原則，爰參考各國政府之審慎因應作法，研訂「行政院及所屬機關（構）使用生成式AI參考指引」（以下簡稱本參考指引），供各機關依循。各機關得視使用生成式AI之業務需求，參酌本參考指引另訂使用規範或內控管理措施。\n\n衡酌AI發展具重要性且與資訊安全及國家安全息息相關，本參考指引明確揭示各機關人員使用生成式AI時，應秉持負責任及可信賴之態度，掌握自主權與控制權，並秉持安全性、隱私性與資料治理、問責等原則，不得恣意揭露未經公開之公務資訊、不得分享個人隱私資訊及不可完全信任生成資訊。因AI之發展日新月異，後續將觀察全球AI發展趨勢與因應作為，及各機關於人工智慧應用之推動情形，持續滾動修正本參考指引。\n\n本參考指引共計十點如下：",
+    "sourceParagraphOrdinals": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "coreConceptIds": [
+      "ai-risk-management",
+      "security-controls",
+      "sensitive-data-protection",
+      "training-data-governance",
+      "human-oversight",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "information security",
+        "privacy and data governance",
+        "accountability"
+      ]
+    },
+    "contentSha256": "1ab0c67dc3d0bf25d13323ae48728616e6dda03eb5b99559247bffea774c8fea"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-1",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "1",
+    "chineseNumber": "一",
+    "label": "第一點",
+    "officialLabel": "一、",
+    "originalTitle": "第一點",
+    "title": "目的與風險範圍",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "以提升行政效率為目的，並將國家安全、資訊安全、人權、隱私、倫理及法律風險列為各機關使用生成式AI時的基本治理範圍。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "一、為使行政院及所屬機關（構）（以下簡稱各機關）使用生成式AI提升行政效率，並避免其可能帶來之國家安全、資訊安全、人權、隱私、倫理及法律等風險，特就各機關使用生成式AI應注意之事項，訂定本參考指引。"
+    ],
+    "fullText": "一、為使行政院及所屬機關（構）（以下簡稱各機關）使用生成式AI提升行政效率，並避免其可能帶來之國家安全、資訊安全、人權、隱私、倫理及法律等風險，特就各機關使用生成式AI應注意之事項，訂定本參考指引。",
+    "sourceParagraphOrdinals": [
+      5
+    ],
+    "coreConceptIds": [
+      "ai-risk-management",
+      "security-controls",
+      "sensitive-data-protection",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "30d9777ecbacadce76842e50e3f418691bb82ab09ff10965dfe198138ff90c63"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-2",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "2",
+    "chineseNumber": "二",
+    "label": "第二點",
+    "officialLabel": "二、",
+    "originalTitle": "第二點",
+    "title": "人工最終判斷與自主性",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "生成資訊不得取代承辦人的客觀專業最終判斷、自主思維、創造力與人際互動。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "二、生成式AI產出之資訊，須由業務承辦人就其風險進行客觀且專業之最終判斷，不得取代業務承辦人之自主思維、創造力及人際互動。"
+    ],
+    "fullText": "二、生成式AI產出之資訊，須由業務承辦人就其風險進行客觀且專業之最終判斷，不得取代業務承辦人之自主思維、創造力及人際互動。",
+    "sourceParagraphOrdinals": [
+      6
+    ],
+    "coreConceptIds": [
+      "human-oversight",
+      "ai-risk-management",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "73f54286e639870e2199e15e800da44bb4c94f47d0a226025aceaac0fdc0b50d"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-3",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "3",
+    "chineseNumber": "三",
+    "label": "第三點",
+    "officialLabel": "三、",
+    "originalTitle": "第三點",
+    "title": "機密文書禁用生成式AI",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "國家機密與一般公務機密文書必須由承辦人親自撰寫，禁止使用生成式AI製作。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "三、製作機密文書應由業務承辦人親自撰寫，禁止使用生成式AI。",
+      "前項所稱機密文書，指行政院「文書處理手冊」所定之國家機密文書及一般公務機密文書。"
+    ],
+    "fullText": "三、製作機密文書應由業務承辦人親自撰寫，禁止使用生成式AI。\n\n前項所稱機密文書，指行政院「文書處理手冊」所定之國家機密文書及一般公務機密文書。",
+    "sourceParagraphOrdinals": [
+      7,
+      8
+    ],
+    "coreConceptIds": [
+      "security-controls",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "716276d3684066f9da2ee9b88023fd282dd686129c12533ce457fda6cde9afe4"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-4",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "4",
+    "chineseNumber": "四",
+    "label": "第四點",
+    "officialLabel": "四、",
+    "originalTitle": "第四點",
+    "title": "機密與個人資料輸入限制",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "不得向生成式AI提供或詢問涉密、公務未公開或個人資料；封閉式地端部署在確認環境安全後，可依文書或資訊機密等級分級使用。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "四、業務承辦人不得向生成式AI提供涉及公務應保密、個人及未經機關（構）同意公開之資訊，亦不得向生成式AI詢問可能涉及機密業務或個人資料之問題。但封閉式地端部署之生成式AI模型，於確認系統環境安全性後，得依文書或資訊機密等級分級使用。"
+    ],
+    "fullText": "四、業務承辦人不得向生成式AI提供涉及公務應保密、個人及未經機關（構）同意公開之資訊，亦不得向生成式AI詢問可能涉及機密業務或個人資料之問題。但封閉式地端部署之生成式AI模型，於確認系統環境安全性後，得依文書或資訊機密等級分級使用。",
+    "sourceParagraphOrdinals": [
+      9
+    ],
+    "coreConceptIds": [
+      "security-controls",
+      "sensitive-data-protection",
+      "data-minimization",
+      "privacy-by-design-default"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "c7b36c79b923db0069a690638e3a1bb7322fc6f6a1f21c81bf72683e83184f60"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-5",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "5",
+    "chineseNumber": "五",
+    "label": "第五點",
+    "officialLabel": "五、",
+    "originalTitle": "第五點",
+    "title": "產出查核與公務決策限制",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "機關不得完全信任未經確認的生成內容，也不得直接據此作成行政行為或將其作為公務決策的唯一依據。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "五、各機關不可完全信任生成式AI產出之資訊，亦不得以未經確認之產出內容直接作成行政行為或作為公務決策之唯一依據。"
+    ],
+    "fullText": "五、各機關不可完全信任生成式AI產出之資訊，亦不得以未經確認之產出內容直接作成行政行為或作為公務決策之唯一依據。",
+    "sourceParagraphOrdinals": [
+      10
+    ],
+    "coreConceptIds": [
+      "human-oversight",
+      "automated-decision-safeguards",
+      "accountability-governance",
+      "ai-risk-management"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "a206ee2b66e936c3c10e81d18ad46f45409ca18a1117c59317e2725f65e8b39e"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-6",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "6",
+    "chineseNumber": "六",
+    "label": "第六點",
+    "officialLabel": "六、",
+    "originalTitle": "第六點",
+    "title": "生成式AI輔助使用揭露",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "各機關以生成式AI輔助執行業務或提供服務時，應作適當揭露。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "六、各機關使用生成式AI作為執行業務或提供服務輔助工具時，應適當揭露。"
+    ],
+    "fullText": "六、各機關使用生成式AI作為執行業務或提供服務輔助工具時，應適當揭露。",
+    "sourceParagraphOrdinals": [
+      11
+    ],
+    "coreConceptIds": [
+      "transparency-explainability",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "a2d870af07f14868bdbcb71244d399c18ca75455b76d617d99a78f095a86baaf"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-7",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "7",
+    "chineseNumber": "七",
+    "label": "第七點",
+    "officialLabel": "七、",
+    "originalTitle": "第七點",
+    "title": "法規遵循、權利保護與內控",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "使用生成式AI須遵守資通安全、個資、著作權及資訊使用規定，注意智慧財產權與人格權風險；機關可依設備及業務制定規範或內控。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "七、使用生成式AI應遵守資通安全、個人資料保護、著作權及相關資訊使用規定，並注意其侵害智慧財產權與人格權之可能性。各機關得依使用生成式AI之設備及業務性質，訂定使用生成式AI之規範或內控管理措施。"
+    ],
+    "fullText": "七、使用生成式AI應遵守資通安全、個人資料保護、著作權及相關資訊使用規定，並注意其侵害智慧財產權與人格權之可能性。各機關得依使用生成式AI之設備及業務性質，訂定使用生成式AI之規範或內控管理措施。",
+    "sourceParagraphOrdinals": [
+      12
+    ],
+    "coreConceptIds": [
+      "security-controls",
+      "sensitive-data-protection",
+      "accountability-governance",
+      "ai-risk-management"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "0419a0714a2e2767ebb6766b2f36d5ea150fb2a853749ecb837e3271abdf5e01"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-8",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "8",
+    "chineseNumber": "八",
+    "label": "第八點",
+    "officialLabel": "八、",
+    "originalTitle": "第八點",
+    "title": "採購與供應商治理",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "機關辦理採購時，應要求得標者注意本指引，並遵守機關依第七點制定的規範或內控措施。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "八、各機關應就所辦採購事項，要求得標之法人、團體或個人注意本參考指引，並遵守各機關依前點所訂定之規範或內控管理措施。"
+    ],
+    "fullText": "八、各機關應就所辦採購事項，要求得標之法人、團體或個人注意本參考指引，並遵守各機關依前點所訂定之規範或內控管理措施。",
+    "sourceParagraphOrdinals": [
+      13
+    ],
+    "coreConceptIds": [
+      "third-party-supply-chain",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "7645a3942d1ce53610d38a39bfe684535c086253076fd06cef0678c085117bb5"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-9",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "9",
+    "chineseNumber": "九",
+    "label": "第九點",
+    "officialLabel": "九、",
+    "originalTitle": "第九點",
+    "title": "公營與受政府支持機構準用",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "公營事業、公立學校、行政法人及政府捐助的財團法人得準用本指引。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "九、公營事業機構、公立學校、行政法人及政府捐助之財團法人使用生成式AI，得準用本參考指引。"
+    ],
+    "fullText": "九、公營事業機構、公立學校、行政法人及政府捐助之財團法人使用生成式AI，得準用本參考指引。",
+    "sourceParagraphOrdinals": [
+      14
+    ],
+    "coreConceptIds": [
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "ac624f678c691bcf3389cd5961d626196a7331224993bca8181f96a04d9b57b8"
+  },
+  {
+    "id": "tw-executive-yuan-generative-ai-guidelines-2023-point-10",
+    "instrumentId": "tw-executive-yuan-generative-ai-guidelines-2023",
+    "language": "zh-Hant-TW",
+    "versionAsOf": "2026-07-20",
+    "issuedOn": "2023-10-03",
+    "status": "current-active-guidance",
+    "legalEffectStatus": "active-non-binding-public-sector-guidance",
+    "legalForce": "non-binding-public-sector-guidance",
+    "appliesFrom": null,
+    "statusNote": "The NSTC FAQ states that the guidance is not a law, is not mandatory, and establishes no penalty. It remains the single current attachment set exposed by the official NSTC guidance page as of 2026-07-20.",
+    "textAvailability": "full-official-traditional-chinese",
+    "source": "https://www.nstc.gov.tw/nstc/attachments/99619717-6c5e-4270-b3b8-46f2041c228c",
+    "sourcePage": "https://www.nstc.gov.tw/folksonomy/list/c79bf57b-dc94-4aff-8d14-3262b5559cfc?l=ch",
+    "sourceLabel": "National Science and Technology Council — official Traditional-Chinese ODT",
+    "authorityNote": "The complete official Traditional-Chinese text is preserved. The navigation title and high-level summary are editorial metadata and are not part of the source document.",
+    "translationStatus": "no-complete-official-english-text-located",
+    "currentLanguageToggleEligible": false,
+    "rightsProfile": "tw-nstc-government-open-data-license-v1",
+    "unitType": "numbered-point",
+    "unitNumber": "10",
+    "chineseNumber": "十",
+    "label": "第十點",
+    "officialLabel": "十、",
+    "originalTitle": "第十點",
+    "title": "其他機關參照",
+    "titleStatus": "editorial-navigation-heading",
+    "summary": "行政院及其所屬機關（構）以外的機關，得參照本指引制定自身的生成式AI使用規範。",
+    "summaryStatus": "editorial-high-level-summary",
+    "paragraphs": [
+      "十、行政院及所屬機關（構）以外之機關得參照本參考指引，訂定使用生成式AI之規範。"
+    ],
+    "fullText": "十、行政院及所屬機關（構）以外之機關得參照本參考指引，訂定使用生成式AI之規範。",
+    "sourceParagraphOrdinals": [
+      15
+    ],
+    "coreConceptIds": [
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance"
+      ]
+    },
+    "contentSha256": "e1761b957feb4f076bfbd1ce639a62a09988987ac6171f6b7e2b8b6d2396b2f0"
+  }
+]

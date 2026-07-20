@@ -1,0 +1,278 @@
+{
+  "instrumentId": "us-nist-ai-rmf-1-0",
+  "officialTitle": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+  "publicationNumber": "NIST AI 100-1",
+  "doi": "https://doi.org/10.6028/NIST.AI.100-1",
+  "publishedOn": "2023-01-26",
+  "retrievedOn": "2026-07-20",
+  "hashAlgorithm": "SHA-256",
+  "currentVersion": {
+    "version": "1.0",
+    "statusAsOf": "2026-07-20",
+    "status": "current-published-version-revision-in-progress",
+    "revisionAuditConclusion": "NIST still identifies AI RMF 1.0 as the published framework and states that a revised version is in progress. No later numbered AI RMF core edition was imported.",
+    "controllingEdition": "NIST AI 100-1, January 2023"
+  },
+  "scopeBoundary": {
+    "included": "The complete English text and authentic hierarchy of NIST AI RMF 1.0, including front matter, both parts, sections, five figure captions, four core tables, 19 categories, 72 subcategories, profiles, and Appendices A-D.",
+    "playbookIncluded": false,
+    "generativeAiProfileIncluded": false,
+    "playbookRelationship": "Separate, frequently updated companion implementation resource; audited but not merged.",
+    "generativeAiProfileRelationship": "Separate NIST AI 600-1 profile released in 2024; audited but not merged.",
+    "aircNumberingCorrection": "Current AIRC HTML labels the four children of section 1.2 as 1.1.1-1.1.4. The corpus uses 1.2.1-1.2.4 exactly as printed in the controlling PDF and table of contents."
+  },
+  "corpus": {
+    "path": "data/v2/us-nist-ai-rmf-1-0-corpus.json",
+    "nodeCount": 135,
+    "unitTypeCounts": {
+      "appendix-section": 5,
+      "core-category": 19,
+      "core-subcategory": 72,
+      "core-table": 4,
+      "figure-caption": 5,
+      "front-matter": 3,
+      "function": 4,
+      "navigation-front-matter": 1,
+      "part": 2,
+      "section": 20
+    },
+    "functionCount": 4,
+    "coreTableCount": 4,
+    "categoryCount": 19,
+    "subcategoryCount": 72,
+    "figureCount": 5,
+    "completeSourceCoverageVerified": true,
+    "contentSha256": "583619872dfc5aea196d64a318ecb3bf2320aedc28c3a3ceb23ce68052c8c847",
+    "nodeIdSequenceSha256": "468e422962b164c131cc810041d777f3762585208045bbd22e6753a16a3031b8",
+    "fileSha256": "ff198eda15d8e62c5016538254066cf15352894650cdc64dad8fe389c1a656ef"
+  },
+  "rights": {
+    "profile": "nist-technical-series-17-usc-105",
+    "usCopyrightStatus": "Works authored by NIST employees are not subject to copyright protection in the United States under 17 U.S.C. § 105.",
+    "foreignRights": "Foreign rights may be reserved, but NIST grants a non-exclusive, perpetual, paid-up, royalty-free, worldwide right to reprint and prepare derivative works for NIST Technical Series publications.",
+    "attributionRecommendation": "Use NIST's recommended citation followed by ‘Republished courtesy of the National Institute of Standards and Technology.’",
+    "thirdPartyCaveat": "Some NIST-published works or embedded third-party materials may be separately protected; this corpus stores text from the NIST-authored technical series publication and identifies external standards only by the references present in that text.",
+    "thirdPartyMaterialBoundary": {
+      "projectLicenseBoundary": "third-party-excluded-from-project-license",
+      "affectedNodeCount": 10,
+      "affectedNodeIds": [
+        "us-nist-ai-rmf-1-0-contents-tables-and-figures",
+        "us-nist-ai-rmf-1-0-executive-summary",
+        "us-nist-ai-rmf-1-0-section-1-1",
+        "us-nist-ai-rmf-1-0-section-1-2-2",
+        "us-nist-ai-rmf-1-0-section-1-2-3",
+        "us-nist-ai-rmf-1-0-section-2",
+        "us-nist-ai-rmf-1-0-figure-2",
+        "us-nist-ai-rmf-1-0-section-3-1",
+        "us-nist-ai-rmf-1-0-section-3-2",
+        "us-nist-ai-rmf-1-0-section-3-3"
+      ],
+      "note": "Only the specifically attributed ISO/IEC and OECD material identified on each affected node is excluded; NIST-authored surrounding text remains governed by the NIST Technical Series rights profile."
+    },
+    "sourceUrl": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+  },
+  "sourceSnapshots": [
+    {
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/pdf",
+      "role": "controlling-complete-official-edition",
+      "sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1",
+      "storedLocally": false,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-ai-100-1-ai-rmf-1-0-2023-pdftotext-raw.txt",
+      "sourceUrl": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/plain",
+      "role": "derived-audit-extraction-from-controlling-pdf",
+      "sha256": "b4fdd26d88a7568744c8b0568c8f5d2348dec6ab46497fa6ddb453998646e2c7",
+      "storedLocally": true,
+      "rightsProfile": "derived-from-nist-technical-series-source"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-ai-rmf-1-0-publication-record-2026-07-20.html",
+      "sourceUrl": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-publication-metadata",
+      "sha256": "0728b907e2a848defddb27403c36c838a9459bba812ed0841f743e2cc4cee347",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-ai-rmf-current-status-2026-07-20.html",
+      "sourceUrl": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "current-version-and-companion-boundary",
+      "sha256": "a0b4c036ee63c436d6b95f57acca5f40cae2b328ef598b40a878a7dda59a2021",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-technical-series-rights-2026-07-20.html",
+      "sourceUrl": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-rights-and-reuse-policy",
+      "sha256": "aa14f70c512159991b34b391e8647abbdd388939563b16883161594b9c2a0233",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-resources-index-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-resource-index",
+      "sha256": "97e2f06f8c09085dc1136c084c63f9ed0a20fb53eeb5ea876f25ee5752239e41",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-executive-summary-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/0-ai-rmf-1-0/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "a61650340f4dd63190d7ef76a3c7205bec9ab9dd762652a524bd3d42bd891cf3",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-framing-risk-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/1-sec-risk/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "be30aa764d79bda43140e5946afebe61bbc8a9aeba972adc12ad34080e8d21a2",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-audience-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/2-sec-audience/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "da6c0db630daf650d4e6832ded66e903e56268fbf579bedc7c81bcaa83ee821b",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-trustworthiness-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "a608d2032920df87b090835cc6c59a1f04d3b546cef34d8fde73006be2356ab2",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-effectiveness-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/4-effectiveness/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "7a9461d1fc7dfd52f77598a787df39a7b81f641f05d4c89b1d0368083d134612",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-core-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt-and-core-tables",
+      "sha256": "7c1d4cb2ca1aaef9fbcdfec9a41dcfb517642ac0b4d9e4eaed06a45ba66506a2",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-profiles-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/6-sec-profile/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "d9166bae97bf0d22857d85a660bbbf1ca69e7909937a425172394d950de8a2da",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-appendix-a-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "5b156e78ef4d956e9eb783b471d6fd63e1f9dcc098d247fafcf83f5cfa85818c",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-appendix-b-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "7430d8afa6eab02c3fe5c855d2df8a8f29057b8cd55031ae33b837189da82fc1",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-appendix-c-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/appendices/app-c-ai-risk-management-and-human-ai-interaction/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "0aab42c0cc4d4a811f034460cc3a9fa8513fb7e81872feafc066ff1e39bdc762",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-airc-ai-rmf-1-0-appendix-d-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/airmf/appendices/app-d-attributes-of-the-ai-rmf/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "official-structured-excerpt",
+      "sha256": "a86d2ce7f6b8543afe8bb9bbc6a40cfccaaf264252c165973e379faeb9d9d568",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-ai-rmf-playbook-boundary-2026-07-20.html",
+      "sourceUrl": "https://airc.nist.gov/airmf-resources/playbook/",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "separate-companion-not-imported",
+      "sha256": "a080e21cd63442406e7d437990b1a5d7ceffb3c32ff3481148d631eb2f851e0e",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    },
+    {
+      "path": "data/v2/source-snapshots/nist-ai-600-1-genai-profile-boundary-2026-07-20.html",
+      "sourceUrl": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "text/html",
+      "role": "separate-profile-not-imported",
+      "sha256": "8e39f1cf3afe6d613ef7707714c6a6fe1fe7541c1351552d57f68840b8276e5c",
+      "storedLocally": true,
+      "rightsProfile": "nist-technical-series-17-usc-105"
+    }
+  ],
+  "qualityAssurance": {
+    "pdfPageCount": 48,
+    "pdfVisualInspection": "Rendered and visually inspected representative cover, contents, narrative, all core-table regions, appendix, and closing pages.",
+    "pdfTextAuthority": true,
+    "aircUsedForStructure": true,
+    "coreCountChecks": {
+      "functions": 4,
+      "categories": 19,
+      "subcategories": 72
+    },
+    "companionContaminationCheck": true
+  },
+  "manifestContentBasisSha256": "bd7dc477148c81f8ea7cd5ede36352105963ddc7f9a83a65c662251db666a45c"
+}

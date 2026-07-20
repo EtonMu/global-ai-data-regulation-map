@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "instrumentId": "ch-fadp-2020",
+  "generatedBy": "scripts/import-swiss-fadp.py",
+  "generatedOn": "2026-07-20",
+  "retrievedOn": "2026-07-20",
+  "currentVersionDate": "2025-07-07",
+  "actCommencementDate": "2023-09-01",
+  "versionDateIsCommencementDate": false,
+  "versionDiscovery": {
+    "checkedAsOf": "2026-07-20",
+    "officialSparqlEndpoint": "https://fedlex.data.admin.ch/sparqlendpoint",
+    "queryPurpose": "List every jolux:Consolidation that isMemberOf the FADP ConsolidationAbstract, with dateApplicability and optional dateEndApplicability.",
+    "result": [
+      {
+        "dateApplicability": "2023-09-01",
+        "dateEndApplicability": "2025-03-31",
+        "eli": "https://fedlex.data.admin.ch/eli/cc/2022/491/20230901"
+      },
+      {
+        "dateApplicability": "2025-04-01",
+        "dateEndApplicability": "2025-07-06",
+        "eli": "https://fedlex.data.admin.ch/eli/cc/2022/491/20250401",
+        "changeNote": "Article 24 paragraph 5bis, concerning forwarding a breach notification to the National Cyber Security Centre, entered into force on 1 April 2025."
+      },
+      {
+        "dateApplicability": "2025-07-07",
+        "dateEndApplicability": null,
+        "eli": "https://fedlex.data.admin.ch/eli/cc/2022/491/20250707",
+        "changeNote": "The Federal Assembly Drafting Committee correction published on 7 July 2025 concerns the Italian text of Article 57 only."
+      }
+    ],
+    "currentVersionMetadata": "https://fedlex.data.admin.ch/eli/cc/2022/491/20250707"
+  },
+  "authenticity": {
+    "status": "three-co-authoritative-texts-plus-official-non-authoritative-english",
+    "authoritativeLanguages": [
+      "de-CH",
+      "fr-CH",
+      "it-CH"
+    ],
+    "authoritativeLanguageStatus": "equal-and-legally-binding",
+    "translationLanguages": [
+      "en-CH"
+    ],
+    "englishStatus": "official-non-authoritative-translation-no-legal-force",
+    "authorityUrl": "https://www.bk.admin.ch/en/languages",
+    "englishStatusUrl": "https://www.bk.admin.ch/en/english",
+    "authorityNote": "The Federal Chancellery states that German, French and Italian versions of federal laws are equal and legally binding. It also states that English legislative versions have no legal force.",
+    "xmlMetadataCaveat": "The shared FRBRWork element in each Akoma Ntoso file contains FRBRauthoritative=true. That work-level flag is not used to promote the English expression to an authoritative language text."
+  },
+  "englishSynchronisation": {
+    "sameConsolidationVersion": true,
+    "dateApplicability": "2025-07-07",
+    "articleCoverageAligned": 77,
+    "annexCoverageAligned": 2,
+    "englishFedlexUploadDate": "2025-08-14",
+    "authoritativeTextsFedlexUploadDate": "2025-07-08",
+    "status": "official-current-version-and-structure-aligned-non-authoritative-translation-with-disclosed-cross-reference-defect",
+    "knownTextualDivergences": {
+      "annex_2": {
+        "type": "official-English-cross-reference-differs-from-authoritative-texts",
+        "englishSourceText": "(Art. 68)",
+        "authoritativeSourceTexts": {
+          "de-CH": "(Art. 73)",
+          "fr-CH": "(art. 73)",
+          "it-CH": "(art. 73)"
+        },
+        "controllingReference": "Article 73",
+        "sourceTextAltered": false,
+        "note": "The frozen official English translation says '(Art. 68)'. The three equal authoritative texts say Article 73, and Article 73 of the Act identifies Annex 2. The corpus preserves the English source verbatim and exposes this warning instead of silently editing a non-authoritative official translation."
+      }
+    },
+    "note": "English was uploaded after the three authoritative texts but embodies the same 2025-07-07 consolidation and includes all 77 Articles, both Annexes, Article 24 paragraph 5bis and the Article 57 Italian-correction note. Version and structural alignment do not make English authoritative and do not cure the disclosed Annex 2 cross-reference defect."
+  },
+  "snapshots": [
+    {
+      "language": "en-CH",
+      "languageName": "English",
+      "authorityStatus": "official-non-authoritative-translation",
+      "authoritative": false,
+      "path": "data/v2/source-snapshots/ch-fadp-20250707-en.xml",
+      "sourceUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/en/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-en-xml.xml",
+      "snapshotSha256": "47d871be5cfc9a7668ae13fd513ca19851c29df76d0ed6fdd861e09f32d8fe82",
+      "snapshotBytes": 155408,
+      "fedlexUploadDate": "2025-08-14",
+      "dateApplicability": "2025-07-07",
+      "dateEntryInForce": "2023-09-01"
+    },
+    {
+      "language": "de-CH",
+      "languageName": "German",
+      "authorityStatus": "official-authoritative-equal-status",
+      "authoritative": true,
+      "path": "data/v2/source-snapshots/ch-fadp-20250707-de.xml",
+      "sourceUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/de/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-de-xml-1.xml",
+      "snapshotSha256": "a99bce3dc59a5c3f25e69ed5e483380c0f1a9b57ec452fedb62e0e68b7baabef",
+      "snapshotBytes": 162824,
+      "fedlexUploadDate": "2025-07-08",
+      "dateApplicability": "2025-07-07",
+      "dateEntryInForce": "2023-09-01"
+    },
+    {
+      "language": "fr-CH",
+      "languageName": "French",
+      "authorityStatus": "official-authoritative-equal-status",
+      "authoritative": true,
+      "path": "data/v2/source-snapshots/ch-fadp-20250707-fr.xml",
+      "sourceUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/fr/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-fr-xml-1.xml",
+      "snapshotSha256": "50b609dddcdb8b2b248f498de8e3a5eabfbb9e6d06674daf8fc508ab7393aeb3",
+      "snapshotBytes": 167777,
+      "fedlexUploadDate": "2025-07-08",
+      "dateApplicability": "2025-07-07",
+      "dateEntryInForce": "2023-09-01"
+    },
+    {
+      "language": "it-CH",
+      "languageName": "Italian",
+      "authorityStatus": "official-authoritative-equal-status",
+      "authoritative": true,
+      "path": "data/v2/source-snapshots/ch-fadp-20250707-it.xml",
+      "sourceUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/it/xml/fedlex-data-admin-ch-eli-cc-2022-491-20250707-it-xml-1.xml",
+      "snapshotSha256": "40d05593c64b46813c4ae1289ccd51717b737fc68b173edafbd2bc824d5fa91f",
+      "snapshotBytes": 157907,
+      "fedlexUploadDate": "2025-07-08",
+      "dateApplicability": "2025-07-07",
+      "dateEntryInForce": "2023-09-01"
+    }
+  ],
+  "corpus": {
+    "path": "data/v2/ch-fadp-2020-provisions.json",
+    "sha256": "3bbf6ab7f1121ef9e5ba9794f88b59b3038c2d5df888d08c5affc70acb00eff2",
+    "bytes": 1564225,
+    "nodeCount": 79,
+    "articleCount": 77,
+    "annexCount": 2,
+    "languageCount": 4
+  },
+  "rights": {
+    "reuseStatus": "official-linked-open-data-reuse-authorised",
+    "rightsHolder": "Swiss Federal Chancellery",
+    "rightsHolderEli": "https://fedlex.data.admin.ch/vocabulary/legal-institution/2",
+    "reuseInformationUrl": "https://www.fedlex.admin.ch/de/broadcasters",
+    "openDataInformationUrl": "https://fedlex.data.admin.ch/",
+    "attribution": "Source: Fedlex, Swiss Federal Chancellery, SR 235.1, consolidation applicable from 7 July 2025, retrieved 20 July 2026. The importer normalises whitespace, separates official editorial notes from operative text, and aligns language texts by official Akoma Ntoso eId. No endorsement by the Swiss Confederation is implied.",
+    "conditionsNote": "Fedlex describes its legal texts and metadata as reusable for commercial and other purposes under its technical and legal information for third-party users."
+  },
+  "formatStatus": {
+    "snapshotFormat": "official-Fedlex-Akoma-Ntoso-XML",
+    "sourceCollection": "Classified Compilation (consolidated federal law)",
+    "systematicReference": "SR 235.1",
+    "normalisation": {
+      "whitespace": "collapsed without changing words or punctuation",
+      "blockStructure": "paragraph and list-item boundaries rendered as JSON blocks",
+      "editorialNotes": "preserved separately in sourceNotes, not mixed into operative fullText",
+      "tables": "none present in the frozen current FADP snapshots",
+      "languageGeneration": "none"
+    }
+  },
+  "integrationBoundary": {
+    "englishDefault": true,
+    "englishMustDisplayNonAuthoritativeWarning": true,
+    "authoritativeTexts": [
+      "de-CH",
+      "fr-CH",
+      "it-CH"
+    ],
+    "preserveFields": [
+      "translations",
+      "authenticity",
+      "sourceNotes",
+      "applicability",
+      "revisionStatus",
+      "amendmentHistory",
+      "transition"
+    ],
+    "dateRule": "Never use currentVersionDate/dateApplicability as a commencement date. Article 24 is a mixed-commencement node."
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "1.0",
+  "handoffId": "africa-indonesia-complete-legal-corpora-2026-07-20",
+  "reviewedAsOf": "2026-07-20",
+  "scope": {
+    "included": [
+      "South Africa Protection of Personal Information Act 4 of 2013: sections 1-115 and Schedule",
+      "Nigeria Data Protection Act 2023: sections 1-66 and Schedule paragraphs 1-18",
+      "Indonesia Law No. 27 of 2022 on Personal Data Protection: Articles 1-76"
+    ],
+    "unitHashAlgorithm": "SHA-256 over UTF-8 fullText with no trailing newline",
+    "englishTranslationPolicy": "No translation is generated or inferred. The Indonesian corpus is original-language only because no complete official English version was verified."
+  },
+  "corpora": [
+    {
+      "instrumentId": "za-popia-4-2013",
+      "jurisdiction": "South Africa",
+      "officialTitle": "Protection of Personal Information Act 4 of 2013",
+      "coverage": {
+        "unit": "section-plus-schedule",
+        "expected": "sections 1-115 plus one Schedule",
+        "expectedUnitCount": 116,
+        "actualUnitCount": 116,
+        "complete": true
+      },
+      "output": {
+        "path": "data/v2/za-popia-sections.json",
+        "sha256": "36a091fdcd03172e5bd90e4db30ad812e278935d4aaf84eebe67c2326d245411"
+      },
+      "generator": "scripts/import-south-africa-popia.py",
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/za-popia-4-2013-current-lines.json",
+          "sha256": "9346d91175f2a2fe0d6443ed76031234414068577b1e0038348838e711a0fbbb",
+          "role": "official current-consolidation statutory text snapshot"
+        }
+      ],
+      "officialSources": [
+        {
+          "role": "current consolidation and commencement table",
+          "url": "https://www.justice.gov.za/legislation/acts/2013-004.pdf"
+        },
+        {
+          "role": "original enacted Gazette",
+          "url": "https://www.gov.za/sites/default/files/gcis_document/201409/3706726-11act4of2013popi.pdf"
+        },
+        {
+          "role": "Proclamation R21, phased commencement on 1 July 2020 and 30 June 2021",
+          "url": "https://www.justice.gov.za/legislation/notices/2020/20200622-gg43461-rg11136-pr21-POPIAsections.pdf"
+        },
+        {
+          "role": "Government Notice 560, section 58(2) applicable from 1 February 2022 for section 57 processing",
+          "url": "https://justice.gov.za/legislation/notices/2021/20210625-gg44761gon560-POPIA-S58-2.pdf"
+        }
+      ],
+      "statusReview": {
+        "status": "in-force",
+        "reviewedOn": "2026-07-20",
+        "textVersionConclusion": "The current Department of Justice consolidation was used. No enacted textual amendment to the 115 sections or Schedule was identified in that current official consolidation.",
+        "commencement": [
+          {
+            "provisions": "section 1; sections 39-54; sections 112-113",
+            "effectiveFrom": "2014-04-11",
+            "instrument": "Proclamation R25, Government Gazette 37544"
+          },
+          {
+            "provisions": "sections 2-38; sections 55-109; section 111; section 114(1)-(3)",
+            "effectiveFrom": "2020-07-01",
+            "instrument": "Proclamation R21, Government Gazette 43461"
+          },
+          {
+            "provisions": "section 110; section 114(4); Schedule amendments",
+            "effectiveFrom": "2021-06-30",
+            "instrument": "Proclamation R21, Government Gazette 43461"
+          },
+          {
+            "provisions": "section 58(2), insofar as applicable to processing in section 57",
+            "applicableFrom": "2022-02-01",
+            "instrument": "Government Notice 560, Government Gazette 44761"
+          }
+        ],
+        "methodNote": "Subordinate regulations and notices were not mistaken for textual amendments to the Act."
+      },
+      "reuse": {
+        "status": "government-edict",
+        "basis": "Section 12(8)(a) of the Copyright Act 98 of 1978 excludes official legislative, administrative and legal texts from copyright.",
+        "source": "https://www.thedtic.gov.za/wp-content/uploads/copyright_act.pdf"
+      }
+    },
+    {
+      "instrumentId": "ng-data-protection-act-2023",
+      "jurisdiction": "Nigeria",
+      "officialTitle": "Nigeria Data Protection Act, 2023",
+      "coverage": {
+        "unit": "section-plus-schedule",
+        "expected": "sections 1-66 plus the complete Schedule (paragraphs 1-18)",
+        "expectedUnitCount": 67,
+        "actualUnitCount": 67,
+        "complete": true
+      },
+      "output": {
+        "path": "data/v2/ng-ndpa-2023-sections.json",
+        "sha256": "b719dc6872dfd6eac550a91fde862dd6c9f59c29af6465c7dec93d9584e59eb0"
+      },
+      "generator": "scripts/import-nigeria-ndpa.py",
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/ng-data-protection-act-2023-lines.json",
+          "sha256": "faeb1b7c51e5b3123eb84bd4f969c0ea9bbb2d806ff20c78877d9dc77ce19ef5",
+          "role": "official Gazette text snapshot"
+        }
+      ],
+      "officialSources": [
+        {
+          "role": "official Gazette copy hosted by the Nigeria Data Protection Commission",
+          "url": "https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf"
+        },
+        {
+          "role": "official NDPC landing page",
+          "url": "https://ndpc.gov.ng/download/nigeria-data-protection-act-2023"
+        },
+        {
+          "role": "National Assembly record for SB.650, an amendment bill rather than an enacted amendment",
+          "url": "https://www.nass.gov.ng/documents/billdownload/11195.pdf"
+        },
+        {
+          "role": "National Assembly Votes and Proceedings recording HB.2436 at First Reading",
+          "url": "https://nass.gov.ng/documents/download/11206"
+        }
+      ],
+      "statusReview": {
+        "status": "in-force-unamended",
+        "reviewedOn": "2026-07-20",
+        "assentedOn": "2023-06-12",
+        "gazettedOn": "2023-07-01",
+        "textVersionConclusion": "The official NDPC Gazette copy remains the operative enacted Act. National Assembly records reviewed through the stated date identify SB.650 and HB.2436 as amendment bills; no enacted amending Act was identified.",
+        "methodNote": "Pending or introduced bills are recorded as legislative developments and do not alter the corpus text."
+      },
+      "reuse": {
+        "status": "government-edict",
+        "basis": "Section 3(b) of the Copyright Act, 2022 makes official legislative or administrative texts, and official translations, ineligible for copyright.",
+        "source": "https://www.copyright.gov.ng/wp-content/uploads/2023/04/CopyrightAct2023FinalPublication1.pdf"
+      }
+    },
+    {
+      "instrumentId": "id-pdp-law-2022",
+      "jurisdiction": "Indonesia",
+      "officialTitle": "Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi",
+      "coverage": {
+        "unit": "article",
+        "expected": "Articles 1-76",
+        "expectedUnitCount": 76,
+        "actualUnitCount": 76,
+        "complete": true,
+        "language": "Indonesian (id-ID)",
+        "englishTranslation": "not supplied"
+      },
+      "output": {
+        "path": "data/v2/id-pdp-law-2022-articles.json",
+        "sha256": "879c8a1270a472a842283199601c9bb7aef85a28ae9e5d2042aaae277f74be00"
+      },
+      "generator": "scripts/import-indonesia-pdp.py",
+      "sourceSnapshots": [
+        {
+          "path": "data/v2/source-snapshots/id-pdp-law-2022-official-lines.json",
+          "sha256": "8dda0ec967a9d1aa715448a97951ef9ada6e07bff8043138a3306acfa73f64d7",
+          "role": "official JDIH operative-text verification snapshot"
+        },
+        {
+          "path": "data/v2/source-snapshots/id-pdp-law-2022-clean-crosscheck-lines.json",
+          "sha256": "8b0f710a25c6b515fbc6cc430ea07d78d717be42f15c67cf64f0a37ad26e69e0",
+          "role": "clean secondary transcription used only to repair official-source OCR/list-marker defects"
+        }
+      ],
+      "officialSources": [
+        {
+          "role": "controlling official Gazette PDF",
+          "url": "https://www.jdihn.go.id/files/2098/2022uu027.pdf"
+        },
+        {
+          "role": "official Ministry JDIH HTML text",
+          "url": "https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang%2Bnomor%2B27%2Btahun%2B2022"
+        },
+        {
+          "role": "official national regulation registry",
+          "url": "https://www.peraturan.go.id/id/uu-no-27-tahun-2022"
+        },
+        {
+          "role": "official current-status record",
+          "url": "https://peraturan.bpk.go.id/details/229798/uu-no-27-"
+        },
+        {
+          "role": "Constitutional Court Decision 151/PUU-XXII/2024 affecting Article 53(1)(b)",
+          "url": "https://s.mkri.id/public/content/persidangan/putusan/putusan_mkri_12970_1753859809.pdf"
+        }
+      ],
+      "transcriptionDisclosure": {
+        "secondarySource": "https://perpajakan.ddtc.co.id/id/sumber-hukum/peraturan-pusat/undang-undang-27-tahun-2022",
+        "reason": "The official PDF text layer and official HTML contain OCR/list-rendering defects. The clean transcription restores list markers and obvious OCR characters only; every Article is checked against the controlling official sources.",
+        "authorityStatement": "The official Indonesian Gazette text controls. The secondary transcription is not represented as an official publication."
+      },
+      "statusReview": {
+        "status": "in-force-with-judicial-overlay",
+        "registryStatus": "Berlaku",
+        "effectiveFrom": "2022-10-17",
+        "reviewedOn": "2026-07-20",
+        "judicialEffects": [
+          {
+            "provision": "Article 53(1)(b), final conjunction",
+            "decision": "151/PUU-XXII/2024",
+            "decidedOn": "2025-07-30",
+            "effect": "The enacted word 'dan' is conditionally non-binding unless interpreted as 'dan/atau'. fullText preserves promulgated wording; currentOperativeText applies the binding interpretation."
+          },
+          {
+            "provisions": "Articles 20(2)(a), 56, 62(2), and the journalism challenge concerning Article 65",
+            "effect": "Reviewed challenges were rejected; no corpus wording changed."
+          },
+          {
+            "provisions": "Articles 58(5) and 61",
+            "case": "236/PUU-XXIV/2026",
+            "statusAsOf": "2026-07-20",
+            "effect": "Pending review has no textual effect while undecided."
+          }
+        ],
+        "englishVersionConclusion": "No complete official English translation was verified; no English text was generated or silently substituted."
+      },
+      "reuse": {
+        "status": "government-edict",
+        "basis": "Article 42(b) and (d) of Law No. 28 of 2014 on Copyright excludes legislation and court judgments from copyright.",
+        "source": "https://peraturan.go.id/files/uu28-2014bt.pdf"
+      }
+    }
+  ],
+  "integration": {
+    "status": "not-performed-by-design",
+    "reason": "This handoff is a corpus-only deliverable. Integration-owned files were explicitly outside this task's edit scope.",
+    "filesNotEdited": [
+      "app/regulation-explorer.tsx",
+      "app/globals.css",
+      "scripts/validate-data.mjs",
+      "scripts/build-provision-concepts.mjs",
+      "data/v2/instruments.json",
+      "data/v2/source-audit.json",
+      "data/v2/provisions.json"
+    ]
+  }
+}

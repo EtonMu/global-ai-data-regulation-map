@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "instrumentId": "hk-personal-data-privacy-ordinance",
+  "title": "Personal Data (Privacy) Ordinance (Cap. 486)",
+  "coAuthenticTitle": "《個人資料(私隱)條例》(第486章)",
+  "retrievedOn": "2026-07-20",
+  "currentVersionDate": "2022-10-01",
+  "dataset": {
+    "name": "Hong Kong e-Legislation — Hong Kong Legislation (Current Version)",
+    "provider": "Department of Justice, Hong Kong SAR Government",
+    "catalogUrl": "https://data.gov.hk/en-data/dataset/hk-doj-hkel-legislation-current",
+    "updateFrequency": "weekly",
+    "archiveObservedLastModified": "2026-07-20T13:00:04Z"
+  },
+  "snapshots": [
+    {
+      "language": "en-HK",
+      "archiveUrl": "https://resource.data.one.gov.hk/doj/data/hkel_c_leg_cap_301_cap_600_en.zip",
+      "archiveContentLength": 560465799,
+      "archiveEtag": "\"21680787-6570a7c1f9d00\"",
+      "archiveSha256": "3ad4809050859508fbb58600e26c116317f81bc7cc070dc0a5a055a9755a22d2",
+      "archiveMember": "cap_486_en_c\\cap_486_20221001000000_en_c.xml",
+      "snapshotFile": "data/v2/source-snapshots/hk-pdpo-cap486-20221001-en.xml",
+      "snapshotBytes": 504212,
+      "snapshotSha256": "57189e97b8cbcc32855d9b524a5bf825c670858c9017da281cd84648fd86825f",
+      "xmlLanguage": "en",
+      "xmlIdentifier": "/hk/cap486!en"
+    },
+    {
+      "language": "zh-Hant-HK",
+      "archiveUrl": "https://resource.data.one.gov.hk/doj/data/hkel_c_leg_cap_301_cap_600_zh-Hant.zip",
+      "archiveContentLength": 551762694,
+      "archiveEtag": "\"20e33b06-6570a7c1f9d00\"",
+      "archiveSha256": "88a510e7ac6c574a5e92ba5d1ea4e6f6c534429c90f46fde5c0a193718eb802e",
+      "archiveMember": "cap_486_zh-Hant_c\\cap_486_20221001000000_zh-Hant_c.xml",
+      "snapshotFile": "data/v2/source-snapshots/hk-pdpo-cap486-20221001-zh-Hant-HK.xml",
+      "snapshotBytes": 455455,
+      "snapshotSha256": "42aaccf483c282fd23c8b91081cff763ad1e9936d4c402a4d7a12235efa5f68d",
+      "xmlLanguage": "zh-Hant-HK",
+      "xmlIdentifier": "/hk/cap486!zh-Hant-HK"
+    }
+  ],
+  "corpus": {
+    "file": "data/v2/hk-pdpo-486-provisions.json",
+    "sha256": "b9351bfdfea79a0d9a206af6409a067d4f72d10adb13d6d0f688e059beb8959c",
+    "nodeCount": 130,
+    "sectionCount": 124,
+    "scheduleCount": 6,
+    "legalEffectCounts": {
+      "in-force": 126,
+      "enacted-not-yet-in-operation": 1,
+      "repealed-placeholder": 1,
+      "omitted-as-spent-placeholder": 2
+    },
+    "defaultLanguage": "en-HK",
+    "availableLanguages": [
+      "en-HK",
+      "zh-Hant-HK"
+    ]
+  },
+  "authenticity": {
+    "status": "co-authentic-equal-status",
+    "languages": [
+      "en-HK",
+      "zh-Hant-HK"
+    ],
+    "authority": "Interpretation and General Clauses Ordinance (Cap. 1), section 10B(1)",
+    "authorityUrl": "https://www.elegislation.gov.hk/hk/cap1!en/s10B",
+    "authorityNote": "The English and Chinese texts of a Hong Kong Ordinance are equally authentic. Neither text is a translation subordinate to the other.",
+    "departmentExplanationUrl": "https://www.doj.gov.hk/en/about/orgchart_ldd_drafting_chi_eng.html"
+  },
+  "sourceFormatStatus": {
+    "snapshotFormat": "official-current-open-data-HKLM-XML",
+    "snapshotLegalStatus": "official-reference-format-not-verified-PDF",
+    "note": "The XML is official current open data. HKeL states that only a PDF bearing the official verification mark is a verified copy with the statutory presumption under section 5 of the Legislation Publication Ordinance (Cap. 614). This format distinction does not alter the equal authenticity of the enacted English and Chinese language texts.",
+    "importantNoticesUrl": "https://www.elegislation.gov.hk/importantnotices"
+  },
+  "rights": {
+    "reuseStatus": "open-government-data-with-conditions",
+    "license": "DATA.GOV.HK Terms and Conditions of Use, version 1.2",
+    "licenseUrl": "https://data.gov.hk/en/terms-and-conditions",
+    "copyrightOwner": "Government of the Hong Kong Special Administrative Region",
+    "dataProvider": "Department of Justice, Hong Kong SAR Government",
+    "attribution": "Source: Hong Kong e-Legislation, Department of Justice, Government of the Hong Kong Special Administrative Region, supplied through DATA.GOV.HK and retrieved on 20 July 2026. The Government and the Department of Justice are acknowledged as owners/providers of the source data. This project normalises whitespace and table layout, pairs provisions by official temporal identifiers, and does not imply Government endorsement.",
+    "conditionsNote": "Reuse is subject to the DATA.GOV.HK Terms and Conditions, including source and intellectual-property attribution and the stated indemnity, disclaimer and limitation-of-liability conditions."
+  },
+  "normalization": {
+    "changes": [
+      "collapse presentation whitespace",
+      "render source-order structural units as text blocks",
+      "render table rows with pipe-delimited cells",
+      "pair co-authentic provisions using official HKLM temporalId values"
+    ],
+    "sourceNotesRetained": true,
+    "generatedTranslation": false,
+    "imagesCopied": false
+  }
+}

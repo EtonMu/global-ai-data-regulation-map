@@ -1,0 +1,1485 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+
+      
+  📚 App. B: How AI Risks Differ from Traditional Software Risks
+
+
+      
+  
+  - AIRC
+
+
+    </title>
+
+    
+      
+      <link rel="stylesheet"
+            type="text/css"
+            href="/dist/custom_fontawesome.00f010cd6129.css">
+      <link rel="stylesheet"
+            type="text/css"
+            href="/dist/application.9e57c8ad8399.css">
+      
+    
+
+    
+      <script  nonce="7jZrfd0g79dlBzL83DoM5w==" 
+              type="text/javascript"
+              src="/dist/uswds-init.min.0c5600cc9db1.js"></script>
+    
+
+    
+  
+  
+  
+    <link rel="canonical" href="https://airc.nist.gov/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/" />
+    <meta property="og:url" content="https://airc.nist.gov/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/" />
+  
+  
+    <meta name="twitter:title"
+          content="📚 App. B: How AI Risks Differ from Traditional Software Risks - AIRC" />
+    <meta property="og:title"
+          content="📚 App. B: How AI Risks Differ from Traditional Software Risks - AIRC" />
+  
+  
+    <meta name="description"
+          content="Discover unique challenges and opportunities in managing AI-specific risks. (AI RMF Appendix B)" />
+    <meta property="og:description"
+          content="Discover unique challenges and opportunities in managing AI-specific risks. (AI RMF Appendix B)" />
+    <meta name="twitter:description"
+          content="Discover unique challenges and opportunities in managing AI-specific risks. (AI RMF Appendix B)" />
+  
+  <link rel="icon" href="/img/use_aihead.png">
+  <meta name="color-scheme" content="normal">
+  <meta property="og:image"
+        content="https://airc.nist.gov/img/ai_head_ratio_191.jpeg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1148">
+  <meta property="og:image:height" content="600">
+  <meta name="twitter:image"
+        content="https://airc.nist.gov/img/ai_head_ratio_191.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:site_name" content="NIST AI Resource Center" />
+  
+    <meta property="og:updated_time"
+          content="2026-06-18T16:45:56.314219-04:00">
+  
+
+
+    
+  
+
+
+    
+      
+    
+
+  </head>
+  <body class=" 
+    
+  layout-styleguide
+
+     ">
+
+    
+  
+  
+    
+
+
+    
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  <div class="app-content">
+
+    <section class="usa-banner site-banner"
+         aria-label="Official website of the United States government">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img aria-hidden="true"
+               class="usa-banner__header-flag"
+               src="/img/us_flag_small.png"
+               alt="Small US Flag" />
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action">Here’s how you know</p>
+        </div>
+        <button type="button"
+                class="usa-accordion__button usa-banner__button"
+                aria-expanded="false"
+                aria-controls="gov-banner-default-default">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content"
+         id="gov-banner-default-default">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img"
+               src="/img/icon-dot-gov.svg"
+               role="img"
+               alt="Small Dot Gov Icon"
+               aria-hidden="true" />
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br />
+              A
+              <strong>.gov</strong> website belongs to an official government
+              organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img"
+               src="/img/icon-https.svg"
+               role="img"
+               alt="Small HTTPS Lock Icon"
+               aria-hidden="true" />
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br />
+              A
+              <strong>lock</strong> (
+              <span class="icon-lock">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="52"
+                     height="64"
+                     viewBox="0 0 52 64"
+                     class="usa-banner__lock-image"
+                     role="img"
+                     aria-labelledby="banner-lock-description-default"
+                     focusable="false">
+                  <title id="banner-lock-title-default">Lock</title>
+                  <desc id="banner-lock-description-default">Locked padlock icon</desc>
+                  <path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+                </svg>
+                </span>) or <strong>https://</strong> means you’ve safely connected to
+                the .gov website. Share sensitive information only on official,
+                secure websites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+
+
+
+
+
+<header class="usa-header usa-header--extended site-header site-header--dark"
+        role="banner">
+  <div class="usa-navbar site-header__navbar">
+    <a href="https://www.nist.gov"
+       title="National Institute of Standards and Technology"
+       aria-label="Home">
+      <img src="/img/nist_logo_brand_white.svg"
+           role="img"
+           class="nist-logo"
+           alt="National Institute of Standards and Technology logo" />
+    </a>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+</header>
+<div class="usa-overlay"></div>
+
+<nav aria-label="Main Site navigation" class="usa-nav site-nav">
+  <div class="usa-nav__inner site-nav__inner nav-header">
+    <button type="button" class="usa-nav__close">
+      <img src="/img/usa-icons/close.svg" role="img" alt="Close" />
+    </button>
+    <ul class="usa-nav__primary usa-accordion airc-nav-list">
+      <li class="usa-nav__primary-item">
+        <div class="usa-logo site-logo" id="-logo">
+          <em class="usa-logo__text site-logo__text site-nav-text">
+            <a href="/" title="NIST AI Resource Center (AIRC)">
+              <span aria-hidden="true" class="site-title--short">AIRMF</span>
+              <span class="site-title--long">NIST AI Resource Center (AIRC)</span>
+            </a>
+          </em>
+        </div>
+      </li>
+      <!-- Mobile-nav -->
+      
+
+<ul class="usa-nav__primary usa-nav__primary--mobile usa-accordion emp-mobilenav"
+    id="airc-mobile-bar">
+  
+    
+    <li class="usa-nav__primary-item is-current ">
+      <a href="/"
+         
+         class="usa-current"
+         >
+        
+          <span>Home</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item is-current ">
+      <a href="/airmf-resources/"
+          class="usa-current
+         sb-menu
+         
+         "
+         id="mentgl_4"
+         >
+        
+          <span>AI RMF Resources</span>
+          <span class="caret"></span>
+        </a>
+        
+          
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_4">
+    
+      
+      
+      <li class="usa-nav__submenu-item is-current ">
+        
+          <a href="/airmf-resources/airmf/"
+              class="usa-current 
+             sb-menu
+             "
+             
+             id="mentgl_5"
+             
+             >
+            <span>AI RMF</span>
+            <span class="caret"></span>
+          </a>
+          
+            
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_5">
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/0-ai-rmf-1-0/"
+             
+             class=""
+             >
+            <span>Executive Summary</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/1-sec-risk/"
+             
+             class=""
+             >
+            <span>Framing Risk</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/2-sec-audience/"
+             
+             class=""
+             >
+            <span>Audience</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/3-sec-characteristics/"
+             
+             class=""
+             >
+            <span>AI Risks and Trustworthiness</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/4-effectiveness/"
+             
+             class=""
+             >
+            <span>Effectiveness of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/5-sec-core/"
+             
+             class=""
+             >
+            <span>AI RMF Core</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/6-sec-profile/"
+             
+             class=""
+             >
+            <span>AI RMF Profiles</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item is-current sidebar-menu-toggle">
+        
+          <button class=" usa-accordion__button"
+                  aria-expanded="true"
+                  aria-controls="mentgl_13">Appendices</button>
+          
+            
+
+
+  <ul class="usa-sidenav__sublist" id="mentgl_13">
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/"
+             
+             class=""
+             >
+            <span>📚 App. A: Descriptions of AI Actor Tasks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item is-current ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/"
+             
+             class="usa-current"
+             >
+            <span>📚 App. B: How AI Risks Differ from Traditional Software Risks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-c-ai-risk-management-and-human-ai-interaction/"
+             
+             class=""
+             >
+            <span>📚 App. C: AI Risk Management and Human-AI Interaction</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-d-attributes-of-the-ai-rmf/"
+             
+             class=""
+             >
+            <span>📚 App. D: Attributes of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="7jZrfd0g79dlBzL83DoM5w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="7jZrfd0g79dlBzL83DoM5w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/playbook/"
+              class="
+             sb-menu
+             "
+             
+             id="mentgl_18"
+             
+             >
+            <span>Playbook</span>
+            <span class="caret"></span>
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/roadmap/"
+             
+             class=""
+             >
+            <span>Roadmap</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/usecases/"
+             
+             class=""
+             >
+            <span>Example of Use Cases</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-nav__submenu-item  ">
+        
+          <a href="/airmf-resources/crosswalks/"
+             
+             class=""
+             >
+            <span>Crosswalk Documents</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+<style nonce="7jZrfd0g79dlBzL83DoM5w==">
+  ul.usa-sidenav__sublist::marker,
+  li.usa-nav__submenu-item::marker {
+    content: ' ';
+    font-size: 1.2em;
+  }
+</style>
+
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/glossary/"
+         
+         class=""
+         >
+        
+          <span>Glossary</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/metrology/"
+         
+         class=""
+         >
+        
+          <span>AI Metrology Center</span>
+          
+        </a>
+        
+      
+    </li>
+  
+    
+    <li class="usa-nav__primary-item  ">
+      <a href="/technical-reports/"
+         
+         class=""
+         >
+        
+          <span>Technical Reports</span>
+          
+        </a>
+        
+      
+    </li>
+  
+</ul>
+
+      <!-- end Mobile nav -->
+    </ul>
+    
+    
+    
+    <div class="usa-nav__secondary">
+      <form id="search_form-mobile"
+            class="site-search usa-search usa-search--small flex-fill"
+            action="/search"
+            accept-charset="UTF-8"
+            method="get">
+        <!-- input name="utf8" type="hidden" value="&#x2713;" /-->
+        <input type="hidden" name="affiliate" id="affiliate-mobile" value="uswds" />
+        <div role="search">
+          <label class="usa-sr-only" for="query-mobile">Search the AIRC Website</label>
+          <input id="query-mobile"
+                 class="usa-input usagov-search-autocomplete"
+                 name="query"
+                 type="search"
+                 placeholder="Search AIRC Website"
+                 autocomplete="off" />
+          <button class="site-search__button usa-button margin-top-0"
+                  type="submit"
+                  name="commit">
+            <img src="/img/usa-icons-bg/search--white.svg"
+                 class="usa-search__submit-icon"
+                 alt="Search">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="default-container">
+
+      
+        
+        
+
+        
+<nav class="usa-breadcrumb site-breadcrumbs" aria-label="Breadcrumbs">
+  
+    <ol class="usa-breadcrumb__list">
+      
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/">Home</a>
+              
+            </span>
+          </li>
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/airmf-resources/">AI RMF Resources</a>
+              
+            </span>
+          </li>
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                <a href="/airmf-resources/airmf/">AI RMF</a>
+              
+            </span>
+          </li>
+        
+      
+        
+          <li class="usa-breadcrumb__list-item">
+            <span class="usa-breadcrumb__link">
+              
+              
+                Appendices
+              
+            </span>
+          </li>
+        
+      
+      <li class="usa-breadcrumb__link active">📚 App. B: How AI Risks Differ from Traditional Software Risks</li>
+    </ol>
+  
+</nav>
+
+
+        
+      
+
+      <div id="user-content-root">
+        
+
+<aside class="sidenav emp-sidenav padding-top-1"
+       id="page-side-navigation"
+       aria-label="Side Navigation">
+  <ul class="site-sidenav usa-sidenav usa-accordion" id="airc-sidebar">
+    
+      
+      
+      <li class="usa-sidenav__item is-current">
+        
+          <a href="/"
+             
+             class="usa-current"
+             >
+            <span>Home</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item is-current">
+        
+          <a href="/airmf-resources/"
+              class="usa-current
+             sb-menu
+             
+             "
+             id="ddtoggle_4"
+             >
+            <span>AI RMF Resources</span>
+            <span class="caret"></span>
+          </a>
+          
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_4">
+    
+      
+      
+      <li class="usa-sitenav__item is-current">
+        
+          <a href="/airmf-resources/airmf/"
+              class="usa-current 
+             sb-menu
+             "
+             
+             id="ddtoggle_5"
+             
+             >
+            <span>AI RMF</span>
+            <span class="caret"></span>
+          </a>
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_5">
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/0-ai-rmf-1-0/"
+             
+             class=""
+             >
+            <span>Executive Summary</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/1-sec-risk/"
+             
+             class=""
+             >
+            <span>Framing Risk</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/2-sec-audience/"
+             
+             class=""
+             >
+            <span>Audience</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/3-sec-characteristics/"
+             
+             class=""
+             >
+            <span>AI Risks and Trustworthiness</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/4-effectiveness/"
+             
+             class=""
+             >
+            <span>Effectiveness of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/5-sec-core/"
+             
+             class=""
+             >
+            <span>AI RMF Core</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/6-sec-profile/"
+             
+             class=""
+             >
+            <span>AI RMF Profiles</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item is-current sidebar-menu-toggle">
+        
+          <button class=" usa-accordion__button"
+                  aria-expanded="true"
+                  aria-controls="ddtoggle_13">Appendices</button>
+          
+            
+
+  <ul class="usa-sidenav__sublist" id="ddtoggle_13">
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/"
+             
+             class=""
+             >
+            <span>📚 App. A: Descriptions of AI Actor Tasks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item is-current">
+        
+          <a href="/airmf-resources/airmf/appendices/app-b-how-ai-risks-differ-from-traditional-software-risks/"
+             
+             class="usa-current"
+             >
+            <span>📚 App. B: How AI Risks Differ from Traditional Software Risks</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-c-ai-risk-management-and-human-ai-interaction/"
+             
+             class=""
+             >
+            <span>📚 App. C: AI Risk Management and Human-AI Interaction</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/airmf/appendices/app-d-attributes-of-the-ai-rmf/"
+             
+             class=""
+             >
+            <span>📚 App. D: Attributes of the AI RMF</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/playbook/"
+              class="
+             sb-menu
+             "
+             
+             id="ddtoggle_18"
+             
+             >
+            <span>Playbook</span>
+            <span class="caret"></span>
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/roadmap/"
+             
+             class=""
+             >
+            <span>Roadmap</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/usecases/"
+             
+             class=""
+             >
+            <span>Example of Use Cases</span>
+            
+          </a>
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sitenav__item ">
+        
+          <a href="/airmf-resources/crosswalks/"
+             
+             class=""
+             >
+            <span>Crosswalk Documents</span>
+            
+          </a>
+          
+        
+      </li>
+    
+  </ul>
+
+
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/glossary/"
+             
+             class=""
+             >
+            <span>Glossary</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/metrology/"
+             
+             class=""
+             >
+            <span>AI Metrology Center</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+      
+      
+      <li class="usa-sidenav__item">
+        
+          <a href="/technical-reports/"
+             
+             class=""
+             >
+            <span>Technical Reports</span>
+            
+          </a>
+          
+          
+        
+      </li>
+    
+  </ul>
+</aside>
+
+        <div class="usa-in-page-nav-container site-in-page-nav-container">
+          
+          
+          <main id="main-content" class="main-content">
+
+            
+  <div class="grid-container"><div class="usa-alert usa-alert--warning margin-y-2 usa-alert--slim">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">
+      The AI RMF 1.0 is being updated. A revised version is in progress.
+    </p>
+  </div>
+</div>
+<div class="rmf-content">
+  <h1 class="unnumbered" id="app:B">
+    Appendix B: How AI Risks Differ from Traditional Software Risks
+  </h1>
+<i> Excerpt from the NIST AI Risk Management Framework 1.0 (2023).</i>
+  <p>
+    As with traditional software, risks from AI-based technology can be bigger
+    than an enterprise, span organizations, and lead to societal impacts. AI
+    systems also bring a set of risks that are not comprehensively addressed by
+    current risk frameworks and approaches. Some AI system features that present
+    risks also can be beneficial. For example, pre-trained models and transfer
+    learning can advance research and increase accuracy and resilience when
+    compared to other models and approaches. Identifying contextual factors in
+    the
+    <span
+      ><strong><span class="smallcaps">map</span></strong></span
+    >
+    function will assist AI actors in determining the level of risk and
+    potential management efforts.
+  </p>
+  <p>
+    Compared to traditional software, AI-specific risks that are new or
+    increased include the following:
+  </p>
+  <ul>
+    <li>
+      <p>
+        The data used for building an AI system may not be a true or appropriate
+        representation of the context or intended use of the AI system, and the
+        ground truth may either not exist or not be available. Additionally,
+        harmful bias and other data quality issues can affect AI system
+        trustworthiness, which could lead to negative impacts.
+      </p>
+    </li>
+    <li>
+      <p>
+        AI system dependency and reliance on data for training tasks, combined
+        with increased volume and complexity typically associated with such
+        data.
+      </p>
+    </li>
+    <li>
+      <p>
+        Intentional or unintentional changes during training may fundamentally
+        alter AI system performance.
+      </p>
+    </li>
+    <li>
+      <p>
+        Datasets used to train AI systems may become detached from their
+        original and intended context or may become stale or outdated relative
+        to deployment context.
+      </p>
+    </li>
+    <li>
+      <p>
+        AI system scale and complexity (many systems contain billions or even
+        trillions of decision points) housed within more traditional software
+        applications.
+      </p>
+    </li>
+    <li>
+      <p>
+        Use of pre-trained models that can advance research and improve
+        performance can also increase levels of statistical uncertainty and
+        cause issues with bias management, scientific validity, and
+        reproducibility.
+      </p>
+    </li>
+    <li>
+      <p>
+        Higher degree of difficulty in predicting failure modes for emergent
+        properties of large-scale pre-trained models.
+      </p>
+    </li>
+    <li>
+      <p>
+        Privacy risk due to enhanced data aggregation capability for AI systems.
+      </p>
+    </li>
+    <li>
+      <p>
+        AI systems may require more frequent maintenance and triggers for
+        conducting corrective maintenance due to data, model, or concept drift.
+      </p>
+    </li>
+    <li><p>Increased opacity and concerns about reproducibility.</p></li>
+    <li>
+      <p>
+        Underdeveloped software testing standards and inability to document
+        AI-based practices to the standard expected of traditionally engineered
+        software for all but the simplest of cases.
+      </p>
+    </li>
+    <li>
+      <p>
+        Difficulty in performing regular AI-based software testing, or
+        determining what to test, since AI systems are not subject to the same
+        controls as traditional code development.
+      </p>
+    </li>
+    <li>
+      <p>
+        Computational costs for developing AI systems and their impact on the
+        environment and planet.
+      </p>
+    </li>
+    <li>
+      <p>
+        Inability to predict or detect the side effects of AI-based systems
+        beyond statistical measures.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Privacy and cybersecurity risk management considerations and approaches are
+    applicable in the design, development, deployment, evaluation, and use of AI
+    systems. Privacy and cybersecurity risks are also considered as part of
+    broader enterprise risk management considerations, which may incorporate AI
+    risks. As part of the effort to address AI trustworthiness characteristics
+    such as “Secure and Resilient” and “Privacy-Enhanced,” organizations may
+    consider leveraging available standards and guidance that provide broad
+    guidance to organizations to reduce security and privacy risks, such as, but
+    not limited to, the NIST Cybersecurity Framework, the NIST Privacy
+    Framework, the NIST Risk Management Framework, and the Secure Software
+    Development Framework. These frameworks have some features in common with
+    the AI RMF. Like most risk management approaches, they are outcome-based
+    rather than prescriptive and are often structured around a Core set of
+    functions, categories, and subcategories. While there are significant
+    differences between these frameworks based on the domain addressed – and
+    because AI risk management calls for addressing many other types of risks –
+    frameworks like those mentioned above may inform security and privacy
+    considerations in the
+    <span
+      ><strong><span class="smallcaps">map</span></strong></span
+    >,
+    <span
+      ><strong><span class="smallcaps">measure</span></strong></span
+    >, and
+    <span
+      ><strong><span class="smallcaps">manage</span></strong></span
+    >
+    functions of the AI RMF.
+  </p>
+  <p>
+    At the same time, guidance available before publication of this AI RMF does
+    not comprehensively address many AI system risks. For example, existing
+    frameworks and guidance are unable to:
+  </p>
+  <ul>
+    <li><p>adequately manage the problem of harmful bias in AI systems;</p></li>
+    <li><p>confront the challenging risks related to generative AI;</p></li>
+    <li>
+      <p>
+        comprehensively address security concerns related to evasion, model
+        extraction, membership inference, availability, or other machine
+        learning attacks;
+      </p>
+    </li>
+    <li>
+      <p>
+        account for the complex attack surface of AI systems or other security
+        abuses enabled by AI systems; and
+      </p>
+    </li>
+    <li>
+      <p>
+        consider risks associated with third-party AI technologies, transfer
+        learning, and off-label use where AI systems may be trained for
+        decision-making outside an organization’s security controls or trained
+        in one domain and then “fine-tuned” for another.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Both AI and traditional software technologies and systems are subject to
+    rapid innovation. Technology advances should be monitored and deployed to
+    take advantage of those developments and work towards a future of AI that is
+    both trustworthy and responsible.
+  </p>
+</div></div>
+
+
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <footer class="nist-footer padding-bottom-4">
+  <div class="grid-container nist-footer__info">
+    <div class="grid-row">
+      <div class="tablet:grid-col-6 padding-left-0">
+        <div class="nist-footer__logo">
+          <a href="https://www.nist.gov/"
+             title="National Institute of Standards and Technology"
+             class="nist-footer__logo-link"
+             rel="home">
+            <img src="/img/nist_logo_brand_white.svg"
+                 role="img"
+                 alt="National Institute of Standards and Technology logo"
+                 width="300px"
+                 height="42px" />
+          </a>
+        </div>
+        <div class="nist-footer__contact">
+          <p class="nist-footer__contact-heading">HEADQUARTERS</p>
+          <address>
+            100 Bureau Drive
+            <br>
+            Gaithersburg, MD 20899
+            <br>
+            <a href="tel:301-975-2000">301-975-2000</a>
+          </address>
+          <p>
+            <a href="mailto:do-webmaster@nist.gov">Webmaster</a> | <a href="https://www.nist.gov/about-nist/contact-us">Contact Us</a> | <a href="https://www.nist.gov/visit">Our Other Offices</a>
+          </p>
+        </div>
+      </div>
+      <div class="tablet:grid-col-6">
+        <div class="nist-footer__social-links grid-row">
+          <a class="nist-social nist-social--x-white ext"
+             href=" https://x.com/NIST"
+             data-extlink="">
+            <span>X</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/x.svg"
+                 alt="X" />
+          </a>
+          <a class="nist-social nist-social--facebook-white ext"
+             href=" https://www.facebook.com/NIST"
+             data-extlink="">
+            <span>Facebook</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/facebook.svg"
+                 alt="Facebook" />
+          </a>
+          <a class="nist-social nist-social--linkedin-white ext"
+             href=" https://www.linkedin.com/company/nist"
+             data-extlink="">
+            <span>LinkedIn</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/linkedin.svg"
+                 alt="LinkedIn" />
+          </a>
+          <a class="nist-social nist-social--instagram-white ext"
+             href=" https://www.instagram.com/nist/"
+             data-extlink="">
+            <span>Instagram</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/instagram.svg"
+                 alt="Instagram" />
+          </a>
+          <a class="nist-social nist-social--youtube-white ext"
+             href=" https://www.youtube.com/NIST"
+             data-extlink="">
+            <span>YouTube</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/youtube.svg"
+                 alt="YouTube" />
+          </a>
+          <a class="nist-social nist-social--rss-white"
+             href=" https://www.nist.gov/news-events/nist-rss-feeds">
+            <span>RSS Feed</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/rss_feed.svg"
+                 alt="RSS" />
+          </a>
+          <a class="nist-social nist-social--envelope-white ext"
+             href=" https://public.govdelivery.com/accounts/USNIST/subscriber/new"
+             data-extlink="">
+            <span>Mailing List</span>
+            <img class="nist-social-footer-icon filter-white"
+                 src="/img/usa-icons/mail.svg"
+                 alt="Subscribe to Mailing List" />
+          </a>
+        </div>
+        <br>
+        <div class="nist-footer__feedback grid-row">
+          <!-- <a class="usa-button" href="/contact/">Contact Us</a> -->
+          How are we doing? <a class="margin-left-2 usa-button"
+    rel="nofollow noopener"
+    href="https://www.nist.gov/form/nist-gov-feedback?destination=/national-institute-standards-and-technology"
+    title="Provide feedback">Feedback</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.usa.gov/">USA.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://vote.gov/">Vote.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  </div>
+
+
+    
+      
+      <script  nonce="7jZrfd0g79dlBzL83DoM5w==" 
+              defer
+              src="/dist/uswds.min.eb67c3d6236f.js"></script>
+      <script  nonce="7jZrfd0g79dlBzL83DoM5w==" 
+              type="text/javascript"
+              src="/dist/application.f2e7541630ae.js"
+              defer></script>
+    
+
+    
+      
+
+  
+
+  <script nonce="7jZrfd0g79dlBzL83DoM5w==" src="https://www.googletagmanager.com/gtag/js?id=G-3CZ2H64ZSV" async></script>
+  <script nonce="7jZrfd0g79dlBzL83DoM5w==" type="application/javascript" defer>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+    dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-3CZ2H64ZSV');</script>
+  <noscript>
+    <style  nonce="7jZrfd0g79dlBzL83DoM5w==" >
+      iframe {
+        display: none;
+        visibility: hidden;
+      }
+    </style>
+    
+    <iframe src="https://www.googletagmanager.com/ns.html?id=G-3CZ2H64ZSV"
+            height="0"
+            width="0"
+            style="display:none;
+                   visibility:hidden"></iframe>
+  </noscript>
+
+
+    
+
+    
+      
+    
+
+  <script nonce="7jZrfd0g79dlBzL83DoM5w==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='7jZrfd0g79dlBzL83DoM5w==';d.innerHTML="window.__CF$cv$params={r:'a1e3966a8dfc4294',t:'MTc4NDU2NzUxMg=='};var a=document.createElement('script');a.nonce='7jZrfd0g79dlBzL83DoM5w==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
