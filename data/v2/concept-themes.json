@@ -1,0 +1,44 @@
+[
+  {
+    "id": "privacy-principles",
+    "label": "Privacy principles",
+    "summary": "Foundational constraints on why personal data is processed, how much is collected, and how protection is embedded into systems and defaults.",
+    "order": 1
+  },
+  {
+    "id": "rights-and-fairness",
+    "label": "Rights, transparency and fairness",
+    "summary": "Information duties, individual agency, procedural safeguards, and protections against unjustified or discriminatory effects.",
+    "order": 2
+  },
+  {
+    "id": "data-lifecycle",
+    "label": "Data lifecycle and transfers",
+    "summary": "Stewardship of data from collection and provenance through use, sharing, international transfer, retention, and deletion.",
+    "order": 3
+  },
+  {
+    "id": "governance-and-assurance",
+    "label": "Governance, risk and assurance",
+    "summary": "Organizational responsibility, documented assessment, third-party controls, monitoring, and evidence that governance measures remain effective.",
+    "order": 4
+  },
+  {
+    "id": "security-and-resilience",
+    "label": "Security and resilience",
+    "summary": "Technical and organizational safeguards that reduce unauthorized access, misuse, loss, disruption, and the consequences of incidents.",
+    "order": 5
+  },
+  {
+    "id": "ai-safety-and-oversight",
+    "label": "AI safety and oversight",
+    "summary": "Human supervision and model-focused controls for capable, adaptive, or high-impact AI systems across their lifecycle.",
+    "order": 6
+  },
+  {
+    "id": "international-coordination",
+    "label": "International coordination",
+    "summary": "Cooperation, shared terminology, standards alignment, scientific exchange, and capacity building across institutions and borders.",
+    "order": 7
+  }
+]

@@ -1,4 +1,4 @@
-# Global AI · Data Regulation Map
+# Compliance Compass: Global AI Governance and Data Regulation Map & Visualization
 
 An open-source, provision-level knowledge graph for exploring how AI governance, privacy, data security, and cybersecurity rules connect across jurisdictions.
 
@@ -8,7 +8,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 
 ## What you can explore
 
-- **Global Atlas** — enter through a jurisdiction-neutral map instead of treating any one law as the center of the world.
+- **Global Atlas** — browse legal systems and international frameworks in a fixed, documented comparative order.
 - **Instrument Genome** — browse an instrument chapter by chapter, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read the selected legal text or clearly labeled editorial summary in the center workspace.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
@@ -17,7 +17,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Corpus search** — find instruments and provisions by title, locator, jurisdiction, or regulatory concept.
 - **Two visual modes** — switch between a near-black **Dark / Geek** workspace and a restrained, paper-like **Bright / Lawyer** workspace without changing the underlying data.
 
-The primary navigation uses a fixed legal-system order—**EU, US, China, UK, Canada, Japan, India**—with California nested under the US. **International / Frameworks / Soft law** is a parallel top-level lane, not a country and not a child of any one national system. Each national, regional, or subnational legal-system entry is paired with its flag; international and standards contexts use issuer or framework icons rather than fictional flags. Instrument-type icons, status symbols, and relation cues provide further orientation without replacing text labels. The bounded, animated graph emphasizes useful one-hop context instead of becoming an unreadable network hairball.
+The legal-source navigation uses a fixed order—**EU, US, China, UK, Canada, Japan, India**—with California nested under the US. **International / Frameworks / Soft law** is a parallel top-level lane, not a country and not a child of any one national system. A peer **Core Concepts** sidebar index organizes sourced learning summaries by theme without presenting concepts as jurisdictions or legal instruments. Each national, regional, or subnational legal-system entry is paired with its flag; international and standards contexts use issuer or framework icons rather than fictional flags. Instrument-type icons, status symbols, and relation cues provide further orientation without replacing text labels. The bounded, animated graph presents one-hop relationships while preserving readable labels and qualified mapping metadata.
 
 ## V2 corpus snapshot
 
@@ -26,7 +26,7 @@ The current dataset was reviewed through **2026-07-19** and contains:
 - 15 jurisdiction, subnational, or institutional-context nodes;
 - 23 instruments across the EU, United States and California, China, the United Kingdom, Canada, Japan, India, and international or standards contexts;
 - 254 unified provision nodes after merging generated and curated records;
-- 42 qualified relations, 54 lifecycle events, 12 controlled regulatory concepts, and 34 curated high-level structure summaries;
+- 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated high-level structure summaries;
 - all **99 GDPR articles** and all **113 EU AI Act articles**, with English article text and hierarchy imported from the official EUR-Lex publications.
 
 The 23-instrument seed includes binding law, phased legislation, executive policy, an unenacted bill, government-internal policy, voluntary frameworks, standards, soft law, declarations, and an advisory report. Its framework and soft-law coverage includes **NIST AI RMF 1.0, ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process,** and the **UN Advisory Body's _Governing AI for Humanity_** report. Legal force and lifecycle status are first-class data—not styling trivia.
@@ -81,7 +81,8 @@ data/v2/
   provisions.json            curated provision metadata and summaries
   gdpr-articles.json          generated official GDPR article corpus
   eu-ai-act-articles.json     generated official EU AI Act article corpus
-  concepts.json              neutral regulatory vocabulary
+  concept-themes.json        ordered learning themes for core concepts
+  concepts.json              sourced core-concept vocabulary and summaries
   structure-summaries.json   curated section/framework orientation summaries
   relations.json             qualified provision/instrument edges
   status-events.json         auditable lifecycle events

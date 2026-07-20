@@ -14,6 +14,8 @@ const [
   seedProvisions,
   relations,
   statusEvents,
+  concepts,
+  conceptThemes,
   gdprArticles,
   euAiActArticles,
 ] = await Promise.all([
@@ -22,6 +24,8 @@ const [
   loadJson("provisions.json"),
   loadJson("relations.json"),
   loadJson("status-events.json"),
+  loadJson("concepts.json"),
+  loadJson("concept-themes.json"),
   loadJson("gdpr-articles.json"),
   loadJson("eu-ai-act-articles.json"),
 ]);
@@ -152,6 +156,17 @@ test("corpus fixtures expose unique dynamically counted records", () => {
     frameworkInstrumentIds.every((id) => instrumentById.has(id)),
     "the complete framework lane fixture must resolve to corpus instruments",
   );
+  assert.equal(
+    new Set(conceptThemes.map((theme) => theme.id)).size,
+    conceptThemes.length,
+    "core-concept themes must be unique",
+  );
+  assert.ok(
+    concepts.every((concept) =>
+      conceptThemes.some((theme) => theme.id === concept.theme),
+    ),
+    "every core concept must resolve to a visible theme",
+  );
 });
 
 test("server renders a neutral global regulatory atlas", async () => {
@@ -162,12 +177,17 @@ test("server renders a neutral global regulatory atlas", async () => {
   const html = await response.text();
   const text = normalizedText(html);
 
-  assert.match(text, /GLOBAL AI · DATA REGULATION MAP/i);
-  assert.match(text, /GLOBAL_REGULATORY_ATLAS \/ LIVE CORPUS/i);
-  assert.match(text, /No single law is the center\./i);
+  assert.match(
+    html,
+    /<title>Compliance Compass: Global AI Governance and Data Regulation Map &amp; Visualization<\/title>/i,
+  );
+  assert.match(text, /COMPLIANCE COMPASS GLOBAL AI GOVERNANCE/i);
+  assert.match(text, /DATA REGULATION MAP \/ VISUALIZATION/i);
+  assert.match(text, /GLOBAL_REGULATORY_ATLAS \/ RESEARCH CORPUS/i);
+  assert.match(text, /Comparative AI and data regulation corpus\./i);
   assert.match(
     text,
-    /Navigate binding law, executive action, proposed legislation, standards and soft law as a versioned global system\./i,
+    /Browse primary legal sources, executive action, proposed legislation, standards and soft law through a versioned comparative index\./i,
   );
   assert.match(text, /7 legal systems/i);
   assert.match(
@@ -186,15 +206,16 @@ test("server renders a neutral global regulatory atlas", async () => {
     text,
     new RegExp(`${corpusCounts.relations} qualified links`, "i"),
   );
+  assert.match(text, new RegExp(`${concepts.length} core concepts`, "i"));
   assert.match(text, /PROVISION_READER \/ STANDBY/i);
   assert.match(text, /Select an instrument node\./i);
   assert.match(text, /VIEW::\s*ATLAS/i);
   assert.match(text, /Global regulatory atlas open\./i);
-  assert.match(text, /RESEARCH PREVIEW \/ NOT LEGAL ADVICE/i);
+  assert.match(text, /ACADEMIC RESEARCH EDITION \/ NOT LEGAL ADVICE/i);
 
   assert.doesNotMatch(
     text,
-    /Trace one regulatory obligation across borders|Regulatory crosswalk lattice/i,
+    /No single law is the center|Trace one regulatory obligation across borders|Regulatory crosswalk lattice/i,
   );
   assert.doesNotMatch(
     html,
@@ -213,7 +234,23 @@ test("server output exposes the semantic atlas controls and idle reader", async 
     /<aside[^>]*class="corpus-navigator"[^>]*aria-label="Global regulation corpus"/i,
   );
   assert.match(html, /<input[^>]*type="search"/i);
-  assert.match(html, /Search regulations and provisions/i);
+  assert.match(html, /Search legal source or core concept/i);
+  const researchIndex = html.match(
+    /<div(?=[^>]*class="navigator-tabs")(?=[^>]*role="tablist")(?=[^>]*aria-label="Research index")(?=[^>]*data-active-tab="sources")[^>]*>[\s\S]*?<\/div>/i,
+  )?.[0];
+  assert.ok(researchIndex, "the sidebar must expose a semantic research-index tablist");
+  assert.match(
+    researchIndex,
+    /<span[^>]*class="navigator-tab-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
+  );
+  assert.match(
+    researchIndex,
+    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-sources")(?=[^>]*aria-selected="true")[^>]*>[\s\S]*?LEGAL SOURCES\s*<\/button>/i,
+  );
+  assert.match(
+    researchIndex,
+    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-concepts")(?=[^>]*aria-selected="false")[^>]*>[\s\S]*?CORE CONCEPTS\s*<\/button>/i,
+  );
   assert.match(
     html,
     /<nav(?=[^>]*class="mode-switch")(?=[^>]*aria-label="Explorer mode")(?=[^>]*data-active-view="atlas")[^>]*>/i,
@@ -224,6 +261,11 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   );
   assert.match(html, /<section[^>]*class="workspace"[^>]*aria-label="Regulation visualization"/i);
   assert.match(html, /<aside[^>]*aria-label="Provision reader"/i);
+  assert.match(
+    html,
+    /<button(?=[^>]*class="interface-back-button")(?=[^>]*disabled="")(?=[^>]*aria-label="Return to previous interface")[^>]*>[\s\S]*?BACK\s*<\/button>/i,
+    "the initial workspace must expose a disabled in-app Back control",
+  );
   assert.match(html, /aria-live="polite"/i);
   const modeControls = html.match(
     /<nav(?=[^>]*class="mode-switch")(?=[^>]*data-active-view="atlas")[^>]*>[\s\S]*?<\/nav>/i,
@@ -265,7 +307,7 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   assert.match(text, /Binding law/i);
   assert.match(text, /Soft law \/ framework/i);
   assert.match(text, /Historical \/ revoked/i);
-  assert.match(text, /CORPUS_NAV/i);
+  assert.match(text, /RESEARCH_NAV/i);
   assert.match(text, /GLOBAL ATLAS/i);
   assert.match(text, /GITHUB/i);
   assert.match(
@@ -285,10 +327,7 @@ test("server output preserves jurisdiction order, inline flags, issuer marks, an
   const renderedGroupOrder = [
     ...html.matchAll(/data-atlas-group="([^"]+)"/g),
   ].map((match) => match[1]);
-  assert.deepEqual(renderedGroupOrder, [
-    ...topLevelGroupOrder,
-    ...topLevelGroupOrder,
-  ]);
+  assert.deepEqual(renderedGroupOrder, topLevelGroupOrder);
 
   assert.doesNotMatch(
     html,

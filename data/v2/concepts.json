@@ -1,86 +1,600 @@
 [
   {
+    "id": "privacy-by-design-default",
+    "label": "Privacy by Design and Default",
+    "family": "privacy-foundation",
+    "theme": "privacy-principles",
+    "description": "Protection is incorporated into architecture, product decisions, operational processes, and default settings rather than added only after deployment.",
+    "summary": "Privacy by Design is an engineering and governance discipline: foreseeable privacy risks are addressed throughout the system lifecycle, while default configurations limit exposure without requiring an individual to take protective action.",
+    "aliases": ["PbD", "data protection by design and by default", "privacy engineering by default"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPT Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/bltc8fa2a80f94fbe6e/IAPP_Training-CIPT_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 25 — Data protection by design and by default",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_25",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "data-minimization",
+    "label": "Data Minimization / Minimum Necessary Collection",
+    "family": "privacy-foundation",
+    "theme": "privacy-principles",
+    "description": "Collection, use, access, and retention are limited to data that is relevant and reasonably necessary for a defined purpose.",
+    "summary": "Data minimization asks whether each data element, recipient, use, and retention period is needed for the stated objective. The analysis is contextual and should be revisited when the purpose, system, or risk profile changes.",
+    "aliases": ["minimum collection", "collection limitation", "minimum necessary", "data minimisation"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPT Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/bltc8fa2a80f94fbe6e/IAPP_Training-CIPT_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 5 — Principles relating to processing of personal data",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_5",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "purpose-limitation",
+    "label": "Purpose Limitation and Secondary Use",
+    "family": "privacy-foundation",
+    "theme": "privacy-principles",
+    "description": "Data is collected for specified purposes and later use is assessed for compatibility, authorization, and the expectations created at collection.",
+    "summary": "Purpose limitation connects the reason for collection to later processing. A new use may require a compatibility analysis, a fresh legal basis or permission, additional notice, safeguards, or a decision not to proceed.",
+    "aliases": ["use limitation", "compatible use", "secondary purpose"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPP/E Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blte39ae9567661b3d2/IAPP_Training-CIPPE_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 5 — Principles relating to processing of personal data",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_5",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "lawfulness-consent-choice",
+    "label": "Lawfulness, Consent and Choice",
+    "family": "privacy-foundation",
+    "theme": "privacy-principles",
+    "description": "Processing requires a valid legal or institutional justification, with consent and user choice evaluated as distinct mechanisms rather than universal defaults.",
+    "summary": "Lawfulness analysis identifies the authority for processing and its conditions. Consent is only one possible basis and must be evaluated for validity, withdrawal, power imbalance, and whether another rule permits or restricts the activity.",
+    "aliases": ["lawful basis", "consent", "choice and control", "processing authority"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPP/E Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blte39ae9567661b3d2/IAPP_Training-CIPPE_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 6 — Lawfulness of processing",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_6",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
     "id": "automated-decision-safeguards",
-    "label": "Automated decision safeguards",
+    "label": "Automated Decision Safeguards",
     "family": "individual-rights",
+    "theme": "rights-and-fairness",
     "description": "Limits, procedural protections, explanations, contestability, or human involvement for consequential automated decisions.",
-    "aliases": ["ADM", "profiling safeguards", "contestability"]
+    "summary": "Automated-decision safeguards address how consequential outputs are explained, reviewed, challenged, corrected, or overridden. Their scope depends on the type of decision, level of automation, legal effect, and governing instrument.",
+    "aliases": ["ADM", "profiling safeguards", "contestability"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 22 — Automated individual decision-making, including profiling",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_22",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
-    "id": "ai-risk-management",
-    "label": "AI risk management",
-    "family": "governance-process",
-    "description": "Lifecycle identification, assessment, prioritization, treatment, and monitoring of AI risks.",
-    "aliases": ["lifecycle risk management", "AI safety management"]
-  },
-  {
-    "id": "impact-assessment",
-    "label": "Impact assessment",
-    "family": "governance-process",
-    "description": "A documented assessment conducted before or during a higher-risk data or AI activity.",
-    "aliases": ["DPIA", "PIPIA", "AIA", "algorithmic impact assessment"]
-  },
-  {
-    "id": "security-controls",
-    "label": "Security controls",
-    "family": "technical-organizational-control",
-    "description": "Technical and organizational measures used to protect data, systems, models, and services.",
-    "aliases": ["security safeguards", "cybersecurity", "security by design"]
-  },
-  {
-    "id": "incident-response",
-    "label": "Incident response",
-    "family": "technical-organizational-control",
-    "description": "Detection, remediation, documentation, and notification of security or personal-data incidents.",
-    "aliases": ["breach response", "incident notification"]
+    "id": "data-subject-rights",
+    "label": "Individual and Data Subject Rights",
+    "family": "individual-rights",
+    "theme": "rights-and-fairness",
+    "description": "Access, correction, deletion, objection, portability, restriction, complaint, and related mechanisms through which people can exercise agency over data practices.",
+    "summary": "Individual-rights regimes differ in who may exercise a right, what data or processing it covers, verification rules, exceptions, response periods, and remedies. A shared label therefore does not imply equivalent scope.",
+    "aliases": ["data subject rights", "consumer privacy rights", "access and correction", "DSR"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPP/E Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blte39ae9567661b3d2/IAPP_Training-CIPPE_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Chapter III — Rights of the data subject",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
     "id": "transparency-explainability",
-    "label": "Transparency and explainability",
+    "label": "Transparency, Notice and Explainability",
     "family": "information-duty",
-    "description": "Information that makes an AI or data practice visible, understandable, and open to scrutiny.",
-    "aliases": ["disclosure", "explainability", "notice"]
+    "theme": "rights-and-fairness",
+    "description": "Information that makes an AI or data practice visible, understandable, and open to scrutiny by affected people and oversight bodies.",
+    "summary": "Transparency covers layered duties: notice about data practices, disclosure that AI is involved, documentation for reviewers, and explanations suitable for a particular audience and decision. These duties are related but not interchangeable.",
+    "aliases": ["disclosure", "explainability", "notice", "meaningful information"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "EU AI Act official publication",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
-    "id": "human-oversight",
-    "label": "Human oversight",
-    "family": "technical-organizational-control",
-    "description": "Meaningful human involvement, review, intervention, or accountability in automated systems.",
-    "aliases": ["human in the loop", "human review"]
+    "id": "fairness-nondiscrimination",
+    "label": "Fairness and Non-discrimination",
+    "family": "individual-rights",
+    "theme": "rights-and-fairness",
+    "description": "Assessment and mitigation of unjustified differences in treatment, outcomes, access, or burden across people and groups.",
+    "summary": "Fairness is context-dependent and can involve legal non-discrimination rules, representative data, performance across groups, allocation choices, accessibility, and procedural opportunities to question an outcome.",
+    "aliases": ["algorithmic fairness", "bias mitigation", "equal treatment", "non-discrimination"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "OECD AI Principles",
+        "url": "https://oecd.ai/en/ai-principles",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "sensitive-data-protection",
+    "label": "Sensitive Data and Vulnerable People",
+    "family": "individual-rights",
+    "theme": "rights-and-fairness",
+    "description": "Heightened safeguards for data, contexts, or populations associated with greater risk of harm, exploitation, exclusion, or loss of autonomy.",
+    "summary": "Sensitive-data rules vary by jurisdiction and may focus on enumerated categories, children, biometric or health data, inferred traits, vulnerable situations, or the consequences of processing rather than the label alone.",
+    "aliases": ["special-category data", "sensitive personal information", "children's data", "vulnerable persons"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPP/E Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blte39ae9567661b3d2/IAPP_Training-CIPPE_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 9 — Processing of special categories of personal data",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_9",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
     "id": "training-data-governance",
-    "label": "Training-data governance",
+    "label": "Data Quality, Provenance and Training-data Governance",
     "family": "data-governance",
-    "description": "Requirements or practices governing the provenance, quality, legality, representativeness, and stewardship of AI training data.",
-    "aliases": ["data quality", "dataset governance", "training data"]
+    "theme": "data-lifecycle",
+    "description": "Requirements or practices governing the provenance, quality, legality, representativeness, documentation, and stewardship of data used to develop or evaluate AI.",
+    "summary": "Training-data governance follows where data came from, whether it may be used, how it was prepared, whose interests may be underrepresented, what limitations are known, and how changes can be traced across model versions.",
+    "aliases": ["data quality", "dataset governance", "training data", "data lineage", "provenance"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "EU AI Act Article 10 — Data and data governance",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng#art_10",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
-    "id": "frontier-model-safety",
-    "label": "Frontier-model safety",
-    "family": "ai-safety",
-    "description": "Evaluation, reporting, safeguards, and incident practices associated with highly capable or advanced AI models.",
-    "aliases": ["dual-use foundation model", "advanced AI system", "frontier AI"]
+    "id": "retention-deletion-lifecycle",
+    "label": "Retention, Deletion and the Data Lifecycle",
+    "family": "data-governance",
+    "theme": "data-lifecycle",
+    "description": "Rules and controls governing how long data and derived artifacts are kept, reviewed, archived, deleted, or rendered no longer identifiable.",
+    "summary": "Lifecycle governance links retention schedules to purpose, legal holds, security, model and backup dependencies, deletion feasibility, and evidence of disposal. Keeping data indefinitely is a design choice, not a neutral default.",
+    "aliases": ["storage limitation", "retention schedule", "secure deletion", "data disposal"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 5 — Principles relating to processing of personal data",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_5",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
     "id": "cross-border-transfer",
-    "label": "Cross-border data transfer",
+    "label": "Cross-border Data Governance",
     "family": "data-governance",
-    "description": "Conditions and mechanisms governing disclosure or transfer of personal data across borders.",
-    "aliases": ["international transfer", "overseas provision"]
+    "theme": "data-lifecycle",
+    "description": "Conditions, safeguards, restrictions, and accountability mechanisms governing access to or transfer of personal data across borders.",
+    "summary": "Cross-border governance requires more than locating a server. It may turn on the exporter, importer, remote access, destination, adequacy findings, contractual or statutory mechanisms, localization rules, and continuing safeguards.",
+    "aliases": ["international transfer", "overseas provision", "data export", "transborder data flow"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPP/E Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blte39ae9567661b3d2/IAPP_Training-CIPPE_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Chapter V — Transfers of personal data to third countries or international organisations",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "ai-risk-management",
+    "label": "AI Risk Management",
+    "family": "governance-process",
+    "theme": "governance-and-assurance",
+    "description": "Lifecycle identification, assessment, prioritization, treatment, documentation, and monitoring of risks arising from AI systems and their use contexts.",
+    "summary": "AI risk management links technical performance to people, organizational objectives, use context, foreseeable misuse, and legal obligations. It is iterative because models, deployments, dependencies, and observed impacts change.",
+    "aliases": ["lifecycle risk management", "AI safety management", "AI governance risk"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "impact-assessment",
+    "label": "Risk and Impact Assessment",
+    "family": "governance-process",
+    "theme": "governance-and-assurance",
+    "description": "A documented assessment conducted before or during a higher-risk data or AI activity to identify impacts, affected groups, mitigations, and residual risk.",
+    "summary": "Impact assessments create a structured record of purpose, necessity, stakeholders, risk scenarios, safeguards, consultation, decisions, and review triggers. DPIAs, PIAs and AI impact assessments are related forms with different legal scopes.",
+    "aliases": ["DPIA", "PIA", "AIA", "algorithmic impact assessment", "risk assessment"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 35 — Data protection impact assessment",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_35",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
     "id": "accountability-governance",
-    "label": "Accountability and governance",
+    "label": "Accountability, Roles and Documentation",
     "family": "governance-process",
-    "description": "Assigned responsibility, policies, documentation, reporting, and organizational structures for trustworthy data and AI practices.",
-    "aliases": ["governance", "organizational accountability"]
+    "theme": "governance-and-assurance",
+    "description": "Assigned responsibility, policies, records, reporting lines, decision rights, and organizational structures for trustworthy data and AI practices.",
+    "summary": "Accountability turns principles into owned work: roles are assigned, decisions and exceptions are documented, resources and escalation paths exist, controls can be tested, and leadership can explain how obligations are met.",
+    "aliases": ["governance", "organizational accountability", "roles and responsibilities", "records of processing"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 5 — Accountability principle",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_5",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "third-party-supply-chain",
+    "label": "Third-party and Supply-chain Governance",
+    "family": "governance-process",
+    "theme": "governance-and-assurance",
+    "description": "Due diligence, contracting, allocation of responsibility, access controls, monitoring, and exit planning for vendors and other external dependencies.",
+    "summary": "Third-party governance follows risk across processors, model and data providers, cloud services, deployers, distributors, and downstream users. Contract terms support but do not replace oversight, evidence, and clear responsibility.",
+    "aliases": ["vendor management", "processor governance", "AI supply chain", "third-party risk"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "continuous-assurance",
+    "label": "Continuous Monitoring, Audit and Metrics",
+    "family": "governance-process",
+    "theme": "governance-and-assurance",
+    "description": "Ongoing testing, monitoring, audit, metrics, issue tracking, and review used to determine whether controls and assumptions remain effective.",
+    "summary": "Continuous assurance replaces one-time approval with observable performance. Useful measures connect known risks and obligations to thresholds, owners, evidence, remediation, reassessment, and escalation when conditions change.",
+    "aliases": ["control monitoring", "governance metrics", "audit", "post-deployment monitoring"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "security-controls",
+    "label": "Security, Resilience and Least Privilege",
+    "family": "technical-organizational-control",
+    "theme": "security-and-resilience",
+    "description": "Technical and organizational measures used to protect data, systems, models, and services against unauthorized access, alteration, loss, misuse, and disruption.",
+    "summary": "Security safeguards are selected according to context and risk, then maintained across identity, access, infrastructure, software, data, models, personnel, and recovery. Confidentiality is one objective alongside integrity, availability, and resilience.",
+    "aliases": ["security safeguards", "cybersecurity", "security by design", "least privilege", "access control"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPT Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/bltc8fa2a80f94fbe6e/IAPP_Training-CIPT_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 32 — Security of processing",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_32",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "privacy-enhancing-tech",
+    "label": "Privacy-enhancing Technologies and De-identification",
+    "family": "technical-organizational-control",
+    "theme": "security-and-resilience",
+    "description": "Technical methods that reduce identifiability, limit disclosure, distribute trust, or permit useful processing with less exposure of underlying data.",
+    "summary": "Privacy-enhancing technologies include context-specific approaches such as pseudonymization, aggregation, differential privacy, federated methods, secure computation, and encryption. No technique eliminates governance or re-identification analysis by itself.",
+    "aliases": ["PETs", "de-identification", "pseudonymization", "anonymization", "privacy-preserving computation"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPT Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/bltc8fa2a80f94fbe6e/IAPP_Training-CIPT_BOK.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "NIST Privacy Framework",
+        "url": "https://www.nist.gov/privacy-framework",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "incident-response",
+    "label": "Incident Response, Notification and Redress",
+    "family": "technical-organizational-control",
+    "theme": "security-and-resilience",
+    "description": "Preparation, detection, containment, remediation, documentation, notification, recovery, and redress for security, privacy, or AI incidents.",
+    "summary": "Incident response coordinates technical containment with evidence preservation, legal assessment, communications, notification thresholds, affected-person support, recovery, and lessons learned. Deadlines and reportable events vary across regimes.",
+    "aliases": ["breach response", "incident notification", "security incident", "remediation"],
+    "sourceBasis": [
+      {
+        "label": "IAPP CIPM Body of Knowledge and Exam Blueprint",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt39d7942c0a9a9f0f/CIPM_BoK_EBP.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "GDPR Article 33 — Notification of a personal data breach",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_33",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "human-oversight",
+    "label": "Human Oversight",
+    "family": "technical-organizational-control",
+    "theme": "ai-safety-and-oversight",
+    "description": "Meaningful human involvement, review, intervention, escalation, or accountability in the design, deployment, and operation of automated systems.",
+    "summary": "Human oversight is effective only when people have appropriate authority, information, competence, time, and interface support to detect problems and intervene. A nominal approval step may not provide meaningful control.",
+    "aliases": ["human in the loop", "human review", "human-on-the-loop", "override"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "EU AI Act Article 14 — Human oversight",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng#art_14",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
+  },
+  {
+    "id": "frontier-model-safety",
+    "label": "Frontier-model Safety",
+    "family": "ai-safety",
+    "theme": "ai-safety-and-oversight",
+    "description": "Evaluation, reporting, safeguards, security, and incident practices associated with highly capable or advanced general-purpose AI models.",
+    "summary": "Frontier-model safety examines capability and risk evaluations, misuse pathways, systemic effects, model security, deployment controls, incident reporting, and the limits of current measurement for rapidly advancing systems.",
+    "aliases": ["dual-use foundation model", "advanced AI system", "frontier AI", "GPAI systemic risk"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "Bletchley Declaration, 2023",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   },
   {
     "id": "global-coordination",
-    "label": "Global AI coordination",
+    "label": "Global AI Coordination",
     "family": "institutional-governance",
-    "description": "International cooperation, shared science, policy dialogue, standards coordination, and capacity building for AI governance.",
-    "aliases": ["international AI governance", "multilateral coordination"]
+    "theme": "international-coordination",
+    "description": "International cooperation, shared science, policy dialogue, standards coordination, interoperability, and capacity building for AI governance.",
+    "summary": "Global coordination seeks shared understanding and practical cooperation without assuming that institutions, standards, declarations, or national laws have the same authority. Governance remains plural and sensitive to local context.",
+    "aliases": ["international AI governance", "multilateral coordination", "standards cooperation"],
+    "sourceBasis": [
+      {
+        "label": "IAPP AIGP Body of Knowledge",
+        "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+        "accessedOn": "2026-07-19"
+      },
+      {
+        "label": "OECD AI Principles",
+        "url": "https://oecd.ai/en/ai-principles",
+        "accessedOn": "2026-07-19"
+      }
+    ],
+    "editorial": {
+      "reviewStatus": "editorial-concept-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "Project-authored learning summary informed by the cited public materials; it is not an IAPP definition, endorsement, or legal conclusion."
+    }
   }
 ]

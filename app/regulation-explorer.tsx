@@ -2,18 +2,26 @@
 
 import {
   type CSSProperties,
+  type Dispatch,
   type KeyboardEvent as ReactKeyboardEvent,
   type MouseEvent as ReactMouseEvent,
+  type ReactNode,
+  type SetStateAction,
   useEffect,
   useMemo,
   useReducer,
   useRef,
+  useState,
   useSyncExternalStore,
 } from "react";
 import { flushSync } from "react-dom";
 import {
   Archive,
+  ArrowLeft,
   BookOpenText,
+  BrainCircuit,
+  ChevronRight,
+  ClipboardCheck,
   Clock3,
   Columns2,
   Database,
@@ -25,11 +33,13 @@ import {
   Info,
   Landmark,
   Link2,
+  LockKeyhole,
   Map as MapIcon,
   Moon,
   Network,
   Scale,
   Search,
+  ShieldCheck,
   Sparkles,
   Sun,
   type LucideIcon,
@@ -38,6 +48,7 @@ import jurisdictionsJson from "@/data/v2/jurisdictions.json";
 import instrumentsJson from "@/data/v2/instruments.json";
 import seedProvisionsJson from "@/data/v2/provisions.json";
 import conceptsJson from "@/data/v2/concepts.json";
+import conceptThemesJson from "@/data/v2/concept-themes.json";
 import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
@@ -169,8 +180,19 @@ type Concept = {
   id: string;
   label: string;
   family: string;
+  theme: string;
   description: string;
+  summary: string;
   aliases: string[];
+  sourceBasis: Source[];
+  editorial: Editorial;
+};
+
+type ConceptTheme = {
+  id: string;
+  label: string;
+  summary: string;
+  order: number;
 };
 
 type RelationEndpoint = {
@@ -208,6 +230,7 @@ type StatusEvent = {
 type View = "atlas" | "instrument" | "connections" | "timeline" | "compare";
 type ReaderTab = "text" | "analysis" | "sources";
 type Theme = "dark" | "bright";
+type NavigatorTab = "sources" | "concepts";
 type TransitionKind = "theme" | "view";
 type ViewDirection = "forward" | "backward";
 
@@ -239,9 +262,11 @@ function subscribeTheme(onStoreChange: () => void) {
 
 type ExplorerState = {
   view: View;
+  navigatorTab: NavigatorTab;
   selectedInstrumentId: string | null;
   selectedProvisionId: string | null;
   selectedRelationId: string | null;
+  selectedConceptId: string | null;
   readerTab: ReaderTab;
   compareIds: string[];
   query: string;
@@ -257,12 +282,15 @@ type ExplorerAction =
       relationId?: string;
     }
   | { type: "OPEN_VIEW"; view: View }
+  | { type: "SET_NAVIGATOR_TAB"; tab: NavigatorTab }
+  | { type: "OPEN_CONCEPT"; conceptId: string }
   | { type: "SELECT_RELATION"; relationId: string }
   | { type: "SET_READER_TAB"; tab: ReaderTab }
   | { type: "SET_QUERY"; query: string }
   | { type: "ADD_COMPARE"; provisionId: string }
   | { type: "REMOVE_COMPARE"; provisionId: string }
-  | { type: "CLEAR_COMPARE" };
+  | { type: "CLEAR_COMPARE" }
+  | { type: "RESTORE_STATE"; state: ExplorerState };
 
 const repositoryUrl =
   "https://github.com/EtonMu/global-ai-data-regulation-map";
@@ -271,6 +299,9 @@ const jurisdictions = jurisdictionsJson as Jurisdiction[];
 const instruments = instrumentsJson as Instrument[];
 const seedProvisions = seedProvisionsJson as SeedProvision[];
 const concepts = conceptsJson as Concept[];
+const conceptThemes = [...(conceptThemesJson as ConceptTheme[])].sort(
+  (left, right) => left.order - right.order,
+);
 const relations = relationsJson as Relation[];
 const statusEvents = statusEventsJson as StatusEvent[];
 const structureSummaries = structureSummariesJson as StructureSummary[];
@@ -287,6 +318,9 @@ const instrumentById = new Map(
 );
 const conceptById = new Map(
   concepts.map((concept) => [concept.id, concept]),
+);
+const conceptThemeById = new Map(
+  conceptThemes.map((theme) => [theme.id, theme]),
 );
 const seedProvisionById = new Map(
   seedProvisions.map((provision) => [provision.id, provision]),
@@ -453,18 +487,22 @@ function explorerReducer(
       return {
         ...state,
         view: "atlas",
+        navigatorTab: "sources",
         selectedInstrumentId: null,
         selectedProvisionId: null,
         selectedRelationId: null,
+        selectedConceptId: null,
         readerTab: "text",
       };
     case "OPEN_INSTRUMENT":
       return {
         ...state,
         view: "instrument",
+        navigatorTab: "sources",
         selectedInstrumentId: action.instrumentId,
         selectedProvisionId: null,
         selectedRelationId: null,
+        selectedConceptId: null,
         readerTab: "text",
         query: "",
       };
@@ -472,14 +510,45 @@ function explorerReducer(
       return {
         ...state,
         view: "connections",
+        navigatorTab: "sources",
         selectedInstrumentId: action.instrumentId,
         selectedProvisionId: action.provisionId,
         selectedRelationId: action.relationId ?? null,
+        selectedConceptId: null,
         readerTab: "text",
         query: "",
       };
     case "OPEN_VIEW":
-      return { ...state, view: action.view };
+      return {
+        ...state,
+        view: action.view,
+        navigatorTab: "sources",
+        selectedConceptId: null,
+      };
+    case "SET_NAVIGATOR_TAB":
+      return {
+        ...state,
+        view: "atlas",
+        navigatorTab: action.tab,
+        selectedInstrumentId: null,
+        selectedProvisionId: null,
+        selectedRelationId: null,
+        selectedConceptId: null,
+        readerTab: "text",
+        query: "",
+      };
+    case "OPEN_CONCEPT":
+      return {
+        ...state,
+        view: "atlas",
+        navigatorTab: "concepts",
+        selectedInstrumentId: null,
+        selectedProvisionId: null,
+        selectedRelationId: null,
+        selectedConceptId: action.conceptId,
+        readerTab: "text",
+        query: "",
+      };
     case "SELECT_RELATION":
       return {
         ...state,
@@ -505,6 +574,11 @@ function explorerReducer(
       };
     case "CLEAR_COMPARE":
       return { ...state, compareIds: [] };
+    case "RESTORE_STATE":
+      return {
+        ...action.state,
+        compareIds: [...action.state.compareIds],
+      };
     default:
       return state;
   }
@@ -680,6 +754,84 @@ function buildAtlasGroups(): AtlasGroup[] {
 }
 
 const atlasGroups = buildAtlasGroups();
+
+const conceptsByTheme = new Map(
+  conceptThemes.map((theme) => [
+    theme.id,
+    concepts
+      .filter((concept) => concept.theme === theme.id)
+      .sort((left, right) => left.label.localeCompare(right.label)),
+  ]),
+);
+
+type ConceptEvidence = {
+  instrumentIds: Set<string>;
+  provisionIds: Set<string>;
+  relationIds: Set<string>;
+};
+
+const conceptEvidenceById = new Map<string, ConceptEvidence>(
+  concepts.map((concept) => [
+    concept.id,
+    {
+      instrumentIds: new Set<string>(),
+      provisionIds: new Set<string>(),
+      relationIds: new Set<string>(),
+    },
+  ]),
+);
+
+instruments.forEach((instrument) => {
+  instrument.topicIds.forEach((conceptId) => {
+    conceptEvidenceById.get(conceptId)?.instrumentIds.add(instrument.id);
+  });
+});
+
+provisions.forEach((provision) => {
+  provision.conceptIds.forEach((conceptId) => {
+    const evidence = conceptEvidenceById.get(conceptId);
+    evidence?.provisionIds.add(provision.id);
+    evidence?.instrumentIds.add(provision.instrumentId);
+  });
+});
+
+relations.forEach((relation) => {
+  relation.conceptIds.forEach((conceptId) => {
+    const evidence = conceptEvidenceById.get(conceptId);
+    if (!evidence) return;
+    evidence.relationIds.add(relation.id);
+    [relation.source, relation.target].forEach((endpoint) => {
+      if (endpoint.type === "instrument") {
+        evidence.instrumentIds.add(endpoint.id);
+      }
+      if (endpoint.type === "provision") {
+        const provision = provisionMap.get(endpoint.id);
+        if (!provision) return;
+        evidence.provisionIds.add(provision.id);
+        evidence.instrumentIds.add(provision.instrumentId);
+      }
+    });
+  });
+});
+
+const conceptThemeIcons: Record<string, LucideIcon> = {
+  "privacy-principles": ShieldCheck,
+  "rights-and-fairness": Scale,
+  "data-lifecycle": Database,
+  "governance-and-assurance": ClipboardCheck,
+  "security-and-resilience": LockKeyhole,
+  "ai-safety-and-oversight": BrainCircuit,
+  "international-coordination": Globe2,
+};
+
+function ConceptThemeIcon({ themeId }: { themeId: string }) {
+  const Icon = conceptThemeIcons[themeId] ?? Database;
+  return <Icon aria-hidden="true" />;
+}
+
+function safeDomId(value: string) {
+  return value.replace(/[^a-zA-Z0-9_-]/g, "-");
+}
 
 function groupInstrumentProvisions(instrumentId: string) {
   const list = provisionsByInstrument.get(instrumentId) ?? [];
@@ -886,22 +1038,143 @@ function InstrumentKindIcon({ instrument }: { instrument: Instrument }) {
   return <Icon aria-hidden="true" />;
 }
 
+function NavigatorAccordion({
+  id,
+  expanded,
+  onToggle,
+  label,
+  count,
+  children,
+  className = "",
+}: {
+  id: string;
+  expanded: boolean;
+  onToggle: () => void;
+  label: ReactNode;
+  count: number;
+  children: ReactNode;
+  className?: string;
+}) {
+  const panelId = "navigator-panel-" + safeDomId(id);
+  return (
+    <section
+      className={["navigator-accordion", className].filter(Boolean).join(" ")}
+      data-expanded={expanded}
+    >
+      <button
+        type="button"
+        className="navigator-accordion-trigger"
+        aria-expanded={expanded}
+        aria-controls={panelId}
+        onClick={onToggle}
+      >
+        {label}
+        <small>{count}</small>
+        <ChevronRight className="accordion-chevron" aria-hidden="true" />
+      </button>
+      <div
+        id={panelId}
+        className="navigator-collapse"
+        data-expanded={expanded}
+        aria-hidden={!expanded}
+      >
+        <div className="navigator-collapse-inner">{children}</div>
+      </div>
+    </section>
+  );
+}
+
 function CorpusNavigator({
+  navigatorTab,
   selectedInstrumentId,
   selectedProvisionId,
+  selectedConceptId,
   query,
+  onSetNavigatorTab,
   onOpenAtlas,
   onOpenInstrument,
   onOpenProvision,
+  onOpenConcept,
 }: {
+  navigatorTab: NavigatorTab;
   selectedInstrumentId: string | null;
   selectedProvisionId: string | null;
+  selectedConceptId: string | null;
   query: string;
+  onSetNavigatorTab: (tab: NavigatorTab) => void;
   onOpenAtlas: () => void;
   onOpenInstrument: (instrumentId: string) => void;
   onOpenProvision: (provision: Provision) => void;
+  onOpenConcept: (conceptId: string) => void;
 }) {
   const normalizedQuery = query.trim().toLowerCase();
+  const selectedInstrument = selectedInstrumentId
+    ? instrumentById.get(selectedInstrumentId)
+    : undefined;
+  const selectedGroups = useMemo(
+    () =>
+      selectedInstrument ? groupInstrumentProvisions(selectedInstrument.id) : [],
+    [selectedInstrument],
+  );
+  const selectedSourceGroupId = selectedInstrumentId
+    ? atlasGroups.find((group) =>
+        group.instruments.some(
+          (instrument) => instrument.id === selectedInstrumentId,
+        ),
+      )?.id
+    : undefined;
+  const selectedArticleGroupId = selectedProvisionId
+    ? selectedGroups.find((group) =>
+        group.provisions.some(
+          (provision) => provision.id === selectedProvisionId,
+        ),
+      )?.id
+    : undefined;
+  const selectedConceptThemeId = selectedConceptId
+    ? conceptById.get(selectedConceptId)?.theme
+    : undefined;
+  const [sourceGroupOverrides, setSourceGroupOverrides] = useState<
+    Record<string, boolean>
+  >({});
+  const [articleGroupOverrides, setArticleGroupOverrides] = useState<
+    Record<string, boolean>
+  >({});
+  const [conceptThemeOverrides, setConceptThemeOverrides] = useState<
+    Record<string, boolean>
+  >({});
+
+  function sourceGroupExpanded(groupId: string) {
+    return (
+      sourceGroupOverrides[groupId] ??
+      (selectedSourceGroupId
+        ? groupId === selectedSourceGroupId
+        : groupId === atlasGroups[0]?.id)
+    );
+  }
+
+  function articleGroupExpanded(groupId: string) {
+    return (
+      articleGroupOverrides[groupId] ?? groupId === selectedArticleGroupId
+    );
+  }
+
+  function conceptThemeExpanded(themeId: string) {
+    return (
+      conceptThemeOverrides[themeId] ??
+      (selectedConceptThemeId
+        ? themeId === selectedConceptThemeId
+        : themeId === conceptThemes[0]?.id)
+    );
+  }
+
+  function toggleOverride(
+    setter: Dispatch<SetStateAction<Record<string, boolean>>>,
+    id: string,
+    expanded: boolean,
+  ) {
+    setter((current) => ({ ...current, [id]: !expanded }));
+  }
+
   const matchingInstruments = normalizedQuery
     ? instruments
         .filter((instrument) =>
@@ -940,147 +1213,317 @@ function CorpusNavigator({
         })
         .slice(0, 18)
     : [];
-  const selectedInstrument = selectedInstrumentId
-    ? instrumentById.get(selectedInstrumentId)
-    : undefined;
-  const selectedGroups = selectedInstrument
-    ? groupInstrumentProvisions(selectedInstrument.id)
+  const matchingConcepts = normalizedQuery
+    ? concepts
+        .filter((concept) =>
+          [concept.label, concept.description, concept.summary, ...concept.aliases]
+            .join(" ")
+            .toLowerCase()
+            .includes(normalizedQuery),
+        )
+        .slice(0, 18)
     : [];
 
+  function handleNavigatorTabKeyDown(
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    currentTab: NavigatorTab,
+  ) {
+    const tabs: NavigatorTab[] = ["sources", "concepts"];
+    const currentIndex = tabs.indexOf(currentTab);
+    let nextIndex = currentIndex;
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % tabs.length;
+    else if (event.key === "ArrowLeft") {
+      nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") nextIndex = 0;
+    else if (event.key === "End") nextIndex = tabs.length - 1;
+    else return;
+    event.preventDefault();
+    const nextTab = tabs[nextIndex];
+    onSetNavigatorTab(nextTab);
+    document.getElementById("navigator-tab-" + nextTab)?.focus();
+  }
+
+  const activeCount = navigatorTab === "sources" ? instruments.length : concepts.length;
+
   return (
-    <aside className="corpus-navigator" aria-label="Global regulation corpus">
+    <aside
+      className="corpus-navigator"
+      aria-label="Global regulation corpus"
+      data-navigator-tab={navigatorTab}
+    >
       <div className="navigator-header">
-        <span className="terminal-label">CORPUS_NAV</span>
-        <span>{instruments.length} instruments</span>
+        <span className="terminal-label">RESEARCH_NAV</span>
+        <span>
+          {activeCount} {navigatorTab === "sources" ? "sources" : "concepts"}
+        </span>
       </div>
-      <button
-        type="button"
-        className="atlas-home-button"
-        onClick={onOpenAtlas}
+
+      <div
+        className="navigator-tabs"
+        role="tablist"
+        aria-label="Research index"
+        data-active-tab={navigatorTab}
       >
-        <MapIcon aria-hidden="true" />
-        GLOBAL ATLAS
-      </button>
+        <span className="navigator-tab-indicator" aria-hidden="true" />
+        <button
+          type="button"
+          role="tab"
+          id="navigator-tab-sources"
+          aria-controls="navigator-tabpanel-sources"
+          aria-selected={navigatorTab === "sources"}
+          onClick={() => onSetNavigatorTab("sources")}
+          onKeyDown={(event) => handleNavigatorTabKeyDown(event, "sources")}
+        >
+          <BookOpenText aria-hidden="true" />
+          LEGAL SOURCES
+        </button>
+        <button
+          type="button"
+          role="tab"
+          id="navigator-tab-concepts"
+          aria-controls="navigator-tabpanel-concepts"
+          aria-selected={navigatorTab === "concepts"}
+          onClick={() => onSetNavigatorTab("concepts")}
+          onKeyDown={(event) => handleNavigatorTabKeyDown(event, "concepts")}
+        >
+          <BrainCircuit aria-hidden="true" />
+          CORE CONCEPTS
+        </button>
+      </div>
 
-      {normalizedQuery ? (
-        <div className="search-results" aria-label="Search results">
-          <p className="navigator-section-label">
-            MATCHES / {matchingInstruments.length + matchingProvisions.length}
-          </p>
-          {matchingInstruments.map((instrument) => (
-            <button
-              type="button"
-              key={instrument.id}
-              onClick={() => onOpenInstrument(instrument.id)}
-            >
-              <span>{instrument.shortTitle}</span>
-              <small>{humanize(instrument.lifecycleStatus)}</small>
-            </button>
-          ))}
-          {matchingProvisions.map((provision) => (
-            <button
-              type="button"
-              key={provision.id}
-              onClick={() => onOpenProvision(provision)}
-            >
-              <span>
-                {instrumentById.get(provision.instrumentId)?.shortTitle}{" "}
-                {provision.locator}
-              </span>
-              <small>{provision.title}</small>
-            </button>
-          ))}
-          {!matchingInstruments.length && !matchingProvisions.length && (
-            <p className="navigator-empty">No indexed match.</p>
-          )}
-        </div>
-      ) : (
-        <div className="corpus-tree">
-          {atlasGroups.map((group) => (
-            <details
-              key={group.id}
-              open={
-                group.instruments.some(
-                  (instrument) => instrument.id === selectedInstrumentId,
-                ) || group.id === atlasGroups[0]?.id
-              }
-              data-atlas-group={group.id}
-            >
-              <summary>
-                <span className="jurisdiction-label">
-                  <JurisdictionMark jurisdictionId={group.markId} />
-                  {group.label}
-                </span>
-                <small>{group.instruments.length}</small>
-              </summary>
-              <div className="tree-instrument-list">
-                {group.instruments.map((instrument) => (
-                  <button
-                    type="button"
-                    key={instrument.id}
-                    className={
-                      instrument.id === selectedInstrumentId
-                        ? "is-selected"
-                        : ""
-                    }
-                    aria-pressed={instrument.id === selectedInstrumentId}
-                    onClick={() => onOpenInstrument(instrument.id)}
-                  >
-                    <span className="instrument-tree-title">
-                      <JurisdictionMark
-                        jurisdictionId={instrument.jurisdictionId}
-                        small
-                      />
-                      {instrument.shortTitle}
-                    </span>
-                    <small>
-                      {jurisdictionById.get(instrument.jurisdictionId)
-                        ?.shortName ?? instrument.jurisdictionId}
-                    </small>
-                  </button>
-                ))}
+      <div className="navigator-pane-viewport">
+        <div
+          key={navigatorTab}
+          className="navigator-pane"
+          data-direction={navigatorTab === "concepts" ? "forward" : "backward"}
+          role="tabpanel"
+          id={"navigator-tabpanel-" + navigatorTab}
+          aria-labelledby={"navigator-tab-" + navigatorTab}
+        >
+          {navigatorTab === "sources" ? (
+            <>
+              <button
+                type="button"
+                className="atlas-home-button"
+                onClick={onOpenAtlas}
+              >
+                <MapIcon aria-hidden="true" />
+                GLOBAL ATLAS
+              </button>
+
+              {normalizedQuery ? (
+                <div className="search-results" aria-label="Search results">
+                  <p className="navigator-section-label">
+                    MATCHES / {matchingInstruments.length + matchingProvisions.length}
+                  </p>
+                  {matchingInstruments.map((instrument) => (
+                    <button
+                      type="button"
+                      key={instrument.id}
+                      onClick={() => onOpenInstrument(instrument.id)}
+                    >
+                      <span className="instrument-tree-title">
+                        <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
+                        {instrument.shortTitle}
+                      </span>
+                      <small>{humanize(instrument.lifecycleStatus)}</small>
+                    </button>
+                  ))}
+                  {matchingProvisions.map((provision) => (
+                    <button
+                      type="button"
+                      key={provision.id}
+                      onClick={() => onOpenProvision(provision)}
+                    >
+                      <span>
+                        {instrumentById.get(provision.instrumentId)?.shortTitle}{" "}
+                        {provision.locator}
+                      </span>
+                      <small>{provision.title}</small>
+                    </button>
+                  ))}
+                  {!matchingInstruments.length && !matchingProvisions.length && (
+                    <p className="navigator-empty">No indexed legal-source match.</p>
+                  )}
+                </div>
+              ) : (
+                <div className="corpus-tree">
+                  {atlasGroups.map((group) => (
+                    <NavigatorAccordion
+                      key={group.id}
+                      id={"source-" + group.id}
+                      expanded={sourceGroupExpanded(group.id)}
+                      onToggle={() =>
+                        toggleOverride(
+                          setSourceGroupOverrides,
+                          group.id,
+                          sourceGroupExpanded(group.id),
+                        )
+                      }
+                      count={group.instruments.length}
+                      label={
+                        <span className="jurisdiction-label">
+                          <JurisdictionMark jurisdictionId={group.markId} />
+                          <span>{group.label}</span>
+                        </span>
+                      }
+                    >
+                      <div className="tree-instrument-list">
+                        {group.instruments.map((instrument) => (
+                          <button
+                            type="button"
+                            key={instrument.id}
+                            className={
+                              instrument.id === selectedInstrumentId ? "is-selected" : ""
+                            }
+                            aria-pressed={instrument.id === selectedInstrumentId}
+                            aria-label={
+                              instrument.shortTitle +
+                              ", " +
+                              (jurisdictionById.get(instrument.jurisdictionId)?.name ??
+                                instrument.jurisdictionId)
+                            }
+                            onClick={() => onOpenInstrument(instrument.id)}
+                          >
+                            <span className="instrument-tree-title">
+                              <JurisdictionMark
+                                jurisdictionId={instrument.jurisdictionId}
+                                small
+                              />
+                              {instrument.shortTitle}
+                            </span>
+                            <small>
+                              {jurisdictionById.get(instrument.jurisdictionId)?.shortName ??
+                                instrument.jurisdictionId}
+                            </small>
+                          </button>
+                        ))}
+                      </div>
+                    </NavigatorAccordion>
+                  ))}
+
+                  {selectedInstrument && selectedGroups.length > 0 && (
+                    <section className="selected-article-tree">
+                      <div className="selected-index-heading">
+                        <span>{selectedInstrument.shortTitle} INDEX</span>
+                        <small>
+                          {provisionsByInstrument.get(selectedInstrument.id)?.length ?? 0}
+                        </small>
+                      </div>
+                      {selectedGroups.map((group) => (
+                        <NavigatorAccordion
+                          key={group.id}
+                          id={"article-" + selectedInstrument.id + "-" + group.id}
+                          className="article-accordion"
+                          expanded={articleGroupExpanded(group.id)}
+                          onToggle={() =>
+                            toggleOverride(
+                              setArticleGroupOverrides,
+                              group.id,
+                              articleGroupExpanded(group.id),
+                            )
+                          }
+                          count={group.provisions.length}
+                          label={<span>{group.label}</span>}
+                        >
+                          <div className="tree-provision-list">
+                            {group.provisions.map((provision) => (
+                              <button
+                                type="button"
+                                key={provision.id}
+                                className={
+                                  provision.id === selectedProvisionId ? "is-selected" : ""
+                                }
+                                aria-pressed={provision.id === selectedProvisionId}
+                                onClick={() => onOpenProvision(provision)}
+                              >
+                                <span>{provision.locator}</span>
+                                <small>{provision.title}</small>
+                              </button>
+                            ))}
+                          </div>
+                        </NavigatorAccordion>
+                      ))}
+                    </section>
+                  )}
+                </div>
+              )}
+            </>
+          ) : normalizedQuery ? (
+            <div className="search-results concept-search-results" aria-label="Concept search results">
+              <p className="navigator-section-label">
+                CONCEPT MATCHES / {matchingConcepts.length}
+              </p>
+              {matchingConcepts.map((concept) => (
+                <button
+                  type="button"
+                  key={concept.id}
+                  className={concept.id === selectedConceptId ? "is-selected" : ""}
+                  aria-pressed={concept.id === selectedConceptId}
+                  onClick={() => onOpenConcept(concept.id)}
+                >
+                  <span className="concept-tree-title">
+                    <ConceptThemeIcon themeId={concept.theme} />
+                    {concept.label}
+                  </span>
+                  <small>{concept.description}</small>
+                </button>
+              ))}
+              {!matchingConcepts.length && (
+                <p className="navigator-empty">No core-concept match.</p>
+              )}
+            </div>
+          ) : (
+            <div className="concept-tree">
+              <div className="concept-index-note">
+                <BrainCircuit aria-hidden="true" />
+                <span>EDITORIAL CONCEPT INDEX</span>
+                <p>Original synthesis informed by public professional bodies of knowledge.</p>
               </div>
-            </details>
-          ))}
-
-          {selectedInstrument && selectedGroups.length > 0 && (
-            <details className="selected-article-tree" open>
-              <summary>
-                <span>{selectedInstrument.shortTitle} INDEX</span>
-                <small>
-                  {provisionsByInstrument.get(selectedInstrument.id)?.length ?? 0}
-                </small>
-              </summary>
-              {selectedGroups.map((group) => (
-                <details key={group.id}>
-                  <summary>
-                    <span>{group.label}</span>
-                    <small>{group.provisions.length}</small>
-                  </summary>
-                  <div className="tree-provision-list">
-                    {group.provisions.map((provision) => (
+              {conceptThemes.map((theme) => (
+                <NavigatorAccordion
+                  key={theme.id}
+                  id={"concept-theme-" + theme.id}
+                  expanded={conceptThemeExpanded(theme.id)}
+                  onToggle={() =>
+                    toggleOverride(
+                      setConceptThemeOverrides,
+                      theme.id,
+                      conceptThemeExpanded(theme.id),
+                    )
+                  }
+                  count={conceptsByTheme.get(theme.id)?.length ?? 0}
+                  label={
+                    <span className="concept-theme-label">
+                      <ConceptThemeIcon themeId={theme.id} />
+                      <span>{theme.label}</span>
+                    </span>
+                  }
+                >
+                  <div className="tree-concept-list">
+                    {(conceptsByTheme.get(theme.id) ?? []).map((concept) => (
                       <button
                         type="button"
-                        key={provision.id}
-                        className={
-                          provision.id === selectedProvisionId
-                            ? "is-selected"
-                            : ""
-                        }
-                        aria-pressed={provision.id === selectedProvisionId}
-                        onClick={() => onOpenProvision(provision)}
+                        key={concept.id}
+                        className={concept.id === selectedConceptId ? "is-selected" : ""}
+                        aria-pressed={concept.id === selectedConceptId}
+                        onClick={() => onOpenConcept(concept.id)}
                       >
-                        <span>{provision.locator}</span>
-                        <small>{provision.title}</small>
+                        <span>{concept.label}</span>
+                        <small>{concept.description}</small>
                       </button>
                     ))}
                   </div>
-                </details>
+                </NavigatorAccordion>
               ))}
-            </details>
+              <p className="concept-attribution">
+                Informed by public IAPP CIPP/E, CIPM, CIPT and AIGP Bodies of Knowledge;
+                not affiliated with or endorsed by IAPP.
+              </p>
+            </div>
           )}
         </div>
-      )}
+      </div>
 
       <div className="navigator-foot">
         <span>SNAPSHOT</span>
@@ -1101,11 +1544,11 @@ function GlobalAtlas({
     <section className="atlas-view" aria-labelledby="atlas-title">
       <div className="view-intro">
         <div>
-          <p className="terminal-label">GLOBAL_REGULATORY_ATLAS / LIVE CORPUS</p>
-          <h1 id="atlas-title">No single law is the center.</h1>
+          <p className="terminal-label">GLOBAL_REGULATORY_ATLAS / RESEARCH CORPUS</p>
+          <h1 id="atlas-title">Comparative AI and data regulation corpus.</h1>
           <p>
-            Navigate binding law, executive action, proposed legislation,
-            standards and soft law as a versioned global system.
+            Browse primary legal sources, executive action, proposed legislation,
+            standards and soft law through a versioned comparative index.
           </p>
         </div>
         <div className="corpus-readout" aria-label="Corpus status">
@@ -1114,6 +1557,7 @@ function GlobalAtlas({
           <span><strong>{instruments.length}</strong> instruments</span>
           <span><strong>{provisions.length}</strong> indexed provisions</span>
           <span><strong>{relations.length}</strong> qualified links</span>
+          <span><strong>{concepts.length}</strong> core concepts</span>
         </div>
       </div>
       <NodeLegend />
@@ -1184,6 +1628,240 @@ function GlobalAtlas({
           </section>
         ))}
       </div>
+    </section>
+  );
+}
+
+function CoreConceptExplorer({
+  selectedConcept,
+  onOpenConcept,
+  onOpenInstrument,
+  onOpenProvision,
+}: {
+  selectedConcept?: Concept;
+  onOpenConcept: (conceptId: string) => void;
+  onOpenInstrument: (instrumentId: string) => void;
+  onOpenProvision: (provision: Provision) => void;
+}) {
+  if (!selectedConcept) {
+    const mappedConceptCount = concepts.filter((concept) => {
+      const evidence = conceptEvidenceById.get(concept.id);
+      return Boolean(evidence && evidence.instrumentIds.size > 0);
+    }).length;
+    return (
+      <section className="concept-view" aria-labelledby="concept-index-title">
+        <div className="concept-masthead">
+          <div>
+            <p className="terminal-label">CORE_CONCEPT_INDEX / EDITORIAL SYNTHESIS</p>
+            <h1 id="concept-index-title">Core concepts for comparative analysis.</h1>
+            <p>
+              A controlled vocabulary for studying recurring privacy, data-governance,
+              cybersecurity and AI-governance ideas across differently structured sources.
+            </p>
+          </div>
+          <div className="concept-readout" aria-label="Concept index status">
+            <span><strong>{conceptThemes.length}</strong> themes</span>
+            <span><strong>{concepts.length}</strong> concepts</span>
+            <span><strong>{mappedConceptCount}</strong> linked concepts</span>
+            <span><strong>4</strong> public IAPP frameworks reviewed</span>
+          </div>
+        </div>
+        <div className="academic-method-note">
+          <Info aria-hidden="true" />
+          <p>
+            These project-authored summaries are analytical aids. A shared concept label
+            does not establish legal equivalence, identical scope, or compliance.
+          </p>
+        </div>
+        <div className="concept-theme-atlas">
+          {conceptThemes.map((theme, themeIndex) => (
+            <section className="concept-theme-lane" key={theme.id}>
+              <header>
+                <span className="lane-index">
+                  {String(themeIndex + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h2>
+                    <ConceptThemeIcon themeId={theme.id} />
+                    {theme.label}
+                  </h2>
+                  <p>{theme.summary}</p>
+                </div>
+              </header>
+              <div className="concept-node-track">
+                {(conceptsByTheme.get(theme.id) ?? []).map((concept) => {
+                  const evidence = conceptEvidenceById.get(concept.id);
+                  return (
+                    <button
+                      type="button"
+                      className="concept-node"
+                      key={concept.id}
+                      onClick={() => onOpenConcept(concept.id)}
+                    >
+                      <span className="concept-node-heading">
+                        <ConceptThemeIcon themeId={concept.theme} />
+                        <strong>{concept.label}</strong>
+                      </span>
+                      <span>{concept.description}</span>
+                      <small>
+                        {evidence?.instrumentIds.size ?? 0} sources ·{" "}
+                        {evidence?.provisionIds.size ?? 0} provisions
+                      </small>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
+        </div>
+        <p className="concept-corpus-attribution">
+          Editorial synthesis informed by the public IAPP CIPP/E, CIPM, CIPT and AIGP
+          Bodies of Knowledge; this project is not affiliated with or endorsed by IAPP.
+        </p>
+      </section>
+    );
+  }
+
+  const theme = conceptThemeById.get(selectedConcept.theme);
+  const evidence = conceptEvidenceById.get(selectedConcept.id) ?? {
+    instrumentIds: new Set<string>(),
+    provisionIds: new Set<string>(),
+    relationIds: new Set<string>(),
+  };
+  const evidenceProvisions = Array.from(evidence.provisionIds)
+    .map((id) => provisionMap.get(id))
+    .filter((provision): provision is Provision => Boolean(provision));
+  const evidenceInstruments = Array.from(evidence.instrumentIds)
+    .map((id) => instrumentById.get(id))
+    .filter((instrument): instrument is Instrument => Boolean(instrument))
+    .sort((left, right) => {
+      const leftGroup = atlasGroups.findIndex((group) =>
+        group.instruments.some((instrument) => instrument.id === left.id),
+      );
+      const rightGroup = atlasGroups.findIndex((group) =>
+        group.instruments.some((instrument) => instrument.id === right.id),
+      );
+      if (leftGroup !== rightGroup) return leftGroup - rightGroup;
+      return left.shortTitle.localeCompare(right.shortTitle);
+    });
+
+  return (
+    <section className="concept-view concept-detail" aria-labelledby="concept-title">
+      <div className="concept-masthead">
+        <div>
+          <p className="terminal-label">
+            <ConceptThemeIcon themeId={selectedConcept.theme} />
+            CORE_CONCEPT / {theme?.label ?? humanize(selectedConcept.theme)}
+          </p>
+          <h1 id="concept-title">{selectedConcept.label}</h1>
+          <p>{selectedConcept.description}</p>
+        </div>
+        <div className="concept-readout" aria-label="Concept evidence status">
+          <span><strong>{evidenceInstruments.length}</strong> linked sources</span>
+          <span><strong>{evidenceProvisions.length}</strong> linked provisions</span>
+          <span><strong>{evidence.relationIds.size}</strong> qualified relations</span>
+          <span><strong>{selectedConcept.sourceBasis.length}</strong> source bases</span>
+        </div>
+      </div>
+
+      <div className="concept-analysis-grid">
+        <article className="concept-definition">
+          <span className="terminal-label">HIGH-LEVEL SUMMARY</span>
+          <p>{selectedConcept.summary}</p>
+        </article>
+        <article className="concept-scope-note">
+          <span className="terminal-label">COMPARATIVE CAUTION</span>
+          <p>
+            The concept is a research bridge across sources. Definitions, regulated actors,
+            thresholds, exceptions, remedies and legal effect must be checked in each text.
+          </p>
+          <div className="concept-aliases" aria-label="Related terminology">
+            {selectedConcept.aliases.map((alias) => (
+              <span key={alias}>{alias}</span>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <section className="concept-source-section" aria-labelledby="concept-source-title">
+        <div className="concept-section-heading">
+          <div>
+            <p className="terminal-label">LEGAL_SOURCE_EVIDENCE</p>
+            <h2 id="concept-source-title">Indexed sources associated with this concept</h2>
+          </div>
+          <span>{evidenceInstruments.length} instrument records</span>
+        </div>
+        {evidenceInstruments.length ? (
+          <div className="concept-source-map">
+            {evidenceInstruments.map((instrument) => {
+              const matchingProvisions = evidenceProvisions.filter(
+                (provision) => provision.instrumentId === instrument.id,
+              );
+              const jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
+              return (
+                <article className="concept-source-node" key={instrument.id}>
+                  <button
+                    type="button"
+                    className="concept-instrument-link"
+                    onClick={() => onOpenInstrument(instrument.id)}
+                  >
+                    <span>
+                      <JurisdictionMark jurisdictionId={instrument.jurisdictionId} />
+                      <strong>{instrument.shortTitle}</strong>
+                    </span>
+                    <small>
+                      {jurisdiction?.name ?? instrument.jurisdictionId} ·{" "}
+                      {humanize(instrument.legalForce)}
+                    </small>
+                  </button>
+                  <p>{instrument.summary}</p>
+                  {matchingProvisions.length > 0 && (
+                    <div className="concept-provision-links">
+                      {matchingProvisions.slice(0, 8).map((provision) => (
+                        <button
+                          type="button"
+                          key={provision.id}
+                          onClick={() => onOpenProvision(provision)}
+                        >
+                          <span>{provision.locator}</span>
+                          <small>{provision.title}</small>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="concept-no-evidence">
+            <Info aria-hidden="true" />
+            <p>
+              The concept summary is available, but provision-level links have not yet been
+              assigned in the current research corpus.
+            </p>
+          </div>
+        )}
+      </section>
+
+      <section className="concept-bibliography" aria-labelledby="concept-bibliography-title">
+        <div>
+          <p className="terminal-label">PUBLIC_SOURCE_BASIS</p>
+          <h2 id="concept-bibliography-title">Sources used for the editorial synthesis</h2>
+        </div>
+        <div className="concept-source-links">
+          {selectedConcept.sourceBasis.map((source) => (
+            <a href={source.url} target="_blank" rel="noreferrer" key={source.url}>
+              <span>{source.label}</span>
+              <small>{source.accessedOn ? "Accessed " + source.accessedOn : "Official source"}</small>
+              <ExternalLink aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+        {selectedConcept.editorial.note && (
+          <p className="concept-editorial-note">{selectedConcept.editorial.note}</p>
+        )}
+      </section>
     </section>
   );
 }
@@ -1357,11 +2035,11 @@ function InstrumentGenome({
         </div>
       ) : (
         <div className="empty-state">
-          <span>NO_LOCAL_TEXT_NODES</span>
-          <h2>Corpus structure queued for ingestion.</h2>
+          <span>PROVISION_TEXT_NOT_IN_CORPUS</span>
+          <h2>Provision-level text is not included in the current corpus.</h2>
           <p>
-            The instrument is indexed with official status and source metadata,
-            but its provision hierarchy has not yet been stored.
+            The instrument record includes official status and source metadata,
+            but its provision hierarchy has not yet been incorporated.
           </p>
           <a href={instrument.source.url} target="_blank" rel="noreferrer">
             Open official source ↗
@@ -1426,7 +2104,7 @@ function ConnectionCanvas({
           { numeric: true },
         );
     });
-  const visible = connections.slice(0, 10);
+  const visible = connections.slice(0, 8);
   const positions = visible.map((_, index) => {
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visible.length;
     return {
@@ -1562,8 +2240,23 @@ function ConnectionCanvas({
               ].join(" ")}
               style={{ left: "50%", top: "50%" }}
               onClick={() => onOpenProvision(anchor)}
+              aria-label={
+                "Anchor: " +
+                anchorInstrument.shortTitle +
+                " " +
+                anchor.locator +
+                ", " +
+                (jurisdictionById.get(anchorInstrument.jurisdictionId)?.name ??
+                  anchorInstrument.jurisdictionId)
+              }
             >
-              <span>ANCHOR</span>
+              <span className="connection-node-kicker">
+                <JurisdictionMark
+                  jurisdictionId={anchorInstrument.jurisdictionId}
+                  small
+                />
+                <span>ANCHOR</span>
+              </span>
               <strong>{anchorInstrument.shortTitle}</strong>
               <small>{anchor.locator}</small>
             </button>
@@ -1606,6 +2299,9 @@ function ConnectionCanvas({
                     " " +
                     targetLabel +
                     ", " +
+                    (jurisdictionById.get(instrument.jurisdictionId)?.name ??
+                      instrument.jurisdictionId) +
+                    ", " +
                     humanize(instrument.lifecycleStatus) +
                     ", " +
                     relationDirectionMarker(item.relation, anchor.id) +
@@ -1613,9 +2309,15 @@ function ConnectionCanvas({
                     relationLabel
                   }
                 >
-                  <span>
-                    {relationDirectionMarker(item.relation, anchor.id)}{" "}
-                    {relationLabel}
+                  <span className="connection-node-kicker">
+                    <JurisdictionMark
+                      jurisdictionId={instrument.jurisdictionId}
+                      small
+                    />
+                    <span>
+                      {relationDirectionMarker(item.relation, anchor.id)}{" "}
+                      {relationLabel}
+                    </span>
                   </span>
                   <strong>{instrument.shortTitle}</strong>
                   <small>{targetLabel}</small>
@@ -1632,11 +2334,11 @@ function ConnectionCanvas({
         </>
       ) : (
         <div className="empty-state graph-empty">
-          <span>NO_REVIEWED_EDGE</span>
-          <h2>This provision is indexed, but not isolated.</h2>
+          <span>NO_RECORDED_RELATION</span>
+          <h2>No reviewed relation is recorded for this provision.</h2>
           <p>
-            The absence of a visible link means no reviewed seed mapping has
-            been published yet—not that no relationship exists.
+            This indicates a gap in the current research corpus; it does not
+            establish that no relationship exists.
           </p>
         </div>
       )}
@@ -2314,19 +3016,23 @@ function CompareTray({
 export default function RegulationExplorer() {
   const [state, dispatch] = useReducer(explorerReducer, {
     view: "atlas",
+    navigatorTab: "sources",
     selectedInstrumentId: null,
     selectedProvisionId: null,
     selectedRelationId: null,
+    selectedConceptId: null,
     readerTab: "text",
     compareIds: [],
     query: "",
   });
+  const [historyDepth, setHistoryDepth] = useState(0);
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const searchRef = useRef<HTMLInputElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
   const urlSyncReadyRef = useRef(false);
   const transitionRef = useRef<SameDocumentViewTransition | null>(null);
   const transitionTokenRef = useRef(0);
+  const navigationHistoryRef = useRef<ExplorerState[]>([]);
 
   function clearTransitionMetadata(token: number) {
     if (transitionTokenRef.current !== token) return;
@@ -2344,6 +3050,7 @@ export default function RegulationExplorer() {
     update: () => void,
     options?: {
       nextView?: View;
+      direction?: ViewDirection;
       origin?: { x: number; y: number };
     },
   ) {
@@ -2367,8 +3074,8 @@ export default function RegulationExplorer() {
       const nextIndex = viewLabels.findIndex(
         (view) => view.id === options.nextView,
       );
-      const direction: ViewDirection =
-        nextIndex >= currentIndex ? "forward" : "backward";
+      const direction: ViewDirection = options.direction ??
+        (nextIndex >= currentIndex ? "forward" : "backward");
       root.setAttribute("data-view-direction", direction);
     }
 
@@ -2430,12 +3137,66 @@ export default function RegulationExplorer() {
     );
   }
 
+  function rememberCurrentInterface() {
+    navigationHistoryRef.current.push({
+      ...state,
+      compareIds: [...state.compareIds],
+    });
+    if (navigationHistoryRef.current.length > 40) {
+      navigationHistoryRef.current.shift();
+    }
+    setHistoryDepth(navigationHistoryRef.current.length);
+  }
+
+  function goBack() {
+    const previous = navigationHistoryRef.current.pop();
+    if (!previous) return;
+    setHistoryDepth(navigationHistoryRef.current.length);
+    const restore = () => dispatch({ type: "RESTORE_STATE", state: previous });
+    if (previous.navigatorTab !== state.navigatorTab) {
+      restore();
+      return;
+    }
+    runVisualTransition("view", restore, {
+      nextView: previous.view,
+      direction: "backward",
+    });
+  }
+
+  function setNavigatorTab(nextTab: NavigatorTab) {
+    if (state.navigatorTab === nextTab) return;
+    rememberCurrentInterface();
+    dispatch({ type: "SET_NAVIGATOR_TAB", tab: nextTab });
+  }
+
+  function openConcept(conceptId: string) {
+    if (
+      state.navigatorTab === "concepts" &&
+      state.selectedConceptId === conceptId
+    ) {
+      return;
+    }
+    rememberCurrentInterface();
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "OPEN_CONCEPT", conceptId }),
+      { nextView: "atlas", direction: "forward" },
+    );
+  }
+
   function openAtlas() {
-    if (state.view === "atlas" && !state.selectedInstrumentId) return;
+    if (
+      state.view === "atlas" &&
+      state.navigatorTab === "sources" &&
+      !state.selectedInstrumentId
+    ) {
+      return;
+    }
+    rememberCurrentInterface();
     runVisualTransition(
       "view",
       () => dispatch({ type: "OPEN_ATLAS" }),
-      { nextView: "atlas" },
+      { nextView: "atlas", direction: "backward" },
     );
   }
 
@@ -2446,6 +3207,7 @@ export default function RegulationExplorer() {
     ) {
       return;
     }
+    rememberCurrentInterface();
     runVisualTransition(
       "view",
       () => dispatch({ type: "OPEN_INSTRUMENT", instrumentId }),
@@ -2454,7 +3216,12 @@ export default function RegulationExplorer() {
   }
 
   function openView(nextView: View) {
-    if (state.view === nextView) return;
+    if (nextView === "atlas" && state.navigatorTab === "concepts") {
+      openAtlas();
+      return;
+    }
+    if (state.view === nextView && state.navigatorTab === "sources") return;
+    rememberCurrentInterface();
     runVisualTransition(
       "view",
       () => dispatch({ type: "OPEN_VIEW", view: nextView }),
@@ -2466,7 +3233,10 @@ export default function RegulationExplorer() {
     const params = new URLSearchParams(window.location.hash.replace(/^#/, ""));
     const instrumentId = params.get("instrument");
     const provisionId = params.get("provision");
+    const conceptId = params.get("concept");
+    const requestedNavigatorTab = params.get("nav");
     const requestedView = params.get("view") as View | null;
+    const restoredConcept = conceptId ? conceptById.get(conceptId) : undefined;
     const restoredProvision = provisionId
       ? provisionMap.get(provisionId)
       : undefined;
@@ -2476,7 +3246,11 @@ export default function RegulationExplorer() {
         ? instrumentById.get(instrumentId)
         : undefined;
 
-    if (restoredProvision) {
+    if (restoredConcept) {
+      dispatch({ type: "OPEN_CONCEPT", conceptId: restoredConcept.id });
+    } else if (requestedNavigatorTab === "concepts") {
+      dispatch({ type: "SET_NAVIGATOR_TAB", tab: "concepts" });
+    } else if (restoredProvision) {
       dispatch({
         type: "OPEN_PROVISION",
         provisionId: restoredProvision.id,
@@ -2495,6 +3269,8 @@ export default function RegulationExplorer() {
     );
 
     if (
+      !restoredConcept &&
+      requestedNavigatorTab !== "concepts" &&
       requestedView &&
       viewLabels.some((view) => view.id === requestedView) &&
       (requestedView === "atlas" ||
@@ -2515,6 +3291,12 @@ export default function RegulationExplorer() {
     if (!urlSyncReadyRef.current) return;
     const params = new URLSearchParams();
     params.set("view", state.view);
+    if (state.navigatorTab === "concepts") {
+      params.set("nav", "concepts");
+    }
+    if (state.selectedConceptId) {
+      params.set("concept", state.selectedConceptId);
+    }
     if (state.selectedInstrumentId) {
       params.set("instrument", state.selectedInstrumentId);
     }
@@ -2534,6 +3316,8 @@ export default function RegulationExplorer() {
     }
   }, [
     state.compareIds,
+    state.navigatorTab,
+    state.selectedConceptId,
     state.selectedInstrumentId,
     state.selectedProvisionId,
     state.view,
@@ -2556,13 +3340,22 @@ export default function RegulationExplorer() {
 
   useEffect(() => {
     workspaceRef.current?.scrollTo({ top: 0 });
-  }, [state.selectedInstrumentId, state.selectedProvisionId, state.view]);
+  }, [
+    state.navigatorTab,
+    state.selectedConceptId,
+    state.selectedInstrumentId,
+    state.selectedProvisionId,
+    state.view,
+  ]);
 
   const selectedInstrument = state.selectedInstrumentId
     ? instrumentById.get(state.selectedInstrumentId)
     : undefined;
   const selectedProvision = state.selectedProvisionId
     ? provisionMap.get(state.selectedProvisionId)
+    : undefined;
+  const selectedConcept = state.selectedConceptId
+    ? conceptById.get(state.selectedConceptId)
     : undefined;
   const selectedRelations = selectedProvision
     ? relationsByProvision.get(selectedProvision.id) ?? []
@@ -2573,6 +3366,8 @@ export default function RegulationExplorer() {
       : undefined) ?? selectedRelations[0];
 
   const breadcrumb = useMemo(() => {
+    if (selectedConcept) return ["CORE CONCEPTS", selectedConcept.label];
+    if (state.navigatorTab === "concepts") return ["CORE CONCEPTS"];
     if (!selectedInstrument) return ["GLOBAL ATLAS"];
     const jurisdiction = jurisdictionById.get(
       selectedInstrument.jurisdictionId,
@@ -2583,7 +3378,7 @@ export default function RegulationExplorer() {
     ];
     if (selectedProvision) parts.push(selectedProvision.locator);
     return parts;
-  }, [selectedInstrument, selectedProvision]);
+  }, [selectedConcept, selectedInstrument, selectedProvision, state.navigatorTab]);
 
   function openProvision(provision: Provision, relationId?: string) {
     if (
@@ -2593,6 +3388,7 @@ export default function RegulationExplorer() {
     ) {
       return;
     }
+    rememberCurrentInterface();
     runVisualTransition(
       "view",
       () =>
@@ -2614,7 +3410,9 @@ export default function RegulationExplorer() {
     "--active-view-index": activeViewIndex,
   } as CSSProperties;
   const readerPanel =
-    state.view !== "compare" && state.view !== "timeline" ? (
+    state.navigatorTab === "sources" &&
+    state.view !== "compare" &&
+    state.view !== "timeline" ? (
       <ProvisionReader
         instrument={selectedInstrument}
         provision={selectedProvision}
@@ -2641,13 +3439,14 @@ export default function RegulationExplorer() {
           type="button"
           className="wordmark"
           onClick={openAtlas}
-          aria-label="Open Global AI Data Regulation Map atlas"
+          aria-label="Open Compliance Compass global AI governance and data regulation atlas"
         >
-          <span>GLOBAL AI · DATA</span>
-          <strong>REGULATION MAP</strong>
+          <span>COMPLIANCE COMPASS</span>
+          <strong>GLOBAL AI GOVERNANCE</strong>
+          <small>DATA REGULATION MAP / VISUALIZATION</small>
         </button>
         <label className="global-search">
-          <span className="sr-only">Search regulations and provisions</span>
+          <span className="sr-only">Search legal sources and core concepts</span>
           <Search aria-hidden="true" />
           <input
             ref={searchRef}
@@ -2656,7 +3455,7 @@ export default function RegulationExplorer() {
             onChange={(event) =>
               dispatch({ type: "SET_QUERY", query: event.target.value })
             }
-            placeholder="Search instrument, article, concept…"
+            placeholder="Search legal source or core concept…"
           />
           <kbd>⌘K</kbd>
         </label>
@@ -2727,19 +3526,29 @@ export default function RegulationExplorer() {
       </header>
 
       <div className="system-strip">
-        <span><i className="system-dot" /> CORPUS ONLINE</span>
+        <span><i className="system-dot" /> DATASET LOADED</span>
         <span>SNAPSHOT 2026.07.19</span>
-        <span>RESEARCH PREVIEW / NOT LEGAL ADVICE</span>
+        <span>ACADEMIC RESEARCH EDITION / NOT LEGAL ADVICE</span>
       </div>
 
-      <div className={"app-shell view-" + state.view}>
+      <div
+        className={[
+          "app-shell",
+          "view-" + state.view,
+          state.navigatorTab === "concepts" ? "navigator-concepts-mode" : "",
+        ].filter(Boolean).join(" ")}
+      >
         <CorpusNavigator
+          navigatorTab={state.navigatorTab}
           selectedInstrumentId={state.selectedInstrumentId}
           selectedProvisionId={state.selectedProvisionId}
+          selectedConceptId={state.selectedConceptId}
           query={state.query}
+          onSetNavigatorTab={setNavigatorTab}
           onOpenAtlas={openAtlas}
           onOpenInstrument={openInstrument}
           onOpenProvision={openProvision}
+          onOpenConcept={openConcept}
         />
 
         {state.view === "connections" && readerPanel}
@@ -2750,32 +3559,58 @@ export default function RegulationExplorer() {
           aria-label="Regulation visualization"
         >
           <div className="workspace-status">
-            <div className="breadcrumbs" aria-label="Current location">
-              {breadcrumb.map((part, index) => (
-                <span key={part + index}>
-                  {index > 0 && <i>/</i>}
-                  {part}
-                </span>
-              ))}
+            <div className="workspace-location">
+              <button
+                type="button"
+                className="interface-back-button"
+                onClick={goBack}
+                disabled={historyDepth === 0}
+                aria-label="Return to previous interface"
+              >
+                <ArrowLeft aria-hidden="true" />
+                BACK
+              </button>
+              <div className="breadcrumbs" aria-label="Current location">
+                {breadcrumb.map((part, index) => (
+                  <span key={part + index}>
+                    {index > 0 && <i>/</i>}
+                    {part}
+                  </span>
+                ))}
+              </div>
             </div>
             <span className="view-code">
-              VIEW::{state.view.toUpperCase()}
+              VIEW::{
+                state.navigatorTab === "concepts"
+                  ? selectedConcept
+                    ? "CONCEPT"
+                    : "CONCEPT_INDEX"
+                  : state.view.toUpperCase()
+              }
             </span>
           </div>
 
-          {state.view === "atlas" && (
+          {state.navigatorTab === "sources" && state.view === "atlas" && (
             <GlobalAtlas
               onOpenInstrument={openInstrument}
             />
           )}
-          {state.view === "instrument" && selectedInstrument && (
+          {state.navigatorTab === "concepts" && state.view === "atlas" && (
+            <CoreConceptExplorer
+              selectedConcept={selectedConcept}
+              onOpenConcept={openConcept}
+              onOpenInstrument={openInstrument}
+              onOpenProvision={openProvision}
+            />
+          )}
+          {state.navigatorTab === "sources" && state.view === "instrument" && selectedInstrument && (
             <InstrumentGenome
               instrument={selectedInstrument}
               onOpenProvision={openProvision}
               onOpenInstrument={openInstrument}
             />
           )}
-          {state.view === "connections" && selectedProvision && (
+          {state.navigatorTab === "sources" && state.view === "connections" && selectedProvision && (
             <ConnectionCanvas
               anchor={selectedProvision}
               selectedRelationId={effectiveRelation?.id ?? null}
@@ -2783,10 +3618,10 @@ export default function RegulationExplorer() {
               onOpenInstrument={openInstrument}
             />
           )}
-          {state.view === "timeline" && selectedInstrument && (
+          {state.navigatorTab === "sources" && state.view === "timeline" && selectedInstrument && (
             <LineageTimeline instrument={selectedInstrument} />
           )}
-          {state.view === "compare" && (
+          {state.navigatorTab === "sources" && state.view === "compare" && (
             <CompareView
               compareIds={state.compareIds}
               onRemove={(provisionId) =>
@@ -2796,21 +3631,30 @@ export default function RegulationExplorer() {
           )}
         </section>
 
-        {state.view !== "connections" && readerPanel}
+        {state.navigatorTab === "sources" && state.view !== "connections" && readerPanel}
       </div>
 
-      <CompareTray
-        compareIds={state.compareIds}
-        onOpen={() => openView("compare")}
-        onRemove={(provisionId) =>
-          dispatch({ type: "REMOVE_COMPARE", provisionId })
-        }
-        onClear={() => dispatch({ type: "CLEAR_COMPARE" })}
-      />
+      {state.navigatorTab === "sources" && (
+        <CompareTray
+          compareIds={state.compareIds}
+          onOpen={() => openView("compare")}
+          onRemove={(provisionId) =>
+            dispatch({ type: "REMOVE_COMPARE", provisionId })
+          }
+          onClear={() => dispatch({ type: "CLEAR_COMPARE" })}
+        />
+      )}
 
       <p className="sr-only" aria-live="polite">
-        {viewLabels.find((view) => view.id === state.view)?.label + " view. "}
-        {selectedProvision
+        {selectedConcept
+          ? "Core concept: " + selectedConcept.label + ". "
+          : state.navigatorTab === "concepts"
+            ? "Core concept index. "
+            : viewLabels.find((view) => view.id === state.view)?.label + " view. "}
+        {selectedConcept
+          ? (conceptEvidenceById.get(selectedConcept.id)?.instrumentIds.size ?? 0) +
+            " linked legal sources."
+          : selectedProvision
           ? selectedProvision.locator +
             " selected with " +
             selectedRelations.length +

@@ -14,6 +14,7 @@ const [
   instruments,
   provisions,
   concepts,
+  conceptThemes,
   relations,
   statusEvents,
   gdprArticles,
@@ -24,6 +25,7 @@ const [
   loadJson("instruments.json"),
   loadJson("provisions.json"),
   loadJson("concepts.json"),
+  loadJson("concept-themes.json"),
   loadJson("relations.json"),
   loadJson("status-events.json"),
   loadJson("gdpr-articles.json"),
@@ -171,6 +173,7 @@ const jurisdictionIds = assertUnique(jurisdictions, "jurisdiction");
 const instrumentIds = assertUnique(instruments, "instrument");
 const provisionIds = assertUnique(provisions, "provision");
 const conceptIds = assertUnique(concepts, "concept");
+const conceptThemeIds = assertUnique(conceptThemes, "concept theme");
 assertUnique(relations, "relation");
 assertUnique(statusEvents, "status event");
 const gdprArticleIds = assertUnique(gdprArticles, "GDPR article");
@@ -217,13 +220,77 @@ for (const jurisdiction of jurisdictions) {
   }
 }
 
+const conceptThemeOrders = new Set();
+for (const theme of conceptThemes) {
+  assertString(theme.label, `${theme.id}.label`);
+  assertString(theme.summary, `${theme.id}.summary`, 80);
+  assert(
+    Number.isInteger(theme.order) && theme.order > 0,
+    `${theme.id}.order must be a positive integer`,
+  );
+  assert(
+    !conceptThemeOrders.has(theme.order),
+    `Duplicate concept theme order: ${theme.order}`,
+  );
+  conceptThemeOrders.add(theme.order);
+}
+assert(
+  [...conceptThemeOrders].sort((left, right) => left - right)
+    .every((order, index) => order === index + 1),
+  "Concept theme order values must form a contiguous sequence beginning at 1",
+);
+
+const conceptsByTheme = new Map(
+  conceptThemes.map((theme) => [theme.id, 0]),
+);
 for (const concept of concepts) {
   assertString(concept.label, `${concept.id}.label`);
   assertString(concept.family, `${concept.id}.family`);
+  assertId(concept.theme, `${concept.id}.theme`);
+  assert(
+    conceptThemeIds.has(concept.theme),
+    `${concept.id} references missing concept theme ${concept.theme}`,
+  );
   assertString(concept.description, `${concept.id}.description`, 30);
+  assertString(concept.summary, `${concept.id}.summary`, 80);
   assertStringArray(concept.aliases, `${concept.id}.aliases`, {
     allowEmpty: true,
   });
+  assert(
+    Array.isArray(concept.sourceBasis) && concept.sourceBasis.length > 0,
+    `${concept.id}.sourceBasis must contain at least one public source`,
+  );
+  const conceptSourceUrls = new Set();
+  concept.sourceBasis.forEach((source, index) => {
+    assertSource(source, `${concept.id}.sourceBasis[${index}]`, {
+      requireAccessedOn: true,
+    });
+    assert(
+      !conceptSourceUrls.has(source.url),
+      `${concept.id}.sourceBasis contains duplicate URL: ${source.url}`,
+    );
+    conceptSourceUrls.add(source.url);
+  });
+  assertObject(concept.editorial, `${concept.id}.editorial`);
+  assert(
+    concept.editorial.reviewStatus === "editorial-concept-summary",
+    `${concept.id}.editorial.reviewStatus must identify a concept summary`,
+  );
+  assertIsoDate(
+    concept.editorial.reviewedOn,
+    `${concept.id}.editorial.reviewedOn`,
+  );
+  assertString(concept.editorial.note, `${concept.id}.editorial.note`, 60);
+  conceptsByTheme.set(
+    concept.theme,
+    (conceptsByTheme.get(concept.theme) ?? 0) + 1,
+  );
+}
+for (const [theme, conceptCount] of conceptsByTheme) {
+  assert(
+    conceptCount > 0,
+    `${theme} must contain at least one core concept`,
+  );
 }
 
 for (const instrument of instruments) {
@@ -755,6 +822,34 @@ for (const id of requiredJurisdictionIds) {
   assert(jurisdictionIds.has(id), `Required jurisdiction is missing: ${id}`);
 }
 
+const requiredCoreConceptIds = [
+  "privacy-by-design-default",
+  "data-minimization",
+  "purpose-limitation",
+  "lawfulness-consent-choice",
+  "data-subject-rights",
+  "fairness-nondiscrimination",
+  "sensitive-data-protection",
+  "retention-deletion-lifecycle",
+  "privacy-enhancing-tech",
+  "third-party-supply-chain",
+  "continuous-assurance",
+  "automated-decision-safeguards",
+  "ai-risk-management",
+  "impact-assessment",
+  "accountability-governance",
+  "security-controls",
+  "incident-response",
+  "human-oversight",
+  "training-data-governance",
+  "frontier-model-safety",
+  "cross-border-transfer",
+  "global-coordination",
+];
+for (const id of requiredCoreConceptIds) {
+  assert(conceptIds.has(id), `Required core concept is missing: ${id}`);
+}
+
 const requiredInstrumentIds = [
   "eu-gdpr",
   "eu-ai-act",
@@ -809,6 +904,7 @@ console.log(
     `${combinedProvisionIds.size} merged provisions`,
     `(${gdprArticles.length} GDPR + ${euAiActArticles.length} EU AI Act official Articles),`,
     `${relations.length} relations, and ${statusEvents.length} lifecycle events.`,
+    `${concepts.length} core concepts are organized into ${conceptThemes.length} themes.`,
     `${structureSummaries.length} reviewed structure summaries cover ${officialSections.size} official EU sections.`,
   ].join(" "),
 );

@@ -26,13 +26,13 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host.startsWith("localhost") ? "http" : "https");
   const baseUrl = new URL(`${protocol}://${host}`);
-  const socialImage = new URL("/og-regulation-atlas-v2.png", baseUrl).toString();
+  const socialImage = new URL("/og-compliance-compass-v3.png", baseUrl).toString();
 
   return {
     metadataBase: baseUrl,
     title: {
-      default: "Global AI · Data Regulation Map",
-      template: "%s · Global AI Data Regulation Map",
+      default: "Compliance Compass: Global AI Governance and Data Regulation Map & Visualization",
+      template: "%s · Compliance Compass",
     },
     description:
       "A versioned, provision-level knowledge graph for global AI governance, privacy, data security and cybersecurity regulation.",
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: "/favicon.svg",
     },
     openGraph: {
-      title: "Global AI · Data Regulation Map",
+      title: "Compliance Compass: Global AI Governance and Data Regulation Map & Visualization",
       description:
         "Explore full legal corpora, provision-level mappings and time-aware regulatory status across jurisdictions.",
       type: "website",
@@ -50,13 +50,13 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1734,
           height: 907,
-          alt: "Global AI Data Regulation Map bridging a dark knowledge graph and a bright legal research workspace",
+          alt: "Compliance Compass global AI governance and data regulation research visualization",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Global AI · Data Regulation Map",
+      title: "Compliance Compass: Global AI Governance and Data Regulation Map & Visualization",
       description:
         "Explore full legal corpora, provision-level mappings and time-aware regulatory status across jurisdictions.",
       images: [socialImage],

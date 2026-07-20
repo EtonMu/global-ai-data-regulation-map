@@ -9,7 +9,7 @@ The dataset snapshot is verified through **2026-07-19**. It is a research aid, n
 
 ## Snapshot scope
 
-The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 254 merged provision nodes, 42 qualified relations, 54 lifecycle events, 12 controlled concepts, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
+The current seed contains **15 jurisdiction or issuing-context records, 23 instruments, 254 merged provision nodes, 42 qualified relations, 54 lifecycle events, 23 controlled core concepts in 7 themes, and 34 curated structure summaries**. The merged provision total combines the generated GDPR and EU AI Act Article corpora with curated provision records by stable ID; it is not the raw length of `provisions.json`.
 
 Complete locally stored Article coverage remains limited to the GDPR (99 Articles) and EU AI Act (113 Articles). Other instruments generally provide selected provision metadata, original editorial summaries, and official links. The snapshot is broad enough to demonstrate the model but is not a complete inventory of any jurisdiction's AI, privacy, data-security, or cybersecurity law.
 
@@ -18,7 +18,8 @@ Complete locally stored Article coverage remains limited to the GDPR (99 Article
 - `jurisdictions.json`: countries, supranational systems, subnational systems, and international institutional contexts.
 - `instruments.json`: laws, regulations, executive orders, bills, rules, mandatory internal directives, voluntary frameworks, standards, soft law, declarations, and advisory reports.
 - `provisions.json`: representative provision-level nodes outside the complete EU imports, plus curated metadata for high-value EU provisions.
-- `concepts.json`: a small controlled vocabulary used to connect differently worded legal duties.
+- `concept-themes.json`: stable, ordered learning themes used to organize the core-concept browser.
+- `concepts.json`: a sourced controlled vocabulary used both for concept-led learning and to connect differently worded legal duties.
 - `structure-summaries.json`: project-authored, high-level orientation summaries for rendered sections and framework roots, with source basis and editorial review metadata.
 - `relations.json`: qualified analytical edges between provision or instrument nodes.
 - `status-events.json`: dated lifecycle events such as adoption, entry into force, partial application, amendment, revocation, veto, and scheduled commencement.
@@ -30,6 +31,8 @@ The two generated EU Article files are intentionally separate from this hand-cur
 ## Navigation and presentation contract
 
 The primary legal-system display order is fixed as **EU → US → China → UK → Canada → Japan → India**. California is a subnational record and is displayed under the US. **International / Frameworks / Soft law** is a parallel top-level browsing lane, not a fictional jurisdiction and not subordinate to any one national system.
+
+The left navigator has two peer browsing modes: **Legal Sources** and **Core Concepts**. Core Concepts is not a ninth jurisdiction or legal-source lane. It is an independent learning index organized by `concept-themes.json`; selecting a concept may reveal relevant instruments and provisions, but membership signals topical relevance rather than legal equivalence.
 
 That presentation lane is intentionally orthogonal to issuer metadata. NIST AI RMF, for example, retains its US issuing context and voluntary force even when surfaced beside ISO/IEC 42001, IEEE Ethically Aligned Design, OECD AI Principles, the Bletchley Declaration (2023), the Hiroshima AI Process, and the UN Advisory Body's _Governing AI for Humanity_ report. These materials have different issuers, audiences, update processes, and legal effects; co-location supports discovery and does not imply equivalence.
 
@@ -106,15 +109,19 @@ The curated file does **not** fabricate full text. It stores editorial summaries
 
 ## `concepts.json`
 
-Concept nodes are a neutral middle layer for comparing differently structured instruments. Each concept has:
+Concept nodes are a neutral middle layer for comparing differently structured instruments and a first-class learning index. Each concept has:
 
-- `id`
-- `label`
-- `family`
-- `description`
-- `aliases`
+- `id`: stable kebab-case identifier. Existing IDs remain stable because instruments, provisions, summaries, and relations may reference them.
+- `label`, `description`, and `summary`: concise, project-authored orientation text.
+- `family`: a granular classification retained for analytical compatibility.
+- `theme`: reference to an ordered record in `concept-themes.json` for navigation grouping.
+- `aliases`: search terms, alternate spellings, and common professional abbreviations.
+- `sourceBasis`: public learning or primary-source materials, each with a label, HTTPS URL, and access date.
+- `editorial`: review state, review date, and an express warning that the summary is not an authoritative definition or legal conclusion.
 
 Concept membership means “relevant to this regulatory idea,” not “legally equivalent.”
+
+The expanded learning taxonomy is an original editorial synthesis informed by the public IAPP CIPP/E, CIPM, CIPT, and AIGP Bodies of Knowledge and by cited primary sources. It is not affiliated with or endorsed by IAPP, does not reproduce course or examination materials, and does not claim that a topic appears with any particular exam frequency.
 
 ## `structure-summaries.json`
 
@@ -199,7 +206,7 @@ The seed currently uses these modes:
 
 ## Suggested UI merge order
 
-1. Load `jurisdictions.json`, `concepts.json`, and `instruments.json`.
+1. Load `jurisdictions.json`, `concept-themes.json`, `concepts.json`, and `instruments.json`.
 2. Load generated `gdpr-articles.json` and `eu-ai-act-articles.json`.
 3. Load `provisions.json` and merge records by `id`:
    - preserve imported official text and structural hierarchy;

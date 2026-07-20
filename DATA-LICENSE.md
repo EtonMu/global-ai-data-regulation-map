@@ -2,7 +2,7 @@
 
 The original classifications, summaries, crosswalk relationships, rationales, and project-authored metadata in the `data/` directory are licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-When reusing the project-authored dataset, attribute **Global AI Data Regulation Map contributors**, identify the dataset version or commit, link to this repository, and indicate whether changes were made.
+When reusing the project-authored dataset, attribute **Compliance Compass contributors**, identify the dataset version or commit, link to this repository, and indicate whether changes were made.
 
 This license does **not** claim ownership of or grant additional rights in:
 

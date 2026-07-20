@@ -1,6 +1,6 @@
 # Dataset overview
 
-`data/v2/` is the active corpus for the Global AI · Data Regulation Map. It is a versioned, time-aware knowledge graph rather than a flat list of look-alike provisions.
+`data/v2/` is the active corpus for **Compliance Compass: Global AI Governance and Data Regulation Map & Visualization**. It is a versioned, time-aware knowledge graph rather than a flat list of look-alike provisions.
 
 Read the complete [V2 schema, merge, status, source, and review guide](v2/README.md) before changing the dataset.
 
