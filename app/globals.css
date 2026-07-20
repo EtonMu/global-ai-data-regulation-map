@@ -93,13 +93,13 @@ html[data-theme="bright"] {
 }
 
 html {
-  min-width: 320px;
+  min-width: 0;
   background: var(--void);
   scroll-behavior: smooth;
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   margin: 0;
   overflow-x: hidden;
   background:
@@ -528,6 +528,7 @@ html[data-ui-transition="theme"] :is(
   .workspace,
   .workspace-status,
   .provision-reader,
+  .atlas-globe-panel,
   .instrument-node,
   .concept-node,
   .concept-source-node,
@@ -550,6 +551,10 @@ html[data-ui-transition="view"] .workspace {
 }
 
 html[data-ui-transition="view"] .provision-reader {
+  view-transition-name: atlas-reader;
+}
+
+html[data-ui-transition="view"] .atlas-globe-panel {
   view-transition-name: atlas-reader;
 }
 
@@ -679,13 +684,15 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .terminal-app:has(.compare-tray) .corpus-navigator,
 .terminal-app:has(.compare-tray) .workspace,
-.terminal-app:has(.compare-tray) .provision-reader {
+.terminal-app:has(.compare-tray) .provision-reader,
+.terminal-app:has(.compare-tray) .atlas-globe-panel {
   height: calc(100vh - 148px);
 }
 
 .corpus-navigator,
 .workspace,
-.provision-reader {
+.provision-reader,
+.atlas-globe-panel {
   min-width: 0;
   height: calc(100vh - 84px);
   overflow-x: hidden;
@@ -701,6 +708,10 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   overflow: hidden;
   border-right: 1px solid var(--line-strong);
   background: var(--navigator-surface);
+}
+
+.atlas-globe-panel {
+  border-left: 1px solid var(--line-strong);
 }
 
 .navigator-header,
@@ -1245,6 +1256,11 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--cyan);
 }
 
+.concept-theme-label span[data-icon-treatment="solid"] > svg,
+.concept-theme-lane h2 span[data-icon-treatment="solid"] > svg {
+  color: inherit;
+}
+
 .tree-concept-list {
   display: grid;
 }
@@ -1313,6 +1329,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .workspace-status {
+  min-width: 0;
   position: sticky;
   z-index: 20;
   top: 0;
@@ -1390,13 +1407,45 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .breadcrumbs span {
   min-width: 0;
-  flex: 0 0 auto;
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
 }
 
 .breadcrumbs i {
   padding: 0 7px;
   color: var(--muted-dark);
   font-style: normal;
+}
+
+.breadcrumbs button {
+  min-width: 0;
+  max-width: 26ch;
+  overflow: hidden;
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breadcrumbs button {
+  padding: 2px 1px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.breadcrumbs button:hover {
+  border-bottom-color: currentColor;
+}
+
+.breadcrumbs button:disabled {
+  border-bottom-color: transparent;
+  color: var(--ink);
+  cursor: default;
 }
 
 .breadcrumbs span:last-child {
@@ -1407,8 +1456,12 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .view-code {
+  max-width: 24ch;
+  overflow: hidden;
   flex: 0 0 auto;
   color: var(--cyan);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .atlas-view,
@@ -1428,11 +1481,20 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .timeline-header,
 .compare-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
   align-items: end;
   gap: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--line-strong);
+}
+
+.view-intro > *,
+.instrument-masthead > *,
+.concept-masthead > *,
+.connections-header > *,
+.timeline-header > *,
+.compare-header > * {
+  min-width: 0;
 }
 
 .view-intro h1,
@@ -1448,7 +1510,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 0.98;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .view-intro p:not(.terminal-label),
@@ -1487,6 +1550,11 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .connection-readout span {
   align-items: center;
   justify-content: flex-start;
+}
+
+.instrument-readout > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .connection-readout svg {
@@ -2306,9 +2374,11 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .instrument-context dd,
 .reader-metadata dd,
 .compare-dimensions dd {
+  min-width: 0;
   margin: 0;
   color: var(--ink);
   font-size: 0.7rem;
+  overflow-wrap: anywhere;
 }
 
 .instrument-relations {
@@ -2435,9 +2505,11 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .genome-section > header strong {
+  min-width: 0;
   color: var(--muted);
   font-size: 0.7rem;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .section-overview {
@@ -3184,6 +3256,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .reader-heading p {
@@ -3191,6 +3264,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--muted);
   font-size: 0.71rem;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .reader-status {
@@ -3205,9 +3279,14 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-size: 0.7rem;
 }
 
+.reader-status > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .reader-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 7px;
   padding: 10px 0;
 }
@@ -3215,6 +3294,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .reader-actions button,
 .reader-actions a,
 .official-source-button {
+  min-width: 0;
   min-height: 34px;
   display: inline-flex;
   align-items: center;
@@ -3228,6 +3308,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .reader-actions svg,
@@ -3252,9 +3334,9 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .reader-tabs {
   position: sticky;
   z-index: 5;
-  top: -16px;
+  top: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 -16px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line-strong);
@@ -3262,6 +3344,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .reader-tabs button {
+  min-width: 0;
   min-height: 38px;
   border: 0;
   border-right: 1px solid var(--line);
@@ -3360,6 +3443,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .document-provenance {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 18px;
@@ -3385,6 +3469,17 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.86rem;
   line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.reader-document[data-text-language^="zh"] > p,
+.reader-document[data-text-language^="ja"] > p {
+  font-family: "Noto Serif CJK SC", "Noto Serif CJK JP", "Songti SC",
+    "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  line-break: strict;
+  word-break: normal;
 }
 
 .reader-document > p + p {
@@ -3419,13 +3514,28 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   margin-bottom: 14px;
 }
 
-.concept-list span {
+.concept-list button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 4px 7px;
   border: 1px solid rgba(110, 231, 183, 0.32);
   background: var(--green-soft);
   color: var(--green);
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.7rem;
+}
+
+.concept-list button:hover,
+.concept-list button:focus-visible {
+  border-color: var(--green);
+  background: var(--panel-hover);
+}
+
+.concept-list button svg {
+  width: 14px;
+  height: 14px;
 }
 
 .reader-relation-list {
@@ -3699,25 +3809,39 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 @media (max-width: 1080px) {
   .top-bar {
+    grid-template-areas:
+      "brand search theme"
+      "mode mode mode";
     grid-template-columns: 190px minmax(160px, 1fr) auto;
+    row-gap: 7px;
+    padding-block: 7px;
+  }
+
+  .wordmark {
+    grid-area: brand;
+  }
+
+  .global-search {
+    grid-area: search;
+  }
+
+  .theme-switch {
+    grid-area: theme;
   }
 
   .mode-switch {
+    grid-area: mode;
     grid-column: 1 / -1;
     width: 100%;
-    margin-bottom: 7px;
+    margin-bottom: 0;
   }
 
   .mode-switch button {
     flex: 1;
   }
 
-  .top-bar {
-    padding-top: 7px;
-  }
-
   .system-strip {
-    margin-top: 7px;
+    margin-top: 0;
   }
 
   .app-shell {
@@ -3734,16 +3858,18 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
   .corpus-navigator,
   .workspace {
-    height: calc(100vh - 126px);
+    height: calc(100dvh - 121px);
   }
 
   .terminal-app:has(.compare-tray) .corpus-navigator,
   .terminal-app:has(.compare-tray) .workspace,
-  .terminal-app:has(.compare-tray) .provision-reader {
+  .terminal-app:has(.compare-tray) .provision-reader,
+  .terminal-app:has(.compare-tray) .atlas-globe-panel {
     height: calc(100vh - 190px);
   }
 
-  .provision-reader {
+  .provision-reader,
+  .atlas-globe-panel {
     grid-column: 1 / -1;
     height: auto;
     min-height: 460px;
@@ -3754,13 +3880,13 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   .view-connections > .corpus-navigator {
     grid-column: 1;
     grid-row: 1 / span 2;
-    height: calc(100vh - 126px);
+    height: calc(100dvh - 121px);
   }
 
   .view-connections > .provision-reader {
     grid-column: 2;
     grid-row: 1;
-    min-height: calc(100vh - 126px);
+    min-height: calc(100dvh - 121px);
     border-right: 0;
     border-bottom: 1px solid var(--line-strong);
   }
@@ -3813,20 +3939,24 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 @media (max-width: 760px) {
   .top-bar {
     position: relative;
+    grid-template-areas: none;
     grid-template-columns: 1fr;
     gap: 9px;
     padding: 12px;
   }
 
   .wordmark {
+    grid-area: auto;
     width: 100%;
   }
 
   .global-search {
+    grid-area: auto;
     width: 100%;
   }
 
   .mode-switch {
+    grid-area: auto;
     grid-column: auto;
     margin-bottom: 0;
   }
@@ -3837,6 +3967,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   }
 
   .theme-switch {
+    grid-area: auto;
     width: 100%;
   }
 
@@ -3887,7 +4018,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
   .corpus-navigator,
   .workspace,
-  .provision-reader {
+  .provision-reader,
+  .atlas-globe-panel {
     width: 100%;
     height: auto;
     overflow: visible;
@@ -3895,7 +4027,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
   .terminal-app:has(.compare-tray) .corpus-navigator,
   .terminal-app:has(.compare-tray) .workspace,
-  .terminal-app:has(.compare-tray) .provision-reader {
+  .terminal-app:has(.compare-tray) .provision-reader,
+  .terminal-app:has(.compare-tray) .atlas-globe-panel {
     height: auto;
   }
 
@@ -4114,11 +4247,14 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   }
 
   .workspace-status {
+    min-height: 0;
+    flex-wrap: wrap;
     gap: 9px;
-    padding: 0 10px;
+    padding: 6px 10px;
   }
 
   .workspace-location {
+    flex-basis: 100%;
     gap: 7px;
   }
 
@@ -4131,6 +4267,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   }
 
   .view-code {
+    margin-left: auto;
     font-size: 0.64rem;
   }
 
@@ -4149,6 +4286,20 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
   .force-axis {
     display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .provision-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .view-code {
+    max-width: 100%;
+  }
+
+  .breadcrumbs button {
+    max-width: 17ch;
   }
 }
 

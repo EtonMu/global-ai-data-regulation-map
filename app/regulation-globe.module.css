@@ -1,0 +1,326 @@
+.panel {
+  container-type: inline-size;
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 18px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 28%, var(--graph-glow), transparent 42%),
+    var(--reader-surface);
+}
+
+.header {
+  min-inline-size: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.headingGroup {
+  min-inline-size: 0;
+}
+
+.eyebrow {
+  display: block;
+  margin-block-end: 4px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--ink-strong);
+  font-size: clamp(1.05rem, 4.8cqi, 1.35rem);
+  font-weight: 500;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+
+.motionButton {
+  flex: 0 0 auto;
+  min-block-size: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.motionButton:hover:not(:disabled) {
+  border-color: var(--cyan);
+  background: var(--panel-hover);
+  color: var(--ink-strong);
+}
+
+.motionButton:focus-visible,
+.nodeButton:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.motionButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.motionButton svg {
+  inline-size: 14px;
+  block-size: 14px;
+}
+
+.figure {
+  min-inline-size: 0;
+  margin: 0;
+}
+
+.stage {
+  position: relative;
+  isolation: isolate;
+  inline-size: 100%;
+  max-inline-size: 520px;
+  min-block-size: 278px;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+
+.stage::before {
+  position: absolute;
+  z-index: -1;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--cyan-soft) 0,
+    var(--graph-glow) 34%,
+    transparent 70%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.canvas {
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.isDragging .canvas {
+  cursor: grabbing;
+}
+
+.visualKey {
+  position: absolute;
+  inset-inline: 6px;
+  inset-block-end: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.035em;
+  pointer-events: none;
+}
+
+.visualKey span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jurisdictionDot {
+  inline-size: 7px;
+  block-size: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 0 3px var(--cyan-soft);
+}
+
+.conceptDiamond {
+  inline-size: 7px;
+  block-size: 7px;
+  display: inline-block;
+  border: 1px solid var(--violet);
+  background: var(--violet-soft);
+  rotate: 45deg;
+}
+
+.instructions {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 8px;
+  margin-block-start: 5px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.instructions svg {
+  flex: 0 0 auto;
+  inline-size: 14px;
+  block-size: 14px;
+  color: var(--cyan);
+}
+
+.nodeDirectory {
+  min-inline-size: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.nodeDirectory nav {
+  min-inline-size: 0;
+}
+
+.nodeDirectory h3 {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.jurisdictionGrid,
+.conceptGrid {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.nodeButton {
+  min-inline-size: 0;
+  min-block-size: 38px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--node-surface);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.28;
+  text-align: start;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.nodeButton > span:not([class*="jurisdiction-mark"]) {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.nodeButton b {
+  min-inline-size: 18px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  text-align: end;
+}
+
+.nodeButton:hover:not(:disabled),
+.nodeButton.isActive {
+  border-color: var(--cyan);
+  background: var(--panel-hover);
+  color: var(--ink-strong);
+  transform: translateY(-1px);
+}
+
+.conceptButton:hover,
+.conceptButton.isActive {
+  border-color: var(--violet);
+}
+
+.conceptButton > svg {
+  color: var(--violet);
+}
+
+.nodeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.54;
+}
+
+@container (max-width: 340px) {
+  .panel {
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .motionButton {
+    align-self: flex-start;
+  }
+
+  .stage {
+    min-block-size: 270px;
+  }
+
+  .jurisdictionGrid,
+  .conceptGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motionButton,
+  .nodeButton {
+    transition: none;
+  }
+
+  .nodeButton:hover:not(:disabled),
+  .nodeButton.isActive {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .stage::before {
+    display: none;
+  }
+
+  .jurisdictionDot,
+  .conceptDiamond {
+    forced-color-adjust: none;
+  }
+}

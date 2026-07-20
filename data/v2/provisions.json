@@ -472,7 +472,13 @@
     "scopeTags": ["automated-decision-making", "personal-information"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2021-11-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the Chinese text."},
+    "paragraphs": [
+      "个人信息处理者利用个人信息进行自动化决策，应当保证决策的透明度和结果公平、公正，不得对个人在交易价格等交易条件上实行不合理的差别待遇。",
+      "通过自动化决策方式向个人进行信息推送、商业营销，应当同时提供不针对其个人特征的选项，或者向个人提供便捷的拒绝方式。",
+      "通过自动化决策方式作出对个人权益有重大影响的决定，个人有权要求个人信息处理者予以说明，并有权拒绝个人信息处理者仅通过自动化决策的方式作出决定。"
+    ],
+    "fullText": "个人信息处理者利用个人信息进行自动化决策，应当保证决策的透明度和结果公平、公正，不得对个人在交易价格等交易条件上实行不合理的差别待遇。\n\n通过自动化决策方式向个人进行信息推送、商业营销，应当同时提供不针对其个人特征的选项，或者向个人提供便捷的拒绝方式。\n\n通过自动化决策方式作出对个人权益有重大影响的决定，个人有权要求个人信息处理者予以说明，并有权拒绝个人信息处理者仅通过自动化决策的方式作出决定。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Terms and enforcement practice should be checked in Chinese-language authorities."}
   },
@@ -489,7 +495,17 @@
     "scopeTags": ["overseas-provision", "personal-information"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2021-11-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; subordinate transfer rules also matter."},
+    "paragraphs": [
+      "个人信息处理者因业务等需要，确需向中华人民共和国境外提供个人信息的，应当具备下列条件之一：",
+      "（一）依照本法第四十条的规定通过国家网信部门组织的安全评估；",
+      "（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；",
+      "（三）按照国家网信部门制定的标准合同与境外接收方订立合同，约定双方的权利和义务；",
+      "（四）法律、行政法规或者国家网信部门规定的其他条件。",
+      "中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。",
+      "个人信息处理者应当采取必要措施，保障境外接收方处理个人信息的活动达到本法规定的个人信息保护标准。"
+    ],
+    "fullText": "个人信息处理者因业务等需要，确需向中华人民共和国境外提供个人信息的，应当具备下列条件之一：\n\n（一）依照本法第四十条的规定通过国家网信部门组织的安全评估；\n\n（二）按照国家网信部门的规定经专业机构进行个人信息保护认证；\n\n（三）按照国家网信部门制定的标准合同与境外接收方订立合同，约定双方的权利和义务；\n\n（四）法律、行政法规或者国家网信部门规定的其他条件。\n\n中华人民共和国缔结或者参加的国际条约、协定对向中华人民共和国境外提供个人信息的条件等有规定的，可以按照其规定执行。\n\n个人信息处理者应当采取必要措施，保障境外接收方处理个人信息的活动达到本法规定的个人信息保护标准。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; subordinate transfer rules and the editorial English summary remain separate."},
     "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Do not infer that listed routes operate identically to GDPR Chapter V mechanisms."}
   },
@@ -506,7 +522,17 @@
     "scopeTags": ["personal-information", "security"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2021-11-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "个人信息处理者应当根据个人信息的处理目的、处理方式、个人信息的种类以及对个人权益的影响、可能存在的安全风险等，采取下列措施确保个人信息处理活动符合法律、行政法规的规定，并防止未经授权的访问以及个人信息泄露、篡改、丢失：",
+      "（一）制定内部管理制度和操作规程；",
+      "（二）对个人信息实行分类管理；",
+      "（三）采取相应的加密、去标识化等安全技术措施；",
+      "（四）合理确定个人信息处理的操作权限，并定期对从业人员进行安全教育和培训；",
+      "（五）制定并组织实施个人信息安全事件应急预案；",
+      "（六）法律、行政法规规定的其他措施。"
+    ],
+    "fullText": "个人信息处理者应当根据个人信息的处理目的、处理方式、个人信息的种类以及对个人权益的影响、可能存在的安全风险等，采取下列措施确保个人信息处理活动符合法律、行政法规的规定，并防止未经授权的访问以及个人信息泄露、篡改、丢失：\n\n（一）制定内部管理制度和操作规程；\n\n（二）对个人信息实行分类管理；\n\n（三）采取相应的加密、去标识化等安全技术措施；\n\n（四）合理确定个人信息处理的操作权限，并定期对从业人员进行安全教育和培训；\n\n（五）制定并组织实施个人信息安全事件应急预案；\n\n（六）法律、行政法规规定的其他措施。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Control lists and risk standards may also be specified elsewhere in Chinese law and standards."}
   },
@@ -523,7 +549,16 @@
     "scopeTags": ["personal-information", "higher-impact-processing"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2021-11-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "有下列情形之一的，个人信息处理者应当事前进行个人信息保护影响评估，并对处理情况进行记录：",
+      "（一）处理敏感个人信息；",
+      "（二）利用个人信息进行自动化决策；",
+      "（三）委托处理个人信息、向其他个人信息处理者提供个人信息、公开个人信息；",
+      "（四）向境外提供个人信息；",
+      "（五）其他对个人权益有重大影响的个人信息处理活动。"
+    ],
+    "fullText": "有下列情形之一的，个人信息处理者应当事前进行个人信息保护影响评估，并对处理情况进行记录：\n\n（一）处理敏感个人信息；\n\n（二）利用个人信息进行自动化决策；\n\n（三）委托处理个人信息、向其他个人信息处理者提供个人信息、公开个人信息；\n\n（四）向境外提供个人信息；\n\n（五）其他对个人权益有重大影响的个人信息处理活动。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; Article 56 and the editorial English summary remain separate."},
     "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Assessment content and retention are further addressed in Article 56."}
   },
@@ -540,7 +575,15 @@
     "scopeTags": ["personal-information-incident", "notification"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2021-11-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "发生或者可能发生个人信息泄露、篡改、丢失的，个人信息处理者应当立即采取补救措施，并通知履行个人信息保护职责的部门和个人。通知应当包括下列事项：",
+      "（一）发生或者可能发生个人信息泄露、篡改、丢失的信息种类、原因和可能造成的危害；",
+      "（二）个人信息处理者采取的补救措施和个人可以采取的减轻危害的措施；",
+      "（三）个人信息处理者的联系方式。",
+      "个人信息处理者采取措施能够有效避免信息泄露、篡改、丢失造成危害的，个人信息处理者可以不通知个人；履行个人信息保护职责的部门认为可能造成危害的，有权要求个人信息处理者通知个人。"
+    ],
+    "fullText": "发生或者可能发生个人信息泄露、篡改、丢失的，个人信息处理者应当立即采取补救措施，并通知履行个人信息保护职责的部门和个人。通知应当包括下列事项：\n\n（一）发生或者可能发生个人信息泄露、篡改、丢失的信息种类、原因和可能造成的危害；\n\n（二）个人信息处理者采取的补救措施和个人可以采取的减轻危害的措施；\n\n（三）个人信息处理者的联系方式。\n\n个人信息处理者采取措施能够有效避免信息泄露、篡改、丢失造成危害的，个人信息处理者可以不通知个人；履行个人信息保护职责的部门认为可能造成危害的，有权要求个人信息处理者通知个人。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "No fixed GDPR-style 72-hour deadline should be inferred from this summary."}
   },
@@ -557,7 +600,12 @@
     "scopeTags": ["artificial-intelligence", "national-policy"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2026-01-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial and does not reproduce the amended Article."},
+    "paragraphs": [
+      "国家支持人工智能基础理论研究和算法等关键技术研发，推进训练数据资源、算力等基础设施建设，完善人工智能伦理规范，加强风险监测评估和安全监管，促进人工智能应用和健康发展。",
+      "国家支持创新网络安全管理方式，运用人工智能等新技术，提升网络安全保护水平。"
+    ],
+    "fullText": "国家支持人工智能基础理论研究和算法等关键技术研发，推进训练数据资源、算力等基础设施建设，完善人工智能伦理规范，加强风险监测评估和安全监管，促进人工智能应用和健康发展。\n\n国家支持创新网络安全管理方式，运用人工智能等新技术，提升网络安全保护水平。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese text from the amended law effective in 2026 is stored verbatim; the English summary remains editorial."},
     "source": {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Cyberspace Administration of China / National People's Congress", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "This is a high-level state-support and governance provision, not a standalone company compliance checklist."}
   },
@@ -574,7 +622,16 @@
     "scopeTags": ["network-operation", "classified-protection"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2026-01-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "Current numbering follows the amended text effective in 2026."},
+    "paragraphs": [
+      "国家实行网络安全等级保护制度。网络运营者应当按照网络安全等级保护制度的要求，履行下列安全保护义务，保障网络免受干扰、破坏或者未经授权的访问，防止网络数据泄露或者被窃取、篡改：",
+      "（一）制定内部安全管理制度和操作规程，确定网络安全负责人，落实网络安全保护责任；",
+      "（二）采取防范计算机病毒和网络攻击、网络侵入等危害网络安全行为的技术措施；",
+      "（三）采取监测、记录网络运行状态、网络安全事件的技术措施，并按照规定留存相关的网络日志不少于六个月；",
+      "（四）采取数据分类、重要数据备份和加密等措施；",
+      "（五）法律、行政法规规定的其他义务。"
+    ],
+    "fullText": "国家实行网络安全等级保护制度。网络运营者应当按照网络安全等级保护制度的要求，履行下列安全保护义务，保障网络免受干扰、破坏或者未经授权的访问，防止网络数据泄露或者被窃取、篡改：\n\n（一）制定内部安全管理制度和操作规程，确定网络安全负责人，落实网络安全保护责任；\n\n（二）采取防范计算机病毒和网络攻击、网络侵入等危害网络安全行为的技术措施；\n\n（三）采取监测、记录网络运行状态、网络安全事件的技术措施，并按照规定留存相关的网络日志不少于六个月；\n\n（四）采取数据分类、重要数据备份和加密等措施；\n\n（五）法律、行政法规规定的其他义务。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese text and current numbering from the amended law effective in 2026 are stored verbatim."},
     "source": {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Cyberspace Administration of China / National People's Congress", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "This was Article 21 in the pre-2026 numbering; legacy mappings require migration."}
   },
@@ -591,7 +648,12 @@
     "scopeTags": ["network-personal-information", "incident"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2026-01-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "Current numbering follows the amended text effective in 2026."},
+    "paragraphs": [
+      "网络运营者不得泄露、篡改、毁损其收集的个人信息；未经被收集者同意，不得向他人提供个人信息。但是，经过处理无法识别特定个人且不能复原的除外。",
+      "网络运营者应当采取技术措施和其他必要措施，确保其收集的个人信息安全，防止信息泄露、毁损、丢失。在发生或者可能发生个人信息泄露、毁损、丢失的情况时，应当立即采取补救措施，按照规定及时告知用户并向有关主管部门报告。"
+    ],
+    "fullText": "网络运营者不得泄露、篡改、毁损其收集的个人信息；未经被收集者同意，不得向他人提供个人信息。但是，经过处理无法识别特定个人且不能复原的除外。\n\n网络运营者应当采取技术措施和其他必要措施，确保其收集的个人信息安全，防止信息泄露、毁损、丢失。在发生或者可能发生个人信息泄露、毁损、丢失的情况时，应当立即采取补救措施，按照规定及时告知用户并向有关主管部门报告。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese text and current numbering from the amended law effective in 2026 are stored verbatim."},
     "source": {"url": "https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm", "label": "Cyberspace Administration of China / National People's Congress", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "This incident provision was located at Article 42 in the pre-2026 text."}
   },
@@ -608,7 +670,11 @@
     "scopeTags": ["personal-information", "annual-reporting", "platform"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2025-01-01",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "大型网络平台服务提供者应当每年度发布个人信息保护社会责任报告，报告内容包括但不限于个人信息保护措施和成效、个人行使权利的申请受理情况、主要由外部成员组成的个人信息保护监督机构履行职责情况等。"
+    ],
+    "fullText": "大型网络平台服务提供者应当每年度发布个人信息保护社会责任报告，报告内容包括但不限于个人信息保护措施和成效、个人行使权利的申请受理情况、主要由外部成员组成的个人信息保护监督机构履行职责情况等。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html", "label": "State Council of the People's Republic of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "The provision applies to the instrument's defined category of large platform provider."}
   },
@@ -625,7 +691,16 @@
     "scopeTags": ["public-generative-ai-service", "content-governance"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2023-08-15",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "提供和使用生成式人工智能服务，应当遵守法律、行政法规，尊重社会公德和伦理道德，遵守以下规定：",
+      "（一）坚持社会主义核心价值观，不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益、损害国家形象，煽动分裂国家、破坏国家统一和社会稳定，宣扬恐怖主义、极端主义，宣扬民族仇恨、民族歧视，暴力、淫秽色情，以及虚假有害信息等法律、行政法规禁止的内容；",
+      "（二）在算法设计、训练数据选择、模型生成和优化、提供服务等过程中，采取有效措施防止产生民族、信仰、国别、地域、性别、年龄、职业、健康等歧视；",
+      "（三）尊重知识产权、商业道德，保守商业秘密，不得利用算法、数据、平台等优势，实施垄断和不正当竞争行为；",
+      "（四）尊重他人合法权益，不得危害他人身心健康，不得侵害他人肖像权、名誉权、荣誉权、隐私权和个人信息权益；",
+      "（五）基于服务类型特点，采取有效措施，提升生成式人工智能服务的透明度，提高生成内容的准确性和可靠性。"
+    ],
+    "fullText": "提供和使用生成式人工智能服务，应当遵守法律、行政法规，尊重社会公德和伦理道德，遵守以下规定：\n\n（一）坚持社会主义核心价值观，不得生成煽动颠覆国家政权、推翻社会主义制度，危害国家安全和利益、损害国家形象，煽动分裂国家、破坏国家统一和社会稳定，宣扬恐怖主义、极端主义，宣扬民族仇恨、民族歧视，暴力、淫秽色情，以及虚假有害信息等法律、行政法规禁止的内容；\n\n（二）在算法设计、训练数据选择、模型生成和优化、提供服务等过程中，采取有效措施防止产生民族、信仰、国别、地域、性别、年龄、职业、健康等歧视；\n\n（三）尊重知识产权、商业道德，保守商业秘密，不得利用算法、数据、平台等优势，实施垄断和不正当竞争行为；\n\n（四）尊重他人合法权益，不得危害他人身心健康，不得侵害他人肖像权、名誉权、荣誉权、隐私权和个人信息权益；\n\n（五）基于服务类型特点，采取有效措施，提升生成式人工智能服务的透明度，提高生成内容的准确性和可靠性。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Article 2 scope limits remain essential to application."}
   },
@@ -642,7 +717,16 @@
     "scopeTags": ["pre-training", "fine-tuning", "training-data"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2023-08-15",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; consult the official Chinese text."},
+    "paragraphs": [
+      "生成式人工智能服务提供者（以下称提供者）应当依法开展预训练、优化训练等训练数据处理活动，遵守以下规定：",
+      "（一）使用具有合法来源的数据和基础模型；",
+      "（二）涉及知识产权的，不得侵害他人依法享有的知识产权；",
+      "（三）涉及个人信息的，应当取得个人同意或者符合法律、行政法规规定的其他情形；",
+      "（四）采取有效措施提高训练数据质量，增强训练数据的真实性、准确性、客观性、多样性；",
+      "（五）《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律、行政法规的其他有关规定和有关主管部门的相关监管要求。"
+    ],
+    "fullText": "生成式人工智能服务提供者（以下称提供者）应当依法开展预训练、优化训练等训练数据处理活动，遵守以下规定：\n\n（一）使用具有合法来源的数据和基础模型；\n\n（二）涉及知识产权的，不得侵害他人依法享有的知识产权；\n\n（三）涉及个人信息的，应当取得个人同意或者符合法律、行政法规规定的其他情形；\n\n（四）采取有效措施提高训练数据质量，增强训练数据的真实性、准确性、客观性、多样性；\n\n（五）《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律、行政法规的其他有关规定和有关主管部门的相关监管要求。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; the English title and summary remain editorial."},
     "source": {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "Article 7 should not be treated as equivalent to the EU AI Act's high-risk-system data requirements."}
   },
@@ -659,7 +743,11 @@
     "scopeTags": ["public-opinion-attribute", "social-mobilization-capacity", "filing"],
     "legalEffectStatus": "in-force",
     "appliesFrom": "2023-08-15",
-    "textAvailability": {"mode": "official-full-text-linked", "stored": false, "language": "zh-CN", "note": "English summary is editorial; linked rules and filing requirements also matter."},
+    "paragraphs": [
+      "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。"
+    ],
+    "fullText": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "zh-CN", "note": "Official Chinese Article text is stored verbatim; linked assessment and filing rules and the editorial English summary remain separate."},
     "source": {"url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", "label": "Cyberspace Administration of China", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "reviewed-summary", "reviewedOn": "2026-07-19", "note": "The trigger is narrower than a general requirement to assess every generative-AI service."}
   },
@@ -710,8 +798,12 @@
     "scopeTags": ["personal-data", "security-management"],
     "legalEffectStatus": "in-force-subject-to-current-japanese-text",
     "appliesFrom": null,
-    "textAvailability": {"mode": "government-reference-translation-linked", "stored": false, "language": "en", "note": "The English translation displays Act No. 37 of 2021; authoritative Japanese text controls."},
-    "source": {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japanese Law Translation", "accessedOn": "2026-07-19"},
+    "paragraphs": [
+      "個人情報取扱事業者は、その取り扱う個人データの漏えい、滅失又は毀損の防止その他の個人データの安全管理のために必要かつ適切な措置を講じなければならない。"
+    ],
+    "fullText": "個人情報取扱事業者は、その取り扱う個人データの漏えい、滅失又は毀損の防止その他の個人データの安全管理のために必要かつ適切な措置を講じなければならない。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "ja", "note": "Current Japanese Article text from e-Gov is stored verbatim; the English title and summary remain editorial."},
+    "source": {"url": "https://laws.e-gov.go.jp/law/415AC0000000057", "label": "e-Gov Law Search, Government of Japan", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "translation-caveat", "reviewedOn": "2026-07-19", "note": "Confirm later amendments and PPC guidance in Japanese for legal reliance."}
   },
   {
@@ -727,8 +819,14 @@
     "scopeTags": ["foreign-country", "third-party-provision", "personal-data"],
     "legalEffectStatus": "in-force-subject-to-current-japanese-text",
     "appliesFrom": null,
-    "textAvailability": {"mode": "government-reference-translation-linked", "stored": false, "language": "en", "note": "The English translation displays Act No. 37 of 2021; authoritative Japanese text controls."},
-    "source": {"url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en", "label": "Japanese Law Translation", "accessedOn": "2026-07-19"},
+    "paragraphs": [
+      "個人情報取扱事業者は、外国（本邦の域外にある国又は地域をいう。以下この条及び第三十一条第一項第二号において同じ。）（個人の権利利益を保護する上で我が国と同等の水準にあると認められる個人情報の保護に関する制度を有している外国として個人情報保護委員会規則で定めるものを除く。以下この条及び同号において同じ。）にある第三者（個人データの取扱いについてこの節の規定により個人情報取扱事業者が講ずべきこととされている措置に相当する措置（第三項において「相当措置」という。）を継続的に講ずるために必要なものとして個人情報保護委員会規則で定める基準に適合する体制を整備している者を除く。以下この項及び次項並びに同号において同じ。）に個人データを提供する場合には、前条第一項各号に掲げる場合を除くほか、あらかじめ外国にある第三者への提供を認める旨の本人の同意を得なければならない。この場合においては、同条の規定は、適用しない。",
+      "２　個人情報取扱事業者は、前項の規定により本人の同意を得ようとする場合には、個人情報保護委員会規則で定めるところにより、あらかじめ、当該外国における個人情報の保護に関する制度、当該第三者が講ずる個人情報の保護のための措置その他当該本人に参考となるべき情報を当該本人に提供しなければならない。",
+      "３　個人情報取扱事業者は、個人データを外国にある第三者（第一項に規定する体制を整備している者に限る。）に提供した場合には、個人情報保護委員会規則で定めるところにより、当該第三者による相当措置の継続的な実施を確保するために必要な措置を講ずるとともに、本人の求めに応じて当該必要な措置に関する情報を当該本人に提供しなければならない。"
+    ],
+    "fullText": "個人情報取扱事業者は、外国（本邦の域外にある国又は地域をいう。以下この条及び第三十一条第一項第二号において同じ。）（個人の権利利益を保護する上で我が国と同等の水準にあると認められる個人情報の保護に関する制度を有している外国として個人情報保護委員会規則で定めるものを除く。以下この条及び同号において同じ。）にある第三者（個人データの取扱いについてこの節の規定により個人情報取扱事業者が講ずべきこととされている措置に相当する措置（第三項において「相当措置」という。）を継続的に講ずるために必要なものとして個人情報保護委員会規則で定める基準に適合する体制を整備している者を除く。以下この項及び次項並びに同号において同じ。）に個人データを提供する場合には、前条第一項各号に掲げる場合を除くほか、あらかじめ外国にある第三者への提供を認める旨の本人の同意を得なければならない。この場合においては、同条の規定は、適用しない。\n\n２　個人情報取扱事業者は、前項の規定により本人の同意を得ようとする場合には、個人情報保護委員会規則で定めるところにより、あらかじめ、当該外国における個人情報の保護に関する制度、当該第三者が講ずる個人情報の保護のための措置その他当該本人に参考となるべき情報を当該本人に提供しなければならない。\n\n３　個人情報取扱事業者は、個人データを外国にある第三者（第一項に規定する体制を整備している者に限る。）に提供した場合には、個人情報保護委員会規則で定めるところにより、当該第三者による相当措置の継続的な実施を確保するために必要な措置を講ずるとともに、本人の求めに応じて当該必要な措置に関する情報を当該本人に提供しなければならない。",
+    "textAvailability": {"mode": "official-original-text-stored", "stored": true, "language": "ja", "note": "Current Japanese Article text from e-Gov is stored verbatim; the English title and summary remain editorial."},
+    "source": {"url": "https://laws.e-gov.go.jp/law/415AC0000000057", "label": "e-Gov Law Search, Government of Japan", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "translation-caveat", "reviewedOn": "2026-07-19", "note": "Country findings, PPC orders, and current Japanese guidance are material."}
   },
   {
@@ -744,8 +842,23 @@
     "scopeTags": ["voluntary-guidance", "ai-business"],
     "legalEffectStatus": "voluntary",
     "appliesFrom": null,
-    "textAvailability": {"mode": "official-publication-linked", "stored": false, "language": "ja", "note": "Use the current Version 1.2 materials; tentative English translation is not authoritative."},
-    "source": {"url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html", "label": "Ministry of Economy, Trade and Industry", "accessedOn": "2026-07-19"},
+    "paragraphs": [
+      "取組にあたり、各主体は、以下に述べる「1）人間中心」に照らし、法の支配、人権、民主主義、多様性・包摂性及び公平公正な社会を尊重するよう AI システム・サービスを開発・提供・利用すべきである。また、憲法、知的財産関連法令及び個人情報保護法をはじめとする関連法令、AI に係る個別分野の既存法令等を遵守すべきであり、国際的な指針等の検討状況についても留意することが重要である。",
+      "なお、これらの取組は、各主体が開発・提供・利用する AI システム・サービスの特性、用途、目的及び社会的文脈を踏まえ、各主体の資源制約を考慮しながら自主的に進めることが重要である。",
+      "1) 人間中心—各主体は、AI システム・サービスの開発・提供・利用において、後述する各事項を含む全ての取り組むべき事項が導出される土台として、少なくとも憲法が保障する又は国際的に認められた人権を侵すことがないようにすべきである。また、AI が人々の能力を拡張し、多様な人々の多様な幸せ（well-being）の追求が可能となるように行動することが重要である。",
+      "2) 安全性—各主体は、AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすべきである。加えて、精神及び環境に危害を及ぼすことがないようにすることが重要である。",
+      "3) 公平性—各主体は、AI システム・サービスの開発・提供・利用において、特定の個人ないし集団への人種、性別、国籍、年齢、政治的信念、宗教等の多様な背景を理由とした不当で有害な偏見及び差別をなくすよう努めることが重要である。また、各主体は、それでも回避できないバイアスがあることを認識しつつ、この回避できないバイアスが人権及び多様な文化を尊重する観点から許容可能か評価した上で、AI システム・サービスの開発・提供・利用を行うことが重要である。",
+      "4) プライバシー保護—各主体は、AI システム・サービスの開発・提供・利用において、その重要性に応じ、プライバシーを尊重し、保護することが重要である。その際、関係法令を遵守すべきである。",
+      "5) セキュリティ確保—各主体は、AI システム・サービスの開発・提供・利用において、不正操作によって AI の振る舞いに意図せぬ変更又は停止が生じることのないように、セキュリティを確保することが重要である。",
+      "6) 透明性—各主体は、AI システム・サービスの開発・提供・利用において、AI システム・サービスを活用する際の社会的文脈を踏まえ、AI システム・サービスの検証可能性を確保しながら、必要かつ技術的に可能な範囲で、ステークホルダーに対し合理的な範囲で情報を提供することが重要である。",
+      "7) アカウンタビリティ—各主体は、AI システム・サービスの開発・提供・利用において、トレーサビリティの確保、「共通の指針」の対応状況等について、ステークホルダーに対して、各主体の役割及び開発・提供・利用する AI システム・サービスのもたらすリスクの程度を踏まえ、合理的な範囲でアカウンタビリティを果たすことが重要である。",
+      "8) 教育・リテラシー—各主体は、主体内の AI に関わる者が、AI の正しい理解及び社会的に正しい利用ができる知識・リテラシー・倫理感を持つために、必要な教育を行うことが期待される。また、各主体は、AI の複雑性、誤情報といった特性及び意図的な悪用の可能性もあることを勘案して、ステークホルダーに対しても教育を行うことが期待される。",
+      "9) 公正競争確保—各主体は、AI を活用した新たなビジネス・サービスが創出され、持続的な経済成長の維持及び社会課題の解決策の提示がなされるよう、AI をめぐる公正な競争環境の維持に努めることが期待される。",
+      "10) イノベーション—各主体は、社会全体のイノベーションの促進に貢献するよう努めることが期待される。"
+    ],
+    "fullText": "取組にあたり、各主体は、以下に述べる「1）人間中心」に照らし、法の支配、人権、民主主義、多様性・包摂性及び公平公正な社会を尊重するよう AI システム・サービスを開発・提供・利用すべきである。また、憲法、知的財産関連法令及び個人情報保護法をはじめとする関連法令、AI に係る個別分野の既存法令等を遵守すべきであり、国際的な指針等の検討状況についても留意することが重要である。\n\nなお、これらの取組は、各主体が開発・提供・利用する AI システム・サービスの特性、用途、目的及び社会的文脈を踏まえ、各主体の資源制約を考慮しながら自主的に進めることが重要である。\n\n1) 人間中心—各主体は、AI システム・サービスの開発・提供・利用において、後述する各事項を含む全ての取り組むべき事項が導出される土台として、少なくとも憲法が保障する又は国際的に認められた人権を侵すことがないようにすべきである。また、AI が人々の能力を拡張し、多様な人々の多様な幸せ（well-being）の追求が可能となるように行動することが重要である。\n\n2) 安全性—各主体は、AI システム・サービスの開発・提供・利用を通じ、ステークホルダーの生命・身体・財産に危害を及ぼすことがないようにすべきである。加えて、精神及び環境に危害を及ぼすことがないようにすることが重要である。\n\n3) 公平性—各主体は、AI システム・サービスの開発・提供・利用において、特定の個人ないし集団への人種、性別、国籍、年齢、政治的信念、宗教等の多様な背景を理由とした不当で有害な偏見及び差別をなくすよう努めることが重要である。また、各主体は、それでも回避できないバイアスがあることを認識しつつ、この回避できないバイアスが人権及び多様な文化を尊重する観点から許容可能か評価した上で、AI システム・サービスの開発・提供・利用を行うことが重要である。\n\n4) プライバシー保護—各主体は、AI システム・サービスの開発・提供・利用において、その重要性に応じ、プライバシーを尊重し、保護することが重要である。その際、関係法令を遵守すべきである。\n\n5) セキュリティ確保—各主体は、AI システム・サービスの開発・提供・利用において、不正操作によって AI の振る舞いに意図せぬ変更又は停止が生じることのないように、セキュリティを確保することが重要である。\n\n6) 透明性—各主体は、AI システム・サービスの開発・提供・利用において、AI システム・サービスを活用する際の社会的文脈を踏まえ、AI システム・サービスの検証可能性を確保しながら、必要かつ技術的に可能な範囲で、ステークホルダーに対し合理的な範囲で情報を提供することが重要である。\n\n7) アカウンタビリティ—各主体は、AI システム・サービスの開発・提供・利用において、トレーサビリティの確保、「共通の指針」の対応状況等について、ステークホルダーに対して、各主体の役割及び開発・提供・利用する AI システム・サービスのもたらすリスクの程度を踏まえ、合理的な範囲でアカウンタビリティを果たすことが重要である。\n\n8) 教育・リテラシー—各主体は、主体内の AI に関わる者が、AI の正しい理解及び社会的に正しい利用ができる知識・リテラシー・倫理感を持つために、必要な教育を行うことが期待される。また、各主体は、AI の複雑性、誤情報といった特性及び意図的な悪用の可能性もあることを勘案して、ステークホルダーに対しても教育を行うことが期待される。\n\n9) 公正競争確保—各主体は、AI を活用した新たなビジネス・サービスが創出され、持続的な経済成長の維持及び社会課題の解決策の提示がなされるよう、AI をめぐる公正な競争環境の維持に努めることが期待される。\n\n10) イノベーション—各主体は、社会全体のイノベーションの促進に貢献するよう努めることが期待される。",
+    "textAvailability": {"mode": "official-original-excerpt-stored", "stored": true, "language": "ja", "note": "A typographically normalized official Japanese overview extract is stored; consult Part 2, C, pages 14–23 of the linked PDF for the complete guidance and footnotes."},
+    "source": {"url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf", "label": "MIC and METI, Government of Japan", "accessedOn": "2026-07-19"},
     "editorial": {"reviewStatus": "candidate-summary", "reviewedOn": "2026-07-19", "note": "The locator is thematic rather than a statutory Article number."}
   },
   {

@@ -142,7 +142,7 @@ test("sidebar tabs and expandable indexes expose semantic state with local motio
     "the source/concept switch must be a named tablist with observable state",
   );
   for (const [tab, label] of [
-    ["sources", "LEGAL SOURCES"],
+    ["sources", "GLOBAL ATLAS"],
     ["concepts", "CORE CONCEPTS"],
   ]) {
     assert.match(

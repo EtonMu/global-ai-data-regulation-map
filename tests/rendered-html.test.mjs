@@ -207,8 +207,9 @@ test("server renders a neutral global regulatory atlas", async () => {
     new RegExp(`${corpusCounts.relations} qualified links`, "i"),
   );
   assert.match(text, new RegExp(`${concepts.length} core concepts`, "i"));
-  assert.match(text, /PROVISION_READER \/ STANDBY/i);
-  assert.match(text, /Select an instrument node\./i);
+  assert.match(text, /GLOBAL ATLAS · RELATION GRAPH/i);
+  assert.match(text, /Regulation ↔ concept globe/i);
+  assert.match(text, /Drag to rotate\. Focus a node and use arrow keys\./i);
   assert.match(text, /VIEW::\s*ATLAS/i);
   assert.match(text, /Global regulatory atlas open\./i);
   assert.match(text, /ACADEMIC RESEARCH EDITION \/ NOT LEGAL ADVICE/i);
@@ -223,7 +224,7 @@ test("server renders a neutral global regulatory atlas", async () => {
   );
 });
 
-test("server output exposes the semantic atlas controls and idle reader", async () => {
+test("server output exposes semantic atlas controls and the relation globe", async () => {
   const response = await render();
   const html = await response.text();
   const text = normalizedText(html);
@@ -245,7 +246,7 @@ test("server output exposes the semantic atlas controls and idle reader", async 
   );
   assert.match(
     researchIndex,
-    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-sources")(?=[^>]*aria-selected="true")[^>]*>[\s\S]*?LEGAL SOURCES\s*<\/button>/i,
+    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-sources")(?=[^>]*aria-selected="true")[^>]*>[\s\S]*?GLOBAL ATLAS\s*<\/button>/i,
   );
   assert.match(
     researchIndex,
@@ -260,11 +261,37 @@ test("server output exposes the semantic atlas controls and idle reader", async 
     /<div[^>]*class="theme-switch"[^>]*role="group"[^>]*aria-label="Color theme"/i,
   );
   assert.match(html, /<section[^>]*class="workspace"[^>]*aria-label="Regulation visualization"/i);
-  assert.match(html, /<aside[^>]*aria-label="Provision reader"/i);
+  assert.match(
+    html,
+    /<section[^>]*aria-labelledby="regulation-globe-heading"/i,
+    "the initial Atlas must mount the relation globe beside the workspace",
+  );
+  assert.match(
+    html,
+    /<canvas(?=[^>]*role="img")(?=[^>]*aria-label="[^"]*jurisdiction nodes connected to [^"]*core concept nodes[^"]*point-cloud globe\.")[^>]*>/i,
+    "the point-cloud globe must expose an accessible canvas description",
+  );
+  assert.match(
+    html,
+    /<nav[^>]*aria-label="Jurisdictions plotted on the regulation globe"/i,
+  );
+  assert.match(
+    html,
+    /<nav[^>]*aria-label="Core concepts connected on the regulation globe"/i,
+  );
   assert.match(
     html,
     /<button(?=[^>]*class="interface-back-button")(?=[^>]*disabled="")(?=[^>]*aria-label="Return to previous interface")[^>]*>[\s\S]*?BACK\s*<\/button>/i,
     "the initial workspace must expose a disabled in-app Back control",
+  );
+  const currentLocation = html.match(
+    /<div[^>]*class="breadcrumbs"[^>]*aria-label="Current location"[^>]*>[\s\S]*?<\/div>/i,
+  )?.[0];
+  assert.ok(currentLocation, "the workspace must render its current hierarchy");
+  assert.match(
+    currentLocation,
+    /<button(?=[^>]*type="button")(?=[^>]*aria-current="page")[^>]*>[\s\S]*?GLOBAL ATLAS\s*<\/button>/i,
+    "the current breadcrumb leaf must be a native button with aria-current",
   );
   assert.match(html, /aria-live="polite"/i);
   const modeControls = html.match(
@@ -331,8 +358,8 @@ test("server output preserves jurisdiction order, inline flags, issuer marks, an
 
   assert.doesNotMatch(
     html,
-    /[\u{1f1e6}-\u{1f1ff}]|\p{Extended_Pictographic}/u,
-    "navigation marks must use SVGs and readable issuer components, not emoji glyphs",
+    /[\u{1f1e6}-\u{1f1ff}]/u,
+    "navigation flags must use SVGs and readable issuer components, not regional-indicator emoji",
   );
 
   const renderedFlagCodes = new Set(

@@ -1,0 +1,24 @@
+.lineIcon {
+  display: inline-block;
+  flex: 0 0 auto;
+  overflow: visible;
+  color: currentColor;
+  vertical-align: -0.15em;
+}
+
+.themeBadge {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 0.42em;
+  background: var(--concept-icon-solid, var(--cyan));
+  color: var(--concept-icon-solid-ink, var(--void));
+  vertical-align: -0.2em;
+}
+
+.themeGlyph {
+  width: 58%;
+  height: 58%;
+  color: currentColor;
+}

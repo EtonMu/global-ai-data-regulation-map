@@ -102,10 +102,11 @@ Each provision contains:
 - `legalEffectStatus`: provision-level status, which may differ from the parent instrument.
 - `appliesFrom`: provision-specific application date when known.
 - `textAvailability`: text mode, storage flag, language, and an explicit caveat.
+- `paragraphs` and `fullText`: present only when verified source text is stored. `fullText` is the paragraph sequence joined with blank lines. `official-original-text-stored` denotes a complete original-language provision; `official-original-excerpt-stored` denotes an expressly identified extract rather than a complete section.
 - `source`: official provision or instrument source.
 - `editorial`: review status, review date, and a caveat.
 
-The curated file does **not** fabricate full text. It stores editorial summaries unless a separate importer has retrieved verified official text. UI labels should say “Editorial summary” whenever the full text is not stored.
+The curated file does **not** fabricate full text. It stores editorial summaries unless verified official text has been transcribed into the record or a separate importer has retrieved it. Original-language text and English editorial summaries remain separate fields. The Chinese provisions link only to official Chinese government publications; the Japanese APPI provisions link to current e-Gov Japanese text. The Japanese AI Guidelines record stores a clearly labelled overview extract and links directly to the official Version 1.2 Japanese PDF. UI labels should say “Editorial summary” whenever text is not stored, and should distinguish a stored extract from a complete provision.
 
 ## `concepts.json`
 

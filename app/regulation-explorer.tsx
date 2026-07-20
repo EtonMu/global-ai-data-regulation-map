@@ -21,7 +21,6 @@ import {
   BookOpenText,
   BrainCircuit,
   ChevronRight,
-  ClipboardCheck,
   Clock3,
   Columns2,
   Database,
@@ -33,13 +32,11 @@ import {
   Info,
   Landmark,
   Link2,
-  LockKeyhole,
   Map as MapIcon,
   Moon,
   Network,
   Scale,
   Search,
-  ShieldCheck,
   Sparkles,
   Sun,
   type LucideIcon,
@@ -54,7 +51,9 @@ import statusEventsJson from "@/data/v2/status-events.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
+import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import { JurisdictionMark } from "./jurisdiction-mark";
+import { RegulationGlobe } from "./regulation-globe";
 
 type Source = {
   url: string;
@@ -128,6 +127,8 @@ type SeedProvision = {
   textAvailability: TextAvailability;
   source: Source;
   editorial: Editorial;
+  paragraphs?: string[];
+  fullText?: string;
 };
 
 type ArticleRecord = {
@@ -814,20 +815,49 @@ relations.forEach((relation) => {
   });
 });
 
-const conceptThemeIcons: Record<string, LucideIcon> = {
-  "privacy-principles": ShieldCheck,
-  "rights-and-fairness": Scale,
-  "data-lifecycle": Database,
-  "governance-and-assurance": ClipboardCheck,
-  "security-and-resilience": LockKeyhole,
-  "ai-safety-and-oversight": BrainCircuit,
-  "international-coordination": Globe2,
-};
+const globeJurisdictions = atlasGroups.map((group) => ({
+  id: group.id === "frameworks" ? "int" : group.id,
+  label:
+    group.id === "frameworks"
+      ? "International / Frameworks"
+      : group.label,
+  instrumentIds: group.instruments.map((instrument) => instrument.id),
+  primaryInstrumentId:
+    group.instruments.find(
+      (instrument) =>
+        (provisionsByInstrument.get(instrument.id)?.length ?? 0) > 0,
+    )?.id ?? group.instruments[0]?.id,
+}));
 
-function ConceptThemeIcon({ themeId }: { themeId: string }) {
-  const Icon = conceptThemeIcons[themeId] ?? Database;
-  return <Icon aria-hidden="true" />;
-}
+const globeThemeRepresentatives = conceptThemes.flatMap((theme) => {
+  const ranked = [...(conceptsByTheme.get(theme.id) ?? [])].sort((left, right) => {
+    const evidenceDelta =
+      (conceptEvidenceById.get(right.id)?.instrumentIds.size ?? 0) -
+      (conceptEvidenceById.get(left.id)?.instrumentIds.size ?? 0);
+    return evidenceDelta || left.label.localeCompare(right.label);
+  });
+  return ranked.slice(0, 1);
+});
+const globeRepresentativeIds = new Set(
+  globeThemeRepresentatives.map((concept) => concept.id),
+);
+const globeConcepts = [
+  ...globeThemeRepresentatives,
+  ...concepts
+    .filter((concept) => !globeRepresentativeIds.has(concept.id))
+    .sort((left, right) => {
+      const evidenceDelta =
+        (conceptEvidenceById.get(right.id)?.instrumentIds.size ?? 0) -
+        (conceptEvidenceById.get(left.id)?.instrumentIds.size ?? 0);
+      return evidenceDelta || left.label.localeCompare(right.label);
+    }),
+].map((concept) => ({
+  id: concept.id,
+  label: concept.label,
+  instrumentIds: Array.from(
+    conceptEvidenceById.get(concept.id)?.instrumentIds ?? [],
+  ),
+}));
 
 function safeDomId(value: string) {
   return value.replace(/[^a-zA-Z0-9_-]/g, "-");
@@ -1274,8 +1304,8 @@ function CorpusNavigator({
           onClick={() => onSetNavigatorTab("sources")}
           onKeyDown={(event) => handleNavigatorTabKeyDown(event, "sources")}
         >
-          <BookOpenText aria-hidden="true" />
-          LEGAL SOURCES
+          <MapIcon aria-hidden="true" />
+          GLOBAL ATLAS
         </button>
         <button
           type="button"
@@ -1463,7 +1493,7 @@ function CorpusNavigator({
                   onClick={() => onOpenConcept(concept.id)}
                 >
                   <span className="concept-tree-title">
-                    <ConceptThemeIcon themeId={concept.theme} />
+                    <ConceptIcon conceptId={concept.id} />
                     {concept.label}
                   </span>
                   <small>{concept.description}</small>
@@ -1509,7 +1539,10 @@ function CorpusNavigator({
                         aria-pressed={concept.id === selectedConceptId}
                         onClick={() => onOpenConcept(concept.id)}
                       >
-                        <span>{concept.label}</span>
+                        <span className="concept-tree-title">
+                          <ConceptIcon conceptId={concept.id} />
+                          {concept.label}
+                        </span>
                         <small>{concept.description}</small>
                       </button>
                     ))}
@@ -1699,7 +1732,7 @@ function CoreConceptExplorer({
                       onClick={() => onOpenConcept(concept.id)}
                     >
                       <span className="concept-node-heading">
-                        <ConceptThemeIcon themeId={concept.theme} />
+                        <ConceptIcon conceptId={concept.id} />
                         <strong>{concept.label}</strong>
                       </span>
                       <span>{concept.description}</span>
@@ -1750,7 +1783,7 @@ function CoreConceptExplorer({
       <div className="concept-masthead">
         <div>
           <p className="terminal-label">
-            <ConceptThemeIcon themeId={selectedConcept.theme} />
+            <ConceptIcon conceptId={selectedConcept.id} />
             CORE_CONCEPT / {theme?.label ?? humanize(selectedConcept.theme)}
           </p>
           <h1 id="concept-title">{selectedConcept.label}</h1>
@@ -2564,6 +2597,7 @@ function ProvisionReader({
   onSelectRelation,
   onOpenProvision,
   onOpenInstrument,
+  onOpenConcept,
   onAddCompare,
 }: {
   instrument?: Instrument;
@@ -2576,6 +2610,7 @@ function ProvisionReader({
   onSelectRelation: (relationId: string) => void;
   onOpenProvision: (provision: Provision, relationId?: string) => void;
   onOpenInstrument: (instrumentId: string) => void;
+  onOpenConcept: (conceptId: string) => void;
   onAddCompare: (provisionId: string) => void;
 }) {
   const readerRef = useRef<HTMLElement>(null);
@@ -2667,6 +2702,15 @@ function ProvisionReader({
   const activeStructureSummary = activeStructureId
     ? structureSummaryByKey.get(activeInstrument.id + "::" + activeStructureId)
     : undefined;
+  const availableParagraphs = provision!.paragraphs?.length
+    ? provision!.paragraphs
+    : provision!.fullText?.trim()
+      ? [provision!.fullText.trim()]
+      : [];
+  const isOriginalLanguage = !/^en(?:-|$)/i.test(
+    provision!.textAvailability.language,
+  );
+  const isStoredExcerpt = provision!.textAvailability.mode.includes("excerpt");
   const readerTabs: ReaderTab[] = ["text", "analysis", "sources"];
   const readerTabIcons: Record<ReaderTab, LucideIcon> = {
     text: BookOpenText,
@@ -2757,6 +2801,8 @@ function ProvisionReader({
           className="reader-document"
           role="tabpanel"
           aria-labelledby="reader-tab-text"
+          lang={provision!.textAvailability.language}
+          data-text-language={provision!.textAvailability.language}
         >
           {activeStructureSummary && (
             <div className="reader-section-overview">
@@ -2771,14 +2817,20 @@ function ProvisionReader({
           <div className="document-provenance">
             <span>
               <FileText aria-hidden="true" />
-              {provision!.paragraphs?.length
-                ? "OFFICIAL TEXT"
+              {availableParagraphs.length
+                ? isStoredExcerpt
+                  ? isOriginalLanguage
+                    ? "OFFICIAL ORIGINAL EXCERPT"
+                    : "OFFICIAL EXCERPT"
+                  : isOriginalLanguage
+                    ? "OFFICIAL ORIGINAL TEXT"
+                    : "OFFICIAL TEXT"
                 : "EDITORIAL SUMMARY"}
             </span>
             <span>{provision!.source.label}</span>
           </div>
-          {provision!.paragraphs?.length ? (
-            provision!.paragraphs!.map((paragraph, index) => (
+          {availableParagraphs.length ? (
+            availableParagraphs.map((paragraph, index) => (
               <p key={index} id={provision!.id + "-p-" + (index + 1)}>
                 {paragraph}
               </p>
@@ -2804,9 +2856,14 @@ function ProvisionReader({
         >
           <div className="concept-list">
             {provision!.conceptIds.map((conceptId) => (
-              <span key={conceptId}>
+              <button
+                type="button"
+                key={conceptId}
+                onClick={() => onOpenConcept(conceptId)}
+              >
+                <ConceptIcon conceptId={conceptId} />
                 {conceptById.get(conceptId)?.label ?? conceptId}
-              </span>
+              </button>
             ))}
           </div>
           {relationsForProvision.length ? (
@@ -3169,6 +3226,16 @@ export default function RegulationExplorer() {
     dispatch({ type: "SET_NAVIGATOR_TAB", tab: nextTab });
   }
 
+  function openConceptIndex() {
+    if (state.navigatorTab === "concepts" && !state.selectedConceptId) return;
+    rememberCurrentInterface();
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "SET_NAVIGATOR_TAB", tab: "concepts" }),
+      { nextView: "atlas", direction: "backward" },
+    );
+  }
+
   function openConcept(conceptId: string) {
     if (
       state.navigatorTab === "concepts" &&
@@ -3198,6 +3265,21 @@ export default function RegulationExplorer() {
       () => dispatch({ type: "OPEN_ATLAS" }),
       { nextView: "atlas", direction: "backward" },
     );
+  }
+
+  function openAtlasGroup(groupId: string) {
+    openAtlas();
+    window.setTimeout(() => {
+      const lane = workspaceRef.current?.querySelector<HTMLElement>(
+        '[data-atlas-group="' + groupId + '"]',
+      );
+      lane?.scrollIntoView({
+        block: "start",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    }, 420);
   }
 
   function openInstrument(instrumentId: string) {
@@ -3365,20 +3447,75 @@ export default function RegulationExplorer() {
       ? relationById.get(state.selectedRelationId)
       : undefined) ?? selectedRelations[0];
 
-  const breadcrumb = useMemo(() => {
-    if (selectedConcept) return ["CORE CONCEPTS", selectedConcept.label];
-    if (state.navigatorTab === "concepts") return ["CORE CONCEPTS"];
-    if (!selectedInstrument) return ["GLOBAL ATLAS"];
+  const breadcrumb = useMemo<Array<{
+    key: string;
+    label: string;
+    destination?:
+      | { type: "atlas"; groupId?: string }
+      | { type: "concept-index" }
+      | { type: "instrument"; instrumentId: string };
+  }>>(() => {
+    if (selectedConcept) {
+      return [
+        {
+          key: "concept-index",
+          label: "CORE CONCEPTS",
+          destination: { type: "concept-index" },
+        },
+        { key: selectedConcept.id, label: selectedConcept.label },
+      ];
+    }
+    if (state.navigatorTab === "concepts") {
+      return [{ key: "concept-index", label: "CORE CONCEPTS" }];
+    }
+    if (!selectedInstrument) {
+      return [{ key: "global-atlas", label: "GLOBAL ATLAS" }];
+    }
     const jurisdiction = jurisdictionById.get(
       selectedInstrument.jurisdictionId,
     );
-    const parts = [
-      jurisdiction?.shortName ?? selectedInstrument.jurisdictionId,
-      selectedInstrument.shortTitle,
+    const atlasGroupId = atlasGroups.find((group) =>
+      group.instruments.some((instrument) => instrument.id === selectedInstrument.id),
+    )?.id;
+    const parts: Array<{
+      key: string;
+      label: string;
+      destination?:
+        | { type: "atlas"; groupId?: string }
+        | { type: "instrument"; instrumentId: string };
+    }> = [
+      {
+        key: "jurisdiction-" + (atlasGroupId ?? selectedInstrument.jurisdictionId),
+        label: jurisdiction?.shortName ?? selectedInstrument.jurisdictionId,
+        destination: { type: "atlas", groupId: atlasGroupId },
+      },
+      {
+        key: selectedInstrument.id,
+        label: selectedInstrument.shortTitle,
+        destination: selectedProvision
+          ? { type: "instrument", instrumentId: selectedInstrument.id }
+          : undefined,
+      },
     ];
-    if (selectedProvision) parts.push(selectedProvision.locator);
+    if (selectedProvision) {
+      parts.push({ key: selectedProvision.id, label: selectedProvision.locator });
+    }
     return parts;
   }, [selectedConcept, selectedInstrument, selectedProvision, state.navigatorTab]);
+
+  function followBreadcrumb(
+    destination: NonNullable<(typeof breadcrumb)[number]["destination"]>,
+  ) {
+    if (destination.type === "concept-index") {
+      openConceptIndex();
+    } else if (destination.type === "instrument") {
+      openInstrument(destination.instrumentId);
+    } else if (destination.groupId) {
+      openAtlasGroup(destination.groupId);
+    } else {
+      openAtlas();
+    }
+  }
 
   function openProvision(provision: Provision, relationId?: string) {
     if (
@@ -3411,6 +3548,7 @@ export default function RegulationExplorer() {
   } as CSSProperties;
   const readerPanel =
     state.navigatorTab === "sources" &&
+    state.view !== "atlas" &&
     state.view !== "compare" &&
     state.view !== "timeline" ? (
       <ProvisionReader
@@ -3426,9 +3564,21 @@ export default function RegulationExplorer() {
         }
         onOpenProvision={openProvision}
         onOpenInstrument={openInstrument}
+        onOpenConcept={openConcept}
         onAddCompare={(provisionId) =>
           dispatch({ type: "ADD_COMPARE", provisionId })
         }
+      />
+    ) : null;
+  const atlasGlobePanel =
+    state.navigatorTab === "sources" && state.view === "atlas" ? (
+      <RegulationGlobe
+        className="atlas-globe-panel"
+        jurisdictions={globeJurisdictions}
+        concepts={globeConcepts}
+        maxConceptNodes={7}
+        onOpenInstrument={openInstrument}
+        onOpenConcept={openConcept}
       />
     ) : null;
 
@@ -3572,9 +3722,18 @@ export default function RegulationExplorer() {
               </button>
               <div className="breadcrumbs" aria-label="Current location">
                 {breadcrumb.map((part, index) => (
-                  <span key={part + index}>
+                  <span key={part.key}>
                     {index > 0 && <i>/</i>}
-                    {part}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        part.destination && followBreadcrumb(part.destination)
+                      }
+                      aria-current={part.destination ? undefined : "page"}
+                      disabled={!part.destination}
+                    >
+                      {part.label}
+                    </button>
                   </span>
                 ))}
               </div>
@@ -3631,7 +3790,11 @@ export default function RegulationExplorer() {
           )}
         </section>
 
-        {state.navigatorTab === "sources" && state.view !== "connections" && readerPanel}
+        {atlasGlobePanel}
+        {state.navigatorTab === "sources" &&
+          state.view !== "connections" &&
+          state.view !== "atlas" &&
+          readerPanel}
       </div>
 
       {state.navigatorTab === "sources" && (

@@ -398,6 +398,23 @@ for (const provision of provisions) {
     provision.textAvailability,
     `${provision.id}.textAvailability`,
   );
+  if (provision.textAvailability.stored) {
+    assertStringArray(provision.paragraphs, `${provision.id}.paragraphs`);
+    assertString(provision.fullText, `${provision.id}.fullText`, 20);
+    assert(
+      provision.fullText === provision.paragraphs.join("\n\n"),
+      `${provision.id}.fullText does not match its paragraph sequence`,
+    );
+    assert(
+      provision.textAvailability.mode.includes("stored"),
+      `${provision.id}.textAvailability.mode must identify stored text`,
+    );
+  } else {
+    assert(
+      provision.paragraphs === undefined && provision.fullText === undefined,
+      `${provision.id} cannot expose text while textAvailability.stored is false`,
+    );
+  }
   assertSource(provision.source, `${provision.id}.source`, {
     requireAccessedOn: true,
   });
