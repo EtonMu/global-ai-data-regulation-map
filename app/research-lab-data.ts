@@ -549,6 +549,122 @@ export type ResearchOperationalizationPaths = {
   paths: ResearchOperationalPath[];
 };
 
+export type ResearchArchetypeMerge = {
+  id: string;
+  leftId: string;
+  rightId: string;
+  height: number;
+  memberInstrumentIds: string[];
+};
+
+export type ResearchArchetypeConceptDifference = {
+  conceptId: string;
+  clusterMean: number;
+  corpusMean: number;
+  difference: number;
+};
+
+export type ResearchArchetypeCluster = {
+  id: string;
+  memberInstrumentIds: string[];
+  medoidInstrumentId: string;
+  boundaryInstrumentIds: string[];
+  jurisdictionCount: number;
+  meanWithinDistance: number;
+  maximumWithinDistance: number;
+  centroidWeights: Array<{ conceptId: string; weight: number }>;
+  differentiatingConcepts: ResearchArchetypeConceptDifference[];
+  legalForceComposition: Array<{ value: string; count: number }>;
+  lifecycleComposition: Array<{ value: string; count: number }>;
+};
+
+export type ResearchArchetypePartition = {
+  clusterCount: number;
+  cutHeight: number;
+  meanSilhouette: number | null;
+  silhouetteInstrumentCount: number;
+  clusters: ResearchArchetypeCluster[];
+};
+
+export type ResearchArchetypeSensitivity = {
+  instrumentId: string;
+  tfidfNeighborId: string;
+  tfidfNeighborDistance: number;
+  prevalenceNeighborId: string;
+  prevalenceNeighborDistance: number;
+  sameNearestNeighbor: boolean;
+};
+
+export type ResearchInstrumentArchetypes = {
+  featureConceptIds: string[];
+  fitInstrumentIds: string[];
+  excludedInstrumentIds: string[];
+  rootId: string | null;
+  leafOrder: string[];
+  maximumMergeHeight: number;
+  merges: ResearchArchetypeMerge[];
+  partitions: ResearchArchetypePartition[];
+  sensitivity: ResearchArchetypeSensitivity[];
+  sameNeighborCount: number;
+};
+
+export type ResearchMappingEndpointCoverage =
+  | "complete-complete"
+  | "complete-selected"
+  | "selected-selected"
+  | "includes-unclassified"
+  | "unresolved";
+
+export type ResearchMappingAuditRecord = {
+  relationId: string;
+  status: string;
+  relationClass: string;
+  type: string;
+  directionality: string;
+  confidence: string;
+  conceptIds: string[];
+  sourceInstrumentId: string | null;
+  targetInstrumentId: string | null;
+  sourceCoverageClass: ResearchCoverageClass | null;
+  targetCoverageClass: ResearchCoverageClass | null;
+  endpointCoverage: ResearchMappingEndpointCoverage;
+  sourceLegalForce: string | null;
+  targetLegalForce: string | null;
+  sourceLifecycleStatus: string | null;
+  targetLifecycleStatus: string | null;
+  crossJurisdiction: boolean | null;
+  sourceSupportCount: number;
+  hasEvidenceBasis: boolean;
+  hasRationale: boolean;
+  hasLimits: boolean;
+  hasVerifiedOn: boolean;
+  verifiedOn: string;
+};
+
+export type ResearchMappingAuditConcept = {
+  conceptId: string;
+  reviewedRelationCount: number;
+  candidateRelationCount: number;
+  totalRelationCount: number;
+};
+
+export type ResearchMappingEvidenceAudit = {
+  relationCount: number;
+  reviewedRelationCount: number;
+  candidateRelationCount: number;
+  analyticalRelationCount: number;
+  lifecycleRelationCount: number;
+  crossJurisdictionRelationCount: number;
+  unresolvedEndpointCount: number;
+  records: ResearchMappingAuditRecord[];
+  concepts: ResearchMappingAuditConcept[];
+  relationTypes: Array<{ value: string; count: number }>;
+  endpointCoverage: Array<{
+    value: ResearchMappingEndpointCoverage;
+    count: number;
+  }>;
+};
+
 export type ResearchLabData = {
   snapshotDate: string;
   methodology: {
@@ -561,6 +677,8 @@ export type ResearchLabData = {
     translationIntegrityDefinition: string;
     bridgeDefinition: string;
     operationalPathDefinition: string;
+    archetypeDefinition: string;
+    relationAuditDefinition: string;
   };
   coverage: ResearchCoverageObservatory;
   instruments: ResearchInstrumentDatum[];
@@ -575,6 +693,8 @@ export type ResearchLabData = {
   relations: ResearchRelationDatum[];
   bridgeAtlas: ResearchBridgeAtlas;
   operationalizationPaths: ResearchOperationalizationPaths;
+  instrumentArchetypes: ResearchInstrumentArchetypes;
+  mappingEvidenceAudit: ResearchMappingEvidenceAudit;
 };
 
 const DEFAULT_COVERAGE_CLASSES: ResearchCoverageClass[] = ["complete"];
@@ -2077,6 +2197,628 @@ export function deriveOperationalizationPaths(
   };
 }
 
+type ArchetypeVector = {
+  instrumentId: string;
+  tfidf: number[];
+  prevalence: number[];
+};
+
+type ArchetypeWorkingCluster = {
+  id: string;
+  memberInstrumentIds: string[];
+};
+
+function normalizeVector(values: readonly number[]): number[] {
+  const magnitude = Math.sqrt(
+    values.reduce((sum, value) => sum + value * value, 0),
+  );
+  return magnitude ? values.map((value) => value / magnitude) : values.map(() => 0);
+}
+
+export function cosineDistance(
+  left: readonly number[],
+  right: readonly number[],
+): number {
+  if (left.length !== right.length || left.length === 0) return 1;
+  const leftMagnitude = Math.sqrt(
+    left.reduce((sum, value) => sum + value * value, 0),
+  );
+  const rightMagnitude = Math.sqrt(
+    right.reduce((sum, value) => sum + value * value, 0),
+  );
+  if (!leftMagnitude || !rightMagnitude) return 1;
+  const dot = left.reduce(
+    (sum, value, index) => sum + value * (right[index] ?? 0),
+    0,
+  );
+  return Math.max(0, Math.min(1, 1 - dot / (leftMagnitude * rightMagnitude)));
+}
+
+function archetypePairKey(left: string, right: string): string {
+  return [left, right].sort().join("::");
+}
+
+function countComposition(
+  values: readonly string[],
+): Array<{ value: string; count: number }> {
+  const counts = new Map<string, number>();
+  values.forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1));
+  return Array.from(counts, ([value, count]) => ({ value, count })).sort(
+    (left, right) =>
+      right.count - left.count || left.value.localeCompare(right.value),
+  );
+}
+
+export function deriveInstrumentArchetypes(
+  fingerprints: readonly ResearchInstrumentFingerprint[],
+  instruments: readonly ResearchInstrumentInput[],
+  concepts: readonly ResearchConceptInput[],
+): ResearchInstrumentArchetypes {
+  const featureConceptIds = concepts.map((concept) => concept.id).sort();
+  const fingerprintById = new Map(
+    fingerprints.map((fingerprint) => [fingerprint.instrumentId, fingerprint]),
+  );
+  const instrumentById = new Map(
+    instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const vectors: ArchetypeVector[] = instruments
+    .map((instrument) => {
+      const fingerprint = fingerprintById.get(instrument.id);
+      if (!fingerprint?.includedInDefaultAnalysis) return null;
+      const weightByConcept = new Map(
+        fingerprint.weights.map((weight) => [weight.conceptId, weight]),
+      );
+      const tfidf = normalizeVector(
+        featureConceptIds.map(
+          (conceptId) => weightByConcept.get(conceptId)?.normalizedTfidf ?? 0,
+        ),
+      );
+      const prevalence = normalizeVector(
+        featureConceptIds.map(
+          (conceptId) => weightByConcept.get(conceptId)?.prevalence ?? 0,
+        ),
+      );
+      if (!tfidf.some((value) => value > 0)) return null;
+      return { instrumentId: instrument.id, tfidf, prevalence };
+    })
+    .filter((vector): vector is ArchetypeVector => Boolean(vector))
+    .sort((left, right) => left.instrumentId.localeCompare(right.instrumentId));
+  const vectorById = new Map(
+    vectors.map((vector) => [vector.instrumentId, vector]),
+  );
+  const fitInstrumentIds = vectors.map((vector) => vector.instrumentId);
+  const fitInstrumentIdSet = new Set(fitInstrumentIds);
+  const excludedInstrumentIds = instruments
+    .map((instrument) => instrument.id)
+    .filter((instrumentId) => !fitInstrumentIdSet.has(instrumentId))
+    .sort();
+  const pairDistances = new Map<string, number>();
+  for (let left = 0; left < vectors.length; left += 1) {
+    for (let right = left + 1; right < vectors.length; right += 1) {
+      pairDistances.set(
+        archetypePairKey(vectors[left].instrumentId, vectors[right].instrumentId),
+        cosineDistance(vectors[left].tfidf, vectors[right].tfidf),
+      );
+    }
+  }
+
+  function distanceBetweenInstruments(leftId: string, rightId: string): number {
+    if (leftId === rightId) return 0;
+    return pairDistances.get(archetypePairKey(leftId, rightId)) ?? 1;
+  }
+
+  function averageLinkageDistance(
+    left: ArchetypeWorkingCluster,
+    right: ArchetypeWorkingCluster,
+  ): number {
+    let sum = 0;
+    let pairCount = 0;
+    left.memberInstrumentIds.forEach((leftId) => {
+      right.memberInstrumentIds.forEach((rightId) => {
+        sum += distanceBetweenInstruments(leftId, rightId);
+        pairCount += 1;
+      });
+    });
+    return pairCount ? sum / pairCount : 1;
+  }
+
+  let activeClusters: ArchetypeWorkingCluster[] = fitInstrumentIds.map(
+    (instrumentId) => ({
+      id: `instrument:${instrumentId}`,
+      memberInstrumentIds: [instrumentId],
+    }),
+  );
+  const merges: ResearchArchetypeMerge[] = [];
+  while (activeClusters.length > 1) {
+    let selected:
+      | {
+          leftIndex: number;
+          rightIndex: number;
+          distance: number;
+          tieKey: string;
+        }
+      | undefined;
+    for (let leftIndex = 0; leftIndex < activeClusters.length; leftIndex += 1) {
+      for (
+        let rightIndex = leftIndex + 1;
+        rightIndex < activeClusters.length;
+        rightIndex += 1
+      ) {
+        const left = activeClusters[leftIndex];
+        const right = activeClusters[rightIndex];
+        const distance = averageLinkageDistance(left, right);
+        const tieKey = archetypePairKey(
+          left.memberInstrumentIds.join("|"),
+          right.memberInstrumentIds.join("|"),
+        );
+        if (
+          !selected ||
+          distance < selected.distance - 1e-12 ||
+          (Math.abs(distance - selected.distance) <= 1e-12 &&
+            tieKey.localeCompare(selected.tieKey) < 0)
+        ) {
+          selected = { leftIndex, rightIndex, distance, tieKey };
+        }
+      }
+    }
+    if (!selected) break;
+    const candidates = [
+      activeClusters[selected.leftIndex],
+      activeClusters[selected.rightIndex],
+    ].sort((left, right) =>
+      left.memberInstrumentIds.join("|").localeCompare(
+        right.memberInstrumentIds.join("|"),
+      ),
+    );
+    const id = `archetype-merge-${String(merges.length + 1).padStart(2, "0")}`;
+    const memberInstrumentIds = Array.from(
+      new Set(candidates.flatMap((cluster) => cluster.memberInstrumentIds)),
+    ).sort();
+    merges.push({
+      id,
+      leftId: candidates[0].id,
+      rightId: candidates[1].id,
+      height: round(selected.distance),
+      memberInstrumentIds,
+    });
+    activeClusters = activeClusters.filter(
+      (_, index) =>
+        index !== selected.leftIndex && index !== selected.rightIndex,
+    );
+    activeClusters.push({ id, memberInstrumentIds });
+    activeClusters.sort((left, right) =>
+      left.memberInstrumentIds.join("|").localeCompare(
+        right.memberInstrumentIds.join("|"),
+      ),
+    );
+  }
+  const rootId = activeClusters[0]?.id ?? null;
+  const mergeById = new Map(merges.map((merge) => [merge.id, merge]));
+  const leafOrder: string[] = [];
+  function visitDendrogram(nodeId: string) {
+    if (nodeId.startsWith("instrument:")) {
+      leafOrder.push(nodeId.slice("instrument:".length));
+      return;
+    }
+    const merge = mergeById.get(nodeId);
+    if (!merge) return;
+    visitDendrogram(merge.leftId);
+    visitDendrogram(merge.rightId);
+  }
+  if (rootId) visitDendrogram(rootId);
+
+  const corpusMean = featureConceptIds.map((_, conceptIndex) =>
+    vectors.length
+      ? vectors.reduce((sum, vector) => sum + vector.tfidf[conceptIndex], 0) /
+        vectors.length
+      : 0,
+  );
+
+  function meanPairDistance(memberInstrumentIds: readonly string[]): number {
+    let sum = 0;
+    let count = 0;
+    for (let left = 0; left < memberInstrumentIds.length; left += 1) {
+      for (let right = left + 1; right < memberInstrumentIds.length; right += 1) {
+        sum += distanceBetweenInstruments(
+          memberInstrumentIds[left],
+          memberInstrumentIds[right],
+        );
+        count += 1;
+      }
+    }
+    return count ? sum / count : 0;
+  }
+
+  function clusterRecord(
+    id: string,
+    memberInstrumentIds: string[],
+  ): ResearchArchetypeCluster {
+    const centroid = featureConceptIds.map((_, conceptIndex) =>
+      memberInstrumentIds.length
+        ? memberInstrumentIds.reduce(
+            (sum, instrumentId) =>
+              sum + (vectorById.get(instrumentId)?.tfidf[conceptIndex] ?? 0),
+            0,
+          ) / memberInstrumentIds.length
+        : 0,
+    );
+    const memberMeanDistances = memberInstrumentIds
+      .map((instrumentId) => ({
+        instrumentId,
+        meanDistance:
+          memberInstrumentIds.length > 1
+            ? memberInstrumentIds
+                .filter((otherId) => otherId !== instrumentId)
+                .reduce(
+                  (sum, otherId) =>
+                    sum + distanceBetweenInstruments(instrumentId, otherId),
+                  0,
+                ) /
+              (memberInstrumentIds.length - 1)
+            : 0,
+      }))
+      .sort(
+        (left, right) =>
+          left.meanDistance - right.meanDistance ||
+          left.instrumentId.localeCompare(right.instrumentId),
+      );
+    let maximumWithinDistance = 0;
+    for (let left = 0; left < memberInstrumentIds.length; left += 1) {
+      for (let right = left + 1; right < memberInstrumentIds.length; right += 1) {
+        maximumWithinDistance = Math.max(
+          maximumWithinDistance,
+          distanceBetweenInstruments(
+            memberInstrumentIds[left],
+            memberInstrumentIds[right],
+          ),
+        );
+      }
+    }
+    const memberInstruments = memberInstrumentIds
+      .map((instrumentId) => instrumentById.get(instrumentId))
+      .filter((instrument): instrument is ResearchInstrumentInput =>
+        Boolean(instrument),
+      );
+    const differentiatingConcepts = featureConceptIds
+      .map((conceptId, conceptIndex) => ({
+        conceptId,
+        clusterMean: round(centroid[conceptIndex]),
+        corpusMean: round(corpusMean[conceptIndex]),
+        difference: round(centroid[conceptIndex] - corpusMean[conceptIndex]),
+      }))
+      .sort(
+        (left, right) =>
+          Math.abs(right.difference) - Math.abs(left.difference) ||
+          left.conceptId.localeCompare(right.conceptId),
+      );
+    return {
+      id,
+      memberInstrumentIds: [...memberInstrumentIds],
+      medoidInstrumentId: memberMeanDistances[0]?.instrumentId ?? "",
+      boundaryInstrumentIds: memberMeanDistances
+        .slice()
+        .reverse()
+        .slice(0, Math.min(2, memberInstrumentIds.length))
+        .map((item) => item.instrumentId),
+      jurisdictionCount: new Set(
+        memberInstruments.map((instrument) => instrument.jurisdictionId),
+      ).size,
+      meanWithinDistance: round(meanPairDistance(memberInstrumentIds)),
+      maximumWithinDistance: round(maximumWithinDistance),
+      centroidWeights: featureConceptIds.map((conceptId, conceptIndex) => ({
+        conceptId,
+        weight: round(centroid[conceptIndex]),
+      })),
+      differentiatingConcepts,
+      legalForceComposition: countComposition(
+        memberInstruments.map((instrument) => instrument.legalForce),
+      ),
+      lifecycleComposition: countComposition(
+        memberInstruments.map((instrument) => instrument.lifecycleStatus),
+      ),
+    };
+  }
+
+  function silhouetteFor(
+    clusters: readonly ResearchArchetypeCluster[],
+  ): { mean: number | null; count: number } {
+    const values: number[] = [];
+    clusters.forEach((cluster) => {
+      if (cluster.memberInstrumentIds.length < 2) return;
+      cluster.memberInstrumentIds.forEach((instrumentId) => {
+        const within =
+          cluster.memberInstrumentIds
+            .filter((otherId) => otherId !== instrumentId)
+            .reduce(
+              (sum, otherId) =>
+                sum + distanceBetweenInstruments(instrumentId, otherId),
+              0,
+            ) /
+          (cluster.memberInstrumentIds.length - 1);
+        const nearestOther = Math.min(
+          ...clusters
+            .filter((other) => other.id !== cluster.id)
+            .map(
+              (other) =>
+                other.memberInstrumentIds.reduce(
+                  (sum, otherId) =>
+                    sum + distanceBetweenInstruments(instrumentId, otherId),
+                  0,
+                ) / other.memberInstrumentIds.length,
+            ),
+        );
+        const denominator = Math.max(within, nearestOther);
+        if (Number.isFinite(nearestOther) && denominator > 0) {
+          values.push((nearestOther - within) / denominator);
+        }
+      });
+    });
+    return {
+      mean: values.length
+        ? round(values.reduce((sum, value) => sum + value, 0) / values.length)
+        : null,
+      count: values.length,
+    };
+  }
+
+  const minimumClusterCount = vectors.length > 1 ? 2 : vectors.length;
+  const maximumClusterCount = Math.min(8, vectors.length);
+  const partitions: ResearchArchetypePartition[] = [];
+  for (
+    let clusterCount = minimumClusterCount;
+    clusterCount <= maximumClusterCount;
+    clusterCount += 1
+  ) {
+    const active = new Map<string, string[]>(
+      fitInstrumentIds.map((instrumentId) => [
+        `instrument:${instrumentId}`,
+        [instrumentId],
+      ]),
+    );
+    const appliedMergeCount = Math.max(0, vectors.length - clusterCount);
+    merges.slice(0, appliedMergeCount).forEach((merge) => {
+      active.delete(merge.leftId);
+      active.delete(merge.rightId);
+      active.set(merge.id, [...merge.memberInstrumentIds]);
+    });
+    const clusterMembers = Array.from(active.values()).sort((left, right) =>
+      left.join("|").localeCompare(right.join("|")),
+    );
+    const clusters = clusterMembers.map((memberInstrumentIds, index) =>
+      clusterRecord(`A${index + 1}`, memberInstrumentIds),
+    );
+    const includedHeight =
+      appliedMergeCount > 0 ? merges[appliedMergeCount - 1]?.height ?? 0 : 0;
+    const excludedHeight =
+      merges[appliedMergeCount]?.height ??
+      merges.at(-1)?.height ??
+      includedHeight;
+    const silhouette = silhouetteFor(clusters);
+    partitions.push({
+      clusterCount,
+      cutHeight: round((includedHeight + excludedHeight) / 2),
+      meanSilhouette: silhouette.mean,
+      silhouetteInstrumentCount: silhouette.count,
+      clusters,
+    });
+  }
+
+  function nearestNeighbor(
+    instrumentId: string,
+    feature: "tfidf" | "prevalence",
+  ): { instrumentId: string; distance: number } | null {
+    const source = vectorById.get(instrumentId);
+    if (!source) return null;
+    return vectors
+      .filter((candidate) => candidate.instrumentId !== instrumentId)
+      .map((candidate) => ({
+        instrumentId: candidate.instrumentId,
+        distance: cosineDistance(source[feature], candidate[feature]),
+      }))
+      .sort(
+        (left, right) =>
+          left.distance - right.distance ||
+          left.instrumentId.localeCompare(right.instrumentId),
+      )[0] ?? null;
+  }
+  const sensitivity = fitInstrumentIds.flatMap((instrumentId) => {
+    const tfidf = nearestNeighbor(instrumentId, "tfidf");
+    const prevalence = nearestNeighbor(instrumentId, "prevalence");
+    if (!tfidf || !prevalence) return [];
+    return [
+      {
+        instrumentId,
+        tfidfNeighborId: tfidf.instrumentId,
+        tfidfNeighborDistance: round(tfidf.distance),
+        prevalenceNeighborId: prevalence.instrumentId,
+        prevalenceNeighborDistance: round(prevalence.distance),
+        sameNearestNeighbor: tfidf.instrumentId === prevalence.instrumentId,
+      },
+    ];
+  });
+
+  return {
+    featureConceptIds,
+    fitInstrumentIds,
+    excludedInstrumentIds,
+    rootId,
+    leafOrder,
+    maximumMergeHeight: round(merges.at(-1)?.height ?? 0),
+    merges,
+    partitions,
+    sensitivity,
+    sameNeighborCount: sensitivity.filter((item) => item.sameNearestNeighbor)
+      .length,
+  };
+}
+
+function mappingEndpointCoverage(
+  source: ResearchCoverageClass | null,
+  target: ResearchCoverageClass | null,
+): ResearchMappingEndpointCoverage {
+  if (!source || !target) return "unresolved";
+  if (source === "unclassified" || target === "unclassified") {
+    return "includes-unclassified";
+  }
+  if (source === "complete" && target === "complete") {
+    return "complete-complete";
+  }
+  if (source === "selected" && target === "selected") {
+    return "selected-selected";
+  }
+  return "complete-selected";
+}
+
+export function deriveMappingEvidenceAudit(
+  input: Pick<
+    ResearchCorpusInput,
+    | "relations"
+    | "provisions"
+    | "instruments"
+    | "jurisdictions"
+    | "sourceAudits"
+    | "concepts"
+  >,
+): ResearchMappingEvidenceAudit {
+  const relations = deriveResearchRelations(input);
+  const originalById = new Map(
+    input.relations.map((relation) => [relation.id, relation]),
+  );
+  const instrumentById = new Map(
+    input.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const jurisdictionById = new Map(
+    input.jurisdictions.map((jurisdiction) => [jurisdiction.id, jurisdiction]),
+  );
+  const coverageByInstrument = new Map(
+    input.sourceAudits.map((audit) => [
+      audit.instrumentId,
+      coverageClassForMode(audit.localCoverage.mode),
+    ]),
+  );
+  const records: ResearchMappingAuditRecord[] = relations
+    .map((relation) => {
+      const original = originalById.get(relation.id);
+      const sourceInstrument = relation.source.instrumentId
+        ? instrumentById.get(relation.source.instrumentId)
+        : undefined;
+      const targetInstrument = relation.target.instrumentId
+        ? instrumentById.get(relation.target.instrumentId)
+        : undefined;
+      const sourceCoverageClass = sourceInstrument
+        ? coverageByInstrument.get(sourceInstrument.id) ?? "unclassified"
+        : null;
+      const targetCoverageClass = targetInstrument
+        ? coverageByInstrument.get(targetInstrument.id) ?? "unclassified"
+        : null;
+      const sourceRoot = sourceInstrument
+        ? rootJurisdictionId(sourceInstrument.jurisdictionId, jurisdictionById)
+        : null;
+      const targetRoot = targetInstrument
+        ? rootJurisdictionId(targetInstrument.jurisdictionId, jurisdictionById)
+        : null;
+      return {
+        relationId: relation.id,
+        status: relation.status,
+        relationClass: relation.relationClass,
+        type: relation.type,
+        directionality: relation.directionality,
+        confidence: relation.confidence,
+        conceptIds: [...relation.conceptIds],
+        sourceInstrumentId: relation.source.instrumentId,
+        targetInstrumentId: relation.target.instrumentId,
+        sourceCoverageClass,
+        targetCoverageClass,
+        endpointCoverage: mappingEndpointCoverage(
+          sourceCoverageClass,
+          targetCoverageClass,
+        ),
+        sourceLegalForce: sourceInstrument?.legalForce ?? null,
+        targetLegalForce: targetInstrument?.legalForce ?? null,
+        sourceLifecycleStatus: sourceInstrument?.lifecycleStatus ?? null,
+        targetLifecycleStatus: targetInstrument?.lifecycleStatus ?? null,
+        crossJurisdiction:
+          sourceRoot && targetRoot ? sourceRoot !== targetRoot : null,
+        sourceSupportCount: relation.sourceSupport.length,
+        hasEvidenceBasis: Boolean(
+          original?.evidenceBasis?.trim() &&
+            original.evidenceBasis !== "not-recorded",
+        ),
+        hasRationale: Boolean(original?.rationale?.trim()),
+        hasLimits: Boolean(original?.limits?.trim()),
+        hasVerifiedOn: Boolean(original?.verifiedOn?.trim()),
+        verifiedOn: relation.verifiedOn,
+      };
+    })
+    .sort(
+      (left, right) =>
+        Number(right.status === "editorial-reviewed") -
+          Number(left.status === "editorial-reviewed") ||
+        left.relationClass.localeCompare(right.relationClass) ||
+        left.type.localeCompare(right.type) ||
+        left.relationId.localeCompare(right.relationId),
+    );
+  const conceptAudit = input.concepts
+    .map((concept) => {
+      const related = records.filter((record) =>
+        record.conceptIds.includes(concept.id),
+      );
+      return {
+        conceptId: concept.id,
+        reviewedRelationCount: related.filter(
+          (record) => record.status === "editorial-reviewed",
+        ).length,
+        candidateRelationCount: related.filter(
+          (record) => record.status === "candidate",
+        ).length,
+        totalRelationCount: related.length,
+      };
+    })
+    .sort(
+      (left, right) =>
+        right.totalRelationCount - left.totalRelationCount ||
+        left.conceptId.localeCompare(right.conceptId),
+    );
+  const relationTypes = countComposition(records.map((record) => record.type));
+  const coverageOrder: ResearchMappingEndpointCoverage[] = [
+    "complete-complete",
+    "complete-selected",
+    "selected-selected",
+    "includes-unclassified",
+    "unresolved",
+  ];
+  const endpointCoverage = coverageOrder.map((value) => ({
+    value,
+    count: records.filter((record) => record.endpointCoverage === value).length,
+  }));
+
+  return {
+    relationCount: records.length,
+    reviewedRelationCount: records.filter(
+      (record) => record.status === "editorial-reviewed",
+    ).length,
+    candidateRelationCount: records.filter(
+      (record) => record.status === "candidate",
+    ).length,
+    analyticalRelationCount: records.filter(
+      (record) => record.relationClass === "analytical",
+    ).length,
+    lifecycleRelationCount: records.filter(
+      (record) => record.relationClass === "lifecycle",
+    ).length,
+    crossJurisdictionRelationCount: records.filter(
+      (record) => record.crossJurisdiction,
+    ).length,
+    unresolvedEndpointCount: records.filter(
+      (record) => record.endpointCoverage === "unresolved",
+    ).length,
+    records,
+    concepts: conceptAudit,
+    relationTypes,
+    endpointCoverage,
+  };
+}
+
 export function buildResearchLabData(
   input: ResearchCorpusInput,
   options?: ResearchAnalysisOptions,
@@ -2106,6 +2848,10 @@ export function buildResearchLabData(
         "Bridge metrics use the unweighted, undirected projection of qualified analytical relations between instruments. Editorial-reviewed edges and the reviewed-plus-candidate graph are calculated separately; centrality describes this project graph, not legal influence.",
       operationalPathDefinition:
         "Operational paths preserve only recorded directed relation semantics and are limited to three hops. Arrow direction is not converted into chronology, causation, diffusion, or legal hierarchy.",
+      archetypeDefinition:
+        "Exploratory archetypes use deterministic average-linkage hierarchical clustering over the 23-dimensional L2-normalized TF-IDF concept profiles in the complete-corpus substantive sample. Cosine distance is the only fit feature; jurisdiction, legal force, lifecycle status and relation edges are excluded and shown only as descriptive context.",
+      relationAuditDefinition:
+        "Mapping evidence is audited across separate dimensions: editorial review state, relation class and direction, source support, rationale and limits, verification date, endpoint coverage, legal force, lifecycle status and jurisdiction span. These dimensions are never collapsed into a quality or equivalence score.",
     },
     coverage: deriveCoverageObservatory(normalizedInput),
     instruments: deriveResearchInstruments(normalizedInput, fingerprints),
@@ -2120,5 +2866,11 @@ export function buildResearchLabData(
     relations: researchRelations,
     bridgeAtlas: deriveQualifiedBridgeAtlas(normalizedInput),
     operationalizationPaths: deriveOperationalizationPaths(normalizedInput),
+    instrumentArchetypes: deriveInstrumentArchetypes(
+      fingerprints,
+      normalizedInput.instruments,
+      normalizedInput.concepts,
+    ),
+    mappingEvidenceAudit: deriveMappingEvidenceAudit(normalizedInput),
   };
 }

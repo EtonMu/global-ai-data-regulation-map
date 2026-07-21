@@ -12,7 +12,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read stored legal text, an explicit English-coverage notice, or a clearly labelled editorial summary where no source text is stored. Where verified original-language text is stored, the reader defaults to English and exposes the original language after the user selects it. Official English text, government but non-authoritative translations, project-authored references, historical or future-phase references, coverage notices, and editorial summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
-- **Research Lab** — investigate the corpus through two linked phases: five coverage-aware corpus-pattern views, followed by translation-provenance, qualified-relation robustness, and directed operationalization views. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
+- **Research Lab** — investigate the corpus through three linked phases: five coverage-aware corpus-pattern views; translation-provenance, qualified-relation robustness, and directed operationalization views; then exploratory instrument archetypes and a mapping-evidence audit. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
@@ -80,6 +80,15 @@ Phase 2 studies the reliability of the multilingual and relational layers withou
 
 All Phase 2 relation details display the rationale and limits together. Candidate mappings remain hypotheses, lifecycle edges remain distinct from substantive mappings, and every source endpoint opens back into the legal text or instrument record.
 
+## Phase 3 research methods
+
+Phase 3 turns the existing fingerprints and qualified mappings into inspectable research models without treating model output as a legal conclusion.
+
+- **Instrument Archetypes** applies deterministic average-linkage hierarchical clustering to the 23-dimensional L2-normalized TF-IDF profiles from the complete-corpus substantive sample. Cosine distance is the only fit feature; jurisdiction, legal force, lifecycle status, and relation edges are excluded and appear only as post-hoc descriptive context. Users may inspect cuts from two to eight neutral groups (`A1`, `A2`, and so on), the real-instrument medoid, within-cluster distance, centroid-minus-corpus concept differences, and silhouette for non-singleton members. A second nearest-neighbour view replaces TF-IDF with normalized concept prevalence to expose method sensitivity. No cut is presented as the correct legal taxonomy.
+- **Mapping Evidence Audit** keeps editorial review state, relation class and direction, source count, evidence basis, rationale, limits, verification date, endpoint corpus coverage, legal force, lifecycle status, and jurisdiction span as separate audit dimensions. The concept-by-review view exposes four concepts for which no mapping is currently recorded, and the evidence barcode opens the same rationale, limits, endpoints, core concepts, and primary-source ledger used elsewhere. Empty cells mean `not recorded in this corpus`, never legal absence.
+
+Phase 3 does not produce legal families, equivalence classes, strictness rankings, compliance probabilities, or a composite mapping-quality score. `editorial-reviewed` records remain project review states rather than independent expert or peer review. The clustering and audit are versioned to the repository snapshot and inherit its concept taxonomy, provision granularity, corpus boundaries, and annotation choices.
+
 ## Intended uses
 
 - Learn the structure of a major instrument and follow a concept across borders.
@@ -108,7 +117,7 @@ app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
   regulation-globe.tsx       border-free physical-land point globe and compass
   concept-constellation.tsx  theme, concept, and source-evidence visualization
-  research-lab.tsx           eight linked corpus, provenance, and relation views
+  research-lab.tsx           ten linked corpus, relation, model, and audit views
   research-lab-data.ts       auditable corpus metrics and analytical derivations
 data/geo/
   natural-earth-land-110m.json  public-domain physical-land geometry

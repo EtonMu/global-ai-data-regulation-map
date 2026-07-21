@@ -9,6 +9,7 @@ import {
   useState,
 } from "react";
 import {
+  ArrowLeftRight,
   ArrowRight,
   Clock3,
   Database,
@@ -17,11 +18,13 @@ import {
   Grid3X3,
   Info,
   Languages,
+  ListChecks,
   Network,
   Pause,
   Play,
   Rows3,
   RotateCcw,
+  Waypoints,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -46,9 +49,11 @@ export type ResearchLabView =
   | "timeline"
   | "translation"
   | "bridges"
-  | "pathways";
+  | "pathways"
+  | "archetypes"
+  | "audit";
 
-type ResearchLabPhase = "patterns" | "relations";
+type ResearchLabPhase = "patterns" | "relations" | "models";
 
 export type ResearchLabProps = {
   data: ResearchLabData;
@@ -238,6 +243,18 @@ const viewDefinitions: Array<{
     label: "Operationalization Paths",
     icon: GitFork,
     phase: "relations",
+  },
+  {
+    id: "archetypes",
+    label: "Instrument Archetypes",
+    icon: Waypoints,
+    phase: "models",
+  },
+  {
+    id: "audit",
+    label: "Mapping Evidence Audit",
+    icon: ListChecks,
+    phase: "models",
   },
 ];
 
@@ -584,6 +601,9 @@ function RelationEvidenceDossier({
     );
   }
 
+  const directed = relation.directionality === "directed";
+  const DirectionIcon = directed ? ArrowRight : ArrowLeftRight;
+
   return (
     <section className={styles.evidenceDossier} aria-label="Relation evidence">
       <header className={styles.sectionHeader}>
@@ -592,8 +612,8 @@ function RelationEvidenceDossier({
           <h3>{humanizeResearchCode(relation.type)}</h3>
         </div>
         <p>
-          {humanizeResearchCode(relation.status)} · {relation.confidence} confidence ·
-          verified {relation.verifiedOn}
+          {humanizeResearchCode(relation.status)} · {relation.confidence} editorial
+          confidence in research utility · verified {relation.verifiedOn}
         </p>
       </header>
 
@@ -603,16 +623,20 @@ function RelationEvidenceDossier({
           className={styles.endpointButton}
           onClick={() => openEndpoint(relation.source)}
         >
-          <span className={styles.fieldLabel}>Source endpoint</span>
+          <span className={styles.fieldLabel}>
+            {directed ? "Source endpoint" : "Endpoint A"}
+          </span>
           <strong>{relationEndpointLabel(relation.source, data)}</strong>
         </button>
-        <ArrowRight aria-hidden="true" />
+        <DirectionIcon aria-hidden="true" />
         <button
           type="button"
           className={styles.endpointButton}
           onClick={() => openEndpoint(relation.target)}
         >
-          <span className={styles.fieldLabel}>Target endpoint</span>
+          <span className={styles.fieldLabel}>
+            {directed ? "Target endpoint" : "Endpoint B"}
+          </span>
           <strong>{relationEndpointLabel(relation.target, data)}</strong>
         </button>
       </div>
@@ -3039,6 +3063,850 @@ function OperationalizationPathways({
   );
 }
 
+const archetypeColors = [
+  "var(--cyan)",
+  "var(--violet)",
+  "var(--amber)",
+  "var(--green)",
+  "var(--red)",
+  "color-mix(in srgb, var(--cyan) 50%, var(--green))",
+  "color-mix(in srgb, var(--violet) 52%, var(--red))",
+  "color-mix(in srgb, var(--amber) 52%, var(--cyan))",
+] as const;
+
+function archetypeStyle(index: number): VisualStyle {
+  return {
+    "--cluster-color": archetypeColors[index % archetypeColors.length],
+  };
+}
+
+function InstrumentArchetypes({
+  data,
+  onOpenInstrument,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const model = data.instrumentArchetypes;
+  const instrumentById = new Map(
+    data.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const conceptById = new Map(
+    data.concepts.map((concept) => [concept.id, concept]),
+  );
+  const orderedThemes = [...data.themes].sort(
+    (left, right) => left.order - right.order,
+  );
+  const defaultPartition =
+    model.partitions.find((partition) => partition.clusterCount === 5) ??
+    model.partitions[0] ??
+    null;
+  const [clusterCount, setClusterCount] = useState(
+    defaultPartition?.clusterCount ?? 2,
+  );
+  const partition =
+    model.partitions.find((item) => item.clusterCount === clusterCount) ??
+    defaultPartition;
+  const [selectedClusterId, setSelectedClusterId] = useState<string | null>(
+    defaultPartition?.clusters[0]?.id ?? null,
+  );
+  const selectedCluster =
+    partition?.clusters.find((cluster) => cluster.id === selectedClusterId) ??
+    partition?.clusters[0] ??
+    null;
+  const [selectedInstrumentId, setSelectedInstrumentId] = useState<
+    string | null
+  >(selectedCluster?.medoidInstrumentId ?? null);
+  const activeInstrumentId =
+    selectedCluster?.memberInstrumentIds.includes(selectedInstrumentId ?? "")
+      ? selectedInstrumentId
+      : selectedCluster?.medoidInstrumentId ?? null;
+  const activeInstrument = activeInstrumentId
+    ? instrumentById.get(activeInstrumentId)
+    : null;
+  const sensitivity = model.sensitivity.find(
+    (item) => item.instrumentId === activeInstrumentId,
+  );
+  const maximumDifference = Math.max(
+    0.000001,
+    ...(selectedCluster?.differentiatingConcepts.map((item) =>
+      Math.abs(item.difference),
+    ) ?? [0]),
+  );
+  const selectedClusterIndex = Math.max(
+    0,
+    partition?.clusters.findIndex((cluster) => cluster.id === selectedCluster?.id) ??
+      0,
+  );
+
+  function themeProfile(
+    cluster: NonNullable<typeof selectedCluster>,
+  ): Array<{ theme: ResearchLabTheme; weight: number }> {
+    const weightByConcept = new Map(
+      cluster.centroidWeights.map((item) => [item.conceptId, item.weight]),
+    );
+    return orderedThemes.map((theme) => ({
+      theme,
+      weight: theme.conceptIds.reduce(
+        (sum, conceptId) => sum + (weightByConcept.get(conceptId) ?? 0),
+        0,
+      ),
+    }));
+  }
+
+  function selectCluster(clusterId: string, medoidInstrumentId: string) {
+    setSelectedClusterId(clusterId);
+    setSelectedInstrumentId(medoidInstrumentId);
+  }
+
+  if (!partition || !selectedCluster) {
+    return (
+      <div className={styles.emptyState}>
+        No non-zero complete-corpus concept profiles are available for exploratory
+        grouping.
+      </div>
+    );
+  }
+  const partitionThemeMaximum = Math.max(
+    0.000001,
+    ...partition.clusters.flatMap((cluster) =>
+      themeProfile(cluster).map((item) => item.weight),
+    ),
+  );
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>09 / Exploratory profile model</span>
+          <h2>Instrument Archetypes</h2>
+          <p>
+            Explore deterministic clusters in the complete-corpus concept profiles,
+            then test whether each instrument&apos;s nearest neighbour changes under a
+            prevalence-only feature model.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.controlBar}>
+        <label className={classNames(styles.field, styles.clusterRangeField)}>
+          <span className={styles.fieldLabel}>
+            Exploratory dendrogram cut · {partition.clusterCount} clusters
+          </span>
+          <input
+            type="range"
+            min={model.partitions[0]?.clusterCount ?? 2}
+            max={model.partitions.at(-1)?.clusterCount ?? 8}
+            step={1}
+            value={partition.clusterCount}
+            aria-label="Exploratory archetype cluster count"
+            aria-valuetext={`${partition.clusterCount} clusters`}
+            onChange={(event) => setClusterCount(Number(event.target.value))}
+          />
+        </label>
+        <span className={styles.controlSummary}>
+          {model.fitInstrumentIds.length} complete instruments · {model.featureConceptIds.length}{" "}
+          concept dimensions · {model.excludedInstrumentIds.length} selected or
+          unsupported records excluded from fit
+        </span>
+      </div>
+
+      <div className={styles.themeProfileLegend} aria-label="Theme profile legend">
+        {orderedThemes.map((theme, index) => (
+          <span key={theme.id}>
+            <i
+              style={{ "--theme-color": themeColors[index % themeColors.length] } as VisualStyle}
+              aria-hidden="true"
+            />
+            {theme.label}
+          </span>
+        ))}
+      </div>
+
+      <section className={styles.archetypeWorkspace}>
+        <div className={styles.archetypeLaneList}>
+          <header className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionCode}>Average-linkage solution</span>
+              <h3>{partition.clusterCount} neutral archetype groups</h3>
+            </div>
+            <p>
+              Cut distance {partition.cutHeight.toFixed(3)} · mean silhouette{" "}
+              {partition.meanSilhouette === null
+                ? "N/A"
+                : partition.meanSilhouette.toFixed(3)}{" "}
+              across {partition.silhouetteInstrumentCount} non-singleton members
+            </p>
+          </header>
+
+          {partition.clusters.map((cluster, clusterIndex) => {
+            const profile = themeProfile(cluster);
+            const medoid = instrumentById.get(cluster.medoidInstrumentId);
+            return (
+              <article
+                key={cluster.id}
+                className={styles.archetypeLane}
+                style={archetypeStyle(clusterIndex)}
+                data-selected={cluster.id === selectedCluster.id}
+              >
+                <button
+                  type="button"
+                  className={styles.archetypeLaneHeader}
+                  aria-pressed={cluster.id === selectedCluster.id}
+                  onClick={() =>
+                    selectCluster(cluster.id, cluster.medoidInstrumentId)
+                  }
+                >
+                  <span className={styles.archetypeId}>{cluster.id}</span>
+                  <span>
+                    <strong>{cluster.memberInstrumentIds.length} instruments</strong>
+                    <small>
+                      Medoid {medoid?.shortTitle ?? cluster.medoidInstrumentId}
+                    </small>
+                  </span>
+                </button>
+                <div
+                  className={styles.themeProfile}
+                  role="img"
+                  aria-label={`${cluster.id} theme centroid profile`}
+                >
+                  {profile.map((item, themeIndex) => (
+                    <span
+                      key={item.theme.id}
+                      style={
+                        {
+                          "--theme-color":
+                            themeColors[themeIndex % themeColors.length],
+                          "--theme-height": `${Math.max(
+                            8,
+                            (item.weight / partitionThemeMaximum) * 100,
+                          )}%`,
+                        } as VisualStyle
+                      }
+                      aria-label={`${item.theme.label}: centroid weight ${item.weight.toFixed(3)}`}
+                    />
+                  ))}
+                </div>
+                <div className={styles.archetypeMembers}>
+                  {cluster.memberInstrumentIds.map((instrumentId) => {
+                    const instrument = instrumentById.get(instrumentId);
+                    return (
+                      <button
+                        type="button"
+                        key={instrumentId}
+                        aria-pressed={activeInstrumentId === instrumentId}
+                        onClick={() => {
+                          setSelectedClusterId(cluster.id);
+                          setSelectedInstrumentId(instrumentId);
+                        }}
+                      >
+                        {instrument?.shortTitle ?? instrumentId}
+                      </button>
+                    );
+                  })}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <aside
+          className={styles.archetypeDossier}
+          style={archetypeStyle(selectedClusterIndex)}
+          aria-live="polite"
+        >
+          <header className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionCode}>Selected computation group</span>
+              <h3>{selectedCluster.id}</h3>
+            </div>
+            <p>Neutral identifier · not a legal-family label</p>
+          </header>
+
+          <dl className={styles.bridgeMetrics}>
+            <div>
+              <dt>Members</dt>
+              <dd>{selectedCluster.memberInstrumentIds.length}</dd>
+            </div>
+            <div>
+              <dt>Jurisdiction records</dt>
+              <dd>{selectedCluster.jurisdictionCount}</dd>
+            </div>
+            <div>
+              <dt>Mean within-cluster distance</dt>
+              <dd>{selectedCluster.meanWithinDistance.toFixed(3)}</dd>
+            </div>
+            <div>
+              <dt>Maximum pair distance</dt>
+              <dd>{selectedCluster.maximumWithinDistance.toFixed(3)}</dd>
+            </div>
+          </dl>
+
+          <section className={styles.archetypeDifferenceSection}>
+            <span className={styles.fieldLabel}>
+              Largest centroid differences from the complete-corpus mean
+            </span>
+            <div className={styles.archetypeDifferenceList}>
+              {selectedCluster.differentiatingConcepts
+                .slice(0, 7)
+                .map((difference) => {
+                  const concept = conceptById.get(difference.conceptId);
+                  const direction = difference.difference >= 0 ? "higher" : "lower";
+                  return (
+                    <div
+                      key={difference.conceptId}
+                      className={styles.archetypeDifferenceRow}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => onOpenConcept(difference.conceptId)}
+                      >
+                        {concept?.label ?? difference.conceptId}
+                      </button>
+                      <span
+                        className={styles.archetypeDifferenceTrack}
+                        aria-label={`${concept?.label ?? difference.conceptId}: ${direction} than corpus mean by ${Math.abs(difference.difference).toFixed(3)}`}
+                      >
+                        <span
+                          data-direction={direction}
+                          style={
+                            {
+                              "--difference-width": `${
+                                (Math.abs(difference.difference) /
+                                  maximumDifference) *
+                                50
+                              }%`,
+                            } as VisualStyle
+                          }
+                        />
+                      </span>
+                      <code>
+                        {difference.difference >= 0 ? "+" : ""}
+                        {difference.difference.toFixed(3)}
+                      </code>
+                    </div>
+                  );
+                })}
+            </div>
+          </section>
+
+          <section className={styles.archetypeContext}>
+            <div>
+              <span className={styles.fieldLabel}>Legal force · descriptive only</span>
+              <p>
+                {selectedCluster.legalForceComposition
+                  .map(
+                    (item) => `${humanizeResearchCode(item.value)} ${item.count}`,
+                  )
+                  .join(" · ")}
+              </p>
+            </div>
+            <div>
+              <span className={styles.fieldLabel}>Lifecycle · descriptive only</span>
+              <p>
+                {selectedCluster.lifecycleComposition
+                  .map(
+                    (item) => `${humanizeResearchCode(item.value)} ${item.count}`,
+                  )
+                  .join(" · ")}
+              </p>
+            </div>
+          </section>
+
+          {activeInstrument && (
+            <section className={styles.archetypeInstrumentReadout}>
+              <div className={styles.bridgeIdentity}>
+                <JurisdictionMark
+                  jurisdictionId={activeInstrument.jurisdictionId}
+                />
+                <div>
+                  <span className={styles.sectionCode}>Selected member</span>
+                  <h3>{activeInstrument.shortTitle}</h3>
+                  <p>{activeInstrument.title}</p>
+                </div>
+              </div>
+              {sensitivity && (
+                <dl className={styles.sensitivityGrid}>
+                  <div>
+                    <dt>L2 TF-IDF nearest neighbour</dt>
+                    <dd>
+                      {instrumentById.get(sensitivity.tfidfNeighborId)?.shortTitle ??
+                        sensitivity.tfidfNeighborId}
+                      <small>
+                        cosine distance {sensitivity.tfidfNeighborDistance.toFixed(3)}
+                      </small>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Prevalence nearest neighbour</dt>
+                    <dd>
+                      {instrumentById.get(sensitivity.prevalenceNeighborId)
+                        ?.shortTitle ?? sensitivity.prevalenceNeighborId}
+                      <small>
+                        cosine distance{" "}
+                        {sensitivity.prevalenceNeighborDistance.toFixed(3)}
+                      </small>
+                    </dd>
+                  </div>
+                </dl>
+              )}
+              <p className={styles.sensitivityFinding}>
+                {sensitivity?.sameNearestNeighbor
+                  ? "Nearest-neighbour identity is unchanged under the two recorded feature models."
+                  : "Nearest-neighbour identity changes when TF-IDF is replaced by concept prevalence."}
+              </p>
+              <button
+                type="button"
+                className={styles.evidenceButton}
+                onClick={() => onOpenInstrument(activeInstrument.id)}
+              >
+                Open instrument and supporting provisions
+              </button>
+            </section>
+          )}
+        </aside>
+      </section>
+
+      <MethodNote>
+        Archetypes are exploratory groups in this project&apos;s 23-concept taxonomy,
+        not legal families, equivalence classes, regulatory rankings or compliance
+        findings. Only complete corpora with non-zero substantive profiles fit the
+        model. Jurisdiction, legal force, lifecycle and relation edges do not enter the
+        distance calculation. The adjustable cut has no preferred or legally correct
+        value; silhouette describes geometric separation, not legal validity.
+      </MethodNote>
+    </>
+  );
+}
+
+type MappingAuditStatus = "all" | "editorial-reviewed" | "candidate";
+type MappingAuditClass = "all" | "analytical" | "lifecycle";
+
+function MappingEvidenceAudit({
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const audit = data.mappingEvidenceAudit;
+  const relationById = new Map(
+    data.relations.map((relation) => [relation.id, relation]),
+  );
+  const instrumentById = new Map(
+    data.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const conceptById = new Map(
+    data.concepts.map((concept) => [concept.id, concept]),
+  );
+  const [statusFilter, setStatusFilter] =
+    useState<MappingAuditStatus>("all");
+  const [classFilter, setClassFilter] = useState<MappingAuditClass>("all");
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [conceptFilter, setConceptFilter] = useState("all");
+  const filteredRecords = audit.records.filter(
+    (record) =>
+      (statusFilter === "all" || record.status === statusFilter) &&
+      (classFilter === "all" || record.relationClass === classFilter) &&
+      (typeFilter === "all" || record.type === typeFilter) &&
+      (conceptFilter === "all" || record.conceptIds.includes(conceptFilter)),
+  );
+  const [selectedRelationId, setSelectedRelationId] = useState<string | null>(
+    audit.records[0]?.relationId ?? null,
+  );
+  const selectedRecord =
+    filteredRecords.find(
+      (record) => record.relationId === selectedRelationId,
+    ) ??
+    filteredRecords[0] ??
+    null;
+  const selectedRelation = selectedRecord
+    ? relationById.get(selectedRecord.relationId) ?? null
+    : null;
+  const maximumConceptRelationCount = Math.max(
+    1,
+    ...audit.concepts.map((item) => item.totalRelationCount),
+  );
+
+  function endpointContext(
+    instrumentId: string | null,
+    legalForce: string | null,
+    lifecycleStatus: string | null,
+    coverageClass: string | null,
+  ) {
+    const instrument = instrumentId ? instrumentById.get(instrumentId) : null;
+    return [
+      instrument?.shortTitle ?? instrumentId ?? "unresolved endpoint",
+      legalForce ? humanizeResearchCode(legalForce) : "legal force unknown",
+      lifecycleStatus
+        ? humanizeResearchCode(lifecycleStatus)
+        : "lifecycle unknown",
+      coverageClass ? `${coverageClass} corpus` : "coverage unknown",
+    ].join(" · ");
+  }
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>10 / Editorial evidence audit</span>
+          <h2>Mapping Evidence Audit</h2>
+          <p>
+            Inspect every recorded mapping as a bundle of separate evidence dimensions,
+            with candidate hypotheses kept distinct from editorial-reviewed relations.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.controlBar}>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Review state</span>
+          <select
+            aria-label="Mapping audit review state"
+            value={statusFilter}
+            onChange={(event) =>
+              setStatusFilter(event.target.value as MappingAuditStatus)
+            }
+          >
+            <option value="all">Reviewed + candidate</option>
+            <option value="editorial-reviewed">Editorial-reviewed</option>
+            <option value="candidate">Candidate hypotheses</option>
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Relation class</span>
+          <select
+            aria-label="Mapping audit relation class"
+            value={classFilter}
+            onChange={(event) =>
+              setClassFilter(event.target.value as MappingAuditClass)
+            }
+          >
+            <option value="all">Analytical + lifecycle</option>
+            <option value="analytical">Analytical</option>
+            <option value="lifecycle">Lifecycle</option>
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Relation type</span>
+          <select
+            aria-label="Mapping audit relation type"
+            value={typeFilter}
+            onChange={(event) => setTypeFilter(event.target.value)}
+          >
+            <option value="all">All recorded types</option>
+            {audit.relationTypes.map((item) => (
+              <option key={item.value} value={item.value}>
+                {humanizeResearchCode(item.value)} ({item.count})
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Core concept</span>
+          <select
+            aria-label="Mapping audit core concept"
+            value={conceptFilter}
+            onChange={(event) => setConceptFilter(event.target.value)}
+          >
+            <option value="all">All concepts</option>
+            {data.concepts.map((concept) => (
+              <option key={concept.id} value={concept.id}>
+                {concept.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <span className={styles.controlSummary} aria-live="polite">
+          {filteredRecords.length} of {audit.relationCount} recorded relations
+        </span>
+      </div>
+
+      <div className={styles.statsGrid}>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Editorial-reviewed</span>
+          <strong className={styles.statValue}>
+            {formatter.format(audit.reviewedRelationCount)}
+          </strong>
+          <span className={styles.statMeta}>Research review state, not legal approval</span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Candidate hypotheses</span>
+          <strong className={styles.statValue}>
+            {formatter.format(audit.candidateRelationCount)}
+          </strong>
+          <span className={styles.statMeta}>Awaiting editorial resolution</span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Cross-jurisdiction records</span>
+          <strong className={styles.statValue}>
+            {formatter.format(audit.crossJurisdictionRelationCount)}
+          </strong>
+          <span className={styles.statMeta}>Based on resolved instrument endpoints</span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Unresolved endpoints</span>
+          <strong className={styles.statValue}>
+            {formatter.format(audit.unresolvedEndpointCount)}
+          </strong>
+          <span className={styles.statMeta}>Resolution failure, not legal absence</span>
+        </article>
+      </div>
+
+      <section className={styles.auditConceptSection}>
+        <header className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionCode}>Concept × review-state coverage</span>
+            <h3>Where the mapping layer has recorded evidence</h3>
+          </div>
+          <p>Solid = editorial-reviewed · outline = candidate · blank = not recorded</p>
+        </header>
+        <div className={styles.auditConceptGrid}>
+          {audit.concepts.map((item) => {
+            const concept = conceptById.get(item.conceptId);
+            const selected = conceptFilter === item.conceptId;
+            return (
+              <button
+                type="button"
+                key={item.conceptId}
+                className={styles.auditConceptRow}
+                aria-pressed={selected}
+                data-empty={item.totalRelationCount === 0}
+                onClick={() =>
+                  setConceptFilter(selected ? "all" : item.conceptId)
+                }
+              >
+                <span className={styles.auditConceptIdentity}>
+                  {concept && <ConceptIcon conceptId={concept.id} />}
+                  <strong>{concept?.label ?? item.conceptId}</strong>
+                </span>
+                <span
+                  className={styles.auditConceptTrack}
+                  aria-label={`${item.reviewedRelationCount} editorial-reviewed and ${item.candidateRelationCount} candidate relations`}
+                >
+                  {item.totalRelationCount > 0 ? (
+                    <span
+                      className={styles.auditConceptBar}
+                      style={
+                        {
+                          "--audit-total-width": `${
+                            (item.totalRelationCount /
+                              maximumConceptRelationCount) *
+                            100
+                          }%`,
+                          "--audit-reviewed-share": `${
+                            (item.reviewedRelationCount /
+                              item.totalRelationCount) *
+                            100
+                          }%`,
+                        } as VisualStyle
+                      }
+                    >
+                      <i data-review="reviewed" />
+                      <i data-review="candidate" />
+                    </span>
+                  ) : (
+                    <span className={styles.auditConceptEmpty}>
+                      No relation recorded in this corpus
+                    </span>
+                  )}
+                </span>
+                <code>
+                  {item.reviewedRelationCount} / {item.candidateRelationCount}
+                </code>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className={styles.auditTableSection}>
+        <header className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionCode}>Evidence barcode</span>
+            <h3>{filteredRecords.length} relations in the current audit view</h3>
+          </div>
+          <p>Each column is independent; no composite quality score is calculated</p>
+        </header>
+        <div
+          className={styles.auditTableScroll}
+          role="region"
+          aria-label="Scrollable mapping evidence audit table"
+        >
+          <table className={styles.auditTable}>
+            <thead>
+              <tr>
+                <th scope="col">Relation</th>
+                <th scope="col">Review</th>
+                <th scope="col">Class · direction</th>
+                <th scope="col">Sources</th>
+                <th scope="col">Basis · rationale · limits</th>
+                <th scope="col">Endpoint corpus</th>
+                <th scope="col">Jurisdiction span</th>
+                <th scope="col">Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredRecords.map((record) => {
+                const relation = relationById.get(record.relationId);
+                const selected = selectedRecord?.relationId === record.relationId;
+                return (
+                  <tr key={record.relationId} data-selected={selected}>
+                    <th scope="row">
+                      <button
+                        type="button"
+                        aria-pressed={selected}
+                        onClick={() => setSelectedRelationId(record.relationId)}
+                      >
+                        <strong>{humanizeResearchCode(record.type)}</strong>
+                        <span>
+                          {relation
+                            ? `${relationEndpointLabel(relation.source, data)} ${record.directionality === "directed" ? "→" : "↔"} ${relationEndpointLabel(relation.target, data)}`
+                            : record.relationId}
+                        </span>
+                      </button>
+                    </th>
+                    <td>
+                      <span
+                        className={styles.auditState}
+                        data-review={record.status}
+                      >
+                        <i aria-hidden="true" />
+                        {humanizeResearchCode(record.status)}
+                      </span>
+                    </td>
+                    <td>
+                      {humanizeResearchCode(record.relationClass)} ·{" "}
+                      {humanizeResearchCode(record.directionality)}
+                    </td>
+                    <td className={styles.auditSourceCount}>
+                      {record.sourceSupportCount}
+                    </td>
+                    <td>
+                      <span
+                        className={styles.auditFacetStrip}
+                        aria-label={`Evidence basis ${record.hasEvidenceBasis ? "recorded" : "not recorded"}; rationale ${record.hasRationale ? "recorded" : "not recorded"}; limits ${record.hasLimits ? "recorded" : "not recorded"}`}
+                      >
+                        <i data-recorded={record.hasEvidenceBasis}>B</i>
+                        <i data-recorded={record.hasRationale}>R</i>
+                        <i data-recorded={record.hasLimits}>L</i>
+                      </span>
+                    </td>
+                    <td>{humanizeResearchCode(record.endpointCoverage)}</td>
+                    <td>
+                      {record.crossJurisdiction === null
+                        ? "unknown"
+                        : record.crossJurisdiction
+                          ? "cross-jurisdiction"
+                          : "same jurisdiction lane"}
+                    </td>
+                    <td>{record.hasVerifiedOn ? record.verifiedOn : "not recorded"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          {filteredRecords.length === 0 && (
+            <div className={styles.emptyState}>
+              No mapping is recorded for this filter combination in the current
+              corpus. This does not establish that no legal relationship exists.
+            </div>
+          )}
+        </div>
+      </section>
+
+      {selectedRecord && (
+        <section className={styles.auditSelectedContext} aria-live="polite">
+          <header className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionCode}>Selected audit dimensions</span>
+              <h3>{humanizeResearchCode(selectedRecord.type)}</h3>
+            </div>
+            <p>{selectedRecord.relationId}</p>
+          </header>
+          <dl className={styles.auditFacetGrid}>
+            <div>
+              <dt>Review state</dt>
+              <dd>{humanizeResearchCode(selectedRecord.status)}</dd>
+            </div>
+            <div>
+              <dt>Editorial confidence</dt>
+              <dd>{selectedRecord.confidence} · research utility</dd>
+            </div>
+            <div>
+              <dt>Direction</dt>
+              <dd>{humanizeResearchCode(selectedRecord.directionality)}</dd>
+            </div>
+            <div>
+              <dt>Source support</dt>
+              <dd>{selectedRecord.sourceSupportCount} records</dd>
+            </div>
+            <div>
+              <dt>Endpoint corpus</dt>
+              <dd>{humanizeResearchCode(selectedRecord.endpointCoverage)}</dd>
+            </div>
+            <div>
+              <dt>Jurisdiction span</dt>
+              <dd>
+                {selectedRecord.crossJurisdiction === null
+                  ? "unknown"
+                  : selectedRecord.crossJurisdiction
+                    ? "cross-jurisdiction"
+                    : "same jurisdiction lane"}
+              </dd>
+            </div>
+            <div>
+              <dt>Endpoint A context</dt>
+              <dd>
+                {endpointContext(
+                  selectedRecord.sourceInstrumentId,
+                  selectedRecord.sourceLegalForce,
+                  selectedRecord.sourceLifecycleStatus,
+                  selectedRecord.sourceCoverageClass,
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Endpoint B context</dt>
+              <dd>
+                {endpointContext(
+                  selectedRecord.targetInstrumentId,
+                  selectedRecord.targetLegalForce,
+                  selectedRecord.targetLifecycleStatus,
+                  selectedRecord.targetCoverageClass,
+                )}
+              </dd>
+            </div>
+          </dl>
+        </section>
+      )}
+
+      <RelationEvidenceDossier
+        relation={selectedRelation}
+        data={data}
+        onOpenInstrument={onOpenInstrument}
+        onOpenProvision={onOpenProvision}
+        onOpenConcept={onOpenConcept}
+      />
+
+      <MethodNote>
+        The audit reports review state, relation semantics, source support, endpoint
+        coverage and lifecycle context as separate observations. Editorial-reviewed
+        does not mean independently peer-reviewed, legally correct or mutually
+        compliant; confidence describes research usefulness, not an equivalence
+        probability. A blank concept row means no relation is recorded in this corpus,
+        not that no relationship exists in law.
+      </MethodNote>
+    </>
+  );
+}
+
 export function ResearchLab({
   data,
   initialView = "observatory",
@@ -3056,18 +3924,69 @@ export function ResearchLab({
     useState<CoverageScope>("complete");
   const [relevanceScope, setRelevanceScope] =
     useState<RelevanceScope>("substantive");
+  const [lastViewByPhase, setLastViewByPhase] = useState<
+    Record<ResearchLabPhase, ResearchLabView>
+  >({
+    patterns:
+      viewDefinitions.find((definition) => definition.id === initialView)?.phase ===
+      "patterns"
+        ? initialView
+        : "observatory",
+    relations:
+      viewDefinitions.find((definition) => definition.id === initialView)?.phase ===
+      "relations"
+        ? initialView
+        : "translation",
+    models:
+      viewDefinitions.find((definition) => definition.id === initialView)?.phase ===
+      "models"
+        ? initialView
+        : "archetypes",
+  });
   const phaseViewDefinitions = viewDefinitions.filter(
     (definition) => definition.phase === activePhase,
   );
+  const phaseMetadata: Record<
+    ResearchLabPhase,
+    { code: string; title: string; description: string }
+  > = {
+    patterns: {
+      code: "PHASE 01",
+      title: "Corpus patterns",
+      description:
+        "Explore corpus quality, regulatory fingerprints, document structure, concept associations and legal change through evidence-linked views.",
+    },
+    relations: {
+      code: "PHASE 02",
+      title: "Provenance + relations",
+      description:
+        "Audit multilingual provenance, relation-graph robustness and directed legal operationalization through source-linked views.",
+    },
+    models: {
+      code: "PHASE 03",
+      title: "Models + evidence audit",
+      description:
+        "Interrogate exploratory instrument groupings and audit every mapping across separate, inspectable evidence dimensions.",
+    },
+  };
+  const activePhaseMetadata = phaseMetadata[activePhase];
 
   function activatePhase(phase: ResearchLabPhase) {
+    if (phase === activePhase) return;
+    setLastViewByPhase((current) => ({
+      ...current,
+      [activePhase]: activeView,
+    }));
     setActivePhase(phase);
-    const currentDefinition = viewDefinitions.find(
-      (definition) => definition.id === activeView,
-    );
-    if (currentDefinition?.phase !== phase) {
-      setActiveView(phase === "patterns" ? "observatory" : "translation");
-    }
+    setActiveView(lastViewByPhase[phase]);
+  }
+
+  function activateView(view: ResearchLabView) {
+    setActiveView(view);
+    setLastViewByPhase((current) => ({
+      ...current,
+      [activePhase]: view,
+    }));
   }
 
   function handleTabKeyDown(
@@ -3093,7 +4012,7 @@ export function ResearchLab({
     }
     event.preventDefault();
     const next = phaseViewDefinitions[nextIndex];
-    setActiveView(next.id);
+    activateView(next.id);
     event.currentTarget.parentElement
       ?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
       [nextIndex]?.focus();
@@ -3107,14 +4026,10 @@ export function ResearchLab({
       <header className={styles.header}>
         <div className={styles.headerCopy}>
           <span className={styles.eyebrow}>
-            COMPUTATIONAL LEGAL RESEARCH / {activePhase === "patterns" ? "PHASE 01" : "PHASE 02"}
+            COMPUTATIONAL LEGAL RESEARCH / {activePhaseMetadata.code}
           </span>
           <h1>Research Lab</h1>
-          <p>
-            {activePhase === "patterns"
-              ? "Explore corpus quality, regulatory fingerprints, document structure, concept associations and legal change through evidence-linked views."
-              : "Audit multilingual provenance, relation-graph robustness and directed legal operationalization through source-linked views."}
-          </p>
+          <p>{activePhaseMetadata.description}</p>
         </div>
         <div className={styles.snapshot}>
           <span>DATA SNAPSHOT</span>
@@ -3142,6 +4057,14 @@ export function ResearchLab({
           <span>Phase 02</span>
           <strong>Provenance + relations</strong>
         </button>
+        <button
+          type="button"
+          aria-pressed={activePhase === "models"}
+          onClick={() => activatePhase("models")}
+        >
+          <span>Phase 03</span>
+          <strong>Models + evidence audit</strong>
+        </button>
       </div>
 
       <nav
@@ -3163,7 +4086,7 @@ export function ResearchLab({
               className={styles.tab}
               aria-selected={activeView === view.id}
               aria-controls={`research-panel-${view.id}`}
-              onClick={() => setActiveView(view.id)}
+              onClick={() => activateView(view.id)}
               onKeyDown={(event) => handleTabKeyDown(event, view.id)}
             >
               <Icon aria-hidden="true" />
@@ -3243,6 +4166,21 @@ export function ResearchLab({
         )}
         {activeView === "pathways" && (
           <OperationalizationPathways
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "archetypes" && (
+          <InstrumentArchetypes
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "audit" && (
+          <MappingEvidenceAudit
             data={data}
             onOpenInstrument={onOpenInstrument}
             onOpenProvision={onOpenProvision}
