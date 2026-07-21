@@ -56,6 +56,7 @@ import conceptThemesJson from "@/data/v2/concept-themes.json";
 import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
 import sourceAuditsJson from "@/data/v2/source-audit.json";
+import englishCorpusCoverageJson from "@/data/v2/english-corpus-coverage.json";
 import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
 import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
 import ukGdprArticlesJson from "@/data/v2/uk-gdpr-articles.json";
@@ -1101,6 +1102,7 @@ const researchLabData = buildResearchLabData({
   sourceAudits,
   relations,
   statusEvents,
+  englishCorpusCoverage: englishCorpusCoverageJson,
 });
 
 const provisionsByInstrument = new Map<string, Provision[]>();

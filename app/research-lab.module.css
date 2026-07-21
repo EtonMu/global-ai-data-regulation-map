@@ -74,10 +74,62 @@
   font-weight: 500;
 }
 
+.phaseSwitch {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--line);
+}
+
+.phaseSwitch button {
+  min-inline-size: 0;
+  min-block-size: 48px;
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 0;
+  background: var(--panel);
+  color: var(--muted);
+  cursor: pointer;
+  text-align: start;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phaseSwitch button:hover {
+  background: var(--panel-hover);
+  color: var(--ink-strong);
+}
+
+.phaseSwitch button[aria-pressed="true"] {
+  background: var(--cyan-soft);
+  color: var(--cyan);
+}
+
+.phaseSwitch button span {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.phaseSwitch button strong {
+  min-inline-size: 0;
+  color: inherit;
+  font-size: 0.76rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
 .tabList {
   min-inline-size: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(108px, 1fr));
+  grid-template-columns: repeat(var(--tab-count, 5), minmax(118px, 1fr));
   overflow-x: auto;
   border-block-end: 1px solid var(--line-strong);
   scrollbar-width: thin;
@@ -395,6 +447,12 @@
   scrollbar-width: thin;
 }
 
+.genomeScroll {
+  padding-block-end: 7px;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: auto;
+}
+
 .qualityTable {
   inline-size: 100%;
   min-inline-size: 680px;
@@ -488,7 +546,7 @@
 }
 
 .genomeFigure {
-  min-inline-size: 820px;
+  min-inline-size: 2780px;
   display: grid;
   gap: 1px;
   background: var(--line);
@@ -496,7 +554,7 @@
 
 .genomeRow {
   display: grid;
-  grid-template-columns: minmax(162px, 190px) repeat(23, minmax(26px, 1fr));
+  grid-template-columns: minmax(190px, 220px) repeat(23, minmax(104px, 1fr));
   gap: 1px;
   background: var(--line);
 }
@@ -534,7 +592,7 @@
   position: sticky;
   z-index: 4;
   inset-block-start: 0;
-  block-size: 126px;
+  min-block-size: 78px;
   display: grid;
   place-items: center;
   padding: 6px 3px;
@@ -551,14 +609,22 @@
 }
 
 .conceptHeaderInner {
-  display: inline-flex;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  line-height: 1;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.conceptHeaderInner > span {
+  min-inline-size: 0;
+  max-inline-size: 100%;
 }
 
 .conceptHeader svg {
@@ -1462,6 +1528,780 @@
   gap: 6px;
 }
 
+.controlSummary {
+  min-inline-size: 0;
+  margin-inline-start: auto;
+  align-self: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  text-align: end;
+  overflow-wrap: anywhere;
+}
+
+.evidenceDossier {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding-block: 14px;
+  border-block: 1px solid var(--line);
+}
+
+.endpointPair {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 8px;
+}
+
+.endpointPair > svg {
+  inline-size: 16px;
+  block-size: 16px;
+  align-self: center;
+  color: var(--cyan);
+}
+
+.endpointButton {
+  min-inline-size: 0;
+  min-block-size: 64px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.endpointButton:hover {
+  background: var(--panel-hover);
+  color: var(--cyan);
+}
+
+.endpointButton strong {
+  color: inherit;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.rationaleGrid,
+.translationDetailGrid {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+
+.rationaleGrid section,
+.translationDetailGrid section {
+  min-inline-size: 0;
+  padding: 12px;
+  background: var(--panel);
+}
+
+.rationaleGrid p,
+.translationDetailGrid p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.conceptLinkRow {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.conceptLink {
+  min-inline-size: 0;
+  min-block-size: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border: 1px solid color-mix(in srgb, var(--concept-color, var(--cyan)) 45%, var(--line));
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 8%, var(--panel));
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.6875rem;
+  text-align: start;
+}
+
+.conceptLink:hover {
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 15%, var(--panel));
+  color: var(--ink-strong);
+}
+
+.conceptLink svg {
+  inline-size: 14px;
+  block-size: 14px;
+  flex: 0 0 auto;
+  color: var(--concept-color, var(--cyan));
+}
+
+.conceptLink span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.sourceLedger {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+
+.sourceLedger > .fieldLabel {
+  flex: 1 0 100%;
+}
+
+.sourceLedger a {
+  min-inline-size: 0;
+  color: var(--cyan);
+  overflow-wrap: anywhere;
+}
+
+.translationLedger {
+  min-inline-size: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.translationLedgerHeader,
+.translationRow {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 1.4fr)
+    minmax(92px, 0.58fr)
+    minmax(180px, 1.12fr)
+    minmax(210px, 1.35fr);
+  gap: 1px;
+}
+
+.translationLedgerHeader {
+  background: var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.translationLedgerHeader span {
+  min-inline-size: 0;
+  padding: 8px 9px;
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+.translationRow {
+  background: var(--panel);
+  transition: background-color 180ms ease;
+}
+
+.translationRow[data-selected="true"] {
+  background: var(--cyan-soft);
+}
+
+.translationRow > * {
+  min-inline-size: 0;
+  padding: 9px;
+}
+
+.translationInstrument {
+  min-inline-size: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.translationInstrument:hover {
+  color: var(--cyan);
+}
+
+.translationInstrument > span {
+  min-inline-size: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.translationInstrument strong,
+.translationInstrument small {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.translationInstrument strong {
+  color: inherit;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.translationInstrument small {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+}
+
+.translationLanguage {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.authorityTokens {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+}
+
+.authorityTokens > span:not(.mobileFieldLabel) {
+  min-inline-size: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 6px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel-strong);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.authorityTokens > span[data-authority="official-text"] {
+  border-color: color-mix(in srgb, var(--cyan) 60%, var(--line));
+}
+
+.authorityTokens > span[data-authority="official-reference"] {
+  border-color: color-mix(in srgb, var(--green) 58%, var(--line));
+}
+
+.authorityTokens > span[data-authority="government-reference"] {
+  border-color: color-mix(in srgb, var(--violet) 58%, var(--line));
+}
+
+.authorityTokens > span[data-authority="project-reference"] {
+  border-color: color-mix(in srgb, var(--amber) 62%, var(--line));
+}
+
+.mobileFieldLabel {
+  display: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.translationMeasures {
+  display: grid;
+  align-content: center;
+  gap: 6px;
+}
+
+.translationMeasure {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(64px, 0.75fr);
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.translationMeasure > span:first-child {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.translationTrack {
+  min-inline-size: 0;
+  block-size: 7px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.translationTrack > span {
+  block-size: 100%;
+  inline-size: var(--translation-width, 0%);
+  display: block;
+  background: var(--violet);
+  transition: inline-size 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.translationTrack > span[data-measure="stored"] {
+  background: var(--cyan);
+}
+
+.attentionText {
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+.translationDetail {
+  min-inline-size: 0;
+  display: grid;
+  gap: 12px;
+  padding-block: 14px;
+  border-block: 1px solid var(--line);
+}
+
+.anomalyList {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.anomalyList > .fieldLabel {
+  flex: 1 0 100%;
+}
+
+.bridgeWorkspace {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.78fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.bridgePlot {
+  position: relative;
+  min-inline-size: 0;
+  min-block-size: 390px;
+  overflow: hidden;
+  border-inline-start: 1px solid var(--line-strong);
+  border-block-end: 1px solid var(--line-strong);
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 20% 20%;
+}
+
+.bridgeAxisX,
+.bridgeAxisY {
+  position: absolute;
+  z-index: 3;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  pointer-events: none;
+}
+
+.bridgeAxisX {
+  inset: auto 8px 7px auto;
+}
+
+.bridgeAxisY {
+  inset: 8px auto auto 8px;
+}
+
+.bridgePoint {
+  position: absolute;
+  z-index: 2;
+  inset-inline-start: var(--plot-x, 50%);
+  inset-block-start: var(--plot-y, 50%);
+  inline-size: 28px;
+  block-size: 28px;
+  display: grid;
+  place-items: center;
+  padding: 3px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.bridgePoint:hover,
+.bridgePoint:focus-visible,
+.bridgePoint[data-selected="true"] {
+  z-index: 4;
+  border-color: var(--cyan);
+  background: var(--cyan-soft);
+  transform: translate(-50%, -50%) scale(1.16);
+}
+
+.bridgePoint :global(.jurisdiction-mark) {
+  margin: 0;
+}
+
+.bridgeReadout {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 13px;
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid var(--line);
+}
+
+.bridgeIdentity {
+  min-inline-size: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bridgeIdentity > div {
+  min-inline-size: 0;
+}
+
+.bridgeIdentity h3 {
+  margin: 3px 0;
+  color: var(--ink-strong);
+  font-size: 1rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.bridgeIdentity p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.bridgeMetrics {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+}
+
+.bridgeMetrics div {
+  min-inline-size: 0;
+  display: grid;
+  gap: 4px;
+  padding: 9px;
+  background: var(--panel);
+}
+
+.bridgeMetrics dt {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+}
+
+.bridgeMetrics dd {
+  margin: 0;
+  color: var(--ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.rankShiftSection,
+.pathSection {
+  min-inline-size: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.rankShiftList {
+  min-inline-size: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.rankShiftRow {
+  min-inline-size: 0;
+  min-block-size: 35px;
+  display: grid;
+  grid-template-columns: minmax(130px, 0.85fr) minmax(150px, 1.5fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 9px;
+  border: 0;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.rankShiftRow:hover {
+  background: var(--panel-hover);
+}
+
+.rankShiftName {
+  min-inline-size: 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.rankShiftTrack {
+  position: relative;
+  min-inline-size: 0;
+  block-size: 14px;
+  border-inline: 1px solid var(--line-strong);
+}
+
+.rankShiftLine {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-start: var(--rank-start, 0%);
+  inline-size: max(2px, var(--rank-width, 0%));
+  block-size: 2px;
+  background: var(--line-strong);
+}
+
+.rankReviewedDot,
+.rankAllDot {
+  position: absolute;
+  inset-block-start: 3px;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.rankReviewedDot {
+  inset-inline-start: var(--rank-reviewed, 0%);
+  border: 2px solid var(--cyan);
+  background: var(--panel);
+}
+
+.rankAllDot {
+  inset-inline-start: var(--rank-all, 0%);
+  border: 2px solid var(--violet);
+  background: var(--violet);
+}
+
+.rankShiftValue {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+
+.relationWorkbench {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.relationQueue {
+  min-inline-size: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.relationQueueList {
+  min-inline-size: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.relationQueueButton {
+  min-inline-size: 0;
+  display: grid;
+  gap: 3px;
+  padding: 9px;
+  border: 0;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.relationQueueButton:hover,
+.relationQueueButton[data-selected="true"] {
+  background: var(--cyan-soft);
+  color: var(--cyan);
+}
+
+.relationQueueButton span,
+.relationQueueButton small {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.relationQueueButton strong {
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.pathLaneList {
+  min-inline-size: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.pathLaneScroll {
+  min-inline-size: 0;
+  overflow-x: auto;
+  padding-block-end: 5px;
+  border-block-end: 1px solid var(--line);
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.pathLane {
+  inline-size: max-content;
+  min-inline-size: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.pathSegment {
+  min-inline-size: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.pathNode {
+  inline-size: 210px;
+  min-block-size: 70px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.pathNode:hover {
+  background: var(--panel-hover);
+  color: var(--cyan);
+}
+
+.pathNode > span {
+  min-inline-size: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.pathNode strong,
+.pathNode small {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.pathNode strong {
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.pathNode small {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+}
+
+.pathEdge {
+  inline-size: 148px;
+  min-block-size: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px;
+  border: 0;
+  border-block: 1px solid var(--line);
+  background: var(--panel-strong);
+  color: var(--muted);
+  cursor: pointer;
+  text-align: start;
+}
+
+.pathEdge:hover,
+.pathEdge[data-selected="true"] {
+  background: var(--cyan-soft);
+  color: var(--cyan);
+}
+
+.pathEdge > svg {
+  inline-size: 16px;
+  block-size: 16px;
+  flex: 0 0 auto;
+}
+
+.pathEdge > span {
+  min-inline-size: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.pathEdge strong,
+.pathEdge small {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.pathEdge strong {
+  color: inherit;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.pathEdge small {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+}
+
 .legendMark {
   inline-size: 11px;
   block-size: 11px;
@@ -1550,7 +2390,49 @@
   }
 
   .observatoryGrid,
-  .morphologyPicker {
+  .morphologyPicker,
+  .bridgeWorkspace,
+  .relationWorkbench {
+    grid-template-columns: 1fr;
+  }
+
+  .bridgeReadout {
+    padding-block-start: 14px;
+    padding-inline-start: 0;
+    border-block-start: 1px solid var(--line);
+    border-inline-start: 0;
+  }
+
+  .translationLedgerHeader {
+    display: none;
+  }
+
+  .translationRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .translationInstrument,
+  .translationMeasures {
+    grid-column: 1 / -1;
+  }
+
+  .mobileFieldLabel {
+    flex: 1 0 100%;
+    display: block;
+    margin-block-end: 3px;
+  }
+
+  .endpointPair {
+    grid-template-columns: 1fr;
+  }
+
+  .endpointPair > svg {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .rationaleGrid,
+  .translationDetailGrid {
     grid-template-columns: 1fr;
   }
 
@@ -1590,6 +2472,42 @@
     inline-size: 100%;
   }
 
+  .controlSummary {
+    inline-size: 100%;
+    margin-inline-start: 0;
+    text-align: start;
+  }
+
+  .phaseSwitch {
+    grid-template-columns: 1fr;
+  }
+
+  .translationRow {
+    grid-template-columns: 1fr;
+  }
+
+  .translationInstrument,
+  .translationMeasures {
+    grid-column: auto;
+  }
+
+  .bridgePlot {
+    min-block-size: 320px;
+  }
+
+  .bridgeMetrics {
+    grid-template-columns: 1fr;
+  }
+
+  .rankShiftRow {
+    grid-template-columns: minmax(100px, 0.8fr) minmax(110px, 1fr) auto;
+    gap: 7px;
+  }
+
+  .pathNode {
+    inline-size: 180px;
+  }
+
   .radioOption {
     flex: 1 1 135px;
   }
@@ -1613,10 +2531,16 @@
 
 @media (prefers-reduced-motion: reduce) {
   .panel,
+  .phaseSwitch button,
   .tab,
   .tab::after,
   .radioOption span,
   .metricFill,
+  .translationTrack > span,
+  .translationRow,
+  .bridgePoint,
+  .endpointButton,
+  .relationQueueButton,
   .heatCell,
   .geneBand,
   .matrixCell,

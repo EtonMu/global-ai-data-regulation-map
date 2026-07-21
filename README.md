@@ -12,7 +12,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read stored legal text, an explicit English-coverage notice, or a clearly labelled editorial summary where no source text is stored. Where verified original-language text is stored, the reader defaults to English and exposes the original language after the user selects it. Official English text, government but non-authoritative translations, project-authored references, historical or future-phase references, coverage notices, and editorial summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
-- **Research Lab** — investigate the corpus through five linked views: a coverage observatory, normalized regulatory genomes, provision-level comparative morphology, a coverage-aware concept grammar, and a dated global lifecycle view. Every analytical mark can be traced back to an instrument, provision, or core concept.
+- **Research Lab** — investigate the corpus through two linked phases: five coverage-aware corpus-pattern views, followed by translation-provenance, qualified-relation robustness, and directed operationalization views. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
@@ -70,6 +70,16 @@ The Research Lab defaults to the **38 version-locked complete corpora** and to p
 
 The interface exposes the active sample, denominator, support count, coverage caveats, and drill-down evidence next to the relevant visual. Analytical values are derived locally from versioned repository data; they do not silently change the legal-source snapshot.
 
+## Phase 2 research methods
+
+Phase 2 studies the reliability of the multilingual and relational layers without using an opaque legal-similarity score.
+
+- **Translation Integrity Observatory** audits the 22 complete non-English or bilingual corpora recorded in `english-corpus-coverage.json`. Stored English coverage, publication authority, and temporal alignment are separate variables. An official, government-reference, public-sector, or project-authored rendering retains its own label; 100% stored coverage is never described as translation accuracy or semantic equivalence.
+- **Qualified Bridge Atlas** projects qualified analytical relations to an instrument-level, unweighted graph while preserving every provision-level relation as drill-down evidence. Degree, cross-jurisdiction degree, and normalized unweighted betweenness are calculated once for editorial-reviewed relations and again after candidate relations are added. Rank movement therefore measures sensitivity to the project's hypotheses and editorial attention—not global legal influence, regulatory importance, or compliance value.
+- **Norm Lineage & Operationalization Paths** includes only explicitly directed `implements`, `operationalizes`, `grounded-in`, `elaborates`, `supports-operational-evidence`, `policy-transition`, `repeals`, and `repeals-and-reenacts` edges. Paths stop at three hops and retain relation type, review state, rationale, limits, sources, instrument dates, legal force, and lifecycle status. Arrow direction preserves the recorded semantic claim; it does not prove chronology, causation, legal diffusion, or one-to-one succession.
+
+All Phase 2 relation details display the rationale and limits together. Candidate mappings remain hypotheses, lifecycle edges remain distinct from substantive mappings, and every source endpoint opens back into the legal text or instrument record.
+
 ## Intended uses
 
 - Learn the structure of a major instrument and follow a concept across borders.
@@ -98,7 +108,7 @@ app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
   regulation-globe.tsx       border-free physical-land point globe and compass
   concept-constellation.tsx  theme, concept, and source-evidence visualization
-  research-lab.tsx           five linked comparative research views
+  research-lab.tsx           eight linked corpus, provenance, and relation views
   research-lab-data.ts       auditable corpus metrics and analytical derivations
 data/geo/
   natural-earth-land-110m.json  public-domain physical-land geometry

@@ -9,11 +9,15 @@ import {
   useState,
 } from "react";
 import {
+  ArrowRight,
   Clock3,
   Database,
   Dna,
+  GitFork,
   Grid3X3,
   Info,
+  Languages,
+  Network,
   Pause,
   Play,
   Rows3,
@@ -39,7 +43,12 @@ export type ResearchLabView =
   | "genome"
   | "morphology"
   | "grammar"
-  | "timeline";
+  | "timeline"
+  | "translation"
+  | "bridges"
+  | "pathways";
+
+type ResearchLabPhase = "patterns" | "relations";
 
 export type ResearchLabProps = {
   data: ResearchLabData;
@@ -185,12 +194,51 @@ const viewDefinitions: Array<{
   id: ResearchLabView;
   label: string;
   icon: LucideIcon;
+  phase: ResearchLabPhase;
 }> = [
-  { id: "observatory", label: "Corpus Observatory", icon: Database },
-  { id: "genome", label: "Regulatory Genome", icon: Dna },
-  { id: "morphology", label: "Comparative Morphology", icon: Rows3 },
-  { id: "grammar", label: "Regulatory Grammar", icon: Grid3X3 },
-  { id: "timeline", label: "Global Time Machine", icon: Clock3 },
+  {
+    id: "observatory",
+    label: "Corpus Observatory",
+    icon: Database,
+    phase: "patterns",
+  },
+  { id: "genome", label: "Regulatory Genome", icon: Dna, phase: "patterns" },
+  {
+    id: "morphology",
+    label: "Comparative Morphology",
+    icon: Rows3,
+    phase: "patterns",
+  },
+  {
+    id: "grammar",
+    label: "Regulatory Grammar",
+    icon: Grid3X3,
+    phase: "patterns",
+  },
+  {
+    id: "timeline",
+    label: "Global Time Machine",
+    icon: Clock3,
+    phase: "patterns",
+  },
+  {
+    id: "translation",
+    label: "Translation Integrity",
+    icon: Languages,
+    phase: "relations",
+  },
+  {
+    id: "bridges",
+    label: "Qualified Bridge Atlas",
+    icon: Network,
+    phase: "relations",
+  },
+  {
+    id: "pathways",
+    label: "Operationalization Paths",
+    icon: GitFork,
+    phase: "relations",
+  },
 ];
 
 function classNames(...values: Array<string | false | null | undefined>) {
@@ -485,6 +533,138 @@ function MethodNote({ children }: { children: ReactNode }) {
         <div>{children}</div>
       </div>
     </aside>
+  );
+}
+
+function relationEndpointLabel(
+  endpoint: ResearchLabData["relations"][number]["source"],
+  data: ResearchLabData,
+) {
+  if (endpoint.type === "provision") {
+    const provision = data.provisions.find((item) => item.id === endpoint.id);
+    const instrument = data.instruments.find(
+      (item) => item.id === provision?.instrumentId,
+    );
+    if (provision) {
+      return `${instrument?.shortTitle ?? provision.instrumentId} · ${provision.locator} · ${provision.title}`;
+    }
+  }
+  const instrument = data.instruments.find((item) => item.id === endpoint.id);
+  return instrument?.title ?? endpoint.id;
+}
+
+function RelationEvidenceDossier({
+  relation,
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  relation: ResearchLabData["relations"][number] | null;
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  function openEndpoint(
+    endpoint: ResearchLabData["relations"][number]["source"],
+  ) {
+    if (endpoint.type === "provision") onOpenProvision(endpoint.id);
+    else if (endpoint.instrumentId) onOpenInstrument(endpoint.instrumentId);
+  }
+
+  if (!relation) {
+    return (
+      <section className={styles.evidenceDossier} aria-label="Relation evidence">
+        <div className={styles.emptyState}>
+          Select a recorded relation to inspect its rationale, limits and source
+          support.
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className={styles.evidenceDossier} aria-label="Relation evidence">
+      <header className={styles.sectionHeader}>
+        <div>
+          <span className={styles.sectionCode}>Evidence dossier</span>
+          <h3>{humanizeResearchCode(relation.type)}</h3>
+        </div>
+        <p>
+          {humanizeResearchCode(relation.status)} · {relation.confidence} confidence ·
+          verified {relation.verifiedOn}
+        </p>
+      </header>
+
+      <div className={styles.endpointPair}>
+        <button
+          type="button"
+          className={styles.endpointButton}
+          onClick={() => openEndpoint(relation.source)}
+        >
+          <span className={styles.fieldLabel}>Source endpoint</span>
+          <strong>{relationEndpointLabel(relation.source, data)}</strong>
+        </button>
+        <ArrowRight aria-hidden="true" />
+        <button
+          type="button"
+          className={styles.endpointButton}
+          onClick={() => openEndpoint(relation.target)}
+        >
+          <span className={styles.fieldLabel}>Target endpoint</span>
+          <strong>{relationEndpointLabel(relation.target, data)}</strong>
+        </button>
+      </div>
+
+      <div className={styles.rationaleGrid}>
+        <section>
+          <span className={styles.fieldLabel}>Why the link is recorded</span>
+          <p>{relation.rationale}</p>
+        </section>
+        <section>
+          <span className={styles.fieldLabel}>Limits on inference</span>
+          <p>{relation.limits}</p>
+        </section>
+      </div>
+
+      {relation.conceptIds.length > 0 && (
+        <div className={styles.conceptLinkRow} aria-label="Relation concepts">
+          {relation.conceptIds.map((conceptId) => {
+            const concept = data.concepts.find((item) => item.id === conceptId);
+            if (!concept) return null;
+            return (
+              <button
+                type="button"
+                key={concept.id}
+                className={styles.conceptLink}
+                style={conceptStyle(concept, data.themes)}
+                onClick={() => onOpenConcept(concept.id)}
+              >
+                <ConceptIcon conceptId={concept.id} />
+                <span>{concept.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      <div className={styles.sourceLedger}>
+        <span className={styles.fieldLabel}>
+          {relation.sourceSupport.length} source records · {humanizeResearchCode(relation.evidenceBasis)}
+        </span>
+        {relation.sourceSupport.map((source) => (
+          <a
+            key={`${relation.id}-${source.url}`}
+            href={source.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {source.label}
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -924,7 +1104,7 @@ function RegulatoryGenome({
       </div>
 
       <div
-        className={styles.scrollRegion}
+        className={classNames(styles.scrollRegion, styles.genomeScroll)}
         role="region"
         aria-label="Scrollable regulatory genome matrix"
       >
@@ -938,7 +1118,7 @@ function RegulatoryGenome({
               <span>Instrument</span>
               <span>{metricLabel}</span>
             </div>
-            {data.concepts.map((concept, conceptIndex) => (
+            {data.concepts.map((concept) => (
               <button
                 type="button"
                 key={concept.id}
@@ -949,7 +1129,7 @@ function RegulatoryGenome({
               >
                 <span className={styles.conceptHeaderInner}>
                   <ConceptIcon conceptId={concept.id} />
-                  {String(conceptIndex + 1).padStart(2, "0")}
+                  <span>{concept.label}</span>
                 </span>
               </button>
             ))}
@@ -1977,6 +2157,888 @@ function GlobalTimeMachine({
   );
 }
 
+const translationAuthorityLabels: Record<
+  ResearchLabData["translationIntegrity"]["corpora"][number]["authorityClasses"][number],
+  string
+> = {
+  "official-text": "Official / co-authentic English",
+  "official-reference": "Official reference translation",
+  "government-reference": "Government / public-sector reference",
+  "project-reference": "Project-authored reference",
+  "other-reference": "Other reference text",
+};
+
+type TranslationAuthorityFilter =
+  | "all"
+  | ResearchLabData["translationIntegrity"]["corpora"][number]["authorityClasses"][number];
+type TranslationAlignmentFilter = "all" | "attention";
+
+function TranslationIntegrityObservatory({
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+}) {
+  const integrity = data.translationIntegrity;
+  const instrumentById = new Map(
+    data.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const [authorityFilter, setAuthorityFilter] =
+    useState<TranslationAuthorityFilter>("all");
+  const [alignmentFilter, setAlignmentFilter] =
+    useState<TranslationAlignmentFilter>("all");
+  const filteredCorpora = integrity.corpora.filter(
+    (corpus) =>
+      (authorityFilter === "all" ||
+        corpus.authorityClasses.includes(authorityFilter)) &&
+      (alignmentFilter === "all" ||
+        corpus.temporallyMismatchedEnglishUnitCount > 0 ||
+        corpus.missingEnglishUnitCount > 0),
+  );
+  const defaultCorpusId =
+    integrity.corpora.find(
+      (corpus) => corpus.temporallyMismatchedEnglishUnitCount > 0,
+    )?.instrumentId ?? integrity.corpora[0]?.instrumentId ?? null;
+  const [activeCorpusId, setActiveCorpusId] = useState<string | null>(
+    defaultCorpusId,
+  );
+
+  const activeCorpus =
+    filteredCorpora.find((corpus) => corpus.instrumentId === activeCorpusId) ??
+    filteredCorpora[0] ??
+    null;
+  const activeInstrument = activeCorpus
+    ? instrumentById.get(activeCorpus.instrumentId)
+    : null;
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>06 / Translation provenance</span>
+          <h2>Translation Integrity Observatory</h2>
+          <p>
+            Separate English-text storage, publication authority and temporal
+            alignment across complete non-English corpora.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.statsGrid} aria-label="Translation coverage summary">
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Audited corpora</span>
+          <strong className={styles.statValue}>
+            {formatter.format(integrity.totals.corpusCount)}
+          </strong>
+          <span className={styles.statMeta}>complete non-English corpora</span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Stored English</span>
+          <strong className={styles.statValue}>
+            {formatter.format(integrity.totals.storedEnglishUnitCount)}
+          </strong>
+          <span className={styles.statMeta}>
+            of {formatter.format(integrity.totals.totalUnitCount)} units
+          </span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Current-aligned</span>
+          <strong className={styles.statValue}>
+            {integrity.totals.currentAlignedPercent.toFixed(1)}%
+          </strong>
+          <span className={styles.statMeta}>
+            {formatter.format(integrity.totals.currentAlignedEnglishUnitCount)} units
+          </span>
+        </article>
+        <article className={styles.stat}>
+          <span className={styles.statLabel}>Temporal mismatch</span>
+          <strong className={styles.statValue}>
+            {formatter.format(
+              integrity.totals.temporallyMismatchedEnglishUnitCount,
+            )}
+          </strong>
+          <span className={styles.statMeta}>version-alignment review targets</span>
+        </article>
+      </div>
+
+      <div className={styles.controlBar}>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>English authority class</span>
+          <select
+            aria-label="English authority class"
+            value={authorityFilter}
+            onChange={(event) =>
+              setAuthorityFilter(
+                event.target.value as TranslationAuthorityFilter,
+              )
+            }
+          >
+            <option value="all">All authority classes</option>
+            {Object.entries(translationAuthorityLabels).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Alignment view</span>
+          <select
+            aria-label="Translation alignment view"
+            value={alignmentFilter}
+            onChange={(event) =>
+              setAlignmentFilter(
+                event.target.value as TranslationAlignmentFilter,
+              )
+            }
+          >
+            <option value="all">All audited corpora</option>
+            <option value="attention">Temporal or missing-text attention</option>
+          </select>
+        </label>
+        <span className={styles.controlSummary}>
+          {filteredCorpora.length} corpora visible · reviewed {integrity.reviewedOn}
+        </span>
+      </div>
+
+      <div className={styles.translationLedger} role="list" aria-label="Translation provenance by corpus">
+        <div className={styles.translationLedgerHeader} aria-hidden="true">
+          <span>Legal source</span>
+          <span>Original language</span>
+          <span>English authority</span>
+          <span>Storage / current alignment</span>
+        </div>
+        {filteredCorpora.map((corpus) => {
+          const instrument = instrumentById.get(corpus.instrumentId);
+          if (!instrument) return null;
+          const storedRatio = corpus.totalUnitCount
+            ? (corpus.storedEnglishUnitCount / corpus.totalUnitCount) * 100
+            : 0;
+          const alignedRatio = corpus.totalUnitCount
+            ? (corpus.currentAlignedEnglishUnitCount / corpus.totalUnitCount) * 100
+            : 0;
+          return (
+            <article
+              key={corpus.instrumentId}
+              className={styles.translationRow}
+              data-selected={activeCorpus?.instrumentId === corpus.instrumentId}
+              role="listitem"
+            >
+              <button
+                type="button"
+                className={styles.translationInstrument}
+                onClick={() => setActiveCorpusId(corpus.instrumentId)}
+                aria-pressed={activeCorpus?.instrumentId === corpus.instrumentId}
+              >
+                <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
+                <span>
+                  <strong>{instrument.shortTitle}</strong>
+                  <small>
+                    {humanizeResearchCode(instrument.legalForce)} · {humanizeResearchCode(instrument.lifecycleStatus)}
+                  </small>
+                </span>
+              </button>
+              <div className={styles.translationLanguage}>
+                <span className={styles.mobileFieldLabel}>Original language</span>
+                {corpus.originalLanguages.join(" · ")}
+              </div>
+              <div className={styles.authorityTokens}>
+                <span className={styles.mobileFieldLabel}>English authority</span>
+                {corpus.authorityClasses.map((authorityClass) => (
+                  <span key={authorityClass} data-authority={authorityClass}>
+                    {translationAuthorityLabels[authorityClass]}
+                  </span>
+                ))}
+              </div>
+              <div className={styles.translationMeasures}>
+                <span className={styles.mobileFieldLabel}>Storage / alignment</span>
+                <div className={styles.translationMeasure}>
+                  <span>
+                    Stored {corpus.storedEnglishUnitCount}/{corpus.totalUnitCount}
+                  </span>
+                  <span className={styles.translationTrack} aria-hidden="true">
+                    <span
+                      data-measure="stored"
+                      style={{ "--translation-width": `${storedRatio}%` } as VisualStyle}
+                    />
+                  </span>
+                </div>
+                <div className={styles.translationMeasure}>
+                  <span>
+                    Current-aligned {corpus.currentAlignedEnglishUnitCount}/{corpus.totalUnitCount}
+                  </span>
+                  <span className={styles.translationTrack} aria-hidden="true">
+                    <span
+                      data-measure="aligned"
+                      style={{ "--translation-width": `${alignedRatio}%` } as VisualStyle}
+                    />
+                  </span>
+                </div>
+                {corpus.temporallyMismatchedEnglishUnitCount > 0 && (
+                  <strong className={styles.attentionText}>
+                    {corpus.temporallyMismatchedEnglishUnitCount} temporally mismatched
+                  </strong>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      {activeCorpus && activeInstrument && (
+        <section className={styles.translationDetail} aria-live="polite">
+          <header className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionCode}>Selected provenance record</span>
+              <h3>{activeInstrument.title}</h3>
+            </div>
+            <button
+              type="button"
+              className={styles.evidenceButton}
+              onClick={() => onOpenInstrument(activeInstrument.id)}
+            >
+              Open instrument
+            </button>
+          </header>
+          <div className={styles.translationDetailGrid}>
+            <section>
+              <span className={styles.fieldLabel}>Version basis</span>
+              {activeCorpus.versionLabels.map((label) => (
+                <p key={label}>{label}</p>
+              ))}
+            </section>
+            <section>
+              <span className={styles.fieldLabel}>English status records</span>
+              <p>{activeCorpus.translationStatuses.map(humanizeResearchCode).join(" · ")}</p>
+            </section>
+          </div>
+          {activeCorpus.anomalyProvisionIds.length > 0 && (
+            <div className={styles.anomalyList}>
+              <span className={styles.fieldLabel}>Article-level temporal review targets</span>
+              {activeCorpus.anomalyProvisionIds.map((provisionId) => {
+                const provision = data.provisions.find(
+                  (item) => item.id === provisionId,
+                );
+                return (
+                  <button
+                    type="button"
+                    key={provisionId}
+                    className={styles.evidenceButton}
+                    onClick={() => onOpenProvision(provisionId)}
+                  >
+                    {provision ? `${provision.locator} · ${provision.title}` : provisionId}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+          <div className={styles.sourceLedger}>
+            <span className={styles.fieldLabel}>English source records</span>
+            {activeCorpus.englishSourceRecords.map((source) => (
+              <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
+                {source.label}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <MethodNote>
+        Stored English text is not a translation-quality finding. Official,
+        government-reference and project-authored texts remain separate authority
+        classes; temporal alignment checks whether the English rendering matches the
+        displayed source version, not whether every sentence is substantively accurate.
+      </MethodNote>
+    </>
+  );
+}
+
+type BridgeLayer = "reviewed" | "all";
+
+function QualifiedBridgeAtlas({
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const atlas = data.bridgeAtlas;
+  const instrumentById = new Map(
+    data.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const [layer, setLayer] = useState<BridgeLayer>("reviewed");
+  const defaultNode =
+    atlas.nodes.find((node) => node.reviewedDegree > 0) ?? atlas.nodes[0] ?? null;
+  const [selectedInstrumentId, setSelectedInstrumentId] = useState<string | null>(
+    defaultNode?.instrumentId ?? null,
+  );
+  const activeNodes = atlas.nodes.filter((node) =>
+    layer === "reviewed" ? node.reviewedDegree > 0 : node.allDegree > 0,
+  );
+
+  const selectedNode =
+    activeNodes.find((node) => node.instrumentId === selectedInstrumentId) ??
+    activeNodes[0] ??
+    null;
+  const selectedInstrument = selectedNode
+    ? instrumentById.get(selectedNode.instrumentId)
+    : null;
+  const visibleRelations = data.relations
+    .filter(
+      (relation) =>
+        relation.relationClass === "analytical" &&
+        (layer === "all" || relation.status === "editorial-reviewed") &&
+        (relation.source.instrumentId === selectedNode?.instrumentId ||
+          relation.target.instrumentId === selectedNode?.instrumentId),
+    )
+    .sort(
+      (left, right) =>
+        Number(right.status === "editorial-reviewed") -
+          Number(left.status === "editorial-reviewed") ||
+        left.type.localeCompare(right.type) ||
+        left.id.localeCompare(right.id),
+    );
+  const [selectedRelationId, setSelectedRelationId] = useState<string | null>(
+    null,
+  );
+
+  const selectedRelation =
+    visibleRelations.find((relation) => relation.id === selectedRelationId) ??
+    visibleRelations[0] ??
+    null;
+  const maxDegree = Math.max(
+    1,
+    ...activeNodes.map((node) =>
+      layer === "reviewed" ? node.reviewedDegree : node.allDegree,
+    ),
+  );
+  const maxBetweenness = Math.max(
+    0.000001,
+    ...activeNodes.map((node) =>
+      layer === "reviewed" ? node.reviewedBetweenness : node.allBetweenness,
+    ),
+  );
+  const selectedConceptIds = Array.from(
+    new Set(visibleRelations.flatMap((relation) => relation.conceptIds)),
+  );
+  const rankShiftNodes = [...atlas.nodes]
+    .filter((node) => node.reviewedDegree > 0 || node.allDegree > 0)
+    .sort(
+      (left, right) =>
+        Math.abs(right.rankDelta) - Math.abs(left.rankDelta) ||
+        left.allRank - right.allRank,
+    )
+    .slice(0, 12);
+  const rankCount = Math.max(2, atlas.nodes.length);
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>07 / Relation robustness</span>
+          <h2>Qualified Bridge Atlas</h2>
+          <p>
+            Test which instruments bridge the project&apos;s reviewed relation graph and
+            how that picture changes when candidate mappings are added.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.controlBar}>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Evidence layer</span>
+          <select
+            aria-label="Bridge evidence layer"
+            value={layer}
+            onChange={(event) => setLayer(event.target.value as BridgeLayer)}
+          >
+            <option value="reviewed">Editorial-reviewed only</option>
+            <option value="all">Reviewed + candidate hypotheses</option>
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Focus instrument</span>
+          <select
+            aria-label="Bridge focus instrument"
+            value={selectedNode?.instrumentId ?? ""}
+            onChange={(event) => setSelectedInstrumentId(event.target.value)}
+          >
+            {activeNodes.map((node) => {
+              const instrument = instrumentById.get(node.instrumentId);
+              return (
+                <option key={node.instrumentId} value={node.instrumentId}>
+                  {instrument?.shortTitle ?? node.instrumentId}
+                </option>
+              );
+            })}
+          </select>
+        </label>
+        <span className={styles.controlSummary}>
+          {layer === "reviewed"
+            ? `${atlas.reviewedRelationCount} reviewed analytical relations`
+            : `${atlas.analyticalRelationCount} reviewed and candidate analytical relations`}
+        </span>
+      </div>
+
+      <section className={styles.bridgeWorkspace}>
+        <div
+          className={styles.bridgePlot}
+          role="group"
+          aria-label={`Instrument bridge plot: horizontal position is distinct mapped neighbors and vertical position is normalized betweenness in the ${layer === "reviewed" ? "reviewed" : "reviewed plus candidate"} graph`}
+        >
+          <span className={styles.bridgeAxisY}>Normalized betweenness</span>
+          <span className={styles.bridgeAxisX}>Distinct mapped neighbors</span>
+          {activeNodes.map((node) => {
+            const instrument = instrumentById.get(node.instrumentId);
+            if (!instrument) return null;
+            const degree =
+              layer === "reviewed" ? node.reviewedDegree : node.allDegree;
+            const betweenness =
+              layer === "reviewed"
+                ? node.reviewedBetweenness
+                : node.allBetweenness;
+            const x = 8 + (degree / maxDegree) * 84;
+            const y = 92 - (betweenness / maxBetweenness) * 84;
+            const selected = node.instrumentId === selectedNode?.instrumentId;
+            return (
+              <button
+                type="button"
+                key={node.instrumentId}
+                className={styles.bridgePoint}
+                style={{ "--plot-x": `${x}%`, "--plot-y": `${y}%` } as VisualStyle}
+                data-selected={selected}
+                aria-pressed={selected}
+                aria-label={`${instrument.shortTitle}: ${degree} mapped neighbors; normalized betweenness ${betweenness.toFixed(3)}`}
+                onClick={() => setSelectedInstrumentId(node.instrumentId)}
+              >
+                <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
+              </button>
+            );
+          })}
+        </div>
+
+        <aside className={styles.bridgeReadout} aria-live="polite">
+          {selectedNode && selectedInstrument ? (
+            <>
+              <div className={styles.bridgeIdentity}>
+                <JurisdictionMark
+                  jurisdictionId={selectedInstrument.jurisdictionId}
+                />
+                <div>
+                  <span className={styles.sectionCode}>Selected graph node</span>
+                  <h3>{selectedInstrument.shortTitle}</h3>
+                  <p>
+                    {selectedInstrument.jurisdictionName} · {humanizeResearchCode(selectedInstrument.legalForce)} · {humanizeResearchCode(selectedInstrument.lifecycleStatus)}
+                  </p>
+                </div>
+              </div>
+              <dl className={styles.bridgeMetrics}>
+                <div>
+                  <dt>Distinct neighbors</dt>
+                  <dd>{layer === "reviewed" ? selectedNode.reviewedDegree : selectedNode.allDegree}</dd>
+                </div>
+                <div>
+                  <dt>Cross-jurisdiction neighbors</dt>
+                  <dd>
+                    {layer === "reviewed"
+                      ? selectedNode.reviewedCrossJurisdictionDegree
+                      : selectedNode.allCrossJurisdictionDegree}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Normalized betweenness</dt>
+                  <dd>
+                    {(layer === "reviewed"
+                      ? selectedNode.reviewedBetweenness
+                      : selectedNode.allBetweenness
+                    ).toFixed(3)}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Graph rank sensitivity</dt>
+                  <dd>
+                    {selectedNode.reviewedRank} → {selectedNode.allRank}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Relations in layer</dt>
+                  <dd>{layer === "reviewed" ? selectedNode.reviewedRelationCount : selectedNode.allRelationCount}</dd>
+                </div>
+                <div>
+                  <dt>Curated facet anchors</dt>
+                  <dd>{selectedNode.curatedFacetProvisionCount}</dd>
+                </div>
+              </dl>
+              <button
+                type="button"
+                className={styles.evidenceButton}
+                onClick={() => onOpenInstrument(selectedInstrument.id)}
+              >
+                Open instrument
+              </button>
+              <div className={styles.conceptLinkRow}>
+                {selectedConceptIds.slice(0, 8).map((conceptId) => {
+                  const concept = data.concepts.find((item) => item.id === conceptId);
+                  if (!concept) return null;
+                  return (
+                    <button
+                      type="button"
+                      key={concept.id}
+                      className={styles.conceptLink}
+                      style={conceptStyle(concept, data.themes)}
+                      onClick={() => onOpenConcept(concept.id)}
+                    >
+                      <ConceptIcon conceptId={concept.id} />
+                      <span>{concept.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <span>No graph node is available in this evidence layer.</span>
+          )}
+        </aside>
+      </section>
+
+      <section className={styles.rankShiftSection}>
+        <header className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionCode}>Candidate-edge sensitivity</span>
+            <h3>Rank movement when hypotheses enter the graph</h3>
+          </div>
+          <p>Reviewed rank → reviewed + candidate rank</p>
+        </header>
+        <div className={styles.rankShiftList}>
+          {rankShiftNodes.map((node) => {
+            const instrument = instrumentById.get(node.instrumentId);
+            if (!instrument) return null;
+            const reviewedPosition =
+              ((node.reviewedRank - 1) / (rankCount - 1)) * 100;
+            const allPosition = ((node.allRank - 1) / (rankCount - 1)) * 100;
+            const lineStart = Math.min(reviewedPosition, allPosition);
+            const lineWidth = Math.abs(reviewedPosition - allPosition);
+            return (
+              <button
+                type="button"
+                key={node.instrumentId}
+                className={styles.rankShiftRow}
+                onClick={() => setSelectedInstrumentId(node.instrumentId)}
+                aria-label={`${instrument.shortTitle}: reviewed rank ${node.reviewedRank}, reviewed plus candidate rank ${node.allRank}`}
+              >
+                <span className={styles.rankShiftName}>{instrument.shortTitle}</span>
+                <span
+                  className={styles.rankShiftTrack}
+                  style={
+                    {
+                      "--rank-start": `${lineStart}%`,
+                      "--rank-width": `${lineWidth}%`,
+                      "--rank-reviewed": `${reviewedPosition}%`,
+                      "--rank-all": `${allPosition}%`,
+                    } as VisualStyle
+                  }
+                  aria-hidden="true"
+                >
+                  <span className={styles.rankShiftLine} />
+                  <span className={styles.rankReviewedDot} />
+                  <span className={styles.rankAllDot} />
+                </span>
+                <span className={styles.rankShiftValue}>
+                  {node.reviewedRank} → {node.allRank}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className={styles.relationWorkbench}>
+        <div className={styles.relationQueue}>
+          <header className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionCode}>Recorded evidence</span>
+              <h3>{visibleRelations.length} relations at this node</h3>
+            </div>
+          </header>
+          <div className={styles.relationQueueList}>
+            {visibleRelations.map((relation) => {
+              const peer =
+                relation.source.instrumentId === selectedNode?.instrumentId
+                  ? relation.target
+                  : relation.source;
+              return (
+                <button
+                  type="button"
+                  key={relation.id}
+                  className={styles.relationQueueButton}
+                  data-selected={selectedRelation?.id === relation.id}
+                  onClick={() => setSelectedRelationId(relation.id)}
+                >
+                  <span>
+                    {humanizeResearchCode(relation.type)} · {humanizeResearchCode(relation.status)}
+                  </span>
+                  <strong>{relationEndpointLabel(peer, data)}</strong>
+                  <small>{relation.confidence} confidence · {relation.verifiedOn}</small>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <RelationEvidenceDossier
+          relation={selectedRelation}
+          data={data}
+          onOpenInstrument={onOpenInstrument}
+          onOpenProvision={onOpenProvision}
+          onOpenConcept={onOpenConcept}
+        />
+      </section>
+
+      <MethodNote>
+        Betweenness and degree describe this project&apos;s qualified-relation graph,
+        not global legal influence, regulatory quality or doctrinal importance.
+        Reviewed-only and reviewed-plus-candidate layers remain separate, and the
+        graph is an unweighted undirected projection used only to inspect bridge
+        sensitivity and editorial attention.
+      </MethodNote>
+    </>
+  );
+}
+
+type PathEvidenceLayer = "reviewed" | "all";
+
+function OperationalizationPathways({
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const operational = data.operationalizationPaths;
+  const instrumentById = new Map(
+    data.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const relationById = new Map(
+    data.relations.map((relation) => [relation.id, relation]),
+  );
+  const edgeById = new Map(
+    operational.edges.map((edge) => [edge.relationId, edge]),
+  );
+  const [layer, setLayer] = useState<PathEvidenceLayer>("reviewed");
+  const visibleEdges = operational.edges.filter(
+    (edge) => layer === "all" || edge.status === "editorial-reviewed",
+  );
+  const rootIds = Array.from(
+    new Set(visibleEdges.map((edge) => edge.sourceInstrumentId)),
+  ).sort((left, right) => {
+    const leftCount = visibleEdges.filter(
+      (edge) => edge.sourceInstrumentId === left,
+    ).length;
+    const rightCount = visibleEdges.filter(
+      (edge) => edge.sourceInstrumentId === right,
+    ).length;
+    return (
+      rightCount - leftCount ||
+      (instrumentById.get(left)?.atlasOrder ?? Number.MAX_SAFE_INTEGER) -
+        (instrumentById.get(right)?.atlasOrder ?? Number.MAX_SAFE_INTEGER) ||
+      left.localeCompare(right)
+    );
+  });
+  const [rootInstrumentId, setRootInstrumentId] = useState<string | null>(
+    rootIds[0] ?? null,
+  );
+  const activeRootInstrumentId = rootIds.includes(rootInstrumentId ?? "")
+    ? rootInstrumentId
+    : rootIds[0] ?? null;
+
+  const pathsForRoot = operational.paths.filter(
+    (path) =>
+      path.rootInstrumentId === activeRootInstrumentId &&
+      (layer === "all" || path.status === "editorial-reviewed"),
+  );
+  const terminalPaths = pathsForRoot
+    .filter(
+      (path) =>
+        !pathsForRoot.some(
+          (other) =>
+            other.relationIds.length > path.relationIds.length &&
+            path.relationIds.every(
+              (relationId, index) => other.relationIds[index] === relationId,
+            ),
+        ),
+    )
+    .slice(0, 12);
+  const [selectedRelationId, setSelectedRelationId] = useState<string | null>(
+    null,
+  );
+  const visibleRelationIds = new Set(
+    terminalPaths.flatMap((path) => path.relationIds),
+  );
+  const activeRelationId =
+    selectedRelationId && visibleRelationIds.has(selectedRelationId)
+      ? selectedRelationId
+      : terminalPaths[0]?.relationIds[0] ?? null;
+  const selectedRelation = activeRelationId
+    ? relationById.get(activeRelationId) ?? null
+    : null;
+
+  function dateForPathNode(path: ResearchLabData["operationalizationPaths"]["paths"][number], index: number) {
+    if (index === 0) {
+      return edgeById.get(path.relationIds[0])?.sourceDate ?? data.snapshotDate;
+    }
+    return edgeById.get(path.relationIds[index - 1])?.targetDate ?? data.snapshotDate;
+  }
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>08 / Directed legal relations</span>
+          <h2>Norm Lineage &amp; Operationalization Paths</h2>
+          <p>
+            Follow recorded implementation, legal-basis, operational-evidence and
+            lifecycle edges without converting them into claims of causal diffusion.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.controlBar}>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Directed evidence layer</span>
+          <select
+            aria-label="Operational path evidence layer"
+            value={layer}
+            onChange={(event) =>
+              setLayer(event.target.value as PathEvidenceLayer)
+            }
+          >
+            <option value="reviewed">Editorial-reviewed only</option>
+            <option value="all">Reviewed + candidate hypotheses</option>
+          </select>
+        </label>
+        <label className={styles.field}>
+          <span className={styles.fieldLabel}>Path origin</span>
+          <select
+            aria-label="Operational path origin"
+            value={activeRootInstrumentId ?? ""}
+            onChange={(event) => setRootInstrumentId(event.target.value)}
+          >
+            {rootIds.map((instrumentId) => (
+              <option key={instrumentId} value={instrumentId}>
+                {instrumentById.get(instrumentId)?.shortTitle ?? instrumentId}
+              </option>
+            ))}
+          </select>
+        </label>
+        <span className={styles.controlSummary}>
+          {layer === "reviewed"
+            ? `${operational.reviewedDirectedRelationCount} reviewed directed relations`
+            : `${operational.directedRelationCount} directed relations in both review layers`}
+        </span>
+      </div>
+
+      <section className={styles.pathSection}>
+        <header className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionCode}>Semantic path lanes</span>
+            <h3>{terminalPaths.length} recorded paths from the selected origin</h3>
+          </div>
+          <p>Maximum three hops · dates label instrument records, not arrow causation</p>
+        </header>
+        {terminalPaths.length > 0 ? (
+          <div className={styles.pathLaneList} role="list" aria-label="Directed operational relation paths">
+            {terminalPaths.map((path) => (
+              <div
+                key={path.id}
+                className={styles.pathLaneScroll}
+                role="listitem"
+                aria-label={`${path.hopCount}-hop ${path.status} path`}
+              >
+                <div className={styles.pathLane}>
+                  {path.instrumentIds.map((instrumentId, index) => {
+                    const instrument = instrumentById.get(instrumentId);
+                    const relationId = path.relationIds[index];
+                    const edge = relationId ? edgeById.get(relationId) : null;
+                    return (
+                      <div className={styles.pathSegment} key={`${path.id}-${instrumentId}-${index}`}>
+                        <button
+                          type="button"
+                          className={styles.pathNode}
+                          data-category={instrument?.category ?? "instrument"}
+                          onClick={() => onOpenInstrument(instrumentId)}
+                        >
+                          {instrument && (
+                            <JurisdictionMark
+                              jurisdictionId={instrument.jurisdictionId}
+                              small
+                            />
+                          )}
+                          <span>
+                            <strong>{instrument?.shortTitle ?? instrumentId}</strong>
+                            <small>
+                              {dateForPathNode(path, index)} · {instrument ? humanizeResearchCode(instrument.legalForce) : "instrument"} · {instrument ? humanizeResearchCode(instrument.lifecycleStatus) : "status unknown"}
+                            </small>
+                          </span>
+                        </button>
+                        {edge && (
+                          <button
+                            type="button"
+                            className={styles.pathEdge}
+                            data-selected={activeRelationId === edge.relationId}
+                            onClick={() => setSelectedRelationId(edge.relationId)}
+                            aria-label={`Inspect ${humanizeResearchCode(edge.type)} relation, ${humanizeResearchCode(edge.status)}`}
+                          >
+                            <ArrowRight aria-hidden="true" />
+                            <span>
+                              <strong>{humanizeResearchCode(edge.type)}</strong>
+                              <small>{humanizeResearchCode(edge.status)}</small>
+                            </span>
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className={styles.emptyState}>
+            No directed path is recorded for this origin in the selected evidence
+            layer.
+          </div>
+        )}
+      </section>
+
+      <RelationEvidenceDossier
+        relation={selectedRelation}
+        data={data}
+        onOpenInstrument={onOpenInstrument}
+        onOpenProvision={onOpenProvision}
+        onOpenConcept={onOpenConcept}
+      />
+
+      <MethodNote>
+        Only explicitly directed relation types are included, and paths stop at three
+        hops. An arrow preserves the corpus&apos;s recorded relation semantics; it does not
+        prove temporal influence, policy migration, legal hierarchy, equivalent duties
+        or causal diffusion. Undirected partial-overlap and soft-law-alignment edges are
+        intentionally excluded.
+      </MethodNote>
+    </>
+  );
+}
+
 export function ResearchLab({
   data,
   initialView = "observatory",
@@ -1986,33 +3048,51 @@ export function ResearchLab({
   onOpenConcept,
 }: ResearchLabProps) {
   const [activeView, setActiveView] = useState<ResearchLabView>(initialView);
+  const [activePhase, setActivePhase] = useState<ResearchLabPhase>(
+    viewDefinitions.find((definition) => definition.id === initialView)?.phase ??
+      "patterns",
+  );
   const [coverageScope, setCoverageScope] =
     useState<CoverageScope>("complete");
   const [relevanceScope, setRelevanceScope] =
     useState<RelevanceScope>("substantive");
+  const phaseViewDefinitions = viewDefinitions.filter(
+    (definition) => definition.phase === activePhase,
+  );
+
+  function activatePhase(phase: ResearchLabPhase) {
+    setActivePhase(phase);
+    const currentDefinition = viewDefinitions.find(
+      (definition) => definition.id === activeView,
+    );
+    if (currentDefinition?.phase !== phase) {
+      setActiveView(phase === "patterns" ? "observatory" : "translation");
+    }
+  }
 
   function handleTabKeyDown(
     event: ReactKeyboardEvent<HTMLButtonElement>,
     currentView: ResearchLabView,
   ) {
-    const currentIndex = viewDefinitions.findIndex(
+    const currentIndex = phaseViewDefinitions.findIndex(
       (definition) => definition.id === currentView,
     );
     let nextIndex = currentIndex;
     if (event.key === "ArrowRight") {
-      nextIndex = (currentIndex + 1) % viewDefinitions.length;
+      nextIndex = (currentIndex + 1) % phaseViewDefinitions.length;
     } else if (event.key === "ArrowLeft") {
       nextIndex =
-        (currentIndex - 1 + viewDefinitions.length) % viewDefinitions.length;
+        (currentIndex - 1 + phaseViewDefinitions.length) %
+        phaseViewDefinitions.length;
     } else if (event.key === "Home") {
       nextIndex = 0;
     } else if (event.key === "End") {
-      nextIndex = viewDefinitions.length - 1;
+      nextIndex = phaseViewDefinitions.length - 1;
     } else {
       return;
     }
     event.preventDefault();
-    const next = viewDefinitions[nextIndex];
+    const next = phaseViewDefinitions[nextIndex];
     setActiveView(next.id);
     event.currentTarget.parentElement
       ?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
@@ -2026,11 +3106,14 @@ export function ResearchLab({
     >
       <header className={styles.header}>
         <div className={styles.headerCopy}>
-          <span className={styles.eyebrow}>COMPUTATIONAL LEGAL RESEARCH / PHASE 01</span>
+          <span className={styles.eyebrow}>
+            COMPUTATIONAL LEGAL RESEARCH / {activePhase === "patterns" ? "PHASE 01" : "PHASE 02"}
+          </span>
           <h1>Research Lab</h1>
           <p>
-            Explore corpus quality, regulatory fingerprints, document structure,
-            concept associations and legal change through evidence-linked views.
+            {activePhase === "patterns"
+              ? "Explore corpus quality, regulatory fingerprints, document structure, concept associations and legal change through evidence-linked views."
+              : "Audit multilingual provenance, relation-graph robustness and directed legal operationalization through source-linked views."}
           </p>
         </div>
         <div className={styles.snapshot}>
@@ -2042,12 +3125,33 @@ export function ResearchLab({
         </div>
       </header>
 
+      <div className={styles.phaseSwitch} aria-label="Research phase">
+        <button
+          type="button"
+          aria-pressed={activePhase === "patterns"}
+          onClick={() => activatePhase("patterns")}
+        >
+          <span>Phase 01</span>
+          <strong>Corpus patterns</strong>
+        </button>
+        <button
+          type="button"
+          aria-pressed={activePhase === "relations"}
+          onClick={() => activatePhase("relations")}
+        >
+          <span>Phase 02</span>
+          <strong>Provenance + relations</strong>
+        </button>
+      </div>
+
       <nav
         className={styles.tabList}
+        style={{ "--tab-count": phaseViewDefinitions.length } as VisualStyle}
         role="tablist"
         aria-label="Research Lab views"
+        data-research-phase={activePhase}
       >
-        {viewDefinitions.map((view) => {
+        {phaseViewDefinitions.map((view) => {
           const Icon = view.icon;
           return (
             <button
@@ -2120,6 +3224,29 @@ export function ResearchLab({
           <GlobalTimeMachine
             data={data}
             onOpenInstrument={onOpenInstrument}
+          />
+        )}
+        {activeView === "translation" && (
+          <TranslationIntegrityObservatory
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+          />
+        )}
+        {activeView === "bridges" && (
+          <QualifiedBridgeAtlas
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "pathways" && (
+          <OperationalizationPathways
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+            onOpenConcept={onOpenConcept}
           />
         )}
       </section>

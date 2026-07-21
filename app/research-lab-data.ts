@@ -1,5 +1,5 @@
 /**
- * Pure, coverage-aware derivations for the Phase 1 Research Lab.
+ * Pure, coverage-aware derivations for the Research Lab.
  *
  * This module deliberately does not import corpus JSON. The explorer already
  * builds the authoritative merged provision array, so callers pass that same
@@ -51,7 +51,27 @@ export type ResearchProvisionInput = {
   parentId?: string | null;
   legalEffectStatus?: string;
   appliesFrom?: string | null;
+  versionAsOf?: string | null;
+  summary?: string;
   conceptIds: string[];
+  actorTags?: string[];
+  scopeTags?: string[];
+  textAvailability?: {
+    language: string;
+    mode?: string;
+    stored?: boolean;
+  };
+  translations?: {
+    en?: {
+      status: string;
+      coverageStatus?: string;
+      versionAsOf?: string;
+      versionLabel?: string;
+      currentTextEquivalent?: boolean;
+      alignmentStatus?: string;
+      source?: ResearchSourceRef | string;
+    };
+  };
   sourceOrder?: number;
   chapter?: ResearchStructureInput | null;
   section?: ResearchStructureInput | null;
@@ -106,6 +126,14 @@ export type ResearchRelationInput = {
   status: string;
   confidence: string;
   type: string;
+  relationClass?: string;
+  directionality?: string;
+  conceptIds?: string[];
+  evidenceBasis?: string;
+  rationale?: string;
+  limits?: string;
+  verifiedOn?: string;
+  sourceSupport?: ResearchSourceRef[];
 };
 
 export type ResearchSourceRef = {
@@ -125,6 +153,42 @@ export type ResearchStatusEventInput = {
   source?: ResearchSourceRef;
 };
 
+export type ResearchEnglishCorpusInput = {
+  instrumentId: string;
+  corpusFile: string;
+  originalLanguages: string[];
+  totalUnitCount: number;
+  storedEnglishUnitCount: number;
+  currentAlignedEnglishUnitCount: number;
+  temporallyMismatchedEnglishUnitCount: number;
+  missingEnglishUnitCount: number;
+  completionPercent: number;
+  coverageStatus: string;
+  translationStatuses: string[];
+  unitCoverageStatuses: string[];
+  versionLabels: string[];
+  englishSourceRecords: ResearchSourceRef[];
+  missingUnitIds: string[];
+  missingCoverageStatuses: string[];
+};
+
+export type ResearchEnglishCorpusCoverageInput = {
+  schemaVersion: string;
+  reviewedOn: string;
+  scope: string;
+  totals: {
+    corpusCount: number;
+    totalUnitCount: number;
+    storedEnglishUnitCount: number;
+    currentAlignedEnglishUnitCount: number;
+    temporallyMismatchedEnglishUnitCount: number;
+    missingEnglishUnitCount: number;
+    completionPercent: number;
+    currentAlignedPercent: number;
+  };
+  corpora: ResearchEnglishCorpusInput[];
+};
+
 export type ResearchCorpusInput = {
   snapshotDate?: string;
   jurisdictions: readonly ResearchJurisdictionInput[];
@@ -135,6 +199,7 @@ export type ResearchCorpusInput = {
   sourceAudits: readonly ResearchSourceAuditInput[];
   relations: readonly ResearchRelationInput[];
   statusEvents: readonly ResearchStatusEventInput[];
+  englishCorpusCoverage?: ResearchEnglishCorpusCoverageInput;
 };
 
 export type ResearchAnalysisOptions = {
@@ -200,6 +265,14 @@ export type ResearchProvisionDatum = {
   provisionType: string;
   legalEffectStatus: string | null;
   appliesFrom: string | null;
+  versionAsOf: string | null;
+  summary: string;
+  actorTags: string[];
+  scopeTags: string[];
+  originalLanguage: string | null;
+  englishTranslationStatus: string | null;
+  englishCoverageStatus: string | null;
+  englishAlignmentStatus: string | null;
   sourceOrder: number;
   relevance: ResearchRelevance;
   conceptIds: string[];
@@ -330,6 +403,7 @@ export type ResearchInstrumentDatum = {
   shortTitle: string;
   title: string;
   jurisdictionId: string;
+  jurisdictionRootId: string;
   jurisdictionName: string;
   jurisdictionIsoCode: string | null;
   category: string;
@@ -352,6 +426,129 @@ export type ResearchInstrumentDatum = {
   conceptWeights: ResearchConceptWeight[];
 };
 
+export type ResearchTranslationAuthorityClass =
+  | "official-text"
+  | "official-reference"
+  | "government-reference"
+  | "project-reference"
+  | "other-reference";
+
+export type ResearchTranslationCorpusDatum = {
+  instrumentId: string;
+  corpusFile: string;
+  originalLanguages: string[];
+  totalUnitCount: number;
+  storedEnglishUnitCount: number;
+  currentAlignedEnglishUnitCount: number;
+  temporallyMismatchedEnglishUnitCount: number;
+  missingEnglishUnitCount: number;
+  completionPercent: number;
+  currentAlignedPercent: number;
+  coverageStatus: string;
+  authorityClasses: ResearchTranslationAuthorityClass[];
+  translationStatuses: string[];
+  unitCoverageStatuses: string[];
+  versionLabels: string[];
+  englishSourceRecords: ResearchSourceRef[];
+  missingUnitIds: string[];
+  anomalyProvisionIds: string[];
+};
+
+export type ResearchTranslationIntegrity = {
+  reviewedOn: string;
+  scope: string;
+  totals: ResearchEnglishCorpusCoverageInput["totals"];
+  authorityCorpusCounts: Record<ResearchTranslationAuthorityClass, number>;
+  corpora: ResearchTranslationCorpusDatum[];
+};
+
+export type ResearchRelationDatum = {
+  id: string;
+  source: { type: string; id: string; instrumentId: string | null };
+  target: { type: string; id: string; instrumentId: string | null };
+  type: string;
+  relationClass: string;
+  directionality: string;
+  conceptIds: string[];
+  status: string;
+  confidence: string;
+  evidenceBasis: string;
+  rationale: string;
+  limits: string;
+  verifiedOn: string;
+  sourceSupport: ResearchSourceRef[];
+};
+
+export type ResearchBridgeEdge = {
+  id: string;
+  leftInstrumentId: string;
+  rightInstrumentId: string;
+  reviewedRelationIds: string[];
+  candidateRelationIds: string[];
+  conceptIds: string[];
+};
+
+export type ResearchBridgeNode = {
+  instrumentId: string;
+  reviewedDegree: number;
+  allDegree: number;
+  reviewedCrossJurisdictionDegree: number;
+  allCrossJurisdictionDegree: number;
+  reviewedBetweenness: number;
+  allBetweenness: number;
+  reviewedRelationCount: number;
+  allRelationCount: number;
+  reviewedConceptCount: number;
+  allConceptCount: number;
+  reviewedRank: number;
+  allRank: number;
+  rankDelta: number;
+  curatedFacetProvisionCount: number;
+};
+
+export type ResearchBridgeAtlas = {
+  analyticalRelationCount: number;
+  reviewedRelationCount: number;
+  candidateRelationCount: number;
+  nodes: ResearchBridgeNode[];
+  edges: ResearchBridgeEdge[];
+};
+
+export type ResearchOperationalEdge = {
+  relationId: string;
+  sourceEndpoint: { type: string; id: string };
+  targetEndpoint: { type: string; id: string };
+  sourceInstrumentId: string;
+  targetInstrumentId: string;
+  sourceDate: string;
+  targetDate: string;
+  type: string;
+  relationClass: string;
+  status: string;
+  confidence: string;
+  conceptIds: string[];
+  rationale: string;
+  limits: string;
+};
+
+export type ResearchOperationalPath = {
+  id: string;
+  rootInstrumentId: string;
+  terminalInstrumentId: string;
+  instrumentIds: string[];
+  relationIds: string[];
+  hopCount: number;
+  status: "editorial-reviewed" | "includes-candidate";
+};
+
+export type ResearchOperationalizationPaths = {
+  directedRelationCount: number;
+  reviewedDirectedRelationCount: number;
+  candidateDirectedRelationCount: number;
+  edges: ResearchOperationalEdge[];
+  paths: ResearchOperationalPath[];
+};
+
 export type ResearchLabData = {
   snapshotDate: string;
   methodology: {
@@ -361,6 +558,9 @@ export type ResearchLabData = {
     fingerprintDefinition: string;
     idfDefinition: string;
     cooccurrenceDefinition: string;
+    translationIntegrityDefinition: string;
+    bridgeDefinition: string;
+    operationalPathDefinition: string;
   };
   coverage: ResearchCoverageObservatory;
   instruments: ResearchInstrumentDatum[];
@@ -371,6 +571,10 @@ export type ResearchLabData = {
   cooccurrence: ResearchCooccurrenceDatum[];
   structuralProfiles: ResearchStructuralProfile[];
   lifecycleLanes: ResearchLifecycleLane[];
+  translationIntegrity: ResearchTranslationIntegrity;
+  relations: ResearchRelationDatum[];
+  bridgeAtlas: ResearchBridgeAtlas;
+  operationalizationPaths: ResearchOperationalizationPaths;
 };
 
 const DEFAULT_COVERAGE_CLASSES: ResearchCoverageClass[] = ["complete"];
@@ -516,6 +720,7 @@ export function deriveResearchProvisions(
   return provisions.map((provision) => {
     const nextOrder = fallbackOrder.get(provision.instrumentId) ?? 0;
     fallbackOrder.set(provision.instrumentId, nextOrder + 1);
+    const english = provision.translations?.en;
     return {
       id: provision.id,
       instrumentId: provision.instrumentId,
@@ -524,6 +729,14 @@ export function deriveResearchProvisions(
       provisionType: provision.provisionType ?? "provision",
       legalEffectStatus: provision.legalEffectStatus ?? null,
       appliesFrom: provision.appliesFrom ?? null,
+      versionAsOf: provision.versionAsOf ?? null,
+      summary: provision.summary ?? "",
+      actorTags: [...(provision.actorTags ?? [])],
+      scopeTags: [...(provision.scopeTags ?? [])],
+      originalLanguage: provision.textAvailability?.language ?? null,
+      englishTranslationStatus: english?.status ?? null,
+      englishCoverageStatus: english?.coverageStatus ?? null,
+      englishAlignmentStatus: english?.alignmentStatus ?? null,
       sourceOrder: provision.sourceOrder ?? nextOrder,
       relevance: relevanceForProvision(provision),
       conceptIds: conceptsForProvision(provision),
@@ -1181,6 +1394,10 @@ export function deriveResearchInstruments(
         shortTitle: instrument.shortTitle,
         title: instrument.title,
         jurisdictionId: instrument.jurisdictionId,
+        jurisdictionRootId: rootJurisdictionId(
+          instrument.jurisdictionId,
+          jurisdictionById,
+        ),
         jurisdictionName: jurisdiction?.shortName ?? instrument.jurisdictionId,
         jurisdictionIsoCode: jurisdiction?.isoCode ?? null,
         category: instrument.category,
@@ -1215,6 +1432,651 @@ export function deriveResearchInstruments(
     );
 }
 
+const translationAuthorityOrder: ResearchTranslationAuthorityClass[] = [
+  "official-text",
+  "official-reference",
+  "government-reference",
+  "project-reference",
+  "other-reference",
+];
+
+function translationAuthorityClass(
+  status: string,
+  unitCoverageStatuses: readonly string[],
+): ResearchTranslationAuthorityClass {
+  const normalized = status.toLowerCase();
+  if (normalized.includes("project")) return "project-reference";
+  if (
+    normalized === "official" ||
+    normalized.includes("co-authentic") ||
+    normalized.includes("authoritative-equal-status")
+  ) {
+    return "official-text";
+  }
+  if (normalized.includes("official-reference")) {
+    return "official-reference";
+  }
+  if (
+    normalized.includes("government") ||
+    normalized.includes("public-sector") ||
+    normalized.includes("public-domain-government")
+  ) {
+    return "government-reference";
+  }
+  const unitSummary = unitCoverageStatuses.join(" ").toLowerCase();
+  if (unitSummary.includes("project")) return "project-reference";
+  if (unitSummary.includes("official-reference")) {
+    return "official-reference";
+  }
+  if (unitSummary.includes("government")) return "government-reference";
+  return "other-reference";
+}
+
+export function deriveTranslationIntegrity(
+  input: Pick<
+    ResearchCorpusInput,
+    "englishCorpusCoverage" | "provisions"
+  >,
+): ResearchTranslationIntegrity {
+  const report = input.englishCorpusCoverage;
+  const authorityCorpusCounts: Record<ResearchTranslationAuthorityClass, number> = {
+    "official-text": 0,
+    "official-reference": 0,
+    "government-reference": 0,
+    "project-reference": 0,
+    "other-reference": 0,
+  };
+  if (!report) {
+    return {
+      reviewedOn: RESEARCH_SNAPSHOT_DATE,
+      scope: "No non-English corpus coverage report was supplied.",
+      totals: {
+        corpusCount: 0,
+        totalUnitCount: 0,
+        storedEnglishUnitCount: 0,
+        currentAlignedEnglishUnitCount: 0,
+        temporallyMismatchedEnglishUnitCount: 0,
+        missingEnglishUnitCount: 0,
+        completionPercent: 0,
+        currentAlignedPercent: 0,
+      },
+      authorityCorpusCounts,
+      corpora: [],
+    };
+  }
+
+  const provisionsByInstrument = new Map<string, ResearchProvisionInput[]>();
+  input.provisions.forEach((provision) => {
+    const list = provisionsByInstrument.get(provision.instrumentId) ?? [];
+    list.push(provision);
+    provisionsByInstrument.set(provision.instrumentId, list);
+  });
+  const anomalyPattern =
+    /next-phase|not-current|mismatch|temporally|future-phase|superseded-translation/i;
+
+  const corpora = report.corpora.map((corpus) => {
+    const authorityClasses = Array.from(
+      new Set(
+        corpus.translationStatuses.map((status) =>
+          translationAuthorityClass(status, corpus.unitCoverageStatuses),
+        ),
+      ),
+    ).sort(
+      (left, right) =>
+        translationAuthorityOrder.indexOf(left) -
+        translationAuthorityOrder.indexOf(right),
+    );
+    authorityClasses.forEach((authorityClass) => {
+      authorityCorpusCounts[authorityClass] += 1;
+    });
+    const anomalyProvisionIds = (
+      provisionsByInstrument.get(corpus.instrumentId) ?? []
+    )
+      .filter((provision) => {
+        const translation = provision.translations?.en;
+        return Boolean(
+          translation &&
+            anomalyPattern.test(
+              [
+                translation.coverageStatus,
+                translation.alignmentStatus,
+                translation.versionLabel,
+              ]
+                .filter(Boolean)
+                .join(" "),
+            ),
+        );
+      })
+      .map((provision) => provision.id)
+      .sort();
+    return {
+      instrumentId: corpus.instrumentId,
+      corpusFile: corpus.corpusFile,
+      originalLanguages: [...corpus.originalLanguages],
+      totalUnitCount: corpus.totalUnitCount,
+      storedEnglishUnitCount: corpus.storedEnglishUnitCount,
+      currentAlignedEnglishUnitCount: corpus.currentAlignedEnglishUnitCount,
+      temporallyMismatchedEnglishUnitCount:
+        corpus.temporallyMismatchedEnglishUnitCount,
+      missingEnglishUnitCount: corpus.missingEnglishUnitCount,
+      completionPercent: corpus.completionPercent,
+      currentAlignedPercent: corpus.totalUnitCount
+        ? round((corpus.currentAlignedEnglishUnitCount / corpus.totalUnitCount) * 100, 1)
+        : 0,
+      coverageStatus: corpus.coverageStatus,
+      authorityClasses,
+      translationStatuses: [...corpus.translationStatuses],
+      unitCoverageStatuses: [...corpus.unitCoverageStatuses],
+      versionLabels: [...corpus.versionLabels],
+      englishSourceRecords: corpus.englishSourceRecords.map((source) => ({
+        ...source,
+      })),
+      missingUnitIds: [...corpus.missingUnitIds],
+      anomalyProvisionIds,
+    };
+  });
+
+  return {
+    reviewedOn: report.reviewedOn,
+    scope: report.scope,
+    totals: { ...report.totals },
+    authorityCorpusCounts,
+    corpora,
+  };
+}
+
+function endpointInstrumentId(
+  endpoint: { type: string; id: string },
+  provisionById: ReadonlyMap<string, ResearchProvisionInput>,
+  instrumentIds: ReadonlySet<string>,
+): string | null {
+  if (endpoint.type === "instrument") {
+    return instrumentIds.has(endpoint.id) ? endpoint.id : null;
+  }
+  if (endpoint.type === "provision") {
+    return provisionById.get(endpoint.id)?.instrumentId ?? null;
+  }
+  return null;
+}
+
+export function deriveResearchRelations(
+  input: Pick<ResearchCorpusInput, "relations" | "provisions" | "instruments">,
+): ResearchRelationDatum[] {
+  const provisionById = new Map(
+    input.provisions.map((provision) => [provision.id, provision]),
+  );
+  const instrumentIds = new Set(
+    input.instruments.map((instrument) => instrument.id),
+  );
+  return input.relations.map((relation) => ({
+    id: relation.id,
+    source: {
+      ...relation.source,
+      instrumentId: endpointInstrumentId(
+        relation.source,
+        provisionById,
+        instrumentIds,
+      ),
+    },
+    target: {
+      ...relation.target,
+      instrumentId: endpointInstrumentId(
+        relation.target,
+        provisionById,
+        instrumentIds,
+      ),
+    },
+    type: relation.type,
+    relationClass: relation.relationClass ?? "analytical",
+    directionality: relation.directionality ?? "undirected",
+    conceptIds: [...(relation.conceptIds ?? [])],
+    status: relation.status,
+    confidence: relation.confidence,
+    evidenceBasis: relation.evidenceBasis ?? "not-recorded",
+    rationale: relation.rationale ?? "No rationale is recorded.",
+    limits: relation.limits ?? "No limits statement is recorded.",
+    verifiedOn: relation.verifiedOn ?? "not-recorded",
+    sourceSupport: (relation.sourceSupport ?? []).map((source) => ({ ...source })),
+  }));
+}
+
+function bridgePairKey(leftInstrumentId: string, rightInstrumentId: string) {
+  return [leftInstrumentId, rightInstrumentId].sort().join("::");
+}
+
+function normalizedBetweenness(
+  nodeIds: readonly string[],
+  edges: readonly { leftInstrumentId: string; rightInstrumentId: string }[],
+): Map<string, number> {
+  const adjacency = new Map(
+    nodeIds.map((nodeId) => [nodeId, new Set<string>()]),
+  );
+  edges.forEach((edge) => {
+    adjacency.get(edge.leftInstrumentId)?.add(edge.rightInstrumentId);
+    adjacency.get(edge.rightInstrumentId)?.add(edge.leftInstrumentId);
+  });
+  const centrality = new Map(nodeIds.map((nodeId) => [nodeId, 0]));
+
+  nodeIds.forEach((sourceId) => {
+    const stack: string[] = [];
+    const predecessors = new Map(
+      nodeIds.map((nodeId) => [nodeId, [] as string[]]),
+    );
+    const pathCount = new Map(nodeIds.map((nodeId) => [nodeId, 0]));
+    const distance = new Map(nodeIds.map((nodeId) => [nodeId, -1]));
+    pathCount.set(sourceId, 1);
+    distance.set(sourceId, 0);
+    const queue = [sourceId];
+    for (let cursor = 0; cursor < queue.length; cursor += 1) {
+      const vertex = queue[cursor];
+      stack.push(vertex);
+      const nextDistance = (distance.get(vertex) ?? -1) + 1;
+      [...(adjacency.get(vertex) ?? [])]
+        .sort()
+        .forEach((neighbor) => {
+          if ((distance.get(neighbor) ?? -1) < 0) {
+            distance.set(neighbor, nextDistance);
+            queue.push(neighbor);
+          }
+          if (distance.get(neighbor) === nextDistance) {
+            pathCount.set(
+              neighbor,
+              (pathCount.get(neighbor) ?? 0) + (pathCount.get(vertex) ?? 0),
+            );
+            predecessors.get(neighbor)?.push(vertex);
+          }
+        });
+    }
+    const dependency = new Map(nodeIds.map((nodeId) => [nodeId, 0]));
+    while (stack.length) {
+      const vertex = stack.pop()!;
+      predecessors.get(vertex)?.forEach((predecessor) => {
+        const denominator = pathCount.get(vertex) ?? 0;
+        if (!denominator) return;
+        const contribution =
+          ((pathCount.get(predecessor) ?? 0) / denominator) *
+          (1 + (dependency.get(vertex) ?? 0));
+        dependency.set(
+          predecessor,
+          (dependency.get(predecessor) ?? 0) + contribution,
+        );
+      });
+      if (vertex !== sourceId) {
+        centrality.set(
+          vertex,
+          (centrality.get(vertex) ?? 0) + (dependency.get(vertex) ?? 0),
+        );
+      }
+    }
+  });
+
+  const scale =
+    nodeIds.length > 2 ? 1 / ((nodeIds.length - 1) * (nodeIds.length - 2)) : 0;
+  centrality.forEach((value, nodeId) => {
+    centrality.set(nodeId, round(value * scale));
+  });
+  return centrality;
+}
+
+export function deriveQualifiedBridgeAtlas(
+  input: Pick<
+    ResearchCorpusInput,
+    "relations" | "provisions" | "instruments" | "jurisdictions"
+  >,
+): ResearchBridgeAtlas {
+  const relations = deriveResearchRelations(input).filter(
+    (relation) =>
+      relation.relationClass === "analytical" &&
+      relation.source.instrumentId &&
+      relation.target.instrumentId &&
+      relation.source.instrumentId !== relation.target.instrumentId,
+  );
+  const edgeMap = new Map<
+    string,
+    {
+      id: string;
+      leftInstrumentId: string;
+      rightInstrumentId: string;
+      reviewedRelationIds: Set<string>;
+      candidateRelationIds: Set<string>;
+      conceptIds: Set<string>;
+    }
+  >();
+  relations.forEach((relation) => {
+    const [leftInstrumentId, rightInstrumentId] = [
+      relation.source.instrumentId!,
+      relation.target.instrumentId!,
+    ].sort();
+    const key = bridgePairKey(leftInstrumentId, rightInstrumentId);
+    const edge = edgeMap.get(key) ?? {
+      id: key,
+      leftInstrumentId,
+      rightInstrumentId,
+      reviewedRelationIds: new Set<string>(),
+      candidateRelationIds: new Set<string>(),
+      conceptIds: new Set<string>(),
+    };
+    if (relation.status === "editorial-reviewed") {
+      edge.reviewedRelationIds.add(relation.id);
+    } else if (relation.status === "candidate") {
+      edge.candidateRelationIds.add(relation.id);
+    }
+    relation.conceptIds.forEach((conceptId) => edge.conceptIds.add(conceptId));
+    edgeMap.set(key, edge);
+  });
+  const edges: ResearchBridgeEdge[] = Array.from(edgeMap.values())
+    .map((edge) => ({
+      id: edge.id,
+      leftInstrumentId: edge.leftInstrumentId,
+      rightInstrumentId: edge.rightInstrumentId,
+      reviewedRelationIds: [...edge.reviewedRelationIds].sort(),
+      candidateRelationIds: [...edge.candidateRelationIds].sort(),
+      conceptIds: [...edge.conceptIds].sort(),
+    }))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const nodeIds = Array.from(
+    new Set(
+      edges.flatMap((edge) => [edge.leftInstrumentId, edge.rightInstrumentId]),
+    ),
+  ).sort();
+  const reviewedEdges = edges.filter(
+    (edge) => edge.reviewedRelationIds.length > 0,
+  );
+  const reviewedBetweenness = normalizedBetweenness(nodeIds, reviewedEdges);
+  const allBetweenness = normalizedBetweenness(nodeIds, edges);
+  const jurisdictionById = new Map(
+    input.jurisdictions.map((jurisdiction) => [jurisdiction.id, jurisdiction]),
+  );
+  const rootByInstrument = new Map(
+    input.instruments.map((instrument) => [
+      instrument.id,
+      rootJurisdictionId(instrument.jurisdictionId, jurisdictionById),
+    ]),
+  );
+  const provisionsByInstrument = new Map<string, ResearchProvisionInput[]>();
+  input.provisions.forEach((provision) => {
+    const list = provisionsByInstrument.get(provision.instrumentId) ?? [];
+    list.push(provision);
+    provisionsByInstrument.set(provision.instrumentId, list);
+  });
+
+  function metricsFor(instrumentId: string, reviewedOnly: boolean) {
+    const related = relations.filter(
+      (relation) =>
+        (!reviewedOnly || relation.status === "editorial-reviewed") &&
+        (relation.source.instrumentId === instrumentId ||
+          relation.target.instrumentId === instrumentId),
+    );
+    const neighbors = new Set<string>();
+    const crossJurisdictionNeighbors = new Set<string>();
+    const conceptIds = new Set<string>();
+    related.forEach((relation) => {
+      const neighbor =
+        relation.source.instrumentId === instrumentId
+          ? relation.target.instrumentId
+          : relation.source.instrumentId;
+      if (!neighbor) return;
+      neighbors.add(neighbor);
+      if (rootByInstrument.get(neighbor) !== rootByInstrument.get(instrumentId)) {
+        crossJurisdictionNeighbors.add(neighbor);
+      }
+      relation.conceptIds.forEach((conceptId) => conceptIds.add(conceptId));
+    });
+    return {
+      degree: neighbors.size,
+      crossJurisdictionDegree: crossJurisdictionNeighbors.size,
+      relationCount: related.length,
+      conceptCount: conceptIds.size,
+    };
+  }
+
+  const draftNodes = nodeIds.map((instrumentId) => {
+    const reviewed = metricsFor(instrumentId, true);
+    const all = metricsFor(instrumentId, false);
+    return {
+      instrumentId,
+      reviewedDegree: reviewed.degree,
+      allDegree: all.degree,
+      reviewedCrossJurisdictionDegree: reviewed.crossJurisdictionDegree,
+      allCrossJurisdictionDegree: all.crossJurisdictionDegree,
+      reviewedBetweenness: reviewedBetweenness.get(instrumentId) ?? 0,
+      allBetweenness: allBetweenness.get(instrumentId) ?? 0,
+      reviewedRelationCount: reviewed.relationCount,
+      allRelationCount: all.relationCount,
+      reviewedConceptCount: reviewed.conceptCount,
+      allConceptCount: all.conceptCount,
+      reviewedRank: 0,
+      allRank: 0,
+      rankDelta: 0,
+      curatedFacetProvisionCount: (
+        provisionsByInstrument.get(instrumentId) ?? []
+      ).filter(
+        (provision) =>
+          (provision.actorTags?.length ?? 0) > 0 ||
+          (provision.scopeTags?.length ?? 0) > 0,
+      ).length,
+    };
+  });
+  const atlasOrder = new Map(
+    input.instruments.map((instrument, index) => [instrument.id, index]),
+  );
+  function ranked(
+    metric: "reviewed" | "all",
+  ): string[] {
+    return [...draftNodes]
+      .sort((left, right) => {
+        const leftBetweenness =
+          metric === "reviewed"
+            ? left.reviewedBetweenness
+            : left.allBetweenness;
+        const rightBetweenness =
+          metric === "reviewed"
+            ? right.reviewedBetweenness
+            : right.allBetweenness;
+        const leftDegree =
+          metric === "reviewed" ? left.reviewedDegree : left.allDegree;
+        const rightDegree =
+          metric === "reviewed" ? right.reviewedDegree : right.allDegree;
+        const leftRelations =
+          metric === "reviewed"
+            ? left.reviewedRelationCount
+            : left.allRelationCount;
+        const rightRelations =
+          metric === "reviewed"
+            ? right.reviewedRelationCount
+            : right.allRelationCount;
+        return (
+          rightBetweenness - leftBetweenness ||
+          rightDegree - leftDegree ||
+          rightRelations - leftRelations ||
+          (atlasOrder.get(left.instrumentId) ?? Number.MAX_SAFE_INTEGER) -
+            (atlasOrder.get(right.instrumentId) ?? Number.MAX_SAFE_INTEGER) ||
+          left.instrumentId.localeCompare(right.instrumentId)
+        );
+      })
+      .map((node) => node.instrumentId);
+  }
+  const reviewedRank = new Map(
+    ranked("reviewed").map((instrumentId, index) => [instrumentId, index + 1]),
+  );
+  const allRank = new Map(
+    ranked("all").map((instrumentId, index) => [instrumentId, index + 1]),
+  );
+  const nodes: ResearchBridgeNode[] = draftNodes
+    .map((node) => ({
+      ...node,
+      reviewedRank: reviewedRank.get(node.instrumentId) ?? 0,
+      allRank: allRank.get(node.instrumentId) ?? 0,
+      rankDelta:
+        (reviewedRank.get(node.instrumentId) ?? 0) -
+        (allRank.get(node.instrumentId) ?? 0),
+    }))
+    .sort(
+      (left, right) =>
+        left.reviewedRank - right.reviewedRank ||
+        left.instrumentId.localeCompare(right.instrumentId),
+    );
+
+  return {
+    analyticalRelationCount: relations.length,
+    reviewedRelationCount: relations.filter(
+      (relation) => relation.status === "editorial-reviewed",
+    ).length,
+    candidateRelationCount: relations.filter(
+      (relation) => relation.status === "candidate",
+    ).length,
+    nodes,
+    edges,
+  };
+}
+
+const operationalRelationTypes = new Set([
+  "implements",
+  "operationalizes",
+  "grounded-in",
+  "elaborates",
+  "supports-operational-evidence",
+  "policy-transition",
+  "repeals",
+  "repeals-and-reenacts",
+]);
+
+function representativeInstrumentDate(instrument: ResearchInstrumentInput) {
+  return (
+    instrument.dates?.adoptedOn ??
+    instrument.dates?.publishedOn ??
+    instrument.dates?.effectiveFrom ??
+    instrument.statusAsOf
+  );
+}
+
+export function deriveOperationalizationPaths(
+  input: Pick<ResearchCorpusInput, "relations" | "provisions" | "instruments">,
+): ResearchOperationalizationPaths {
+  const relations = deriveResearchRelations(input);
+  const instrumentById = new Map(
+    input.instruments.map((instrument) => [instrument.id, instrument]),
+  );
+  const edges: ResearchOperationalEdge[] = relations
+    .filter(
+      (relation) =>
+        relation.directionality === "directed" &&
+        operationalRelationTypes.has(relation.type) &&
+        relation.source.instrumentId &&
+        relation.target.instrumentId &&
+        relation.source.instrumentId !== relation.target.instrumentId,
+    )
+    .map((relation) => {
+      const sourceInstrument = instrumentById.get(relation.source.instrumentId!);
+      const targetInstrument = instrumentById.get(relation.target.instrumentId!);
+      return {
+        relationId: relation.id,
+        sourceEndpoint: {
+          type: relation.source.type,
+          id: relation.source.id,
+        },
+        targetEndpoint: {
+          type: relation.target.type,
+          id: relation.target.id,
+        },
+        sourceInstrumentId: relation.source.instrumentId!,
+        targetInstrumentId: relation.target.instrumentId!,
+        sourceDate: sourceInstrument
+          ? representativeInstrumentDate(sourceInstrument)
+          : RESEARCH_SNAPSHOT_DATE,
+        targetDate: targetInstrument
+          ? representativeInstrumentDate(targetInstrument)
+          : RESEARCH_SNAPSHOT_DATE,
+        type: relation.type,
+        relationClass: relation.relationClass,
+        status: relation.status,
+        confidence: relation.confidence,
+        conceptIds: [...relation.conceptIds],
+        rationale: relation.rationale,
+        limits: relation.limits,
+      };
+    })
+    .sort(
+      (left, right) =>
+        left.sourceDate.localeCompare(right.sourceDate) ||
+        left.relationId.localeCompare(right.relationId),
+    );
+  const outgoing = new Map<string, ResearchOperationalEdge[]>();
+  edges.forEach((edge) => {
+    const list = outgoing.get(edge.sourceInstrumentId) ?? [];
+    list.push(edge);
+    outgoing.set(edge.sourceInstrumentId, list);
+  });
+  outgoing.forEach((list) => list.sort((left, right) => left.relationId.localeCompare(right.relationId)));
+  const paths: ResearchOperationalPath[] = [];
+  const pathIds = new Set<string>();
+
+  function visit(
+    rootInstrumentId: string,
+    currentInstrumentId: string,
+    instrumentIds: string[],
+    relationIds: string[],
+  ) {
+    if (relationIds.length > 0) {
+      const id = relationIds.join("::");
+      if (!pathIds.has(id)) {
+        pathIds.add(id);
+        paths.push({
+          id,
+          rootInstrumentId,
+          terminalInstrumentId: currentInstrumentId,
+          instrumentIds: [...instrumentIds],
+          relationIds: [...relationIds],
+          hopCount: relationIds.length,
+          status: relationIds.some(
+            (relationId) =>
+              edges.find((edge) => edge.relationId === relationId)?.status ===
+              "candidate",
+          )
+            ? "includes-candidate"
+            : "editorial-reviewed",
+        });
+      }
+    }
+    if (relationIds.length >= 3) return;
+    (outgoing.get(currentInstrumentId) ?? []).forEach((edge) => {
+      if (
+        relationIds.includes(edge.relationId) ||
+        instrumentIds.includes(edge.targetInstrumentId)
+      ) {
+        return;
+      }
+      visit(
+        rootInstrumentId,
+        edge.targetInstrumentId,
+        [...instrumentIds, edge.targetInstrumentId],
+        [...relationIds, edge.relationId],
+      );
+    });
+  }
+
+  [...outgoing.keys()].sort().forEach((rootInstrumentId) => {
+    visit(rootInstrumentId, rootInstrumentId, [rootInstrumentId], []);
+  });
+
+  return {
+    directedRelationCount: edges.length,
+    reviewedDirectedRelationCount: edges.filter(
+      (edge) => edge.status === "editorial-reviewed",
+    ).length,
+    candidateDirectedRelationCount: edges.filter(
+      (edge) => edge.status === "candidate",
+    ).length,
+    edges,
+    paths: paths.sort(
+      (left, right) =>
+        left.rootInstrumentId.localeCompare(right.rootInstrumentId) ||
+        left.hopCount - right.hopCount ||
+        left.id.localeCompare(right.id),
+    ),
+  };
+}
+
 export function buildResearchLabData(
   input: ResearchCorpusInput,
   options?: ResearchAnalysisOptions,
@@ -1223,6 +2085,7 @@ export function buildResearchLabData(
   const normalizedInput = { ...input, snapshotDate };
   const fingerprints = deriveConceptFingerprints(normalizedInput, options);
   const conceptData = deriveResearchConcepts(normalizedInput, options);
+  const researchRelations = deriveResearchRelations(normalizedInput);
   return {
     snapshotDate,
     methodology: {
@@ -1237,6 +2100,12 @@ export function buildResearchLabData(
         "IDF = ln((1 + N) / (1 + document frequency)) + 1, where N is the number of instruments in the selected coverage sample.",
       cooccurrenceDefinition:
         "Concept pairs are counted once per included provision. Lift, base-2 PMI, normalized PMI, and Jaccard use complete-corpus substantive provisions by default; provision, distinct-instrument, and distinct-jurisdiction support are retained separately.",
+      translationIntegrityDefinition:
+        "English storage, authority class, and temporal alignment are reported as separate dimensions. Coverage is not a translation-accuracy or semantic-drift score.",
+      bridgeDefinition:
+        "Bridge metrics use the unweighted, undirected projection of qualified analytical relations between instruments. Editorial-reviewed edges and the reviewed-plus-candidate graph are calculated separately; centrality describes this project graph, not legal influence.",
+      operationalPathDefinition:
+        "Operational paths preserve only recorded directed relation semantics and are limited to three hops. Arrow direction is not converted into chronology, causation, diffusion, or legal hierarchy.",
     },
     coverage: deriveCoverageObservatory(normalizedInput),
     instruments: deriveResearchInstruments(normalizedInput, fingerprints),
@@ -1247,5 +2116,9 @@ export function buildResearchLabData(
     cooccurrence: deriveConceptCooccurrence(normalizedInput, options),
     structuralProfiles: deriveStructuralProfiles(normalizedInput, options),
     lifecycleLanes: deriveLifecycleLanes(normalizedInput),
+    translationIntegrity: deriveTranslationIntegrity(normalizedInput),
+    relations: researchRelations,
+    bridgeAtlas: deriveQualifiedBridgeAtlas(normalizedInput),
+    operationalizationPaths: deriveOperationalizationPaths(normalizedInput),
   };
 }
