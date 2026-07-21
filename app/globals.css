@@ -133,9 +133,12 @@ html[data-theme="bright"] :is(
   .concept-masthead,
   .connections-header,
   .timeline-header,
-  .compare-header
+  .compare-header,
+  .research-lab-view
 ) h1,
-html[data-theme="bright"] .reader-heading h2 {
+html[data-theme="bright"] .reader-heading h2,
+html[data-theme="bright"] .research-lab-view h2,
+html[data-theme="bright"] .research-lab-view h3 {
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: -0.035em;
 }
@@ -174,6 +177,7 @@ a {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
+select:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
@@ -303,7 +307,7 @@ button {
   --active-view-index: 0;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   align-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -316,7 +320,7 @@ button {
   top: 2px;
   bottom: 2px;
   left: 2px;
-  width: calc((100% - 4px) / 5);
+  width: calc((100% - 4px) / 6);
   border-bottom: 1px solid var(--cyan);
   background: var(--cyan-soft);
   pointer-events: none;
@@ -522,7 +526,8 @@ button {
 }
 
 .app-shell.view-compare,
-.app-shell.view-timeline {
+.app-shell.view-timeline,
+.app-shell.view-research {
   grid-template-columns: var(--left-grid-width) minmax(0, 1fr);
 }
 
@@ -678,6 +683,7 @@ html[data-ui-transition="theme"] :is(
   .relationship-panel,
   .atlas-globe-panel,
   .concept-constellation-panel,
+  .research-lab-view,
   .instrument-node,
   .concept-node,
   .concept-source-node,
@@ -771,7 +777,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   .provision-reader,
   .connections-view,
   .timeline-view,
-  .compare-view
+  .compare-view,
+  .research-lab-view
 ) {
   animation: view-fallback-enter 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -4762,6 +4769,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
   .app-shell.view-compare,
   .app-shell.view-timeline,
+  .app-shell.view-research,
   .app-shell.navigator-concepts-mode {
     grid-template-columns: var(--left-grid-width) minmax(0, 1fr);
   }

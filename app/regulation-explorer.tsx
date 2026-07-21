@@ -28,6 +28,7 @@ import {
   ExternalLink,
   FileClock,
   FileText,
+  FlaskConical,
   GitFork,
   Globe2,
   Info,
@@ -97,6 +98,8 @@ import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import { ConceptConstellation } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
 import { RegulationGlobe } from "./regulation-globe";
+import { buildResearchLabData } from "./research-lab-data";
+import { ResearchLab } from "./research-lab";
 
 type Source = {
   url: string;
@@ -506,7 +509,13 @@ type SourceAudit = {
   };
 };
 
-type View = "atlas" | "instrument" | "connections" | "timeline" | "compare";
+type View =
+  | "atlas"
+  | "research"
+  | "instrument"
+  | "connections"
+  | "timeline"
+  | "compare";
 type ReaderTab = "text" | "analysis" | "sources";
 type Theme = "dark" | "bright";
 type NavigatorTab = "sources" | "concepts";
@@ -1082,6 +1091,18 @@ seedProvisions.forEach((provision) => {
 });
 const provisions = Array.from(provisionMap.values());
 
+const researchLabData = buildResearchLabData({
+  snapshotDate: "2026-07-20",
+  jurisdictions,
+  instruments,
+  provisions,
+  concepts,
+  themes: conceptThemes,
+  sourceAudits,
+  relations,
+  statusEvents,
+});
+
 const provisionsByInstrument = new Map<string, Provision[]>();
 provisions.forEach((provision) => {
   const list = provisionsByInstrument.get(provision.instrumentId) ?? [];
@@ -1174,6 +1195,7 @@ const relationLabels: Record<string, string> = {
 
 const viewLabels: Array<{ id: View; label: string; icon: LucideIcon }> = [
   { id: "atlas", label: "Atlas", icon: MapIcon },
+  { id: "research", label: "Research", icon: FlaskConical },
   { id: "instrument", label: "Instrument", icon: BookOpenText },
   { id: "connections", label: "Connections", icon: Network },
   { id: "timeline", label: "Timeline", icon: Clock3 },
@@ -1231,6 +1253,19 @@ function explorerReducer(
           selectedRelationId: null,
           selectedConceptId: null,
           readerTab: "text",
+        };
+      }
+      if (action.view === "research") {
+        return {
+          ...state,
+          view: "research",
+          navigatorTab: "sources",
+          selectedInstrumentId: null,
+          selectedProvisionId: null,
+          selectedRelationId: null,
+          selectedConceptId: null,
+          readerTab: "text",
+          query: "",
         };
       }
       if (action.view === "instrument" || action.view === "timeline") {
@@ -5188,6 +5223,7 @@ export default function RegulationExplorer() {
       requestedView &&
       viewLabels.some((view) => view.id === requestedView) &&
       (requestedView === "atlas" ||
+        requestedView === "research" ||
         (requestedView === "instrument" && restoredInstrument) ||
         (requestedView === "timeline" && restoredInstrument) ||
         (requestedView === "connections" && restoredProvision) ||
@@ -5285,6 +5321,7 @@ export default function RegulationExplorer() {
     current: boolean;
     destination:
       | { type: "atlas"; groupId?: string }
+      | { type: "research" }
       | { type: "concept-index" }
       | { type: "concept"; conceptId: string }
       | { type: "instrument"; instrumentId: string }
@@ -5316,6 +5353,22 @@ export default function RegulationExplorer() {
         },
       ];
     }
+    if (state.view === "research") {
+      return [
+        {
+          key: "global-atlas",
+          label: "GLOBAL ATLAS",
+          current: false,
+          destination: { type: "atlas" },
+        },
+        {
+          key: "research-lab",
+          label: "RESEARCH LAB",
+          current: true,
+          destination: { type: "research" },
+        },
+      ];
+    }
     if (!selectedInstrument) {
       return [
         {
@@ -5338,6 +5391,7 @@ export default function RegulationExplorer() {
       current: boolean;
       destination:
         | { type: "atlas"; groupId?: string }
+        | { type: "research" }
         | { type: "instrument"; instrumentId: string }
         | { type: "provision"; provisionId: string };
     }> = [
@@ -5369,13 +5423,21 @@ export default function RegulationExplorer() {
       });
     }
     return parts;
-  }, [selectedConcept, selectedInstrument, selectedProvision, state.navigatorTab]);
+  }, [
+    selectedConcept,
+    selectedInstrument,
+    selectedProvision,
+    state.navigatorTab,
+    state.view,
+  ]);
 
   function followBreadcrumb(
     destination: (typeof breadcrumb)[number]["destination"],
   ) {
     if (destination.type === "concept-index") {
       openConceptIndex();
+    } else if (destination.type === "research") {
+      openView("research");
     } else if (destination.type === "concept") {
       openConcept(destination.conceptId);
     } else if (destination.type === "instrument") {
@@ -5779,6 +5841,23 @@ export default function RegulationExplorer() {
           {state.navigatorTab === "sources" && state.view === "atlas" && (
             <GlobalAtlas
               onOpenInstrument={openInstrument}
+            />
+          )}
+          {state.navigatorTab === "sources" && state.view === "research" && (
+            <ResearchLab
+              data={researchLabData}
+              defaultInstrumentIds={[
+                "eu-gdpr",
+                "eu-ai-act",
+                "cn-pipl",
+                "us-nist-ai-rmf-1-0",
+              ]}
+              onOpenInstrument={openInstrument}
+              onOpenProvision={(provisionId) => {
+                const provision = provisionMap.get(provisionId);
+                if (provision) openProvision(provision);
+              }}
+              onOpenConcept={openConcept}
             />
           )}
           {state.navigatorTab === "concepts" && state.view === "atlas" && (

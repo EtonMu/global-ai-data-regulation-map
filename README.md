@@ -1,6 +1,6 @@
 # Compliance Compass: Global AI Governance and Data Regulation Map & Visualization
 
-An open-source, provision-level knowledge graph for exploring how AI governance, privacy, data security, and cybersecurity rules connect across jurisdictions.
+An open-source, provision-level knowledge graph and comparative research lab for exploring how AI governance, privacy, data security, and cybersecurity rules connect across jurisdictions.
 
 The project combines a visual regulatory atlas, complete article navigation for selected instruments, qualified crosswalks, legal-status timelines, and side-by-side comparison. It is built for learning and research—not for reducing different legal systems to a single similarity score.
 
@@ -12,6 +12,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read stored legal text, an explicit English-coverage notice, or a clearly labelled editorial summary where no source text is stored. Where verified original-language text is stored, the reader defaults to English and exposes the original language after the user selects it. Official English text, government but non-authoritative translations, project-authored references, historical or future-phase references, coverage notices, and editorial summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
+- **Research Lab** — investigate the corpus through five linked views: a coverage observatory, normalized regulatory genomes, provision-level comparative morphology, a coverage-aware concept grammar, and a dated global lifecycle view. Every analytical mark can be traced back to an instrument, provision, or core concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
@@ -57,6 +58,18 @@ Each relation records:
 | `sourceSupport` | Links the official materials used to assess the edge |
 | `verifiedOn` | Records when the comparison was last checked |
 
+## Phase 1 research methods
+
+The Research Lab defaults to the **38 version-locked complete corpora** and to provisions reviewed as **substantive** for the project's subject matter. Controls can reveal selected-source instruments and structural provisions, but incomplete coverage is never silently mixed into the default comparative sample.
+
+- **Corpus Observatory** reports the stored coverage, language, legal-force, lifecycle, and topic-review boundary behind each instrument. It is an audit view, not a completeness score for the world's law.
+- **Regulatory Genome** applies smoothed inverse-document frequency to provision-level core-concept frequencies, then L2-normalizes each instrument vector. The resulting profile compares emphasis within this corpus; it is not a measure of regulatory quality, strictness, or compliance.
+- **Comparative Morphology** preserves provision order and renders every provision as an inspectable band, allowing structural similarities and gaps to be checked against the underlying text.
+- **Regulatory Grammar** measures concept co-occurrence within the selected provision sample using count, lift, base-2 PMI, normalized PMI, and Jaccard views. Normalized PMI is the default, with a display floor of three shared provisions across at least two instruments. The matrix separates positive association, negative association, independence, and unavailable or unsupported cells. Because legal sources use unequal provision granularity and long instruments contribute more observations, the floor is not a significance test; association does not establish legal equivalence, causation, or interoperability.
+- **Global Time Machine** indexes recorded adoption, commencement, application, amendment, cessation, and scheduled events relative to the **2026-07-20** snapshot. The slider advances through recorded event dates rather than reconstructing the law at every date, and local-text completeness is not presented as complete lifecycle history.
+
+The interface exposes the active sample, denominator, support count, coverage caveats, and drill-down evidence next to the relevant visual. Analytical values are derived locally from versioned repository data; they do not silently change the legal-source snapshot.
+
 ## Intended uses
 
 - Learn the structure of a major instrument and follow a concept across borders.
@@ -85,6 +98,8 @@ app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
   regulation-globe.tsx       border-free physical-land point globe and compass
   concept-constellation.tsx  theme, concept, and source-evidence visualization
+  research-lab.tsx           five linked comparative research views
+  research-lab-data.ts       auditable corpus metrics and analytical derivations
 data/geo/
   natural-earth-land-110m.json  public-domain physical-land geometry
 data/v2/
@@ -178,7 +193,7 @@ Do not edit generated EU corpus files by hand. Fix or update the source import a
 
 - Split and lazy-load complete instrument text as the corpus grows, while keeping the graph index fast.
 - Expand complete, versioned instrument coverage without weakening source and reuse controls.
-- Add date-selectable graph states and amendment lineage at provision level.
+- Extend the Global Time Machine to date-selectable provision states and amendment lineage.
 - Separate candidate, editorially reviewed, and independently expert-reviewed mappings.
 - Add jurisdiction, actor, legal-force, lifecycle, and concept filters.
 - Publish citable dataset releases and machine-readable provenance.
