@@ -3,6 +3,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const dataRoot = new URL("../data/v2/", import.meta.url);
+const appRoot = new URL("../app/", import.meta.url);
+
+const [explorerSource, globeSource, jurisdictionMarkSource] = await Promise.all([
+  readFile(new URL("regulation-explorer.tsx", appRoot), "utf8"),
+  readFile(new URL("regulation-globe.tsx", appRoot), "utf8"),
+  readFile(new URL("jurisdiction-mark.tsx", appRoot), "utf8"),
+]);
 
 async function loadJson(filename) {
   return JSON.parse(await readFile(new URL(filename, dataRoot), "utf8"));
@@ -208,19 +215,6 @@ const expectedIssuerMarks = new Map([
   ["ai-safety-summit", ["AI Safety Summit", "AISS"]],
 ]);
 
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function escapeHtmlText(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#x27;");
-}
-
 async function render() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -297,10 +291,11 @@ test("corpus fixtures expose unique dynamically counted records", () => {
   );
 });
 
-test("server renders a neutral global regulatory atlas", async () => {
+test("server returns a neutral static atlas shell without loading the corpus", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  assert.equal(response.headers.get("x-vinext-cache"), "STATIC");
 
   const html = await response.text();
   const text = normalizedText(html);
@@ -309,38 +304,23 @@ test("server renders a neutral global regulatory atlas", async () => {
     html,
     /<title>Compliance Compass: Global AI Governance and Data Regulation Map &amp; Visualization<\/title>/i,
   );
-  assert.match(text, /COMPLIANCE COMPASS GLOBAL AI GOVERNANCE/i);
-  assert.match(text, /DATA REGULATION MAP \/ VISUALIZATION/i);
-  assert.match(text, /GLOBAL_REGULATORY_ATLAS \/ RESEARCH CORPUS/i);
-  assert.match(text, /Comparative AI and data regulation corpus\./i);
   assert.match(
-    text,
-    /Browse primary legal sources, executive action, proposed legislation, standards and soft law through a versioned comparative index\./i,
+    html,
+    /<main(?=[^>]*class="explorer-loading-shell")(?=[^>]*aria-busy="true")(?=[^>]*aria-live="polite")[^>]*>/i,
   );
-  assert.match(text, /20 legal systems/i);
+  assert.match(text, /COMPLIANCE_COMPASS/i);
+  assert.match(text, /Loading the global regulatory atlas/i);
+  assert.match(text, /Preparing legal corpora and knowledge relationships/i);
   assert.match(
-    text,
-    new RegExp(`${frameworkInstrumentIds.length} frameworks`, "i"),
+    html,
+    /<link[^>]*rel="modulepreload"[^>]*regulation-explorer-client-[^"/]+\.js/i,
+    "the static shell must preload only the small client boundary",
   );
-  assert.match(
-    text,
-    new RegExp(`${corpusCounts.instruments} instruments`, "i"),
+  assert.doesNotMatch(
+    html,
+    /class="terminal-app"|data-atlas-group=|Comparative AI and data regulation corpus/i,
+    "the Worker response must not render or parse the heavy atlas corpus",
   );
-  assert.match(
-    text,
-    new RegExp(`${corpusCounts.provisions} indexed provisions`, "i"),
-  );
-  assert.match(
-    text,
-    new RegExp(`${corpusCounts.relations} qualified links`, "i"),
-  );
-  assert.match(text, new RegExp(`${concepts.length} core concepts`, "i"));
-  assert.match(text, /GLOBAL ATLAS · RELATION GRAPH/i);
-  assert.match(text, /Regulation ↔ concept globe/i);
-  assert.match(text, /Drag to rotate\. Focus a node and use arrow keys\./i);
-  assert.match(text, /VIEW::\s*ATLAS/i);
-  assert.match(text, /Global regulatory atlas open\./i);
-  assert.match(text, /ACADEMIC RESEARCH EDITION \/ NOT LEGAL ADVICE/i);
 
   assert.doesNotMatch(
     text,
@@ -352,216 +332,111 @@ test("server renders a neutral global regulatory atlas", async () => {
   );
 });
 
-test("server output exposes semantic atlas controls and the relation globe", async () => {
-  const response = await render();
-  const html = await response.text();
-  const text = normalizedText(html);
-
-  assert.match(html, /<main[^>]*class="terminal-app"/i);
+test("the browser atlas retains semantic controls and the relation globe contract", () => {
+  assert.match(explorerSource, /<main className="terminal-app">/);
   assert.match(
-    html,
-    /<aside[^>]*class="corpus-navigator"[^>]*aria-label="Global regulation corpus"/i,
+    explorerSource,
+    /className="corpus-navigator"[\s\S]*?aria-label="Global regulation corpus"/,
   );
-  assert.match(html, /<input[^>]*type="search"/i);
-  assert.match(html, /Search legal source or core concept/i);
-  const researchIndex = html.match(
-    /<div(?=[^>]*class="navigator-tabs")(?=[^>]*role="tablist")(?=[^>]*aria-label="Research index")(?=[^>]*data-active-tab="sources")[^>]*>[\s\S]*?<\/div>/i,
-  )?.[0];
-  assert.ok(researchIndex, "the sidebar must expose a semantic research-index tablist");
+  assert.match(explorerSource, /<input[\s\S]*?type="search"/);
+  assert.match(explorerSource, /Search legal source or core concept/);
   assert.match(
-    researchIndex,
-    /<span[^>]*class="navigator-tab-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
+    explorerSource,
+    /className="navigator-tabs"[\s\S]*?role="tablist"[\s\S]*?aria-label="Research index"/,
+  );
+  assert.match(explorerSource, /id="navigator-tab-sources"[\s\S]*?GLOBAL ATLAS/);
+  assert.match(
+    explorerSource,
+    /id="navigator-tab-concepts"[\s\S]*?CORE CONCEPTS/,
   );
   assert.match(
-    researchIndex,
-    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-sources")(?=[^>]*aria-selected="true")[^>]*>[\s\S]*?GLOBAL ATLAS\s*<\/button>/i,
+    explorerSource,
+    /className="mode-switch"[\s\S]*?aria-label="Explorer mode"[\s\S]*?data-active-view=/,
   );
   assert.match(
-    researchIndex,
-    /<button(?=[^>]*role="tab")(?=[^>]*id="navigator-tab-concepts")(?=[^>]*aria-selected="false")[^>]*>[\s\S]*?CORE CONCEPTS\s*<\/button>/i,
+    explorerSource,
+    /className="theme-switch"[\s\S]*?role="group"[\s\S]*?aria-label="Color theme"/,
   );
   assert.match(
-    html,
-    /<nav(?=[^>]*class="mode-switch")(?=[^>]*aria-label="Explorer mode")(?=[^>]*data-active-view="atlas")[^>]*>/i,
+    explorerSource,
+    /className="workspace center-column-panel"[\s\S]*?aria-label="Legal source content"/,
   );
   assert.match(
-    html,
-    /<div[^>]*class="theme-switch"[^>]*role="group"[^>]*aria-label="Color theme"/i,
+    explorerSource,
+    /const atlasGlobePanel =[\s\S]*?<RegulationGlobe[\s\S]*?const rightVisualizationPanel =/,
+    "the initial Atlas must mount the relation globe in the right visualization column",
   );
   assert.match(
-    html,
-    /<section(?=[^>]*class="[^"]*\bworkspace\b[^"]*")(?=[^>]*aria-label="Regulation visualization")[^>]*>/i,
-  );
-  assert.match(
-    html,
-    /<section[^>]*aria-labelledby="regulation-globe-heading"/i,
-    "the initial Atlas must mount the relation globe beside the workspace",
-  );
-  assert.match(
-    html,
-    /<canvas(?=[^>]*role="img")(?=[^>]*aria-label="[^"]*jurisdiction nodes connected to [^"]*core concept nodes[^"]*point-cloud globe\.")[^>]*>/i,
+    globeSource,
+    /<canvas[\s\S]*?role="img"[\s\S]*?aria-label=\{`\$\{jurisdictions\.length\} jurisdiction nodes connected to \$\{displayedConceptCount\} core concept nodes/,
     "the point-cloud globe must expose an accessible canvas description",
   );
-  assert.match(
-    html,
-    /<nav[^>]*aria-label="Jurisdictions plotted on the regulation globe"/i,
-  );
-  assert.match(
-    html,
-    /<nav[^>]*aria-label="Core concepts connected on the regulation globe"/i,
-  );
-  assert.match(
-    html,
-    /<button(?=[^>]*class="interface-back-button")(?=[^>]*disabled="")(?=[^>]*aria-label="Return to previous interface")[^>]*>[\s\S]*?BACK\s*<\/button>/i,
-    "the initial workspace must expose a disabled in-app Back control",
-  );
-  const currentLocation = html.match(
-    /<div[^>]*class="breadcrumbs"[^>]*aria-label="Current location"[^>]*>[\s\S]*?<\/div>/i,
-  )?.[0];
-  assert.ok(currentLocation, "the workspace must render its current hierarchy");
-  assert.match(
-    currentLocation,
-    /<button(?=[^>]*type="button")(?=[^>]*aria-current="page")[^>]*>[\s\S]*?GLOBAL ATLAS\s*<\/button>/i,
-    "the current breadcrumb leaf must be a native button with aria-current",
-  );
-  assert.match(html, /aria-live="polite"/i);
-  const modeControls = html.match(
-    /<nav(?=[^>]*class="mode-switch")(?=[^>]*data-active-view="atlas")[^>]*>[\s\S]*?<\/nav>/i,
-  )?.[0];
-  assert.ok(modeControls, "the semantic explorer mode control must render");
-  assert.match(
-    modeControls,
-    /<span[^>]*class="mode-switch-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
-  );
-  assert.match(
-    html,
-    /<button(?=[^>]*aria-pressed="true")[^>]*>[\s\S]*?Atlas\s*<\/button>/i,
-  );
-  const themeControls = html.match(
-    /<div(?=[^>]*class="theme-switch")(?=[^>]*data-active-theme="dark")[^>]*>[\s\S]*?<\/div>/i,
-  )?.[0];
-  assert.ok(themeControls, "the semantic color theme control must render");
-  assert.match(
-    themeControls,
-    /<span[^>]*class="theme-switch-indicator"[^>]*aria-hidden="true"[^>]*><\/span>/i,
-  );
-  assert.match(
-    themeControls,
-    /<button(?=[^>]*data-theme-option="dark")(?=[^>]*aria-pressed="true")[^>]*>[\s\S]*?lucide-moon[\s\S]*?Dark\s*<\/button>/i,
-  );
-  assert.match(
-    themeControls,
-    /<button(?=[^>]*data-theme-option="bright")(?=[^>]*aria-pressed="false")[^>]*>[\s\S]*?lucide-sun[\s\S]*?Bright\s*<\/button>/i,
-  );
-  const liveRegion = html.match(
-    /<p(?=[^>]*class="sr-only")(?=[^>]*aria-live="polite")[^>]*>[\s\S]*?<\/p>/i,
-  )?.[0];
-  assert.ok(liveRegion, "view changes must retain a polite live region");
-  assert.match(
-    normalizedText(liveRegion),
-    /Atlas view\. Global regulatory atlas open\./i,
-  );
-  assert.match(text, /Atlas Instrument Connections Timeline Compare/i);
-  assert.match(text, /Binding law/i);
-  assert.match(text, /Soft law \/ framework/i);
-  assert.match(text, /Historical \/ revoked/i);
-  assert.match(text, /RESEARCH_NAV/i);
-  assert.match(text, /GLOBAL ATLAS/i);
-  assert.match(text, /GITHUB/i);
-  assert.match(
-    html,
-    /<a[^>]*class="github-link"[^>]*href="https:\/\/github\.com\/EtonMu\/global-ai-data-regulation-map"[^>]*target="_blank"/i,
-  );
-
-  assert.doesNotMatch(html, /<table[^>]*class="crosswalk-table"/i);
-  assert.doesNotMatch(html, /<select\b/i);
-  assert.doesNotMatch(text, /ONE_HOP_PROVISION_NEIGHBORHOOD|COMPARE_LAB/i);
+  assert.match(globeSource, /aria-label="Jurisdictions plotted on the regulation globe"/);
+  assert.match(globeSource, /aria-label="Core concepts connected on the regulation globe"/);
+  assert.match(explorerSource, /className="interface-back-button"[\s\S]*?disabled=\{historyDepth === 0\}[\s\S]*?Return to previous interface/);
+  assert.match(explorerSource, /className="breadcrumbs" aria-label="Current location"/);
+  assert.match(explorerSource, /aria-current=\{part\.current \? "page" : undefined\}/);
+  assert.match(explorerSource, /className="github-link"[\s\S]*?href=\{repositoryUrl\}[\s\S]*?target="_blank"/);
 });
 
-test("server output preserves jurisdiction order, inline flags, issuer marks, and the framework lane", async () => {
-  const response = await render();
-  const html = await response.text();
+test("client grouping preserves jurisdiction order, SVG marks, and the framework lane", () => {
+  const orderBlock = explorerSource.match(
+    /const atlasGroupOrder = \[([\s\S]*?)\];/,
+  )?.[1];
+  assert.ok(orderBlock, "the client must declare one deterministic Atlas order");
+  const declaredOrder = [...orderBlock.matchAll(/"([^"]+)"/g)].map(
+    (match) => match[1],
+  );
+  assert.deepEqual(declaredOrder, topLevelGroupOrder);
 
-  const renderedGroupOrder = [
-    ...html.matchAll(/data-atlas-group="([^"]+)"/g),
-  ].map((match) => match[1]);
-  assert.deepEqual(renderedGroupOrder, topLevelGroupOrder);
+  const groupForInstrument = (instrument) => {
+    let jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
+    const seen = new Set();
+    if (jurisdiction?.id !== "hk") {
+      while (jurisdiction?.parentId && !seen.has(jurisdiction.id)) {
+        seen.add(jurisdiction.id);
+        jurisdiction = jurisdictionById.get(jurisdiction.parentId) ?? jurisdiction;
+      }
+    }
+    const type = jurisdiction?.type ?? "";
+    return type.includes("international") ||
+      type.includes("intergovernmental") ||
+      type.includes("standards")
+      ? "frameworks"
+      : jurisdiction?.id;
+  };
+  const actualGroups = [...new Set(instruments.map(groupForInstrument))]
+    .filter(Boolean)
+    .sort(
+      (left, right) =>
+        topLevelGroupOrder.indexOf(left) - topLevelGroupOrder.indexOf(right),
+    );
+  assert.deepEqual(actualGroups, topLevelGroupOrder);
 
+  assert.match(
+    explorerSource,
+    /className="atlas-lane"[\s\S]*?data-atlas-group=\{group\.id\}/,
+  );
+  assert.match(explorerSource, /className="instrument-kind-icon" aria-hidden="true"/);
+  assert.match(jurisdictionMarkSource, /data-flag-code=\{flag\.code\}[\s\S]*?aria-hidden="true"/);
+  assert.match(jurisdictionMarkSource, /data-issuer-id=[\s\S]*?aria-label=\{issuer\.label\}[\s\S]*?role="img"/);
   assert.doesNotMatch(
-    html,
+    jurisdictionMarkSource,
     /[\u{1f1e6}-\u{1f1ff}]/u,
-    "navigation flags must use SVGs and readable issuer components, not regional-indicator emoji",
-  );
-
-  const renderedFlagCodes = new Set(
-    [...html.matchAll(/data-flag-code="([A-Z]{2})"/g)].map(
-      (match) => match[1],
-    ),
-  );
-  assert.deepEqual(
-    [...renderedFlagCodes].sort(),
-    [...expectedFlagCodes.values()].sort(),
-    "all primary legal systems must render their intended flag code",
+    "navigation marks must use SVG flags, not regional-indicator emoji",
   );
 
   for (const [jurisdictionId, flagCode] of expectedFlagCodes) {
-    const jurisdiction = jurisdictionById.get(jurisdictionId);
-    assert.ok(jurisdiction, `missing test jurisdiction ${jurisdictionId}`);
+    assert.ok(jurisdictionById.has(jurisdictionId));
     assert.match(
-      html,
-      new RegExp(
-        `<span(?=[^>]*class="[^"]*jurisdiction-mark[^"]*is-flag[^"]*")(?=[^>]*data-flag-code="${flagCode}")(?=[^>]*aria-hidden="true")[^>]*>\\s*<svg[^>]*>[\\s\\S]*?<\\/svg>\\s*<\\/span>\\s*(?:<span[^>]*>)?${escapeRegExp(escapeHtmlText(jurisdiction.name))}`,
-        "i",
-      ),
-      `${jurisdiction.name} must use a decorative inline SVG flag beside its visible label`,
-    );
-  }
-
-  const renderedIssuerIds = new Set(
-    [...html.matchAll(/data-issuer-id="([^"]+)"/g)].map(
-      (match) => match[1],
-    ),
-  );
-  for (const issuerId of expectedIssuerMarks.keys()) {
-    assert.ok(
-      renderedIssuerIds.has(issuerId),
-      `missing issuer mark for ${issuerId}`,
+      jurisdictionMarkSource,
+      new RegExp(`\\b${jurisdictionId}: \\{ code: "${flagCode}"`),
+      `${jurisdictionId} must retain its SVG flag mapping`,
     );
   }
   for (const [issuerId, [label, abbreviation]] of expectedIssuerMarks) {
-    assert.match(
-      html,
-      new RegExp(
-        `<span(?=[^>]*class="[^"]*jurisdiction-mark[^"]*is-issuer[^"]*")(?=[^>]*data-issuer-id="${escapeRegExp(issuerId)}")(?=[^>]*aria-label="${escapeRegExp(escapeHtmlText(label))}")(?=[^>]*role="img")[^>]*>[\\s\\S]*?<svg[^>]*class="[^"]*lucide[^"]*"[^>]*>[\\s\\S]*?<\\/svg>\\s*<span[^>]*aria-hidden="true"[^>]*>${escapeRegExp(abbreviation)}<\\/span>\\s*<\\/span>`,
-        "i",
-      ),
-      `${issuerId} must expose a readable abbreviation and accessible issuer label`,
-    );
-  }
-
-  const kindIconCount = (html.match(/class="instrument-kind-icon"/g) ?? [])
-    .length;
-  assert.equal(
-    kindIconCount,
-    corpusCounts.instruments,
-    "every atlas instrument node must expose a visual kind icon",
-  );
-  assert.match(
-    html,
-    /<span[^>]*class="instrument-kind-icon"[^>]*aria-hidden="true"[^>]*>[\s\S]*?<svg[^>]*class="lucide lucide-(?:scale|landmark|file-clock|globe-2|archive)"/i,
-  );
-
-  const frameworkLane = html.match(
-    /<section[^>]*class="atlas-lane"[^>]*data-atlas-group="frameworks"[^>]*>([\s\S]*?)<\/section>/i,
-  )?.[1];
-  assert.ok(frameworkLane, "the framework lane must render alongside legal systems");
-  const frameworkText = normalizedText(frameworkLane);
-  for (const instrumentId of frameworkInstrumentIds) {
-    const instrument = instrumentById.get(instrumentId);
-    assert.ok(instrument, `missing test instrument ${instrumentId}`);
-    assert.match(
-      frameworkText,
-      new RegExp(escapeRegExp(instrument.shortTitle), "i"),
-    );
+    assert.match(jurisdictionMarkSource, new RegExp(`"?${issuerId}"?: \\{`));
+    assert.ok(jurisdictionMarkSource.includes(`abbreviation: "${abbreviation}"`));
+    assert.ok(jurisdictionMarkSource.includes(`label: "${label}"`));
   }
 });

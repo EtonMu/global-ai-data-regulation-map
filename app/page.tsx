@@ -1,5 +1,7 @@
-import RegulationExplorer from "./regulation-explorer";
+import RegulationExplorerClient from "./regulation-explorer-client";
+
+export const dynamic = "force-static";
 
 export default function Home() {
-  return <RegulationExplorer />;
+  return <RegulationExplorerClient />;
 }

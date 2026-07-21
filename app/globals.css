@@ -5406,3 +5406,70 @@ html[data-theme="bright"] .connection-canvas::before,
 html[data-theme="bright"] .connection-canvas::after {
   border-color: var(--line);
 }
+
+.explorer-loading-shell {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 32px;
+  color: var(--ink);
+  text-align: center;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--void);
+  background-size: 44px 44px;
+}
+
+.explorer-loading-shell h1,
+.explorer-loading-shell p {
+  margin: 0;
+}
+
+.explorer-loading-shell h1 {
+  max-width: 22ch;
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  line-height: 1.02;
+}
+
+.explorer-loading-shell > p:last-child {
+  color: var(--muted);
+}
+
+.explorer-loading-mark {
+  display: flex;
+  gap: 7px;
+  height: 24px;
+  align-items: end;
+}
+
+.explorer-loading-mark span {
+  width: 5px;
+  height: 9px;
+  background: var(--cyan);
+  animation: explorer-loading-pulse 900ms ease-in-out infinite alternate;
+}
+
+.explorer-loading-mark span:nth-child(2) {
+  height: 17px;
+  animation-delay: 140ms;
+}
+
+.explorer-loading-mark span:nth-child(3) {
+  height: 24px;
+  animation-delay: 280ms;
+}
+
+@keyframes explorer-loading-pulse {
+  to {
+    opacity: 0.35;
+    transform: scaleY(0.55);
+  }
+}
+
+html[data-theme="bright"] .explorer-loading-shell h1 {
+  font-family: Georgia, "Times New Roman", serif;
+}
