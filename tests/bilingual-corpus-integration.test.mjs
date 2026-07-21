@@ -7,13 +7,18 @@ const appSource = await readFile(
   new URL("../app/regulation-explorer.tsx", import.meta.url),
   "utf8",
 );
+const corpusBuildSource = await readFile(
+  new URL("../scripts/build-client-corpus.mjs", import.meta.url),
+  "utf8",
+);
 const load = async (filename) =>
   JSON.parse(await readFile(new URL(filename, dataRoot), "utf8"));
 
-const [instruments, audits, pipeda, lgpd, taiwanAiAct, taiwanPdpa] =
+const [instruments, audits, clientIndex, pipeda, lgpd, taiwanAiAct, taiwanPdpa] =
   await Promise.all([
     load("instruments.json"),
     load("source-audit.json"),
+    load("client-corpus-index.json"),
     load("canada-pipeda-provisions.json"),
     load("brazil-lgpd-articles.json"),
     load("tw-ai-basic-act-2026-articles.json"),
@@ -25,15 +30,34 @@ const auditByInstrumentId = new Map(
   audits.map((item) => [item.instrumentId, item]),
 );
 
-test("the four complete corpora are imported into the production explorer", () => {
+test("the four complete corpora are registered as on-demand production shards", () => {
   for (const filename of [
     "canada-pipeda-provisions.json",
     "brazil-lgpd-articles.json",
     "tw-ai-basic-act-2026-articles.json",
     "tw-personal-data-protection-act-articles.json",
   ]) {
-    assert.match(appSource, new RegExp(filename.replaceAll(".", "\\.")));
+    assert.match(
+      corpusBuildSource,
+      new RegExp(filename.replaceAll(".", "\\.")),
+    );
+    assert.doesNotMatch(
+      appSource,
+      new RegExp(`from ["'][^"']*${filename.replaceAll(".", "\\.")}["']`),
+    );
   }
+  for (const instrumentId of [
+    "ca-pipeda",
+    "br-lgpd-2018",
+    "tw-ai-basic-act-2026",
+    "tw-personal-data-protection-act",
+  ]) {
+    assert.match(
+      clientIndex.shards[instrumentId],
+      new RegExp(`^data/corpus/${instrumentId}\\.json\\?v=[a-f0-9]{16}$`),
+    );
+  }
+  assert.match(appSource, /hydrateInstrumentCorpus/);
   assert.match(
     appSource,
     /\[readerLanguagePreference,\s*setReaderLanguagePreference\][\s\S]*?useState\("en"\)/,

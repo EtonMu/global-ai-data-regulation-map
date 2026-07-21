@@ -17,7 +17,7 @@ const [labSource, labDataSource, labStyles, coverage, relations] =
   ]);
 
 const phaseTwoViews = [
-  ["translation", "Translation Integrity"],
+  ["translation", "Translation Coverage & Authority"],
   ["bridges", "Qualified Bridge Atlas"],
   ["pathways", "Operationalization Paths"],
 ];
@@ -53,7 +53,7 @@ test("translation integrity keeps coverage, authority, and temporal alignment se
     assert.match(labDataSource, new RegExp(`["']${authorityClass}["']`));
   }
   assert.match(labDataSource, /export function deriveTranslationIntegrity\(/);
-  assert.match(labSource, /Translation Integrity Observatory/);
+  assert.match(labSource, /Translation Coverage &amp; Authority/);
   assert.match(labSource, /Stored English text is not a translation-quality finding/);
   assert.doesNotMatch(labSource, /translation quality score|semantic drift score/i);
   assert.match(labSource, /onOpenProvision\(provisionId\)/);
@@ -80,6 +80,9 @@ test("bridge metrics separate reviewed evidence from candidate sensitivity", () 
   assert.match(labDataSource, /reviewedRank/);
   assert.match(labDataSource, /allRank/);
   assert.match(labSource, /Candidate-edge sensitivity/);
+  assert.match(labSource, /Reviewed-subgraph betweenness/);
+  assert.match(labSource, /Recorded-relation graph betweenness/);
+  assert.match(labDataSource, /reviewed subgraph or recorded-relation graph/);
   assert.match(labSource, /not global legal influence/i);
   assert.doesNotMatch(labSource, /global influence score|regulatory importance score/i);
 });

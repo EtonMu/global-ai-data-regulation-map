@@ -10,9 +10,9 @@
   --ink: #d9e5ef;
   --ink-strong: #f4f8fb;
   --muted: #7890a4;
-  --muted-dark: #4b6174;
+  --muted-dark: #6a8094;
   --line: #172838;
-  --line-strong: #294158;
+  --line-strong: #4a6780;
   --cyan: #56e1ff;
   --cyan-soft: rgba(86, 225, 255, 0.11);
   --violet: #9a7cff;
@@ -55,9 +55,9 @@ html[data-theme="bright"] {
   --ink: #2d3948;
   --ink-strong: #12243b;
   --muted: #5f6b76;
-  --muted-dark: #7a8490;
+  --muted-dark: #5d6772;
   --line: #d9d2c6;
-  --line-strong: #b8b0a3;
+  --line-strong: #878075;
   --cyan: #1f5c7a;
   --cyan-soft: rgba(31, 92, 122, 0.09);
   --violet: #6c4f72;
@@ -594,6 +594,10 @@ button {
     color 160ms ease;
 }
 
+.mobile-navigator-toggle {
+  display: none;
+}
+
 .column-toggle:hover {
   border-color: var(--cyan);
   background: var(--panel-hover);
@@ -624,7 +628,7 @@ button {
   z-index: 44;
   top: 38px;
   bottom: 0;
-  width: 9px;
+  width: 24px;
   touch-action: none;
   cursor: col-resize;
 }
@@ -632,7 +636,7 @@ button {
 .column-resizer::before {
   position: absolute;
   inset-block: 0;
-  inset-inline-start: 4px;
+  inset-inline-start: 11px;
   width: 1px;
   background: var(--line-strong);
   content: "";
@@ -651,11 +655,11 @@ button {
 }
 
 .column-resizer-left {
-  left: calc(var(--left-column-width) - 4px);
+  left: calc(var(--left-column-width) - 12px);
 }
 
 .column-resizer-right {
-  right: calc(var(--right-column-width) - 4px);
+  right: calc(var(--right-column-width) - 12px);
 }
 
 .app-shell.is-column-resizing,
@@ -1543,6 +1547,8 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .workspace {
   position: relative;
+  container-name: legal-workspace;
+  container-type: inline-size;
   background:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
@@ -1579,12 +1585,12 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .interface-back-button {
-  min-height: 26px;
+  min-height: 32px;
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
   gap: 5px;
-  padding: 0 7px;
+  padding: 0 9px;
   border: 1px solid var(--line-strong);
   background: transparent;
   color: var(--muted);
@@ -1642,7 +1648,10 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 
 .breadcrumbs button {
   min-width: 0;
+  min-height: 32px;
   max-width: 26ch;
+  display: inline-flex;
+  align-items: center;
   overflow: hidden;
   color: inherit;
   font: inherit;
@@ -1652,7 +1661,7 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 }
 
 .breadcrumbs button {
-  padding: 2px 1px;
+  padding: 5px 3px;
   border: 0;
   border-bottom: 1px solid transparent;
   background: transparent;
@@ -1755,7 +1764,9 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
 .bilingual-instrument-title > span,
 .bilingual-provision-title > span {
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 
 .bilingual-instrument-title > span[lang],
@@ -2631,6 +2642,90 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   color: var(--ink);
   font-size: 0.7rem;
   overflow-wrap: anywhere;
+}
+
+/*
+ * The legal workspace is independently resizable on wide screens. Its
+ * contents therefore respond to the column itself instead of waiting for a
+ * viewport breakpoint that may never be crossed.
+ */
+@container legal-workspace (max-width: 600px) {
+  .instrument-context {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@container legal-workspace (max-width: 560px) {
+  .view-intro,
+  .instrument-masthead,
+  .concept-masthead,
+  .connections-header,
+  .timeline-header,
+  .compare-header {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+  }
+
+  .view-intro h1,
+  .instrument-masthead h1,
+  .concept-masthead h1,
+  .connections-header h1,
+  .timeline-header h1,
+  .compare-header h1 {
+    max-inline-size: 100%;
+    font-size: clamp(1.75rem, 8cqi, 2.65rem);
+    line-height: 1.03;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+    text-wrap: balance;
+  }
+
+  .corpus-readout,
+  .instrument-readout,
+  .concept-readout,
+  .connection-readout {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container legal-workspace (max-width: 520px) {
+  .workspace-status {
+    min-height: 0;
+    flex-wrap: wrap;
+    gap: 7px 9px;
+    padding: 6px 10px;
+  }
+
+  .workspace-location {
+    flex-basis: 100%;
+    gap: 7px;
+  }
+
+  .interface-back-button,
+  .breadcrumbs button {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .view-code {
+    margin-left: auto;
+    font-size: 0.64rem;
+  }
+}
+
+@container legal-workspace (max-width: 440px) {
+  .instrument-context dl,
+  .corpus-readout,
+  .instrument-readout,
+  .concept-readout,
+  .connection-readout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .instrument-relations {
@@ -5023,6 +5118,54 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     flex: 1 1 auto;
   }
 
+  .mobile-navigator-toggle {
+    position: sticky;
+    z-index: 46;
+    inset-block-start: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 6px 10px;
+    padding: 0 11px;
+    border: 1px solid var(--line-strong);
+    border-radius: 5px;
+    background: var(--workspace-bar);
+    box-shadow: 0 4px 14px var(--ambient-shadow);
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    touch-action: manipulation;
+    transition:
+      border-color 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease,
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-navigator-toggle:hover,
+  .mobile-navigator-toggle[aria-expanded="true"] {
+    border-color: var(--cyan);
+    background: var(--cyan-soft);
+    color: var(--cyan);
+  }
+
+  .mobile-navigator-toggle:focus,
+  .mobile-navigator-toggle:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px var(--cyan-soft), 0 4px 14px var(--ambient-shadow);
+  }
+
+  .mobile-navigator-toggle svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+  }
+
   .app-shell {
     display: block;
     padding-bottom: 0 !important;
@@ -5056,15 +5199,47 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     height: auto;
   }
 
-  .corpus-navigator {
-    max-height: 330px;
-    overflow: auto;
+  .app-shell > .corpus-navigator,
+  .app-shell.is-left-collapsed > .corpus-navigator {
+    max-height: 0;
+    overflow: hidden;
     border-right: 0;
-    border-bottom: 1px solid var(--line-strong);
+    border-bottom: 0 solid transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    visibility: hidden;
+    transition:
+      max-height 300ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 180ms ease,
+      opacity 180ms ease,
+      transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 300ms;
+  }
+
+  .mobile-navigator-open .app-shell > .corpus-navigator,
+  .app-shell.mobile-navigator-open > .corpus-navigator,
+  .app-shell[data-mobile-nav-open="true"] > .corpus-navigator {
+    max-height: min(70dvh, 560px);
+    overflow: auto;
+    overscroll-behavior: contain;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--line-strong);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
   }
 
   .workspace-status {
     position: static;
+  }
+
+  .interface-back-button,
+  .breadcrumbs button {
+    min-height: 44px;
+    touch-action: manipulation;
   }
 
   .atlas-view,
@@ -5369,6 +5544,11 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .mobile-navigator-toggle,
+  .app-shell > .corpus-navigator {
+    transition: none !important;
   }
 
   .relation-flow {

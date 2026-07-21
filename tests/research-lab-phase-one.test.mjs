@@ -2,11 +2,18 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import {
+  buildResearchLabExportPayload,
+  buildResearchLabShareHash,
+  RESEARCH_LAB_EXPORT_LIMITATIONS,
+} from "../app/research-lab-data.ts";
+
 const appRoot = new URL("../app/", import.meta.url);
 const dataRoot = new URL("../data/v2/", import.meta.url);
 
 const [
   explorerSource,
+  lazyResearchSource,
   labSource,
   labDataSource,
   labStyles,
@@ -15,6 +22,7 @@ const [
   statusEvents,
 ] = await Promise.all([
   readFile(new URL("regulation-explorer.tsx", appRoot), "utf8"),
+  readFile(new URL("lazy-research-view.tsx", appRoot), "utf8"),
   readFile(new URL("research-lab.tsx", appRoot), "utf8"),
   readFile(new URL("research-lab-data.ts", appRoot), "utf8"),
   readFile(new URL("research-lab.module.css", appRoot), "utf8"),
@@ -34,8 +42,8 @@ const phaseOneViews = [
 test("Research Lab is a first-class explorer surface", () => {
   assert.match(
     explorerSource,
-    /import\s+\{\s*ResearchLab\s*\}\s+from\s+["']\.\/research-lab["']/,
-    "the explorer must mount the dedicated research surface",
+    /import\(["']\.\/lazy-research-view["']\)/,
+    "the explorer must defer the dedicated research surface",
   );
   assert.match(
     explorerSource,
@@ -49,9 +57,11 @@ test("Research Lab is a first-class explorer surface", () => {
   );
   assert.match(
     explorerSource,
-    /state\.view\s*===\s*["']research["'][\s\S]*?<ResearchLab(?=[^>]*(?:data|researchData)=\{researchLabData\})(?=[^>]*onOpenInstrument=\{openInstrument\})[^>]*\/?\s*>/,
+    /state\.view\s*===\s*["']research["'][\s\S]*?<LazyResearchView[\s\S]*?input=\{researchCorpusInput\}/,
     "the research state must mount the model with legal-source drill-down",
   );
+  assert.match(explorerSource, /onOpenInstrument=\{openInstrument\}/);
+  assert.match(lazyResearchSource, /<ResearchLab/);
   assert.match(
     explorerSource,
     /type NavigatorTab\s*=\s*["']sources["']\s*\|\s*["']concepts["']/,
@@ -132,7 +142,7 @@ test("coverage is observable and its limits are stated alongside the analysis", 
   );
   assert.match(
     labSource,
-    /useState<CoverageScope>\(["']complete["']\)/,
+    /initialCoverageScope\s*=\s*["']complete["'][\s\S]*?useState<CoverageScope>\(initialCoverageScope\)/,
     "complete corpora must be the default comparative sample",
   );
   assert.match(
@@ -267,12 +277,12 @@ test("substantive analysis is the default while structural context remains inspe
   assert.match(labSource, /All records · structural \+ unreviewed/i);
   assert.match(
     labSource,
-    /function RegulatoryGrammar\(\{[\s\S]*?coverageScope,[\s\S]*?const includedInstrumentIds[\s\S]*?instrumentMatchesCoverage\(instrument, coverageScope\)[\s\S]*?const includedProvisions[\s\S]*?buildGrammarPairs\(\s*includedProvisions/,
-    "grammar associations must honor the same completeness mask as the genome",
+    /function RegulatoryGrammar\(\{[\s\S]*?coverageScope,[\s\S]*?const displayedInstruments[\s\S]*?instrumentMatchesCoverage\(instrument, coverageScope\)[\s\S]*?const includedInstrumentIds[\s\S]*?conceptMeasurementState === ["']observed-complete["'][\s\S]*?const includedProvisions[\s\S]*?buildGrammarPairs\(\s*includedProvisions/,
+    "grammar associations must expose requested instruments while keeping partial corpora outside the estimand",
   );
   assert.match(
     labSource,
-    /const selectedEvidence\s*=[\s\S]*?includedProvisions[\s\S]*?provisionMatchesScope\(provision, relevanceScope\)/,
+    /const allSelectedEvidence\s*=[\s\S]*?includedProvisions[\s\S]*?provisionMatchesScope\(provision, relevanceScope\)/,
     "grammar drill-down evidence must honor both coverage and relevance filters",
   );
 });
@@ -332,14 +342,217 @@ test("time view is an event index rather than an invented historical state", () 
   );
 });
 
-test("interactive readouts derive current values and avoid custom tab indexes", () => {
+test("interactive readouts derive current values and tabs use roving focus", () => {
   assert.match(
     labSource,
-    /const activeValue =[\s\S]*?matrix\.get\(activeCell\.instrumentId\)[\s\S]*?\[\s*metric\s*\]/,
+    /const activeMatrixCell =[\s\S]*?matrix\.get\(activeCell\.instrumentId\)[\s\S]*?const activeValue =[\s\S]*?activeMatrixCell\?\.\[metric\]/,
   );
   assert.doesNotMatch(
     labSource,
     /const \[activeCell[\s\S]{0,180}value:\s*number/,
   );
-  assert.doesNotMatch(labSource, /\btabIndex=/);
+  assert.match(labSource, /tabIndex=\{activeView === view\.id \? 0 : -1\}/);
+  assert.match(labSource, /tabIndex=\{activePhase === ["']patterns["'] \? 0 : -1\}/);
+  assert.match(labSource, /function handlePhaseKeyDown\(/);
+  assert.match(labSource, /onViewChange\?: \(view: ResearchLabView\) => void/);
+  assert.match(labSource, /onViewChange\?\.\(nextView\)/);
+  assert.match(labSource, /onViewChange\?\.\(view\)/);
+  assert.match(labSource, /function handleGenomeCellKeyDown\(/);
+  assert.match(labSource, /data-genome-row=\{instrumentIndex\}/);
+  assert.match(labSource, /data-genome-column=\{conceptIndex\}/);
+  assert.match(
+    labSource,
+    /instrumentIndex === rovingGenomeRowIndex[\s\S]{0,120}conceptIndex === rovingGenomeColumnIndex[\s\S]{0,80}\? 0[\s\S]{0,40}: -1/,
+  );
+  assert.match(labSource, /function handleGrammarCellKeyDown\(/);
+  assert.match(labSource, /data-grammar-row=\{rowIndex\}/);
+  assert.match(labSource, /data-grammar-column=\{columnIndex\}/);
+  assert.match(labSource, /tabIndex=\{key === rovingGrammarKey \? 0 : -1\}/);
+});
+
+test("Research Lab share state uses the explorer hash and exposes filter callbacks", () => {
+  const hash = buildResearchLabShareHash(
+    "#view=instrument&instrument=eu-gdpr&researchPhase=patterns",
+    {
+      view: "genome",
+      coverageScope: "all",
+      relevanceScope: "all",
+    },
+  );
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  assert.equal(params.get("view"), "research");
+  assert.equal(params.get("instrument"), "eu-gdpr");
+  assert.equal(params.get("researchView"), "genome");
+  assert.equal(params.get("researchCoverage"), "all");
+  assert.equal(params.get("researchRelevance"), "all");
+  assert.equal(params.has("researchPhase"), false);
+
+  assert.match(labSource, /initialCoverageScope\?: ResearchCoverageScope/);
+  assert.match(labSource, /initialRelevanceScope\?: ResearchRelevanceScope/);
+  assert.match(labSource, /onCoverageScopeChange\?: \(scope: ResearchCoverageScope\) => void/);
+  assert.match(labSource, /onRelevanceScopeChange\?: \(scope: ResearchRelevanceScope\) => void/);
+  assert.match(labSource, /useState<CoverageScope>\(initialCoverageScope\)/);
+  assert.match(labSource, /useState<RelevanceScope>\(initialRelevanceScope\)/);
+  assert.match(labSource, /url\.hash = buildResearchLabShareHash\(url\.hash/);
+  assert.doesNotMatch(labSource, /url\.searchParams\.set\(["']research/);
+});
+
+test("view dataset exports disclose that view-local controls are omitted", () => {
+  assert.deepEqual(RESEARCH_LAB_EXPORT_LIMITATIONS.sharedStateFields, [
+    "view",
+    "coverageScope",
+    "relevanceScope",
+  ]);
+  assert.equal(RESEARCH_LAB_EXPORT_LIMITATIONS.viewLocalControlsIncluded, false);
+  assert.ok(
+    RESEARCH_LAB_EXPORT_LIMITATIONS.omittedViewLocalControlKinds.includes(
+      "threshold",
+    ),
+  );
+  assert.ok(
+    RESEARCH_LAB_EXPORT_LIMITATIONS.omittedViewLocalControlKinds.includes(
+      "instrument-selection",
+    ),
+  );
+  assert.match(
+    RESEARCH_LAB_EXPORT_LIMITATIONS.note,
+    /View-local thresholds, metrics, selections and display positions are not included/,
+  );
+  assert.match(
+    labDataSource,
+    /exportLimitations:\s*RESEARCH_LAB_EXPORT_LIMITATIONS/,
+  );
+  assert.match(labSource, /Export view dataset/);
+  assert.match(labSource, /Research view dataset exported\./);
+  assert.doesNotMatch(labSource, /Current Research Lab data exported\./);
+});
+
+test("partial-corpus genome observations remain unknown rather than false zeroes", () => {
+  assert.match(labDataSource, /ResearchConceptMeasurementState/);
+  assert.match(labDataSource, /["']observed-complete["']/);
+  assert.match(labDataSource, /["']unknown-partial["']/);
+  assert.match(labSource, /["']observed-partial["']/);
+  assert.match(labSource, /recorded positive counts are lower bounds/);
+  assert.match(labSource, /Count = recorded lower bound in a selected or partial corpus/);
+  assert.match(labSource, /N\/A = unrecorded absence or normalization unavailable/);
+  assert.match(labSource, /unknown(?: rather than|, not) zero/);
+  assert.match(labStyles, /\.heatCell\[data-availability=["']unknown["']\]/);
+  assert.match(
+    labStyles,
+    /\.heatCell\[data-availability=["']observed-partial["']\]/,
+  );
+  assert.match(labDataSource, /buildResearchLabExportPayload/);
+  assert.match(labSource, /Copy link/);
+  assert.match(labSource, /Export view dataset/);
+});
+
+test("Genome exports partial positive mappings as raw-count lower bounds only", () => {
+  const completeInstrument = {
+    id: "complete",
+    coverageClass: "complete",
+    conceptMeasurementState: "observed-complete",
+  };
+  const partialInstrument = {
+    id: "partial",
+    coverageClass: "selected",
+    conceptMeasurementState: "unknown-partial",
+  };
+  const fingerprint = (instrumentId, measurementState) => ({
+    instrumentId,
+    measurementState,
+    coverageClass: measurementState === "observed-complete" ? "complete" : "selected",
+    coverageMode: "fixture",
+    includedInDefaultAnalysis: measurementState === "observed-complete",
+    denominatorProvisionCount: 0,
+    conceptAssignmentCount: 0,
+    mappedConceptCount: 0,
+    weights: [],
+  });
+  const data = {
+    snapshotDate: "2026-07-20",
+    methodology: {},
+    instruments: [completeInstrument, partialInstrument],
+    provisions: [
+      {
+        id: "complete-1",
+        instrumentId: "complete",
+        relevance: "substantive-topic",
+        conceptIds: ["c1"],
+      },
+      {
+        id: "partial-1",
+        instrumentId: "partial",
+        relevance: "substantive-topic",
+        conceptIds: ["c1"],
+      },
+    ],
+    concepts: [
+      { id: "c1", label: "Recorded" },
+      { id: "c2", label: "Unrecorded" },
+    ],
+    themes: [],
+    fingerprints: [
+      fingerprint("complete", "observed-complete"),
+      fingerprint("partial", "unknown-partial"),
+    ],
+  };
+
+  const payload = buildResearchLabExportPayload(data, {
+    phase: "patterns",
+    view: "genome",
+    coverageScope: "all",
+    relevanceScope: "substantive",
+  });
+  const partial = payload.viewData.data.fingerprints.find(
+    (item) => item.instrumentId === "partial",
+  );
+  const recorded = partial.weights.find((weight) => weight.conceptId === "c1");
+  const unrecorded = partial.weights.find((weight) => weight.conceptId === "c2");
+
+  assert.equal(payload.schemaVersion, "research-lab-view-export.v2");
+  assert.equal(recorded.rawCount, 1);
+  assert.equal(recorded.rawCountState, "observed-partial-lower-bound");
+  assert.equal(recorded.prevalence, null);
+  assert.equal(recorded.tfidf, null);
+  assert.equal(recorded.normalizedTfidf, null);
+  assert.equal(unrecorded.rawCount, null);
+  assert.equal(unrecorded.rawCountState, "unknown-unobserved");
+  assert.deepEqual(payload.sample.viewScope, payload.viewData.scope);
+});
+
+test("every exported view declares its actual per-view scope", () => {
+  const data = {
+    snapshotDate: "2026-07-20",
+    methodology: {},
+    instruments: [
+      {
+        id: "complete",
+        coverageClass: "complete",
+        conceptMeasurementState: "observed-complete",
+      },
+      {
+        id: "partial",
+        coverageClass: "selected",
+        conceptMeasurementState: "unknown-partial",
+      },
+    ],
+    provisions: [],
+    lifecycleLanes: [
+      { instrumentId: "complete" },
+      { instrumentId: "partial" },
+    ],
+  };
+  const payload = buildResearchLabExportPayload(data, {
+    phase: "patterns",
+    view: "timeline",
+    coverageScope: "complete",
+    relevanceScope: "substantive",
+  });
+
+  assert.deepEqual(payload.sample.displayedInstrumentIds, ["complete"]);
+  assert.deepEqual(payload.viewData.scope.instrumentIds, ["complete", "partial"]);
+  assert.equal(payload.viewData.scope.basis, "all-recorded-instruments");
+  assert.equal(payload.viewData.scope.coverageScopeApplied, false);
+  assert.deepEqual(payload.sample.viewScope, payload.viewData.scope);
+  assert.equal(payload.viewData.data.length, 2);
 });

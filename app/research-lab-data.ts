@@ -9,6 +9,9 @@
 export const RESEARCH_SNAPSHOT_DATE = "2026-07-20";
 
 export type ResearchCoverageClass = "complete" | "selected" | "unclassified";
+export type ResearchConceptMeasurementState =
+  | "observed-complete"
+  | "unknown-partial";
 export type ResearchRelevance =
   | "substantive-topic"
   | "structural-context"
@@ -302,6 +305,7 @@ export type ResearchInstrumentFingerprint = {
   instrumentId: string;
   coverageMode: string;
   coverageClass: ResearchCoverageClass;
+  measurementState: ResearchConceptMeasurementState;
   includedInDefaultAnalysis: boolean;
   denominatorProvisionCount: number;
   conceptAssignmentCount: number;
@@ -416,6 +420,7 @@ export type ResearchInstrumentDatum = {
   atlasOrder: number;
   coverageMode: string;
   coverageClass: ResearchCoverageClass;
+  conceptMeasurementState: ResearchConceptMeasurementState;
   includedInDefaultAnalysis: boolean;
   localUnitCount: number;
   totalProvisionCount: number;
@@ -940,6 +945,111 @@ export type ResearchLabData = {
   articleMicroscope: ResearchArticleMicroscope;
 };
 
+export type ResearchLabExportPhase =
+  | "patterns"
+  | "relations"
+  | "models"
+  | "dynamics";
+
+export type ResearchLabExportView =
+  | "observatory"
+  | "genome"
+  | "morphology"
+  | "grammar"
+  | "timeline"
+  | "translation"
+  | "bridges"
+  | "pathways"
+  | "archetypes"
+  | "audit"
+  | "horizon"
+  | "microscope"
+  | "neighborhoods"
+  | "granularity";
+
+export type ResearchLabExportOptions = {
+  phase: ResearchLabExportPhase;
+  view: ResearchLabExportView;
+  coverageScope: "complete" | "all";
+  relevanceScope: "substantive" | "all";
+};
+
+export type ResearchLabShareState = Pick<
+  ResearchLabExportOptions,
+  "view" | "coverageScope" | "relevanceScope"
+>;
+
+export const RESEARCH_LAB_EXPORT_LIMITATIONS = {
+  sharedStateFields: ["view", "coverageScope", "relevanceScope"],
+  viewLocalControlsIncluded: false,
+  omittedViewLocalControlKinds: [
+    "metric",
+    "threshold",
+    "instrument-selection",
+    "provision-selection",
+    "date-position",
+    "playback-state",
+    "display-scale",
+  ],
+  note:
+    "This export records the shared Research Lab view, coverage scope and relevance scope. Each viewData object declares the exact backing scope it exports. View-local thresholds, metrics, selections and display positions are not included.",
+} as const;
+
+export type ResearchLabExportPayload = {
+  schemaVersion: "research-lab-view-export.v2";
+  snapshotDate: string;
+  selection: ResearchLabExportOptions;
+  exportLimitations: typeof RESEARCH_LAB_EXPORT_LIMITATIONS;
+  methodology: ResearchLabData["methodology"];
+  sample: {
+    displayedInstrumentIds: string[];
+    analyticalInstrumentIds: string[];
+    visibleProvisionIds: string[];
+    displayedInstrumentCount: number;
+    analyticalInstrumentCount: number;
+    visibleProvisionCount: number;
+    partialCorpusMeaning: string;
+    viewScope: ResearchLabExportViewScope;
+  };
+  viewData: {
+    scope: ResearchLabExportViewScope;
+    data: unknown;
+  };
+};
+
+export type ResearchLabExportViewScope = {
+  basis:
+    | "shared-display-selection"
+    | "shared-analytical-selection"
+    | "all-recorded-instruments"
+    | "derived-complete-corpus-fit";
+  instrumentIds: string[];
+  analyticalInstrumentIds: string[];
+  provisionIds: string[] | null;
+  relationIds: string[] | null;
+  coverageScopeApplied: boolean;
+  relevanceScopeApplied: boolean;
+  note: string;
+};
+
+/**
+ * Preserve the explorer's existing hash state while replacing the Research Lab
+ * portion with one canonical, restorable schema. The enclosing explorer owns
+ * validation when it reads these values back.
+ */
+export function buildResearchLabShareHash(
+  currentHash: string,
+  state: ResearchLabShareState,
+): string {
+  const params = new URLSearchParams(currentHash.replace(/^#/, ""));
+  params.delete("researchPhase");
+  params.set("view", "research");
+  params.set("researchView", state.view);
+  params.set("researchCoverage", state.coverageScope);
+  params.set("researchRelevance", state.relevanceScope);
+  return `#${params.toString()}`;
+}
+
 const DEFAULT_COVERAGE_CLASSES: ResearchCoverageClass[] = ["complete"];
 const DEFAULT_RELEVANCE: ResearchRelevance[] = ["substantive-topic"];
 
@@ -971,6 +1081,14 @@ export function coverageClassForMode(mode: string): ResearchCoverageClass {
   if (mode.startsWith("complete-")) return "complete";
   if (mode.startsWith("selected-")) return "selected";
   return "unclassified";
+}
+
+export function conceptMeasurementStateForCoverage(
+  coverageClass: ResearchCoverageClass,
+): ResearchConceptMeasurementState {
+  return coverageClass === "complete"
+    ? "observed-complete"
+    : "unknown-partial";
 }
 
 function relevanceForProvision(
@@ -1341,6 +1459,7 @@ export function deriveConceptFingerprints(
       coverageMode:
         auditByInstrument.get(instrument.id)?.localCoverage.mode ?? "unclassified",
       coverageClass,
+      measurementState: conceptMeasurementStateForCoverage(coverageClass),
       includedInDefaultAnalysis,
       denominatorProvisionCount: denominatorProvisions.length,
       conceptAssignmentCount,
@@ -1774,6 +1893,9 @@ export function deriveResearchInstruments(
         ),
         coverageMode: audit?.localCoverage.mode ?? "unclassified",
         coverageClass,
+        conceptMeasurementState:
+          fingerprint?.measurementState ??
+          conceptMeasurementStateForCoverage(coverageClass),
         includedInDefaultAnalysis:
           fingerprint?.includedInDefaultAnalysis ?? false,
         localUnitCount: audit?.localCoverage.localUnitCount ?? 0,
@@ -3979,7 +4101,7 @@ export function buildResearchLabData(
       translationIntegrityDefinition:
         "English storage, authority class, and temporal alignment are reported as separate dimensions. Coverage is not a translation-accuracy or semantic-drift score.",
       bridgeDefinition:
-        "Bridge metrics use the unweighted, undirected projection of qualified analytical relations between instruments. Editorial-reviewed edges and the reviewed-plus-candidate graph are calculated separately; centrality describes this project graph, not legal influence.",
+        "Bridge metrics use the unweighted, undirected projection of qualified analytical relations between instruments. Editorial-reviewed edges and the reviewed-plus-candidate graph are calculated separately; centrality describes only this project's reviewed subgraph or recorded-relation graph, not global legal influence.",
       operationalPathDefinition:
         "Operational paths preserve only recorded directed relation semantics and are limited to three hops. Arrow direction is not converted into chronology, causation, diffusion, or legal hierarchy.",
       archetypeDefinition:
@@ -4022,5 +4144,419 @@ export function buildResearchLabData(
     ),
     granularityAudit: deriveProvisionGranularityAudit(normalizedInput),
     articleMicroscope: deriveArticleMicroscope(normalizedInput),
+  };
+}
+
+/**
+ * Build a self-describing snapshot of the records behind the active Research Lab
+ * view. Presentation-only controls that live inside an individual view are not
+ * inferred here; the export preserves the shared corpus and relevance scopes and
+ * names the analytical complete-corpus subset explicitly.
+ */
+export function buildResearchLabExportPayload(
+  data: ResearchLabData,
+  options: ResearchLabExportOptions,
+): ResearchLabExportPayload {
+  const displayedInstruments = data.instruments.filter(
+    (instrument) =>
+      options.coverageScope === "all" || instrument.coverageClass === "complete",
+  );
+  const displayedInstrumentIds = displayedInstruments.map(
+    (instrument) => instrument.id,
+  );
+  const displayedInstrumentIdSet = new Set(displayedInstrumentIds);
+  const analyticalInstrumentIds = displayedInstruments
+    .filter(
+      (instrument) =>
+        instrument.conceptMeasurementState === "observed-complete",
+    )
+    .map((instrument) => instrument.id);
+  const analyticalInstrumentIdSet = new Set(analyticalInstrumentIds);
+  const visibleProvisions = data.provisions.filter(
+    (provision) =>
+      displayedInstrumentIdSet.has(provision.instrumentId) &&
+      (options.relevanceScope === "all" ||
+        provision.relevance === "substantive-topic"),
+  );
+
+  const uniqueSorted = (ids: Iterable<string>) =>
+    Array.from(new Set(ids)).sort((left, right) => left.localeCompare(right));
+  const makeScope = (
+    basis: ResearchLabExportViewScope["basis"],
+    instrumentIds: Iterable<string>,
+    analyticalIds: Iterable<string>,
+    note: string,
+    scopeOptions?: {
+      provisionIds?: Iterable<string> | null;
+      relationIds?: Iterable<string> | null;
+      coverageScopeApplied?: boolean;
+      relevanceScopeApplied?: boolean;
+    },
+  ): ResearchLabExportViewScope => ({
+    basis,
+    instrumentIds: uniqueSorted(instrumentIds),
+    analyticalInstrumentIds: uniqueSorted(analyticalIds),
+    provisionIds:
+      scopeOptions?.provisionIds === undefined ||
+      scopeOptions.provisionIds === null
+        ? null
+        : uniqueSorted(scopeOptions.provisionIds),
+    relationIds:
+      scopeOptions?.relationIds === undefined ||
+      scopeOptions.relationIds === null
+        ? null
+        : uniqueSorted(scopeOptions.relationIds),
+    coverageScopeApplied: scopeOptions?.coverageScopeApplied ?? false,
+    relevanceScopeApplied: scopeOptions?.relevanceScopeApplied ?? false,
+    note,
+  });
+
+  const viewData = (() => {
+    switch (options.view) {
+      case "observatory":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.coverage.instruments.map((instrument) => instrument.instrumentId),
+            analyticalInstrumentIds,
+            "The observatory is a whole-corpus inventory. Shared coverage and relevance controls do not filter this view.",
+          ),
+          data: data.coverage,
+        };
+      case "genome": {
+        const counts = new Map<string, Map<string, number>>();
+        const assignmentTotals = new Map<string, number>();
+        const provisionTotals = new Map<string, number>();
+        for (const provision of visibleProvisions) {
+          provisionTotals.set(
+            provision.instrumentId,
+            (provisionTotals.get(provision.instrumentId) ?? 0) + 1,
+          );
+          const conceptCounts = counts.get(provision.instrumentId) ?? new Map();
+          for (const conceptId of new Set(provision.conceptIds)) {
+            conceptCounts.set(conceptId, (conceptCounts.get(conceptId) ?? 0) + 1);
+            assignmentTotals.set(
+              provision.instrumentId,
+              (assignmentTotals.get(provision.instrumentId) ?? 0) + 1,
+            );
+          }
+          counts.set(provision.instrumentId, conceptCounts);
+        }
+        const documentFrequency = new Map(
+          data.concepts.map((concept) => [
+            concept.id,
+            analyticalInstrumentIds.filter(
+              (instrumentId) =>
+                (counts.get(instrumentId)?.get(concept.id) ?? 0) > 0,
+            ).length,
+          ]),
+        );
+        const fingerprints = data.fingerprints
+          .filter((fingerprint) =>
+            displayedInstrumentIdSet.has(fingerprint.instrumentId),
+          )
+          .map((fingerprint) => {
+            const rawWeights = data.concepts.map((concept) => {
+              const rawCount =
+                counts.get(fingerprint.instrumentId)?.get(concept.id) ?? 0;
+              const documentCount = documentFrequency.get(concept.id) ?? 0;
+              const idf =
+                Math.log(
+                  (analyticalInstrumentIds.length + 1) / (documentCount + 1),
+                ) + 1;
+              const prevalence =
+                rawCount /
+                Math.max(1, provisionTotals.get(fingerprint.instrumentId) ?? 0);
+              const termFrequency =
+                rawCount /
+                Math.max(1, assignmentTotals.get(fingerprint.instrumentId) ?? 0);
+              return {
+                conceptId: concept.id,
+                rawCount,
+                documentFrequency: documentCount,
+                idf,
+                prevalence,
+                termFrequency,
+                tfidf: termFrequency * idf,
+              };
+            });
+            const magnitude = Math.sqrt(
+              rawWeights.reduce(
+                (sum, weight) => sum + weight.tfidf * weight.tfidf,
+                0,
+              ),
+            );
+            return {
+              ...fingerprint,
+              denominatorProvisionCount:
+                provisionTotals.get(fingerprint.instrumentId) ?? 0,
+              conceptAssignmentCount:
+                assignmentTotals.get(fingerprint.instrumentId) ?? 0,
+              mappedConceptCount: rawWeights.filter(
+                (weight) => weight.rawCount > 0,
+              ).length,
+              weights: rawWeights.map((weight) =>
+                fingerprint.measurementState === "observed-complete"
+                  ? {
+                      ...weight,
+                      idf: round(weight.idf),
+                      prevalence: round(weight.prevalence),
+                      termFrequency: round(weight.termFrequency),
+                      tfidf: round(weight.tfidf),
+                      normalizedTfidf: magnitude
+                        ? round(weight.tfidf / magnitude)
+                        : 0,
+                      rawCountState: "observed-complete-exact" as const,
+                    }
+                  : {
+                      conceptId: weight.conceptId,
+                      rawCount: weight.rawCount > 0 ? weight.rawCount : null,
+                      rawCountState:
+                        weight.rawCount > 0
+                          ? ("observed-partial-lower-bound" as const)
+                          : ("unknown-unobserved" as const),
+                      documentFrequency: null,
+                      idf: null,
+                      prevalence: null,
+                      termFrequency: null,
+                      tfidf: null,
+                      normalizedTfidf: null,
+                    },
+              ),
+            };
+          });
+        return {
+          scope: makeScope(
+            "shared-display-selection",
+            displayedInstrumentIds,
+            analyticalInstrumentIds,
+            "Coverage and relevance controls filter this matrix. Complete-corpus cells are exact; positive raw counts from partial corpora are lower bounds, while their unrecorded cells and all normalized values remain unknown.",
+            {
+              provisionIds: visibleProvisions.map((provision) => provision.id),
+              coverageScopeApplied: true,
+              relevanceScopeApplied: true,
+            },
+          ),
+          data: {
+            instruments: displayedInstruments,
+            concepts: data.concepts,
+            themes: data.themes,
+            fingerprints,
+          },
+        };
+      }
+      case "morphology":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.structuralProfiles.map((profile) => profile.instrumentId),
+            analyticalInstrumentIds,
+            "The export contains the full backing profile collection because the view's local instrument picker is intentionally not serialized.",
+          ),
+          data: data.structuralProfiles,
+        };
+      case "grammar":
+        return (() => {
+          const analyticalSourceProvisions = visibleProvisions.filter(
+            (provision) =>
+              analyticalInstrumentIdSet.has(provision.instrumentId),
+          );
+          return {
+            scope: makeScope(
+              "shared-analytical-selection",
+              analyticalInstrumentIds,
+              analyticalInstrumentIds,
+              "Only complete corpora enter the grammar estimand; the shared relevance control filters its source provisions.",
+              {
+                provisionIds: analyticalSourceProvisions.map(
+                  (provision) => provision.id,
+                ),
+                coverageScopeApplied: true,
+                relevanceScopeApplied: true,
+              },
+            ),
+            data: {
+              concepts: data.concepts,
+              analyticalSourceProvisions,
+              defaultDerivedPairs:
+                options.relevanceScope === "substantive"
+                  ? data.cooccurrence
+                  : null,
+            },
+          };
+        })();
+      case "timeline":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.lifecycleLanes.map((lane) => lane.instrumentId),
+            [],
+            "The timeline exports every instrument with a recorded lifecycle event; shared corpus controls do not filter this view.",
+          ),
+          data: data.lifecycleLanes,
+        };
+      case "translation":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.translationIntegrity.corpora.map(
+              (corpus) => corpus.instrumentId,
+            ),
+            [],
+            "Translation coverage is an authority and storage inventory for every audited foreign-language corpus; shared corpus controls do not filter this view.",
+          ),
+          data: data.translationIntegrity,
+        };
+      case "bridges":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.bridgeAtlas.nodes.map((node) => node.instrumentId),
+            [],
+            "Bridge metrics retain the complete recorded-relation graph on which centrality was calculated; slicing by a shared corpus control would invalidate those metrics.",
+            { relationIds: data.relations.map((relation) => relation.id) },
+          ),
+          data: { atlas: data.bridgeAtlas, relations: data.relations },
+        };
+      case "pathways": {
+        const pathwayInstrumentIds = data.operationalizationPaths.edges.flatMap(
+          (edge) => [edge.sourceInstrumentId, edge.targetInstrumentId],
+        );
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            pathwayInstrumentIds,
+            [],
+            "The pathway export contains every recorded directed analytical relation and its retained paths; shared corpus controls do not filter this view.",
+            {
+              relationIds: data.operationalizationPaths.edges.map(
+                (edge) => edge.relationId,
+              ),
+            },
+          ),
+          data: data.operationalizationPaths,
+        };
+      }
+      case "archetypes":
+        return {
+          scope: makeScope(
+            "derived-complete-corpus-fit",
+            [
+              ...data.instrumentArchetypes.fitInstrumentIds,
+              ...data.instrumentArchetypes.excludedInstrumentIds,
+            ],
+            data.instrumentArchetypes.fitInstrumentIds,
+            "Fit records are the complete-corpus analytical sample. Excluded instrument IDs are included only to disclose the derivation boundary.",
+          ),
+          data: data.instrumentArchetypes,
+        };
+      case "audit": {
+        const auditInstrumentIds = data.mappingEvidenceAudit.records.flatMap(
+          (record) =>
+            [record.sourceInstrumentId, record.targetInstrumentId].filter(
+              (instrumentId): instrumentId is string => instrumentId !== null,
+            ),
+        );
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            auditInstrumentIds,
+            [],
+            "The evidence audit exports every recorded relation so its completeness counts remain internally consistent.",
+            {
+              relationIds: data.mappingEvidenceAudit.records.map(
+                (record) => record.relationId,
+              ),
+            },
+          ),
+          data: data.mappingEvidenceAudit,
+        };
+      }
+      case "horizon": {
+        const horizonProvisionIds = [
+          ...data.applicabilityHorizon.provisionDateGroups.flatMap(
+            (group) => group.provisionIds,
+          ),
+          ...data.applicabilityHorizon.missingProvisionIds,
+          ...data.applicabilityHorizon.unresolvedProvisionDates.map(
+            (record) => record.provisionId,
+          ),
+        ];
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.applicabilityHorizon.instruments.map(
+              (instrument) => instrument.instrumentId,
+            ),
+            [],
+            "The horizon exports every provision-date annotation and status event used by its global counts; shared corpus controls do not filter this view.",
+            { provisionIds: horizonProvisionIds },
+          ),
+          data: data.applicabilityHorizon,
+        };
+      }
+      case "microscope":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.articleMicroscope.instruments.map(
+              (profile) => profile.instrumentId,
+            ),
+            analyticalInstrumentIds,
+            "The export contains every article profile because the view's local instrument selection is intentionally not serialized.",
+            {
+              provisionIds: data.articleMicroscope.instruments.flatMap(
+                (profile) => profile.bands.map((band) => band.provisionId),
+              ),
+            },
+          ),
+          data: data.articleMicroscope,
+        };
+      case "neighborhoods":
+        return {
+          scope: makeScope(
+            "derived-complete-corpus-fit",
+            [
+              ...data.neighborhoodStability.fitInstrumentIds,
+              ...data.neighborhoodStability.excludedInstrumentIds,
+            ],
+            data.neighborhoodStability.fitInstrumentIds,
+            "Distances are fitted only on the recorded complete-corpus sample. Excluded instrument IDs disclose the derivation boundary and are not distance observations.",
+          ),
+          data: data.neighborhoodStability,
+        };
+      case "granularity":
+        return {
+          scope: makeScope(
+            "all-recorded-instruments",
+            data.granularityAudit.instruments.map(
+              (instrument) => instrument.instrumentId,
+            ),
+            analyticalInstrumentIds,
+            "Coverage-class summaries and instrument records both span the complete granularity audit; shared corpus controls do not filter this view.",
+          ),
+          data: data.granularityAudit,
+        };
+    }
+  })();
+
+  return {
+    schemaVersion: "research-lab-view-export.v2",
+    snapshotDate: data.snapshotDate,
+    selection: { ...options },
+    exportLimitations: RESEARCH_LAB_EXPORT_LIMITATIONS,
+    methodology: data.methodology,
+    sample: {
+      displayedInstrumentIds,
+      analyticalInstrumentIds,
+      visibleProvisionIds: visibleProvisions.map((provision) => provision.id),
+      displayedInstrumentCount: displayedInstrumentIds.length,
+      analyticalInstrumentCount: analyticalInstrumentIds.length,
+      visibleProvisionCount: visibleProvisions.length,
+      partialCorpusMeaning:
+        "Selected, partial and unclassified corpora preserve positive recorded concept counts as lower bounds. Unrecorded cells remain unknown, not zero, and prevalence or TF-IDF is never calculated from a partial denominator.",
+      viewScope: viewData.scope,
+    },
+    viewData,
   };
 }

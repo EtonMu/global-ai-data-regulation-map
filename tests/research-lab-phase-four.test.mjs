@@ -349,10 +349,16 @@ test("Phase 4 UI states its evidentiary limits and preserves drill-down", () => 
   assert.match(labSource, /Missing and unresolved dates remain visible/i);
   assert.match(labSource, /onOpenProvision\(group\.provisionIds\[0\]\)/);
   assert.match(labSource, /onOpenConcept\(conceptId\)/);
+  assert.match(labSource, /aria-valuetext=\{`\$\{formatDate\(selectedDate\)\}/);
 
   assert.match(labSource, /Color and intensity encode recorded concept assignments, not legal\s+importance/i);
   assert.match(labSource, /Selected \/ partial corpus/);
-  assert.match(labSource, /onOpenProvision\(band\.provisionId\)/);
+  assert.match(labSource, /role=["']listbox["']/);
+  assert.match(labSource, /role=["']option["']/);
+  assert.match(labSource, /aria-activedescendant=/);
+  assert.match(labSource, /function handleMicroscopeKeyDown\(/);
+  assert.match(labSource, /onOpenProvision\(selectedBand\.provisionId\)/);
+  assert.match(labSource, /Current provision · \{selectedBandIndex \+ 1\} of \{profile\.bands\.length\}/);
 
   assert.match(labSource, /Cosine rank/);
   assert.match(labSource, /Hellinger rank/);
@@ -381,6 +387,17 @@ test("Phase 4 layouts contain true wide views and reflow without text overlap", 
     labStyles,
     /\.applicabilityScroll,[\s\S]{0,80}\.granularityScroll\s*\{[\s\S]*?overflow-x:\s*auto/,
   );
+  assert.match(
+    labSource,
+    /className=\{styles\.applicabilityScroll\}[\s\S]{0,180}role=["']region["'][\s\S]{0,100}tabIndex=\{0\}/,
+  );
+  assert.match(
+    labSource,
+    /className=\{styles\.granularityScroll\}[\s\S]{0,180}role=["']region["'][\s\S]{0,100}tabIndex=\{0\}/,
+  );
+  assert.match(labStyles, /\.applicabilityAxisCorner\s*\{[\s\S]*?position:\s*sticky[\s\S]*?inset-inline-start:\s*0/);
+  assert.match(labStyles, /\.granularityHeader\s*>\s*:first-child\s*\{[\s\S]*?position:\s*sticky/);
+  assert.match(labStyles, /\.granularityInstrumentCell\s*\{[\s\S]*?position:\s*sticky/);
   assert.match(labStyles, /\.applicabilityFigure\s*\{[\s\S]*?min-inline-size:\s*980px/);
   assert.match(labStyles, /\.granularityPlot\s*\{[\s\S]*?min-inline-size:\s*1180px/);
   assert.match(labStyles, /\.microscopeStrip\s*\{[\s\S]*?overflow-y:\s*auto/);
@@ -403,4 +420,11 @@ test("Phase 4 layouts contain true wide views and reflow without text overlap", 
   assert.doesNotMatch(phaseFourStyles, /#[\da-f]{3,8}\b/i);
   assert.match(phaseFourStyles, /overflow-wrap:\s*anywhere/);
   assert.doesNotMatch(labStyles, /position:\s*fixed/);
+});
+
+test("truncated research lists disclose displayed and total counts", () => {
+  assert.match(labSource, /Showing \{selectedEvidence\.length\} of \{allSelectedEvidence\.length\} supporting/);
+  assert.match(labSource, /showing \{rankShiftNodes\.length\} of \{allRankShiftNodes\.length\} nodes/i);
+  assert.match(labSource, /Showing \{terminalPaths\.length\} of \{allTerminalPaths\.length\} recorded/);
+  assert.match(labSource, /Showing \{displayedCandidates\.length\} of \{rankedCandidates\.length\} ranked/);
 });

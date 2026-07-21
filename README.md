@@ -12,12 +12,12 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read stored legal text, an explicit English-coverage notice, or a clearly labelled editorial summary where no source text is stored. Where verified original-language text is stored, the reader defaults to English and exposes the original language after the user selects it. Official English text, government but non-authoritative translations, project-authored references, historical or future-phase references, coverage notices, and editorial summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
-- **Research Lab** — investigate the corpus through four linked phases: five coverage-aware corpus-pattern views; translation-provenance, qualified-relation robustness, and directed operationalization views; exploratory instrument archetypes and a mapping-evidence audit; then prospective applicability, article-level concept structure, neighbourhood robustness, and corpus-granularity diagnostics. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
+- **Research Lab** — investigate the corpus through four linked phases: five coverage-aware corpus-pattern views; translation-provenance, qualified-relation robustness, and directed operationalization views; exploratory instrument archetypes and a mapping-evidence audit; then prospective applicability, article-level concept structure, neighbourhood robustness, and corpus-granularity diagnostics. Active views can be deep-linked and exported as self-describing JSON, and every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
-- **Corpus search** — find instruments and provisions by title, locator, jurisdiction, or regulatory concept.
-- **Workspace controls** — use clickable breadcrumbs to return to any point in the current research path; on desktop, collapse or resize the left and right columns by pointer or keyboard.
+- **Corpus search** — find instruments and provisions by title, locator, jurisdiction, regulatory concept, or—after the on-demand text corpus is loaded—complete stored text.
+- **Workspace controls** — use clickable breadcrumbs to return to any point in the current research path; on desktop, collapse or resize the left and right columns by pointer or keyboard; on small screens, open the corpus navigator only when it is needed.
 - **Two visual modes** — switch between a near-black **Dark / Geek** workspace and a restrained, paper-like **Bright / Lawyer** workspace without changing the underlying data.
 
 The Global Atlas uses the documented display order **EU → US → China → UK → Canada → Japan → India → Singapore → South Korea → Australia → Brazil → UAE → Saudi Arabia → Taiwan → Hong Kong SAR → Indonesia → Vietnam → South Africa → Nigeria → Switzerland → International / Frameworks / Soft law**. California and Colorado remain nested under the United States, and Dubai remains nested under the UAE. The final lane is parallel to national and regional legal systems. It contains internationally issued materials as well as national voluntary frameworks, guidance, and testing tools whose issuer metadata remains attached to each instrument. Placement supports discovery and does not imply common legal force, institutional origin, or equivalence.
@@ -63,7 +63,7 @@ Each relation records:
 The Research Lab defaults to the **38 version-locked complete corpora** and to provisions reviewed as **substantive** for the project's subject matter. Controls can reveal selected-source instruments and structural provisions, but incomplete coverage is never silently mixed into the default comparative sample.
 
 - **Corpus Observatory** reports the stored coverage, language, legal-force, lifecycle, and topic-review boundary behind each instrument. It is an audit view, not a completeness score for the world's law.
-- **Regulatory Genome** applies smoothed inverse-document frequency to provision-level core-concept frequencies, then L2-normalizes each instrument vector. The resulting profile compares emphasis within this corpus; it is not a measure of regulatory quality, strictness, or compliance.
+- **Regulatory Genome** applies smoothed inverse-document frequency to provision-level core-concept frequencies, then L2-normalizes each complete-corpus instrument vector. Complete-corpus zeroes, positive lower-bound counts observed in selected/partial corpora, and unknown cells remain visibly distinct; partial denominators never receive prevalence or TF-IDF values. The resulting profile compares emphasis within this corpus; it is not a measure of regulatory quality, strictness, or compliance.
 - **Comparative Morphology** preserves provision order and renders every provision as an inspectable band, allowing structural similarities and gaps to be checked against the underlying text.
 - **Regulatory Grammar** measures concept co-occurrence within the selected provision sample using count, lift, base-2 PMI, normalized PMI, and Jaccard views. Normalized PMI is the default, with a display floor of three shared provisions across at least two instruments. The matrix separates positive association, negative association, independence, and unavailable or unsupported cells. Because legal sources use unequal provision granularity and long instruments contribute more observations, the floor is not a significance test; association does not establish legal equivalence, causation, or interoperability.
 - **Global Time Machine** indexes recorded adoption, commencement, application, amendment, cessation, and scheduled events relative to the **2026-07-20** snapshot. The slider advances through recorded event dates rather than reconstructing the law at every date, and local-text completeness is not presented as complete lifecycle history.
@@ -74,7 +74,7 @@ The interface exposes the active sample, denominator, support count, coverage ca
 
 Phase 2 studies the reliability of the multilingual and relational layers without using an opaque legal-similarity score.
 
-- **Translation Integrity Observatory** audits the 22 complete non-English or bilingual corpora recorded in `english-corpus-coverage.json`. Stored English coverage, publication authority, and temporal alignment are separate variables. An official, government-reference, public-sector, or project-authored rendering retains its own label; 100% stored coverage is never described as translation accuracy or semantic equivalence.
+- **Translation Coverage & Authority** audits the 22 complete non-English or bilingual corpora recorded in `english-corpus-coverage.json`. Stored English coverage, publication authority, and temporal alignment are separate variables. An official, government-reference, public-sector, or project-authored rendering retains its own label; 100% stored coverage is never described as translation accuracy or semantic equivalence.
 - **Qualified Bridge Atlas** projects qualified analytical relations to an instrument-level, unweighted graph while preserving every provision-level relation as drill-down evidence. Degree, cross-jurisdiction degree, and normalized unweighted betweenness are calculated once for editorial-reviewed relations and again after candidate relations are added. Rank movement therefore measures sensitivity to the project's hypotheses and editorial attention—not global legal influence, regulatory importance, or compliance value.
 - **Norm Lineage & Operationalization Paths** includes only explicitly directed `implements`, `operationalizes`, `grounded-in`, `elaborates`, `supports-operational-evidence`, `policy-transition`, `repeals`, and `repeals-and-reenacts` edges. Paths stop at three hops and retain relation type, review state, rationale, limits, sources, instrument dates, legal force, and lifecycle status. Arrow direction preserves the recorded semantic claim; it does not prove chronology, causation, legal diffusion, or one-to-one succession.
 
@@ -126,6 +126,8 @@ The application is intentionally simple to inspect and fork:
 ```text
 app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
+  corpus-loader.ts           cached, validated on-demand instrument text loader
+  lazy-research-view.tsx     deferred corpus-wide analysis boundary
   regulation-globe.tsx       border-free physical-land point globe and compass
   concept-constellation.tsx  theme, concept, and source-evidence visualization
   research-lab.tsx           fourteen linked corpus, relation, model, and diagnostic views
@@ -133,6 +135,7 @@ app/
 data/geo/
   natural-earth-land-110m.json  public-domain physical-land geometry
 data/v2/
+  client-corpus-index.json   generated lightweight provision and shard index
   jurisdictions.json         jurisdiction and institutional contexts
   instruments.json           legal force, lifecycle, dates, and official sources
   provisions.json            curated source-linked anchors and metadata
@@ -146,6 +149,7 @@ data/v2/
   status-events.json         auditable lifecycle events
   source-audit.json          one source and coverage audit per instrument
 scripts/
+  build-client-corpus.mjs    builds the lightweight index and runtime text shards
   expand-global-corpus.mjs   disabled historical bootstrap (not normal maintenance)
   build-source-audit.mjs     rebuilds structured instrument audit companions
   build-provision-concepts.mjs rebuilds clause-level highlight mappings
@@ -158,7 +162,7 @@ research/
   proposed-new-relations.json reviewed input for the expanded relation set
 ```
 
-At runtime the version-locked corpora are merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, lifecycle metadata, tags and analytical reviews remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
+At build time, the version-locked corpora are split into one runtime shard per instrument plus a lightweight provision index. The Atlas, concept graph and article lists can therefore open without embedding every legal text in the initial JavaScript bundle. Opening an instrument hydrates only its shard; corpus-wide search and the Research Lab load the complete set with visible progress and retry states. Hydrated text is merged with curated provision metadata by stable ID. Official imported text wins for text fields; curated summaries, lifecycle metadata, tags and analytical reviews remain available alongside it. Structure summaries orient readers at section or framework-root level but never replace the underlying provisions. Relations can connect provision or instrument nodes, and all endpoints resolve against the unified graph.
 
 The frontend is built with React, TypeScript, D3 geographic primitives, and a Next-compatible application structure. The corpus is versioned JSON, so a contributor can review data changes in a normal pull request without operating a database.
 
@@ -169,6 +173,7 @@ After changing corpus or reviewed metadata, rebuild the derived files in this or
 ```bash
 node scripts/build-provision-concepts.mjs
 node scripts/build-source-audit.mjs
+pnpm build:client-corpus
 pnpm validate:data
 ```
 
@@ -221,7 +226,7 @@ Do not edit generated EU corpus files by hand. Fix or update the source import a
 
 ## Roadmap
 
-- Split and lazy-load complete instrument text as the corpus grows, while keeping the graph index fast.
+- Add offline shard caching and integrity manifests for large-corpus field research.
 - Expand complete, versioned instrument coverage without weakening source and reuse controls.
 - Extend the Global Time Machine to date-selectable provision states and amendment lineage.
 - Separate candidate, editorially reviewed, and independently expert-reviewed mappings.

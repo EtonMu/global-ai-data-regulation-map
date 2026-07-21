@@ -22,8 +22,9 @@ test("instrument articles use titled list rows instead of square cells", () => {
   assert.match(explorerSource, /className="provision-list-locator"/);
   assert.match(
     explorerSource,
-    /className="provision-list-copy"[\s\S]*?<strong>\{provision\.title\}<\/strong>[\s\S]*?<small>\{provision\.summary\}<\/small>/,
+    /className="provision-list-copy"[\s\S]*?<strong>\{provision\.title\}<\/strong>[\s\S]*?editorialPreview\.text/,
   );
+  assert.match(explorerSource, /function provisionEditorialPreview/);
   assert.doesNotMatch(explorerSource, /className="provision-grid"/);
   assert.doesNotMatch(explorerSource, /className="provision-cell/);
   assert.match(stylesheet, /\.provision-list-item\s*\{/);

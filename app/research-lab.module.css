@@ -74,6 +74,54 @@
   font-weight: 500;
 }
 
+.headerTools {
+  min-inline-size: 0;
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.headerActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.headerAction {
+  min-inline-size: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 7px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.headerAction:hover {
+  background: var(--panel-hover);
+  color: var(--cyan);
+}
+
+.headerAction svg {
+  inline-size: 14px;
+  block-size: 14px;
+}
+
+.headerStatus {
+  min-block-size: 1em;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-align: end;
+}
+
 .phaseSwitch {
   min-inline-size: 0;
   display: grid;
@@ -766,6 +814,45 @@
   background: var(--panel-hover);
 }
 
+.heatCell[data-availability="unknown"] {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--panel) 0 6px,
+    color-mix(in srgb, var(--amber) 10%, var(--panel)) 6px 12px
+  );
+}
+
+.heatCell[data-availability="observed-partial"] {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--concept-color, var(--cyan)) 15%, var(--panel)),
+      var(--panel) 68%
+    );
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--concept-color, var(--cyan)) 42%, transparent);
+}
+
+.heatUnknown {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.03em;
+}
+
+.heatPartial {
+  min-inline-size: 22px;
+  padding: 2px 4px;
+  border: 1px dashed
+    color-mix(in srgb, var(--concept-color, var(--cyan)) 72%, var(--line-strong));
+  color: var(--concept-color, var(--cyan));
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: center;
+}
+
 .heatMark {
   inline-size: 4px;
   block-size: 4px;
@@ -829,6 +916,44 @@
 .readout code {
   color: var(--cyan);
   font-family: var(--font-mono);
+}
+
+.genomeAvailabilityLegend {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 16px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+}
+
+.genomeAvailabilityLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.genomeAvailabilityLegend i {
+  inline-size: 16px;
+  block-size: 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.genomeAvailabilityLegend span[data-availability="unknown"] i {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--panel) 0 4px,
+    color-mix(in srgb, var(--amber) 14%, var(--panel)) 4px 8px
+  );
+}
+
+.genomeAvailabilityLegend span[data-availability="observed-partial"] i {
+  border-style: dashed;
+  border-color: var(--cyan);
+  background: color-mix(in srgb, var(--cyan) 14%, var(--panel));
 }
 
 .legendGrid {
@@ -2963,6 +3088,23 @@
   border-block: 1px solid var(--line-strong);
 }
 
+.applicabilityScroll:focus-visible,
+.granularityScroll:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.scrollHint,
+.microscopeKeyboardHint {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
 .applicabilityFigure {
   min-inline-size: 980px;
   display: grid;
@@ -2989,16 +3131,24 @@
 }
 
 .applicabilityLaneLabel {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 2;
   min-inline-size: 0;
   border-inline-end: 1px solid var(--line-strong);
+  background: inherit;
 }
 
 .applicabilityAxisCorner {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 5;
   min-inline-size: 0;
   display: flex;
   align-items: center;
   padding: 8px 10px;
   border-inline-end: 1px solid var(--line-strong);
+  background: var(--panel-strong);
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -3332,6 +3482,16 @@
   padding: 8px 10px;
 }
 
+.microscopeStrip:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+
+.microscopeKeyboardHint {
+  padding: 7px 10px;
+  border-block-end: 1px solid var(--line);
+}
+
 .microscopeProvision {
   min-inline-size: 100%;
   min-block-size: 4px;
@@ -3344,6 +3504,7 @@
   color: var(--ink);
   cursor: pointer;
   opacity: clamp(0.34, var(--concept-density, 0.64), 1);
+  user-select: none;
   transition:
     background-color 180ms ease,
     opacity 180ms ease,
@@ -3434,6 +3595,24 @@
   gap: 11px;
   padding-inline-start: 16px;
   border-inline-start: 1px solid var(--line);
+}
+
+.microscopeSelectionAction {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  padding-block: 9px;
+  border-block: 1px solid var(--line);
+}
+
+.microscopeSelectionAction > span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
 }
 
 .microscopeConceptTracks {
@@ -3724,6 +3903,13 @@
   overflow-wrap: anywhere;
 }
 
+.granularityHeader > :first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 5;
+  background: var(--panel-strong);
+}
+
 .granularityGroup {
   min-inline-size: 0;
   display: grid;
@@ -3946,6 +4132,18 @@
     padding: 8px 0 0;
     border-block-start: 1px solid var(--line);
     border-inline-start: 0;
+    text-align: start;
+  }
+
+  .headerTools {
+    justify-items: start;
+  }
+
+  .headerActions {
+    justify-content: flex-start;
+  }
+
+  .headerStatus {
     text-align: start;
   }
 

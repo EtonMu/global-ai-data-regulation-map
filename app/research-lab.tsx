@@ -5,7 +5,9 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
   useEffect,
+  useId,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import {
@@ -16,10 +18,12 @@ import {
   Clock3,
   Database,
   Dna,
+  Download,
   GitFork,
   Grid3X3,
   Info,
   Languages,
+  Link2,
   ListChecks,
   Network,
   Pause,
@@ -32,6 +36,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { ConceptIcon } from "./concept-icon";
+import {
+  buildResearchLabExportPayload,
+  buildResearchLabShareHash,
+} from "./research-lab-data";
 import type {
   ResearchConceptDatum as ResearchLabConcept,
   ResearchInstrumentDatum as ResearchLabInstrument,
@@ -60,19 +68,34 @@ export type ResearchLabView =
   | "neighborhoods"
   | "granularity";
 
+export type ResearchCoverageScope = "all" | "complete";
+export type ResearchRelevanceScope = "substantive" | "all";
+
 type ResearchLabPhase = "patterns" | "relations" | "models" | "dynamics";
+
+const researchPhaseOrder: ResearchLabPhase[] = [
+  "patterns",
+  "relations",
+  "models",
+  "dynamics",
+];
 
 export type ResearchLabProps = {
   data: ResearchLabData;
   initialView?: ResearchLabView;
+  initialCoverageScope?: ResearchCoverageScope;
+  initialRelevanceScope?: ResearchRelevanceScope;
   defaultInstrumentIds?: string[];
+  onViewChange?: (view: ResearchLabView) => void;
+  onCoverageScopeChange?: (scope: ResearchCoverageScope) => void;
+  onRelevanceScopeChange?: (scope: ResearchRelevanceScope) => void;
   onOpenInstrument: (instrumentId: string) => void;
   onOpenProvision: (provisionId: string) => void;
   onOpenConcept: (conceptId: string) => void;
 };
 
-type CoverageScope = "all" | "complete";
-type RelevanceScope = "substantive" | "all";
+type CoverageScope = ResearchCoverageScope;
+type RelevanceScope = ResearchRelevanceScope;
 type GenomeMetric = "tfidf" | "prevalence" | "count";
 type GrammarMetric =
   | "normalizedPmi"
@@ -235,7 +258,7 @@ const viewDefinitions: Array<{
   },
   {
     id: "translation",
-    label: "Translation Integrity",
+    label: "Translation Coverage & Authority",
     icon: Languages,
     phase: "relations",
   },
@@ -1010,6 +1033,7 @@ function RegulatoryGenome({
     instrumentId: string;
     conceptId: string;
   } | null>(null);
+  const genomeGridRef = useRef<HTMLDivElement>(null);
 
   const instruments = useMemo(
     () =>
@@ -1020,9 +1044,19 @@ function RegulatoryGenome({
         .sort((left, right) => left.atlasOrder - right.atlasOrder),
     [coverageScope, data.instruments],
   );
+  const comparableInstruments = useMemo(
+    () =>
+      instruments.filter(
+        (instrument) =>
+          instrument.conceptMeasurementState === "observed-complete",
+      ),
+    [instruments],
+  );
 
   const matrix = useMemo(() => {
-    const instrumentIds = new Set(instruments.map((instrument) => instrument.id));
+    const instrumentIds = new Set(
+      instruments.map((instrument) => instrument.id),
+    );
     const relevant = data.provisions.filter(
       (provision) =>
         instrumentIds.has(provision.instrumentId) &&
@@ -1052,7 +1086,7 @@ function RegulatoryGenome({
     for (const concept of data.concepts) {
       documentFrequency.set(
         concept.id,
-        instruments.filter(
+        comparableInstruments.filter(
           (instrument) => (counts.get(instrument.id)?.get(concept.id) ?? 0) > 0,
         ).length,
       );
@@ -1068,7 +1102,7 @@ function RegulatoryGenome({
           count / Math.max(1, assignmentTotals.get(instrument.id) ?? 0);
         const idf =
           Math.log(
-            (instruments.length + 1) /
+            (comparableInstruments.length + 1) /
               ((documentFrequency.get(concept.id) ?? 0) + 1),
           ) + 1;
         cells.set(concept.id, {
@@ -1091,19 +1125,25 @@ function RegulatoryGenome({
       rows.set(instrument.id, cells);
     }
     return rows;
-  }, [data.concepts, data.provisions, instruments, relevanceScope]);
+  }, [
+    comparableInstruments,
+    data.concepts,
+    data.provisions,
+    instruments,
+    relevanceScope,
+  ]);
 
   const maxValue = useMemo(
     () =>
       Math.max(
         0,
-        ...instruments.flatMap((instrument) =>
+        ...(metric === "count" ? instruments : comparableInstruments).flatMap((instrument) =>
           data.concepts.map(
             (concept) => matrix.get(instrument.id)?.get(concept.id)?.[metric] ?? 0,
           ),
         ),
       ),
-    [data.concepts, instruments, matrix, metric],
+    [comparableInstruments, data.concepts, instruments, matrix, metric],
   );
 
   const metricLabel =
@@ -1121,12 +1161,78 @@ function RegulatoryGenome({
   const activeConcept = activeCell
     ? data.concepts.find((concept) => concept.id === activeCell.conceptId)
     : undefined;
-  const activeValue =
-    activeCell && activeInstrument && activeConcept
-      ? (matrix.get(activeCell.instrumentId)?.get(activeCell.conceptId)?.[
-          metric
-        ] ?? null)
+  const activeMatrixCell =
+    activeCell && activeConcept
+      ? matrix.get(activeCell.instrumentId)?.get(activeCell.conceptId)
+      : undefined;
+  const activeMeasurementComplete =
+    activeInstrument?.conceptMeasurementState === "observed-complete";
+  const activeRecordedPartial =
+    activeInstrument?.conceptMeasurementState === "unknown-partial" &&
+    metric === "count" &&
+    (activeMatrixCell?.count ?? 0) > 0;
+  const activeValue = activeMeasurementComplete
+    ? (activeMatrixCell?.[metric] ?? null)
+    : activeRecordedPartial
+      ? (activeMatrixCell?.count ?? null)
       : null;
+  const activeGenomeRowIndex = activeCell
+    ? instruments.findIndex(
+        (instrument) => instrument.id === activeCell.instrumentId,
+      )
+    : -1;
+  const activeGenomeColumnIndex = activeCell
+    ? data.concepts.findIndex((concept) => concept.id === activeCell.conceptId)
+    : -1;
+  const rovingGenomeRowIndex = activeGenomeRowIndex >= 0 ? activeGenomeRowIndex : 0;
+  const rovingGenomeColumnIndex =
+    activeGenomeColumnIndex >= 0 ? activeGenomeColumnIndex : 0;
+
+  function focusGenomeCell(rowIndex: number, columnIndex: number) {
+    if (!instruments.length || !data.concepts.length) return;
+    const nextRowIndex = Math.max(
+      0,
+      Math.min(instruments.length - 1, rowIndex),
+    );
+    const nextColumnIndex = Math.max(
+      0,
+      Math.min(data.concepts.length - 1, columnIndex),
+    );
+    setActiveCell({
+      instrumentId: instruments[nextRowIndex].id,
+      conceptId: data.concepts[nextColumnIndex].id,
+    });
+    window.requestAnimationFrame(() => {
+      genomeGridRef.current
+        ?.querySelector<HTMLButtonElement>(
+          `[data-genome-row="${nextRowIndex}"][data-genome-column="${nextColumnIndex}"]`,
+        )
+        ?.focus();
+    });
+  }
+
+  function handleGenomeCellKeyDown(
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    rowIndex: number,
+    columnIndex: number,
+  ) {
+    let nextRowIndex = rowIndex;
+    let nextColumnIndex = columnIndex;
+    if (event.key === "ArrowRight") nextColumnIndex += 1;
+    else if (event.key === "ArrowLeft") nextColumnIndex -= 1;
+    else if (event.key === "ArrowDown") nextRowIndex += 1;
+    else if (event.key === "ArrowUp") nextRowIndex -= 1;
+    else if (event.key === "Home") {
+      if (event.ctrlKey || event.metaKey) nextRowIndex = 0;
+      nextColumnIndex = 0;
+    } else if (event.key === "End") {
+      if (event.ctrlKey || event.metaKey) nextRowIndex = instruments.length - 1;
+      nextColumnIndex = data.concepts.length - 1;
+    } else return;
+
+    event.preventDefault();
+    focusGenomeCell(nextRowIndex, nextColumnIndex);
+  }
 
   return (
     <>
@@ -1156,17 +1262,31 @@ function RegulatoryGenome({
             <option value="count">Raw count</option>
           </select>
         </label>
+        {instruments.length - comparableInstruments.length > 0 && (
+          <span className={styles.controlSummary}>
+            {metric === "count"
+              ? `${instruments.length - comparableInstruments.length} selected or partial instruments: recorded positive counts are lower bounds; unrecorded cells remain unknown.`
+              : `${instruments.length - comparableInstruments.length} selected or partial instruments are N/A and excluded from normalization.`}
+          </span>
+        )}
       </div>
 
       <div
         className={classNames(styles.scrollRegion, styles.genomeScroll)}
         role="region"
         aria-label="Scrollable regulatory genome matrix"
+        aria-describedby="genome-keyboard-instructions"
       >
+        <p id="genome-keyboard-instructions" className={styles.srOnly}>
+          The concept cells use one keyboard stop. Use the arrow keys to move by
+          row or column, Home and End to move within a row, and Control or Command
+          plus Home or End to move to the first or last cell.
+        </p>
         <div
+          ref={genomeGridRef}
           className={styles.genomeFigure}
           role="group"
-          aria-label={`${metricLabel} heat map for ${instruments.length} instruments and ${data.concepts.length} concepts`}
+          aria-label={`${metricLabel} heat map for ${comparableInstruments.length} complete corpora; ${instruments.length - comparableInstruments.length} selected or partial corpora use recorded lower-bound counts only in Raw count mode and otherwise remain unknown or not comparable; ${data.concepts.length} concepts`}
         >
           <div className={classNames(styles.genomeRow, styles.genomeHeader)}>
             <div className={styles.genomeCorner}>
@@ -1190,7 +1310,7 @@ function RegulatoryGenome({
             ))}
           </div>
 
-          {instruments.map((instrument) => (
+          {instruments.map((instrument, instrumentIndex) => (
             <div className={styles.genomeRow} key={instrument.id}>
                   <button
                     type="button"
@@ -1216,9 +1336,25 @@ function RegulatoryGenome({
                   </span>
                 </span>
               </button>
-              {data.concepts.map((concept) => {
-                const value = matrix.get(instrument.id)?.get(concept.id)?.[metric] ?? 0;
-                const heatLevel = maxValue
+              {data.concepts.map((concept, conceptIndex) => {
+                const isComparable =
+                  instrument.conceptMeasurementState === "observed-complete";
+                const matrixCell = matrix.get(instrument.id)?.get(concept.id);
+                const isRecordedPartial =
+                  !isComparable &&
+                  metric === "count" &&
+                  (matrixCell?.count ?? 0) > 0;
+                const value = isComparable
+                  ? (matrixCell?.[metric] ?? 0)
+                  : isRecordedPartial
+                    ? (matrixCell?.count ?? null)
+                    : null;
+                const availability = isComparable
+                  ? "observed-complete"
+                  : isRecordedPartial
+                    ? "observed-partial"
+                    : "unknown";
+                const heatLevel = value !== null && maxValue
                   ? Math.min(5, Math.ceil((value / maxValue) * 5))
                   : 0;
                 return (
@@ -1226,11 +1362,28 @@ function RegulatoryGenome({
                     type="button"
                     key={concept.id}
                     className={styles.heatCell}
-                    data-grade={heatLevel}
+                    data-grade={value !== null ? heatLevel : undefined}
+                    data-availability={availability}
+                    data-genome-row={instrumentIndex}
+                    data-genome-column={conceptIndex}
+                    tabIndex={
+                      instrumentIndex === rovingGenomeRowIndex &&
+                      conceptIndex === rovingGenomeColumnIndex
+                        ? 0
+                        : -1
+                    }
                     style={
                       conceptStyle(concept, data.themes)
                     }
-                    aria-label={`${instrument.shortTitle}, ${concept.label}: ${formatMetric(value, metric)} ${metricLabel}`}
+                    aria-label={
+                      isComparable && value !== null
+                        ? `${instrument.shortTitle}, ${concept.label}: ${formatMetric(value, metric)} ${metricLabel}; exact observation in a complete corpus`
+                        : isRecordedPartial && value !== null
+                          ? `${instrument.shortTitle}, ${concept.label}: ${formatMetric(value, "count")} recorded mapped provisions; observed lower bound in a selected or partial corpus, with additional unobserved assignments possible`
+                          : metric === "count"
+                            ? `${instrument.shortTitle}, ${concept.label}: no assignment recorded in the selected or partial corpus; absence is unknown, not zero`
+                            : `${instrument.shortTitle}, ${concept.label}: ${metricLabel} is not comparable for a selected or partial corpus; recorded and unobserved content cannot be normalized together`
+                    }
                     onPointerEnter={() =>
                       setActiveCell({
                         instrumentId: instrument.id,
@@ -1243,9 +1396,26 @@ function RegulatoryGenome({
                         conceptId: concept.id,
                       })
                     }
+                    onKeyDown={(event) =>
+                      handleGenomeCellKeyDown(
+                        event,
+                        instrumentIndex,
+                        conceptIndex,
+                      )
+                    }
                     onClick={() => onOpenConcept(concept.id)}
                   >
-                    <span className={styles.heatMark} aria-hidden="true" />
+                    {isComparable ? (
+                      <span className={styles.heatMark} aria-hidden="true" />
+                    ) : isRecordedPartial && value !== null ? (
+                      <span className={styles.heatPartial} aria-hidden="true">
+                        {formatMetric(value, "count")}
+                      </span>
+                    ) : (
+                      <span className={styles.heatUnknown} aria-hidden="true">
+                        N/A
+                      </span>
+                    )}
                   </button>
                 );
               })}
@@ -1255,7 +1425,30 @@ function RegulatoryGenome({
       </div>
 
       <div className={styles.readout} aria-live="polite">
-        {activeInstrument && activeConcept && activeValue !== null ? (
+        {activeInstrument && activeConcept && activeRecordedPartial && activeValue !== null ? (
+          <>
+            <strong>{activeInstrument.shortTitle}</strong>
+            <span>×</span>
+            <strong>{activeConcept.label}</strong>
+            <code>{formatMetric(activeValue, "count")}</code>
+            <span>
+              recorded mapped provisions · observed lower bound in a selected or
+              partial corpus
+            </span>
+          </>
+        ) : activeInstrument && activeConcept && !activeMeasurementComplete ? (
+          <>
+            <strong>{activeInstrument.shortTitle}</strong>
+            <span>×</span>
+            <strong>{activeConcept.label}</strong>
+            <code>N/A</code>
+            <span>
+              {metric === "count"
+                ? "No assignment recorded in this selected or partial corpus · absence is unknown, not zero"
+                : `${metricLabel} is not comparable for selected or partial corpora`}
+            </span>
+          </>
+        ) : activeInstrument && activeConcept && activeValue !== null ? (
           <>
             <strong>{activeInstrument.shortTitle}</strong>
             <span>×</span>
@@ -1266,6 +1459,21 @@ function RegulatoryGenome({
         ) : (
           <span>Focus or point to a cell to inspect its normalized value.</span>
         )}
+      </div>
+
+      <div
+        className={styles.genomeAvailabilityLegend}
+        aria-label="Genome observation-state legend"
+      >
+        <span data-availability="observed-complete">
+          <i /> Exact = complete corpus; 0 is an observed zero
+        </span>
+        <span data-availability="observed-partial">
+          <i /> Count = recorded lower bound in a selected or partial corpus
+        </span>
+        <span data-availability="unknown">
+          <i /> N/A = unrecorded absence or normalization unavailable
+        </span>
       </div>
 
       <div className={styles.legendGrid} aria-label="Core concept legend">
@@ -1289,7 +1497,11 @@ function RegulatoryGenome({
       <MethodNote>
         <strong>Raw counts ≠ regulatory strength.</strong> TF-IDF reduces the
         dominance of long instruments and ubiquitous concepts; the complete-only
-        filter removes selected-text corpora from distributional comparison.
+        estimand removes selected-text corpora from distributional comparison.
+        Choosing all indexed instruments preserves recorded positive raw counts
+        from partial corpora as lower bounds, while unrecorded cells remain unknown.
+        Prevalence and TF-IDF stay N/A for those rows, so the complete-corpus
+        normalization never absorbs a partial denominator.
       </MethodNote>
     </>
   );
@@ -1569,17 +1781,27 @@ function RegulatoryGrammar({
   const [minimumSupport, setMinimumSupport] = useState(3);
   const [minimumInstruments, setMinimumInstruments] = useState(2);
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
-  const includedInstrumentIds = useMemo(
+  const [activeGrammarKey, setActiveGrammarKey] = useState<string | null>(null);
+  const grammarGridRef = useRef<HTMLDivElement>(null);
+  const displayedInstruments = useMemo(
     () =>
-      new Set(
-        data.instruments
-          .filter((instrument) =>
-            instrumentMatchesCoverage(instrument, coverageScope),
-          )
-          .map((instrument) => instrument.id),
+      data.instruments.filter((instrument) =>
+        instrumentMatchesCoverage(instrument, coverageScope),
       ),
     [coverageScope, data.instruments],
   );
+  const includedInstrumentIds = useMemo(
+    () =>
+      new Set(
+        displayedInstruments
+          .filter((instrument) =>
+            instrument.conceptMeasurementState === "observed-complete",
+          )
+          .map((instrument) => instrument.id),
+      ),
+    [displayedInstruments],
+  );
+  const excludedPartialInstrumentCount = displayedInstruments.length - includedInstrumentIds.size;
   const includedProvisions = useMemo(
     () =>
       data.provisions.filter((provision) =>
@@ -1617,7 +1839,7 @@ function RegulatoryGrammar({
     ),
   );
   const selectedPair = selectedKey ? pairByKey.get(selectedKey) : undefined;
-  const selectedEvidence = selectedPair
+  const allSelectedEvidence = selectedPair
     ? includedProvisions
         .filter(
           (provision) =>
@@ -1625,8 +1847,8 @@ function RegulatoryGrammar({
             provision.conceptIds.includes(selectedPair.leftConceptId) &&
             provision.conceptIds.includes(selectedPair.rightConceptId),
         )
-        .slice(0, 8)
     : [];
+  const selectedEvidence = allSelectedEvidence.slice(0, 8);
   const conceptById = useMemo(
     () => new Map(data.concepts.map((concept) => [concept.id, concept])),
     [data.concepts],
@@ -1644,6 +1866,62 @@ function RegulatoryGrammar({
           : "Shared provision count";
   const directionalMetric =
     metric === "normalizedPmi" || metric === "pmi" || metric === "lift";
+  const firstGrammarKey =
+    data.concepts.length > 1
+      ? pairKey(data.concepts[0].id, data.concepts[1].id)
+      : null;
+  const rovingGrammarKey = activeGrammarKey ?? firstGrammarKey;
+
+  function focusGrammarCell(rowIndex: number, columnIndex: number) {
+    if (data.concepts.length < 2) return;
+    const nextRowIndex = Math.max(
+      0,
+      Math.min(data.concepts.length - 2, rowIndex),
+    );
+    const nextColumnIndex = Math.max(
+      nextRowIndex + 1,
+      Math.min(data.concepts.length - 1, columnIndex),
+    );
+    const nextKey = pairKey(
+      data.concepts[nextRowIndex].id,
+      data.concepts[nextColumnIndex].id,
+    );
+    setActiveGrammarKey(nextKey);
+    window.requestAnimationFrame(() => {
+      grammarGridRef.current
+        ?.querySelector<HTMLButtonElement>(
+          `[data-grammar-row="${nextRowIndex}"][data-grammar-column="${nextColumnIndex}"]`,
+        )
+        ?.focus();
+    });
+  }
+
+  function handleGrammarCellKeyDown(
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    rowIndex: number,
+    columnIndex: number,
+  ) {
+    let nextRowIndex = rowIndex;
+    let nextColumnIndex = columnIndex;
+    if (event.key === "ArrowRight") nextColumnIndex += 1;
+    else if (event.key === "ArrowLeft") nextColumnIndex -= 1;
+    else if (event.key === "ArrowDown") {
+      nextRowIndex += 1;
+      nextColumnIndex = Math.max(nextColumnIndex, nextRowIndex + 1);
+    } else if (event.key === "ArrowUp") nextRowIndex -= 1;
+    else if (event.key === "Home") {
+      if (event.ctrlKey || event.metaKey) {
+        nextRowIndex = 0;
+        nextColumnIndex = 1;
+      } else nextColumnIndex = rowIndex + 1;
+    } else if (event.key === "End") {
+      if (event.ctrlKey || event.metaKey) nextRowIndex = data.concepts.length - 2;
+      nextColumnIndex = data.concepts.length - 1;
+    } else return;
+
+    event.preventDefault();
+    focusGrammarCell(nextRowIndex, nextColumnIndex);
+  }
 
   return (
     <>
@@ -1703,6 +1981,13 @@ function RegulatoryGrammar({
             <option value={5}>5 instruments</option>
           </select>
         </label>
+        {excludedPartialInstrumentCount > 0 && (
+          <span className={styles.controlSummary}>
+            {excludedPartialInstrumentCount} selected or partial instruments are
+            excluded from the association estimand because unobserved content is
+            unknown.
+          </span>
+        )}
       </div>
 
       <div className={styles.grammarLegend} aria-label="Association direction legend">
@@ -1723,8 +2008,16 @@ function RegulatoryGrammar({
         className={styles.matrixScroll}
         role="region"
         aria-label="Scrollable concept association matrix"
+        aria-describedby="grammar-keyboard-instructions"
       >
+        <p id="grammar-keyboard-instructions" className={styles.srOnly}>
+          The unique association cells use one keyboard stop. Use the arrow keys
+          to move through the upper-triangle matrix, Home and End to move within
+          a row, and Control or Command plus Home or End for the first or last
+          cell.
+        </p>
         <div
+          ref={grammarGridRef}
           className={styles.matrixFigure}
           role="group"
           aria-label={`${metricName} matrix for ${data.concepts.length} core concepts`}
@@ -1808,8 +2101,15 @@ function RegulatoryGrammar({
                     className={styles.matrixCell}
                     data-grade={grade}
                     data-sign={direction}
+                    data-grammar-row={rowIndex}
+                    data-grammar-column={columnIndex}
+                    tabIndex={key === rovingGrammarKey ? 0 : -1}
                     aria-pressed={selectedKey === key}
                     aria-label={`${rowConcept.label} with ${columnConcept.label}: ${formatMetric(value, metric)} ${metricName}; ${supportDescription}${meetsSupport ? "" : ", below the display threshold"}`}
+                    onFocus={() => setActiveGrammarKey(key)}
+                    onKeyDown={(event) =>
+                      handleGrammarCellKeyDown(event, rowIndex, columnIndex)
+                    }
                     onClick={() => setSelectedKey(key)}
                   >
                     <span className={styles.matrixCellValue} aria-hidden="true">
@@ -1851,17 +2151,23 @@ function RegulatoryGrammar({
       </div>
 
       {selectedEvidence.length > 0 && (
-        <div className={styles.evidenceList} aria-label="Supporting provisions">
-          {selectedEvidence.map((provision) => (
-            <button
-              type="button"
-              key={provision.id}
-              className={styles.evidenceButton}
-              onClick={() => onOpenProvision(provision.id)}
-            >
-              {provision.locator} · {provision.title}
-            </button>
-          ))}
+        <div>
+          <span className={styles.fieldLabel}>
+            Showing {selectedEvidence.length} of {allSelectedEvidence.length} supporting
+            provisions
+          </span>
+          <div className={styles.evidenceList} aria-label="Supporting provisions">
+            {selectedEvidence.map((provision) => (
+              <button
+                type="button"
+                key={provision.id}
+                className={styles.evidenceButton}
+                onClick={() => onOpenProvision(provision.id)}
+              >
+                {provision.locator} · {provision.title}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
@@ -1871,7 +2177,8 @@ function RegulatoryGrammar({
         instruments; this is a visibility rule, not a significance test. Pooled
         provisions have unequal legal granularity, and long instruments contribute
         more observations. Association indicates co-tagging, not doctrinal
-        equivalence or causal influence.
+        equivalence or causal influence. Selected and partial corpora never enter
+        this comparative matrix, even when they are revealed elsewhere for discovery.
       </MethodNote>
     </>
   );
@@ -2274,7 +2581,7 @@ function TranslationIntegrityObservatory({
       <header className={styles.panelHeader}>
         <div>
           <span className={styles.sectionCode}>06 / Translation provenance</span>
-          <h2>Translation Integrity Observatory</h2>
+          <h2>Translation Coverage &amp; Authority</h2>
           <p>
             Separate English-text storage, publication authority and temporal
             alignment across complete non-English corpora.
@@ -2583,14 +2890,14 @@ function QualifiedBridgeAtlas({
   const selectedConceptIds = Array.from(
     new Set(visibleRelations.flatMap((relation) => relation.conceptIds)),
   );
-  const rankShiftNodes = [...atlas.nodes]
+  const allRankShiftNodes = [...atlas.nodes]
     .filter((node) => node.reviewedDegree > 0 || node.allDegree > 0)
     .sort(
       (left, right) =>
         Math.abs(right.rankDelta) - Math.abs(left.rankDelta) ||
         left.allRank - right.allRank,
-    )
-    .slice(0, 12);
+    );
+  const rankShiftNodes = allRankShiftNodes.slice(0, 12);
   const rankCount = Math.max(2, atlas.nodes.length);
 
   return (
@@ -2646,9 +2953,13 @@ function QualifiedBridgeAtlas({
         <div
           className={styles.bridgePlot}
           role="group"
-          aria-label={`Instrument bridge plot: horizontal position is distinct mapped neighbors and vertical position is normalized betweenness in the ${layer === "reviewed" ? "reviewed" : "reviewed plus candidate"} graph`}
+          aria-label={`Instrument bridge plot: horizontal position is distinct mapped neighbors and vertical position is normalized betweenness in this project's ${layer === "reviewed" ? "reviewed subgraph" : "recorded reviewed plus candidate relation graph"}`}
         >
-          <span className={styles.bridgeAxisY}>Normalized betweenness</span>
+          <span className={styles.bridgeAxisY}>
+            {layer === "reviewed"
+              ? "Reviewed-subgraph betweenness"
+              : "Recorded-relation graph betweenness"}
+          </span>
           <span className={styles.bridgeAxisX}>Distinct mapped neighbors</span>
           {activeNodes.map((node) => {
             const instrument = instrumentById.get(node.instrumentId);
@@ -2670,7 +2981,7 @@ function QualifiedBridgeAtlas({
                 style={{ "--plot-x": `${x}%`, "--plot-y": `${y}%` } as VisualStyle}
                 data-selected={selected}
                 aria-pressed={selected}
-                aria-label={`${instrument.shortTitle}: ${degree} mapped neighbors; normalized betweenness ${betweenness.toFixed(3)}`}
+                aria-label={`${instrument.shortTitle}: ${degree} mapped neighbors; ${layer === "reviewed" ? "reviewed-subgraph" : "recorded-relation graph"} normalized betweenness ${betweenness.toFixed(3)}`}
                 onClick={() => setSelectedInstrumentId(node.instrumentId)}
               >
                 <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
@@ -2708,7 +3019,11 @@ function QualifiedBridgeAtlas({
                   </dd>
                 </div>
                 <div>
-                  <dt>Normalized betweenness</dt>
+                  <dt>
+                    {layer === "reviewed"
+                      ? "Reviewed-subgraph betweenness"
+                      : "Recorded-graph betweenness"}
+                  </dt>
                   <dd>
                     {(layer === "reviewed"
                       ? selectedNode.reviewedBetweenness
@@ -2738,6 +3053,9 @@ function QualifiedBridgeAtlas({
               >
                 Open instrument
               </button>
+              <span className={styles.fieldLabel}>
+                Showing {Math.min(8, selectedConceptIds.length)} of {selectedConceptIds.length} mapped concepts
+              </span>
               <div className={styles.conceptLinkRow}>
                 {selectedConceptIds.slice(0, 8).map((conceptId) => {
                   const concept = data.concepts.find((item) => item.id === conceptId);
@@ -2769,7 +3087,9 @@ function QualifiedBridgeAtlas({
             <span className={styles.sectionCode}>Candidate-edge sensitivity</span>
             <h3>Rank movement when hypotheses enter the graph</h3>
           </div>
-          <p>Reviewed rank → reviewed + candidate rank</p>
+          <p>
+            Reviewed rank → reviewed + candidate rank · showing {rankShiftNodes.length} of {allRankShiftNodes.length} nodes
+          </p>
         </header>
         <div className={styles.rankShiftList}>
           {rankShiftNodes.map((node) => {
@@ -2921,7 +3241,7 @@ function OperationalizationPathways({
       path.rootInstrumentId === activeRootInstrumentId &&
       (layer === "all" || path.status === "editorial-reviewed"),
   );
-  const terminalPaths = pathsForRoot
+  const allTerminalPaths = pathsForRoot
     .filter(
       (path) =>
         !pathsForRoot.some(
@@ -2931,8 +3251,8 @@ function OperationalizationPathways({
               (relationId, index) => other.relationIds[index] === relationId,
             ),
         ),
-    )
-    .slice(0, 12);
+    );
+  const terminalPaths = allTerminalPaths.slice(0, 12);
   const [selectedRelationId, setSelectedRelationId] = useState<string | null>(
     null,
   );
@@ -3006,7 +3326,10 @@ function OperationalizationPathways({
         <header className={styles.sectionHeader}>
           <div>
             <span className={styles.sectionCode}>Semantic path lanes</span>
-            <h3>{terminalPaths.length} recorded paths from the selected origin</h3>
+            <h3>
+              Showing {terminalPaths.length} of {allTerminalPaths.length} recorded
+              paths from the selected origin
+            </h3>
           </div>
           <p>Maximum three hops · dates label instrument records, not arrow causation</p>
         </header>
@@ -3377,7 +3700,7 @@ function InstrumentArchetypes({
 
           <section className={styles.archetypeDifferenceSection}>
             <span className={styles.fieldLabel}>
-              Largest centroid differences from the complete-corpus mean
+              Largest {Math.min(7, selectedCluster.differentiatingConcepts.length)} of {selectedCluster.differentiatingConcepts.length} centroid differences from the complete-corpus mean
             </span>
             <div className={styles.archetypeDifferenceList}>
               {selectedCluster.differentiatingConcepts
@@ -4018,9 +4341,10 @@ function ApplicabilityHorizon({
       );
     });
   });
-  const leadingConcepts = [...activeConceptCounts.entries()]
-    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
-    .slice(0, 6);
+  const allLeadingConcepts = [...activeConceptCounts.entries()].sort(
+    (left, right) => right[1] - left[1] || left[0].localeCompare(right[0]),
+  );
+  const leadingConcepts = allLeadingConcepts.slice(0, 6);
   const lanes = horizon.instruments
     .filter(
       (instrument) =>
@@ -4073,6 +4397,7 @@ function ApplicabilityHorizon({
               step={1}
               value={selectedHorizonIndex}
               aria-label="Selected applicability horizon"
+              aria-valuetext={`${formatDate(selectedDate)}; step ${selectedHorizonIndex} of ${Math.max(0, horizonDates.length - 1)} recorded future date steps`}
               onChange={(event) => setHorizonIndex(Number(event.target.value))}
             />
           </label>
@@ -4099,7 +4424,12 @@ function ApplicabilityHorizon({
           </div>
           <div className={styles.applicabilityConcepts}>
             {leadingConcepts.length ? (
-              leadingConcepts.map(([conceptId, count]) => {
+              <>
+              <span className={styles.fieldLabel}>
+                Showing {leadingConcepts.length} of {allLeadingConcepts.length} recorded
+                concepts
+              </span>
+              {leadingConcepts.map(([conceptId, count]) => {
                 const concept = conceptById.get(conceptId);
                 if (!concept) return null;
                 return (
@@ -4115,7 +4445,8 @@ function ApplicabilityHorizon({
                     <code>{count}</code>
                   </button>
                 );
-              })
+              })}
+              </>
             ) : (
               <span className={styles.statMeta}>
                 No provision-level commencement falls within this horizon.
@@ -4125,7 +4456,18 @@ function ApplicabilityHorizon({
         </section>
 
         {lanes.length ? (
-          <div className={styles.applicabilityScroll}>
+          <>
+          <p id="applicability-scroll-hint" className={styles.scrollHint}>
+            This timeline is wider than the panel. Focus it, then scroll horizontally
+            to inspect later dates; instrument names remain pinned.
+          </p>
+          <div
+            className={styles.applicabilityScroll}
+            role="region"
+            tabIndex={0}
+            aria-label="Scrollable applicability horizon"
+            aria-describedby="applicability-scroll-hint"
+          >
             <div
               className={styles.applicabilityFigure}
               role="group"
@@ -4242,6 +4584,7 @@ function ApplicabilityHorizon({
               </div>
             </div>
           </div>
+          </>
         ) : (
           <div className={styles.emptyState}>
             No explicit future dates are recorded after this corpus snapshot.
@@ -4316,6 +4659,8 @@ function ArticleConceptMicroscope({
       profile?.bands[0]?.provisionId ??
       "",
   );
+  const microscopeListboxId = useId();
+  const microscopeListboxRef = useRef<HTMLDivElement>(null);
 
   const effectiveSelectedProvisionId = profile?.bands.some(
     (band) => band.provisionId === selectedProvisionId,
@@ -4330,6 +4675,12 @@ function ArticleConceptMicroscope({
       (band) => band.provisionId === effectiveSelectedProvisionId,
     ) ??
     profile?.bands[0];
+  const selectedBandIndex = Math.max(
+    0,
+    profile?.bands.findIndex(
+      (band) => band.provisionId === effectiveSelectedProvisionId,
+    ) ?? 0,
+  );
   const instrument = profile ? instrumentById.get(profile.instrumentId) : null;
   const completeProfiles = microscope.instruments.filter(
     (item) => item.coverageClass === "complete",
@@ -4337,6 +4688,36 @@ function ArticleConceptMicroscope({
   const selectedProfiles = microscope.instruments.filter(
     (item) => item.coverageClass !== "complete",
   );
+
+  function selectMicroscopeBand(index: number) {
+    if (!profile?.bands.length) return;
+    const nextIndex = Math.max(0, Math.min(profile.bands.length - 1, index));
+    setSelectedProvisionId(profile.bands[nextIndex].provisionId);
+    window.requestAnimationFrame(() => {
+      microscopeListboxRef.current
+        ?.querySelectorAll<HTMLElement>('[role="option"]')
+        [nextIndex]?.scrollIntoView({ block: "nearest" });
+    });
+  }
+
+  function handleMicroscopeKeyDown(event: ReactKeyboardEvent<HTMLDivElement>) {
+    if (!profile?.bands.length) return;
+    let nextIndex = selectedBandIndex;
+    if (event.key === "ArrowDown") nextIndex += 1;
+    else if (event.key === "ArrowUp") nextIndex -= 1;
+    else if (event.key === "PageDown") nextIndex += 10;
+    else if (event.key === "PageUp") nextIndex -= 10;
+    else if (event.key === "Home") nextIndex = 0;
+    else if (event.key === "End") nextIndex = profile.bands.length - 1;
+    else if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      if (selectedBand) onOpenProvision(selectedBand.provisionId);
+      return;
+    } else return;
+
+    event.preventDefault();
+    selectMicroscopeBand(nextIndex);
+  }
 
   if (!profile || !instrument) {
     return <div className={styles.emptyState}>No provision profiles are available.</div>;
@@ -4423,10 +4804,24 @@ function ArticleConceptMicroscope({
                 </small>
               </span>
             </div>
+            <p
+              id={`${microscopeListboxId}-instructions`}
+              className={styles.microscopeKeyboardHint}
+            >
+              Use ↑/↓, Page Up/Page Down, Home or End to select one provision.
+              Press Enter to open it.
+            </p>
             <div
+              id={microscopeListboxId}
+              ref={microscopeListboxRef}
               className={styles.microscopeStrip}
-              role="group"
+              role="listbox"
+              tabIndex={0}
+              aria-orientation="vertical"
               aria-label={`${instrument.shortTitle} provision sequence`}
+              aria-describedby={`${microscopeListboxId}-instructions`}
+              aria-activedescendant={`${microscopeListboxId}-option-${selectedBandIndex}`}
+              onKeyDown={handleMicroscopeKeyDown}
             >
               {profile.bands.map((band, index) => {
                 const leadConcept = conceptById.get(band.conceptIds[0]);
@@ -4436,10 +4831,14 @@ function ArticleConceptMicroscope({
                     profile.maximumConceptAssignmentCount
                   : 0;
                 return (
-                  <button
-                    type="button"
+                  <div
+                    id={`${microscopeListboxId}-option-${index}`}
                     key={band.provisionId}
                     className={styles.microscopeProvision}
+                    role="option"
+                    aria-selected={
+                      band.provisionId === effectiveSelectedProvisionId
+                    }
                     data-relevance={band.relevance}
                     data-selected={
                       band.provisionId === effectiveSelectedProvisionId
@@ -4457,15 +4856,11 @@ function ArticleConceptMicroscope({
                       } as VisualStyle
                     }
                     aria-label={`${band.locator}: ${band.title}; ${band.conceptAssignmentCount} recorded concepts; ${humanizeResearchCode(band.relevance)}`}
-                    onFocus={() => setSelectedProvisionId(band.provisionId)}
                     onMouseEnter={() => setSelectedProvisionId(band.provisionId)}
-                    onClick={() => {
-                      setSelectedProvisionId(band.provisionId);
-                      onOpenProvision(band.provisionId);
-                    }}
+                    onClick={() => setSelectedProvisionId(band.provisionId)}
                   >
                     <span className={styles.srOnly}>{band.locator}</span>
-                  </button>
+                  </div>
                 );
               })}
             </div>
@@ -4486,6 +4881,18 @@ function ArticleConceptMicroscope({
                   </div>
                   <p>{selectedBand.title}</p>
                 </header>
+                <div className={styles.microscopeSelectionAction}>
+                  <span>
+                    Current provision · {selectedBandIndex + 1} of {profile.bands.length}
+                  </span>
+                  <button
+                    type="button"
+                    className={styles.actionButton}
+                    onClick={() => onOpenProvision(selectedBand.provisionId)}
+                  >
+                    Open {selectedBand.locator} <ArrowRight aria-hidden="true" />
+                  </button>
+                </div>
                 <div className={styles.microscopeConcepts}>
                   {selectedBand.conceptIds.length ? (
                     selectedBand.conceptIds.map((conceptId) => {
@@ -4510,13 +4917,6 @@ function ArticleConceptMicroscope({
                     </span>
                   )}
                 </div>
-                <button
-                  type="button"
-                  className={styles.actionButton}
-                  onClick={() => onOpenProvision(selectedBand.provisionId)}
-                >
-                  Open provision <ArrowRight aria-hidden="true" />
-                </button>
               </>
             )}
 
@@ -4698,6 +5098,11 @@ function NeighborhoodStability({
           <span data-metric="range"><i /> Leave-one-theme-out rank range · metric-specific</span>
         </div>
 
+        <span className={styles.fieldLabel}>
+          Showing {displayedCandidates.length} of {rankedCandidates.length} ranked
+          neighbors
+        </span>
+
         <section
           className={styles.neighborhoodPlot}
           aria-label={`Neighbor ranks for ${focalInstrument?.shortTitle ?? record.instrumentId}`}
@@ -4824,7 +5229,7 @@ function NeighborhoodStability({
                 <section key={label}>
                   <span className={styles.fieldLabel}>{label}</span>
                   <div className={styles.neighborhoodContributorList}>
-                    {contributors.slice(0, 5).map((contributor) => {
+                    {contributors.map((contributor) => {
                       const concept = conceptById.get(contributor.conceptId);
                       if (!concept) return null;
                       return (
@@ -4929,7 +5334,17 @@ function GranularityCorpusBias({
           <span><i data-scale="count" /> Shared maximum within each count or density column</span>
           <span><i data-scale="coverage" /> Shared 0–100% annotation coverage scale</span>
         </div>
-        <div className={styles.granularityScroll}>
+        <p id="granularity-scroll-hint" className={styles.scrollHint}>
+          This comparison table is wider than the panel. Focus it, then scroll
+          horizontally; the header and instrument column remain pinned.
+        </p>
+        <div
+          className={styles.granularityScroll}
+          role="region"
+          tabIndex={0}
+          aria-label="Scrollable granularity and corpus-bias table"
+          aria-describedby="granularity-scroll-hint"
+        >
           <div className={styles.granularityPlot} role="table" aria-label="Instrument granularity and corpus annotation coverage">
             <div className={styles.granularityHeader} role="row">
               <span role="columnheader">Instrument</span>
@@ -5077,7 +5492,12 @@ function GranularityCorpusBias({
 export function ResearchLab({
   data,
   initialView = "observatory",
+  initialCoverageScope = "complete",
+  initialRelevanceScope = "substantive",
   defaultInstrumentIds,
+  onViewChange,
+  onCoverageScopeChange,
+  onRelevanceScopeChange,
   onOpenInstrument,
   onOpenProvision,
   onOpenConcept,
@@ -5088,9 +5508,10 @@ export function ResearchLab({
       "patterns",
   );
   const [coverageScope, setCoverageScope] =
-    useState<CoverageScope>("complete");
+    useState<CoverageScope>(initialCoverageScope);
   const [relevanceScope, setRelevanceScope] =
-    useState<RelevanceScope>("substantive");
+    useState<RelevanceScope>(initialRelevanceScope);
+  const [shareStatus, setShareStatus] = useState("");
   const [lastViewByPhase, setLastViewByPhase] = useState<
     Record<ResearchLabPhase, ResearchLabView>
   >({
@@ -5151,12 +5572,14 @@ export function ResearchLab({
 
   function activatePhase(phase: ResearchLabPhase) {
     if (phase === activePhase) return;
+    const nextView = lastViewByPhase[phase];
     setLastViewByPhase((current) => ({
       ...current,
       [activePhase]: activeView,
     }));
     setActivePhase(phase);
-    setActiveView(lastViewByPhase[phase]);
+    setActiveView(nextView);
+    onViewChange?.(nextView);
   }
 
   function activateView(view: ResearchLabView) {
@@ -5165,6 +5588,43 @@ export function ResearchLab({
       ...current,
       [activePhase]: view,
     }));
+    onViewChange?.(view);
+  }
+
+  function changeCoverageScope(scope: CoverageScope) {
+    setCoverageScope(scope);
+    onCoverageScopeChange?.(scope);
+  }
+
+  function changeRelevanceScope(scope: RelevanceScope) {
+    setRelevanceScope(scope);
+    onRelevanceScopeChange?.(scope);
+  }
+
+  function handlePhaseKeyDown(
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    currentPhase: ResearchLabPhase,
+  ) {
+    const currentIndex = researchPhaseOrder.indexOf(currentPhase);
+    let nextIndex = currentIndex;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (currentIndex + 1) % researchPhaseOrder.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex =
+        (currentIndex - 1 + researchPhaseOrder.length) % researchPhaseOrder.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = researchPhaseOrder.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    const nextPhase = researchPhaseOrder[nextIndex];
+    activatePhase(nextPhase);
+    event.currentTarget.parentElement
+      ?.querySelectorAll<HTMLButtonElement>("button")
+      [nextIndex]?.focus();
   }
 
   function handleTabKeyDown(
@@ -5196,6 +5656,46 @@ export function ResearchLab({
       [nextIndex]?.focus();
   }
 
+  async function copyResearchLink() {
+    try {
+      const url = new URL(window.location.href);
+      url.hash = buildResearchLabShareHash(url.hash, {
+        view: activeView,
+        coverageScope,
+        relevanceScope,
+      });
+      url.searchParams.delete("researchView");
+      url.searchParams.delete("researchPhase");
+      url.searchParams.delete("researchCoverage");
+      url.searchParams.delete("researchRelevance");
+      await navigator.clipboard.writeText(url.toString());
+      setShareStatus("Research view link copied.");
+    } catch {
+      setShareStatus("Link copying is unavailable in this browser.");
+    }
+  }
+
+  function exportResearchData() {
+    const payload = buildResearchLabExportPayload(data, {
+      phase: activePhase,
+      view: activeView,
+      coverageScope,
+      relevanceScope,
+    });
+    const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], {
+      type: "application/json;charset=utf-8",
+    });
+    const objectUrl = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = objectUrl;
+    anchor.download = `${data.snapshotDate}-${activeView}-research-lab.json`;
+    document.body.append(anchor);
+    anchor.click();
+    anchor.remove();
+    window.setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+    setShareStatus("Research view dataset exported.");
+  }
+
   return (
     <article
       className={classNames(styles.lab, "research-lab-view")}
@@ -5209,20 +5709,47 @@ export function ResearchLab({
           <h1>Research Lab</h1>
           <p>{activePhaseMetadata.description}</p>
         </div>
-        <div className={styles.snapshot}>
-          <span>DATA SNAPSHOT</span>
-          <strong>{data.snapshotDate}</strong>
-          <span>
-            {formatter.format(data.coverage.summary.provisionCount)} records
+        <div className={styles.headerTools}>
+          <div className={styles.snapshot}>
+            <span>DATA SNAPSHOT</span>
+            <strong>{data.snapshotDate}</strong>
+            <span>
+              {formatter.format(data.coverage.summary.provisionCount)} records
+            </span>
+          </div>
+          <div className={styles.headerActions}>
+            <button
+              type="button"
+              className={styles.headerAction}
+              onClick={copyResearchLink}
+            >
+              <Link2 aria-hidden="true" /> Copy link
+            </button>
+            <button
+              type="button"
+              className={styles.headerAction}
+              onClick={exportResearchData}
+            >
+              <Download aria-hidden="true" /> Export view dataset
+            </button>
+          </div>
+          <span className={styles.headerStatus} aria-live="polite">
+            {shareStatus}
           </span>
         </div>
       </header>
 
-      <div className={styles.phaseSwitch} aria-label="Research phase">
+      <div
+        className={styles.phaseSwitch}
+        role="group"
+        aria-label="Research phase"
+      >
         <button
           type="button"
           aria-pressed={activePhase === "patterns"}
+          tabIndex={activePhase === "patterns" ? 0 : -1}
           onClick={() => activatePhase("patterns")}
+          onKeyDown={(event) => handlePhaseKeyDown(event, "patterns")}
         >
           <span>Phase 01</span>
           <strong>Corpus patterns</strong>
@@ -5230,7 +5757,9 @@ export function ResearchLab({
         <button
           type="button"
           aria-pressed={activePhase === "relations"}
+          tabIndex={activePhase === "relations" ? 0 : -1}
           onClick={() => activatePhase("relations")}
+          onKeyDown={(event) => handlePhaseKeyDown(event, "relations")}
         >
           <span>Phase 02</span>
           <strong>Provenance + relations</strong>
@@ -5238,7 +5767,9 @@ export function ResearchLab({
         <button
           type="button"
           aria-pressed={activePhase === "models"}
+          tabIndex={activePhase === "models" ? 0 : -1}
           onClick={() => activatePhase("models")}
+          onKeyDown={(event) => handlePhaseKeyDown(event, "models")}
         >
           <span>Phase 03</span>
           <strong>Models + evidence audit</strong>
@@ -5246,7 +5777,9 @@ export function ResearchLab({
         <button
           type="button"
           aria-pressed={activePhase === "dynamics"}
+          tabIndex={activePhase === "dynamics" ? 0 : -1}
           onClick={() => activatePhase("dynamics")}
+          onKeyDown={(event) => handlePhaseKeyDown(event, "dynamics")}
         >
           <span>Phase 04</span>
           <strong>Dynamics + measurement</strong>
@@ -5271,6 +5804,7 @@ export function ResearchLab({
               data-testid={`research-tab-${view.id}`}
               className={styles.tab}
               aria-selected={activeView === view.id}
+              tabIndex={activeView === view.id ? 0 : -1}
               aria-controls={`research-panel-${view.id}`}
               onClick={() => activateView(view.id)}
               onKeyDown={(event) => handleTabKeyDown(event, view.id)}
@@ -5301,8 +5835,8 @@ export function ResearchLab({
             data={data}
             coverageScope={coverageScope}
             relevanceScope={relevanceScope}
-            onCoverageChange={setCoverageScope}
-            onRelevanceChange={setRelevanceScope}
+            onCoverageChange={changeCoverageScope}
+            onRelevanceChange={changeRelevanceScope}
             onOpenInstrument={onOpenInstrument}
             onOpenConcept={onOpenConcept}
           />
@@ -5311,7 +5845,7 @@ export function ResearchLab({
           <ComparativeMorphology
             data={data}
             relevanceScope={relevanceScope}
-            onRelevanceChange={setRelevanceScope}
+            onRelevanceChange={changeRelevanceScope}
             defaultInstrumentIds={defaultInstrumentIds}
             onOpenInstrument={onOpenInstrument}
             onOpenProvision={onOpenProvision}
@@ -5323,8 +5857,8 @@ export function ResearchLab({
             data={data}
             coverageScope={coverageScope}
             relevanceScope={relevanceScope}
-            onCoverageChange={setCoverageScope}
-            onRelevanceChange={setRelevanceScope}
+            onCoverageChange={changeCoverageScope}
+            onRelevanceChange={changeRelevanceScope}
             onOpenProvision={onOpenProvision}
             onOpenConcept={onOpenConcept}
           />

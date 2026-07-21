@@ -8,6 +8,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
   type SetStateAction,
+  useCallback,
   useEffect,
   useMemo,
   useReducer,
@@ -16,6 +17,7 @@ import {
   useSyncExternalStore,
 } from "react";
 import { flushSync } from "react-dom";
+import dynamic from "next/dynamic";
 import {
   Archive,
   ArrowLeft,
@@ -50,57 +52,28 @@ import {
 } from "lucide-react";
 import jurisdictionsJson from "@/data/v2/jurisdictions.json";
 import instrumentsJson from "@/data/v2/instruments.json";
-import seedProvisionsJson from "@/data/v2/provisions.json";
+import clientCorpusIndexJson from "@/data/v2/client-corpus-index.json";
 import conceptsJson from "@/data/v2/concepts.json";
 import conceptThemesJson from "@/data/v2/concept-themes.json";
 import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
 import sourceAuditsJson from "@/data/v2/source-audit.json";
 import englishCorpusCoverageJson from "@/data/v2/english-corpus-coverage.json";
-import gdprArticlesJson from "@/data/v2/gdpr-articles.json";
-import euAiActArticlesJson from "@/data/v2/eu-ai-act-articles.json";
-import ukGdprArticlesJson from "@/data/v2/uk-gdpr-articles.json";
-import piplArticlesJson from "@/data/v2/cn-pipl-articles.json";
-import networkDataArticlesJson from "@/data/v2/cn-network-data-regulations-articles.json";
-import generativeAiArticlesJson from "@/data/v2/cn-generative-ai-measures-articles.json";
-import pipedaProvisionsJson from "@/data/v2/canada-pipeda-provisions.json";
-import lgpdArticlesJson from "@/data/v2/brazil-lgpd-articles.json";
-import taiwanAiActArticlesJson from "@/data/v2/tw-ai-basic-act-2026-articles.json";
-import taiwanPdpaArticlesJson from "@/data/v2/tw-personal-data-protection-act-articles.json";
-import singaporePdpaProvisionsJson from "@/data/v2/sg-pdpa-provisions.json";
-import southAfricaPopiaSectionsJson from "@/data/v2/za-popia-sections.json";
-import nigeriaNdpaSectionsJson from "@/data/v2/ng-ndpa-2023-sections.json";
-import indonesiaPdpArticlesJson from "@/data/v2/id-pdp-law-2022-articles.json";
-import indiaDpdpActProvisionsJson from "@/data/v2/india-dpdp-act-2023-provisions.json";
-import indiaDpdpRulesProvisionsJson from "@/data/v2/india-dpdp-rules-2025-provisions.json";
-import uaePdplArticlesJson from "@/data/v2/uae-federal-pdpl-45-2021-articles.json";
-import saudiPdplArticlesJson from "@/data/v2/sa-pdpl-2021-amended-2023-articles.json";
-import saudiPdplImplementingArticlesJson from "@/data/v2/sa-pdpl-implementing-regulation-2023-articles.json";
-import saudiPdplTransferArticlesJson from "@/data/v2/sa-pdpl-transfer-regulation-2023-articles.json";
-import australiaPrivacyActProvisionsJson from "@/data/v2/au-privacy-act-1988-provisions.json";
-import japanAppiArticlesJson from "@/data/v2/jp-appi-current-articles.json";
-import japanAiPromotionActArticlesJson from "@/data/v2/jp-ai-promotion-act-2025-articles.json";
-import hongKongPdpoProvisionsJson from "@/data/v2/hk-pdpo-486-provisions.json";
-import swissFadpProvisionsJson from "@/data/v2/ch-fadp-2020-provisions.json";
-import vietnamPdplArticlesJson from "@/data/v2/vn-personal-data-protection-law-2025-articles.json";
-import vietnamDecree356ProvisionsJson from "@/data/v2/vn-decree-356-2025-provisions.json";
-import vietnamDecree13HistoricalProvisionsJson from "@/data/v2/vn-decree-13-2023-historical-provisions.json";
-import koreaPipaArticlesJson from "@/data/v2/kr-pipa-2011-current-articles.json";
-import koreaAiFrameworkArticlesJson from "@/data/v2/kr-ai-framework-act-2025-current-articles.json";
-import usExecutiveOrderProvisionsJson from "@/data/v2/us-executive-orders-provisions.json";
-import taiwanExecutiveYuanGenAiGuidelinesJson from "@/data/v2/tw-executive-yuan-generative-ai-guidelines-2023-points.json";
-import brazilAiBillArticlesJson from "@/data/v2/br-ai-bill-2338-2023-articles.json";
-import californiaSb1047ProvisionsJson from "@/data/v2/us-ca-sb1047-2024-provisions.json";
-import coloradoAiActProvisionsJson from "@/data/v2/us-co-ai-act-current-provisions.json";
-import nistAiRmfCorpusJson from "@/data/v2/us-nist-ai-rmf-1-0-corpus.json";
 import provisionConceptReviewsJson from "@/data/v2/provision-concepts.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
 import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import { ConceptConstellation } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
 import { RegulationGlobe } from "./regulation-globe";
-import { buildResearchLabData } from "./research-lab-data";
-import { ResearchLab } from "./research-lab";
+import { loadCorpusShard } from "./corpus-loader";
+import type { CorpusShardPayload } from "./corpus-loader";
+import type { LazyResearchViewProps } from "./lazy-research-view";
+import type { ResearchCorpusInput } from "./research-lab-data";
+import type {
+  ResearchCoverageScope,
+  ResearchLabView,
+  ResearchRelevanceScope,
+} from "./research-lab";
 
 type Source = {
   url: string;
@@ -399,6 +372,19 @@ type ImportedArticleRecord = Omit<
   currentOperativeSha256?: string;
 };
 
+type ClientCorpusIndex = {
+  schemaVersion: string;
+  totals: {
+    instrumentCount: number;
+    importedArticleCount: number;
+    seedProvisionCount: number;
+    mergedProvisionCount: number;
+  };
+  shards: Record<string, string>;
+  articleRecords: ImportedArticleRecord[];
+  seedProvisions: SeedProvision[];
+};
+
 type Provision = SeedProvision & {
   paragraphs?: string[];
   fullText?: string;
@@ -536,6 +522,7 @@ type TransitionDocument = Document & {
 
 const themeChangeEvent = "gadrm-theme-change";
 const columnLayoutStorageKey = "gadrm-column-layout";
+const mobileNavigatorMediaQuery = "(max-width: 760px)";
 const defaultColumnLayout = {
   leftWidth: 268,
   rightWidth: 390,
@@ -653,9 +640,11 @@ type ExplorerAction =
 const repositoryUrl =
   "https://github.com/EtonMu/global-ai-data-regulation-map";
 
+const clientCorpusIndex =
+  clientCorpusIndexJson as unknown as ClientCorpusIndex;
 const jurisdictions = jurisdictionsJson as Jurisdiction[];
 const instruments = instrumentsJson as Instrument[];
-const seedProvisions = seedProvisionsJson as SeedProvision[];
+const seedProvisions = clientCorpusIndex.seedProvisions;
 const concepts = conceptsJson as Concept[];
 const conceptThemes = [...(conceptThemesJson as ConceptTheme[])].sort(
   (left, right) => left.order - right.order,
@@ -714,44 +703,7 @@ function normalizeImportedArticle(
   } as ArticleRecord;
 }
 
-const articleRecords = [
-  ...(gdprArticlesJson as ArticleRecord[]),
-  ...(euAiActArticlesJson as ArticleRecord[]),
-  ...(ukGdprArticlesJson as ArticleRecord[]),
-  ...(piplArticlesJson as ArticleRecord[]),
-  ...(networkDataArticlesJson as ArticleRecord[]),
-  ...(generativeAiArticlesJson as ArticleRecord[]),
-  ...(pipedaProvisionsJson as ArticleRecord[]),
-  ...(lgpdArticlesJson as ArticleRecord[]),
-  ...(taiwanAiActArticlesJson as ArticleRecord[]),
-  ...(taiwanPdpaArticlesJson as ArticleRecord[]),
-  ...(singaporePdpaProvisionsJson as ArticleRecord[]),
-  ...(southAfricaPopiaSectionsJson as ArticleRecord[]),
-  ...(nigeriaNdpaSectionsJson as ArticleRecord[]),
-  ...(indonesiaPdpArticlesJson as ArticleRecord[]),
-  ...(indiaDpdpActProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(indiaDpdpRulesProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(uaePdplArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(saudiPdplArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(saudiPdplImplementingArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(saudiPdplTransferArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(australiaPrivacyActProvisionsJson as ArticleRecord[]),
-  ...(japanAppiArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(japanAiPromotionActArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(hongKongPdpoProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(swissFadpProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(vietnamPdplArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(vietnamDecree356ProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(vietnamDecree13HistoricalProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(koreaPipaArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(koreaAiFrameworkArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(usExecutiveOrderProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(taiwanExecutiveYuanGenAiGuidelinesJson as unknown as ImportedArticleRecord[]),
-  ...(brazilAiBillArticlesJson as unknown as ImportedArticleRecord[]),
-  ...(californiaSb1047ProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(coloradoAiActProvisionsJson as unknown as ImportedArticleRecord[]),
-  ...(nistAiRmfCorpusJson as unknown as ImportedArticleRecord[]),
-] as ImportedArticleRecord[];
+const articleRecords = clientCorpusIndex.articleRecords;
 const normalizedArticleRecords = articleRecords.map(normalizeImportedArticle);
 const provisionConceptReviews =
   provisionConceptReviewsJson as ProvisionConceptReview[];
@@ -1092,19 +1044,6 @@ seedProvisions.forEach((provision) => {
 });
 const provisions = Array.from(provisionMap.values());
 
-const researchLabData = buildResearchLabData({
-  snapshotDate: "2026-07-20",
-  jurisdictions,
-  instruments,
-  provisions,
-  concepts,
-  themes: conceptThemes,
-  sourceAudits,
-  relations,
-  statusEvents,
-  englishCorpusCoverage: englishCorpusCoverageJson,
-});
-
 const provisionsByInstrument = new Map<string, Provision[]>();
 provisions.forEach((provision) => {
   const list = provisionsByInstrument.get(provision.instrumentId) ?? [];
@@ -1129,6 +1068,74 @@ for (const list of provisionsByInstrument.values()) {
       numeric: true,
     });
   });
+}
+
+const hydratedInstrumentIds = new Set<string>();
+const instrumentHydrationPromises = new Map<string, Promise<void>>();
+
+async function hydrateInstrumentCorpus(
+  instrumentId: string,
+  options: { force?: boolean } = {},
+) {
+  if (hydratedInstrumentIds.has(instrumentId)) return;
+  const activeRequest = instrumentHydrationPromises.get(instrumentId);
+  if (activeRequest && !options.force) return activeRequest;
+
+  const shardUrl = clientCorpusIndex.shards[instrumentId];
+  if (!shardUrl) {
+    throw new Error(`No client corpus shard is registered for ${instrumentId}.`);
+  }
+
+  const request = loadCorpusShard(instrumentId, shardUrl, options)
+    .then((payload: CorpusShardPayload) => {
+      const hydratedSeeds = payload.seedProvisions as SeedProvision[];
+      hydratedSeeds.forEach((seed) => {
+        const indexedSeed = seedProvisionById.get(seed.id);
+        if (indexedSeed) Object.assign(indexedSeed, seed);
+      });
+
+      (payload.articleRecords as ImportedArticleRecord[]).forEach(
+        (rawArticle, shardOrder) => {
+          const article = normalizeImportedArticle(rawArticle);
+          const existing = provisionMap.get(article.id);
+          if (!existing) {
+            throw new Error(
+              `Corpus shard ${instrumentId} contains unindexed provision ${article.id}.`,
+            );
+          }
+          const hydrated = articleToProvision(
+            article,
+            existing.sourceOrder ?? shardOrder,
+          );
+          Object.assign(existing, hydrated);
+        },
+      );
+
+      hydratedSeeds.forEach((seed) => {
+        const existing = provisionMap.get(seed.id);
+        if (existing && !payload.articleRecords.some(
+          (article) =>
+            (article as ImportedArticleRecord).id === seed.id,
+        )) {
+          Object.assign(existing, provisionWithConceptReview(seed));
+        }
+      });
+      hydratedInstrumentIds.add(instrumentId);
+    })
+    .finally(() => {
+      if (instrumentHydrationPromises.get(instrumentId) === request) {
+        instrumentHydrationPromises.delete(instrumentId);
+      }
+    });
+
+  instrumentHydrationPromises.set(instrumentId, request);
+  return request;
+}
+
+function corpusErrorMessage(error: unknown) {
+  return error instanceof Error
+    ? error.message
+    : "The legal-text corpus could not be downloaded.";
 }
 
 const relationsByProvision = new Map<string, Relation[]>();
@@ -1203,6 +1210,85 @@ const viewLabels: Array<{ id: View; label: string; icon: LucideIcon }> = [
   { id: "timeline", label: "Timeline", icon: Clock3 },
   { id: "compare", label: "Compare", icon: Columns2 },
 ];
+
+const researchLabViewIds = [
+  "observatory",
+  "genome",
+  "morphology",
+  "grammar",
+  "timeline",
+  "translation",
+  "bridges",
+  "pathways",
+  "archetypes",
+  "audit",
+  "horizon",
+  "microscope",
+  "neighborhoods",
+  "granularity",
+] as const satisfies readonly ResearchLabView[];
+
+function isResearchLabView(value: string | null): value is ResearchLabView {
+  return Boolean(
+    value && (researchLabViewIds as readonly string[]).includes(value),
+  );
+}
+
+type DynamicLoadingProps = {
+  error?: Error | null;
+  isLoading?: boolean;
+  retry?: () => void;
+};
+
+function reloadAtlasAfterModuleFailure() {
+  window.history.replaceState(
+    null,
+    "",
+    `${window.location.pathname}${window.location.search}#view=atlas`,
+  );
+  window.location.reload();
+}
+
+function ResearchModuleLoading({ error, retry }: DynamicLoadingProps) {
+  if (error) {
+    return (
+      <section className="empty-state" role="alert">
+        <span>RESEARCH_MODULE_UNAVAILABLE</span>
+        <h2>The Research Lab interface did not load.</h2>
+        <p>{error.message}</p>
+        <div>
+          <button type="button" className="interface-back-button" onClick={retry}>
+            <Database aria-hidden="true" />
+            RETRY MODULE
+          </button>
+          <button
+            type="button"
+            className="interface-back-button"
+            onClick={reloadAtlasAfterModuleFailure}
+          >
+            <ArrowLeft aria-hidden="true" />
+            BACK TO ATLAS
+          </button>
+        </div>
+      </section>
+    );
+  }
+  return (
+    <section className="empty-state" aria-busy="true" aria-live="polite">
+      <span>RESEARCH_MODULE_LOADING</span>
+      <h2>Opening the Research Lab.</h2>
+      <p>Loading the analytical interface and corpus methods…</p>
+    </section>
+  );
+}
+
+const LazyResearchView = dynamic<LazyResearchViewProps>(
+  () => import("./lazy-research-view"),
+  {
+    ssr: false,
+    loading: ResearchModuleLoading,
+  },
+);
 
 function explorerReducer(
   state: ExplorerState,
@@ -1912,6 +1998,66 @@ function InstrumentKindIcon({ instrument }: { instrument: Instrument }) {
   return <Icon aria-hidden="true" />;
 }
 
+type CorpusLoadPhase = "idle" | "loading" | "ready" | "error";
+type CorpusLoadState = {
+  phase: CorpusLoadPhase;
+  error?: string;
+};
+
+function CorpusLoadNotice({
+  state,
+  title,
+  onRetry,
+  onBackToAtlas,
+}: {
+  state: CorpusLoadState;
+  title: string;
+  onRetry: () => void;
+  onBackToAtlas: () => void;
+}) {
+  const failed = state.phase === "error";
+  return (
+    <section
+      className="empty-state"
+      aria-busy={!failed}
+      aria-live="polite"
+      role={failed ? "alert" : undefined}
+    >
+      <span>{failed ? "CORPUS_LOAD_INTERRUPTED" : "CORPUS_LOADING"}</span>
+      <h2>
+        {failed
+          ? "The legal text could not be loaded."
+          : `Loading the complete text of ${title}.`}
+      </h2>
+      <p>
+        {failed
+          ? state.error
+          : "The provision index is available now; the complete authoritative and reference-language texts are being retrieved on demand."}
+      </p>
+      {failed && (
+        <div>
+          <button
+            type="button"
+            className="interface-back-button"
+            onClick={onRetry}
+          >
+            <Database aria-hidden="true" />
+            RETRY TEXT
+          </button>
+          <button
+            type="button"
+            className="interface-back-button"
+            onClick={onBackToAtlas}
+          >
+            <ArrowLeft aria-hidden="true" />
+            BACK TO ATLAS
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function NavigatorAccordion({
   id,
   expanded,
@@ -1964,22 +2110,26 @@ function CorpusNavigator({
   selectedProvisionId,
   selectedConceptId,
   query,
+  fullTextSearchState,
   onSetNavigatorTab,
   onOpenAtlas,
   onOpenInstrument,
   onOpenProvision,
   onOpenConcept,
+  onRetryFullTextSearch,
 }: {
   navigatorTab: NavigatorTab;
   selectedInstrumentId: string | null;
   selectedProvisionId: string | null;
   selectedConceptId: string | null;
   query: string;
+  fullTextSearchState: CorpusLoadState;
   onSetNavigatorTab: (tab: NavigatorTab) => void;
   onOpenAtlas: () => void;
   onOpenInstrument: (instrumentId: string) => void;
   onOpenProvision: (provision: Provision) => void;
   onOpenConcept: (conceptId: string) => void;
+  onRetryFullTextSearch: () => void;
 }) {
   const normalizedQuery = query.trim().toLowerCase();
   const selectedInstrument = selectedInstrumentId
@@ -2116,8 +2266,13 @@ function CorpusNavigator({
     else return;
     event.preventDefault();
     const nextTab = tabs[nextIndex];
+    const mobileDrawerWillClose = window.matchMedia(
+      mobileNavigatorMediaQuery,
+    ).matches;
     onSetNavigatorTab(nextTab);
-    document.getElementById("navigator-tab-" + nextTab)?.focus();
+    if (!mobileDrawerWillClose) {
+      document.getElementById("navigator-tab-" + nextTab)?.focus();
+    }
   }
 
   const activeCount = navigatorTab === "sources" ? instruments.length : concepts.length;
@@ -2194,6 +2349,22 @@ function CorpusNavigator({
                   <p className="navigator-section-label">
                     MATCHES / {matchingInstruments.length + matchingProvisions.length}
                   </p>
+                  {fullTextSearchState.phase === "loading" && (
+                    <p className="navigator-empty" role="status">
+                      Loading complete provision text for corpus-wide search…
+                    </p>
+                  )}
+                  {fullTextSearchState.phase === "error" && (
+                    <div role="alert">
+                      <p className="navigator-empty">
+                        Full-text search is temporarily unavailable. Metadata
+                        matches remain visible.
+                      </p>
+                      <button type="button" onClick={onRetryFullTextSearch}>
+                        Retry full-text index
+                      </button>
+                    </div>
+                  )}
                   {matchingInstruments.map((instrument) => (
                     <button
                       type="button"
@@ -2220,7 +2391,9 @@ function CorpusNavigator({
                       <small>{provision.title}</small>
                     </button>
                   ))}
-                  {!matchingInstruments.length && !matchingProvisions.length && (
+                  {!matchingInstruments.length &&
+                    !matchingProvisions.length &&
+                    fullTextSearchState.phase !== "loading" && (
                     <p className="navigator-empty">No indexed legal-source match.</p>
                   )}
                 </div>
@@ -2770,6 +2943,84 @@ function CoreConceptExplorer({
   );
 }
 
+function normalizedPreviewText(value: string | undefined) {
+  return (value ?? "").replace(/\s+/g, " ").trim();
+}
+
+function firstProvisionSentence(value: string | undefined, maximumLength = 300) {
+  const text = normalizedPreviewText(value);
+  if (!text) return "";
+  const sentence = text.match(/^.*?(?:[.!?。！？](?=\s|$)|$)/u)?.[0] ?? text;
+  if (sentence.length <= maximumLength) return sentence;
+  const clipped = sentence.slice(0, maximumLength);
+  const breakAt = Math.max(
+    clipped.lastIndexOf(". "),
+    clipped.lastIndexOf("; "),
+    clipped.lastIndexOf("。"),
+    clipped.lastIndexOf(", "),
+  );
+  return (
+    (breakAt >= 120 ? clipped.slice(0, breakAt + 1) : clipped)
+      .replace(/\s+\S*$/u, "")
+      .trimEnd() + "…"
+  );
+}
+
+function isGenericProvisionHeading(provision: Provision) {
+  const title = normalizedPreviewText(provision.title);
+  const locator = normalizedPreviewText(provision.locator);
+  return (
+    title.toLowerCase() === locator.toLowerCase() ||
+    /^(?:article|section|rule|regulation|point|item|schedule)\s+[\w.()-]+$/iu.test(
+      title,
+    )
+  );
+}
+
+function isTranslationAuthoritySummary(value: string | undefined) {
+  const text = normalizedPreviewText(value).toLowerCase();
+  return (
+    /complete (?:official|authoritative).*(?:text|wording).*(?:stored|available)/u.test(
+      text,
+    ) ||
+    /government-published english reference translation/u.test(text) ||
+    /project-authored english reference/u.test(text) ||
+    /english text is not co-authentic/u.test(text) ||
+    /this article is mapped to/u.test(text) ||
+    /orientation is not a translation/u.test(text) ||
+    /official .* wording is available/u.test(text) ||
+    /toàn văn .*chính thức.*(?:lưu|đầy đủ)/u.test(text)
+  );
+}
+
+function provisionEditorialPreview(provision: Provision) {
+  const summary = normalizedPreviewText(provision.summary);
+  const firstSourceParagraph = normalizedPreviewText(provision.paragraphs?.[0]);
+  const sourceExcerptUsedAsSummary = Boolean(
+    firstSourceParagraph &&
+      summary === firstSourceParagraph &&
+      !/^en(?:-|$)/iu.test(provision.textAvailability.language),
+  );
+  const derived =
+    isGenericProvisionHeading(provision) ||
+    isTranslationAuthoritySummary(summary) ||
+    sourceExcerptUsedAsSummary ||
+    (!provision.fullText &&
+      !/^en(?:-|$)/iu.test(provision.textAvailability.language));
+  if (!derived) return { text: summary, derived: false };
+
+  const englishText =
+    provision.translations?.en?.paragraphs?.[0] ??
+    provision.translations?.en?.fullText ??
+    (/^en(?:-|$)/iu.test(provision.textAvailability.language)
+      ? provision.paragraphs?.[0] ?? provision.fullText
+      : undefined);
+  return {
+    text: firstProvisionSentence(englishText) || summary,
+    derived: true,
+  };
+}
+
 function InstrumentGenome({
   instrument,
   onOpenProvision,
@@ -2935,6 +3186,8 @@ function InstrumentGenome({
                         const isTopicRelevant =
                           provision.topicRelevance.relevance ===
                           "substantive-topic";
+                        const editorialPreview =
+                          provisionEditorialPreview(provision);
                         return (
                           <li key={provision.id}>
                           <button
@@ -2972,7 +3225,12 @@ function InstrumentGenome({
                                   {provision.originalTitle}
                                 </span>
                               )}
-                              <small>{provision.summary}</small>
+                              <small>
+                                {editorialPreview.derived && (
+                                  <span>Editorial preview · </span>
+                                )}
+                                {editorialPreview.text}
+                              </small>
                             </span>
                             <span className="provision-list-signals" aria-hidden="true">
                               {conceptCount > 0 && (
@@ -4770,6 +5028,19 @@ export default function RegulationExplorer() {
   const [historyDepth, setHistoryDepth] = useState(0);
   const [readerLanguagePreference, setReaderLanguagePreference] =
     useState("en");
+  const [researchView, setResearchView] =
+    useState<ResearchLabView>("observatory");
+  const [researchCoverage, setResearchCoverage] =
+    useState<ResearchCoverageScope>("complete");
+  const [researchRelevance, setResearchRelevance] =
+    useState<ResearchRelevanceScope>("substantive");
+  const [mobileNavigatorOpen, setMobileNavigatorOpen] = useState(false);
+  const [corpusRevision, setCorpusRevision] = useState(0);
+  const [instrumentLoadStates, setInstrumentLoadStates] = useState<
+    Record<string, CorpusLoadState>
+  >({});
+  const [fullCorpusLoadState, setFullCorpusLoadState] =
+    useState<CorpusLoadState>({ phase: "idle" });
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
     defaultColumnLayout,
@@ -4778,6 +5049,8 @@ export default function RegulationExplorer() {
   const [activeColumnResize, setActiveColumnResize] =
     useState<ColumnSide | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const mobileNavigatorToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileNavigatorFocusFrameRef = useRef<number | null>(null);
   const appShellRef = useRef<HTMLDivElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
   const columnResizeRef = useRef<ColumnResize>(null);
@@ -4785,10 +5058,84 @@ export default function RegulationExplorer() {
   const transitionRef = useRef<SameDocumentViewTransition | null>(null);
   const transitionTokenRef = useRef(0);
   const navigationHistoryRef = useRef<ExplorerState[]>([]);
+  const allCorpusRequestRef = useRef<Promise<void> | null>(null);
   const hasRightColumn =
     state.view === "atlas" ||
     (state.navigatorTab === "sources" &&
       (state.view === "instrument" || state.view === "connections"));
+
+  const ensureInstrumentAvailable = useCallback(
+    async (instrumentId: string, force = false) => {
+      if (hydratedInstrumentIds.has(instrumentId)) {
+        setInstrumentLoadStates((current) => ({
+          ...current,
+          [instrumentId]: { phase: "ready" },
+        }));
+        return;
+      }
+      setInstrumentLoadStates((current) => ({
+        ...current,
+        [instrumentId]: { phase: "loading" },
+      }));
+      try {
+        await hydrateInstrumentCorpus(instrumentId, { force });
+        setInstrumentLoadStates((current) => ({
+          ...current,
+          [instrumentId]: { phase: "ready" },
+        }));
+        setCorpusRevision((current) => current + 1);
+      } catch (error) {
+        setInstrumentLoadStates((current) => ({
+          ...current,
+          [instrumentId]: {
+            phase: "error",
+            error: corpusErrorMessage(error),
+          },
+        }));
+      }
+    },
+    [],
+  );
+
+  const ensureCompleteCorpus = useCallback(async (force = false) => {
+    if (
+      Object.keys(clientCorpusIndex.shards).every((instrumentId) =>
+        hydratedInstrumentIds.has(instrumentId),
+      )
+    ) {
+      setFullCorpusLoadState({ phase: "ready" });
+      return;
+    }
+    if (allCorpusRequestRef.current) return allCorpusRequestRef.current;
+
+    setFullCorpusLoadState({ phase: "loading" });
+    const instrumentIds = Object.keys(clientCorpusIndex.shards).filter(
+      (instrumentId) => !hydratedInstrumentIds.has(instrumentId),
+    );
+    const request = (async () => {
+      try {
+        for (let offset = 0; offset < instrumentIds.length; offset += 6) {
+          const batch = instrumentIds.slice(offset, offset + 6);
+          await Promise.all(
+            batch.map((instrumentId) =>
+              hydrateInstrumentCorpus(instrumentId, { force }),
+            ),
+          );
+        }
+        setFullCorpusLoadState({ phase: "ready" });
+        setCorpusRevision((current) => current + 1);
+      } catch (error) {
+        setFullCorpusLoadState({
+          phase: "error",
+          error: corpusErrorMessage(error),
+        });
+      } finally {
+        allCorpusRequestRef.current = null;
+      }
+    })();
+    allCorpusRequestRef.current = request;
+    return request;
+  }, []);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -5074,7 +5421,30 @@ export default function RegulationExplorer() {
     setHistoryDepth(navigationHistoryRef.current.length);
   }
 
+  const closeMobileNavigatorAndRestoreFocus = useCallback(() => {
+    if (!mobileNavigatorOpen) return;
+    setMobileNavigatorOpen(false);
+    if (!window.matchMedia(mobileNavigatorMediaQuery).matches) return;
+    if (mobileNavigatorFocusFrameRef.current !== null) {
+      window.cancelAnimationFrame(mobileNavigatorFocusFrameRef.current);
+    }
+    mobileNavigatorFocusFrameRef.current = window.requestAnimationFrame(() => {
+      mobileNavigatorFocusFrameRef.current = null;
+      if (!window.matchMedia(mobileNavigatorMediaQuery).matches) return;
+      mobileNavigatorToggleRef.current?.focus({ preventScroll: true });
+    });
+  }, [mobileNavigatorOpen]);
+
+  function toggleMobileNavigator() {
+    if (mobileNavigatorOpen) {
+      closeMobileNavigatorAndRestoreFocus();
+    } else {
+      setMobileNavigatorOpen(true);
+    }
+  }
+
   function goBack() {
+    closeMobileNavigatorAndRestoreFocus();
     const previous = navigationHistoryRef.current.pop();
     if (!previous) return;
     setHistoryDepth(navigationHistoryRef.current.length);
@@ -5090,12 +5460,14 @@ export default function RegulationExplorer() {
   }
 
   function setNavigatorTab(nextTab: NavigatorTab) {
+    closeMobileNavigatorAndRestoreFocus();
     if (state.navigatorTab === nextTab) return;
     rememberCurrentInterface();
     dispatch({ type: "SET_NAVIGATOR_TAB", tab: nextTab });
   }
 
   function openConceptIndex() {
+    closeMobileNavigatorAndRestoreFocus();
     if (state.navigatorTab === "concepts" && !state.selectedConceptId) return;
     rememberCurrentInterface();
     runVisualTransition(
@@ -5106,6 +5478,7 @@ export default function RegulationExplorer() {
   }
 
   function openConcept(conceptId: string) {
+    closeMobileNavigatorAndRestoreFocus();
     if (
       state.navigatorTab === "concepts" &&
       state.selectedConceptId === conceptId
@@ -5121,6 +5494,7 @@ export default function RegulationExplorer() {
   }
 
   function openAtlas() {
+    closeMobileNavigatorAndRestoreFocus();
     if (
       state.view === "atlas" &&
       state.navigatorTab === "sources" &&
@@ -5152,6 +5526,7 @@ export default function RegulationExplorer() {
   }
 
   function openInstrument(instrumentId: string) {
+    closeMobileNavigatorAndRestoreFocus();
     if (
       state.view === "instrument" &&
       state.selectedInstrumentId === instrumentId
@@ -5167,6 +5542,7 @@ export default function RegulationExplorer() {
   }
 
   function openView(nextView: View) {
+    closeMobileNavigatorAndRestoreFocus();
     if (nextView === "atlas" && state.navigatorTab === "concepts") {
       openAtlas();
       return;
@@ -5187,6 +5563,9 @@ export default function RegulationExplorer() {
     const conceptId = params.get("concept");
     const requestedNavigatorTab = params.get("nav");
     const requestedView = params.get("view") as View | null;
+    const requestedResearchView = params.get("researchView");
+    const requestedResearchCoverage = params.get("researchCoverage");
+    const requestedResearchRelevance = params.get("researchRelevance");
     const restoredConcept = conceptId ? conceptById.get(conceptId) : undefined;
     const restoredProvision = provisionId
       ? provisionMap.get(provisionId)
@@ -5196,6 +5575,22 @@ export default function RegulationExplorer() {
       : instrumentId
         ? instrumentById.get(instrumentId)
         : undefined;
+
+    if (isResearchLabView(requestedResearchView)) {
+      setResearchView(requestedResearchView);
+    }
+    if (
+      requestedResearchCoverage === "complete" ||
+      requestedResearchCoverage === "all"
+    ) {
+      setResearchCoverage(requestedResearchCoverage);
+    }
+    if (
+      requestedResearchRelevance === "substantive" ||
+      requestedResearchRelevance === "all"
+    ) {
+      setResearchRelevance(requestedResearchRelevance);
+    }
 
     if (restoredConcept) {
       dispatch({ type: "OPEN_CONCEPT", conceptId: restoredConcept.id });
@@ -5258,6 +5653,11 @@ export default function RegulationExplorer() {
     if (state.compareIds.length) {
       params.set("compare", state.compareIds.join(","));
     }
+    if (state.view === "research") {
+      params.set("researchView", researchView);
+      params.set("researchCoverage", researchCoverage);
+      params.set("researchRelevance", researchRelevance);
+    }
     const nextHash = "#" + params.toString();
     if (window.location.hash !== nextHash) {
       window.history.replaceState(
@@ -5273,7 +5673,63 @@ export default function RegulationExplorer() {
     state.selectedInstrumentId,
     state.selectedProvisionId,
     state.view,
+    researchCoverage,
+    researchRelevance,
+    researchView,
   ]);
+
+  useEffect(() => {
+    if (
+      !state.selectedInstrumentId ||
+      !["instrument", "connections", "timeline"].includes(state.view)
+    ) {
+      return;
+    }
+    void ensureInstrumentAvailable(state.selectedInstrumentId);
+  }, [
+    ensureInstrumentAvailable,
+    state.selectedInstrumentId,
+    state.view,
+  ]);
+
+  useEffect(() => {
+    if (state.view !== "compare") return;
+    const instrumentIds = Array.from(
+      new Set(
+        state.compareIds
+          .map((provisionId) => provisionMap.get(provisionId)?.instrumentId)
+          .filter((instrumentId): instrumentId is string => Boolean(instrumentId)),
+      ),
+    );
+    instrumentIds.forEach((instrumentId) => {
+      void ensureInstrumentAvailable(instrumentId);
+    });
+  }, [ensureInstrumentAvailable, state.compareIds, state.view]);
+
+  useEffect(() => {
+    if (
+      state.navigatorTab !== "sources" ||
+      !state.query.trim() ||
+      fullCorpusLoadState.phase !== "idle"
+    ) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      void ensureCompleteCorpus();
+    }, 180);
+    return () => window.clearTimeout(timer);
+  }, [
+    ensureCompleteCorpus,
+    fullCorpusLoadState.phase,
+    state.navigatorTab,
+    state.query,
+  ]);
+
+  useEffect(() => {
+    if (state.navigatorTab === "sources" && state.view === "research") {
+      void ensureCompleteCorpus();
+    }
+  }, [ensureCompleteCorpus, state.navigatorTab, state.view]);
 
   useEffect(() => {
     function handleKeyboard(event: KeyboardEvent) {
@@ -5284,11 +5740,22 @@ export default function RegulationExplorer() {
       if (event.key === "Escape" && document.activeElement === searchRef.current) {
         searchRef.current?.blur();
         dispatch({ type: "SET_QUERY", query: "" });
+      } else if (event.key === "Escape" && mobileNavigatorOpen) {
+        closeMobileNavigatorAndRestoreFocus();
       }
     }
     window.addEventListener("keydown", handleKeyboard);
     return () => window.removeEventListener("keydown", handleKeyboard);
-  }, []);
+  }, [closeMobileNavigatorAndRestoreFocus, mobileNavigatorOpen]);
+
+  useEffect(
+    () => () => {
+      if (mobileNavigatorFocusFrameRef.current !== null) {
+        window.cancelAnimationFrame(mobileNavigatorFocusFrameRef.current);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     workspaceRef.current?.scrollTo({ top: 0 });
@@ -5309,6 +5776,30 @@ export default function RegulationExplorer() {
   const selectedConcept = state.selectedConceptId
     ? conceptById.get(state.selectedConceptId)
     : undefined;
+  const selectedInstrumentLoadState: CorpusLoadState = state.selectedInstrumentId
+    ? hydratedInstrumentIds.has(state.selectedInstrumentId)
+      ? { phase: "ready" }
+      : (instrumentLoadStates[state.selectedInstrumentId] ?? { phase: "idle" })
+    : { phase: "idle" };
+  const researchCorpusInput = useMemo<ResearchCorpusInput>(
+    () => {
+      // Hydration mutates stable provision objects; the revision is the cache key.
+      void corpusRevision;
+      return ({
+        snapshotDate: "2026-07-20",
+        jurisdictions,
+        instruments,
+        provisions,
+        concepts,
+        themes: conceptThemes,
+        sourceAudits,
+        relations,
+        statusEvents,
+        englishCorpusCoverage: englishCorpusCoverageJson,
+      }) as unknown as ResearchCorpusInput;
+    },
+    [corpusRevision],
+  );
   const selectedRelations = selectedProvision
     ? relationsByProvision.get(selectedProvision.id) ?? []
     : [];
@@ -5455,6 +5946,7 @@ export default function RegulationExplorer() {
   }
 
   function openProvision(provision: Provision, relationId?: string) {
+    closeMobileNavigatorAndRestoreFocus();
     if (
       state.view === "connections" &&
       state.selectedProvisionId === provision.id &&
@@ -5487,31 +5979,61 @@ export default function RegulationExplorer() {
     "--left-column-width": `${columnLayout.leftWidth}px`,
     "--right-column-width": `${columnLayout.rightWidth}px`,
   } as CSSProperties;
+  const comparedInstrumentIds = Array.from(
+    new Set(
+      state.compareIds
+        .map((provisionId) => provisionMap.get(provisionId)?.instrumentId)
+        .filter((instrumentId): instrumentId is string => Boolean(instrumentId)),
+    ),
+  );
+  const compareLoadError = comparedInstrumentIds
+    .map((instrumentId) => instrumentLoadStates[instrumentId])
+    .find((loadState) => loadState?.phase === "error");
+  const compareCorpusReady = comparedInstrumentIds.every((instrumentId) =>
+    hydratedInstrumentIds.has(instrumentId),
+  );
+  const compareCorpusState: CorpusLoadState = compareLoadError ??
+    (compareCorpusReady ? { phase: "ready" } : { phase: "loading" });
   const provisionReaderContent =
     state.navigatorTab === "sources" &&
     state.view === "connections" &&
     selectedProvision ? (
-      <ProvisionReader
-        instrument={selectedInstrument}
-        provision={selectedProvision}
-        className="embedded-provision-reader"
-        selectedRelation={effectiveRelation}
-        relationsForProvision={selectedRelations}
-        readerTab={state.readerTab}
-        compareIds={state.compareIds}
-        onSetTab={(tab) => dispatch({ type: "SET_READER_TAB", tab })}
-        onSelectRelation={(relationId) =>
-          dispatch({ type: "SELECT_RELATION", relationId })
-        }
-        onOpenProvision={openProvision}
-        onOpenInstrument={openInstrument}
-        onOpenConcept={openConcept}
-        onAddCompare={(provisionId) =>
-          dispatch({ type: "ADD_COMPARE", provisionId })
-        }
-        readerLanguagePreference={readerLanguagePreference}
-        onSetReaderLanguagePreference={setReaderLanguagePreference}
-      />
+      selectedInstrumentLoadState.phase === "ready" ? (
+        <ProvisionReader
+          instrument={selectedInstrument}
+          provision={selectedProvision}
+          className="embedded-provision-reader"
+          selectedRelation={effectiveRelation}
+          relationsForProvision={selectedRelations}
+          readerTab={state.readerTab}
+          compareIds={state.compareIds}
+          onSetTab={(tab) => dispatch({ type: "SET_READER_TAB", tab })}
+          onSelectRelation={(relationId) =>
+            dispatch({ type: "SELECT_RELATION", relationId })
+          }
+          onOpenProvision={openProvision}
+          onOpenInstrument={openInstrument}
+          onOpenConcept={openConcept}
+          onAddCompare={(provisionId) =>
+            dispatch({ type: "ADD_COMPARE", provisionId })
+          }
+          readerLanguagePreference={readerLanguagePreference}
+          onSetReaderLanguagePreference={setReaderLanguagePreference}
+        />
+      ) : (
+        <CorpusLoadNotice
+          state={
+            selectedInstrumentLoadState.phase === "idle"
+              ? { phase: "loading" }
+              : selectedInstrumentLoadState
+          }
+          title={selectedInstrument?.shortTitle ?? selectedProvision.instrumentId}
+          onRetry={() =>
+            void ensureInstrumentAvailable(selectedProvision.instrumentId, true)
+          }
+          onBackToAtlas={openAtlas}
+        />
+      )
     ) : null;
   const atlasGlobePanel =
     state.navigatorTab === "sources" && state.view === "atlas" ? (
@@ -5698,9 +6220,26 @@ export default function RegulationExplorer() {
           state.navigatorTab === "concepts" && state.view === "atlas"
             ? "concept-visualization-active"
             : "",
+          mobileNavigatorOpen ? "is-mobile-navigator-open" : "",
         ].filter(Boolean).join(" ")}
+        data-mobile-nav-open={mobileNavigatorOpen ? "true" : "false"}
         style={appShellStyle}
       >
+        <button
+          ref={mobileNavigatorToggleRef}
+          type="button"
+          className="mobile-navigator-toggle"
+          aria-controls="corpus-navigator-panel"
+          aria-expanded={mobileNavigatorOpen}
+          onClick={toggleMobileNavigator}
+        >
+          {mobileNavigatorOpen ? (
+            <PanelLeftClose aria-hidden="true" />
+          ) : (
+            <PanelLeftOpen aria-hidden="true" />
+          )}
+          <span>{mobileNavigatorOpen ? "Close navigator" : "Open navigator"}</span>
+        </button>
         <button
           type="button"
           className="column-toggle column-toggle-left"
@@ -5789,11 +6328,13 @@ export default function RegulationExplorer() {
           selectedProvisionId={state.selectedProvisionId}
           selectedConceptId={state.selectedConceptId}
           query={state.query}
+          fullTextSearchState={fullCorpusLoadState}
           onSetNavigatorTab={setNavigatorTab}
           onOpenAtlas={openAtlas}
           onOpenInstrument={openInstrument}
           onOpenProvision={openProvision}
           onOpenConcept={openConcept}
+          onRetryFullTextSearch={() => void ensureCompleteCorpus(true)}
         />
 
         <section
@@ -5846,14 +6387,18 @@ export default function RegulationExplorer() {
             />
           )}
           {state.navigatorTab === "sources" && state.view === "research" && (
-            <ResearchLab
-              data={researchLabData}
-              defaultInstrumentIds={[
-                "eu-gdpr",
-                "eu-ai-act",
-                "cn-pipl",
-                "us-nist-ai-rmf-1-0",
-              ]}
+            <LazyResearchView
+              input={researchCorpusInput}
+              ready={fullCorpusLoadState.phase === "ready"}
+              errorMessage={fullCorpusLoadState.error}
+              initialView={researchView}
+              initialCoverageScope={researchCoverage}
+              initialRelevanceScope={researchRelevance}
+              onViewChange={setResearchView}
+              onCoverageScopeChange={setResearchCoverage}
+              onRelevanceScopeChange={setResearchRelevance}
+              onRetry={() => void ensureCompleteCorpus(true)}
+              onBackToAtlas={openAtlas}
               onOpenInstrument={openInstrument}
               onOpenProvision={(provisionId) => {
                 const provision = provisionMap.get(provisionId);
@@ -5871,11 +6416,31 @@ export default function RegulationExplorer() {
             />
           )}
           {state.navigatorTab === "sources" && state.view === "instrument" && selectedInstrument && (
-            <InstrumentGenome
-              instrument={selectedInstrument}
-              onOpenProvision={openProvision}
-              onOpenInstrument={openInstrument}
-            />
+            selectedInstrumentLoadState.phase === "error" ? (
+              <CorpusLoadNotice
+                state={selectedInstrumentLoadState}
+                title={selectedInstrument.shortTitle}
+                onRetry={() =>
+                  void ensureInstrumentAvailable(selectedInstrument.id, true)
+                }
+                onBackToAtlas={openAtlas}
+              />
+            ) : (
+              <>
+                {selectedInstrumentLoadState.phase !== "ready" && (
+                  <p className="restricted-text-note" role="status">
+                    Loading complete provision text in the background. The
+                    indexed structure remains available while the corpus shard
+                    is retrieved.
+                  </p>
+                )}
+                <InstrumentGenome
+                  instrument={selectedInstrument}
+                  onOpenProvision={openProvision}
+                  onOpenInstrument={openInstrument}
+                />
+              </>
+            )
           )}
           {state.navigatorTab === "sources" && state.view === "connections" && selectedProvision && (
             provisionReaderContent
@@ -5884,12 +6449,25 @@ export default function RegulationExplorer() {
             <LineageTimeline instrument={selectedInstrument} />
           )}
           {state.navigatorTab === "sources" && state.view === "compare" && (
-            <CompareView
-              compareIds={state.compareIds}
-              onRemove={(provisionId) =>
-                dispatch({ type: "REMOVE_COMPARE", provisionId })
-              }
-            />
+            compareCorpusReady ? (
+              <CompareView
+                compareIds={state.compareIds}
+                onRemove={(provisionId) =>
+                  dispatch({ type: "REMOVE_COMPARE", provisionId })
+                }
+              />
+            ) : (
+              <CorpusLoadNotice
+                state={compareCorpusState}
+                title="the selected provisions"
+                onRetry={() => {
+                  comparedInstrumentIds.forEach((instrumentId) => {
+                    void ensureInstrumentAvailable(instrumentId, true);
+                  });
+                }}
+                onBackToAtlas={openAtlas}
+              />
+            )
           )}
         </section>
 
