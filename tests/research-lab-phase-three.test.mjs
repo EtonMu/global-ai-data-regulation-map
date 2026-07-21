@@ -319,7 +319,7 @@ test("undirected relations use a bidirectional cue and confidence is scoped", ()
 });
 
 test("Phase 3 reflows locally and reserves horizontal scrolling for the audit table", () => {
-  assert.match(labStyles, /\.phaseSwitch\s*\{[\s\S]*?repeat\(3,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(labStyles, /\.phaseSwitch\s*\{[\s\S]*?repeat\(4,\s*minmax\(0,\s*1fr\)\)/);
   assert.match(labStyles, /\.archetypeWorkspace\s*\{[\s\S]*?min-inline-size:\s*0/);
   assert.match(labStyles, /\.auditTableScroll\s*\{[\s\S]*?overflow-x:\s*auto/);
   assert.match(labStyles, /\.auditTable\s*\{[\s\S]*?min-inline-size:\s*1180px/);

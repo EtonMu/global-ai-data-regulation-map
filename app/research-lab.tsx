@@ -11,6 +11,8 @@ import {
 import {
   ArrowLeftRight,
   ArrowRight,
+  CalendarRange,
+  ChartNoAxesColumnIncreasing,
   Clock3,
   Database,
   Dna,
@@ -22,6 +24,7 @@ import {
   Network,
   Pause,
   Play,
+  ScanSearch,
   Rows3,
   RotateCcw,
   Waypoints,
@@ -51,9 +54,13 @@ export type ResearchLabView =
   | "bridges"
   | "pathways"
   | "archetypes"
-  | "audit";
+  | "audit"
+  | "horizon"
+  | "microscope"
+  | "neighborhoods"
+  | "granularity";
 
-type ResearchLabPhase = "patterns" | "relations" | "models";
+type ResearchLabPhase = "patterns" | "relations" | "models" | "dynamics";
 
 export type ResearchLabProps = {
   data: ResearchLabData;
@@ -255,6 +262,30 @@ const viewDefinitions: Array<{
     label: "Mapping Evidence Audit",
     icon: ListChecks,
     phase: "models",
+  },
+  {
+    id: "horizon",
+    label: "Applicability Horizon",
+    icon: CalendarRange,
+    phase: "dynamics",
+  },
+  {
+    id: "microscope",
+    label: "Article Concept Microscope",
+    icon: ScanSearch,
+    phase: "dynamics",
+  },
+  {
+    id: "neighborhoods",
+    label: "Neighborhood Stability",
+    icon: Waypoints,
+    phase: "dynamics",
+  },
+  {
+    id: "granularity",
+    label: "Granularity + Corpus Bias",
+    icon: ChartNoAxesColumnIncreasing,
+    phase: "dynamics",
   },
 ];
 
@@ -3907,6 +3938,1142 @@ function MappingEvidenceAudit({
   );
 }
 
+function ApplicabilityHorizon({
+  data,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const horizon = data.applicabilityHorizon;
+  const instrumentById = useMemo(
+    () => new Map(data.instruments.map((instrument) => [instrument.id, instrument])),
+    [data.instruments],
+  );
+  const conceptById = useMemo(
+    () => new Map(data.concepts.map((concept) => [concept.id, concept])),
+    [data.concepts],
+  );
+  const provisionGroupById = useMemo(
+    () =>
+      new Map(
+        horizon.provisionDateGroups.map((group) => [group.id, group]),
+      ),
+    [horizon.provisionDateGroups],
+  );
+  const statusEventById = useMemo(
+    () => new Map(horizon.statusEvents.map((event) => [event.id, event])),
+    [horizon.statusEvents],
+  );
+  const futureGroups = horizon.provisionDateGroups.filter(
+    (group) => group.temporalStatus === "future",
+  );
+  const futureEvents = horizon.statusEvents.filter(
+    (event) => event.temporalStatus === "future",
+  );
+  const horizonDates = useMemo(
+    () =>
+      Array.from(
+        new Set([
+          horizon.snapshotDate,
+          ...futureGroups.map((group) => group.date),
+          ...futureEvents.map((event) => event.date),
+        ]),
+      ).sort(),
+    [futureEvents, futureGroups, horizon.snapshotDate],
+  );
+  const [horizonIndex, setHorizonIndex] = useState(0);
+
+  const selectedHorizonIndex = Math.min(
+    horizonIndex,
+    Math.max(0, horizonDates.length - 1),
+  );
+  const selectedDate =
+    horizonDates[selectedHorizonIndex] ??
+    horizon.snapshotDate;
+  const startTime = Date.parse(`${horizon.snapshotDate}T00:00:00Z`);
+  const endDate = horizonDates.at(-1) ?? horizon.snapshotDate;
+  const endTime = Date.parse(`${endDate}T00:00:00Z`);
+  const timeSpan = Math.max(1, endTime - startTime);
+  const datePosition = (date: string) => {
+    const value = Date.parse(`${date}T00:00:00Z`);
+    return Math.max(0, Math.min(100, ((value - startTime) / timeSpan) * 100));
+  };
+  const activeGroups = futureGroups.filter((group) => group.date <= selectedDate);
+  const activeEvents = futureEvents.filter((event) => event.date <= selectedDate);
+  const activeProvisionCount = activeGroups.reduce(
+    (sum, group) => sum + group.provisionCount,
+    0,
+  );
+  const activeConceptCounts = new Map<string, number>();
+  activeGroups.forEach((group) => {
+    group.conceptCounts.forEach(({ conceptId, provisionCount }) => {
+      activeConceptCounts.set(
+        conceptId,
+        (activeConceptCounts.get(conceptId) ?? 0) + provisionCount,
+      );
+    });
+  });
+  const leadingConcepts = [...activeConceptCounts.entries()]
+    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
+    .slice(0, 6);
+  const lanes = horizon.instruments
+    .filter(
+      (instrument) =>
+        instrument.futureProvisionCount > 0 ||
+        instrument.statusEventIds.some(
+          (eventId) => statusEventById.get(eventId)?.temporalStatus === "future",
+        ),
+    )
+    .sort((left, right) => {
+      const leftInstrument = instrumentById.get(left.instrumentId);
+      const rightInstrument = instrumentById.get(right.instrumentId);
+      return (
+        (leftInstrument?.atlasOrder ?? 999) -
+          (rightInstrument?.atlasOrder ?? 999) ||
+        (leftInstrument?.shortTitle ?? left.instrumentId).localeCompare(
+          rightInstrument?.shortTitle ?? right.instrumentId,
+        )
+      );
+    });
+  const cursorPosition = datePosition(selectedDate);
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>11 / Explicit future dates</span>
+          <h2>Applicability Horizon</h2>
+          <p>
+            Move through recorded future commencement dates without converting
+            them into a prediction of complete legal applicability.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.applicabilityWorkspace}>
+        <div className={styles.applicabilityControls}>
+          <label className={classNames(styles.field, styles.rangeField)}>
+            <span className={styles.fieldLabel}>Selected horizon</span>
+            <span className={styles.rangeValue}>
+              <strong>{formatDate(selectedDate)}</strong>
+              <span>
+                {selectedHorizonIndex} of {Math.max(0, horizonDates.length - 1)} recorded
+                future date steps
+              </span>
+            </span>
+            <input
+              type="range"
+              min={0}
+              max={Math.max(0, horizonDates.length - 1)}
+              step={1}
+              value={selectedHorizonIndex}
+              aria-label="Selected applicability horizon"
+              onChange={(event) => setHorizonIndex(Number(event.target.value))}
+            />
+          </label>
+          <button
+            type="button"
+            className={styles.actionButton}
+            disabled={selectedHorizonIndex === 0}
+            onClick={() => setHorizonIndex(0)}
+          >
+            <RotateCcw aria-hidden="true" />
+            Snapshot date
+          </button>
+        </div>
+
+        <section
+          className={styles.applicabilitySummary}
+          aria-label={`Recorded change through ${formatDate(selectedDate)}`}
+        >
+          <div>
+            <span className={styles.fieldLabel}>Recorded through horizon</span>
+            <strong>
+              {formatter.format(activeProvisionCount)} provisions · {formatter.format(activeEvents.length)} instrument events
+            </strong>
+          </div>
+          <div className={styles.applicabilityConcepts}>
+            {leadingConcepts.length ? (
+              leadingConcepts.map(([conceptId, count]) => {
+                const concept = conceptById.get(conceptId);
+                if (!concept) return null;
+                return (
+                  <button
+                    type="button"
+                    key={conceptId}
+                    className={styles.conceptLink}
+                    style={conceptStyle(concept, data.themes)}
+                    onClick={() => onOpenConcept(conceptId)}
+                  >
+                    <ConceptIcon conceptId={conceptId} />
+                    <span>{concept.label}</span>
+                    <code>{count}</code>
+                  </button>
+                );
+              })
+            ) : (
+              <span className={styles.statMeta}>
+                No provision-level commencement falls within this horizon.
+              </span>
+            )}
+          </div>
+        </section>
+
+        {lanes.length ? (
+          <div className={styles.applicabilityScroll}>
+            <div
+              className={styles.applicabilityFigure}
+              role="group"
+              aria-label={`Explicit future provision and instrument dates from ${formatDate(horizon.snapshotDate)} through ${formatDate(endDate)}`}
+            >
+              <div className={styles.applicabilityAxis} aria-hidden="true">
+                <span className={styles.applicabilityAxisCorner}>Instrument</span>
+                <span className={styles.applicabilityAxisTrack}>
+                  <span className={styles.applicabilityAxisStart}>
+                    {formatDate(horizon.snapshotDate)}
+                  </span>
+                  <i
+                    className={styles.applicabilityCursor}
+                    style={
+                      { "--horizon-cursor": `${cursorPosition}%` } as VisualStyle
+                    }
+                  />
+                  <span className={styles.applicabilityAxisEnd}>
+                    {formatDate(endDate)}
+                  </span>
+                </span>
+              </div>
+              <div className={styles.applicabilityLaneList}>
+                {lanes.map((lane) => {
+                  const instrument = instrumentById.get(lane.instrumentId);
+                  if (!instrument) return null;
+                  const groups = lane.provisionDateGroupIds
+                    .map((groupId) => provisionGroupById.get(groupId))
+                    .filter(
+                      (group): group is NonNullable<typeof group> =>
+                        Boolean(group && group.temporalStatus === "future"),
+                    );
+                  const events = lane.statusEventIds
+                    .map((eventId) => statusEventById.get(eventId))
+                    .filter(
+                      (event): event is NonNullable<typeof event> =>
+                        Boolean(event && event.temporalStatus === "future"),
+                    );
+                  return (
+                    <div
+                      key={lane.instrumentId}
+                      className={styles.applicabilityLane}
+                      data-coverage={lane.coverageClass}
+                    >
+                      <button
+                        type="button"
+                        className={styles.applicabilityLaneLabel}
+                        onClick={() => onOpenInstrument(lane.instrumentId)}
+                      >
+                        <JurisdictionMark
+                          jurisdictionId={instrument.jurisdictionId}
+                        />
+                        <span>
+                          <strong>{instrument.shortTitle}</strong>
+                          <small>
+                            {humanizeResearchCode(lane.coverageClass)} corpus
+                          </small>
+                        </span>
+                      </button>
+                      <div className={styles.applicabilityTrack}>
+                        <i
+                          className={styles.applicabilityCursor}
+                          aria-hidden="true"
+                          style={
+                            {
+                              "--horizon-cursor": `${cursorPosition}%`,
+                            } as VisualStyle
+                          }
+                        />
+                        {groups.map((group) => (
+                          <button
+                            type="button"
+                            key={group.id}
+                            className={styles.applicabilityMarker}
+                            data-kind="provision"
+                            data-beyond={group.date > selectedDate}
+                            style={
+                              {
+                                "--horizon-position": `${datePosition(group.date)}%`,
+                              } as VisualStyle
+                            }
+                            aria-label={`${instrument.shortTitle}: ${group.provisionCount} provisions with recorded applicability date ${formatDate(group.date)}`}
+                            onClick={() =>
+                              group.provisionIds.length === 1
+                                ? onOpenProvision(group.provisionIds[0])
+                                : onOpenInstrument(group.instrumentId)
+                            }
+                          >
+                            <span>{group.provisionCount}</span>
+                          </button>
+                        ))}
+                        {events.map((event) => (
+                          <button
+                            type="button"
+                            key={event.id}
+                            className={styles.applicabilityMarker}
+                            data-kind="status"
+                            data-beyond={event.date > selectedDate}
+                            style={
+                              {
+                                "--horizon-position": `${datePosition(event.date)}%`,
+                              } as VisualStyle
+                            }
+                            aria-label={`${instrument.shortTitle}: ${event.label}, ${formatDate(event.date)}`}
+                            onClick={() => onOpenInstrument(event.instrumentId)}
+                          >
+                            <span className={styles.srOnly}>{event.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.emptyState}>
+            No explicit future dates are recorded after this corpus snapshot.
+          </div>
+        )}
+
+        <div className={styles.applicabilityLegend} aria-label="Timeline legend">
+          <span data-kind="provision"><i /> Provision-level date group</span>
+          <span data-kind="status"><i /> Instrument lifecycle event</span>
+          <span data-beyond="true"><i /> Beyond selected horizon</span>
+        </div>
+
+        <section className={styles.applicabilityUnresolved}>
+          <span className={styles.fieldLabel}>Dates not placed on the timeline</span>
+          <p>
+            {formatter.format(horizon.missingProvisionDateCount)} provisions have
+            no recorded applicability date; {formatter.format(horizon.unresolvedProvisionDateCount)} provision dates and {formatter.format(horizon.unresolvedStatusEvents.length)} lifecycle dates could not be resolved.
+          </p>
+        </section>
+      </div>
+
+      <MethodNote>
+        The horizon plots only explicit, machine-resolvable dates recorded in the
+        corpus. A marker can describe a provision date or an instrument-level event;
+        neither establishes that every obligation in the instrument is active on
+        the selected date. Missing and unresolved dates remain visible as corpus
+        limits.
+      </MethodNote>
+    </>
+  );
+}
+
+function ArticleConceptMicroscope({
+  data,
+  defaultInstrumentIds,
+  onOpenInstrument,
+  onOpenProvision,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  defaultInstrumentIds?: string[];
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenProvision: ResearchLabProps["onOpenProvision"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const microscope = data.articleMicroscope;
+  const instrumentById = useMemo(
+    () => new Map(data.instruments.map((instrument) => [instrument.id, instrument])),
+    [data.instruments],
+  );
+  const conceptById = useMemo(
+    () => new Map(data.concepts.map((concept) => [concept.id, concept])),
+    [data.concepts],
+  );
+  const initialInstrumentId =
+    defaultInstrumentIds?.find((id) =>
+      microscope.instruments.some((instrument) => instrument.instrumentId === id),
+    ) ??
+    microscope.instruments.find((instrument) => instrument.instrumentId === "eu-gdpr")
+      ?.instrumentId ??
+    microscope.instruments.find((instrument) => instrument.coverageClass === "complete")
+      ?.instrumentId ??
+    microscope.instruments[0]?.instrumentId ??
+    "";
+  const [instrumentId, setInstrumentId] = useState(initialInstrumentId);
+  const profile =
+    microscope.instruments.find((instrument) => instrument.instrumentId === instrumentId) ??
+    microscope.instruments[0];
+  const [selectedProvisionId, setSelectedProvisionId] = useState(
+    profile?.bands.find((band) => band.relevance === "substantive-topic")
+      ?.provisionId ??
+      profile?.bands[0]?.provisionId ??
+      "",
+  );
+
+  const effectiveSelectedProvisionId = profile?.bands.some(
+    (band) => band.provisionId === selectedProvisionId,
+  )
+    ? selectedProvisionId
+    : profile?.bands.find((band) => band.relevance === "substantive-topic")
+        ?.provisionId ??
+      profile?.bands[0]?.provisionId ??
+      "";
+  const selectedBand =
+    profile?.bands.find(
+      (band) => band.provisionId === effectiveSelectedProvisionId,
+    ) ??
+    profile?.bands[0];
+  const instrument = profile ? instrumentById.get(profile.instrumentId) : null;
+  const completeProfiles = microscope.instruments.filter(
+    (item) => item.coverageClass === "complete",
+  );
+  const selectedProfiles = microscope.instruments.filter(
+    (item) => item.coverageClass !== "complete",
+  );
+
+  if (!profile || !instrument) {
+    return <div className={styles.emptyState}>No provision profiles are available.</div>;
+  }
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>12 / Provision structure</span>
+          <h2>Article Concept Microscope</h2>
+          <p>
+            Read an instrument as a source-ordered sequence of provisions and inspect
+            where recorded governance concepts occur.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.microscopeWorkspace}>
+        <div className={styles.microscopePicker}>
+          <label className={styles.field}>
+            <span className={styles.fieldLabel}>Instrument</span>
+            <select
+              value={profile.instrumentId}
+              aria-label="Microscope instrument"
+              onChange={(event) => {
+                const nextInstrumentId = event.target.value;
+                const nextProfile = microscope.instruments.find(
+                  (item) => item.instrumentId === nextInstrumentId,
+                );
+                setInstrumentId(nextInstrumentId);
+                setSelectedProvisionId(
+                  nextProfile?.bands.find(
+                    (band) => band.relevance === "substantive-topic",
+                  )?.provisionId ??
+                    nextProfile?.bands[0]?.provisionId ??
+                    "",
+                );
+              }}
+            >
+              <optgroup label="Complete corpus">
+                {completeProfiles.map((item) => {
+                  const optionInstrument = instrumentById.get(item.instrumentId);
+                  return (
+                    <option key={item.instrumentId} value={item.instrumentId}>
+                      {optionInstrument?.shortTitle ?? item.instrumentId}
+                    </option>
+                  );
+                })}
+              </optgroup>
+              {selectedProfiles.length > 0 && (
+                <optgroup label="Selected / partial corpus">
+                  {selectedProfiles.map((item) => {
+                    const optionInstrument = instrumentById.get(item.instrumentId);
+                    return (
+                      <option key={item.instrumentId} value={item.instrumentId}>
+                        {optionInstrument?.shortTitle ?? item.instrumentId}
+                      </option>
+                    );
+                  })}
+                </optgroup>
+              )}
+            </select>
+          </label>
+          <button
+            type="button"
+            className={styles.actionButton}
+            onClick={() => onOpenInstrument(profile.instrumentId)}
+          >
+            Open instrument <ArrowRight aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className={styles.microscopeFigure}>
+          <section className={styles.microscopeStripFrame}>
+            <div className={styles.microscopeIdentity}>
+              <JurisdictionMark
+                jurisdictionId={instrument.jurisdictionId}
+              />
+              <span>
+                <strong>{instrument.shortTitle}</strong>
+                <small>
+                  {formatter.format(profile.totalProvisionCount)} provisions · {humanizeResearchCode(profile.coverageClass)} corpus
+                </small>
+              </span>
+            </div>
+            <div
+              className={styles.microscopeStrip}
+              role="group"
+              aria-label={`${instrument.shortTitle} provision sequence`}
+            >
+              {profile.bands.map((band, index) => {
+                const leadConcept = conceptById.get(band.conceptIds[0]);
+                const priorBand = profile.bands[index - 1];
+                const density = profile.maximumConceptAssignmentCount
+                  ? band.conceptAssignmentCount /
+                    profile.maximumConceptAssignmentCount
+                  : 0;
+                return (
+                  <button
+                    type="button"
+                    key={band.provisionId}
+                    className={styles.microscopeProvision}
+                    data-relevance={band.relevance}
+                    data-selected={
+                      band.provisionId === effectiveSelectedProvisionId
+                    }
+                    data-structure-start={
+                      index === 0 || priorBand?.structureId !== band.structureId
+                    }
+                    data-annotation={band.hasActorTags || band.hasScopeTags}
+                    style={
+                      {
+                        "--concept-color": leadConcept
+                          ? conceptColor(leadConcept, data.themes)
+                          : "var(--muted)",
+                        "--concept-density": density,
+                      } as VisualStyle
+                    }
+                    aria-label={`${band.locator}: ${band.title}; ${band.conceptAssignmentCount} recorded concepts; ${humanizeResearchCode(band.relevance)}`}
+                    onFocus={() => setSelectedProvisionId(band.provisionId)}
+                    onMouseEnter={() => setSelectedProvisionId(band.provisionId)}
+                    onClick={() => {
+                      setSelectedProvisionId(band.provisionId);
+                      onOpenProvision(band.provisionId);
+                    }}
+                  >
+                    <span className={styles.srOnly}>{band.locator}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className={styles.microscopeLegend}>
+              <span data-relevance="substantive-topic"><i /> Substantive</span>
+              <span data-relevance="structural-context"><i /> Structural</span>
+              <span data-relevance="unreviewed"><i /> Unreviewed</span>
+            </div>
+          </section>
+
+          <section className={styles.microscopeReadout} aria-live="polite">
+            {selectedBand && (
+              <>
+                <header className={styles.sectionHeader}>
+                  <div>
+                    <span className={styles.sectionCode}>Selected provision</span>
+                    <h3>{selectedBand.locator}</h3>
+                  </div>
+                  <p>{selectedBand.title}</p>
+                </header>
+                <div className={styles.microscopeConcepts}>
+                  {selectedBand.conceptIds.length ? (
+                    selectedBand.conceptIds.map((conceptId) => {
+                      const concept = conceptById.get(conceptId);
+                      if (!concept) return null;
+                      return (
+                        <button
+                          type="button"
+                          key={conceptId}
+                          className={styles.conceptLink}
+                          style={conceptStyle(concept, data.themes)}
+                          onClick={() => onOpenConcept(conceptId)}
+                        >
+                          <ConceptIcon conceptId={conceptId} />
+                          <span>{concept.label}</span>
+                        </button>
+                      );
+                    })
+                  ) : (
+                    <span className={styles.statMeta}>
+                      No concept assignment is recorded for this provision.
+                    </span>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  className={styles.actionButton}
+                  onClick={() => onOpenProvision(selectedBand.provisionId)}
+                >
+                  Open provision <ArrowRight aria-hidden="true" />
+                </button>
+              </>
+            )}
+
+            <div className={styles.microscopeConceptTracks}>
+              <span className={styles.fieldLabel}>Concept spans in source order</span>
+              {profile.conceptTracks.map((track) => {
+                const concept = conceptById.get(track.conceptId);
+                if (!concept) return null;
+                const denominator = Math.max(1, profile.totalProvisionCount - 1);
+                const start = (track.firstIndex / denominator) * 100;
+                const end = (track.lastIndex / denominator) * 100;
+                return (
+                  <button
+                    type="button"
+                    key={track.conceptId}
+                    className={styles.microscopeConceptTrack}
+                    style={conceptStyle(concept, data.themes)}
+                    onClick={() => onOpenConcept(track.conceptId)}
+                  >
+                    <span>{concept.label}</span>
+                    <i className={styles.microscopeConceptRail}>
+                      <i
+                        className={styles.microscopeConceptSpan}
+                        style={
+                          {
+                            "--concept-start": `${start}%`,
+                            "--concept-end": `${end}%`,
+                          } as VisualStyle
+                        }
+                      />
+                    </i>
+                    <code>{track.provisionCount}</code>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <MethodNote>
+        Color and intensity encode recorded concept assignments, not legal
+        importance. A blank or unreviewed provision means the annotation is absent
+        or pending in this corpus; it does not establish that the provision lacks
+        relevance. Selected and partial corpora remain explicitly labelled.
+      </MethodNote>
+    </>
+  );
+}
+
+function NeighborhoodStability({
+  data,
+  defaultInstrumentIds,
+  onOpenInstrument,
+  onOpenConcept,
+}: {
+  data: ResearchLabData;
+  defaultInstrumentIds?: string[];
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+  onOpenConcept: ResearchLabProps["onOpenConcept"];
+}) {
+  const neighborhoods = data.neighborhoodStability;
+  const instrumentById = useMemo(
+    () => new Map(data.instruments.map((instrument) => [instrument.id, instrument])),
+    [data.instruments],
+  );
+  const conceptById = useMemo(
+    () => new Map(data.concepts.map((concept) => [concept.id, concept])),
+    [data.concepts],
+  );
+  const initialInstrumentId =
+    defaultInstrumentIds?.find((id) => neighborhoods.fitInstrumentIds.includes(id)) ??
+    (neighborhoods.fitInstrumentIds.includes("eu-gdpr") ? "eu-gdpr" : null) ??
+    neighborhoods.fitInstrumentIds[0] ??
+    "";
+  const [instrumentId, setInstrumentId] = useState(initialInstrumentId);
+  const record =
+    neighborhoods.records.find((item) => item.instrumentId === instrumentId) ??
+    neighborhoods.records[0];
+  const rankedCandidates = useMemo(
+    () =>
+      record
+        ? [...record.candidates].sort(
+            (left, right) =>
+              Math.min(left.cosine.baseRank, left.hellinger.baseRank) -
+                Math.min(right.cosine.baseRank, right.hellinger.baseRank) ||
+              left.neighborInstrumentId.localeCompare(right.neighborInstrumentId),
+          )
+        : [],
+    [record],
+  );
+  const [selectedNeighborId, setSelectedNeighborId] = useState(
+    rankedCandidates[0]?.neighborInstrumentId ?? "",
+  );
+
+  if (!record) {
+    return <div className={styles.emptyState}>No complete-corpus neighborhoods are available.</div>;
+  }
+
+  const focalInstrument = instrumentById.get(record.instrumentId);
+  const effectiveSelectedNeighborId = rankedCandidates.some(
+    (candidate) => candidate.neighborInstrumentId === selectedNeighborId,
+  )
+    ? selectedNeighborId
+    : rankedCandidates[0]?.neighborInstrumentId ?? "";
+  const selectedCandidate =
+    rankedCandidates.find(
+      (candidate) =>
+        candidate.neighborInstrumentId === effectiveSelectedNeighborId,
+    ) ?? rankedCandidates[0];
+  const maximumRank = Math.max(1, neighborhoods.fitInstrumentIds.length - 1);
+  const rankPosition = (rank: number) =>
+    maximumRank <= 1 ? 0 : ((rank - 1) / (maximumRank - 1)) * 100;
+  const displayedCandidates = rankedCandidates.slice(0, 12);
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>13 / Robust neighborhoods</span>
+          <h2>Neighborhood Stability</h2>
+          <p>
+            Compare nearest regulatory profiles under two distance measures and
+            {" "}{neighborhoods.themeOmissionCount} leave-one-theme-out perturbations.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.neighborhoodWorkspace}>
+        <label className={classNames(styles.field, styles.neighborhoodPicker)}>
+          <span className={styles.fieldLabel}>Focal complete corpus</span>
+          <select
+            value={record.instrumentId}
+            aria-label="Focal complete-corpus instrument"
+            onChange={(event) => {
+              const nextInstrumentId = event.target.value;
+              const nextRecord = neighborhoods.records.find(
+                (item) => item.instrumentId === nextInstrumentId,
+              );
+              const nextCandidate = nextRecord
+                ? [...nextRecord.candidates].sort(
+                    (left, right) =>
+                      Math.min(left.cosine.baseRank, left.hellinger.baseRank) -
+                      Math.min(right.cosine.baseRank, right.hellinger.baseRank),
+                  )[0]
+                : null;
+              setInstrumentId(nextInstrumentId);
+              setSelectedNeighborId(nextCandidate?.neighborInstrumentId ?? "");
+            }}
+          >
+            {neighborhoods.fitInstrumentIds.map((id) => (
+              <option key={id} value={id}>
+                {instrumentById.get(id)?.shortTitle ?? id}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <section className={styles.neighborhoodSummary}>
+          <div>
+            <span className={styles.fieldLabel}>Nearest-neighbor agreement</span>
+            <strong>
+              {record.sameNearestNeighbor
+                ? `Both measures select ${instrumentById.get(record.cosineNearestNeighborId)?.shortTitle ?? record.cosineNearestNeighborId}`
+                : `Cosine: ${instrumentById.get(record.cosineNearestNeighborId)?.shortTitle ?? record.cosineNearestNeighborId} · Hellinger: ${instrumentById.get(record.hellingerNearestNeighborId)?.shortTitle ?? record.hellingerNearestNeighborId}`}
+            </strong>
+          </div>
+          <div>
+            <span className={styles.fieldLabel}>Theme-omission retention</span>
+            <strong>
+              Cosine {record.cosineNearestStabilityCount}/{neighborhoods.themeOmissionCount} · Hellinger {record.hellingerNearestStabilityCount}/{neighborhoods.themeOmissionCount}
+            </strong>
+          </div>
+        </section>
+
+        <div className={styles.neighborhoodLegend} aria-label="Neighborhood plot legend">
+          <span data-metric="cosine"><i /> Cosine rank</span>
+          <span data-metric="hellinger"><i /> Hellinger rank</span>
+          <span data-metric="range"><i /> Leave-one-theme-out rank range · metric-specific</span>
+        </div>
+
+        <section
+          className={styles.neighborhoodPlot}
+          aria-label={`Neighbor ranks for ${focalInstrument?.shortTitle ?? record.instrumentId}`}
+        >
+          {displayedCandidates.map((candidate) => {
+            const neighbor = instrumentById.get(candidate.neighborInstrumentId);
+            const cosineRangeStart = rankPosition(
+              candidate.cosine.leaveOneThemeOutMinimumRank,
+            );
+            const cosineRangeEnd = rankPosition(
+              candidate.cosine.leaveOneThemeOutMaximumRank,
+            );
+            const hellingerRangeStart = rankPosition(
+              candidate.hellinger.leaveOneThemeOutMinimumRank,
+            );
+            const hellingerRangeEnd = rankPosition(
+              candidate.hellinger.leaveOneThemeOutMaximumRank,
+            );
+            return (
+              <div
+                key={candidate.neighborInstrumentId}
+                className={styles.neighborhoodRow}
+                data-selected={
+                  candidate.neighborInstrumentId === effectiveSelectedNeighborId
+                }
+              >
+                <button
+                  type="button"
+                  className={styles.neighborhoodIdentity}
+                  aria-pressed={
+                    candidate.neighborInstrumentId === effectiveSelectedNeighborId
+                  }
+                  onClick={() => setSelectedNeighborId(candidate.neighborInstrumentId)}
+                >
+                  {neighbor && (
+                    <JurisdictionMark
+                      jurisdictionId={neighbor.jurisdictionId}
+                    />
+                  )}
+                  <span>
+                    <strong>{neighbor?.shortTitle ?? candidate.neighborInstrumentId}</strong>
+                    <small>
+                      C {candidate.cosine.baseRank} · H {candidate.hellinger.baseRank}
+                    </small>
+                  </span>
+                </button>
+                <div
+                  className={styles.neighborhoodTrack}
+                  role="img"
+                  aria-label={`${neighbor?.shortTitle ?? candidate.neighborInstrumentId}: cosine rank ${candidate.cosine.baseRank} with leave-one-theme-out range ${candidate.cosine.leaveOneThemeOutMinimumRank} to ${candidate.cosine.leaveOneThemeOutMaximumRank}; Hellinger rank ${candidate.hellinger.baseRank} with range ${candidate.hellinger.leaveOneThemeOutMinimumRank} to ${candidate.hellinger.leaveOneThemeOutMaximumRank}`}
+                >
+                  <i
+                    className={styles.neighborhoodRange}
+                    data-metric="cosine"
+                    style={
+                      {
+                        "--neighbor-range-start": `${cosineRangeStart}%`,
+                        "--neighbor-range-width": `${Math.max(0, cosineRangeEnd - cosineRangeStart)}%`,
+                      } as VisualStyle
+                    }
+                  />
+                  <i
+                    className={styles.neighborhoodRange}
+                    data-metric="hellinger"
+                    style={
+                      {
+                        "--neighbor-range-start": `${hellingerRangeStart}%`,
+                        "--neighbor-range-width": `${Math.max(0, hellingerRangeEnd - hellingerRangeStart)}%`,
+                      } as VisualStyle
+                    }
+                  />
+                  <i
+                    className={styles.neighborhoodMarker}
+                    data-metric="cosine"
+                    style={
+                      {
+                        "--neighbor-cosine-position": `${rankPosition(candidate.cosine.baseRank)}%`,
+                      } as VisualStyle
+                    }
+                  />
+                  <i
+                    className={styles.neighborhoodMarker}
+                    data-metric="hellinger"
+                    style={
+                      {
+                        "--neighbor-hellinger-position": `${rankPosition(candidate.hellinger.baseRank)}%`,
+                      } as VisualStyle
+                    }
+                  />
+                </div>
+                <span className={styles.neighborhoodRank}>
+                  C {candidate.cosine.leaveOneThemeOutMinimumRank}–{candidate.cosine.leaveOneThemeOutMaximumRank} · H {candidate.hellinger.leaveOneThemeOutMinimumRank}–{candidate.hellinger.leaveOneThemeOutMaximumRank}
+                </span>
+              </div>
+            );
+          })}
+        </section>
+
+        {selectedCandidate && (
+          <section className={styles.neighborhoodReadout} aria-live="polite">
+            <header className={styles.sectionHeader}>
+              <div>
+                <span className={styles.sectionCode}>Selected neighbor</span>
+                <h3>
+                  {instrumentById.get(selectedCandidate.neighborInstrumentId)?.shortTitle ??
+                    selectedCandidate.neighborInstrumentId}
+                </h3>
+              </div>
+              <button
+                type="button"
+                className={styles.actionButton}
+                onClick={() => onOpenInstrument(selectedCandidate.neighborInstrumentId)}
+              >
+                Open instrument <ArrowRight aria-hidden="true" />
+              </button>
+            </header>
+            <div className={styles.neighborhoodContributors}>
+              {(
+                [
+                  ["Cosine distance contributors", selectedCandidate.cosineContributors],
+                  ["Hellinger distance contributors", selectedCandidate.hellingerContributors],
+                ] as const
+              ).map(([label, contributors]) => (
+                <section key={label}>
+                  <span className={styles.fieldLabel}>{label}</span>
+                  <div className={styles.neighborhoodContributorList}>
+                    {contributors.slice(0, 5).map((contributor) => {
+                      const concept = conceptById.get(contributor.conceptId);
+                      if (!concept) return null;
+                      return (
+                        <button
+                          type="button"
+                          key={`${label}-${contributor.conceptId}`}
+                          className={styles.conceptLink}
+                          style={conceptStyle(concept, data.themes)}
+                          onClick={() => onOpenConcept(contributor.conceptId)}
+                        >
+                          <ConceptIcon conceptId={contributor.conceptId} />
+                          <span>{concept.label}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+
+      <MethodNote>
+        Rank 1 means nearest within the {formatter.format(neighborhoods.fitInstrumentIds.length)} complete-corpus profiles. The two bands preserve the separate cosine and Hellinger rank ranges after omitting each theme once. Distances are not legal-equivalence or compliance scores; selected and partial corpora are excluded from fitting rather than treated as zeros. The plot shows the 12 candidates with the best baseline rank under either metric; every candidate remains present in the derivation.
+      </MethodNote>
+    </>
+  );
+}
+
+function GranularityCorpusBias({
+  data,
+  onOpenInstrument,
+}: {
+  data: ResearchLabData;
+  onOpenInstrument: ResearchLabProps["onOpenInstrument"];
+}) {
+  const audit = data.granularityAudit;
+  const instrumentById = useMemo(
+    () => new Map(data.instruments.map((instrument) => [instrument.id, instrument])),
+    [data.instruments],
+  );
+  const maximumProvisionCount = Math.max(
+    1,
+    ...audit.instruments.map((instrument) => instrument.totalProvisionCount),
+  );
+  const maximumConceptDensity = Math.max(
+    1,
+    ...audit.instruments.map(
+      (instrument) =>
+        instrument.conceptAssignmentsPerSubstantiveProvision ?? 0,
+    ),
+  );
+  const coverageOrder = ["complete", "selected", "unclassified"] as const;
+  const coverageLabels = {
+    complete: "Complete corpora",
+    selected: "Selected / partial corpora",
+    unclassified: "Unclassified coverage",
+  } as const;
+
+  function measure(
+    id: string,
+    value: number | null,
+    maximum: number,
+    display: string,
+    ariaLabel: string,
+  ) {
+    const width = value === null ? 0 : Math.max(0, Math.min(100, (value / maximum) * 100));
+    return (
+      <div
+        className={styles.granularityMeasure}
+        data-measure={id}
+        role="cell"
+        aria-label={ariaLabel}
+      >
+        <span className={styles.granularityTrack} aria-hidden="true">
+          <i
+            className={styles.granularityFill}
+            style={{ "--granularity-value": `${width}%` } as VisualStyle}
+          />
+        </span>
+        <span className={styles.granularityValue}>{display}</span>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <header className={styles.panelHeader}>
+        <div>
+          <span className={styles.sectionCode}>14 / Measurement limits</span>
+          <h2>Granularity + Corpus Bias</h2>
+          <p>
+            Compare drafting granularity and annotation coverage on shared scales
+            before interpreting counts, clusters or mappings.
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.granularityWorkspace}>
+        <div className={styles.granularityLegend}>
+          <span><i data-scale="count" /> Shared maximum within each count or density column</span>
+          <span><i data-scale="coverage" /> Shared 0–100% annotation coverage scale</span>
+        </div>
+        <div className={styles.granularityScroll}>
+          <div className={styles.granularityPlot} role="table" aria-label="Instrument granularity and corpus annotation coverage">
+            <div className={styles.granularityHeader} role="row">
+              <span role="columnheader">Instrument</span>
+              <span role="columnheader">Provision records</span>
+              <span role="columnheader">Concept assignments / substantive provision</span>
+              <span role="columnheader">Structural-context share</span>
+              <span role="columnheader">Stored text</span>
+              <span role="columnheader">Actor tags recorded</span>
+              <span role="columnheader">Scope tags recorded</span>
+              <span role="columnheader">Applicability date recorded</span>
+            </div>
+            {coverageOrder.map((coverageClass) => {
+              const summary = audit.coverageClasses.find(
+                (item) => item.coverageClass === coverageClass,
+              );
+              const instruments = audit.instruments
+                .filter((item) => item.coverageClass === coverageClass)
+                .sort((left, right) => {
+                  const leftInstrument = instrumentById.get(left.instrumentId);
+                  const rightInstrument = instrumentById.get(right.instrumentId);
+                  return (
+                    (leftInstrument?.atlasOrder ?? 999) -
+                      (rightInstrument?.atlasOrder ?? 999) ||
+                    (leftInstrument?.shortTitle ?? left.instrumentId).localeCompare(
+                      rightInstrument?.shortTitle ?? right.instrumentId,
+                    )
+                  );
+                });
+              if (!instruments.length) return null;
+              return (
+                <section
+                  key={coverageClass}
+                  className={styles.granularityGroup}
+                  data-coverage={coverageClass}
+                  role="rowgroup"
+                  aria-label={coverageLabels[coverageClass]}
+                >
+                  <div className={styles.granularityGroupHeader} role="row">
+                    <strong role="rowheader">{coverageLabels[coverageClass]}</strong>
+                    <span role="cell">
+                      {formatter.format(summary?.instrumentCount ?? instruments.length)} instruments · {formatter.format(summary?.provisionCount ?? 0)} provision records
+                    </span>
+                  </div>
+                  {instruments.map((item) => {
+                    const instrument = instrumentById.get(item.instrumentId);
+                    const conceptDensity =
+                      item.conceptAssignmentsPerSubstantiveProvision;
+                    return (
+                      <div
+                        key={item.instrumentId}
+                        className={styles.granularityRow}
+                        data-coverage={coverageClass}
+                        role="row"
+                      >
+                        <div className={styles.granularityInstrumentCell} role="rowheader">
+                          <button
+                            type="button"
+                            className={styles.granularityInstrument}
+                            onClick={() => onOpenInstrument(item.instrumentId)}
+                          >
+                            {instrument && (
+                              <JurisdictionMark
+                                jurisdictionId={instrument.jurisdictionId}
+                              />
+                            )}
+                            <span>
+                              <strong>{instrument?.shortTitle ?? item.instrumentId}</strong>
+                              <small>
+                                {formatter.format(item.substantiveProvisionCount)} substantive · {formatter.format(item.structuralContextCount)} structural
+                              </small>
+                            </span>
+                          </button>
+                        </div>
+                        {measure(
+                          "provisions",
+                          item.totalProvisionCount,
+                          maximumProvisionCount,
+                          formatter.format(item.totalProvisionCount),
+                          `${instrument?.shortTitle ?? item.instrumentId}: ${formatter.format(item.totalProvisionCount)} provision records`,
+                        )}
+                        {measure(
+                          "concept-density",
+                          conceptDensity,
+                          maximumConceptDensity,
+                          conceptDensity === null ? "N/A" : conceptDensity.toFixed(2),
+                          `${instrument?.shortTitle ?? item.instrumentId}: ${conceptDensity === null ? "not available" : conceptDensity.toFixed(2)} concept assignments per substantive provision`,
+                        )}
+                        {measure(
+                          "structural-share",
+                          item.structuralContextShare,
+                          1,
+                          `${(item.structuralContextShare * 100).toFixed(1)}%`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: structural-context records are ${(item.structuralContextShare * 100).toFixed(1)} percent of provision records`,
+                        )}
+                        {measure(
+                          "stored-text",
+                          item.textCoverage.storedTextCoveragePercent,
+                          100,
+                          `${item.textCoverage.storedTextCoveragePercent.toFixed(1)}%`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: stored text recorded for ${item.textCoverage.storedTextCoveragePercent.toFixed(1)} percent of provision records`,
+                        )}
+                        {measure(
+                          "actor-tags",
+                          item.annotationCoverage.actorTags.coveragePercent,
+                          100,
+                          `${item.annotationCoverage.actorTags.coveragePercent.toFixed(1)}%`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: actor tags recorded on ${item.annotationCoverage.actorTags.recordedProvisionCount} of ${item.totalProvisionCount} provisions`,
+                        )}
+                        {measure(
+                          "scope-tags",
+                          item.annotationCoverage.scopeTags.coveragePercent,
+                          100,
+                          `${item.annotationCoverage.scopeTags.coveragePercent.toFixed(1)}%`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: scope tags recorded on ${item.annotationCoverage.scopeTags.recordedProvisionCount} of ${item.totalProvisionCount} provisions`,
+                        )}
+                        {measure(
+                          "applicability",
+                          item.annotationCoverage.appliesFrom.coveragePercent,
+                          100,
+                          `${item.annotationCoverage.appliesFrom.coveragePercent.toFixed(1)}%`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: applicability date recorded on ${item.annotationCoverage.appliesFrom.recordedProvisionCount} of ${item.totalProvisionCount} provisions, including ${item.annotationCoverage.appliesFrom.unresolvedProvisionCount} unresolved values`,
+                        )}
+                      </div>
+                    );
+                  })}
+                </section>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <MethodNote>
+        Each column has one shared scale across all displayed instruments; unlike
+        units are never combined into a score. Complete and selected corpora are
+        separated. Text coverage reports storage completeness but does not compare
+        document length across languages. Low actor, scope or applicability coverage
+        means the annotation is not recorded here—it is not evidence that the law
+        contains no relevant actor, scope condition or commencement rule.
+      </MethodNote>
+    </>
+  );
+}
+
 export function ResearchLab({
   data,
   initialView = "observatory",
@@ -3942,6 +5109,11 @@ export function ResearchLab({
       "models"
         ? initialView
         : "archetypes",
+    dynamics:
+      viewDefinitions.find((definition) => definition.id === initialView)?.phase ===
+      "dynamics"
+        ? initialView
+        : "horizon",
   });
   const phaseViewDefinitions = viewDefinitions.filter(
     (definition) => definition.phase === activePhase,
@@ -3967,6 +5139,12 @@ export function ResearchLab({
       title: "Models + evidence audit",
       description:
         "Interrogate exploratory instrument groupings and audit every mapping across separate, inspectable evidence dimensions.",
+    },
+    dynamics: {
+      code: "PHASE 04",
+      title: "Dynamics + measurement",
+      description:
+        "Examine explicit future applicability, provision-level concept structure, neighborhood robustness and corpus measurement limits.",
     },
   };
   const activePhaseMetadata = phaseMetadata[activePhase];
@@ -4064,6 +5242,14 @@ export function ResearchLab({
         >
           <span>Phase 03</span>
           <strong>Models + evidence audit</strong>
+        </button>
+        <button
+          type="button"
+          aria-pressed={activePhase === "dynamics"}
+          onClick={() => activatePhase("dynamics")}
+        >
+          <span>Phase 04</span>
+          <strong>Dynamics + measurement</strong>
         </button>
       </div>
 
@@ -4185,6 +5371,37 @@ export function ResearchLab({
             onOpenInstrument={onOpenInstrument}
             onOpenProvision={onOpenProvision}
             onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "horizon" && (
+          <ApplicabilityHorizon
+            data={data}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "microscope" && (
+          <ArticleConceptMicroscope
+            data={data}
+            defaultInstrumentIds={defaultInstrumentIds}
+            onOpenInstrument={onOpenInstrument}
+            onOpenProvision={onOpenProvision}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "neighborhoods" && (
+          <NeighborhoodStability
+            data={data}
+            defaultInstrumentIds={defaultInstrumentIds}
+            onOpenInstrument={onOpenInstrument}
+            onOpenConcept={onOpenConcept}
+          />
+        )}
+        {activeView === "granularity" && (
+          <GranularityCorpusBias
+            data={data}
+            onOpenInstrument={onOpenInstrument}
           />
         )}
       </section>

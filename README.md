@@ -12,7 +12,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Instrument Genome** — browse an instrument chapter by chapter in a titled article list, use curated high-level section summaries for orientation, and open an individual article or provision.
 - **Provision Reader** — read stored legal text, an explicit English-coverage notice, or a clearly labelled editorial summary where no source text is stored. Where verified original-language text is stored, the reader defaults to English and exposes the original language after the user selects it. Official English text, government but non-authoritative translations, project-authored references, historical or future-phase references, coverage notices, and editorial summaries remain distinct.
 - **Core Concept Constellation** — move from filled theme nodes to outline concept nodes and the legal sources that provide evidence for each concept.
-- **Research Lab** — investigate the corpus through three linked phases: five coverage-aware corpus-pattern views; translation-provenance, qualified-relation robustness, and directed operationalization views; then exploratory instrument archetypes and a mapping-evidence audit. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
+- **Research Lab** — investigate the corpus through four linked phases: five coverage-aware corpus-pattern views; translation-provenance, qualified-relation robustness, and directed operationalization views; exploratory instrument archetypes and a mapping-evidence audit; then prospective applicability, article-level concept structure, neighbourhood robustness, and corpus-granularity diagnostics. Every analytical mark can be traced back to an instrument, provision, relation, source, or core concept.
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
@@ -89,6 +89,17 @@ Phase 3 turns the existing fingerprints and qualified mappings into inspectable 
 
 Phase 3 does not produce legal families, equivalence classes, strictness rankings, compliance probabilities, or a composite mapping-quality score. `editorial-reviewed` records remain project review states rather than independent expert or peer review. The clustering and audit are versioned to the repository snapshot and inherit its concept taxonomy, provision granularity, corpus boundaries, and annotation choices.
 
+## Phase 4 research methods
+
+Phase 4 turns time, document structure, metric sensitivity, and annotation coverage into inspectable research diagnostics.
+
+- **Applicability Horizon** starts at the fixed **2026-07-20** snapshot and uses only explicit provision-level `appliesFrom` dates and source-backed lifecycle events. Repeated provision dates are grouped without losing the underlying provision IDs or concepts. Instrument events, provision commencement, and unrecorded dates remain separate; the view is not a reconstruction of every rule applicable on a selected date.
+- **Article Concept Microscope** preserves source order and renders every stored provision as an interactive mark. Structure, topic-review state, and mapped core concepts remain separately identifiable, and every mark opens the underlying provision. Concentrated colour means recorded concept assignments in this corpus—not legal importance or regulatory intensity.
+- **Neighborhood Stability** compares two separately reported profile geometries: cosine distance over L2-normalized TF-IDF and Hellinger distance over concept-prevalence probability distributions. Leave-one-theme-out runs expose nearest-neighbor rank ranges and show how often the same neighbor remains first; concept-level distance contributions remain inspectable. The view does not convert distance into a similarity percentage or a finding of legal equivalence.
+- **Granularity & Corpus Bias** compares provision counts, concept assignments per included provision, structural/substantive composition, and the recorded coverage of actor, scope, and commencement annotations. Complete and selected corpora remain visibly separate, missing fields mean `not recorded`, and script- or translation-dependent text length is not used as a legal-drafting quality measure.
+
+Phase 4 is diagnostic rather than predictive. A future event is not current law at the snapshot, an unrecorded annotation is not proof of legal absence, and a stable computational neighbour is not a substitute for provision-level legal analysis.
+
 ## Intended uses
 
 - Learn the structure of a major instrument and follow a concept across borders.
@@ -117,7 +128,7 @@ app/
   regulation-explorer.tsx    interactive atlas, reader, graph, timeline, compare
   regulation-globe.tsx       border-free physical-land point globe and compass
   concept-constellation.tsx  theme, concept, and source-evidence visualization
-  research-lab.tsx           ten linked corpus, relation, model, and audit views
+  research-lab.tsx           fourteen linked corpus, relation, model, and diagnostic views
   research-lab-data.ts       auditable corpus metrics and analytical derivations
 data/geo/
   natural-earth-land-110m.json  public-domain physical-land geometry

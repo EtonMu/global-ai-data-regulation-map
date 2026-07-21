@@ -53,6 +53,9 @@ export type ResearchProvisionInput = {
   appliesFrom?: string | null;
   versionAsOf?: string | null;
   summary?: string;
+  /** Stored source-language text, when the merged runtime corpus supplies it. */
+  fullText?: string;
+  paragraphs?: string[];
   conceptIds: string[];
   actorTags?: string[];
   scopeTags?: string[];
@@ -665,6 +668,238 @@ export type ResearchMappingEvidenceAudit = {
   }>;
 };
 
+export type ResearchApplicabilityDateState =
+  | "resolved"
+  | "unresolved"
+  | "missing";
+
+export type ResearchApplicabilityConceptCount = {
+  conceptId: string;
+  provisionCount: number;
+};
+
+export type ResearchApplicabilityProvisionDateGroup = {
+  id: string;
+  instrumentId: string;
+  date: string;
+  temporalStatus: ResearchTemporalStatus;
+  coverageClass: ResearchCoverageClass;
+  provisionIds: string[];
+  provisionCount: number;
+  substantiveProvisionCount: number;
+  structuralContextCount: number;
+  unreviewedProvisionCount: number;
+  conceptCounts: ResearchApplicabilityConceptCount[];
+};
+
+export type ResearchApplicabilityStatusEvent = ResearchStatusEventInput & {
+  temporalStatus: ResearchTemporalStatus;
+};
+
+export type ResearchUnresolvedProvisionDate = {
+  provisionId: string;
+  instrumentId: string;
+  rawDate: string;
+  coverageClass: ResearchCoverageClass;
+};
+
+export type ResearchUnresolvedStatusEvent = Omit<
+  ResearchStatusEventInput,
+  "date"
+> & {
+  rawDate: string;
+};
+
+export type ResearchApplicabilityInstrument = {
+  instrumentId: string;
+  coverageMode: string;
+  coverageClass: ResearchCoverageClass;
+  totalProvisionCount: number;
+  resolvedProvisionDateCount: number;
+  missingProvisionDateCount: number;
+  unresolvedProvisionDateCount: number;
+  beforeSnapshotProvisionCount: number;
+  onSnapshotProvisionCount: number;
+  futureProvisionCount: number;
+  provisionDateGroupIds: string[];
+  statusEventIds: string[];
+  unresolvedStatusEventIds: string[];
+};
+
+export type ResearchApplicabilityHorizon = {
+  snapshotDate: string;
+  earliestResolvedDate: string | null;
+  latestResolvedDate: string | null;
+  resolvedProvisionDateCount: number;
+  missingProvisionDateCount: number;
+  unresolvedProvisionDateCount: number;
+  beforeSnapshotProvisionCount: number;
+  onSnapshotProvisionCount: number;
+  futureProvisionCount: number;
+  resolvedStatusEventCount: number;
+  unresolvedStatusEventCount: number;
+  provisionDateGroups: ResearchApplicabilityProvisionDateGroup[];
+  statusEvents: ResearchApplicabilityStatusEvent[];
+  missingProvisionIds: string[];
+  unresolvedProvisionDates: ResearchUnresolvedProvisionDate[];
+  unresolvedStatusEvents: ResearchUnresolvedStatusEvent[];
+  instruments: ResearchApplicabilityInstrument[];
+};
+
+export type ResearchNeighborhoodRankStability = {
+  distance: number;
+  baseRank: number;
+  leaveOneThemeOutMinimumRank: number;
+  leaveOneThemeOutMaximumRank: number;
+  firstPlaceCount: number;
+  unchangedRankCount: number;
+};
+
+export type ResearchNeighborhoodConceptContributor = {
+  conceptId: string;
+  contribution: number;
+  shareOfSquaredDistance: number;
+};
+
+export type ResearchNeighborhoodCandidate = {
+  neighborInstrumentId: string;
+  cosine: ResearchNeighborhoodRankStability;
+  hellinger: ResearchNeighborhoodRankStability;
+  cosineContributors: ResearchNeighborhoodConceptContributor[];
+  hellingerContributors: ResearchNeighborhoodConceptContributor[];
+};
+
+export type ResearchNeighborhoodInstrument = {
+  instrumentId: string;
+  cosineNearestNeighborId: string;
+  cosineNearestDistance: number;
+  hellingerNearestNeighborId: string;
+  hellingerNearestDistance: number;
+  sameNearestNeighbor: boolean;
+  cosineNearestStabilityCount: number;
+  hellingerNearestStabilityCount: number;
+  candidates: ResearchNeighborhoodCandidate[];
+};
+
+export type ResearchNeighborhoodStability = {
+  featureConceptIds: string[];
+  themeIds: string[];
+  fitInstrumentIds: string[];
+  excludedInstrumentIds: string[];
+  themeOmissionCount: number;
+  records: ResearchNeighborhoodInstrument[];
+};
+
+export type ResearchAnnotationCoverage = {
+  recordedProvisionCount: number;
+  missingProvisionCount: number;
+  coveragePercent: number;
+};
+
+export type ResearchApplicabilityAnnotationCoverage =
+  ResearchAnnotationCoverage & {
+    resolvedProvisionCount: number;
+    unresolvedProvisionCount: number;
+  };
+
+export type ResearchGranularityTextCoverage = {
+  storedTextProvisionCount: number;
+  missingTextProvisionCount: number;
+  storedTextCoveragePercent: number;
+  storedUnicodeCharacterCount: number;
+  meanUnicodeCharactersPerStoredProvision: number | null;
+  medianUnicodeCharactersPerStoredProvision: number | null;
+};
+
+export type ResearchGranularityInstrument = {
+  instrumentId: string;
+  coverageMode: string;
+  coverageClass: ResearchCoverageClass;
+  includedInDefaultAnalysis: boolean;
+  totalProvisionCount: number;
+  substantiveProvisionCount: number;
+  structuralContextCount: number;
+  unreviewedProvisionCount: number;
+  substantiveShare: number;
+  structuralContextShare: number;
+  unreviewedShare: number;
+  conceptAssignmentCount: number;
+  substantiveConceptAssignmentCount: number;
+  conceptAssignmentsPerProvision: number | null;
+  conceptAssignmentsPerSubstantiveProvision: number | null;
+  mappedProvisionCount: number;
+  unmappedProvisionCount: number;
+  mappedSubstantiveProvisionCount: number;
+  multiConceptProvisionCount: number;
+  maximumConceptAssignmentsOnProvision: number;
+  annotationCoverage: {
+    actorTags: ResearchAnnotationCoverage;
+    scopeTags: ResearchAnnotationCoverage;
+    appliesFrom: ResearchApplicabilityAnnotationCoverage;
+  };
+  textCoverage: ResearchGranularityTextCoverage;
+};
+
+export type ResearchGranularityCoverageClassSummary = {
+  coverageClass: ResearchCoverageClass;
+  instrumentCount: number;
+  provisionCount: number;
+  substantiveProvisionCount: number;
+  structuralContextCount: number;
+  unreviewedProvisionCount: number;
+  conceptAssignmentCount: number;
+  conceptAssignmentsPerProvision: number | null;
+  actorTagRecordedProvisionCount: number;
+  scopeTagRecordedProvisionCount: number;
+  appliesFromRecordedProvisionCount: number;
+  storedTextProvisionCount: number;
+  missingTextProvisionCount: number;
+};
+
+export type ResearchGranularityAudit = {
+  instruments: ResearchGranularityInstrument[];
+  coverageClasses: ResearchGranularityCoverageClassSummary[];
+};
+
+export type ResearchArticleMicroscopeBand = {
+  provisionId: string;
+  index: number;
+  startRatio: number;
+  endRatio: number;
+  locator: string;
+  title: string;
+  relevance: ResearchRelevance;
+  conceptIds: string[];
+  conceptAssignmentCount: number;
+  structureId: string;
+  hasActorTags: boolean;
+  hasScopeTags: boolean;
+  appliesFromState: ResearchApplicabilityDateState;
+};
+
+export type ResearchArticleMicroscopeConceptTrack = {
+  conceptId: string;
+  provisionCount: number;
+  firstIndex: number;
+  lastIndex: number;
+  meanPosition: number;
+};
+
+export type ResearchArticleMicroscopeInstrument = {
+  instrumentId: string;
+  coverageMode: string;
+  coverageClass: ResearchCoverageClass;
+  includedInDefaultAnalysis: boolean;
+  totalProvisionCount: number;
+  maximumConceptAssignmentCount: number;
+  bands: ResearchArticleMicroscopeBand[];
+  conceptTracks: ResearchArticleMicroscopeConceptTrack[];
+};
+
+export type ResearchArticleMicroscope = {
+  instruments: ResearchArticleMicroscopeInstrument[];
+};
+
 export type ResearchLabData = {
   snapshotDate: string;
   methodology: {
@@ -679,6 +914,10 @@ export type ResearchLabData = {
     operationalPathDefinition: string;
     archetypeDefinition: string;
     relationAuditDefinition: string;
+    applicabilityHorizonDefinition: string;
+    neighborhoodStabilityDefinition: string;
+    granularityAuditDefinition: string;
+    articleMicroscopeDefinition: string;
   };
   coverage: ResearchCoverageObservatory;
   instruments: ResearchInstrumentDatum[];
@@ -695,6 +934,10 @@ export type ResearchLabData = {
   operationalizationPaths: ResearchOperationalizationPaths;
   instrumentArchetypes: ResearchInstrumentArchetypes;
   mappingEvidenceAudit: ResearchMappingEvidenceAudit;
+  applicabilityHorizon: ResearchApplicabilityHorizon;
+  neighborhoodStability: ResearchNeighborhoodStability;
+  granularityAudit: ResearchGranularityAudit;
+  articleMicroscope: ResearchArticleMicroscope;
 };
 
 const DEFAULT_COVERAGE_CLASSES: ResearchCoverageClass[] = ["complete"];
@@ -2819,6 +3062,897 @@ export function deriveMappingEvidenceAudit(
   };
 }
 
+function resolvedIsoDate(value: string | null | undefined): string | null {
+  if (typeof value !== "string") return null;
+  const normalized = value.trim();
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(normalized);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const timestamp = Date.UTC(year, month - 1, day);
+  const resolved = new Date(timestamp);
+  if (
+    resolved.getUTCFullYear() !== year ||
+    resolved.getUTCMonth() !== month - 1 ||
+    resolved.getUTCDate() !== day
+  ) {
+    return null;
+  }
+  return normalized;
+}
+
+function applicabilityDateState(
+  value: string | null | undefined,
+): ResearchApplicabilityDateState {
+  if (typeof value !== "string" || value.trim() === "") return "missing";
+  return resolvedIsoDate(value) ? "resolved" : "unresolved";
+}
+
+export function deriveApplicabilityHorizon(
+  input: Pick<
+    ResearchCorpusInput,
+    | "snapshotDate"
+    | "instruments"
+    | "provisions"
+    | "sourceAudits"
+    | "statusEvents"
+  >,
+): ResearchApplicabilityHorizon {
+  const snapshotDate = input.snapshotDate ?? RESEARCH_SNAPSHOT_DATE;
+  const { auditByInstrument, classByInstrument } = coverageMaps(
+    input.sourceAudits,
+  );
+  const provisionGroups = new Map<
+    string,
+    { instrumentId: string; date: string; provisions: ResearchProvisionInput[] }
+  >();
+  const missingProvisionIds: string[] = [];
+  const unresolvedProvisionDates: ResearchUnresolvedProvisionDate[] = [];
+
+  input.provisions.forEach((provision) => {
+    const state = applicabilityDateState(provision.appliesFrom);
+    if (state === "missing") {
+      missingProvisionIds.push(provision.id);
+      return;
+    }
+    const date = resolvedIsoDate(provision.appliesFrom);
+    if (!date) {
+      unresolvedProvisionDates.push({
+        provisionId: provision.id,
+        instrumentId: provision.instrumentId,
+        rawDate: provision.appliesFrom!.trim(),
+        coverageClass:
+          classByInstrument.get(provision.instrumentId) ?? "unclassified",
+      });
+      return;
+    }
+    const key = `${provision.instrumentId}::${date}`;
+    const group = provisionGroups.get(key) ?? {
+      instrumentId: provision.instrumentId,
+      date,
+      provisions: [],
+    };
+    group.provisions.push(provision);
+    provisionGroups.set(key, group);
+  });
+
+  const provisionDateGroups: ResearchApplicabilityProvisionDateGroup[] =
+    Array.from(provisionGroups.values())
+      .map((group) => {
+        const conceptCounts = new Map<string, number>();
+        group.provisions.forEach((provision) => {
+          conceptsForProvision(provision)
+            .sort()
+            .forEach((conceptId) =>
+              conceptCounts.set(
+                conceptId,
+                (conceptCounts.get(conceptId) ?? 0) + 1,
+              ),
+            );
+        });
+        return {
+          id: `${group.instrumentId}::${group.date}`,
+          instrumentId: group.instrumentId,
+          date: group.date,
+          temporalStatus: temporalStatusFor(group.date, snapshotDate),
+          coverageClass:
+            classByInstrument.get(group.instrumentId) ?? "unclassified",
+          provisionIds: group.provisions
+            .map((provision) => provision.id)
+            .sort(),
+          provisionCount: group.provisions.length,
+          substantiveProvisionCount: group.provisions.filter(
+            (provision) =>
+              relevanceForProvision(provision) === "substantive-topic",
+          ).length,
+          structuralContextCount: group.provisions.filter(
+            (provision) =>
+              relevanceForProvision(provision) === "structural-context",
+          ).length,
+          unreviewedProvisionCount: group.provisions.filter(
+            (provision) => relevanceForProvision(provision) === "unreviewed",
+          ).length,
+          conceptCounts: Array.from(
+            conceptCounts,
+            ([conceptId, provisionCount]) => ({ conceptId, provisionCount }),
+          ).sort(
+            (left, right) =>
+              right.provisionCount - left.provisionCount ||
+              left.conceptId.localeCompare(right.conceptId),
+          ),
+        };
+      })
+      .sort(
+        (left, right) =>
+          left.date.localeCompare(right.date) ||
+          left.instrumentId.localeCompare(right.instrumentId),
+      );
+
+  const statusEvents: ResearchApplicabilityStatusEvent[] = [];
+  const unresolvedStatusEvents: ResearchUnresolvedStatusEvent[] = [];
+  input.statusEvents.forEach((event) => {
+    const date = resolvedIsoDate(event.date);
+    if (!date) {
+      const { date: rawDate, ...eventWithoutDate } = event;
+      unresolvedStatusEvents.push({
+        ...eventWithoutDate,
+        rawDate: typeof rawDate === "string" ? rawDate.trim() : "",
+      });
+      return;
+    }
+    statusEvents.push({
+      ...event,
+      date,
+      temporalStatus: temporalStatusFor(date, snapshotDate),
+    });
+  });
+  statusEvents.sort(
+    (left, right) =>
+      left.date.localeCompare(right.date) || left.id.localeCompare(right.id),
+  );
+  unresolvedStatusEvents.sort((left, right) => left.id.localeCompare(right.id));
+  missingProvisionIds.sort();
+  unresolvedProvisionDates.sort(
+    (left, right) =>
+      left.instrumentId.localeCompare(right.instrumentId) ||
+      left.provisionId.localeCompare(right.provisionId),
+  );
+
+  const groupsByInstrument = new Map<
+    string,
+    ResearchApplicabilityProvisionDateGroup[]
+  >();
+  provisionDateGroups.forEach((group) => {
+    const list = groupsByInstrument.get(group.instrumentId) ?? [];
+    list.push(group);
+    groupsByInstrument.set(group.instrumentId, list);
+  });
+  const statusEventsByInstrument = new Map<
+    string,
+    ResearchApplicabilityStatusEvent[]
+  >();
+  statusEvents.forEach((event) => {
+    const list = statusEventsByInstrument.get(event.instrumentId) ?? [];
+    list.push(event);
+    statusEventsByInstrument.set(event.instrumentId, list);
+  });
+  const unresolvedEventsByInstrument = new Map<
+    string,
+    ResearchUnresolvedStatusEvent[]
+  >();
+  unresolvedStatusEvents.forEach((event) => {
+    const list = unresolvedEventsByInstrument.get(event.instrumentId) ?? [];
+    list.push(event);
+    unresolvedEventsByInstrument.set(event.instrumentId, list);
+  });
+
+  const instruments: ResearchApplicabilityInstrument[] = input.instruments
+    .map((instrument) => {
+      const provisions = input.provisions.filter(
+        (provision) => provision.instrumentId === instrument.id,
+      );
+      const resolvedDates = provisions
+        .map((provision) => resolvedIsoDate(provision.appliesFrom))
+        .filter((date): date is string => Boolean(date));
+      return {
+        instrumentId: instrument.id,
+        coverageMode:
+          auditByInstrument.get(instrument.id)?.localCoverage.mode ??
+          "unclassified",
+        coverageClass:
+          classByInstrument.get(instrument.id) ?? "unclassified",
+        totalProvisionCount: provisions.length,
+        resolvedProvisionDateCount: resolvedDates.length,
+        missingProvisionDateCount: provisions.filter(
+          (provision) =>
+            applicabilityDateState(provision.appliesFrom) === "missing",
+        ).length,
+        unresolvedProvisionDateCount: provisions.filter(
+          (provision) =>
+            applicabilityDateState(provision.appliesFrom) === "unresolved",
+        ).length,
+        beforeSnapshotProvisionCount: resolvedDates.filter(
+          (date) => temporalStatusFor(date, snapshotDate) === "past",
+        ).length,
+        onSnapshotProvisionCount: resolvedDates.filter(
+          (date) => temporalStatusFor(date, snapshotDate) === "on-snapshot",
+        ).length,
+        futureProvisionCount: resolvedDates.filter(
+          (date) => temporalStatusFor(date, snapshotDate) === "future",
+        ).length,
+        provisionDateGroupIds: (groupsByInstrument.get(instrument.id) ?? []).map(
+          (group) => group.id,
+        ),
+        statusEventIds: (statusEventsByInstrument.get(instrument.id) ?? []).map(
+          (event) => event.id,
+        ),
+        unresolvedStatusEventIds: (
+          unresolvedEventsByInstrument.get(instrument.id) ?? []
+        ).map((event) => event.id),
+      };
+    })
+    .sort((left, right) =>
+      left.instrumentId.localeCompare(right.instrumentId),
+    );
+  const resolvedDates = [
+    ...provisionDateGroups.map((group) => group.date),
+    ...statusEvents.map((event) => event.date),
+  ].sort();
+
+  return {
+    snapshotDate,
+    earliestResolvedDate: resolvedDates[0] ?? null,
+    latestResolvedDate: resolvedDates.at(-1) ?? null,
+    resolvedProvisionDateCount: provisionDateGroups.reduce(
+      (sum, group) => sum + group.provisionCount,
+      0,
+    ),
+    missingProvisionDateCount: missingProvisionIds.length,
+    unresolvedProvisionDateCount: unresolvedProvisionDates.length,
+    beforeSnapshotProvisionCount: provisionDateGroups
+      .filter((group) => group.temporalStatus === "past")
+      .reduce((sum, group) => sum + group.provisionCount, 0),
+    onSnapshotProvisionCount: provisionDateGroups
+      .filter((group) => group.temporalStatus === "on-snapshot")
+      .reduce((sum, group) => sum + group.provisionCount, 0),
+    futureProvisionCount: provisionDateGroups
+      .filter((group) => group.temporalStatus === "future")
+      .reduce((sum, group) => sum + group.provisionCount, 0),
+    resolvedStatusEventCount: statusEvents.length,
+    unresolvedStatusEventCount: unresolvedStatusEvents.length,
+    provisionDateGroups,
+    statusEvents,
+    missingProvisionIds,
+    unresolvedProvisionDates,
+    unresolvedStatusEvents,
+    instruments,
+  };
+}
+
+export function hellingerDistance(
+  left: readonly number[],
+  right: readonly number[],
+): number {
+  if (left.length !== right.length || left.length === 0) return 1;
+  const leftTotal = left.reduce((sum, value) => sum + Math.max(0, value), 0);
+  const rightTotal = right.reduce((sum, value) => sum + Math.max(0, value), 0);
+  if (!leftTotal && !rightTotal) return 0;
+  if (!leftTotal || !rightTotal) return 1;
+  const squared = left.reduce((sum, value, index) => {
+    const leftProbability = Math.max(0, value) / leftTotal;
+    const rightProbability = Math.max(0, right[index] ?? 0) / rightTotal;
+    return (
+      sum +
+      (Math.sqrt(leftProbability) - Math.sqrt(rightProbability)) ** 2
+    );
+  }, 0);
+  return Math.max(0, Math.min(1, Math.sqrt(squared / 2)));
+}
+
+type ResearchNeighborhoodVector = {
+  instrumentId: string;
+  tfidf: number[];
+  prevalenceProbability: number[];
+};
+
+function probabilityVector(values: readonly number[]): number[] {
+  const nonnegative = values.map((value) => Math.max(0, value));
+  const total = nonnegative.reduce((sum, value) => sum + value, 0);
+  return total
+    ? nonnegative.map((value) => value / total)
+    : nonnegative.map(() => 0);
+}
+
+function neighborhoodRanking(
+  source: ResearchNeighborhoodVector,
+  candidates: readonly ResearchNeighborhoodVector[],
+  metric: "cosine" | "hellinger",
+  activeIndices: readonly number[],
+): Map<string, { rank: number; distance: number }> {
+  const sourceValues =
+    metric === "cosine" ? source.tfidf : source.prevalenceProbability;
+  return new Map(
+    candidates
+      .filter((candidate) => candidate.instrumentId !== source.instrumentId)
+      .map((candidate) => {
+        const candidateValues =
+          metric === "cosine"
+            ? candidate.tfidf
+            : candidate.prevalenceProbability;
+        const left = activeIndices.map((index) => sourceValues[index] ?? 0);
+        const right = activeIndices.map((index) => candidateValues[index] ?? 0);
+        return {
+          instrumentId: candidate.instrumentId,
+          distance:
+            metric === "cosine"
+              ? cosineDistance(left, right)
+              : hellingerDistance(left, right),
+        };
+      })
+      .sort(
+        (left, right) =>
+          left.distance - right.distance ||
+          left.instrumentId.localeCompare(right.instrumentId),
+      )
+      .map((candidate, index) => [
+        candidate.instrumentId,
+        { rank: index + 1, distance: candidate.distance },
+      ]),
+  );
+}
+
+function neighborhoodContributors(
+  conceptIds: readonly string[],
+  left: readonly number[],
+  right: readonly number[],
+  metric: "cosine" | "hellinger",
+): ResearchNeighborhoodConceptContributor[] {
+  const contributions = conceptIds.map((conceptId, index) => {
+    const contribution =
+      metric === "cosine"
+        ? 0.5 * ((left[index] ?? 0) - (right[index] ?? 0)) ** 2
+        : 0.5 *
+          (Math.sqrt(left[index] ?? 0) - Math.sqrt(right[index] ?? 0)) ** 2;
+    return { conceptId, contribution };
+  });
+  const total = contributions.reduce(
+    (sum, contribution) => sum + contribution.contribution,
+    0,
+  );
+  return contributions
+    .filter((contribution) => contribution.contribution > 0)
+    .sort(
+      (leftContribution, rightContribution) =>
+        rightContribution.contribution - leftContribution.contribution ||
+        leftContribution.conceptId.localeCompare(rightContribution.conceptId),
+    )
+    .slice(0, 5)
+    .map((contribution) => ({
+      conceptId: contribution.conceptId,
+      contribution: round(contribution.contribution),
+      shareOfSquaredDistance: total
+        ? round(contribution.contribution / total)
+        : 0,
+    }));
+}
+
+export function deriveRegulatoryNeighborhoodStability(
+  fingerprints: readonly ResearchInstrumentFingerprint[],
+  concepts: readonly ResearchConceptInput[],
+  themes: readonly ResearchThemeInput[],
+): ResearchNeighborhoodStability {
+  const featureConceptIds = concepts
+    .map((concept) => concept.id)
+    .filter((conceptId, index, all) => all.indexOf(conceptId) === index)
+    .sort();
+  const conceptById = new Map(concepts.map((concept) => [concept.id, concept]));
+  const themeIds = themes
+    .filter((theme) =>
+      featureConceptIds.some(
+        (conceptId) => conceptById.get(conceptId)?.theme === theme.id,
+      ),
+    )
+    .sort((left, right) => left.order - right.order || left.id.localeCompare(right.id))
+    .map((theme) => theme.id);
+  const vectors: ResearchNeighborhoodVector[] = fingerprints
+    .filter((fingerprint) => fingerprint.includedInDefaultAnalysis)
+    .map((fingerprint) => {
+      const weightByConcept = new Map(
+        fingerprint.weights.map((weight) => [weight.conceptId, weight]),
+      );
+      const tfidf = normalizeVector(
+        featureConceptIds.map(
+          (conceptId) => weightByConcept.get(conceptId)?.normalizedTfidf ?? 0,
+        ),
+      );
+      const prevalenceProbability = probabilityVector(
+        featureConceptIds.map(
+          (conceptId) => weightByConcept.get(conceptId)?.prevalence ?? 0,
+        ),
+      );
+      return {
+        instrumentId: fingerprint.instrumentId,
+        tfidf,
+        prevalenceProbability,
+      };
+    })
+    .filter(
+      (vector) =>
+        vector.tfidf.some((value) => value > 0) &&
+        vector.prevalenceProbability.some((value) => value > 0),
+    )
+    .sort((left, right) => left.instrumentId.localeCompare(right.instrumentId));
+  const fitInstrumentIds = vectors.map((vector) => vector.instrumentId);
+  const fitIdSet = new Set(fitInstrumentIds);
+  const excludedInstrumentIds = fingerprints
+    .map((fingerprint) => fingerprint.instrumentId)
+    .filter((instrumentId) => !fitIdSet.has(instrumentId))
+    .sort();
+  const allIndices = featureConceptIds.map((_, index) => index);
+  const omissionIndices = themeIds.map((themeId) =>
+    allIndices.filter(
+      (index) => conceptById.get(featureConceptIds[index])?.theme !== themeId,
+    ),
+  );
+
+  const records: ResearchNeighborhoodInstrument[] = vectors.flatMap((source) => {
+    if (vectors.length < 2) return [];
+    const cosineBase = neighborhoodRanking(
+      source,
+      vectors,
+      "cosine",
+      allIndices,
+    );
+    const hellingerBase = neighborhoodRanking(
+      source,
+      vectors,
+      "hellinger",
+      allIndices,
+    );
+    const cosineOmissions = omissionIndices.map((indices) =>
+      neighborhoodRanking(source, vectors, "cosine", indices),
+    );
+    const hellingerOmissions = omissionIndices.map((indices) =>
+      neighborhoodRanking(source, vectors, "hellinger", indices),
+    );
+
+    const candidates: ResearchNeighborhoodCandidate[] = vectors
+      .filter((candidate) => candidate.instrumentId !== source.instrumentId)
+      .map((candidate) => {
+        const cosine = cosineBase.get(candidate.instrumentId)!;
+        const hellinger = hellingerBase.get(candidate.instrumentId)!;
+        const cosineRanks = cosineOmissions.map(
+          (ranking) => ranking.get(candidate.instrumentId)?.rank ?? cosine.rank,
+        );
+        const hellingerRanks = hellingerOmissions.map(
+          (ranking) =>
+            ranking.get(candidate.instrumentId)?.rank ?? hellinger.rank,
+        );
+        return {
+          neighborInstrumentId: candidate.instrumentId,
+          cosine: {
+            distance: round(cosine.distance),
+            baseRank: cosine.rank,
+            leaveOneThemeOutMinimumRank: cosineRanks.length
+              ? Math.min(...cosineRanks)
+              : cosine.rank,
+            leaveOneThemeOutMaximumRank: cosineRanks.length
+              ? Math.max(...cosineRanks)
+              : cosine.rank,
+            firstPlaceCount: cosineRanks.filter((rank) => rank === 1).length,
+            unchangedRankCount: cosineRanks.filter(
+              (rank) => rank === cosine.rank,
+            ).length,
+          },
+          hellinger: {
+            distance: round(hellinger.distance),
+            baseRank: hellinger.rank,
+            leaveOneThemeOutMinimumRank: hellingerRanks.length
+              ? Math.min(...hellingerRanks)
+              : hellinger.rank,
+            leaveOneThemeOutMaximumRank: hellingerRanks.length
+              ? Math.max(...hellingerRanks)
+              : hellinger.rank,
+            firstPlaceCount: hellingerRanks.filter((rank) => rank === 1).length,
+            unchangedRankCount: hellingerRanks.filter(
+              (rank) => rank === hellinger.rank,
+            ).length,
+          },
+          cosineContributors: neighborhoodContributors(
+            featureConceptIds,
+            source.tfidf,
+            candidate.tfidf,
+            "cosine",
+          ),
+          hellingerContributors: neighborhoodContributors(
+            featureConceptIds,
+            source.prevalenceProbability,
+            candidate.prevalenceProbability,
+            "hellinger",
+          ),
+        };
+      })
+      .sort(
+        (left, right) =>
+          left.cosine.baseRank - right.cosine.baseRank ||
+          left.neighborInstrumentId.localeCompare(right.neighborInstrumentId),
+      );
+    const cosineNearest = candidates.find(
+      (candidate) => candidate.cosine.baseRank === 1,
+    )!;
+    const hellingerNearest = candidates.find(
+      (candidate) => candidate.hellinger.baseRank === 1,
+    )!;
+    return [
+      {
+        instrumentId: source.instrumentId,
+        cosineNearestNeighborId: cosineNearest.neighborInstrumentId,
+        cosineNearestDistance: cosineNearest.cosine.distance,
+        hellingerNearestNeighborId: hellingerNearest.neighborInstrumentId,
+        hellingerNearestDistance: hellingerNearest.hellinger.distance,
+        sameNearestNeighbor:
+          cosineNearest.neighborInstrumentId ===
+          hellingerNearest.neighborInstrumentId,
+        cosineNearestStabilityCount: cosineNearest.cosine.firstPlaceCount,
+        hellingerNearestStabilityCount:
+          hellingerNearest.hellinger.firstPlaceCount,
+        candidates,
+      },
+    ];
+  });
+
+  return {
+    featureConceptIds,
+    themeIds,
+    fitInstrumentIds,
+    excludedInstrumentIds,
+    themeOmissionCount: themeIds.length,
+    records,
+  };
+}
+
+function coveragePercent(count: number, total: number): number {
+  return total ? round((count / total) * 100, 1) : 0;
+}
+
+function annotationCoverage(
+  recordedProvisionCount: number,
+  totalProvisionCount: number,
+): ResearchAnnotationCoverage {
+  return {
+    recordedProvisionCount,
+    missingProvisionCount: Math.max(
+      0,
+      totalProvisionCount - recordedProvisionCount,
+    ),
+    coveragePercent: coveragePercent(
+      recordedProvisionCount,
+      totalProvisionCount,
+    ),
+  };
+}
+
+function normalizedStoredText(value: string | undefined): string | null {
+  if (typeof value !== "string") return null;
+  const normalized = value.normalize("NFC").replace(/\s+/gu, " ").trim();
+  return normalized || null;
+}
+
+function median(values: readonly number[]): number | null {
+  if (!values.length) return null;
+  const sorted = [...values].sort((left, right) => left - right);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2
+    ? sorted[middle]
+    : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+
+export function deriveProvisionGranularityAudit(
+  input: Pick<
+    ResearchCorpusInput,
+    "instruments" | "provisions" | "sourceAudits"
+  >,
+): ResearchGranularityAudit {
+  const { auditByInstrument, classByInstrument } = coverageMaps(
+    input.sourceAudits,
+  );
+  const instruments: ResearchGranularityInstrument[] = input.instruments
+    .map((instrument) => {
+      const provisions = input.provisions.filter(
+        (provision) => provision.instrumentId === instrument.id,
+      );
+      const totalProvisionCount = provisions.length;
+      const substantive = provisions.filter(
+        (provision) =>
+          relevanceForProvision(provision) === "substantive-topic",
+      );
+      const structural = provisions.filter(
+        (provision) =>
+          relevanceForProvision(provision) === "structural-context",
+      );
+      const unreviewed = provisions.filter(
+        (provision) => relevanceForProvision(provision) === "unreviewed",
+      );
+      const assignmentCounts = provisions.map(
+        (provision) => conceptsForProvision(provision).length,
+      );
+      const substantiveAssignmentCounts = substantive.map(
+        (provision) => conceptsForProvision(provision).length,
+      );
+      const conceptAssignmentCount = assignmentCounts.reduce(
+        (sum, count) => sum + count,
+        0,
+      );
+      const substantiveConceptAssignmentCount =
+        substantiveAssignmentCounts.reduce((sum, count) => sum + count, 0);
+      const actorTagRecordedProvisionCount = provisions.filter(
+        (provision) => (provision.actorTags?.length ?? 0) > 0,
+      ).length;
+      const scopeTagRecordedProvisionCount = provisions.filter(
+        (provision) => (provision.scopeTags?.length ?? 0) > 0,
+      ).length;
+      const resolvedAppliesFromCount = provisions.filter(
+        (provision) =>
+          applicabilityDateState(provision.appliesFrom) === "resolved",
+      ).length;
+      const unresolvedAppliesFromCount = provisions.filter(
+        (provision) =>
+          applicabilityDateState(provision.appliesFrom) === "unresolved",
+      ).length;
+      const recordedAppliesFromCount =
+        resolvedAppliesFromCount + unresolvedAppliesFromCount;
+      const storedTextLengths = provisions.flatMap((provision) => {
+        const text = normalizedStoredText(provision.fullText);
+        return text ? [Array.from(text).length] : [];
+      });
+      const storedUnicodeCharacterCount = storedTextLengths.reduce(
+        (sum, length) => sum + length,
+        0,
+      );
+      const coverageClass =
+        classByInstrument.get(instrument.id) ?? "unclassified";
+      return {
+        instrumentId: instrument.id,
+        coverageMode:
+          auditByInstrument.get(instrument.id)?.localCoverage.mode ??
+          "unclassified",
+        coverageClass,
+        includedInDefaultAnalysis: coverageClass === "complete",
+        totalProvisionCount,
+        substantiveProvisionCount: substantive.length,
+        structuralContextCount: structural.length,
+        unreviewedProvisionCount: unreviewed.length,
+        substantiveShare: totalProvisionCount
+          ? round(substantive.length / totalProvisionCount)
+          : 0,
+        structuralContextShare: totalProvisionCount
+          ? round(structural.length / totalProvisionCount)
+          : 0,
+        unreviewedShare: totalProvisionCount
+          ? round(unreviewed.length / totalProvisionCount)
+          : 0,
+        conceptAssignmentCount,
+        substantiveConceptAssignmentCount,
+        conceptAssignmentsPerProvision: totalProvisionCount
+          ? round(conceptAssignmentCount / totalProvisionCount)
+          : null,
+        conceptAssignmentsPerSubstantiveProvision: substantive.length
+          ? round(substantiveConceptAssignmentCount / substantive.length)
+          : null,
+        mappedProvisionCount: assignmentCounts.filter((count) => count > 0)
+          .length,
+        unmappedProvisionCount: assignmentCounts.filter((count) => count === 0)
+          .length,
+        mappedSubstantiveProvisionCount: substantiveAssignmentCounts.filter(
+          (count) => count > 0,
+        ).length,
+        multiConceptProvisionCount: assignmentCounts.filter((count) => count > 1)
+          .length,
+        maximumConceptAssignmentsOnProvision: Math.max(0, ...assignmentCounts),
+        annotationCoverage: {
+          actorTags: annotationCoverage(
+            actorTagRecordedProvisionCount,
+            totalProvisionCount,
+          ),
+          scopeTags: annotationCoverage(
+            scopeTagRecordedProvisionCount,
+            totalProvisionCount,
+          ),
+          appliesFrom: {
+            ...annotationCoverage(
+              recordedAppliesFromCount,
+              totalProvisionCount,
+            ),
+            resolvedProvisionCount: resolvedAppliesFromCount,
+            unresolvedProvisionCount: unresolvedAppliesFromCount,
+          },
+        },
+        textCoverage: {
+          storedTextProvisionCount: storedTextLengths.length,
+          missingTextProvisionCount:
+            totalProvisionCount - storedTextLengths.length,
+          storedTextCoveragePercent: coveragePercent(
+            storedTextLengths.length,
+            totalProvisionCount,
+          ),
+          storedUnicodeCharacterCount,
+          meanUnicodeCharactersPerStoredProvision: storedTextLengths.length
+            ? round(storedUnicodeCharacterCount / storedTextLengths.length, 1)
+            : null,
+          medianUnicodeCharactersPerStoredProvision: median(storedTextLengths),
+        },
+      };
+    })
+    .sort((left, right) =>
+      left.instrumentId.localeCompare(right.instrumentId),
+    );
+
+  const coverageClassOrder: ResearchCoverageClass[] = [
+    "complete",
+    "selected",
+    "unclassified",
+  ];
+  const coverageClasses = coverageClassOrder.map((coverageClass) => {
+    const cohort = instruments.filter(
+      (instrument) => instrument.coverageClass === coverageClass,
+    );
+    const provisionCount = cohort.reduce(
+      (sum, instrument) => sum + instrument.totalProvisionCount,
+      0,
+    );
+    const conceptAssignmentCount = cohort.reduce(
+      (sum, instrument) => sum + instrument.conceptAssignmentCount,
+      0,
+    );
+    return {
+      coverageClass,
+      instrumentCount: cohort.length,
+      provisionCount,
+      substantiveProvisionCount: cohort.reduce(
+        (sum, instrument) => sum + instrument.substantiveProvisionCount,
+        0,
+      ),
+      structuralContextCount: cohort.reduce(
+        (sum, instrument) => sum + instrument.structuralContextCount,
+        0,
+      ),
+      unreviewedProvisionCount: cohort.reduce(
+        (sum, instrument) => sum + instrument.unreviewedProvisionCount,
+        0,
+      ),
+      conceptAssignmentCount,
+      conceptAssignmentsPerProvision: provisionCount
+        ? round(conceptAssignmentCount / provisionCount)
+        : null,
+      actorTagRecordedProvisionCount: cohort.reduce(
+        (sum, instrument) =>
+          sum +
+          instrument.annotationCoverage.actorTags.recordedProvisionCount,
+        0,
+      ),
+      scopeTagRecordedProvisionCount: cohort.reduce(
+        (sum, instrument) =>
+          sum +
+          instrument.annotationCoverage.scopeTags.recordedProvisionCount,
+        0,
+      ),
+      appliesFromRecordedProvisionCount: cohort.reduce(
+        (sum, instrument) =>
+          sum +
+          instrument.annotationCoverage.appliesFrom.recordedProvisionCount,
+        0,
+      ),
+      storedTextProvisionCount: cohort.reduce(
+        (sum, instrument) =>
+          sum + instrument.textCoverage.storedTextProvisionCount,
+        0,
+      ),
+      missingTextProvisionCount: cohort.reduce(
+        (sum, instrument) =>
+          sum + instrument.textCoverage.missingTextProvisionCount,
+        0,
+      ),
+    };
+  });
+
+  return { instruments, coverageClasses };
+}
+
+export function deriveArticleMicroscope(
+  input: Pick<
+    ResearchCorpusInput,
+    "instruments" | "provisions" | "sourceAudits"
+  >,
+): ResearchArticleMicroscope {
+  const { auditByInstrument, classByInstrument } = coverageMaps(
+    input.sourceAudits,
+  );
+  const researchProvisions = deriveResearchProvisions(input.provisions);
+  const instruments = input.instruments
+    .map((instrument) => {
+      const provisions = researchProvisions
+        .filter((provision) => provision.instrumentId === instrument.id)
+        .sort(
+          (left, right) =>
+            left.sourceOrder - right.sourceOrder ||
+            left.locator.localeCompare(right.locator, undefined, {
+              numeric: true,
+            }) ||
+            left.id.localeCompare(right.id),
+        );
+      const totalProvisionCount = provisions.length;
+      const bands: ResearchArticleMicroscopeBand[] = provisions.map(
+        (provision, index) => ({
+          provisionId: provision.id,
+          index,
+          startRatio: totalProvisionCount
+            ? round(index / totalProvisionCount)
+            : 0,
+          endRatio: totalProvisionCount
+            ? round((index + 1) / totalProvisionCount)
+            : 0,
+          locator: provision.locator,
+          title: provision.title,
+          relevance: provision.relevance,
+          conceptIds: [...provision.conceptIds].sort(),
+          conceptAssignmentCount: provision.conceptIds.length,
+          structureId: provisionStructure(provision).id,
+          hasActorTags: provision.actorTags.length > 0,
+          hasScopeTags: provision.scopeTags.length > 0,
+          appliesFromState: applicabilityDateState(provision.appliesFrom),
+        }),
+      );
+      const positionsByConcept = new Map<string, number[]>();
+      bands.forEach((band) => {
+        band.conceptIds.forEach((conceptId) => {
+          const list = positionsByConcept.get(conceptId) ?? [];
+          list.push(band.index);
+          positionsByConcept.set(conceptId, list);
+        });
+      });
+      const conceptTracks = Array.from(
+        positionsByConcept,
+        ([conceptId, positions]) => ({
+          conceptId,
+          provisionCount: positions.length,
+          firstIndex: Math.min(...positions),
+          lastIndex: Math.max(...positions),
+          meanPosition: round(
+            positions.reduce((sum, position) => sum + position, 0) /
+              positions.length /
+              Math.max(totalProvisionCount - 1, 1),
+          ),
+        }),
+      ).sort(
+        (left, right) =>
+          right.provisionCount - left.provisionCount ||
+          left.conceptId.localeCompare(right.conceptId),
+      );
+      const coverageClass =
+        classByInstrument.get(instrument.id) ?? "unclassified";
+      return {
+        instrumentId: instrument.id,
+        coverageMode:
+          auditByInstrument.get(instrument.id)?.localCoverage.mode ??
+          "unclassified",
+        coverageClass,
+        includedInDefaultAnalysis: coverageClass === "complete",
+        totalProvisionCount,
+        maximumConceptAssignmentCount: Math.max(
+          0,
+          ...bands.map((band) => band.conceptAssignmentCount),
+        ),
+        bands,
+        conceptTracks,
+      };
+    })
+    .sort((left, right) =>
+      left.instrumentId.localeCompare(right.instrumentId),
+    );
+  return { instruments };
+}
+
 export function buildResearchLabData(
   input: ResearchCorpusInput,
   options?: ResearchAnalysisOptions,
@@ -2852,6 +3986,14 @@ export function buildResearchLabData(
         "Exploratory archetypes use deterministic average-linkage hierarchical clustering over the 23-dimensional L2-normalized TF-IDF concept profiles in the complete-corpus substantive sample. Cosine distance is the only fit feature; jurisdiction, legal force, lifecycle status and relation edges are excluded and shown only as descriptive context.",
       relationAuditDefinition:
         "Mapping evidence is audited across separate dimensions: editorial review state, relation class and direction, source support, rationale and limits, verification date, endpoint coverage, legal force, lifecycle status and jurisdiction span. These dimensions are never collapsed into a quality or equivalence score.",
+      applicabilityHorizonDefinition:
+        "The applicability horizon groups only explicit, valid provision appliesFrom dates by instrument and date, and keeps recorded instrument-level status events in a separate stream. Dates are classified against the fixed corpus snapshot; missing and non-ISO or impossible dates remain visible rather than being inferred from instrument metadata.",
+      neighborhoodStabilityDefinition:
+        "Regulatory neighborhoods compare cosine distance over L2-normalized TF-IDF profiles with Hellinger distance over concept-prevalence distributions normalized to probability. Leave-one-theme-out rank ranges and nearest-neighbor stability counts are reported for every recorded theme; no distance is a legal-equivalence or compliance score.",
+      granularityAuditDefinition:
+        "Granularity and annotation coverage are reported separately for complete, selected and unclassified corpora. Primary measures use provision relevance, concept assignments and recorded annotation fields. Text length is secondary: it counts NFC-normalized, whitespace-collapsed Unicode code points only where stored fullText exists, with missing text retained explicitly; cross-language lengths are not treated as directly comparable drafting strength.",
+      articleMicroscopeDefinition:
+        "Article microscope bands preserve source order and encode recorded relevance, concept assignments, structure and annotation presence at provision level. Concept tracks summarize positions within an instrument for navigation and do not infer absent rules from unassigned concepts.",
     },
     coverage: deriveCoverageObservatory(normalizedInput),
     instruments: deriveResearchInstruments(normalizedInput, fingerprints),
@@ -2872,5 +4014,13 @@ export function buildResearchLabData(
       normalizedInput.concepts,
     ),
     mappingEvidenceAudit: deriveMappingEvidenceAudit(normalizedInput),
+    applicabilityHorizon: deriveApplicabilityHorizon(normalizedInput),
+    neighborhoodStability: deriveRegulatoryNeighborhoodStability(
+      fingerprints,
+      normalizedInput.concepts,
+      normalizedInput.themes,
+    ),
+    granularityAudit: deriveProvisionGranularityAudit(normalizedInput),
+    articleMicroscope: deriveArticleMicroscope(normalizedInput),
   };
 }

@@ -77,7 +77,7 @@
 .phaseSwitch {
   min-inline-size: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   padding: 1px;
   background: var(--line);
@@ -2894,6 +2894,978 @@
   grid-column: span 2;
 }
 
+/* Phase 04 · Dynamics + measurement */
+
+.applicabilityWorkspace,
+.microscopeWorkspace,
+.neighborhoodWorkspace,
+.granularityWorkspace {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.applicabilityControls {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px 14px;
+}
+
+.applicabilitySummary,
+.neighborhoodSummary {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+}
+
+.applicabilitySummary > div,
+.neighborhoodSummary > div {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 9px 10px;
+  background: var(--panel);
+}
+
+.applicabilitySummary dt,
+.neighborhoodSummary dt {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.applicabilitySummary dd,
+.neighborhoodSummary dd {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--ink-strong);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.applicabilityScroll,
+.granularityScroll {
+  min-inline-size: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: auto;
+  border-block: 1px solid var(--line-strong);
+}
+
+.applicabilityFigure {
+  min-inline-size: 980px;
+  display: grid;
+  align-content: start;
+  background: var(--panel);
+}
+
+.applicabilityLane {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(680px, 2fr);
+}
+
+.applicabilityAxis {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 3;
+  min-block-size: 43px;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(680px, 2fr);
+  align-items: stretch;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--panel-strong);
+}
+
+.applicabilityLaneLabel {
+  min-inline-size: 0;
+  border-inline-end: 1px solid var(--line-strong);
+}
+
+.applicabilityAxisCorner {
+  min-inline-size: 0;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-inline-end: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.applicabilityAxisTrack,
+.applicabilityTrack {
+  position: relative;
+  min-inline-size: 0;
+}
+
+.applicabilityAxisTrack {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.applicabilityAxisStart,
+.applicabilityAxisEnd {
+  position: relative;
+  z-index: 2;
+  min-inline-size: 0;
+  background: var(--panel-strong);
+  overflow-wrap: anywhere;
+}
+
+.applicabilityAxisEnd {
+  text-align: end;
+}
+
+.applicabilityAxisTrack::after,
+.applicabilityTrack::before {
+  position: absolute;
+  inset-inline: 12px;
+  inset-block-start: 50%;
+  block-size: 1px;
+  background: var(--line-strong);
+  content: "";
+}
+
+.applicabilityLaneList {
+  min-inline-size: 0;
+  display: grid;
+}
+
+.applicabilityLane {
+  min-block-size: 54px;
+  border-block-end: 1px solid var(--line);
+  background: var(--panel);
+  transition: background-color 180ms ease;
+}
+
+.applicabilityLane[data-coverage="selected"] {
+  background: color-mix(in srgb, var(--amber) 4%, var(--panel));
+}
+
+.applicabilityLaneLabel {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-block: 0;
+  border-inline-start: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.applicabilityLaneLabel:hover {
+  background: var(--panel-hover);
+  color: var(--cyan);
+}
+
+.applicabilityLaneLabel strong,
+.applicabilityLaneLabel span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.applicabilityLaneLabel :global(.jurisdiction-mark) {
+  flex: 0 0 auto;
+}
+
+.applicabilityLaneLabel strong {
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.applicabilityLaneLabel span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+}
+
+.applicabilityTrack {
+  min-block-size: 53px;
+  margin-inline: 12px;
+}
+
+.applicabilityMarker {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: 50%;
+  inset-inline-start: clamp(0%, var(--horizon-position, 0%), 100%);
+  inline-size: 22px;
+  block-size: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid var(--panel);
+  border-radius: 50%;
+  background: var(--cyan);
+  color: var(--ink-strong);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition:
+    inset-inline-start 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.applicabilityMarker span:not(.srOnly) {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.applicabilityMarker[data-kind="provision"] {
+  inset-block-start: 64%;
+}
+
+.applicabilityMarker:hover,
+.applicabilityMarker:focus-visible {
+  z-index: 4;
+  transform: translate(-50%, -50%) scale(1.24);
+}
+
+.applicabilityMarker[data-kind="status"] {
+  inset-block-start: 30%;
+  inline-size: 14px;
+  block-size: 14px;
+  border-radius: 1px;
+  background: var(--violet);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.applicabilityMarker[data-kind="status"]:hover,
+.applicabilityMarker[data-kind="status"]:focus-visible {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.24);
+}
+
+.applicabilityMarker[data-beyond="true"] {
+  border-color: var(--amber);
+  background: var(--panel);
+}
+
+.applicabilityCursor {
+  position: absolute;
+  z-index: 1;
+  inset-block: 6px;
+  inset-inline-start: clamp(0%, var(--horizon-cursor, 0%), 100%);
+  inline-size: 1px;
+  background: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan-soft);
+  pointer-events: none;
+  transition: inset-inline-start 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.applicabilityLegend,
+.microscopeLegend,
+.neighborhoodLegend,
+.granularityLegend {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+}
+
+.applicabilityLegend span,
+.microscopeLegend span,
+.neighborhoodLegend span,
+.granularityLegend span {
+  min-inline-size: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  overflow-wrap: anywhere;
+}
+
+.applicabilityLegend span[data-kind="status"] i {
+  border-color: var(--violet);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.applicabilityLegend span[data-beyond="true"] i {
+  border-color: var(--amber);
+}
+
+.applicabilityConcepts,
+.microscopeConcepts {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.applicabilitySummary > .applicabilityConcepts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.applicabilityConcepts button,
+.microscopeConcepts button {
+  min-inline-size: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 7px;
+  border: 1px solid color-mix(in srgb, var(--concept-color, var(--cyan)) 42%, var(--line));
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 7%, var(--panel));
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.applicabilityConcepts button:hover,
+.microscopeConcepts button:hover {
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 14%, var(--panel));
+  color: var(--ink-strong);
+}
+
+.applicabilityUnresolved {
+  min-inline-size: 0;
+  display: grid;
+  gap: 7px;
+  padding-block-start: 11px;
+  border-block-start: 1px solid var(--line);
+}
+
+.applicabilityUnresolved p,
+.applicabilityUnresolved li {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.neighborhoodWorkspace {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.microscopePicker,
+.neighborhoodPicker {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.microscopePicker {
+  grid-template-columns: minmax(220px, 360px) auto;
+  align-items: end;
+  justify-content: start;
+}
+
+.microscopeFigure {
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1.58fr);
+  align-items: start;
+}
+
+.microscopeFigure,
+.neighborhoodPlot,
+.microscopeReadout,
+.neighborhoodReadout,
+.neighborhoodContributors,
+.neighborhoodContributorList {
+  min-inline-size: 0;
+}
+
+.microscopeFigure,
+.neighborhoodPlot {
+  display: grid;
+  align-content: start;
+  gap: 11px;
+}
+
+.microscopeStripFrame {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+  border-block: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.microscopeStrip {
+  min-inline-size: 100%;
+  max-block-size: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+  scrollbar-width: thin;
+  padding: 8px 10px;
+}
+
+.microscopeProvision {
+  min-inline-size: 100%;
+  min-block-size: 4px;
+  flex: 1 0 4px;
+  padding: 0;
+  border: 0;
+  border-block-end: 1px solid color-mix(in srgb, var(--line-strong) 58%, transparent);
+  border-inline-start: 3px solid var(--concept-color, var(--cyan));
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 18%, var(--panel));
+  color: var(--ink);
+  cursor: pointer;
+  opacity: clamp(0.34, var(--concept-density, 0.64), 1);
+  transition:
+    background-color 180ms ease,
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.microscopeProvision:hover,
+.microscopeProvision:focus-visible,
+.microscopeProvision[data-selected="true"] {
+  position: relative;
+  z-index: 2;
+  background: color-mix(in srgb, var(--concept-color, var(--cyan)) 46%, var(--panel));
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.microscopeProvision[data-relevance="structural-context"] {
+  border-inline-start-style: dashed;
+  background: color-mix(in srgb, var(--muted) 12%, var(--panel));
+}
+
+.microscopeProvision[data-relevance="unreviewed"] {
+  border-inline-start-color: var(--line-strong);
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 4px,
+    color-mix(in srgb, var(--muted) 11%, transparent) 4px 8px
+  );
+}
+
+.microscopeProvision[data-structure-start="true"] {
+  border-block-start: 2px solid var(--ink-strong);
+}
+
+.microscopeProvision[data-annotation="true"] {
+  box-shadow: inset -3px 0 0 var(--green);
+}
+
+.microscopeIdentity,
+.neighborhoodIdentity {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+}
+
+.microscopeIdentity {
+  padding: 9px 10px;
+  border-block-end: 1px solid var(--line);
+}
+
+.microscopeIdentity :global(.jurisdiction-mark),
+.neighborhoodIdentity :global(.jurisdiction-mark),
+.granularityInstrument :global(.jurisdiction-mark) {
+  flex: 0 0 auto;
+}
+
+.microscopeIdentity strong,
+.microscopeIdentity span,
+.neighborhoodIdentity strong,
+.neighborhoodIdentity span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.microscopeIdentity strong,
+.neighborhoodIdentity strong {
+  color: var(--ink-strong);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.microscopeIdentity span,
+.neighborhoodIdentity span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+}
+
+.microscopeReadout,
+.neighborhoodReadout {
+  display: grid;
+  align-content: start;
+  gap: 11px;
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid var(--line);
+}
+
+.microscopeConceptTracks {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+}
+
+.microscopeConceptTrack {
+  min-inline-size: 0;
+  min-block-size: 34px;
+  display: grid;
+  grid-template-columns: minmax(128px, 0.8fr) minmax(150px, 1.2fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  border-block-end: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.microscopeConceptTrack > span {
+  min-inline-size: 0;
+  padding: 6px 0;
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.microscopeConceptTrack:hover {
+  color: var(--cyan);
+}
+
+.microscopeConceptTrack code {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  text-align: end;
+}
+
+.microscopeConceptRail {
+  position: relative;
+  min-inline-size: 0;
+  block-size: 16px;
+  border-inline: 1px solid var(--line-strong);
+}
+
+.microscopeConceptRail::before {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  block-size: 1px;
+  background: var(--line-strong);
+  content: "";
+}
+
+.microscopeConceptSpan {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-start: clamp(0%, var(--concept-start, 0%), 100%);
+  inline-size: max(
+    2px,
+    calc(var(--concept-end, 0%) - var(--concept-start, 0%))
+  );
+  block-size: 8px;
+  background: var(--concept-color, var(--cyan));
+  transition:
+    inset-inline-start 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    inline-size 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neighborhoodLegend i,
+.granularityLegend i,
+.microscopeLegend i,
+.applicabilityLegend i {
+  inline-size: 10px;
+  block-size: 10px;
+  flex: 0 0 auto;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  background: var(--panel);
+}
+
+.neighborhoodLegend span[data-metric="hellinger"] i {
+  border-color: var(--violet);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.neighborhoodLegend span[data-metric="range"] i {
+  inline-size: 16px;
+  border-color: var(--amber);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--amber) 22%, var(--panel));
+}
+
+.microscopeLegend span[data-relevance="structural-context"] i {
+  border-style: dashed;
+  border-color: var(--muted);
+}
+
+.microscopeLegend span[data-relevance="unreviewed"] i {
+  border-color: var(--line-strong);
+  border-radius: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 2px,
+    color-mix(in srgb, var(--muted) 18%, transparent) 2px 4px
+  );
+}
+
+.granularityLegend i[data-scale="count"] {
+  border-radius: 0;
+  background: var(--cyan);
+}
+
+.granularityLegend i[data-scale="coverage"] {
+  border-color: var(--green);
+  border-radius: 0;
+  background: var(--green);
+}
+
+.neighborhoodRow {
+  min-inline-size: 0;
+  min-block-size: 45px;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.78fr) minmax(230px, 1.22fr) 68px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-block-end: 1px solid var(--line);
+  background: var(--panel);
+  transition: background-color 180ms ease;
+}
+
+.neighborhoodRow[data-selected="true"] {
+  background: var(--cyan-soft);
+}
+
+.neighborhoodIdentity {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.neighborhoodIdentity:hover {
+  color: var(--cyan);
+}
+
+.neighborhoodTrack {
+  position: relative;
+  min-inline-size: 0;
+  block-size: 32px;
+  border-inline: 1px solid var(--line-strong);
+}
+
+.neighborhoodTrack::before {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: calc(50% - 0.5px);
+  block-size: 1px;
+  background: var(--line-strong);
+  content: "";
+}
+
+.neighborhoodRange {
+  position: absolute;
+  inset-inline-start: clamp(0%, var(--neighbor-range-start, 0%), 100%);
+  inline-size: clamp(2px, var(--neighbor-range-width, 0%), 100%);
+  block-size: 8px;
+  background: color-mix(in srgb, var(--amber) 22%, var(--panel));
+  border-inline: 1px solid var(--amber);
+  transition:
+    inset-inline-start 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    inline-size 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neighborhoodRange[data-metric="cosine"] {
+  inset-block-start: 4px;
+  border-color: var(--cyan);
+  background: color-mix(in srgb, var(--cyan) 18%, var(--panel));
+}
+
+.neighborhoodRange[data-metric="hellinger"] {
+  inset-block-end: 4px;
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 18%, var(--panel));
+}
+
+.neighborhoodMarker {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: 50%;
+  inline-size: 13px;
+  block-size: 13px;
+  padding: 0;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  background: var(--panel);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    inset-inline-start 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.neighborhoodMarker[data-metric="cosine"] {
+  inset-block-start: 8px;
+  inset-inline-start: clamp(0%, var(--neighbor-cosine-position, 0%), 100%);
+}
+
+.neighborhoodMarker[data-metric="hellinger"] {
+  inset-block-start: 24px;
+  inset-inline-start: clamp(0%, var(--neighbor-hellinger-position, 0%), 100%);
+  border-color: var(--violet);
+  border-radius: 1px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.neighborhoodRank {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.neighborhoodContributors,
+.neighborhoodContributorList {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.neighborhoodContributors {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+}
+
+.neighborhoodContributorList button {
+  min-inline-size: 0;
+  inline-size: 100%;
+}
+
+.granularityPlot {
+  inline-size: 100%;
+  min-inline-size: 1180px;
+  display: grid;
+  align-content: start;
+  background: var(--panel);
+}
+
+.granularityHeader,
+.granularityRow {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(270px, 1.35fr) repeat(7, minmax(110px, 0.65fr));
+  align-items: stretch;
+}
+
+.granularityHeader {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 3;
+  min-block-size: 47px;
+  border-block-end: 1px solid var(--line-strong);
+  background: var(--panel-strong);
+}
+
+.granularityHeader > * {
+  min-inline-size: 0;
+  display: flex;
+  align-items: end;
+  padding: 8px;
+  border-inline-end: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.granularityGroup {
+  min-inline-size: 0;
+  display: grid;
+  align-content: start;
+}
+
+.granularityGroupHeader {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 2;
+  min-inline-size: 270px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-block: 1px solid var(--line-strong);
+  background: var(--panel-strong);
+  color: var(--ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.granularityRow {
+  min-block-size: 48px;
+  border-block-end: 1px solid var(--line);
+  transition: background-color 180ms ease;
+}
+
+.granularityRow[data-coverage="selected"] {
+  background: color-mix(in srgb, var(--amber) 4%, var(--panel));
+}
+
+.granularityInstrument {
+  min-inline-size: 0;
+  inline-size: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 0;
+  background: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.granularityInstrumentCell {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  min-inline-size: 0;
+  display: flex;
+  border-inline-end: 1px solid var(--line-strong);
+  background: inherit;
+}
+
+.granularityInstrument:hover {
+  background: var(--panel-hover);
+  color: var(--cyan);
+}
+
+.granularityInstrument strong,
+.granularityInstrument span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.granularityInstrument strong {
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.granularityInstrument span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.3;
+}
+
+.granularityMeasure {
+  min-inline-size: 0;
+  display: grid;
+  grid-template-columns: minmax(44px, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 8px;
+  border-inline-end: 1px solid var(--line);
+}
+
+.granularityTrack {
+  position: relative;
+  min-inline-size: 0;
+  block-size: 10px;
+  background: color-mix(in srgb, var(--line-strong) 48%, transparent);
+  overflow: hidden;
+}
+
+.granularityFill {
+  inline-size: clamp(0%, var(--granularity-value, 0%), 100%);
+  block-size: 100%;
+  background: var(--cyan);
+  transition: inline-size 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.granularityMeasure[data-measure="concept-density"] .granularityFill {
+  background: var(--violet);
+}
+
+.granularityMeasure[data-measure="structural-share"] .granularityFill {
+  background: var(--amber);
+}
+
+.granularityMeasure[data-measure="actor-tags"] .granularityFill,
+.granularityMeasure[data-measure="scope-tags"] .granularityFill {
+  background: var(--green);
+}
+
+.granularityMeasure[data-measure="applicability"] .granularityFill {
+  background: var(--amber);
+}
+
+.granularityMeasure[data-measure="median-text"] .granularityFill,
+.granularityMeasure[data-measure="stored-text"] .granularityFill {
+  background: color-mix(in srgb, var(--cyan) 55%, var(--violet));
+}
+
+.granularityValue {
+  color: var(--ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  text-align: end;
+  white-space: nowrap;
+}
+
 .legendMark {
   inline-size: 11px;
   block-size: 11px;
@@ -2995,6 +3967,28 @@
     grid-template-columns: 1fr;
   }
 
+  .microscopeWorkspace,
+  .neighborhoodWorkspace {
+    grid-template-columns: 1fr;
+  }
+
+  .microscopeFigure {
+    grid-template-columns: 1fr;
+  }
+
+  .microscopeReadout,
+  .neighborhoodReadout {
+    padding-block-start: 14px;
+    padding-inline-start: 0;
+    border-block-start: 1px solid var(--line);
+    border-inline-start: 0;
+  }
+
+  .applicabilitySummary,
+  .neighborhoodSummary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .bridgeReadout {
     padding-block-start: 14px;
     padding-inline-start: 0;
@@ -3074,6 +4068,19 @@
     grid-template-columns: 1fr;
   }
 
+  .applicabilitySummary,
+  .neighborhoodSummary {
+    grid-template-columns: 1fr;
+  }
+
+  .microscopePicker {
+    grid-template-columns: 1fr;
+  }
+
+  .microscopeFigure {
+    grid-template-columns: 1fr;
+  }
+
   .stat {
     min-block-size: 92px;
   }
@@ -3141,6 +4148,31 @@
     grid-row: 2;
   }
 
+  .microscopeConceptTrack {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 5px 8px;
+    padding-block: 5px;
+  }
+
+  .microscopeConceptRail {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .neighborhoodRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 6px 8px;
+  }
+
+  .neighborhoodTrack {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .neighborhoodContributors {
+    grid-template-columns: 1fr;
+  }
+
   .rankShiftRow {
     grid-template-columns: minmax(100px, 0.8fr) minmax(110px, 1fr) auto;
     gap: 7px;
@@ -3187,6 +4219,16 @@
   .themeProfile > span,
   .archetypeDifferenceTrack > span,
   .auditConceptBar,
+  .applicabilityLane,
+  .applicabilityMarker,
+  .applicabilityCursor,
+  .microscopeProvision,
+  .microscopeConceptSpan,
+  .neighborhoodRow,
+  .neighborhoodRange,
+  .neighborhoodMarker,
+  .granularityRow,
+  .granularityFill,
   .heatCell,
   .geneBand,
   .matrixCell,
