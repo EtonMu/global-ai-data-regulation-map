@@ -15,6 +15,7 @@ const [
   networkData,
   generativeAi,
   pipeda,
+  canadaAdm,
   lgpd,
   taiwanAiAct,
   taiwanPdpa,
@@ -55,6 +56,7 @@ const [
   load("cn-network-data-regulations-articles.json"),
   load("cn-generative-ai-measures-articles.json"),
   load("canada-pipeda-provisions.json"),
+  load("canada-adm-directive-provisions.json"),
   load("brazil-lgpd-articles.json"),
   load("tw-ai-basic-act-2026-articles.json"),
   load("tw-personal-data-protection-act-articles.json"),
@@ -97,6 +99,7 @@ const mergedIds = new Set([
   ...networkData.map((item) => item.id),
   ...generativeAi.map((item) => item.id),
   ...pipeda.map((item) => item.id),
+  ...canadaAdm.map((item) => item.id),
   ...lgpd.map((item) => item.id),
   ...taiwanAiAct.map((item) => item.id),
   ...taiwanPdpa.map((item) => item.id),
@@ -168,6 +171,23 @@ test("known high-value provisions retain precise concept mappings", () => {
   assert.ok(byId.get("cn-network-data-reg-art-35").conceptIds.includes("cross-border-transfer"));
   assert.ok(byId.get("cn-genai-art-7").conceptIds.includes("training-data-governance"));
   assert.ok(byId.get("ca-pipeda-sec-10-1").conceptIds.includes("incident-response"));
+  assert.ok(
+    byId
+      .get("ca-pipeda-nif-2026-c3-s389")
+      .conceptIds.includes("data-subject-rights"),
+  );
+  assert.ok(
+    byId
+      .get("ca-adm-directive-sec-6")
+      .conceptIds.includes("automated-decision-safeguards"),
+  );
+  assert.ok(
+    byId
+      .get("ca-adm-directive-appendix-c")
+      .conceptIds.includes("human-oversight"),
+  );
+  assert.equal(byId.get("in-dpdp-act-2023-s44").relevance, "structural-context");
+  assert.deepEqual(byId.get("in-dpdp-act-2023-s44").conceptIds, []);
   assert.ok(byId.get("ca-pipeda-sch-1").conceptIds.includes("security-controls"));
   assert.ok(byId.get("br-lgpd-art-20").conceptIds.includes("automated-decision-safeguards"));
   assert.ok(byId.get("br-lgpd-art-48").conceptIds.includes("incident-response"));

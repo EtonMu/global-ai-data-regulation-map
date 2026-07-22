@@ -26,6 +26,7 @@ const [
   networkDataArticles,
   generativeAiArticles,
   pipedaProvisions,
+  canadaAdmDirectiveProvisions,
   lgpdArticles,
   taiwanAiActArticles,
   taiwanPdpaArticles,
@@ -73,6 +74,7 @@ const [
   loadJson("cn-network-data-regulations-articles.json"),
   loadJson("cn-generative-ai-measures-articles.json"),
   loadJson("canada-pipeda-provisions.json"),
+  loadJson("canada-adm-directive-provisions.json"),
   loadJson("brazil-lgpd-articles.json"),
   loadJson("tw-ai-basic-act-2026-articles.json"),
   loadJson("tw-personal-data-protection-act-articles.json"),
@@ -428,6 +430,10 @@ const generativeAiArticleIds = assertUnique(
   "Generative AI Measures article",
 );
 const pipedaProvisionIds = assertUnique(pipedaProvisions, "PIPEDA provision");
+const canadaAdmDirectiveProvisionIds = assertUnique(
+  canadaAdmDirectiveProvisions,
+  "Canada Directive on Automated Decision-Making provision",
+);
 const lgpdArticleIds = assertUnique(lgpdArticles, "LGPD article");
 const taiwanAiActArticleIds = assertUnique(
   taiwanAiActArticles,
@@ -548,6 +554,7 @@ const knownProvisionParentIds = new Set(
     networkDataArticles,
     generativeAiArticles,
     pipedaProvisions,
+    canadaAdmDirectiveProvisions,
     lgpdArticles,
     taiwanAiActArticles,
     taiwanPdpaArticles,
@@ -1500,18 +1507,35 @@ function assertCompleteCoverageMetadata(
 }
 
 function validatePipedaCorpus() {
-  assert(pipedaProvisions.length === 75, `PIPEDA corpus must contain 75 top-level units; found ${pipedaProvisions.length}`);
+  const currentProvisions = pipedaProvisions.filter(
+    (item) => item.unitType !== "amending-section-not-in-force",
+  );
+  const prospectiveAmendments = pipedaProvisions.filter(
+    (item) => item.unitType === "amending-section-not-in-force",
+  );
   assert(
-    pipedaProvisions.filter((item) => item.label.startsWith("Schedule ")).length === 4,
+    pipedaProvisions.length === 84,
+    `PIPEDA corpus must contain 75 current units and 9 enacted amendments not in force; found ${pipedaProvisions.length}`,
+  );
+  assert(
+    currentProvisions.length === 75,
+    `PIPEDA current corpus must contain 75 top-level units; found ${currentProvisions.length}`,
+  );
+  assert(
+    prospectiveAmendments.length === 9,
+    `PIPEDA prospective layer must contain sections 389–397; found ${prospectiveAmendments.length}`,
+  );
+  assert(
+    currentProvisions.filter((item) => item.label.startsWith("Schedule ")).length === 4,
     "PIPEDA corpus must include all four current Schedules",
   );
-  for (const provision of pipedaProvisions) {
+  for (const provision of currentProvisions) {
     assertImportedTextRecord(provision, provision.id);
     assert(provision.instrumentId === "ca-pipeda", `${provision.id} references the wrong instrument`);
     assert(/^Section |^Schedule /.test(provision.label), `${provision.id}.label must identify a Section or Schedule`);
     assert(provision.language === "fr", `${provision.id}.language must be fr`);
     assert(
-      provision.textAvailability === "official-co-authentic-current-text",
+      provision.textAvailability === "official-co-authentic-current-in-force-text",
       `${provision.id} must identify the co-authentic current text`,
     );
     assert(provision.versionAsOf === "2026-03-31", `${provision.id}.versionAsOf is incorrect`);
@@ -1527,14 +1551,135 @@ function validatePipedaCorpus() {
     assert(provision.rights.reuseStatus === "open-government-edict", `${provision.id}.rights is incorrect`);
     assertHttpsUrl(provision.rights.licenseUrl, `${provision.id}.rights.licenseUrl`);
   }
+  for (const [offset, provision] of prospectiveAmendments.entries()) {
+    const expectedSection = 389 + offset;
+    assertImportedTextRecord(provision, provision.id);
+    assert(
+      provision.id === `ca-pipeda-nif-2026-c3-s${expectedSection}`,
+      `${provision.id} is not the expected enacted amending section ${expectedSection}`,
+    );
+    assert(
+      provision.articleNumber === `NIF-${expectedSection}` &&
+        provision.label.includes(`${expectedSection}`),
+      `${provision.id} does not expose its prospective locator`,
+    );
+    assert(
+      provision.textAvailability ===
+        "official-co-authentic-enacted-amendment-not-in-force",
+      `${provision.id} must remain separate from current operative text`,
+    );
+    assert(
+      provision.legalEffectStatus ===
+        "enacted-not-in-force-order-in-council-required" &&
+        provision.effectiveFrom === null &&
+        provision.enactedOn === "2026-03-26" &&
+        provision.commencementAuthority === "S.C. 2026, c. 3, s. 398",
+      `${provision.id} has an incorrect commencement state`,
+    );
+    assertObject(provision.translations, `${provision.id}.translations`);
+    const english = provision.translations.en;
+    assertObject(english, `${provision.id}.translations.en`);
+    assert(
+      english.status === "official" &&
+        english.fullText === english.paragraphs.join("\n\n"),
+      `${provision.id} must include the complete co-authentic English amendment text`,
+    );
+    assertStringArray(provision.coreConceptIds, `${provision.id}.coreConceptIds`);
+    for (const conceptId of provision.coreConceptIds) {
+      assert(conceptIds.has(conceptId), `${provision.id} references unknown concept ${conceptId}`);
+    }
+  }
   assert(
     pipedaProvisions.find((item) => item.id === "ca-pipeda-sch-1")?.fullText.includes("Responsabilité"),
     "PIPEDA Schedule 1 principles are missing",
   );
+  assert(
+    pipedaProvisions
+      .find((item) => item.id === "ca-pipeda-nif-2026-c3-s389")
+      ?.translations.en.fullText.includes("10.4") &&
+      pipedaProvisions
+        .find((item) => item.id === "ca-pipeda-nif-2026-c3-s389")
+        ?.translations.en.fullText.includes("10.6"),
+    "PIPEDA enacted data-mobility amendments are incomplete",
+  );
   assertCompleteCoverageMetadata("ca-pipeda", {
     count: 75,
     language: "fr",
-    completeness: "complete-official-co-authentic-current-text",
+    completeness:
+      "complete-official-co-authentic-current-in-force-text-with-enacted-amendments-not-in-force",
+  });
+  const instrument = instruments.find((item) => item.id === "ca-pipeda");
+  assertObject(instrument.prospectiveAmendments, "ca-pipeda.prospectiveAmendments");
+  assert(
+    instrument.prospectiveAmendments.count === 9 &&
+      instrument.prospectiveAmendments.status ===
+        "enacted-not-in-force-order-in-council-required",
+    "ca-pipeda.prospectiveAmendments does not describe the nine not-in-force sections",
+  );
+}
+
+function validateCanadaAdmDirectiveCorpus() {
+  assert(
+    canadaAdmDirectiveProvisions.length === 13,
+    `Canada ADM Directive corpus must contain Sections 1–10 and Appendices A–C; found ${canadaAdmDirectiveProvisions.length}`,
+  );
+  const expectedNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "A", "B", "C"];
+  assert(
+    canadaAdmDirectiveProvisions
+      .map((item) => item.articleNumber)
+      .every((number, index) => number === expectedNumbers[index]),
+    "Canada ADM Directive units are missing or out of official document order",
+  );
+  for (const provision of canadaAdmDirectiveProvisions) {
+    assertImportedTextRecord(provision, provision.id);
+    assert(
+      provision.instrumentId === "ca-directive-automated-decision-making",
+      `${provision.id} references the wrong instrument`,
+    );
+    assert(
+      provision.language === "en-CA" &&
+        provision.displayDefaultLanguage === "en-CA" &&
+        provision.textAvailability === "official-complete-co-published-current-text",
+      `${provision.id} does not identify complete official English as the default text`,
+    );
+    assert(
+      provision.versionAsOf === "2025-06-24" &&
+        provision.statusAsOf === "2026-07-21",
+      `${provision.id} has an incorrect version boundary`,
+    );
+    assert(
+      provision.contentSha256 ===
+        createHash("sha256").update(provision.fullText, "utf8").digest("hex"),
+      `${provision.id}.contentSha256 does not match the official English text`,
+    );
+    assertObject(provision.translations, `${provision.id}.translations`);
+    const french = provision.translations.fr;
+    assertObject(french, `${provision.id}.translations.fr`);
+    assertStringArray(french.paragraphs, `${provision.id}.translations.fr.paragraphs`, {
+      allowDuplicates: true,
+    });
+    assert(
+      french.status === "official-co-published" &&
+        french.currentTextEquivalent === true &&
+        french.fullText === french.paragraphs.join("\n\n") &&
+        french.contentSha256 ===
+          createHash("sha256").update(french.fullText, "utf8").digest("hex"),
+      `${provision.id} does not include complete aligned official French text`,
+    );
+    assertStringArray(provision.coreConceptIds, `${provision.id}.coreConceptIds`);
+    for (const conceptId of provision.coreConceptIds) {
+      assert(conceptIds.has(conceptId), `${provision.id} references unknown concept ${conceptId}`);
+    }
+    assert(
+      provision.rights?.reuseStatus ===
+        "canada-crown-copyright-non-commercial-reproduction",
+      `${provision.id} is missing the Canada.ca non-commercial reuse boundary`,
+    );
+  }
+  assertCompleteCoverageMetadata("ca-directive-automated-decision-making", {
+    count: 13,
+    language: "en-CA",
+    completeness: "complete-official-co-published-current-English-and-French-text",
   });
 }
 
@@ -2456,7 +2601,8 @@ function validateSwissVietnamKoreaAndUsCorpora() {
   assertCompleteCoverageMetadata("ch-fadp-2020", {
     count: 79,
     language: "en-CH",
-    completeness: "complete-current-four-language-aligned-article-and-annex-corpus",
+    completeness:
+      "complete-current-four-language-aligned-article-corpus-with-annex-reference-boundary",
   });
 
   assert(vietnamPdplArticles.length === 39, "Vietnam PDP Law must contain all 39 Articles");
@@ -2843,18 +2989,104 @@ function validateAidaPublicCorpusBoundary() {
   const publicAnchors = provisions.filter(
     (item) => item.instrumentId === "ca-bill-c-27-aida-2022-lapsed",
   );
+  const expectedTitles = [
+    "Short title",
+    "Definitions",
+    "Non-application",
+    "Purposes",
+    "Definitions",
+    "Anonymized data",
+    "Assessment — high-impact system",
+    "Measures related to risks",
+    "Monitoring of mitigation measures",
+    "Keeping general records",
+    "Publication of description — making system available for use",
+    "Notification of material harm",
+    "Provision of subsection 10 (1) records",
+    "Provision of subsection 10 (2) records",
+    "Audit",
+    "Implementation of measures",
+    "Cessation",
+    "Publication",
+    "Compliance",
+    "Filing — Federal Court",
+    "Statutory Instruments Act",
+    "Confidential nature maintained",
+    "Obligation of Minister",
+    "Disclosure of confidential business information — subpoena, warrant, etc.",
+    "Disclosure of information — analyst",
+    "Disclosure of information — others",
+    "Publication of information — contravention",
+    "Publication of information — harm",
+    "Administrative monetary penalties",
+    "Contravention — sections 6 to 12",
+    "Designation",
+    "General powers of Minister",
+    "Artificial Intelligence and Data Commissioner",
+    "Analysts",
+    "Advisory committee",
+    "Regulations — Governor in Council",
+    "Regulations — Minister",
+    "Possession or use of personal information",
+    "Making system available for use",
+    "Punishment",
+    "Order in council",
+  ];
   assert(
-    publicAnchors.length === 4,
-    `AIDA public aggregate must retain exactly four source-linked editorial anchors; found ${publicAnchors.length}`,
+    publicAnchors.length === 41,
+    `AIDA public aggregate must retain exactly 41 section-level editorial anchors; found ${publicAnchors.length}`,
+  );
+  const publicAnchorById = new Map(
+    publicAnchors.map((item) => [item.id, item]),
   );
   assert(
-    publicAnchors.every(
-      (item) =>
-        (item.fullText === undefined || item.fullText === null) &&
-        item.textAvailability?.stored === false,
-    ),
-    "AIDA public anchors must not redistribute the complete unenacted bill text",
+    publicAnchorById.size === 41,
+    "AIDA public anchors must have unique section-level ids",
   );
+  for (let section = 1; section <= 41; section += 1) {
+    const id = `ca-bill-c-27-aida-2022-lapsed-proposed-s-${section}`;
+    const anchor = publicAnchorById.get(id);
+    assert(anchor, `Missing AIDA first-reading editorial anchor ${id}`);
+    assert(
+      anchor.locator ===
+        `Bill C-27, clause 39 — proposed AIDA section ${section}`,
+      `${id}.locator must identify its individual proposed section`,
+    );
+    assert(anchor.title === expectedTitles[section - 1], `${id}.title is incorrect`);
+    assert(
+      anchor.provisionType === "historical-proposed-section",
+      `${id}.provisionType must preserve historical-proposal semantics`,
+    );
+    assert(anchor.versionAsOf === "2022-06-16", `${id}.versionAsOf must pin the first-reading text`);
+    assert(anchor.appliesFrom === null, `${id}.appliesFrom must remain null`);
+    assert(
+      anchor.legalEffectStatus === "lapsed-never-law",
+      `${id}.legalEffectStatus must state that no proposed section became law`,
+    );
+    assert(
+      anchor.textAvailability?.stored === false &&
+        anchor.textAvailability?.mode ===
+          "official-source-linked-project-authored-editorial-summary",
+      `${id} must remain a source-linked, project-authored editorial anchor`,
+    );
+    assert(
+      /project-authored summary.*no bill wording or fullText/u.test(
+        anchor.textAvailability?.note ?? "",
+      ),
+      `${id}.textAvailability.note must state the public-corpus boundary`,
+    );
+    assert(
+      anchor.source?.url ===
+        "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      `${id}.source must link the official 16 June 2022 first-reading text`,
+    );
+    assert(
+      !Object.hasOwn(anchor, "fullText") &&
+        !Object.hasOwn(anchor, "paragraphs") &&
+        !Object.hasOwn(anchor, "translations"),
+      `${id} must not redistribute bill wording`,
+    );
+  }
   assert(
     ![...knownProvisionParentIds].some((id) => /^ca-aida-c27-sec-\d+$/.test(id)),
     "The complete AIDA bill corpus must remain outside the public aggregate",
@@ -2862,11 +3094,16 @@ function validateAidaPublicCorpusBoundary() {
   const instrument = instruments.find(
     (item) => item.id === "ca-bill-c-27-aida-2022-lapsed",
   );
+  assert(instrument, "AIDA instrument metadata is missing");
   assert(instrument.textAvailability.stored === false, "AIDA instrument metadata must remain source-linked only");
   assert(instrument.lifecycleStatus === "lapsed", "AIDA must remain a lapsed, never-enacted proposal");
+  assert(instrument.legalForce === "not-enacted", "AIDA legal force must remain not-enacted");
+  assert(instrument.dates.introducedOn === "2022-06-16", "AIDA first-reading date is incorrect");
+  assert(instrument.dates.effectiveFrom === null, "AIDA must not have an effective date");
 }
 
 validatePipedaCorpus();
+validateCanadaAdmDirectiveCorpus();
 validateLgpdCorpus();
 validateTaiwanAiActCorpus();
 validateTaiwanPdpaCorpus();
@@ -2893,6 +3130,7 @@ const officialArticleIdSets = [
   networkDataArticleIds,
   generativeAiArticleIds,
   pipedaProvisionIds,
+  canadaAdmDirectiveProvisionIds,
   lgpdArticleIds,
   taiwanAiActArticleIds,
   taiwanPdpaArticleIds,
@@ -2943,6 +3181,7 @@ const combinedProvisionIds = new Set([
   ...networkDataArticleIds,
   ...generativeAiArticleIds,
   ...pipedaProvisionIds,
+  ...canadaAdmDirectiveProvisionIds,
   ...lgpdArticleIds,
   ...taiwanAiActArticleIds,
   ...taiwanPdpaArticleIds,
@@ -2981,6 +3220,7 @@ const allOfficialArticles = [
   ...networkDataArticles,
   ...generativeAiArticles,
   ...pipedaProvisions,
+  ...canadaAdmDirectiveProvisions,
   ...lgpdArticles,
   ...taiwanAiActArticles,
   ...taiwanPdpaArticles,
@@ -3698,7 +3938,7 @@ console.log(
     `${combinedProvisionIds.size} merged provisions`,
     `(${gdprArticles.length} EU GDPR + ${euAiActArticles.length} EU AI Act +`,
     `${ukGdprArticles.length} UK GDPR + ${piplArticles.length + networkDataArticles.length + generativeAiArticles.length} Chinese official Article imports),`,
-    `${pipedaProvisions.length} PIPEDA + ${lgpdArticles.length} LGPD +`,
+    `${pipedaProvisions.length} PIPEDA current/prospective + ${canadaAdmDirectiveProvisions.length} Canada ADM Directive + ${lgpdArticles.length} LGPD +`,
     `${taiwanAiActArticles.length + taiwanPdpaArticles.length} Taiwan bilingual provision imports +`,
     `${singaporePdpaProvisions.length} Singapore PDPA section/Schedule imports,`,
     `${southAfricaPopiaSections.length + nigeriaNdpaSections.length + indonesiaPdpArticles.length} Africa/Indonesia complete provision imports,`,

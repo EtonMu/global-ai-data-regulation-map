@@ -18,6 +18,7 @@ const [
   networkDataArticles,
   generativeAiArticles,
   pipedaProvisions,
+  canadaAdmDirectiveProvisions,
   lgpdArticles,
   taiwanAiActArticles,
   taiwanPdpaArticles,
@@ -56,6 +57,7 @@ const [
   load("cn-network-data-regulations-articles.json"),
   load("cn-generative-ai-measures-articles.json"),
   load("canada-pipeda-provisions.json"),
+  load("canada-adm-directive-provisions.json"),
   load("brazil-lgpd-articles.json"),
   load("tw-ai-basic-act-2026-articles.json"),
   load("tw-personal-data-protection-act-articles.json"),
@@ -320,6 +322,9 @@ function generativeAiConcepts(article) {
 }
 
 function pipedaConcepts(provision) {
+  if (Array.isArray(provision.coreConceptIds) && provision.coreConceptIds.length) {
+    return unique(provision.coreConceptIds);
+  }
   if (provision.id === "ca-pipeda-sch-1") {
     return [
       "accountability-governance",
@@ -1542,6 +1547,19 @@ for (const provision of pipedaProvisions) {
       provision,
       pipedaConcepts(provision),
       pipedaRelevance(provision),
+    ),
+  );
+}
+
+for (const provision of canadaAdmDirectiveProvisions) {
+  reviewById.set(
+    provision.id,
+    reviewForArticle(
+      provision,
+      provision.coreConceptIds,
+      provision.thematicRelevance?.isRelevant
+        ? "substantive-topic"
+        : "structural-context",
     ),
   );
 }

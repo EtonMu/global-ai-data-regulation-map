@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import { deriveTranslationIntegrity } from "../app/research-lab-data.ts";
+
 const appRoot = new URL("../app/", import.meta.url);
 const dataRoot = new URL("../data/v2/", import.meta.url);
 
@@ -37,9 +39,9 @@ test("Phase 2 is a distinct, accessible research phase", () => {
 
 test("translation integrity keeps coverage, authority, and temporal alignment separate", () => {
   assert.equal(coverage.totals.corpusCount, 22);
-  assert.equal(coverage.totals.totalUnitCount, 1337);
-  assert.equal(coverage.totals.storedEnglishUnitCount, 1337);
-  assert.equal(coverage.totals.currentAlignedEnglishUnitCount, 1332);
+  assert.equal(coverage.totals.totalUnitCount, 1346);
+  assert.equal(coverage.totals.storedEnglishUnitCount, 1346);
+  assert.equal(coverage.totals.currentAlignedEnglishUnitCount, 1341);
   assert.equal(coverage.totals.temporallyMismatchedEnglishUnitCount, 5);
   assert.equal(coverage.totals.missingEnglishUnitCount, 0);
 
@@ -57,6 +59,70 @@ test("translation integrity keeps coverage, authority, and temporal alignment se
   assert.match(labSource, /Stored English text is not a translation-quality finding/);
   assert.doesNotMatch(labSource, /translation quality score|semantic drift score/i);
   assert.match(labSource, /onOpenProvision\(provisionId\)/);
+});
+
+test("translation integrity resolves legacy Vietnam corpus IDs to registry IDs", () => {
+  const legacyInstrumentId = "vn-decree-356-2025";
+  const registryInstrumentId = "vn-pdpl-implementing-decree-356-2025";
+  const integrity = deriveTranslationIntegrity({
+    englishCorpusCoverage: {
+      schemaVersion: "fixture",
+      reviewedOn: "2026-07-20",
+      scope: "Fixture coverage.",
+      totals: {
+        corpusCount: 1,
+        totalUnitCount: 1,
+        storedEnglishUnitCount: 1,
+        currentAlignedEnglishUnitCount: 0,
+        temporallyMismatchedEnglishUnitCount: 1,
+        missingEnglishUnitCount: 0,
+        completionPercent: 100,
+        currentAlignedPercent: 0,
+      },
+      corpora: [
+        {
+          instrumentId: legacyInstrumentId,
+          sourceInstrumentId: legacyInstrumentId,
+          corpusFile: "fixture.json",
+          originalLanguages: ["vi"],
+          totalUnitCount: 1,
+          storedEnglishUnitCount: 1,
+          currentAlignedEnglishUnitCount: 0,
+          temporallyMismatchedEnglishUnitCount: 1,
+          missingEnglishUnitCount: 0,
+          completionPercent: 100,
+          coverageStatus: "complete-stored-english-with-version-boundaries",
+          translationStatuses: ["project-authored-reference"],
+          unitCoverageStatuses: ["future-phase"],
+          versionLabels: ["fixture"],
+          englishSourceRecords: [],
+          missingUnitIds: [],
+          missingCoverageStatuses: [],
+        },
+      ],
+    },
+    provisions: [
+      {
+        id: "vn-fixture-art-1",
+        instrumentId: registryInstrumentId,
+        locator: "Article 1",
+        title: "Fixture",
+        conceptIds: [],
+        translations: {
+          en: {
+            status: "project-authored-reference",
+            coverageStatus: "future-phase",
+          },
+        },
+      },
+    ],
+  });
+
+  assert.equal(integrity.corpora[0].instrumentId, registryInstrumentId);
+  assert.equal(integrity.corpora[0].sourceInstrumentId, legacyInstrumentId);
+  assert.deepEqual(integrity.corpora[0].anomalyProvisionIds, [
+    "vn-fixture-art-1",
+  ]);
 });
 
 test("bridge metrics separate reviewed evidence from candidate sensitivity", () => {

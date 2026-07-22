@@ -30,6 +30,7 @@ const [
   generativeAiArticles,
   ukGdprArticles,
   pipedaProvisions,
+  canadaAdmDirectiveProvisions,
   lgpdArticles,
   taiwanAiActArticles,
   taiwanPdpaArticles,
@@ -66,6 +67,7 @@ const [
     "cn-generative-ai-measures-articles.json",
     "uk-gdpr-articles.json",
     "canada-pipeda-provisions.json",
+    "canada-adm-directive-provisions.json",
     "brazil-lgpd-articles.json",
     "tw-ai-basic-act-2026-articles.json",
     "tw-personal-data-protection-act-articles.json",
@@ -177,7 +179,7 @@ const authoritativeLanguageOverrides = {
   },
   "ch-fadp-2020": {
     languages: ["de-CH", "fr-CH", "it-CH"],
-    note: "German, French and Italian Fedlex enactments are equally authoritative and legally binding. The complete aligned English publication is official but expressly has no legal force.",
+    note: "German, French and Italian Fedlex enactments are equally authoritative and legally binding. The aligned English publication is official but expressly has no legal force; the local Annex records retain the source's external-reference boundary rather than claiming self-contained amendment text.",
   },
   "vn-personal-data-protection-law-2025": {
     languages: ["vi-VN"],
@@ -245,7 +247,11 @@ const authoritativeLanguageOverrides = {
   },
   "ca-pipeda": {
     languages: ["en-CA", "fr-CA"],
-    note: "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English while preserving the full aligned French text.",
+    note: "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English while preserving both the complete current in-force corpus and the separately labelled enacted amendments that still await an order bringing them into force.",
+  },
+  "ca-directive-automated-decision-making": {
+    languages: ["en-CA", "fr-CA"],
+    note: "The Treasury Board of Canada Secretariat co-publishes complete English and French policy texts. Neither is presented as an unofficial translation; this is a mandatory federal internal-policy instrument rather than legislation.",
   },
   "tw-ai-basic-act-2026": {
     languages: ["zh-Hant-TW"],
@@ -320,9 +326,9 @@ const englishOverrides = {
     coverage: { translatedUnitCount: 7, totalUnitCount: 7, completeness: "complete-official-original-English-text" },
   },
   "ch-fadp-2020": {
-    status: "complete-official-non-authoritative-English-translation-stored",
-    note: "All 77 Articles and two Annexes include aligned German, French and Italian authoritative texts and a complete official English translation that has no legal force.",
-    coverage: { translatedUnitCount: 79, totalUnitCount: 79, completeness: "complete-four-language-alignment" },
+    status: "complete-article-level-official-non-authoritative-English-translation-stored-with-annex-reference-boundary",
+    note: "All 77 Articles include aligned German, French and Italian authoritative texts and the official English translation that has no legal force. Two Annex reference records are aligned across the same languages but do not purport to reproduce every externalized consequential amendment.",
+    coverage: { translatedUnitCount: 79, totalUnitCount: 79, completeness: "complete-four-language-article-alignment-with-annex-reference-boundary" },
   },
   "vn-personal-data-protection-law-2025": {
     status: "complete-current-project-English-reference-stored-no-official-translation-verified",
@@ -394,12 +400,25 @@ const englishOverrides = {
     coverage: { translatedUnitCount: 67, totalUnitCount: 67, completeness: "complete-official-original-English-text" },
   },
   "ca-pipeda": {
-    status: "complete-official-co-authentic-English-text-stored",
-    note: "All 75 current top-level Section/range and Schedule units are stored in official co-authentic English and French. English is the interface default and is not characterized as a translation of the French enactment.",
+    status: "complete-official-co-authentic-English-text-stored-with-operative-state-boundary",
+    note: "All 75 current in-force top-level Section/range and Schedule units, plus nine enacted amending sections not yet in force, are stored in official co-authentic English and French. The prospective units are isolated and never presented as operative duties.",
     coverage: {
-      translatedUnitCount: 75,
-      totalUnitCount: 75,
-      completeness: "complete-official-co-authentic-bilingual-text",
+      translatedUnitCount: 84,
+      currentAlignedUnitCount: 84,
+      temporallyMismatchedUnitCount: 0,
+      totalUnitCount: 84,
+      completeness: "complete-official-co-authentic-bilingual-text-with-operative-state-boundary",
+    },
+  },
+  "ca-directive-automated-decision-making": {
+    status: "complete-official-co-published-English-policy-text-stored",
+    note: "All ten numbered sections and Appendices A–C are stored from the current official English publication with the complete co-published French text aligned unit by unit.",
+    coverage: {
+      translatedUnitCount: 13,
+      currentAlignedUnitCount: 13,
+      temporallyMismatchedUnitCount: 0,
+      totalUnitCount: 13,
+      completeness: "complete-official-co-published-bilingual-policy-text",
     },
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
@@ -541,9 +560,9 @@ const coverageOverrides = {
     statement: "All 99 operative Articles are stored from the official English EUR-Lex publication. The 173 Recitals remain available at the linked official source and are not copied into the local Article corpus.",
   },
   "eu-ai-act": {
-    mode: "complete-enacted-article-corpus",
+    mode: "complete-enacted-operative-article-corpus",
     localUnitCount: 113,
-    statement: "All 113 Articles of Regulation (EU) 2024/1689 are stored from the enacted official English publication. A later amending act must be separately versioned after Official Journal publication and entry into force.",
+    statement: "All 113 operative Articles of Regulation (EU) 2024/1689 are stored from the enacted official English publication. The 180 Recitals and Annexes I–XIII remain at EUR-Lex and are outside the present local corpus; the site therefore does not claim a complete document-level reproduction.",
   },
   "cn-cybersecurity-law": {
     mode: "complete-current-article-corpus",
@@ -571,9 +590,14 @@ const coverageOverrides = {
     statement: "All 120 distinct Article nodes in the current revised UK GDPR are stored from the official legislation.gov.uk XML presentation as at 19 June 2026, including inserted alphanumeric Articles. This is a UK consolidated corpus and must not be treated as identical to the EU GDPR text.",
   },
   "ca-pipeda": {
-    mode: "complete-official-co-authentic-bilingual-current-corpus",
+    mode: "complete-official-co-authentic-bilingual-in-force-and-prospective-corpus",
     localUnitCount: pipedaProvisions.length,
-    statement: "All 75 current top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications. The two enactments are co-authentic, and the local corpus is current to 31 March 2026.",
+    statement: "All 75 current in-force top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications, together with nine enacted amending sections from S.C. 2026, c. 3 that still require an order under section 398 to come into force. The two language texts are co-authentic and the two operative states remain visibly separated.",
+  },
+  "ca-directive-automated-decision-making": {
+    mode: "complete-current-official-co-published-bilingual-policy-corpus",
+    localUnitCount: canadaAdmDirectiveProvisions.length,
+    statement: "All ten numbered sections and Appendices A–C of the Directive modified 24 June 2025 are stored in complete official English and French. The 24 June 2026 date is recorded only as the transition deadline for pre-existing systems and Agents of Parliament, not as a universal commencement date.",
   },
   "br-lgpd-2018": {
     mode: "complete-current-Portuguese-and-English-reference-article-corpus",
@@ -666,9 +690,9 @@ const coverageOverrides = {
     statement: "All 124 Sections and six Schedules are stored in complete co-authentic English and Traditional Chinese. Section 33 is retained as enacted but not in operation; repealed and spent placeholders remain explicit, and source-version dates are not presented as commencement dates.",
   },
   "ch-fadp-2020": {
-    mode: "complete-current-four-language-aligned-article-and-annex-corpus",
+    mode: "complete-current-four-language-aligned-article-corpus-with-annex-reference-boundary",
     localUnitCount: swissFadpProvisions.length,
-    statement: "All 77 Articles and two Annexes of the current 7 July 2025 Fedlex consolidation are stored in aligned English, German, French and Italian. German, French and Italian are equally authoritative; English is official but non-authoritative.",
+    statement: "All 77 Articles of the current 7 July 2025 Fedlex consolidation are stored in aligned English, German, French and Italian. Two Annex navigation records are also retained, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference; they are not represented as self-contained reproduced amendment text. German, French and Italian are equally authoritative; English is official but non-authoritative.",
   },
   "vn-personal-data-protection-law-2025": {
     mode: "complete-current-official-vietnamese-and-project-English-article-corpus",
@@ -732,7 +756,8 @@ const reviewLevelOverrides = {
   "cn-network-data-regulations": "complete-official-original-language-article-corpus-and-anchor-review",
   "cn-generative-ai-measures": "complete-official-original-language-article-corpus-and-anchor-review",
   "gb-uk-gdpr": "complete-official-current-consolidated-article-corpus-and-anchor-review",
-  "ca-pipeda": "complete-official-co-authentic-bilingual-current-corpus-and-anchor-review",
+  "ca-pipeda": "complete-official-co-authentic-bilingual-current-and-prospective-corpus-review",
+  "ca-directive-automated-decision-making": "complete-current-official-co-published-bilingual-policy-corpus-review",
   "br-lgpd-2018": "complete-official-current-original-language-article-corpus-and-anchor-review",
   "tw-ai-basic-act-2026": "complete-official-bilingual-article-corpus-and-anchor-review",
   "tw-personal-data-protection-act": "complete-official-bilingual-article-corpus-with-commencement-review",
@@ -766,7 +791,8 @@ const reviewLevelOverrides = {
 };
 
 const reviewedOnOverrides = {
-  "ca-pipeda": "2026-07-20",
+  "ca-pipeda": "2026-07-21",
+  "ca-directive-automated-decision-making": "2026-07-21",
   "br-lgpd-2018": "2026-07-20",
   "tw-ai-basic-act-2026": "2026-07-20",
   "tw-personal-data-protection-act": "2026-07-20",
@@ -802,6 +828,14 @@ const reviewedOnOverrides = {
 const instrumentCaveats = {
   "eu-ai-act": [
     "The complete local Article file is the 2024 enacted text. The Digital Omnibus on AI received final Council approval on 29 June 2026 and had a final legislative text dated 8 July 2026, but no replacement consolidated corpus is claimed without an Official Journal legal-act record.",
+    "The present local corpus contains all 113 operative Articles but not the 180 Recitals or Annexes I–XIII. Annex-dependent classifications and documentation duties must be checked at the linked EUR-Lex publication.",
+  ],
+  "ca-pipeda": [
+    "The 75-unit current consolidation and the nine enacted amending sections not yet in force are stored as separate operative-state groups. Sections 389–397 of S.C. 2026, c. 3 do not become operative unless and until an order is made under section 398.",
+  ],
+  "ca-directive-automated-decision-making": [
+    "The Directive is a mandatory federal internal-policy instrument, not a generally applicable Canadian private-sector AI statute.",
+    "The 24 June 2026 date is a transition deadline for existing automated decision systems and Agents of Parliament; it is not a universal start date for the Directive.",
   ],
   "ca-bill-c-27-aida-2022-lapsed": [
     "Bill C-27 lapsed on prorogation on 6 January 2025 and AIDA never became law; these nodes are retained only for legislative history and comparison.",
@@ -842,6 +876,7 @@ const instrumentCaveats = {
   "ch-fadp-2020": [
     "The English Fedlex expression is complete and official but has no legal force; German, French and Italian remain equally authoritative.",
     "The 7 July 2025 version date is a consolidation boundary, not the Act's 1 September 2023 commencement date.",
+    "The two local Annex nodes preserve Fedlex reference content, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference. The project does not claim that those records reproduce every amendment text cross-referenced by the Annexes.",
   ],
   "vn-pdpl-implementing-decree-356-2025": [
     "The 13 Appendix forms are part of the complete stored corpus. No complete official English text was verified.",
@@ -879,6 +914,16 @@ const instrumentCaveats = {
 };
 
 const rightsBoundaryOverrides = {
+  "ca-pipeda": {
+    sourceTextStatus: "official-federal-enactment-co-authentic-English-and-French",
+    projectLicenseBoundary: "official-law-text-reproduced-under-Reproduction-of-Federal-Law-Order-not-relicensed-as-project-editorial-content",
+    note: "The bilingual enactment is reproduced under the Reproduction of Federal Law Order with attribution and without representing this copy as official. Project-authored summaries and mappings remain separate editorial material.",
+  },
+  "ca-directive-automated-decision-making": {
+    sourceTextStatus: "official-co-published-federal-policy-Crown-copyright",
+    projectLicenseBoundary: "non-commercial-reproduction-under-Canada.ca-terms-not-relicensed-as-project-editorial-content",
+    note: "The official policy text is reproduced for this non-commercial academic project under Canada.ca's non-commercial reproduction conditions, with source attribution, accuracy controls, and no suggestion of Crown endorsement. Project-authored summaries and mappings remain separate.",
+  },
   "br-pl-2338-2023-ai-bill": {
     sourceTextStatus: "official-act-excluded-from-copyright-protection-under-Brazilian-law",
     projectLicenseBoundary: "official-Portuguese-bill-text-excluded-from-project-CC-BY-license-project-English-reference-licensed-CC-BY-4.0",
@@ -967,6 +1012,7 @@ function englishProfile(instrument) {
             computed.temporallyMismatchedEnglishUnitCount,
           totalUnitCount: computed.totalUnitCount,
           completeness: computed.coverageStatus,
+          ...profile.coverage,
         },
       }
     : profile;

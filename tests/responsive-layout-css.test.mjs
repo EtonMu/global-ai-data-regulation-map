@@ -29,6 +29,10 @@ test("the resizable legal workspace responds to its own inline size", () => {
     contextQuery,
     /\.instrument-context\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/,
   );
+  assert.match(
+    contextQuery,
+    /\.instrument-corpus-profile\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/,
+  );
 
   const mastheadQuery = blockFrom(
     "@container legal-workspace (max-width: 560px)",

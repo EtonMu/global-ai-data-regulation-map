@@ -1,0 +1,2 @@
+# Frozen official HTML snapshots preserve source bytes, including publisher whitespace.
+data/v2/source-snapshots/*.html whitespace=-trailing-space,-space-before-tab,-blank-at-eof

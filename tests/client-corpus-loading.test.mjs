@@ -22,10 +22,14 @@ const [
   readFile(new URL("app/corpus-loader.ts", projectRoot), "utf8"),
   readFile(new URL("app/lazy-research-view.tsx", projectRoot), "utf8"),
 ]);
+const sourceAudits = await readFile(
+  new URL("data/v2/source-audit.json", projectRoot),
+  "utf8",
+).then(JSON.parse);
 
 test("the first explorer chunk contains a lightweight 58-instrument index", () => {
   assert.equal(index.totals.instrumentCount, 58);
-  assert.equal(index.totals.mergedProvisionCount, 2873);
+  assert.equal(index.totals.mergedProvisionCount, 2932);
   assert.equal(Object.keys(index.shards).length, instruments.length);
   for (const instrument of instruments) {
     assert.match(
@@ -72,6 +76,67 @@ test("complete corpora are fetched and hydrated by instrument instead of importe
   assert.match(loaderSource, /fetch\(resolvedUrl/);
   assert.match(loaderSource, /cache: options\.force \? "no-cache" : "force-cache"/);
   assert.match(loaderSource, /shardPromises\.delete\(instrumentId\)/);
+  assert.match(loaderSource, /corpusRevision\(serializedPayload\)/);
+  assert.match(loaderSource, /assertExactIds/);
+  assert.match(loaderSource, /expectation\.articleIds/);
+  assert.match(loaderSource, /expectation\.seedIds/);
+  assert.match(
+    explorerSource,
+    /hydratedInstrumentIds\.has\(instrumentId\) && !options\.force/,
+  );
+  assert.match(
+    explorerSource,
+    /hydratedInstrumentIds\.has\(instrumentId\) && !force/,
+  );
+});
+
+test("instrument overviews disclose corpus composition and redistribution boundaries", () => {
+  assert.match(explorerSource, /LOCAL_CORPUS_COVERAGE/);
+  assert.match(explorerSource, /RIGHTS \/ REDISTRIBUTION/);
+  assert.match(explorerSource, /sourceTextUnitCount/);
+  assert.match(explorerSource, /analyticalAnchorCount/);
+  assert.match(explorerSource, /sourceAudit\.localCoverage\.statement/);
+  assert.match(explorerSource, /sourceAudit\.rightsBoundary\.note/);
+  assert.match(explorerSource, /translation\.status === "official-co-published"/);
+
+  const articleIds = new Set(index.articleRecords.map((record) => record.id));
+  const runtimeIdsFor = (instrumentId) =>
+    new Set(
+      [...index.articleRecords, ...index.seedProvisions]
+        .filter((record) => record.instrumentId === instrumentId)
+        .map((record) => record.id),
+    );
+  assert.equal(
+    index.articleRecords.filter((record) => record.instrumentId === "ca-pipeda")
+      .length,
+    84,
+  );
+  assert.equal(runtimeIdsFor("ca-pipeda").size, 85);
+  assert.equal(
+    [...runtimeIdsFor("ca-pipeda")].filter((id) => !articleIds.has(id)).length,
+    1,
+  );
+  assert.equal(
+    index.articleRecords.filter(
+      (record) =>
+        record.instrumentId === "ca-directive-automated-decision-making",
+    ).length,
+    13,
+  );
+  assert.equal(runtimeIdsFor("ca-directive-automated-decision-making").size, 16);
+  assert.equal(
+    index.articleRecords.filter(
+      (record) => record.instrumentId === "ca-bill-c-27-aida-2022-lapsed",
+    ).length,
+    0,
+  );
+  assert.equal(runtimeIdsFor("ca-bill-c-27-aida-2022-lapsed").size, 41);
+  assert.match(
+    sourceAudits.find(
+      (audit) => audit.instrumentId === "ca-bill-c-27-aida-2022-lapsed",
+    ).rightsBoundary.note,
+    /permission for public redistribution has not been established/i,
+  );
 });
 
 test("full-text search and Research load the complete corpus only on demand", () => {

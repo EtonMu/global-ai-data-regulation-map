@@ -61,7 +61,11 @@ test("project-authored English references pass the publication quality gate", as
   for (const corpusEntry of audit.corpora) {
     const records = JSON.parse(
       await readFile(new URL(corpusEntry.corpusFile, dataRoot), "utf8"),
-    ).filter((record) => record.instrumentId === corpusEntry.instrumentId);
+    ).filter(
+      (record) =>
+        record.instrumentId ===
+        (corpusEntry.sourceInstrumentId ?? corpusEntry.instrumentId),
+    );
 
     for (const record of records) {
       const translation = record.translations?.en;

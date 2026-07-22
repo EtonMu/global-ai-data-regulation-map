@@ -33,6 +33,20 @@ const corpusFiles = [
   "provisions.json",
 ];
 
+// A small number of source corpora retain legacy import IDs so their frozen
+// snapshots and provision IDs remain stable. Coverage records, however, are
+// consumed alongside instruments.json and must use the registry ID.
+const registryInstrumentIdBySourceId = new Map([
+  ["vn-decree-356-2025", "vn-pdpl-implementing-decree-356-2025"],
+  ["vn-decree-13-2023", "vn-personal-data-protection-decree-13-2023"],
+]);
+
+function registryInstrumentId(sourceInstrumentId) {
+  return (
+    registryInstrumentIdBySourceId.get(sourceInstrumentId) ?? sourceInstrumentId
+  );
+}
+
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
@@ -132,8 +146,9 @@ for (const corpusFile of corpusFiles) {
   assert(Array.isArray(records) && records.length, `${corpusFile} is empty`);
 
   const byInstrument = Map.groupBy(records, (record) => record.instrumentId);
-  for (const [instrumentId, units] of byInstrument) {
-    assert(instrumentId, `${corpusFile} has a unit without instrumentId`);
+  for (const [sourceInstrumentId, units] of byInstrument) {
+    assert(sourceInstrumentId, `${corpusFile} has a unit without instrumentId`);
+    const instrumentId = registryInstrumentId(sourceInstrumentId);
     assert(
       units.every((unit) => !isEnglish(unit.language)),
       `${corpusFile} must contain only non-English source-language units`,
@@ -245,6 +260,7 @@ for (const corpusFile of corpusFiles) {
 
     groups.push({
       instrumentId,
+      ...(sourceInstrumentId !== instrumentId ? { sourceInstrumentId } : {}),
       corpusFile,
       originalLanguages: unique(units.map((unit) => unit.language)),
       totalUnitCount: units.length,

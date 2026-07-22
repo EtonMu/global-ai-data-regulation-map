@@ -16,7 +16,17 @@ export type ResearchRelevance =
   | "substantive-topic"
   | "structural-context"
   | "unreviewed";
+export type ResearchAnalysisRole =
+  | "metric-unit"
+  | "navigation-analytical-excerpt";
 export type ResearchTemporalStatus = "past" | "on-snapshot" | "future";
+
+export type ResearchTreatment = {
+  role: ResearchAnalysisRole;
+  metricEligible: boolean;
+  canonicalProvisionId?: string | null;
+  note?: string;
+};
 
 export type ResearchJurisdictionInput = {
   id: string;
@@ -81,6 +91,7 @@ export type ResearchProvisionInput = {
   sourceOrder?: number;
   chapter?: ResearchStructureInput | null;
   section?: ResearchStructureInput | null;
+  researchTreatment?: ResearchTreatment;
   topicRelevance?: {
     relevance: ResearchRelevance;
     conceptIds: string[];
@@ -161,6 +172,8 @@ export type ResearchStatusEventInput = {
 
 export type ResearchEnglishCorpusInput = {
   instrumentId: string;
+  /** Legacy ID retained by a frozen source corpus, when different. */
+  sourceInstrumentId?: string;
   corpusFile: string;
   originalLanguages: string[];
   totalUnitCount: number;
@@ -243,6 +256,8 @@ export type ResearchCoverageObservatory = {
   summary: {
     jurisdictionCount: number;
     instrumentCount: number;
+    corpusRecordCount: number;
+    navigationExcerptCount: number;
     provisionCount: number;
     substantiveProvisionCount: number;
     structuralContextCount: number;
@@ -280,6 +295,9 @@ export type ResearchProvisionDatum = {
   englishCoverageStatus: string | null;
   englishAlignmentStatus: string | null;
   sourceOrder: number;
+  analysisRole: ResearchAnalysisRole;
+  metricEligible: boolean;
+  canonicalProvisionId: string | null;
   relevance: ResearchRelevance;
   conceptIds: string[];
   chapterId: string | null;
@@ -371,6 +389,8 @@ export type ResearchStructuralBand = {
 export type ResearchStructuralProfile = {
   instrumentId: string;
   includedInDefaultAnalysis: boolean;
+  corpusRecordCount: number;
+  excludedNavigationExcerptCount: number;
   totalProvisionCount: number;
   substantiveProvisionCount: number;
   structuralContextCount: number;
@@ -423,6 +443,8 @@ export type ResearchInstrumentDatum = {
   conceptMeasurementState: ResearchConceptMeasurementState;
   includedInDefaultAnalysis: boolean;
   localUnitCount: number;
+  corpusRecordCount: number;
+  navigationExcerptCount: number;
   totalProvisionCount: number;
   substantiveProvisionCount: number;
   structuralContextCount: number;
@@ -443,6 +465,7 @@ export type ResearchTranslationAuthorityClass =
 
 export type ResearchTranslationCorpusDatum = {
   instrumentId: string;
+  sourceInstrumentId?: string;
   corpusFile: string;
   originalLanguages: string[];
   totalUnitCount: number;
@@ -821,6 +844,8 @@ export type ResearchGranularityInstrument = {
   coverageMode: string;
   coverageClass: ResearchCoverageClass;
   includedInDefaultAnalysis: boolean;
+  corpusRecordCount: number;
+  excludedNavigationExcerptCount: number;
   totalProvisionCount: number;
   substantiveProvisionCount: number;
   structuralContextCount: number;
@@ -848,6 +873,8 @@ export type ResearchGranularityInstrument = {
 export type ResearchGranularityCoverageClassSummary = {
   coverageClass: ResearchCoverageClass;
   instrumentCount: number;
+  corpusRecordCount: number;
+  excludedNavigationExcerptCount: number;
   provisionCount: number;
   substantiveProvisionCount: number;
   structuralContextCount: number;
@@ -874,6 +901,9 @@ export type ResearchArticleMicroscopeBand = {
   locator: string;
   title: string;
   relevance: ResearchRelevance;
+  analysisRole: ResearchAnalysisRole;
+  metricEligible: boolean;
+  canonicalProvisionId: string | null;
   conceptIds: string[];
   conceptAssignmentCount: number;
   structureId: string;
@@ -895,6 +925,8 @@ export type ResearchArticleMicroscopeInstrument = {
   coverageMode: string;
   coverageClass: ResearchCoverageClass;
   includedInDefaultAnalysis: boolean;
+  metricEligibleProvisionCount: number;
+  navigationExcerptCount: number;
   totalProvisionCount: number;
   maximumConceptAssignmentCount: number;
   bands: ResearchArticleMicroscopeBand[];
@@ -1106,6 +1138,28 @@ function conceptsForProvision(provision: ResearchProvisionInput): string[] {
   );
 }
 
+function researchTreatmentForProvision(
+  provision: ResearchProvisionInput,
+): Required<Pick<ResearchTreatment, "role" | "metricEligible">> &
+  Pick<ResearchTreatment, "canonicalProvisionId" | "note"> {
+  const treatment = provision.researchTreatment;
+  const isNavigationExcerpt =
+    treatment?.role === "navigation-analytical-excerpt";
+  return {
+    role: treatment?.role ?? "metric-unit",
+    metricEligible:
+      treatment?.metricEligible !== false && !isNavigationExcerpt,
+    canonicalProvisionId: treatment?.canonicalProvisionId ?? null,
+    note: treatment?.note,
+  };
+}
+
+function provisionIsMetricEligible(
+  provision: ResearchProvisionInput,
+): boolean {
+  return researchTreatmentForProvision(provision).metricEligible;
+}
+
 function round(value: number, precision = 6): number {
   const scale = 10 ** precision;
   return Math.round((value + Number.EPSILON) * scale) / scale;
@@ -1188,6 +1242,7 @@ function provisionIsInSample(
 ): boolean {
   const normalized = normalizedOptions(options);
   return (
+    provisionIsMetricEligible(provision) &&
     normalized.coverageClasses.has(
       classByInstrument.get(provision.instrumentId) ?? "unclassified",
     ) && normalized.relevance.has(relevanceForProvision(provision))
@@ -1202,6 +1257,7 @@ export function deriveResearchProvisions(
     const nextOrder = fallbackOrder.get(provision.instrumentId) ?? 0;
     fallbackOrder.set(provision.instrumentId, nextOrder + 1);
     const english = provision.translations?.en;
+    const researchTreatment = researchTreatmentForProvision(provision);
     return {
       id: provision.id,
       instrumentId: provision.instrumentId,
@@ -1219,6 +1275,10 @@ export function deriveResearchProvisions(
       englishCoverageStatus: english?.coverageStatus ?? null,
       englishAlignmentStatus: english?.alignmentStatus ?? null,
       sourceOrder: provision.sourceOrder ?? nextOrder,
+      analysisRole: researchTreatment.role,
+      metricEligible: researchTreatment.metricEligible,
+      canonicalProvisionId:
+        researchTreatment.canonicalProvisionId ?? null,
       relevance: relevanceForProvision(provision),
       conceptIds: conceptsForProvision(provision),
       chapterId: provision.chapter?.id ?? null,
@@ -1234,12 +1294,13 @@ export function deriveResearchProvisions(
 export function deriveCoverageObservatory(
   input: ResearchCorpusInput,
 ): ResearchCoverageObservatory {
+  const metricProvisions = input.provisions.filter(provisionIsMetricEligible);
   const relevanceCounts: Record<ResearchRelevance, number> = {
     "substantive-topic": 0,
     "structural-context": 0,
     unreviewed: 0,
   };
-  input.provisions.forEach((provision) => {
+  metricProvisions.forEach((provision) => {
     relevanceCounts[relevanceForProvision(provision)] += 1;
   });
 
@@ -1287,7 +1348,10 @@ export function deriveCoverageObservatory(
     summary: {
       jurisdictionCount: input.jurisdictions.length,
       instrumentCount: input.instruments.length,
-      provisionCount: input.provisions.length,
+      corpusRecordCount: input.provisions.length,
+      navigationExcerptCount:
+        input.provisions.length - metricProvisions.length,
+      provisionCount: metricProvisions.length,
       substantiveProvisionCount: relevanceCounts["substantive-topic"],
       structuralContextCount: relevanceCounts["structural-context"],
       unreviewedProvisionCount: relevanceCounts.unreviewed,
@@ -1336,6 +1400,12 @@ export function deriveCoverageObservatory(
         title: "Frequency is not regulatory strength",
         detail:
           "Raw provision counts are affected by drafting structure and multi-label annotation. Fingerprints therefore expose prevalence, TF-IDF, and coverage status rather than a strictness score.",
+      },
+      {
+        id: "navigation-excerpts-non-metric",
+        title: "Navigation excerpts are not analysis units",
+        detail:
+          "Editorial child anchors remain available for source and concept navigation, but are excluded from provision counts, fingerprints, prevalence, co-occurrence, structural profiles, and granularity statistics when their complete parent unit is already stored.",
       },
       {
         id: "unreviewed-excluded",
@@ -1410,6 +1480,7 @@ export function deriveConceptFingerprints(
     const denominatorProvisions = input.provisions.filter(
       (provision) =>
         provision.instrumentId === instrument.id &&
+        provisionIsMetricEligible(provision) &&
         normalized.relevance.has(relevanceForProvision(provision)),
     );
     const counts = new Map<string, number>();
@@ -1608,13 +1679,16 @@ export function deriveStructuralProfiles(
   const normalized = normalizedOptions(options);
 
   return input.instruments.map((instrument) => {
-    const instrumentProvisions = provisions
+    const instrumentRecords = provisions
       .filter((provision) => provision.instrumentId === instrument.id)
       .sort(
         (left, right) =>
           left.sourceOrder - right.sourceOrder ||
           left.locator.localeCompare(right.locator, undefined, { numeric: true }),
       );
+    const instrumentProvisions = instrumentRecords.filter(
+      (provision) => provision.metricEligible,
+    );
     const total = instrumentProvisions.length;
     const draftBands: Array<{
       structure: ReturnType<typeof provisionStructure>;
@@ -1673,6 +1747,9 @@ export function deriveStructuralProfiles(
       includedInDefaultAnalysis: normalized.coverageClasses.has(
         classByInstrument.get(instrument.id) ?? "unclassified",
       ),
+      corpusRecordCount: instrumentRecords.length,
+      excludedNavigationExcerptCount:
+        instrumentRecords.length - instrumentProvisions.length,
       totalProvisionCount: total,
       substantiveProvisionCount: instrumentProvisions.filter(
         (provision) => provision.relevance === "substantive-topic",
@@ -1760,11 +1837,13 @@ export function deriveResearchConcepts(
   const concepts = input.concepts.map((concept) => {
     const substantive = input.provisions.filter(
       (provision) =>
+        provisionIsMetricEligible(provision) &&
         relevanceForProvision(provision) === "substantive-topic" &&
         conceptsForProvision(provision).includes(concept.id),
     );
     const structural = input.provisions.filter(
       (provision) =>
+        provisionIsMetricEligible(provision) &&
         relevanceForProvision(provision) === "structural-context" &&
         conceptsForProvision(provision).includes(concept.id),
     );
@@ -1856,8 +1935,11 @@ export function deriveResearchInstruments(
       const audit = auditByInstrument.get(instrument.id);
       const coverageClass =
         classByInstrument.get(instrument.id) ?? "unclassified";
-      const instrumentProvisions = input.provisions.filter(
+      const instrumentRecords = input.provisions.filter(
         (provision) => provision.instrumentId === instrument.id,
+      );
+      const instrumentProvisions = instrumentRecords.filter(
+        provisionIsMetricEligible,
       );
       const substantive = instrumentProvisions.filter(
         (provision) => relevanceForProvision(provision) === "substantive-topic",
@@ -1899,6 +1981,9 @@ export function deriveResearchInstruments(
         includedInDefaultAnalysis:
           fingerprint?.includedInDefaultAnalysis ?? false,
         localUnitCount: audit?.localCoverage.localUnitCount ?? 0,
+        corpusRecordCount: instrumentRecords.length,
+        navigationExcerptCount:
+          instrumentRecords.length - instrumentProvisions.length,
         totalProvisionCount: instrumentProvisions.length,
         substantiveProvisionCount: substantive.length,
         structuralContextCount: structural.length,
@@ -1924,6 +2009,16 @@ const translationAuthorityOrder: ResearchTranslationAuthorityClass[] = [
   "project-reference",
   "other-reference",
 ];
+
+function canonicalResearchInstrumentId(instrumentId: string): string {
+  if (instrumentId === "vn-decree-356-2025") {
+    return "vn-pdpl-implementing-decree-356-2025";
+  }
+  if (instrumentId === "vn-decree-13-2023") {
+    return "vn-personal-data-protection-decree-13-2023";
+  }
+  return instrumentId;
+}
 
 function translationAuthorityClass(
   status: string,
@@ -1992,14 +2087,16 @@ export function deriveTranslationIntegrity(
 
   const provisionsByInstrument = new Map<string, ResearchProvisionInput[]>();
   input.provisions.forEach((provision) => {
-    const list = provisionsByInstrument.get(provision.instrumentId) ?? [];
+    const instrumentId = canonicalResearchInstrumentId(provision.instrumentId);
+    const list = provisionsByInstrument.get(instrumentId) ?? [];
     list.push(provision);
-    provisionsByInstrument.set(provision.instrumentId, list);
+    provisionsByInstrument.set(instrumentId, list);
   });
   const anomalyPattern =
     /next-phase|not-current|mismatch|temporally|future-phase|superseded-translation/i;
 
   const corpora = report.corpora.map((corpus) => {
+    const instrumentId = canonicalResearchInstrumentId(corpus.instrumentId);
     const authorityClasses = Array.from(
       new Set(
         corpus.translationStatuses.map((status) =>
@@ -2015,7 +2112,7 @@ export function deriveTranslationIntegrity(
       authorityCorpusCounts[authorityClass] += 1;
     });
     const anomalyProvisionIds = (
-      provisionsByInstrument.get(corpus.instrumentId) ?? []
+      provisionsByInstrument.get(instrumentId) ?? []
     )
       .filter((provision) => {
         const translation = provision.translations?.en;
@@ -2035,7 +2132,10 @@ export function deriveTranslationIntegrity(
       .map((provision) => provision.id)
       .sort();
     return {
-      instrumentId: corpus.instrumentId,
+      instrumentId,
+      ...(corpus.sourceInstrumentId
+        ? { sourceInstrumentId: corpus.sourceInstrumentId }
+        : {}),
       corpusFile: corpus.corpusFile,
       originalLanguages: [...corpus.originalLanguages],
       totalUnitCount: corpus.totalUnitCount,
@@ -3781,9 +3881,10 @@ export function deriveProvisionGranularityAudit(
   );
   const instruments: ResearchGranularityInstrument[] = input.instruments
     .map((instrument) => {
-      const provisions = input.provisions.filter(
+      const corpusRecords = input.provisions.filter(
         (provision) => provision.instrumentId === instrument.id,
       );
+      const provisions = corpusRecords.filter(provisionIsMetricEligible);
       const totalProvisionCount = provisions.length;
       const substantive = provisions.filter(
         (provision) =>
@@ -3841,6 +3942,9 @@ export function deriveProvisionGranularityAudit(
           "unclassified",
         coverageClass,
         includedInDefaultAnalysis: coverageClass === "complete",
+        corpusRecordCount: corpusRecords.length,
+        excludedNavigationExcerptCount:
+          corpusRecords.length - provisions.length,
         totalProvisionCount,
         substantiveProvisionCount: substantive.length,
         structuralContextCount: structural.length,
@@ -3923,6 +4027,10 @@ export function deriveProvisionGranularityAudit(
       (sum, instrument) => sum + instrument.totalProvisionCount,
       0,
     );
+    const corpusRecordCount = cohort.reduce(
+      (sum, instrument) => sum + instrument.corpusRecordCount,
+      0,
+    );
     const conceptAssignmentCount = cohort.reduce(
       (sum, instrument) => sum + instrument.conceptAssignmentCount,
       0,
@@ -3930,6 +4038,12 @@ export function deriveProvisionGranularityAudit(
     return {
       coverageClass,
       instrumentCount: cohort.length,
+      corpusRecordCount,
+      excludedNavigationExcerptCount: cohort.reduce(
+        (sum, instrument) =>
+          sum + instrument.excludedNavigationExcerptCount,
+        0,
+      ),
       provisionCount,
       substantiveProvisionCount: cohort.reduce(
         (sum, instrument) => sum + instrument.substantiveProvisionCount,
@@ -4017,6 +4131,9 @@ export function deriveArticleMicroscope(
           locator: provision.locator,
           title: provision.title,
           relevance: provision.relevance,
+          analysisRole: provision.analysisRole,
+          metricEligible: provision.metricEligible,
+          canonicalProvisionId: provision.canonicalProvisionId,
           conceptIds: [...provision.conceptIds].sort(),
           conceptAssignmentCount: provision.conceptIds.length,
           structureId: provisionStructure(provision).id,
@@ -4026,7 +4143,7 @@ export function deriveArticleMicroscope(
         }),
       );
       const positionsByConcept = new Map<string, number[]>();
-      bands.forEach((band) => {
+      bands.filter((band) => band.metricEligible).forEach((band) => {
         band.conceptIds.forEach((conceptId) => {
           const list = positionsByConcept.get(conceptId) ?? [];
           list.push(band.index);
@@ -4060,10 +4177,18 @@ export function deriveArticleMicroscope(
           "unclassified",
         coverageClass,
         includedInDefaultAnalysis: coverageClass === "complete",
+        metricEligibleProvisionCount: bands.filter(
+          (band) => band.metricEligible,
+        ).length,
+        navigationExcerptCount: bands.filter(
+          (band) => !band.metricEligible,
+        ).length,
         totalProvisionCount,
         maximumConceptAssignmentCount: Math.max(
           0,
-          ...bands.map((band) => band.conceptAssignmentCount),
+          ...bands
+            .filter((band) => band.metricEligible)
+            .map((band) => band.conceptAssignmentCount),
         ),
         bands,
         conceptTracks,
@@ -4093,11 +4218,11 @@ export function buildResearchLabData(
       defaultRelevance: [...(options?.relevance ?? DEFAULT_RELEVANCE)],
       analysisUnit: "provision",
       fingerprintDefinition:
-        "Per-instrument TF is a concept's provision assignments divided by all concept assignments in the included relevance class; prevalence separately divides by included provisions. TF-IDF vectors are L2-normalized.",
+        "Per-instrument TF is a concept's provision assignments divided by all concept assignments in the included relevance class; prevalence separately divides by included metric-eligible provisions. Navigation and analytical excerpts whose complete parent unit is already stored remain linked but are excluded. TF-IDF vectors are L2-normalized.",
       idfDefinition:
         "IDF = ln((1 + N) / (1 + document frequency)) + 1, where N is the number of instruments in the selected coverage sample.",
       cooccurrenceDefinition:
-        "Concept pairs are counted once per included provision. Lift, base-2 PMI, normalized PMI, and Jaccard use complete-corpus substantive provisions by default; provision, distinct-instrument, and distinct-jurisdiction support are retained separately.",
+        "Concept pairs are counted once per included metric-eligible provision. Lift, base-2 PMI, normalized PMI, and Jaccard use complete-corpus substantive provisions by default; provision, distinct-instrument, and distinct-jurisdiction support are retained separately. Navigation excerpts are excluded to avoid counting both a complete parent and its editorial child anchor.",
       translationIntegrityDefinition:
         "English storage, authority class, and temporal alignment are reported as separate dimensions. Coverage is not a translation-accuracy or semantic-drift score.",
       bridgeDefinition:
@@ -4113,9 +4238,9 @@ export function buildResearchLabData(
       neighborhoodStabilityDefinition:
         "Regulatory neighborhoods compare cosine distance over L2-normalized TF-IDF profiles with Hellinger distance over concept-prevalence distributions normalized to probability. Leave-one-theme-out rank ranges and nearest-neighbor stability counts are reported for every recorded theme; no distance is a legal-equivalence or compliance score.",
       granularityAuditDefinition:
-        "Granularity and annotation coverage are reported separately for complete, selected and unclassified corpora. Primary measures use provision relevance, concept assignments and recorded annotation fields. Text length is secondary: it counts NFC-normalized, whitespace-collapsed Unicode code points only where stored fullText exists, with missing text retained explicitly; cross-language lengths are not treated as directly comparable drafting strength.",
+        "Granularity and annotation coverage are reported separately for complete, selected and unclassified corpora. Primary measures use metric-eligible provision relevance, concept assignments and recorded annotation fields; excluded navigation excerpts and total corpus-record counts are disclosed separately. Text length is secondary: it counts NFC-normalized, whitespace-collapsed Unicode code points only where stored fullText exists, with missing text retained explicitly; cross-language lengths are not treated as directly comparable drafting strength.",
       articleMicroscopeDefinition:
-        "Article microscope bands preserve source order and encode recorded relevance, concept assignments, structure and annotation presence at provision level. Concept tracks summarize positions within an instrument for navigation and do not infer absent rules from unassigned concepts.",
+        "Article microscope bands preserve source order and encode recorded relevance, concept assignments, structure, metric eligibility and annotation presence at provision level. Navigation excerpts remain drillable, while aggregate concept tracks exclude them so a complete parent and its editorial child anchor are not counted twice; the view does not infer absent rules from unassigned concepts.",
     },
     coverage: deriveCoverageObservatory(normalizedInput),
     instruments: deriveResearchInstruments(normalizedInput, fingerprints),
@@ -4174,6 +4299,7 @@ export function buildResearchLabExportPayload(
   const analyticalInstrumentIdSet = new Set(analyticalInstrumentIds);
   const visibleProvisions = data.provisions.filter(
     (provision) =>
+      provision.metricEligible !== false &&
       displayedInstrumentIdSet.has(provision.instrumentId) &&
       (options.relevanceScope === "all" ||
         provision.relevance === "substantive-topic"),

@@ -51,9 +51,9 @@
       "note": "The indexed source is available in English; legal effect and completeness still follow the instrument's source and version notes."
     },
     "localCoverage": {
-      "mode": "complete-enacted-article-corpus",
+      "mode": "complete-enacted-operative-article-corpus",
       "localUnitCount": 113,
-      "statement": "All 113 Articles of Regulation (EU) 2024/1689 are stored from the enacted official English publication. A later amending act must be separately versioned after Official Journal publication and entry into force."
+      "statement": "All 113 operative Articles of Regulation (EU) 2024/1689 are stored from the enacted official English publication. The 180 Recitals and Annexes I–XIII remain at EUR-Lex and are outside the present local corpus; the site therefore does not claim a complete document-level reproduction."
     },
     "sources": [
       {
@@ -70,8 +70,9 @@
       }
     ],
     "caveats": [
-      "Complete Article records are generated separately from EUR-Lex in eu-ai-act-articles.json.",
-      "The complete local Article file is the 2024 enacted text. The Digital Omnibus on AI received final Council approval on 29 June 2026 and had a final legislative text dated 8 July 2026, but no replacement consolidated corpus is claimed without an Official Journal legal-act record."
+      "All 113 operative Article records are generated separately from EUR-Lex in eu-ai-act-articles.json. The 180 Recitals and Annexes I–XIII are not yet reproduced locally and remain available at the linked official source.",
+      "The complete local Article file is the 2024 enacted text. The Digital Omnibus on AI received final Council approval on 29 June 2026 and had a final legislative text dated 8 July 2026, but no replacement consolidated corpus is claimed without an Official Journal legal-act record.",
+      "The present local corpus contains all 113 operative Articles but not the 180 Recitals or Annexes I–XIII. Annex-dependent classifications and documentation duties must be checked at the linked EUR-Lex publication."
     ]
   },
   {
@@ -343,7 +344,7 @@
         "currentAlignedUnitCount": 81,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 81,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-non-official-reference-translation"
       }
     },
     "localCoverage": {
@@ -584,7 +585,7 @@
         "currentAlignedUnitCount": 29,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 29,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-current-government-reference-translation"
       }
     },
     "localCoverage": {
@@ -648,84 +649,122 @@
   {
     "id": "audit-ca-pipeda",
     "instrumentId": "ca-pipeda",
-    "reviewedOn": "2026-07-20",
-    "reviewLevel": "complete-official-co-authentic-bilingual-current-corpus-and-anchor-review",
-    "lifecycleFinding": "Application interacts with substantially similar provincial privacy laws and other statutory limits; do not treat it as a universal rule for every Canadian organization.",
-    "versionFinding": "Local bilingual XML corpus current to 2026-03-31; last amended 2025-03-04",
+    "reviewedOn": "2026-07-21",
+    "reviewLevel": "complete-official-co-authentic-bilingual-current-and-prospective-corpus-review",
+    "lifecycleFinding": "Application interacts with substantially similar provincial privacy laws and other statutory limits; do not treat it as a universal rule for every Canadian organization. The separately displayed S.C. 2026, c. 3 amendments require an order in council under s. 398 and are not part of current operative PIPEDA wording.",
+    "versionFinding": "Complete bilingual in-force consolidation current to 2026-03-31, plus S.C. 2026, c. 3, ss. 389–397 enacted on 2026-03-26 but not yet in force",
     "authoritativeLanguage": {
       "languages": [
         "en-CA",
         "fr-CA"
       ],
-      "note": "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English while preserving the full aligned French text."
+      "note": "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English while preserving both the complete current in-force corpus and the separately labelled enacted amendments that still await an order bringing them into force."
     },
     "englishAvailability": {
-      "status": "complete-official-co-authentic-English-text-stored",
-      "note": "All 75 current top-level Section/range and Schedule units are stored in official co-authentic English and French. English is the interface default and is not characterized as a translation of the French enactment.",
+      "status": "complete-official-co-authentic-English-text-stored-with-operative-state-boundary",
+      "note": "All 75 current in-force top-level Section/range and Schedule units, plus nine enacted amending sections not yet in force, are stored in official co-authentic English and French. The prospective units are isolated and never presented as operative duties.",
       "coverage": {
-        "translatedUnitCount": 75,
-        "currentAlignedUnitCount": 75,
+        "translatedUnitCount": 84,
+        "currentAlignedUnitCount": 84,
         "temporallyMismatchedUnitCount": 0,
-        "totalUnitCount": 75,
-        "completeness": "complete-stored-english"
+        "totalUnitCount": 84,
+        "completeness": "complete-official-co-authentic-bilingual-text-with-operative-state-boundary"
       }
     },
     "localCoverage": {
-      "mode": "complete-official-co-authentic-bilingual-current-corpus",
-      "localUnitCount": 75,
-      "statement": "All 75 current top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications. The two enactments are co-authentic, and the local corpus is current to 31 March 2026."
+      "mode": "complete-official-co-authentic-bilingual-in-force-and-prospective-corpus",
+      "localUnitCount": 84,
+      "statement": "All 75 current in-force top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications, together with nine enacted amending sections from S.C. 2026, c. 3 that still require an order under section 398 to come into force. The two language texts are co-authentic and the two operative states remain visibly separated."
+    },
+    "rightsBoundary": {
+      "sourceTextStatus": "official-federal-enactment-co-authentic-English-and-French",
+      "projectLicenseBoundary": "official-law-text-reproduced-under-Reproduction-of-Federal-Law-Order-not-relicensed-as-project-editorial-content",
+      "note": "The bilingual enactment is reproduced under the Reproduction of Federal Law Order with attribution and without representing this copy as official. Project-authored summaries and mappings remain separate editorial material."
     },
     "sources": [
       {
         "role": "primary-current-record",
         "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
         "label": "Justice Laws Website, Government of Canada",
-        "accessedOn": "2026-07-20"
+        "accessedOn": "2026-07-21"
+      },
+      {
+        "role": "companion-or-implementation-record",
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/nifnev.html",
+        "label": "Justice Laws Website — amendments not in force",
+        "accessedOn": "2026-07-21"
+      },
+      {
+        "role": "amendment-or-lifecycle-record",
+        "url": "https://laws-lois.justice.gc.ca/eng/AnnualStatutes/2026_3/",
+        "label": "Statutes of Canada 2026, chapter 3 — enacted amending Act and commencement clause",
+        "accessedOn": "2026-07-21"
       },
       {
         "role": "official-original-language-record",
         "url": "https://laws-lois.justice.gc.ca/fra/lois/P-8.6/",
         "label": "Site Web de la législation (Justice) — texte français officiel",
-        "accessedOn": "2026-07-20"
+        "accessedOn": "2026-07-21"
       }
     ],
     "caveats": [
-      "All 75 current top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications. English and French enactments are co-authentic."
+      "All 75 current top-level Section/range and Schedule units and all nine enacted amendments not in force from S.C. 2026, c. 3, ss. 389–397 are stored from the official Justice Laws English and French XML publication. Current and prospective text are kept in separate legal-effect states.",
+      "The 75-unit current consolidation and the nine enacted amending sections not yet in force are stored as separate operative-state groups. Sections 389–397 of S.C. 2026, c. 3 do not become operative unless and until an order is made under section 398."
     ]
   },
   {
     "id": "audit-ca-directive-automated-decision-making",
     "instrumentId": "ca-directive-automated-decision-making",
-    "reviewedOn": "2026-07-20",
-    "reviewLevel": "primary-source-metadata-and-anchor-review",
-    "lifecycleFinding": "Mandatory only within its federal-policy scope, not an Act of Parliament or a general private-sector AI law. The transition to the requirements reflected on the page modified 24 June 2025 ended on 24 June 2026.",
+    "reviewedOn": "2026-07-21",
+    "reviewLevel": "complete-current-official-co-published-bilingual-policy-corpus-review",
+    "lifecycleFinding": "Mandatory only within its federal-policy scope, not an Act of Parliament or a general private-sector AI law. The current revision was published on 24 June 2025; 24 June 2026 was the transition deadline for pre-existing systems and Agents of Parliament, not a universal commencement date.",
     "versionFinding": "Current page modified 2025-06-24; transition to updated requirements ended 2026-06-24",
     "authoritativeLanguage": {
       "languages": [
-        "en",
-        "fr"
+        "en-CA",
+        "fr-CA"
       ],
-      "note": "Canada's federal legislative publications are bilingual. The project currently indexes the linked English presentation unless another language is identified."
+      "note": "The Treasury Board of Canada Secretariat co-publishes complete English and French policy texts. Neither is presented as an unofficial translation; this is a mandatory federal internal-policy instrument rather than legislation."
     },
     "englishAvailability": {
-      "status": "official-or-original-english-source",
-      "note": "The indexed source is available in English; legal effect and completeness still follow the instrument's source and version notes."
+      "status": "complete-official-co-published-English-policy-text-stored",
+      "note": "All ten numbered sections and Appendices A–C are stored from the current official English publication with the complete co-published French text aligned unit by unit.",
+      "coverage": {
+        "translatedUnitCount": 13,
+        "currentAlignedUnitCount": 13,
+        "temporallyMismatchedUnitCount": 0,
+        "totalUnitCount": 13,
+        "completeness": "complete-official-co-published-bilingual-policy-text"
+      }
     },
     "localCoverage": {
-      "mode": "selected-provision-index",
-      "localUnitCount": 3,
-      "statement": "3 selected provision or framework node(s) are stored as source-linked editorial summaries; the complete official text is not copied locally."
+      "mode": "complete-current-official-co-published-bilingual-policy-corpus",
+      "localUnitCount": 13,
+      "statement": "All ten numbered sections and Appendices A–C of the Directive modified 24 June 2025 are stored in complete official English and French. The 24 June 2026 date is recorded only as the transition deadline for pre-existing systems and Agents of Parliament, not as a universal commencement date."
+    },
+    "rightsBoundary": {
+      "sourceTextStatus": "official-co-published-federal-policy-Crown-copyright",
+      "projectLicenseBoundary": "non-commercial-reproduction-under-Canada.ca-terms-not-relicensed-as-project-editorial-content",
+      "note": "The official policy text is reproduced for this non-commercial academic project under Canada.ca's non-commercial reproduction conditions, with source attribution, accuracy controls, and no suggestion of Crown endorsement. Project-authored summaries and mappings remain separate."
     },
     "sources": [
       {
         "role": "primary-current-record",
         "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
         "label": "Treasury Board of Canada Secretariat",
-        "accessedOn": "2026-07-19"
+        "accessedOn": "2026-07-21"
+      },
+      {
+        "role": "official-original-language-record",
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "label": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "accessedOn": "2026-07-21"
       }
     ],
     "caveats": [
-      "The official page also links archived versions, making version comparison possible."
+      "All current Sections 1–10 and Appendices A–C are stored from the co-published official English and French policy pages. Archived versions remain linked for historical comparison.",
+      "The Directive is a mandatory federal internal-policy instrument, not a generally applicable Canadian private-sector AI statute.",
+      "The 24 June 2026 date is a transition deadline for existing automated decision systems and Agents of Parliament; it is not a universal start date for the Directive."
     ]
   },
   {
@@ -1438,7 +1477,7 @@
         "currentAlignedUnitCount": 79,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 79,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-pending-Portuguese-bill-with-project-English-reference"
       }
     },
     "localCoverage": {
@@ -1492,7 +1531,7 @@
         "currentAlignedUnitCount": 31,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 31,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-official-reference-translation"
       }
     },
     "localCoverage": {
@@ -1614,7 +1653,7 @@
         "currentAlignedUnitCount": 43,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 43,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-government-reference-translation"
       }
     },
     "localCoverage": {
@@ -1673,7 +1712,7 @@
         "currentAlignedUnitCount": 38,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 38,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-government-reference-translation"
       }
     },
     "localCoverage": {
@@ -1720,7 +1759,7 @@
         "currentAlignedUnitCount": 9,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 9,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-government-reference-translation"
       }
     },
     "localCoverage": {
@@ -1803,7 +1842,7 @@
         "currentAlignedUnitCount": 66,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 66,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-government-reference-translation-with-commencement-layer"
       }
     },
     "localCoverage": {
@@ -1850,7 +1889,7 @@
         "currentAlignedUnitCount": 20,
         "temporallyMismatchedUnitCount": 0,
         "totalUnitCount": 20,
-        "completeness": "complete-stored-english"
+        "completeness": "complete-government-reference-translation"
       }
     },
     "localCoverage": {
@@ -2388,8 +2427,8 @@
     },
     "localCoverage": {
       "mode": "selected-provision-index",
-      "localUnitCount": 4,
-      "statement": "4 selected provision or framework node(s) are stored as source-linked editorial summaries; the complete official text is not copied locally."
+      "localUnitCount": 41,
+      "statement": "41 selected provision or framework node(s) are stored as source-linked editorial summaries; the complete official text is not copied locally."
     },
     "rightsBoundary": {
       "sourceTextStatus": "unenacted-Parliamentary-bill-permission-not-established",
@@ -2516,7 +2555,7 @@
         "fr-CH",
         "it-CH"
       ],
-      "note": "German, French and Italian Fedlex enactments are equally authoritative and legally binding. The complete aligned English publication is official but expressly has no legal force."
+      "note": "German, French and Italian Fedlex enactments are equally authoritative and legally binding. The aligned English publication is official but expressly has no legal force; the local Annex records retain the source's external-reference boundary rather than claiming self-contained amendment text."
     },
     "englishAvailability": {
       "status": "complete-official-non-authoritative-English-translation-stored",
@@ -2528,9 +2567,9 @@
       }
     },
     "localCoverage": {
-      "mode": "complete-current-four-language-aligned-article-and-annex-corpus",
+      "mode": "complete-current-four-language-aligned-article-corpus-with-annex-reference-boundary",
       "localUnitCount": 79,
-      "statement": "All 77 Articles and two Annexes of the current 7 July 2025 Fedlex consolidation are stored in aligned English, German, French and Italian. German, French and Italian are equally authoritative; English is official but non-authoritative."
+      "statement": "All 77 Articles of the current 7 July 2025 Fedlex consolidation are stored in aligned English, German, French and Italian. Two Annex navigation records are also retained, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference; they are not represented as self-contained reproduced amendment text. German, French and Italian are equally authoritative; English is official but non-authoritative."
     },
     "sources": [
       {
@@ -2547,9 +2586,10 @@
       }
     ],
     "caveats": [
-      "All 77 Articles and two Annexes are stored in aligned English, German, French and Italian. German, French and Italian are equally authoritative; the default English display is official but has no legal force.",
+      "All 77 Articles are stored in aligned English, German, French and Italian. Two Annex navigation records preserve Fedlex reference content, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference; the site does not claim that those records reproduce every cross-referenced amendment. German, French and Italian are equally authoritative; the default English display is official but has no legal force.",
       "The English Fedlex expression is complete and official but has no legal force; German, French and Italian remain equally authoritative.",
-      "The 7 July 2025 version date is a consolidation boundary, not the Act's 1 September 2023 commencement date."
+      "The 7 July 2025 version date is a consolidation boundary, not the Act's 1 September 2023 commencement date.",
+      "The two local Annex nodes preserve Fedlex reference content, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference. The project does not claim that those records reproduce every amendment text cross-referenced by the Annexes."
     ]
   }
 ]

@@ -4,9 +4,9 @@
   "scope": "Complete locally imported corpora whose controlling/default stored text is not English. The audit distinguishes stored English legal text from explicit coverage gaps; it does not treat concept mappings or summaries as translations.",
   "totals": {
     "corpusCount": 22,
-    "totalUnitCount": 1337,
-    "storedEnglishUnitCount": 1337,
-    "currentAlignedEnglishUnitCount": 1332,
+    "totalUnitCount": 1346,
+    "storedEnglishUnitCount": 1346,
+    "currentAlignedEnglishUnitCount": 1341,
     "temporallyMismatchedEnglishUnitCount": 5,
     "missingEnglishUnitCount": 0,
     "completionPercent": 100,
@@ -119,9 +119,9 @@
       "originalLanguages": [
         "fr"
       ],
-      "totalUnitCount": 75,
-      "storedEnglishUnitCount": 75,
-      "currentAlignedEnglishUnitCount": 75,
+      "totalUnitCount": 84,
+      "storedEnglishUnitCount": 84,
+      "currentAlignedEnglishUnitCount": 84,
       "temporallyMismatchedEnglishUnitCount": 0,
       "missingEnglishUnitCount": 0,
       "completionPercent": 100,
@@ -136,6 +136,10 @@
         "2026-03-31"
       ],
       "englishSourceRecords": [
+        {
+          "url": "https://laws-lois.justice.gc.ca/eng/XML/P-8.6.xml#NifProvs",
+          "label": "Justice Laws Website — official amendments-not-in-force text"
+        },
         {
           "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
           "label": "Justice Laws Website — official English text"
@@ -620,38 +624,8 @@
       "missingCoverageStatuses": []
     },
     {
-      "instrumentId": "vn-decree-13-2023",
-      "corpusFile": "vn-decree-13-2023-historical-provisions.json",
-      "originalLanguages": [
-        "vi-VN"
-      ],
-      "totalUnitCount": 50,
-      "storedEnglishUnitCount": 50,
-      "currentAlignedEnglishUnitCount": 50,
-      "temporallyMismatchedEnglishUnitCount": 0,
-      "missingEnglishUnitCount": 0,
-      "completionPercent": 100,
-      "coverageStatus": "complete-stored-english",
-      "translationStatuses": [
-        "project-authored-reference-translation-no-legal-effect"
-      ],
-      "unitCoverageStatuses": [
-        "complete-historical-project-reference"
-      ],
-      "versionLabels": [
-        "Pinned official Vietnamese text of Decree 13/2023/NĐ-CP — effective 1 July 2023 through 31 December 2025"
-      ],
-      "englishSourceRecords": [
-        {
-          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/4/13nd.signed.pdf",
-          "label": "Signed Government Vietnamese text — controlling historical source for project reference"
-        }
-      ],
-      "missingUnitIds": [],
-      "missingCoverageStatuses": []
-    },
-    {
-      "instrumentId": "vn-decree-356-2025",
+      "instrumentId": "vn-pdpl-implementing-decree-356-2025",
+      "sourceInstrumentId": "vn-decree-356-2025",
       "corpusFile": "vn-decree-356-2025-provisions.json",
       "originalLanguages": [
         "vi-VN"
@@ -676,6 +650,38 @@
         {
           "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf",
           "label": "Signed Government Vietnamese text — controlling source for project reference"
+        }
+      ],
+      "missingUnitIds": [],
+      "missingCoverageStatuses": []
+    },
+    {
+      "instrumentId": "vn-personal-data-protection-decree-13-2023",
+      "sourceInstrumentId": "vn-decree-13-2023",
+      "corpusFile": "vn-decree-13-2023-historical-provisions.json",
+      "originalLanguages": [
+        "vi-VN"
+      ],
+      "totalUnitCount": 50,
+      "storedEnglishUnitCount": 50,
+      "currentAlignedEnglishUnitCount": 50,
+      "temporallyMismatchedEnglishUnitCount": 0,
+      "missingEnglishUnitCount": 0,
+      "completionPercent": 100,
+      "coverageStatus": "complete-stored-english",
+      "translationStatuses": [
+        "project-authored-reference-translation-no-legal-effect"
+      ],
+      "unitCoverageStatuses": [
+        "complete-historical-project-reference"
+      ],
+      "versionLabels": [
+        "Pinned official Vietnamese text of Decree 13/2023/NĐ-CP — effective 1 July 2023 through 31 December 2025"
+      ],
+      "englishSourceRecords": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/4/13nd.signed.pdf",
+          "label": "Signed Government Vietnamese text — controlling historical source for project reference"
         }
       ],
       "missingUnitIds": [],

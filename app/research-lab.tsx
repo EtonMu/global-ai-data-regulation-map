@@ -362,7 +362,8 @@ function provisionMatchesScope(
   relevanceScope: RelevanceScope,
 ) {
   return (
-    relevanceScope === "all" || provision.relevance === "substantive-topic"
+    provision.metricEligible !== false &&
+    (relevanceScope === "all" || provision.relevance === "substantive-topic")
   );
 }
 
@@ -825,12 +826,14 @@ function CorpusObservatory({
           <span className={styles.statMeta}>binding, proposed and soft-law sources</span>
         </article>
         <article className={styles.stat}>
-          <span className={styles.statLabel}>Provision records</span>
+          <span className={styles.statLabel}>Analytical provisions</span>
           <strong className={styles.statValue}>
             {formatter.format(coverage.provisionCount)}
           </strong>
           <span className={styles.statMeta}>
             {formatter.format(coverage.substantiveProvisionCount)} substantive
+            {coverage.navigationExcerptCount > 0 &&
+              ` · ${formatter.format(coverage.navigationExcerptCount)} navigation excerpts excluded`}
           </span>
         </article>
         <article className={styles.stat}>
@@ -4800,7 +4803,10 @@ function ArticleConceptMicroscope({
               <span>
                 <strong>{instrument.shortTitle}</strong>
                 <small>
-                  {formatter.format(profile.totalProvisionCount)} provisions · {humanizeResearchCode(profile.coverageClass)} corpus
+                  {formatter.format(profile.metricEligibleProvisionCount)} analytical provisions
+                  {profile.navigationExcerptCount > 0 &&
+                    ` · ${formatter.format(profile.navigationExcerptCount)} navigation excerpts`}
+                  {` · ${humanizeResearchCode(profile.coverageClass)} corpus`}
                 </small>
               </span>
             </div>
@@ -4840,6 +4846,8 @@ function ArticleConceptMicroscope({
                       band.provisionId === effectiveSelectedProvisionId
                     }
                     data-relevance={band.relevance}
+                    data-analysis-role={band.analysisRole}
+                    data-metric-eligible={band.metricEligible}
                     data-selected={
                       band.provisionId === effectiveSelectedProvisionId
                     }
@@ -4855,7 +4863,7 @@ function ArticleConceptMicroscope({
                         "--concept-density": density,
                       } as VisualStyle
                     }
-                    aria-label={`${band.locator}: ${band.title}; ${band.conceptAssignmentCount} recorded concepts; ${humanizeResearchCode(band.relevance)}`}
+                    aria-label={`${band.locator}: ${band.title}; ${band.conceptAssignmentCount} recorded concepts; ${humanizeResearchCode(band.relevance)}; ${band.metricEligible !== false ? "included in aggregate metrics" : "navigation excerpt excluded from aggregate metrics"}`}
                     onMouseEnter={() => setSelectedProvisionId(band.provisionId)}
                     onClick={() => setSelectedProvisionId(band.provisionId)}
                   >
@@ -4893,6 +4901,26 @@ function ArticleConceptMicroscope({
                     Open {selectedBand.locator} <ArrowRight aria-hidden="true" />
                   </button>
                 </div>
+                {selectedBand.metricEligible === false && (
+                  <div className={styles.microscopeSelectionAction}>
+                    <span>
+                      Navigation + analytical excerpt · excluded from aggregate
+                      statistics to avoid double counting its complete parent
+                      unit.
+                    </span>
+                    {selectedBand.canonicalProvisionId && (
+                      <button
+                        type="button"
+                        className={styles.actionButton}
+                        onClick={() =>
+                          onOpenProvision(selectedBand.canonicalProvisionId!)
+                        }
+                      >
+                        Open counted parent <ArrowRight aria-hidden="true" />
+                      </button>
+                    )}
+                  </div>
+                )}
                 <div className={styles.microscopeConcepts}>
                   {selectedBand.conceptIds.length ? (
                     selectedBand.conceptIds.map((conceptId) => {
@@ -5385,7 +5413,9 @@ function GranularityCorpusBias({
                   <div className={styles.granularityGroupHeader} role="row">
                     <strong role="rowheader">{coverageLabels[coverageClass]}</strong>
                     <span role="cell">
-                      {formatter.format(summary?.instrumentCount ?? instruments.length)} instruments · {formatter.format(summary?.provisionCount ?? 0)} provision records
+                      {formatter.format(summary?.instrumentCount ?? instruments.length)} instruments · {formatter.format(summary?.provisionCount ?? 0)} analytical provisions
+                      {(summary?.excludedNavigationExcerptCount ?? 0) > 0 &&
+                        ` · ${formatter.format(summary?.excludedNavigationExcerptCount ?? 0)} navigation excerpts excluded`}
                     </span>
                   </div>
                   {instruments.map((item) => {
@@ -5414,6 +5444,8 @@ function GranularityCorpusBias({
                               <strong>{instrument?.shortTitle ?? item.instrumentId}</strong>
                               <small>
                                 {formatter.format(item.substantiveProvisionCount)} substantive · {formatter.format(item.structuralContextCount)} structural
+                                {item.excludedNavigationExcerptCount > 0 &&
+                                  ` · ${formatter.format(item.excludedNavigationExcerptCount)} navigation excerpts excluded`}
                               </small>
                             </span>
                           </button>
@@ -5423,7 +5455,7 @@ function GranularityCorpusBias({
                           item.totalProvisionCount,
                           maximumProvisionCount,
                           formatter.format(item.totalProvisionCount),
-                          `${instrument?.shortTitle ?? item.instrumentId}: ${formatter.format(item.totalProvisionCount)} provision records`,
+                          `${instrument?.shortTitle ?? item.instrumentId}: ${formatter.format(item.totalProvisionCount)} metric-eligible provision records; ${formatter.format(item.excludedNavigationExcerptCount)} navigation excerpts excluded`,
                         )}
                         {measure(
                           "concept-density",

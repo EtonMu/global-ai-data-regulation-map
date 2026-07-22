@@ -245,15 +245,15 @@ test("production archetype fit is exactly the complete substantive non-zero samp
     instruments,
     concepts,
   );
-  assert.equal(model.fitInstrumentIds.length, 38);
-  assert.equal(model.excludedInstrumentIds.length, 20);
+  assert.equal(model.fitInstrumentIds.length, 39);
+  assert.equal(model.excludedInstrumentIds.length, 19);
   assert.equal(model.featureConceptIds.length, 23);
-  assert.equal(model.merges.length, 37);
+  assert.equal(model.merges.length, 38);
   assert.deepEqual(
     model.partitions.map((partition) => partition.clusterCount),
     [2, 3, 4, 5, 6, 7, 8],
   );
-  assert.equal(model.sensitivity.length, 38);
+  assert.equal(model.sensitivity.length, 39);
   for (const fingerprint of fingerprints.filter((item) =>
     model.fitInstrumentIds.includes(item.instrumentId),
   )) {

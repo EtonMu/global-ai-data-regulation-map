@@ -6,6 +6,9 @@ const dataRoot = new URL("../data/v2/", import.meta.url);
 const audit = JSON.parse(
   await readFile(new URL("english-corpus-coverage.json", dataRoot), "utf8"),
 );
+const instruments = JSON.parse(
+  await readFile(new URL("instruments.json", dataRoot), "utf8"),
+);
 
 function containsParagraphsInOrder(fullText, paragraphs) {
   let cursor = 0;
@@ -34,7 +37,11 @@ test("foreign-language English coverage audit matches every stored corpus unit",
   for (const corpus of audit.corpora) {
     const records = JSON.parse(
       await readFile(new URL(corpus.corpusFile, dataRoot), "utf8"),
-    ).filter((record) => record.instrumentId === corpus.instrumentId);
+    ).filter(
+      (record) =>
+        record.instrumentId ===
+        (corpus.sourceInstrumentId ?? corpus.instrumentId),
+    );
     const translated = records.filter((record) => record.translations?.en);
     const missing = records.filter((record) => !record.translations?.en);
 
@@ -164,8 +171,8 @@ test("the named China and Japan examples expose real English legal text", () => 
     ["id-pdp-law-2022", 76],
     ["tw-executive-yuan-generative-ai-guidelines-2023", 11],
     ["vn-personal-data-protection-law-2025", 39],
-    ["vn-decree-356-2025", 55],
-    ["vn-decree-13-2023", 50],
+    ["vn-pdpl-implementing-decree-356-2025", 55],
+    ["vn-personal-data-protection-decree-13-2023", 50],
   ]) {
     assert.equal(
       byInstrument.get(instrumentId)?.storedEnglishUnitCount,
@@ -173,4 +180,28 @@ test("the named China and Japan examples expose real English legal text", () => 
       instrumentId,
     );
   }
+});
+
+test("coverage records use registry instrument IDs while preserving source IDs", () => {
+  const registryIds = new Set(instruments.map((instrument) => instrument.id));
+  for (const corpus of audit.corpora) {
+    assert.ok(
+      registryIds.has(corpus.instrumentId),
+      `${corpus.instrumentId} must resolve in instruments.json`,
+    );
+  }
+
+  const byInstrument = new Map(
+    audit.corpora.map((corpus) => [corpus.instrumentId, corpus]),
+  );
+  assert.equal(
+    byInstrument.get("vn-pdpl-implementing-decree-356-2025")
+      ?.sourceInstrumentId,
+    "vn-decree-356-2025",
+  );
+  assert.equal(
+    byInstrument.get("vn-personal-data-protection-decree-13-2023")
+      ?.sourceInstrumentId,
+    "vn-decree-13-2023",
+  );
 });

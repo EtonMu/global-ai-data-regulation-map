@@ -92,6 +92,19 @@ test("India DPDP Act corpus contains all 44 sections and the complete Schedule",
   assert.match(sections[9].fullText, /Data Protection Impact Assessment/i);
   assert.match(sections[15].fullText, /restrict the transfer of personal data/i);
   assert.match(sections[32].fullText, /monetary penalty specified in the Schedule/i);
+  assert.match(
+    sections[43].fullText,
+    /\(j\) information which relates to personal information;”\.$/,
+  );
+  assert.doesNotMatch(
+    sections[43].fullText,
+    /Breach in observing|reasonable security safeguards|May extend to .*crore rupees/i,
+  );
+  assert.doesNotMatch(sections[43].fullText, /THE SCHEDULE/i);
+  assert.match(
+    schedule.fullText,
+    /Breach in observing the obligation of Data Fiduciary to[\s\S]*reasonable security safeguards/i,
+  );
   assert.equal(sections[43].legalEffectStatus, "partially-in-force-phased");
   assert.deepEqual(
     sections[43].applicability.provisionParts.map((part) => part.appliesFrom),

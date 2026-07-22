@@ -25,6 +25,7 @@ const corpusFiles = [
   "cn-network-data-regulations-articles.json",
   "cn-generative-ai-measures-articles.json",
   "canada-pipeda-provisions.json",
+  "canada-adm-directive-provisions.json",
   "brazil-lgpd-articles.json",
   "tw-ai-basic-act-2026-articles.json",
   "tw-personal-data-protection-act-articles.json",
@@ -235,6 +236,9 @@ function lightweightSeed(record) {
     ...(record.section ? { section: slimStructure(record.section) } : {}),
     ...(record.articleNumber !== undefined
       ? { articleNumber: record.articleNumber }
+      : {}),
+    ...(record.researchTreatment
+      ? { researchTreatment: record.researchTreatment }
       : {}),
     ...(record.defaultLanguageStatus
       ? { defaultLanguageStatus: record.defaultLanguageStatus }

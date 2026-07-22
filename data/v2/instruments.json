@@ -86,7 +86,7 @@
       "mode": "separate-official-import",
       "stored": false,
       "language": "en",
-      "note": "Complete Article records are generated separately from EUR-Lex in eu-ai-act-articles.json."
+      "note": "All 113 operative Article records are generated separately from EUR-Lex in eu-ai-act-articles.json. The 180 Recitals and Annexes I–XIII are not yet reproduced locally and remain available at the linked official source."
     },
     "amendmentSource": {
       "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=consil%3APE_30_2026_REV_1",
@@ -768,7 +768,7 @@
     "hierarchyLevel": "federal-statute",
     "legalForce": "binding",
     "lifecycleStatus": "in-force-amended",
-    "statusAsOf": "2026-07-20",
+    "statusAsOf": "2026-07-21",
     "dates": {
       "adoptedOn": "2000-04-13",
       "publishedOn": "2000-04-13",
@@ -776,7 +776,7 @@
       "generalApplicationFrom": null,
       "ceasedOn": null
     },
-    "version": "Local bilingual XML corpus current to 2026-03-31; last amended 2025-03-04",
+    "version": "Complete bilingual in-force consolidation current to 2026-03-31, plus S.C. 2026, c. 3, ss. 389–397 enacted on 2026-03-26 but not yet in force",
     "parentInstrumentId": null,
     "topicIds": [
       "security-controls",
@@ -784,35 +784,56 @@
       "accountability-governance"
     ],
     "summary": "Canada's federal private-sector privacy statute for commercial activities and specified federal works, undertakings, and businesses.",
-    "statusNote": "Application interacts with substantially similar provincial privacy laws and other statutory limits; do not treat it as a universal rule for every Canadian organization.",
+    "statusNote": "Application interacts with substantially similar provincial privacy laws and other statutory limits; do not treat it as a universal rule for every Canadian organization. The separately displayed S.C. 2026, c. 3 amendments require an order in council under s. 398 and are not part of current operative PIPEDA wording.",
     "source": {
       "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
       "label": "Justice Laws Website, Government of Canada",
-      "accessedOn": "2026-07-20"
+      "accessedOn": "2026-07-21"
     },
     "originalLanguageSource": {
       "url": "https://laws-lois.justice.gc.ca/fra/lois/P-8.6/",
       "label": "Site Web de la législation (Justice) — texte français officiel",
-      "accessedOn": "2026-07-20"
+      "accessedOn": "2026-07-21"
+    },
+    "supportingSource": {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/nifnev.html",
+      "label": "Justice Laws Website — amendments not in force",
+      "accessedOn": "2026-07-21"
+    },
+    "amendmentSource": {
+      "url": "https://laws-lois.justice.gc.ca/eng/AnnualStatutes/2026_3/",
+      "label": "Statutes of Canada 2026, chapter 3 — enacted amending Act and commencement clause",
+      "accessedOn": "2026-07-21"
     },
     "coverage": {
       "unit": "top-level-current-section-or-schedule",
       "first": 1,
       "last": 72,
       "count": 75,
-      "completeness": "complete-official-co-authentic-current-text"
+      "completeness": "complete-official-co-authentic-current-in-force-text-with-enacted-amendments-not-in-force"
+    },
+    "prospectiveAmendments": {
+      "unit": "amending-section-not-in-force",
+      "first": 389,
+      "last": 397,
+      "count": 9,
+      "enactedOn": "2026-03-26",
+      "commencementAuthority": "S.C. 2026, c. 3, s. 398",
+      "effectiveFrom": null,
+      "status": "enacted-not-in-force-order-in-council-required"
     },
     "textAvailability": {
-      "mode": "separate-official-co-authentic-bilingual-import",
+      "mode": "separate-official-co-authentic-bilingual-in-force-and-prospective-import",
       "stored": true,
       "language": "fr",
-      "note": "All 75 current top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications. English and French enactments are co-authentic."
+      "note": "All 75 current top-level Section/range and Schedule units and all nine enacted amendments not in force from S.C. 2026, c. 3, ss. 389–397 are stored from the official Justice Laws English and French XML publication. Current and prospective text are kept in separate legal-effect states."
     }
   },
   {
     "id": "ca-directive-automated-decision-making",
     "shortTitle": "Canada ADM Directive",
     "title": "Directive on Automated Decision-Making",
+    "originalTitle": "Directive sur la prise de décisions automatisée",
     "jurisdictionId": "ca",
     "issuingBodies": [
       "Treasury Board of Canada Secretariat"
@@ -821,7 +842,7 @@
     "hierarchyLevel": "federal-administrative-policy",
     "legalForce": "mandatory-internal-policy",
     "lifecycleStatus": "active",
-    "statusAsOf": "2026-07-19",
+    "statusAsOf": "2026-07-21",
     "dates": {
       "adoptedOn": "2019-03-04",
       "publishedOn": "2019-03-04",
@@ -839,17 +860,29 @@
       "security-controls"
     ],
     "summary": "Mandatory federal-government policy requirements for automated systems used to make or support administrative decisions within its institutional and operational scope.",
-    "statusNote": "Mandatory only within its federal-policy scope, not an Act of Parliament or a general private-sector AI law. The transition to the requirements reflected on the page modified 24 June 2025 ended on 24 June 2026.",
+    "statusNote": "Mandatory only within its federal-policy scope, not an Act of Parliament or a general private-sector AI law. The current revision was published on 24 June 2025; 24 June 2026 was the transition deadline for pre-existing systems and Agents of Parliament, not a universal commencement date.",
     "source": {
       "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
       "label": "Treasury Board of Canada Secretariat",
-      "accessedOn": "2026-07-19"
+      "accessedOn": "2026-07-21"
+    },
+    "originalLanguageSource": {
+      "url": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+      "label": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+      "accessedOn": "2026-07-21"
+    },
+    "coverage": {
+      "unit": "top-level-section-or-appendix",
+      "first": 1,
+      "last": 10,
+      "count": 13,
+      "completeness": "complete-official-co-published-current-English-and-French-text"
     },
     "textAvailability": {
-      "mode": "official-current-text-linked",
-      "stored": false,
-      "language": "en",
-      "note": "The official page also links archived versions, making version comparison possible."
+      "mode": "complete-official-co-published-bilingual-current-import",
+      "stored": true,
+      "language": "en-CA",
+      "note": "All current Sections 1–10 and Appendices A–C are stored from the co-published official English and French policy pages. Archived versions remain linked for historical comparison."
     }
   },
   {
@@ -3042,14 +3075,14 @@
       "mode": "complete-current-official-multilingual-corpus",
       "stored": true,
       "language": "en-CH",
-      "note": "All 77 Articles and two Annexes are stored in aligned English, German, French and Italian. German, French and Italian are equally authoritative; the default English display is official but has no legal force."
+      "note": "All 77 Articles are stored in aligned English, German, French and Italian. Two Annex navigation records preserve Fedlex reference content, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference; the site does not claim that those records reproduce every cross-referenced amendment. German, French and Italian are equally authoritative; the default English display is official but has no legal force."
     },
     "coverage": {
       "unit": "article-and-annex-node",
       "first": 1,
       "last": 79,
       "count": 79,
-      "completeness": "complete-current-four-language-aligned-article-and-annex-corpus"
+      "completeness": "complete-current-four-language-aligned-article-corpus-with-annex-reference-boundary"
     }
   }
 ]

@@ -288,7 +288,18 @@ def common_source_version(path: Path, **extra: str) -> dict:
 def build_act(act_path: Path, commencement_path: Path) -> list[dict]:
     raw = pdftotext(act_path, raw=True)
     start = raw.index("1. (1) This Act may be called")
-    end = raw.index("THE SCHEDULE") if "THE SCHEDULE" in raw else len(raw)
+    # Poppler emits the Schedule's table body before its heading in ``-raw``
+    # reading order.  Cutting at ``THE SCHEDULE`` therefore leaks the entire
+    # penalty table into section 44.  The final substituted RTI clause is the
+    # actual terminal wording of section 44 in the pinned Gazette source, so
+    # use it as the authoritative end of the operative sections instead.
+    final_section_match = re.search(
+        r"“\(j\)\s+information\s+which\s+relates\s+to\s+personal\s+information;”\.",
+        raw[start:],
+    )
+    if final_section_match is None:
+        raise RuntimeError("Act parser could not locate the terminal wording of section 44")
+    end = start + final_section_match.end()
     body = raw[start:end]
     matches = list(re.finditer(r"(?m)^(\d{1,2})\.\s", body))
     section_matches = []

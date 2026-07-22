@@ -2693,16 +2693,68 @@ const provisionSets = [
   },
   {
     instrumentId: "ca-bill-c-27-aida-2022-lapsed",
-    provisionType: "historical-proposed-section-group",
+    provisionType: "historical-proposed-section",
     legalEffectStatus: "lapsed-never-law",
+    versionAsOf: "2022-06-16",
     appliesFrom: null,
     actorTags: ["proposed-regulated-persons", "minister"],
-    scopeTags: ["historical-proposal", "ai-systems"],
+    scopeTags: [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16",
+    ],
+    source: source(
+      "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "Parliament of Canada — Bill C-27 first-reading text",
+      "2026-07-20",
+    ),
+    textAvailability: linkedText(
+      "official-source-linked-project-authored-editorial-summary",
+      "en",
+      "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText.",
+    ),
     items: [
-      ["proposed-ss-6-11", "Bill C-27, clause 39 — proposed AIDA sections 6–11", "Assessment, mitigation, monitoring, records and public descriptions", "Would have addressed anonymized data, high-impact-system assessment, risk mitigation and monitoring, records, and public descriptions before the bill lapsed without becoming law.", ["ai-risk-management", "fairness-nondiscrimination", "accountability-governance", "transparency-explainability"]],
-      ["proposed-s-12", "Bill C-27, clause 39 — proposed AIDA section 12", "Notification of material harm", "Would have required ministerial notification where use of a high-impact system resulted or was likely to result in material harm; no such duty entered into force.", ["incident-response", "continuous-assurance"]],
-      ["proposed-ss-13-37", "Bill C-27, clause 39 — proposed AIDA sections 13–37", "Ministerial orders, information, penalties and administration", "Would have established ministerial information and audit powers, orders, an administrative monetary penalty framework, offences, administration and regulation-making authorities.", ["accountability-governance", "continuous-assurance"]],
-      ["proposed-ss-38-40", "Bill C-27, clause 39 — proposed AIDA sections 38–40", "Proposed criminal prohibitions and punishment", "Would have prohibited specified possession or use of unlawfully obtained personal information and making AI systems available with intent or recklessness concerning serious harm or fraud, with proposed punishment provisions.", ["security-controls", "incident-response", "accountability-governance"]],
+      ["proposed-s-1", "Bill C-27, clause 39 — proposed AIDA section 1", "Short title", "Identified the proposed enactment's short citation for legislative reference; Bill C-27 lapsed before this provision or any other AIDA section could become law.", ["accountability-governance"]],
+      ["proposed-s-2", "Bill C-27, clause 39 — proposed AIDA section 2", "Definitions", "Set out cross-cutting terminology for the proposed Act, including its technology, actor and personal-information vocabulary, without itself creating an operative compliance duty.", ["ai-risk-management", "accountability-governance", "sensitive-data-protection"]],
+      ["proposed-s-3", "Bill C-27, clause 39 — proposed AIDA section 3", "Non-application", "Would have excluded federal government institutions and specified defence, intelligence, security and prescribed public-sector activities from the proposed Act's application.", ["accountability-governance"]],
+      ["proposed-s-4", "Bill C-27, clause 39 — proposed AIDA section 4", "Purposes", "Described a proposed national framework for interprovincial and international commercial AI activity together with prohibitions aimed at serious individual harm.", ["ai-risk-management", "fairness-nondiscrimination", "incident-response", "global-coordination"]],
+      ["proposed-s-5", "Bill C-27, clause 39 — proposed AIDA section 5", "Definitions", "Defined the main Part 1 concepts and regulated roles, including biased output, harm, high-impact systems, regulated activities and responsibility for an AI system; important thresholds were left to regulations.", ["ai-risk-management", "fairness-nondiscrimination", "accountability-governance"]],
+      ["proposed-s-6", "Bill C-27, clause 39 — proposed AIDA section 6", "Anonymized data", "Would have required persons conducting regulated activities to establish prescribed controls for anonymization and for the later use or management of anonymized data.", ["privacy-enhancing-tech", "training-data-governance", "accountability-governance"]],
+      ["proposed-s-7", "Bill C-27, clause 39 — proposed AIDA section 7", "Assessment — high-impact system", "Would have required the person responsible for an AI system to assess its proposed high-impact classification using criteria to be supplied by regulation.", ["impact-assessment", "ai-risk-management"]],
+      ["proposed-s-8", "Bill C-27, clause 39 — proposed AIDA section 8", "Measures related to risks", "Would have required governance measures to identify, evaluate and reduce risks of harm or unjustified differentiated outcomes from a proposed high-impact system.", ["ai-risk-management", "fairness-nondiscrimination", "accountability-governance"]],
+      ["proposed-s-9", "Bill C-27, clause 39 — proposed AIDA section 9", "Monitoring of mitigation measures", "Would have required continuing checks on both adherence to the proposed risk controls and whether those controls remained effective.", ["continuous-assurance", "ai-risk-management"]],
+      ["proposed-s-10", "Bill C-27, clause 39 — proposed AIDA section 10", "Keeping general records", "Would have created regulation-dependent records for anonymization, system classification, risk controls and monitoring, including the reasoning behind a high-impact assessment.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-11", "Bill C-27, clause 39 — proposed AIDA section 11", "Publication of description — making system available for use", "Would have required public, plain-language system descriptions from covered providers and operators of proposed high-impact systems, with timing and content largely delegated to regulations.", ["transparency-explainability", "accountability-governance"]],
+      ["proposed-s-12", "Bill C-27, clause 39 — proposed AIDA section 12", "Notification of material harm", "Would have required a responsible person to alert the Minister when use of a proposed high-impact system produced, or was likely to produce, material harm; the bill lapsed before any duty arose.", ["incident-response", "continuous-assurance"]],
+      ["proposed-s-13", "Bill C-27, clause 39 — proposed AIDA section 13", "Provision of subsection 10 (1) records", "Would have allowed the Minister to order production of the general compliance records contemplated by proposed subsection 10(1).", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-14", "Bill C-27, clause 39 — proposed AIDA section 14", "Provision of subsection 10 (2) records", "Would have allowed a targeted order for additional records where the Minister had a prescribed evidentiary basis for concern about harm or biased output from a proposed high-impact system.", ["ai-risk-management", "accountability-governance", "continuous-assurance"]],
+      ["proposed-s-15", "Bill C-27, clause 39 — proposed AIDA section 15", "Audit", "Would have empowered the Minister to require a qualified internal or independent audit of a suspected contravention, with assistance, reporting and cost obligations for the audited person.", ["continuous-assurance", "accountability-governance"]],
+      ["proposed-s-16", "Bill C-27, clause 39 — proposed AIDA section 16", "Implementation of measures", "Would have allowed the Minister to direct post-audit corrective action addressing matters identified in an audit report.", ["continuous-assurance", "ai-risk-management", "accountability-governance"]],
+      ["proposed-s-17", "Bill C-27, clause 39 — proposed AIDA section 17", "Cessation", "Would have authorized an order stopping use or distribution of a proposed high-impact system where the Minister identified a serious and imminent risk of harm.", ["incident-response", "ai-risk-management"]],
+      ["proposed-s-18", "Bill C-27, clause 39 — proposed AIDA section 18", "Publication", "Would have allowed the Minister to order public disclosure of specified compliance information while protecting confidential business information.", ["transparency-explainability", "accountability-governance"]],
+      ["proposed-s-19", "Bill C-27, clause 39 — proposed AIDA section 19", "Compliance", "Would have made compliance with ministerial orders under proposed Part 1 mandatory.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-20", "Bill C-27, clause 39 — proposed AIDA section 20", "Filing — Federal Court", "Would have enabled certified ministerial orders to be filed and enforced through the Federal Court.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-21", "Bill C-27, clause 39 — proposed AIDA section 21", "Statutory Instruments Act", "Would have excluded specified ministerial orders from treatment as statutory instruments under the referenced federal legislation.", ["accountability-governance"]],
+      ["proposed-s-22", "Bill C-27, clause 39 — proposed AIDA section 22", "Confidential nature maintained", "Would have preserved the confidential character of protected business information obtained or shared in administering proposed Part 1.", ["accountability-governance", "security-controls"]],
+      ["proposed-s-23", "Bill C-27, clause 39 — proposed AIDA section 23", "Obligation of Minister", "Would have placed a confidentiality-protection responsibility on the Minister, subject to the proposal's specified disclosure routes.", ["accountability-governance", "security-controls"]],
+      ["proposed-s-24", "Bill C-27, clause 39 — proposed AIDA section 24", "Disclosure of confidential business information — subpoena, warrant, etc.", "Would have permitted disclosure of confidential business information when required by valid legal compulsion or applicable court procedure.", ["accountability-governance", "security-controls"]],
+      ["proposed-s-25", "Bill C-27, clause 39 — proposed AIDA section 25", "Disclosure of information — analyst", "Would have allowed information to be shared with a designated analyst under confidentiality conditions and purpose limits tied to administration or enforcement.", ["accountability-governance", "security-controls"]],
+      ["proposed-s-26", "Bill C-27, clause 39 — proposed AIDA section 26", "Disclosure of information — others", "Would have enabled limited information sharing with listed federal or provincial regulators where relevant to a suspected breach of another law, subject to necessity, use and confidentiality safeguards.", ["accountability-governance", "third-party-supply-chain", "global-coordination"]],
+      ["proposed-s-27", "Bill C-27, clause 39 — proposed AIDA section 27", "Publication of information — contravention", "Would have allowed public notice of a proposed Part 1 contravention to encourage compliance, while withholding confidential business information.", ["transparency-explainability", "accountability-governance"]],
+      ["proposed-s-28", "Bill C-27, clause 39 — proposed AIDA section 28", "Publication of information — harm", "Would have supported an urgent public warning about an AI system when publication was considered essential to prevent serious imminent harm, while excluding personal and confidential business information.", ["incident-response", "transparency-explainability", "security-controls"]],
+      ["proposed-s-29", "Bill C-27, clause 39 — proposed AIDA section 29", "Administrative monetary penalties", "Would have authorized a regulation-built administrative monetary penalty scheme focused on compliance, including classifications, procedures, amounts, review routes and compliance agreements.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-30", "Bill C-27, clause 39 — proposed AIDA section 30", "Contravention — sections 6 to 12", "Would have created offences for breaches of the proposed core duties and for obstruction or misleading information, together with differentiated penalties and a due-diligence defence.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-31", "Bill C-27, clause 39 — proposed AIDA section 31", "Designation", "Would have authorized the Governor in Council to designate the Minister responsible for administering proposed Part 1.", ["accountability-governance"]],
+      ["proposed-s-32", "Bill C-27, clause 39 — proposed AIDA section 32", "General powers of Minister", "Would have assigned public education, reporting, recommendation and compliance-guidance functions to the Minister.", ["accountability-governance", "transparency-explainability"]],
+      ["proposed-s-33", "Bill C-27, clause 39 — proposed AIDA section 33", "Artificial Intelligence and Data Commissioner", "Would have allowed designation of a departmental official to assist the Minister, plus delegation of administrative and enforcement powers subject to a regulation-making exception.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-34", "Bill C-27, clause 39 — proposed AIDA section 34", "Analysts", "Would have authorized designation of analysts to support administration and enforcement of the proposed private-sector AI regime.", ["accountability-governance", "continuous-assurance"]],
+      ["proposed-s-35", "Bill C-27, clause 39 — proposed AIDA section 35", "Advisory committee", "Would have permitted an expert advisory committee and discretionary publication of its advice to the Minister.", ["accountability-governance", "global-coordination", "transparency-explainability"]],
+      ["proposed-s-36", "Bill C-27, clause 39 — proposed AIDA section 36", "Regulations — Governor in Council", "Would have delegated major design choices to Governor in Council regulations, including high-impact criteria, risk controls, assessments, material-harm parameters and auditor qualifications.", ["ai-risk-management", "impact-assessment", "fairness-nondiscrimination", "accountability-governance"]],
+      ["proposed-s-37", "Bill C-27, clause 39 — proposed AIDA section 37", "Regulations — Minister", "Would have delegated detailed rules on records, system descriptions, harm notices and ordered publication to ministerial regulations.", ["accountability-governance", "transparency-explainability", "incident-response"]],
+      ["proposed-s-38", "Bill C-27, clause 39 — proposed AIDA section 38", "Possession or use of personal information", "Would have criminalized specified knowing possession or use of unlawfully obtained personal information for activities involving an AI system.", ["security-controls", "sensitive-data-protection", "accountability-governance"]],
+      ["proposed-s-39", "Bill C-27, clause 39 — proposed AIDA section 39", "Making system available for use", "Would have created offences for making an AI system available under specified culpability and causation conditions involving serious personal or property harm, or intentional fraud causing substantial loss.", ["incident-response", "ai-risk-management", "accountability-governance"]],
+      ["proposed-s-40", "Bill C-27, clause 39 — proposed AIDA section 40", "Punishment", "Would have established separate corporate and individual sentencing exposure for the proposed offences in sections 38 and 39.", ["accountability-governance"]],
+      ["proposed-s-41", "Bill C-27, clause 39 — proposed AIDA section 41", "Order in council", "Would have left commencement to one or more future orders in council; no commencement occurred because Bill C-27 lapsed without enactment.", ["accountability-governance"]],
     ],
   },
   {
@@ -2771,16 +2823,20 @@ const newProvisions = provisionSets.flatMap((set) => {
       scopeTags: overrides.scopeTags ?? set.scopeTags,
       legalEffectStatus:
         overrides.legalEffectStatus ?? set.legalEffectStatus,
-      versionAsOf: overrides.versionAsOf ?? snapshotDate,
+      versionAsOf:
+        overrides.versionAsOf ?? set.versionAsOf ?? snapshotDate,
       appliesFrom: Object.hasOwn(overrides, "appliesFrom")
         ? overrides.appliesFrom
         : set.appliesFrom,
-      textAvailability: linkedText(
-        "official-source-linked-editorial-summary",
-        "en",
-        "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text.",
-      ),
-      source: overrides.source ?? instrument.source,
+      textAvailability:
+        overrides.textAvailability ??
+        set.textAvailability ??
+        linkedText(
+          "official-source-linked-editorial-summary",
+          "en",
+          "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text.",
+        ),
+      source: overrides.source ?? set.source ?? instrument.source,
       ...(overrides.supportingSources
         ? { supportingSources: overrides.supportingSources }
         : instrument.supportingSource
@@ -2871,17 +2927,33 @@ async function patchJson(filename, patches) {
 }
 
 const results = [];
-results.push(await updateJson("instruments.json", newInstruments));
-results.push(await patchJson("instruments.json", existingInstrumentPatches));
-results.push(
-  await replaceManagedProvisions(
-    "provisions.json",
-    newProvisions,
-    new Set(newInstruments.map((instrument) => instrument.id)),
-  ),
-);
-results.push(await updateJson("relations.json", newRelations));
-results.push(await updateJson("status-events.json", newStatusEvents));
+const aidaEditorialOnly =
+  process.env.COMPLIANCE_COMPASS_AIDA_EDITORIAL_ONLY === "1";
+
+if (aidaEditorialOnly) {
+  const aidaInstrumentId = "ca-bill-c-27-aida-2022-lapsed";
+  results.push(
+    await replaceManagedProvisions(
+      "provisions.json",
+      newProvisions.filter(
+        (provision) => provision.instrumentId === aidaInstrumentId,
+      ),
+      new Set([aidaInstrumentId]),
+    ),
+  );
+} else {
+  results.push(await updateJson("instruments.json", newInstruments));
+  results.push(await patchJson("instruments.json", existingInstrumentPatches));
+  results.push(
+    await replaceManagedProvisions(
+      "provisions.json",
+      newProvisions,
+      new Set(newInstruments.map((instrument) => instrument.id)),
+    ),
+  );
+  results.push(await updateJson("relations.json", newRelations));
+  results.push(await updateJson("status-events.json", newStatusEvents));
+}
 
 for (const result of results) {
   console.log(`${result.filename}: ${result.before} -> ${result.after}`);

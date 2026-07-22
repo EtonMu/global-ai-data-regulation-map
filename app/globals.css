@@ -2644,6 +2644,65 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   overflow-wrap: anywhere;
 }
 
+.instrument-corpus-profile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 18px 0 24px;
+  border: 1px solid var(--line-strong);
+  background: var(--line-strong);
+}
+
+.instrument-corpus-disclosure {
+  min-width: 0;
+  padding: 16px;
+  background: var(--panel);
+}
+
+.instrument-corpus-disclosure > strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.instrument-corpus-disclosure > p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.instrument-corpus-disclosure.is-rights-boundary {
+  box-shadow: inset 3px 0 0 var(--amber);
+}
+
+.instrument-corpus-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+
+.instrument-corpus-counts span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--muted-dark);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+}
+
+.instrument-corpus-counts b {
+  color: var(--cyan);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 /*
  * The legal workspace is independently resizable on wide screens. Its
  * contents therefore respond to the column itself instead of waiting for a
@@ -2653,6 +2712,14 @@ html[data-transition-fallback="true"][data-ui-transition="view"] .workspace > :i
   .instrument-context {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
+  }
+
+  .instrument-corpus-profile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .instrument-corpus-disclosure.is-rights-boundary {
+    box-shadow: inset 0 3px 0 var(--amber);
   }
 }
 

@@ -1,0 +1,1469 @@
+[
+  {
+    "id": "ca-adm-directive-sec-1",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "1",
+    "label": "Section 1",
+    "title": "Effective date",
+    "originalTitle": "Date d’entrée en vigueur",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "1.1 This directive takes effect on April 1, 2019, with compliance required by no later than April 1, 2020.",
+      "1.2 This directive applies to all automated decision systems developed or procured after April 1, 2020.",
+      "1.2.1 Existing automated decision systems developed or procured prior to June 24, 2025, will have until June 24, 2026 to comply with the new or updated requirements.",
+      "1.2.2 Agents of Parliament will have until June 24, 2026, to comply with the requirements.",
+      "1.3 This directive will be reviewed every two years, and as determined by the Chief Information Officer of Canada."
+    ],
+    "fullText": "1.1 This directive takes effect on April 1, 2019, with compliance required by no later than April 1, 2020.\n\n1.2 This directive applies to all automated decision systems developed or procured after April 1, 2020.\n\n1.2.1 Existing automated decision systems developed or procured prior to June 24, 2025, will have until June 24, 2026 to comply with the new or updated requirements.\n\n1.2.2 Agents of Parliament will have until June 24, 2026, to comply with the requirements.\n\n1.3 This directive will be reviewed every two years, and as determined by the Chief Information Officer of Canada.",
+    "contentSha256": "ecba35ad4b181b9dada5698065dae6af9e7f6aedb99668c5da72bde08dd13eaf",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha1",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 1",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Date d’entrée en vigueur",
+        "paragraphs": [
+          "1.1 La présente directive entre en vigueur le 1er avril 2019, et la conformité à celle-ci devient obligatoire le 1er avril 2020.",
+          "1.2 La Directive s’applique à tous les systèmes décisionnels automatisés qui ont été développés ou acquis après le 1er avril 2020.",
+          "1.2.1 Les systèmes de décision automatisés existants, développés ou acquis avant le 24 juin 2025, devront être conformes aux exigences nouvelles ou mises à jour au plus tard le 24 juin 2026.",
+          "1.2.2 Les organisations mandataires du Parlement auront jusqu’au 24 juin 2026 pour se conformer aux exigences.",
+          "1.3 La Directive sera réexaminée tous les deux ans, ou à la demande du dirigeant principal ou de la dirigeante principale de l’information du Canada."
+        ],
+        "fullText": "1.1 La présente directive entre en vigueur le 1er avril 2019, et la conformité à celle-ci devient obligatoire le 1er avril 2020.\n\n1.2 La Directive s’applique à tous les systèmes décisionnels automatisés qui ont été développés ou acquis après le 1er avril 2020.\n\n1.2.1 Les systèmes de décision automatisés existants, développés ou acquis avant le 24 juin 2025, devront être conformes aux exigences nouvelles ou mises à jour au plus tard le 24 juin 2026.\n\n1.2.2 Les organisations mandataires du Parlement auront jusqu’au 24 juin 2026 pour se conformer aux exigences.\n\n1.3 La Directive sera réexaminée tous les deux ans, ou à la demande du dirigeant principal ou de la dirigeante principale de l’information du Canada.",
+        "contentSha256": "14d7f9e32c9d656b5cdb4e7702f167b8f32226dbcd39bc4ea362277724932c5c",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Sets the Directive's effective date, system-cohort scope, transition deadline, and review cycle.",
+    "coreConceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-2",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "2",
+    "label": "Section 2",
+    "title": "Authorities",
+    "originalTitle": "Autorisations et pouvoirs",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "2.1 This directive is issued pursuant to the same authority indicated in section 2 of the Policy on Service and Digital."
+    ],
+    "fullText": "2.1 This directive is issued pursuant to the same authority indicated in section 2 of the Policy on Service and Digital.",
+    "contentSha256": "136d2f374a381c9973c23084b376b53bf282840a26bbc798d42075486b5fa8dc",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha2",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 2",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Autorisations et pouvoirs",
+        "paragraphs": [
+          "2.1 La Directive est émise conformément aux mêmes autorisations et aux mêmes pouvoirs que ceux indiqués à la section 2 de la Politique sur les services et le numérique."
+        ],
+        "fullText": "2.1 La Directive est émise conformément aux mêmes autorisations et aux mêmes pouvoirs que ceux indiqués à la section 2 de la Politique sur les services et le numérique.",
+        "contentSha256": "0ade803d88a2e756d3780f4b2cb0bd169d3f1fc52eeae71a0e198cf0ffb860d7",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Links the Directive to the authority of the federal Policy on Service and Digital.",
+    "coreConceptIds": [
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-3",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "3",
+    "label": "Section 3",
+    "title": "Definitions",
+    "originalTitle": "Définitions",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "3.1 Definitions to be used in the interpretation of this directive are listed in Appendix A."
+    ],
+    "fullText": "3.1 Definitions to be used in the interpretation of this directive are listed in Appendix A.",
+    "contentSha256": "90b508337def68da2029fbe009d5ae1ece0cc39a0fc847723882bc6e085f9fde",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha3",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 3",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Définitions",
+        "paragraphs": [
+          "3.1 Les définitions servant à l’interprétation de la présente directive sont présentées à l’annexe A."
+        ],
+        "fullText": "3.1 Les définitions servant à l’interprétation de la présente directive sont présentées à l’annexe A.",
+        "contentSha256": "6a1fa2ff1892fb6b9ec499d48f07db449ae602b69363824026888215d7adb6f7",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Incorporates the defined terms collected in Appendix A.",
+    "coreConceptIds": [
+      "automated-decision-safeguards",
+      "transparency-explainability"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-4",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "4",
+    "label": "Section 4",
+    "title": "Objectives and expected results",
+    "originalTitle": "Objectifs et résultats attendus",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "4.1 The objective of this directive is to ensure that automated decision systems are used in a manner that reduces risks to clients, departments and Canadian society, and leads to more efficient, accurate, consistent and interpretable decisions made pursuant to Canadian law.",
+      "4.2 The expected results of this directive as it applies to automated decision systems are as follows:",
+      "4.2.1 Decisions made by departments are data-driven and responsible, and comply with procedural fairness and due process requirements.",
+      "4.2.2 Impacts to administrative decisions are assessed and negative outcomes are reduced.",
+      "4.2.3 Data and information on the use of automated decision systems in departments are made available to the public, while protecting privacy, security and intellectual property."
+    ],
+    "fullText": "4.1 The objective of this directive is to ensure that automated decision systems are used in a manner that reduces risks to clients, departments and Canadian society, and leads to more efficient, accurate, consistent and interpretable decisions made pursuant to Canadian law.\n\n4.2 The expected results of this directive as it applies to automated decision systems are as follows:\n\n4.2.1 Decisions made by departments are data-driven and responsible, and comply with procedural fairness and due process requirements.\n\n4.2.2 Impacts to administrative decisions are assessed and negative outcomes are reduced.\n\n4.2.3 Data and information on the use of automated decision systems in departments are made available to the public, while protecting privacy, security and intellectual property.",
+    "contentSha256": "6b689b52e7c31c17af8fb245fc22a2457f394aa624d0eaaabfa12ade2f08bc0d",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha4",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 4",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Objectifs et résultats attendus",
+        "paragraphs": [
+          "4.1 La Directive a pour objet de garantir que les systèmes décisionnels automatisés sont utilisés d’une manière qui permet de réduire les risques pour la clientèle, les ministères et la société canadienne, d’accroître l’efficacité, l’exactitude et la cohérence des décisions prises en vertu du droit canadien ainsi que d’en faciliter l’interprétation.",
+          "4.2 Les résultats escomptés de la Directive en ce qui a trait aux systèmes décisionnels automatisés sont les suivants :",
+          "4.2.1 Les décisions rendues par les ministères sont appuyées par des données, et sont prises de façon responsable et conformes à l’équité procédurale et aux exigences d’application régulière de la loi.",
+          "4.2.2 Les incidences sur les décisions administratives sont évaluées et les résultats négatifs sont atténués.",
+          "4.2.3 Les données et les renseignements sur l’utilisation des systèmes décisionnels automatisés dans les ministères sont mis à la disposition du public conformément aux exigences en matière de protection des renseignements personnels, de sécurité et de propriété intellectuelle."
+        ],
+        "fullText": "4.1 La Directive a pour objet de garantir que les systèmes décisionnels automatisés sont utilisés d’une manière qui permet de réduire les risques pour la clientèle, les ministères et la société canadienne, d’accroître l’efficacité, l’exactitude et la cohérence des décisions prises en vertu du droit canadien ainsi que d’en faciliter l’interprétation.\n\n4.2 Les résultats escomptés de la Directive en ce qui a trait aux systèmes décisionnels automatisés sont les suivants :\n\n4.2.1 Les décisions rendues par les ministères sont appuyées par des données, et sont prises de façon responsable et conformes à l’équité procédurale et aux exigences d’application régulière de la loi.\n\n4.2.2 Les incidences sur les décisions administratives sont évaluées et les résultats négatifs sont atténués.\n\n4.2.3 Les données et les renseignements sur l’utilisation des systèmes décisionnels automatisés dans les ministères sont mis à la disposition du public conformément aux exigences en matière de protection des renseignements personnels, de sécurité et de propriété intellectuelle.",
+        "contentSha256": "f7d981869dca11613e23aee53835a45ab2ec440fa87d814325d27b7fb7a020da",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "States the objectives of lawful, fair, responsible, interpretable, privacy- and security-conscious automated decisions.",
+    "coreConceptIds": [
+      "ai-risk-management",
+      "fairness-nondiscrimination",
+      "transparency-explainability",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-5",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "5",
+    "label": "Section 5",
+    "title": "Scope",
+    "originalTitle": "Portée",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "5.1 This directive applies to any automated decision system in production used to make an administrative decision or a related assessment about a client.",
+      "5.2 This directive excludes automated decision systems used solely for research and experimentation purposes, and those operating in test environments."
+    ],
+    "fullText": "5.1 This directive applies to any automated decision system in production used to make an administrative decision or a related assessment about a client.\n\n5.2 This directive excludes automated decision systems used solely for research and experimentation purposes, and those operating in test environments.",
+    "contentSha256": "ab7e1b7f677761bd1820f4f419684bbec755637771c6406e6f7aafc204a1354b",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha5",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 5",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Portée",
+        "paragraphs": [
+          "5.1 La Directive s’applique à tout système décisionnel automatisé en production qui servira à la prise d’une décision administrative ou à la réalisation d’une évaluation connexe concernant une personne.",
+          "5.2 La Directive ne vise pas les systèmes décisionnels automatisés utilisés uniquement à des fins de recherche et d’expérimentation ni ceux exploités dans des environnements d’essais."
+        ],
+        "fullText": "5.1 La Directive s’applique à tout système décisionnel automatisé en production qui servira à la prise d’une décision administrative ou à la réalisation d’une évaluation connexe concernant une personne.\n\n5.2 La Directive ne vise pas les systèmes décisionnels automatisés utilisés uniquement à des fins de recherche et d’expérimentation ni ceux exploités dans des environnements d’essais.",
+        "contentSha256": "22f705724f059553160cc2ddac5b6dc7835401f9ce7ebc5601fd08c6aca5b8b9",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Defines the production administrative-decision systems covered by the Directive and excludes research and test environments.",
+    "coreConceptIds": [
+      "automated-decision-safeguards",
+      "ai-risk-management"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-6",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "6",
+    "label": "Section 6",
+    "title": "Requirements",
+    "originalTitle": "Exigences",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "The assistant deputy minister responsible for the program using the automated decision system, or any other senior official named by the deputy head, is responsible for:",
+      "6.1 Algorithmic impact assessment",
+      "6.1.1 Completing, approving and publishing the final results of an algorithmic impact assessment in an accessible format on the Open Government Portal prior to the production of any automated decision system.",
+      "6.1.2 Applying the relevant requirements prescribed in Appendix C as determined by the algorithmic impact assessment.",
+      "6.1.3 Reviewing, approving, and updating the published algorithmic impact assessment on a scheduled basis, including when the functionality or scope of the automated decision system changes.",
+      "6.2 Transparency",
+      "Providing notice before decisions",
+      "6.2.1 Providing notice through all service delivery channels in use that the decision will be made or assisted by an automated decision system, as prescribed in Appendix C.",
+      "6.2.2 Providing notices prominently and in plain language.",
+      "6.2.2.1 Providing notices pursuant to the Canada.ca Content Style Guide.",
+      "Providing explanations after decisions",
+      "6.2.3 Providing a meaningful explanation to clients of how and why the decision was made, as prescribed in Appendix C.",
+      "Access to components",
+      "6.2.4 Determining the appropriate licence for software components, including consideration of open source software.",
+      "6.2.5 Obtaining and safeguarding all released versions of software components used for automated decision systems.",
+      "6.2.6 If using a proprietary licence, ensuring that:",
+      "6.2.6.1 The department responsible for the automated decision system retains the right to access, test and monitor the automated decision system, including all released versions of proprietary software components, in case it is necessary for a specific audit, investigation, inspection, examination, enforcement action, or judicial proceeding, subject to safeguards against unauthorized disclosure.",
+      "6.2.6.2 As part of this access, the department responsible for the automated decision system retains the right to authorize external parties to review, test, monitor, and audit these components as necessary.",
+      "Documenting decisions",
+      "6.2.7 Documenting the decisions and assessments made or assisted by automated decision systems in accordance with the Directive on Service and Digital, and in support of the testing (6.3.1), monitoring (6.3.2), data governance (6.3.6) and reporting requirements (6.5.1 and 6.5.2).",
+      "6.3 Quality assurance",
+      "Testing and monitoring outcomes",
+      "6.3.1 Before an automated decision system is in production, testing the data, information, and underlying model for accuracy, unintended biases and all factors that may unintentionally or unfairly impact the outcomes or violate human rights and freedoms.",
+      "6.3.2 Monitoring the outcomes of the automated decision system to safeguard against unintentional or unfair outcomes and to verify compliance with human rights obligations, departmental and program legislation, and this directive, on a scheduled basis.",
+      "6.3.3 Ensuring that testing and monitoring assesses human rights and is consistent with applicable legislation such as the Canadian Charter of Rights and Freedoms, Canadian Human Rights Act, and the United Nations Declaration on the Rights of Indigenous Peoples Act.",
+      "6.3.4 Documenting client feedback, unexpected impacts, human overrides of the decision or assessment made by the system and other system failures as appropriate.",
+      "6.3.4.1 Using findings from outcome monitoring and documented feedback, unexpected impacts and human overrides to identify issues and take corrective actions.",
+      "Data quality",
+      "6.3.5 Validating that the data used to train the automated decision system and the data input into the system are relevant, accurate, up-to-date, and in accordance with the Policy on Service and Digital and the Privacy Act.",
+      "Data governance",
+      "6.3.6 Establishing measures to ensure that data used and produced by the automated decision system are traceable, protected and accessed appropriately, and lawfully collected, used, retained, disclosed and disposed of in accordance with the Directive on Service and Digital, Directive on Privacy Practices, and Directive on Security Management.",
+      "Peer review",
+      "6.3.7 Consulting the appropriate qualified experts to review the automated decision system, algorithmic impact assessment and supporting documentation, and publishing the complete review or a plain language summary prior to the automated decision system’s production, as prescribed in Appendix C.",
+      "Gender-based Analysis Plus",
+      "6.3.8 Completing a Gender-based Analysis Plus during the development or modification of the automated decision system, as prescribed in Appendix C.",
+      "Employee training",
+      "6.3.9 Providing training to each employee involved in any aspect of the development, use or management of automated decision systems, as prescribed in Appendix C.",
+      "Security",
+      "6.3.10 Conducting risk assessments during the development and maintenance of the automated decision system and implementing appropriate information management and information technology security protections, in accordance with the Policy on Government Security and the Policy on Service and Digital.",
+      "6.3.11 Implementing measures to secure data and model integrity to prevent tampering and unauthorized modifications, ensuring alignment with Government of Canada guidance, standards, and industry best practices, as prescribed by Treasury Board of Canada Secretariat.",
+      "Legal",
+      "6.3.12 Consulting with the department’s legal services from the concept stage of an automation project to ensure that the use of the automated decision system is compliant with applicable legal requirements.",
+      "Ensuring human involvement",
+      "6.3.13 Ensuring that the automated decision system allows for human involvement, as prescribed in Appendix C.",
+      "6.3.14 Obtaining the appropriate level of approvals prior to the production of an automated decision system, as prescribed in Appendix C.",
+      "6.4 Recourse",
+      "6.4.1 Informing clients of recourse options to challenge the administrative decision.",
+      "6.4.1.1 Ensuring that recourse options are timely, effective, and easy to access.",
+      "6.5 Reporting",
+      "6.5.1 Publishing information on the effectiveness and efficiency of the automated decision system in meeting program objectives on the Open Government Portal.",
+      "6.5.2 Publishing information on the Open Government Portal on how the use of the automated decision system is fair and transparent and does not violate human rights and freedoms."
+    ],
+    "fullText": "The assistant deputy minister responsible for the program using the automated decision system, or any other senior official named by the deputy head, is responsible for:\n\n6.1 Algorithmic impact assessment\n\n6.1.1 Completing, approving and publishing the final results of an algorithmic impact assessment in an accessible format on the Open Government Portal prior to the production of any automated decision system.\n\n6.1.2 Applying the relevant requirements prescribed in Appendix C as determined by the algorithmic impact assessment.\n\n6.1.3 Reviewing, approving, and updating the published algorithmic impact assessment on a scheduled basis, including when the functionality or scope of the automated decision system changes.\n\n6.2 Transparency\n\nProviding notice before decisions\n\n6.2.1 Providing notice through all service delivery channels in use that the decision will be made or assisted by an automated decision system, as prescribed in Appendix C.\n\n6.2.2 Providing notices prominently and in plain language.\n\n6.2.2.1 Providing notices pursuant to the Canada.ca Content Style Guide.\n\nProviding explanations after decisions\n\n6.2.3 Providing a meaningful explanation to clients of how and why the decision was made, as prescribed in Appendix C.\n\nAccess to components\n\n6.2.4 Determining the appropriate licence for software components, including consideration of open source software.\n\n6.2.5 Obtaining and safeguarding all released versions of software components used for automated decision systems.\n\n6.2.6 If using a proprietary licence, ensuring that:\n\n6.2.6.1 The department responsible for the automated decision system retains the right to access, test and monitor the automated decision system, including all released versions of proprietary software components, in case it is necessary for a specific audit, investigation, inspection, examination, enforcement action, or judicial proceeding, subject to safeguards against unauthorized disclosure.\n\n6.2.6.2 As part of this access, the department responsible for the automated decision system retains the right to authorize external parties to review, test, monitor, and audit these components as necessary.\n\nDocumenting decisions\n\n6.2.7 Documenting the decisions and assessments made or assisted by automated decision systems in accordance with the Directive on Service and Digital, and in support of the testing (6.3.1), monitoring (6.3.2), data governance (6.3.6) and reporting requirements (6.5.1 and 6.5.2).\n\n6.3 Quality assurance\n\nTesting and monitoring outcomes\n\n6.3.1 Before an automated decision system is in production, testing the data, information, and underlying model for accuracy, unintended biases and all factors that may unintentionally or unfairly impact the outcomes or violate human rights and freedoms.\n\n6.3.2 Monitoring the outcomes of the automated decision system to safeguard against unintentional or unfair outcomes and to verify compliance with human rights obligations, departmental and program legislation, and this directive, on a scheduled basis.\n\n6.3.3 Ensuring that testing and monitoring assesses human rights and is consistent with applicable legislation such as the Canadian Charter of Rights and Freedoms, Canadian Human Rights Act, and the United Nations Declaration on the Rights of Indigenous Peoples Act.\n\n6.3.4 Documenting client feedback, unexpected impacts, human overrides of the decision or assessment made by the system and other system failures as appropriate.\n\n6.3.4.1 Using findings from outcome monitoring and documented feedback, unexpected impacts and human overrides to identify issues and take corrective actions.\n\nData quality\n\n6.3.5 Validating that the data used to train the automated decision system and the data input into the system are relevant, accurate, up-to-date, and in accordance with the Policy on Service and Digital and the Privacy Act.\n\nData governance\n\n6.3.6 Establishing measures to ensure that data used and produced by the automated decision system are traceable, protected and accessed appropriately, and lawfully collected, used, retained, disclosed and disposed of in accordance with the Directive on Service and Digital, Directive on Privacy Practices, and Directive on Security Management.\n\nPeer review\n\n6.3.7 Consulting the appropriate qualified experts to review the automated decision system, algorithmic impact assessment and supporting documentation, and publishing the complete review or a plain language summary prior to the automated decision system’s production, as prescribed in Appendix C.\n\nGender-based Analysis Plus\n\n6.3.8 Completing a Gender-based Analysis Plus during the development or modification of the automated decision system, as prescribed in Appendix C.\n\nEmployee training\n\n6.3.9 Providing training to each employee involved in any aspect of the development, use or management of automated decision systems, as prescribed in Appendix C.\n\nSecurity\n\n6.3.10 Conducting risk assessments during the development and maintenance of the automated decision system and implementing appropriate information management and information technology security protections, in accordance with the Policy on Government Security and the Policy on Service and Digital.\n\n6.3.11 Implementing measures to secure data and model integrity to prevent tampering and unauthorized modifications, ensuring alignment with Government of Canada guidance, standards, and industry best practices, as prescribed by Treasury Board of Canada Secretariat.\n\nLegal\n\n6.3.12 Consulting with the department’s legal services from the concept stage of an automation project to ensure that the use of the automated decision system is compliant with applicable legal requirements.\n\nEnsuring human involvement\n\n6.3.13 Ensuring that the automated decision system allows for human involvement, as prescribed in Appendix C.\n\n6.3.14 Obtaining the appropriate level of approvals prior to the production of an automated decision system, as prescribed in Appendix C.\n\n6.4 Recourse\n\n6.4.1 Informing clients of recourse options to challenge the administrative decision.\n\n6.4.1.1 Ensuring that recourse options are timely, effective, and easy to access.\n\n6.5 Reporting\n\n6.5.1 Publishing information on the effectiveness and efficiency of the automated decision system in meeting program objectives on the Open Government Portal.\n\n6.5.2 Publishing information on the Open Government Portal on how the use of the automated decision system is fair and transparent and does not violate human rights and freedoms.",
+    "contentSha256": "4246085f0241acb3dcde824c4b24e5eac4c3606a7d6b9d424114e6f6fcf4f14d",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha6",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 6",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Exigences",
+        "paragraphs": [
+          "Le sous-ministre adjoint ou la sous-ministre adjointe responsable du programme pour lequel le système décisionnel automatisé est utilisé, ou toute autre personne de la haute direction nommée par l’administrateur général ou l’administratrice générale, est responsable de ce qui suit :",
+          "6.1 Évaluation de l’incidence algorithmique",
+          "6.1.1 Réaliser une évaluation de l’incidence algorithmique, en approuver les résultats définitifs et les publier dans un format accessible sur le Portail du gouvernement ouvert avant la production de tout système décisionnel automatisé.",
+          "6.1.2 Appliquer les exigences appropriées qui sont décrites à l’annexe C en fonction des résultats de l’évaluation de l’incidence algorithmique.",
+          "6.1.3 Examiner, approuver et mettre à jour l’évaluation de l’incidence algorithmique à intervalles réguliers ou lorsque des changements sont apportés à la fonctionnalité ou à la portée du système décisionnel automatisé.",
+          "6.2 Transparence",
+          "Présentation d’un avis avant les décisions",
+          "6.2.1 Fournir, par l’entremise de tous les modes de prestation de services utilisés, un avis précisant que le processus décisionnel est exécuté ou assisté par un système décisionnel automatisé, conformément à l’annexe C.",
+          "6.2.2 Rédiger les avis en langage clair et les afficher de manière à ce qu’ils soient bien en vue.",
+          "6.2.2.1 Fournir des avis conformes au Guide de rédaction du contenu du site canada.ca.",
+          "Fournir des explications après les décisions",
+          "6.2.3 Fournir aux personnes concernées une explication détaillée de la façon dont la décision a été prise et la raison pour laquelle elle l’a été, comme prescrit à l’annexe C.",
+          "Accès aux composants",
+          "6.2.4 Déterminer la licence appropriée pour les composants logiciels, en tenant compte des logiciels à code source ouvert.",
+          "6.2.5 Obtenir et sauvegarder toutes les versions publiées des composants logiciels utilisés pour les systèmes décisionnels automatisés.",
+          "6.2.6 Si une licence propriétaire est utilisée, veiller à ce que :",
+          "6.2.6.1 le ministère responsable du système décisionnel automatisé se réserve un droit d’accès à ce dernier, de même qu’à toutes les versions publiées des composants logiciels exclusifs, qui lui permette d’effectuer des essais et un suivi, si de telles mesures s’avèrent nécessaires à des fins d’audit, d’enquête, d’inspection, d’examen, d’application de la loi ou de procédure judiciaire, sous réserve de garanties contre une divulgation non autorisée;",
+          "6.2.6.2 ce droit d’accès doit également permettre au ministère responsable du système décisionnel automatisé d’autoriser des tiers à examiner les composants, à les mettre à l’essai et à en faire le suivi, au besoin.",
+          "Documentation des décisions",
+          "6.2.7 Documenter les décisions et les évaluations des systèmes décisionnels automatisés, conformément à la Directive sur les services et le numérique et aux exigences en matière d’examen (6.3.1), de surveillance (6.3.2), de gouvernance des données (6.3.6) et d’établissement de rapports (6.5.1 et 6.5.2).",
+          "6.3 Assurance de la qualité",
+          "Mise à l’essai et suivi des résultats",
+          "6.3.1 Avant la mise en production d’un système décisionnel automatisé, mettre à l’essai les données, les renseignements et le modèle sous-jacent pour en vérifier l’exactitude et déceler tout biais involontaire ou tout facteur susceptible d’avoir une incidence involontaire ou injuste sur les résultats ou de porter atteinte aux droits et libertés de la personne.",
+          "6.3.2 Suivre les résultats du système décisionnel automatisé afin d’éviter tout résultat involontaire ou injuste, et de vérifier régulièrement la conformité aux obligations en matière de droits de la personne, aux dispositions législatives régissant les ministères et les programmes ainsi qu’à la présente directive.",
+          "6.3.3 Veiller à ce que les essais et le suivi tiennent compte des droits de la personne et soient conformes aux dispositions législatives applicables, comme la Charte canadienne des droits et libertés, la Loi canadienne sur les droits de la personne et la Loi sur la Déclaration des Nations Unies sur les droits des peuples autochtones.",
+          "6.3.4 Consigner la rétroaction de la clientèle, tout incidence imprévue, toute dérogation du personnel à la décision ou à l’évaluation du système ainsi que toute autre défaillance du système, le cas échéant.",
+          "6.3.4.1 Utiliser les conclusions tirées du suivi des résultats, de la rétroaction consignée, des incidences imprévues et des dérogations du personnel pour cerner les problèmes et prendre les mesures correctives qui s’imposent.",
+          "Qualité des données",
+          "6.3.5 Confirmer que toutes les données utilisées pour l’apprentissage du système décisionnel automatisé et celles saisies dans ce dernier sont pertinentes, exactes, à jour, et conformes à la Politique sur les services et le numérique et à la Loi sur la protection des renseignements personnels.",
+          "Gouvernance des données",
+          "6.3.6 Mettre en place des mesures permettant de garantir que les données utilisées et produites par le système décisionnel automatisé sont traçables, protégées et accessibles de manière appropriée et qu’elles sont recueillies, utilisées, conservées et éliminées légalement, conformément à la Directive sur les services et le numérique, à la Directive sur les pratiques relatives à la protection de la vie privée et à la Directive sur la gestion de la sécurité.",
+          "Examen par les pairs",
+          "6.3.7 Consulter les personnes possédant l’expertise requise pour examiner le système décisionnel automatisé, l’évaluation de l’incidence algorithmique et les documents à l’appui, et publier l’examen complet ou un résumé en langage clair avant la mise en production du système décisionnel automatisé, conformément à l’annexe C.",
+          "Analyse comparative entre les sexes plus",
+          "6.3.8 Réaliser une analyse comparative entre les sexes plus lors de l’élaboration ou de la modification du système décisionnel automatisé, conformément à l’annexe C.",
+          "Formation du personnel",
+          "6.3.9 Fournir une formation à tout le personnel participant au développement, à l’exploitation ou à la gestion des systèmes décisionnels automatisés, conformément à l’annexe C.",
+          "Sécurité",
+          "6.3.10 Mener des évaluations des risques durant le développement et l’entretien du système décisionnel automatisé et mettre en œuvre des mesures de protection appropriées en matière de gestion de l’information et de sécurité des technologies de l’information, conformément à la Politique sur la sécurité du gouvernement et à la Politique sur les services et le numérique.",
+          "6.3.11 Mettre en œuvre des mesures visant à garantir l’intégrité des données et des modèles pour empêcher toute altération ou modification non autorisée et se conformer aux lignes directrices du gouvernement du Canada, aux normes et aux pratiques exemplaires de l’industrie, telles que prescrites par le Secrétariat du Conseil du Trésor du Canada.",
+          "Services juridiques",
+          "6.3.12 Consulter l’unité des services juridiques de votre ministère, dès la phase de conception d’un projet d’automatisation, afin de veiller à ce que l’exploitation du système décisionnel automatisé soit conforme aux exigences juridiques applicables.",
+          "Participation humaine",
+          "6.3.13 Veiller à ce que le système décisionnel automatisé permette au personnel de participer au processus, comme prescrit à l’annexe C.",
+          "6.3.14 Obtenir le niveau d’approbation approprié avant de produire un système décisionnel automatisé, comme prescrit à l’annexe C.",
+          "6.4 Recours",
+          "6.4.1 Informer la clientèle des mécanismes de recours dont elle dispose pour contester la décision administrative.",
+          "6.4.1.1 Veiller à ce que les mécanismes de recours soient rapides, efficaces et faciles d’accès.",
+          "6.5 Établissement de rapports",
+          "6.5.1 Publier les renseignements sur l’efficacité et l’efficience des systèmes décisionnels automatisés par rapport aux objectifs du programme sur le Portail du gouvernement ouvert.",
+          "6.5.2 Publier des renseignements sur le Portail gouvernemental ouvert visant à expliquer en quoi l’exploitation du système de décision automatisé est équitable, transparente et conforme aux droits et libertés de la personne."
+        ],
+        "fullText": "Le sous-ministre adjoint ou la sous-ministre adjointe responsable du programme pour lequel le système décisionnel automatisé est utilisé, ou toute autre personne de la haute direction nommée par l’administrateur général ou l’administratrice générale, est responsable de ce qui suit :\n\n6.1 Évaluation de l’incidence algorithmique\n\n6.1.1 Réaliser une évaluation de l’incidence algorithmique, en approuver les résultats définitifs et les publier dans un format accessible sur le Portail du gouvernement ouvert avant la production de tout système décisionnel automatisé.\n\n6.1.2 Appliquer les exigences appropriées qui sont décrites à l’annexe C en fonction des résultats de l’évaluation de l’incidence algorithmique.\n\n6.1.3 Examiner, approuver et mettre à jour l’évaluation de l’incidence algorithmique à intervalles réguliers ou lorsque des changements sont apportés à la fonctionnalité ou à la portée du système décisionnel automatisé.\n\n6.2 Transparence\n\nPrésentation d’un avis avant les décisions\n\n6.2.1 Fournir, par l’entremise de tous les modes de prestation de services utilisés, un avis précisant que le processus décisionnel est exécuté ou assisté par un système décisionnel automatisé, conformément à l’annexe C.\n\n6.2.2 Rédiger les avis en langage clair et les afficher de manière à ce qu’ils soient bien en vue.\n\n6.2.2.1 Fournir des avis conformes au Guide de rédaction du contenu du site canada.ca.\n\nFournir des explications après les décisions\n\n6.2.3 Fournir aux personnes concernées une explication détaillée de la façon dont la décision a été prise et la raison pour laquelle elle l’a été, comme prescrit à l’annexe C.\n\nAccès aux composants\n\n6.2.4 Déterminer la licence appropriée pour les composants logiciels, en tenant compte des logiciels à code source ouvert.\n\n6.2.5 Obtenir et sauvegarder toutes les versions publiées des composants logiciels utilisés pour les systèmes décisionnels automatisés.\n\n6.2.6 Si une licence propriétaire est utilisée, veiller à ce que :\n\n6.2.6.1 le ministère responsable du système décisionnel automatisé se réserve un droit d’accès à ce dernier, de même qu’à toutes les versions publiées des composants logiciels exclusifs, qui lui permette d’effectuer des essais et un suivi, si de telles mesures s’avèrent nécessaires à des fins d’audit, d’enquête, d’inspection, d’examen, d’application de la loi ou de procédure judiciaire, sous réserve de garanties contre une divulgation non autorisée;\n\n6.2.6.2 ce droit d’accès doit également permettre au ministère responsable du système décisionnel automatisé d’autoriser des tiers à examiner les composants, à les mettre à l’essai et à en faire le suivi, au besoin.\n\nDocumentation des décisions\n\n6.2.7 Documenter les décisions et les évaluations des systèmes décisionnels automatisés, conformément à la Directive sur les services et le numérique et aux exigences en matière d’examen (6.3.1), de surveillance (6.3.2), de gouvernance des données (6.3.6) et d’établissement de rapports (6.5.1 et 6.5.2).\n\n6.3 Assurance de la qualité\n\nMise à l’essai et suivi des résultats\n\n6.3.1 Avant la mise en production d’un système décisionnel automatisé, mettre à l’essai les données, les renseignements et le modèle sous-jacent pour en vérifier l’exactitude et déceler tout biais involontaire ou tout facteur susceptible d’avoir une incidence involontaire ou injuste sur les résultats ou de porter atteinte aux droits et libertés de la personne.\n\n6.3.2 Suivre les résultats du système décisionnel automatisé afin d’éviter tout résultat involontaire ou injuste, et de vérifier régulièrement la conformité aux obligations en matière de droits de la personne, aux dispositions législatives régissant les ministères et les programmes ainsi qu’à la présente directive.\n\n6.3.3 Veiller à ce que les essais et le suivi tiennent compte des droits de la personne et soient conformes aux dispositions législatives applicables, comme la Charte canadienne des droits et libertés, la Loi canadienne sur les droits de la personne et la Loi sur la Déclaration des Nations Unies sur les droits des peuples autochtones.\n\n6.3.4 Consigner la rétroaction de la clientèle, tout incidence imprévue, toute dérogation du personnel à la décision ou à l’évaluation du système ainsi que toute autre défaillance du système, le cas échéant.\n\n6.3.4.1 Utiliser les conclusions tirées du suivi des résultats, de la rétroaction consignée, des incidences imprévues et des dérogations du personnel pour cerner les problèmes et prendre les mesures correctives qui s’imposent.\n\nQualité des données\n\n6.3.5 Confirmer que toutes les données utilisées pour l’apprentissage du système décisionnel automatisé et celles saisies dans ce dernier sont pertinentes, exactes, à jour, et conformes à la Politique sur les services et le numérique et à la Loi sur la protection des renseignements personnels.\n\nGouvernance des données\n\n6.3.6 Mettre en place des mesures permettant de garantir que les données utilisées et produites par le système décisionnel automatisé sont traçables, protégées et accessibles de manière appropriée et qu’elles sont recueillies, utilisées, conservées et éliminées légalement, conformément à la Directive sur les services et le numérique, à la Directive sur les pratiques relatives à la protection de la vie privée et à la Directive sur la gestion de la sécurité.\n\nExamen par les pairs\n\n6.3.7 Consulter les personnes possédant l’expertise requise pour examiner le système décisionnel automatisé, l’évaluation de l’incidence algorithmique et les documents à l’appui, et publier l’examen complet ou un résumé en langage clair avant la mise en production du système décisionnel automatisé, conformément à l’annexe C.\n\nAnalyse comparative entre les sexes plus\n\n6.3.8 Réaliser une analyse comparative entre les sexes plus lors de l’élaboration ou de la modification du système décisionnel automatisé, conformément à l’annexe C.\n\nFormation du personnel\n\n6.3.9 Fournir une formation à tout le personnel participant au développement, à l’exploitation ou à la gestion des systèmes décisionnels automatisés, conformément à l’annexe C.\n\nSécurité\n\n6.3.10 Mener des évaluations des risques durant le développement et l’entretien du système décisionnel automatisé et mettre en œuvre des mesures de protection appropriées en matière de gestion de l’information et de sécurité des technologies de l’information, conformément à la Politique sur la sécurité du gouvernement et à la Politique sur les services et le numérique.\n\n6.3.11 Mettre en œuvre des mesures visant à garantir l’intégrité des données et des modèles pour empêcher toute altération ou modification non autorisée et se conformer aux lignes directrices du gouvernement du Canada, aux normes et aux pratiques exemplaires de l’industrie, telles que prescrites par le Secrétariat du Conseil du Trésor du Canada.\n\nServices juridiques\n\n6.3.12 Consulter l’unité des services juridiques de votre ministère, dès la phase de conception d’un projet d’automatisation, afin de veiller à ce que l’exploitation du système décisionnel automatisé soit conforme aux exigences juridiques applicables.\n\nParticipation humaine\n\n6.3.13 Veiller à ce que le système décisionnel automatisé permette au personnel de participer au processus, comme prescrit à l’annexe C.\n\n6.3.14 Obtenir le niveau d’approbation approprié avant de produire un système décisionnel automatisé, comme prescrit à l’annexe C.\n\n6.4 Recours\n\n6.4.1 Informer la clientèle des mécanismes de recours dont elle dispose pour contester la décision administrative.\n\n6.4.1.1 Veiller à ce que les mécanismes de recours soient rapides, efficaces et faciles d’accès.\n\n6.5 Établissement de rapports\n\n6.5.1 Publier les renseignements sur l’efficacité et l’efficience des systèmes décisionnels automatisés par rapport aux objectifs du programme sur le Portail du gouvernement ouvert.\n\n6.5.2 Publier des renseignements sur le Portail gouvernemental ouvert visant à expliquer en quoi l’exploitation du système de décision automatisé est équitable, transparente et conforme aux droits et libertés de la personne.",
+        "contentSha256": "5440293b03255a21d6cfcdf2dc08aef9e1cf6c0984113fa3aba016f3d75a6978",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Sets the operational duties for impact assessment, notice and explanation, testing, monitoring, data governance, security, legal review, human involvement, recourse, and reporting.",
+    "coreConceptIds": [
+      "impact-assessment",
+      "ai-risk-management",
+      "transparency-explainability",
+      "fairness-nondiscrimination",
+      "training-data-governance",
+      "security-controls",
+      "continuous-assurance",
+      "human-oversight",
+      "automated-decision-safeguards",
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-7",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "7",
+    "label": "Section 7",
+    "title": "Roles and responsibilities of Treasury Board of Canada Secretariat",
+    "originalTitle": "Rôles et responsabilités du Secrétariat du Conseil du Trésor du Canada",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "The Treasury Board of Canada Secretariat is responsible for:",
+      "7.1 Providing government-wide guidance on the use of automated decision systems.",
+      "7.2 Developing and maintaining the Algorithmic Impact Assessment tool and any supporting documentation.",
+      "7.3 Communicating and engaging government-wide and with partners in other jurisdictions and sectors to develop common strategies, approaches, and processes to support the responsible use of automated decision systems.",
+      "7.4 Raising with the relevant deputy head as appropriate any compliance issues that arise with this directive.",
+      "7.5 Supporting policy implementation by working with departments, as appropriate, to ensure that automated decision systems are fair, effective and transparent."
+    ],
+    "fullText": "The Treasury Board of Canada Secretariat is responsible for:\n\n7.1 Providing government-wide guidance on the use of automated decision systems.\n\n7.2 Developing and maintaining the Algorithmic Impact Assessment tool and any supporting documentation.\n\n7.3 Communicating and engaging government-wide and with partners in other jurisdictions and sectors to develop common strategies, approaches, and processes to support the responsible use of automated decision systems.\n\n7.4 Raising with the relevant deputy head as appropriate any compliance issues that arise with this directive.\n\n7.5 Supporting policy implementation by working with departments, as appropriate, to ensure that automated decision systems are fair, effective and transparent.",
+    "contentSha256": "2361c879eaf972eef6b59a9b443b57735ca5f7fca9f084557d6efd6b9e4234b0",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha7",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 7",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Rôles et responsabilités du Secrétariat du Conseil du Trésor du Canada",
+        "paragraphs": [
+          "Le Secrétariat du Conseil du Trésor du Canada est responsable de ce qui suit :",
+          "7.1 Fournir une orientation pangouvernementale sur l’utilisation des systèmes décisionnels automatisés.",
+          "7.2 Mettre au point l’évaluation de l’incidence algorithmique et les documents connexes, et les tenir à jour.",
+          "7.3 Mener des activités de communication et de mobilisation dans l’ensemble du gouvernement et auprès des partenaires d’autres administrations et secteurs afin d’élaborer des stratégies, des approches et des processus communs qui favoriseront l’utilisation responsable des systèmes décisionnels automatisés.",
+          "7.4 Au besoin, informer l’administrateur général ou l’administratrice générale responsable des problèmes de conformité à la présente directive.",
+          "7.5 Le cas échéant, appuyer la mise en œuvre de la politique en collaborant avec les ministères et veiller à ce que les systèmes de prise de décision automatisés soient équitables, efficaces et transparents."
+        ],
+        "fullText": "Le Secrétariat du Conseil du Trésor du Canada est responsable de ce qui suit :\n\n7.1 Fournir une orientation pangouvernementale sur l’utilisation des systèmes décisionnels automatisés.\n\n7.2 Mettre au point l’évaluation de l’incidence algorithmique et les documents connexes, et les tenir à jour.\n\n7.3 Mener des activités de communication et de mobilisation dans l’ensemble du gouvernement et auprès des partenaires d’autres administrations et secteurs afin d’élaborer des stratégies, des approches et des processus communs qui favoriseront l’utilisation responsable des systèmes décisionnels automatisés.\n\n7.4 Au besoin, informer l’administrateur général ou l’administratrice générale responsable des problèmes de conformité à la présente directive.\n\n7.5 Le cas échéant, appuyer la mise en œuvre de la politique en collaborant avec les ministères et veiller à ce que les systèmes de prise de décision automatisés soient équitables, efficaces et transparents.",
+        "contentSha256": "5148d2c294321190f7fbb170a5e148ab267697df4bfb0750d3ac8d9fce49de06",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Assigns central guidance, tool maintenance, coordination, and compliance-support responsibilities to the Treasury Board Secretariat.",
+    "coreConceptIds": [
+      "accountability-governance",
+      "global-coordination"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-8",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "8",
+    "label": "Section 8",
+    "title": "Application",
+    "originalTitle": "Application",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "8.1 This directive applies to all institutions subject to the Policy on Service and Digital.",
+      "8.2 Other departments or separate agencies that are not subject to the Policy on Service and Digital are encouraged to meet the requirements of this directive as good practice.",
+      "8.3 Agents of Parliament",
+      "8.3.1 The following organizations are considered agents of Parliament for the purposes of the directive:",
+      "Office of the Auditor General of Canada",
+      "Office of the Chief Electoral Officer",
+      "Office of the Commissioner of Lobbying of Canada",
+      "Office of the Commissioner of Official Languages",
+      "Office of the Information Commissioner of Canada",
+      "Office of the Privacy Commissioner of Canada",
+      "Office of the Public Sector Integrity Commissioner of Canada",
+      "8.3.2 The heads of agents of Parliaments are solely responsible for monitoring and ensuring compliance with this directive within their organizations, as well as for responding to cases of non-compliance in accordance with any Treasury Board instruments that address the management of compliance.",
+      "8.3.3 The subsections 6.2.2.1 and 7.4 do not apply to agents of Parliament.",
+      "8.3.4 Agents of Parliament are not required to publish the algorithmic impact assessment (6.1.1) or reporting information on the Open Government Portal (6.5.1 and 6.5.2).",
+      "8.3.5 The heads of agents of Parliaments are responsible for approval of level 4 systems to operate (6.3.14, Appendix C)."
+    ],
+    "fullText": "8.1 This directive applies to all institutions subject to the Policy on Service and Digital.\n\n8.2 Other departments or separate agencies that are not subject to the Policy on Service and Digital are encouraged to meet the requirements of this directive as good practice.\n\n8.3 Agents of Parliament\n\n8.3.1 The following organizations are considered agents of Parliament for the purposes of the directive:\n\nOffice of the Auditor General of Canada\n\nOffice of the Chief Electoral Officer\n\nOffice of the Commissioner of Lobbying of Canada\n\nOffice of the Commissioner of Official Languages\n\nOffice of the Information Commissioner of Canada\n\nOffice of the Privacy Commissioner of Canada\n\nOffice of the Public Sector Integrity Commissioner of Canada\n\n8.3.2 The heads of agents of Parliaments are solely responsible for monitoring and ensuring compliance with this directive within their organizations, as well as for responding to cases of non-compliance in accordance with any Treasury Board instruments that address the management of compliance.\n\n8.3.3 The subsections 6.2.2.1 and 7.4 do not apply to agents of Parliament.\n\n8.3.4 Agents of Parliament are not required to publish the algorithmic impact assessment (6.1.1) or reporting information on the Open Government Portal (6.5.1 and 6.5.2).\n\n8.3.5 The heads of agents of Parliaments are responsible for approval of level 4 systems to operate (6.3.14, Appendix C).",
+    "contentSha256": "1e5f2b9feb8f81393e05ce3785933ac208b7f3cba35bd144666e9326de9b39a1",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha8",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 8",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Application",
+        "paragraphs": [
+          "8.1 La présente directive s’applique à toutes les institutions assujetties à la Politique sur les services et le numérique.",
+          "8.2 À titre de pratiques exemplaires, on encourage les ministères et organismes distincts non assujettis à la Politique sur les services et le numérique à respecter les exigences de la présente directive.",
+          "8.3 Mandataires du Parlement",
+          "8.3.1 Les organisations suivantes sont considérées comme des mandataires du Parlement aux fins de la Directive :",
+          "Bureau du vérificateur général du Canada",
+          "Bureau du directeur général des élections",
+          "Commissariat au lobbying du Canada",
+          "Commissariat aux langues officielles",
+          "Commissariat à l’information du Canada",
+          "Commissariat à la protection de la vie privée du Canada",
+          "Commissariat à l’intégrité du secteur public du Canada",
+          "8.3.2 Les administrateurs généraux et les administratrices générales des organisations mandataires du Parlement sont seuls responsables de surveiller et de garantir la conformité à la présente directive au sein de leur organisation, ainsi que de remédier aux cas de non-conformité conformément aux instruments du Conseil du Trésor qui se rapportent à la gestion de la conformité.",
+          "8.3.3 Les paragraphes suivants ne s’appliquent pas aux organisations mandataires du Parlement : 6.2.2.1 et 7.4.",
+          "8.3.4 Les organisations mandataires du Parlement ne sont pas tenues de publier les renseignements liés à l’évaluation de l’incidence algorithmique (6.1.1) ou aux rapports sur le Portail gouvernemental ouvert (6.5.1 et 6.5.2).",
+          "8.3.5 Les administrateurs généraux et les administratrices générales des organisations mandataires du Parlement sont responsables de l’approbation des systèmes de niveau 4 aux fins de leur fonctionnement (6.3.14 et annexe C)."
+        ],
+        "fullText": "8.1 La présente directive s’applique à toutes les institutions assujetties à la Politique sur les services et le numérique.\n\n8.2 À titre de pratiques exemplaires, on encourage les ministères et organismes distincts non assujettis à la Politique sur les services et le numérique à respecter les exigences de la présente directive.\n\n8.3 Mandataires du Parlement\n\n8.3.1 Les organisations suivantes sont considérées comme des mandataires du Parlement aux fins de la Directive :\n\nBureau du vérificateur général du Canada\n\nBureau du directeur général des élections\n\nCommissariat au lobbying du Canada\n\nCommissariat aux langues officielles\n\nCommissariat à l’information du Canada\n\nCommissariat à la protection de la vie privée du Canada\n\nCommissariat à l’intégrité du secteur public du Canada\n\n8.3.2 Les administrateurs généraux et les administratrices générales des organisations mandataires du Parlement sont seuls responsables de surveiller et de garantir la conformité à la présente directive au sein de leur organisation, ainsi que de remédier aux cas de non-conformité conformément aux instruments du Conseil du Trésor qui se rapportent à la gestion de la conformité.\n\n8.3.3 Les paragraphes suivants ne s’appliquent pas aux organisations mandataires du Parlement : 6.2.2.1 et 7.4.\n\n8.3.4 Les organisations mandataires du Parlement ne sont pas tenues de publier les renseignements liés à l’évaluation de l’incidence algorithmique (6.1.1) ou aux rapports sur le Portail gouvernemental ouvert (6.5.1 et 6.5.2).\n\n8.3.5 Les administrateurs généraux et les administratrices générales des organisations mandataires du Parlement sont responsables de l’approbation des systèmes de niveau 4 aux fins de leur fonctionnement (6.3.14 et annexe C).",
+        "contentSha256": "84f1dcbe801639df90e21ee883b69128e7b30326e9fb14ec2ab85806e563e3b7",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Defines the institutions and Agents of Parliament to which the Directive applies, including specified publication exceptions and governance duties.",
+    "coreConceptIds": [
+      "accountability-governance",
+      "automated-decision-safeguards"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-9",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "9",
+    "label": "Section 9",
+    "title": "References",
+    "originalTitle": "Références",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "9.1 Legislation",
+      "Financial Administration Act",
+      "Access to Information Act",
+      "Canadian Charter of Rights and Freedoms",
+      "Canadian Human Rights Act",
+      "United Nations Declaration on the Rights of Indigenous Peoples Act",
+      "Privacy Act",
+      "Security of Information Act",
+      "Accessible Canada Act",
+      "9.2 Related policy instruments",
+      "Policy on Access to Information",
+      "Policy on Service and Digital",
+      "Policy on Government Security",
+      "Policy on Privacy Protection",
+      "Policy on People Management",
+      "Directive on Open Government",
+      "Directive on Security Screening",
+      "Directive on Security Management",
+      "Directive on Service and Digital",
+      "Directive on Privacy Practices",
+      "Values and Ethics Code for the Public Service"
+    ],
+    "fullText": "9.1 Legislation\n\nFinancial Administration Act\n\nAccess to Information Act\n\nCanadian Charter of Rights and Freedoms\n\nCanadian Human Rights Act\n\nUnited Nations Declaration on the Rights of Indigenous Peoples Act\n\nPrivacy Act\n\nSecurity of Information Act\n\nAccessible Canada Act\n\n9.2 Related policy instruments\n\nPolicy on Access to Information\n\nPolicy on Service and Digital\n\nPolicy on Government Security\n\nPolicy on Privacy Protection\n\nPolicy on People Management\n\nDirective on Open Government\n\nDirective on Security Screening\n\nDirective on Security Management\n\nDirective on Service and Digital\n\nDirective on Privacy Practices\n\nValues and Ethics Code for the Public Service",
+    "contentSha256": "09cb688c462318491eef5228d5e360483833104809960519be2e8792a921d6d6",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha9",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 9",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Références",
+        "paragraphs": [
+          "9.1 Lois",
+          "Loi sur la gestion des finances publiques",
+          "Loi sur l’accès à l’information",
+          "Charte canadienne des droits et libertés",
+          "Loi canadienne sur les droits de la personne",
+          "Loi sur la Déclaration des Nations Unies sur les droits des peuples autochtones",
+          "Loi sur la protection des renseignements personnels",
+          "Loi sur la protection de l’information",
+          "Loi canadienne sur l’accessibilité",
+          "9.2 Instruments de politique connexes",
+          "Politique sur l’accès à l’information",
+          "Politique sur les services et le numérique",
+          "Politique sur la sécurité du gouvernement",
+          "Politique sur la protection de la vie privée",
+          "Politique sur la gestion des personnes",
+          "Directive sur le gouvernement ouvert",
+          "Directive sur le filtrage de sécurité",
+          "Directive sur la gestion de la sécurité",
+          "Directive sur les services et le numérique",
+          "Directive sur les pratiques relatives à la protection de la vie privée",
+          "Code de valeurs et d’éthique du secteur public"
+        ],
+        "fullText": "9.1 Lois\n\nLoi sur la gestion des finances publiques\n\nLoi sur l’accès à l’information\n\nCharte canadienne des droits et libertés\n\nLoi canadienne sur les droits de la personne\n\nLoi sur la Déclaration des Nations Unies sur les droits des peuples autochtones\n\nLoi sur la protection des renseignements personnels\n\nLoi sur la protection de l’information\n\nLoi canadienne sur l’accessibilité\n\n9.2 Instruments de politique connexes\n\nPolitique sur l’accès à l’information\n\nPolitique sur les services et le numérique\n\nPolitique sur la sécurité du gouvernement\n\nPolitique sur la protection de la vie privée\n\nPolitique sur la gestion des personnes\n\nDirective sur le gouvernement ouvert\n\nDirective sur le filtrage de sécurité\n\nDirective sur la gestion de la sécurité\n\nDirective sur les services et le numérique\n\nDirective sur les pratiques relatives à la protection de la vie privée\n\nCode de valeurs et d’éthique du secteur public",
+        "contentSha256": "8011c0baf5b6b6c8f05b7933f4234a749dfc41031126963d9bb30002cf79953d",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Identifies the legislation and related federal policy instruments used with the Directive.",
+    "coreConceptIds": [
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-sec-10",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-section",
+    "articleNumber": "10",
+    "label": "Section 10",
+    "title": "Enquiries",
+    "originalTitle": "Demandes d’information",
+    "chapter": {
+      "id": "ca-adm-directive-body",
+      "label": "Directive",
+      "title": "Directive on Automated Decision-Making"
+    },
+    "section": null,
+    "paragraphs": [
+      "10.1 For interpretation of any aspect of this directive, contact Treasury Board of Canada Secretariat Public Enquiries.",
+      "10.2 Individuals from departments may contact ai-ia@tbs-sct.gc.ca for any questions regarding this directive, including the Algorithmic Impact Assessment tool."
+    ],
+    "fullText": "10.1 For interpretation of any aspect of this directive, contact Treasury Board of Canada Secretariat Public Enquiries.\n\n10.2 Individuals from departments may contact ai-ia@tbs-sct.gc.ca for any questions regarding this directive, including the Algorithmic Impact Assessment tool.",
+    "contentSha256": "7c9f48ef6a529bbf7f38a84f27eaa9b0cea3fe03d5d4a5f2da3ff4e9cfabe7e4",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#cha10",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Section 10",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Demandes d’information",
+        "paragraphs": [
+          "10.1 Pour toute question concernant l’interprétation d’un aspect quelconque de la Directive, communiquer avec le Secrétariat du Conseil du Trésor du Canada.",
+          "10.2 Pour toute question concernant la Directive et l’outil d’évaluation de l’incidence algorithmique, le personnel des ministères peut envoyer un courriel à ai-ia@tbs-sct.gc.ca."
+        ],
+        "fullText": "10.1 Pour toute question concernant l’interprétation d’un aspect quelconque de la Directive, communiquer avec le Secrétariat du Conseil du Trésor du Canada.\n\n10.2 Pour toute question concernant la Directive et l’outil d’évaluation de l’incidence algorithmique, le personnel des ministères peut envoyer un courriel à ai-ia@tbs-sct.gc.ca.",
+        "contentSha256": "defb0125e88b76c0157a2febb9e330f8712a59a2bff5b835332cbfa8f8c97a59",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Provides the official channels for interpretation and implementation enquiries.",
+    "coreConceptIds": [
+      "accountability-governance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": false,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-appendix-a",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-appendix",
+    "articleNumber": "A",
+    "label": "Appendix A",
+    "title": "Definitions",
+    "originalTitle": "Définitions",
+    "chapter": {
+      "id": "ca-adm-directive-appendices",
+      "label": "Appendices",
+      "title": "Appendices"
+    },
+    "section": null,
+    "paragraphs": [
+      "administrative decision",
+      "Any decision that is made by an authorized official of a department as identified in section 8 of this directive pursuant to powers conferred by an Act of Parliament or an order made pursuant to a prerogative of the Crown that affects legal rights, privileges or interests.",
+      "algorithmic impact assessment",
+      "A framework to help departments better understand and reduce the risks associated with automated decision systems and to provide the appropriate requirements that best match the type of system being designed.",
+      "automated decision system",
+      "Any technology that either assists or replaces the judgment of human decision makers. These systems draw from fields like statistics, linguistics and computer science, and use techniques such as rules-based systems, regression, predictive analytics, machine learning, deep learning, and neural networks.",
+      "human rights",
+      "The rights to which persons are inherently entitled because they are human beings (Source). Human rights are protected in the Canadian Charter of Rights and Freedoms, Canadian Human Rights Act, and the United Nations Declaration on the Rights of Indigenous Peoples Act.",
+      "production",
+      "An automated decision system is in production when it is in use and has impacts on real clients. This can include when it is in beta or user testing and producing outputs that impact clients.",
+      "proprietary",
+      "Refers to systems, algorithms or software owned by an entity, such as a company or government. These systems are often closed source, meaning the source code is not publicly available.",
+      "test environment",
+      "An environment containing hardware, instrumentation, simulators, software tools, and other support elements needed to conduct a test. A system in a test environment may mimic a production environment but does not impact real clients. Test environments may include exploration zones and sandboxes."
+    ],
+    "fullText": "administrative decision\n\nAny decision that is made by an authorized official of a department as identified in section 8 of this directive pursuant to powers conferred by an Act of Parliament or an order made pursuant to a prerogative of the Crown that affects legal rights, privileges or interests.\n\nalgorithmic impact assessment\n\nA framework to help departments better understand and reduce the risks associated with automated decision systems and to provide the appropriate requirements that best match the type of system being designed.\n\nautomated decision system\n\nAny technology that either assists or replaces the judgment of human decision makers. These systems draw from fields like statistics, linguistics and computer science, and use techniques such as rules-based systems, regression, predictive analytics, machine learning, deep learning, and neural networks.\n\nhuman rights\n\nThe rights to which persons are inherently entitled because they are human beings (Source). Human rights are protected in the Canadian Charter of Rights and Freedoms, Canadian Human Rights Act, and the United Nations Declaration on the Rights of Indigenous Peoples Act.\n\nproduction\n\nAn automated decision system is in production when it is in use and has impacts on real clients. This can include when it is in beta or user testing and producing outputs that impact clients.\n\nproprietary\n\nRefers to systems, algorithms or software owned by an entity, such as a company or government. These systems are often closed source, meaning the source code is not publicly available.\n\ntest environment\n\nAn environment containing hardware, instrumentation, simulators, software tools, and other support elements needed to conduct a test. A system in a test environment may mimic a production environment but does not impact real clients. Test environments may include exploration zones and sandboxes.",
+    "contentSha256": "5526ff1bba2f8a490f6dae33ebf0e95d93f4e6006a17978c2523c60f84e8d20f",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#appA",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Appendix A",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Définitions",
+        "paragraphs": [
+          "Décision administrative",
+          "Toute décision prise par une personne autorisée d’un ministère, visée à la section 8 de la Directive, en application des pouvoirs que lui confère une loi du Parlement ou une ordonnance prise en vertu de la prérogative de la Couronne et qui touche des droits juridiques, les privilèges ou les intérêts d’une personne.",
+          "Droits de la personne",
+          "Les droits de la personne sont les droits légitimes conférés aux personnes parce qu’elles sont des êtres humains (source). Les droits de la personne sont protégés par la Charte canadienne des droits et libertés, la Loi canadienne sur les droits de la personne et la Loi sur la Déclaration des Nations Unies sur les droits des peuples autochtones.",
+          "En production",
+          "Se dit d’un système décisionnel automatisé qui est utilisé et qui a une incidence sur la clientèle réelle. Il peut s’agir d’un système en version bêta ou d’un système testé par les personnes qui l’utilisent, qui produit des résultats ayant une incidence sur la clientèle.",
+          "Environnement d’essai",
+          "Environnement contenant du matériel, des instruments, des simulateurs, des outils logiciels et d’autres composantes nécessaires à la réalisation d’un essai. Le déploiement d’un système dans un environnement d’essai permet de simuler son fonctionnement dans un environnement de production sans incidence sur la clientèle réelle. Il peut s’agir de zones d’exploration ou de bacs à sable.",
+          "Évaluation de l’incidence algorithmique",
+          "Cadre destiné à aider ministères à mieux comprendre les risques associés aux systèmes décisionnels automatisés, à les atténuer et à définir les exigences appropriées qui correspondent le mieux au type de système conçu.",
+          "Propriétaire",
+          "Se dit des systèmes, des algorithmes ou des logiciels qui appartiennent à une entité, telle qu’une entreprise ou une administration publique. Il s’agit souvent de systèmes à code fermé, c’est-à-dire que le code source n’est pas accessible au public.",
+          "Système décisionnel automatisé",
+          "Toute technologie qui se substitue au jugement des décideurs ou qui les assiste. Ces systèmes proviennent de domaines tels ceux des statistiques, de la linguistique et de l’informatique. Ils utilisent des techniques telles que les systèmes basés sur des règles, la régression, l’analytique prédictive, l’apprentissage automatique, l’apprentissage en profondeur et les réseaux neuronaux."
+        ],
+        "fullText": "Décision administrative\n\nToute décision prise par une personne autorisée d’un ministère, visée à la section 8 de la Directive, en application des pouvoirs que lui confère une loi du Parlement ou une ordonnance prise en vertu de la prérogative de la Couronne et qui touche des droits juridiques, les privilèges ou les intérêts d’une personne.\n\nDroits de la personne\n\nLes droits de la personne sont les droits légitimes conférés aux personnes parce qu’elles sont des êtres humains (source). Les droits de la personne sont protégés par la Charte canadienne des droits et libertés, la Loi canadienne sur les droits de la personne et la Loi sur la Déclaration des Nations Unies sur les droits des peuples autochtones.\n\nEn production\n\nSe dit d’un système décisionnel automatisé qui est utilisé et qui a une incidence sur la clientèle réelle. Il peut s’agir d’un système en version bêta ou d’un système testé par les personnes qui l’utilisent, qui produit des résultats ayant une incidence sur la clientèle.\n\nEnvironnement d’essai\n\nEnvironnement contenant du matériel, des instruments, des simulateurs, des outils logiciels et d’autres composantes nécessaires à la réalisation d’un essai. Le déploiement d’un système dans un environnement d’essai permet de simuler son fonctionnement dans un environnement de production sans incidence sur la clientèle réelle. Il peut s’agir de zones d’exploration ou de bacs à sable.\n\nÉvaluation de l’incidence algorithmique\n\nCadre destiné à aider ministères à mieux comprendre les risques associés aux systèmes décisionnels automatisés, à les atténuer et à définir les exigences appropriées qui correspondent le mieux au type de système conçu.\n\nPropriétaire\n\nSe dit des systèmes, des algorithmes ou des logiciels qui appartiennent à une entité, telle qu’une entreprise ou une administration publique. Il s’agit souvent de systèmes à code fermé, c’est-à-dire que le code source n’est pas accessible au public.\n\nSystème décisionnel automatisé\n\nToute technologie qui se substitue au jugement des décideurs ou qui les assiste. Ces systèmes proviennent de domaines tels ceux des statistiques, de la linguistique et de l’informatique. Ils utilisent des techniques telles que les systèmes basés sur des règles, la régression, l’analytique prédictive, l’apprentissage automatique, l’apprentissage en profondeur et les réseaux neuronaux.",
+        "contentSha256": "734570efc06ceb1aa37784f82e0529ba33dcbe1426dd1b243bb2771bd878c112",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Defines administrative decision, algorithmic impact assessment, automated decision system, human rights, production, proprietary systems, and test environment.",
+    "coreConceptIds": [
+      "automated-decision-safeguards",
+      "transparency-explainability"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-appendix-b",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-appendix",
+    "articleNumber": "B",
+    "label": "Appendix B",
+    "title": "Impact Assessment Levels",
+    "originalTitle": "Niveaux de l’évaluation de l’incidence",
+    "chapter": {
+      "id": "ca-adm-directive-appendices",
+      "label": "Appendices",
+      "title": "Appendices"
+    },
+    "section": null,
+    "paragraphs": [
+      "Level | Description",
+      "I | The context in which the system is operating likely has low levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have little to no, easily reversible, and brief impacts on some of: the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents low levels of risk. This may be because of: the sensitivity of the data (such as the use of non-personal or unclassified information) the use of structured data the data collection approach",
+      "II | The context in which the system is operating likely has moderate levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have moderate, likely reversible and short-term impacts on some or all of : the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents moderate levels of risk. This may be because of: the sensitivity of the data (such as the use of personal, non-personal, unclassified or protected information) the use of structured or unstructured data the data collection approach",
+      "III | The context in which the system is operating likely has high levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have high, difficult to reverse and potentially ongoing impacts on some or all of : the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents high levels of risk. This may be because of: the sensitivity of the data (such as the use of personal or protected information) the use of unstructured data the data collection approach",
+      "IV | The context in which the system is operating likely has very high levels of risk associated with it. This may be because of: the identity factors of the clients that will be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have very high, irreversible and perpetual impacts on some or all of: the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents very high levels of risk. This may be because of: the sensitivity of the data (such as the use of personal, protected, or classified information) the use of unstructured or incomplete data the data collection approach"
+    ],
+    "fullText": "Level | Description\n\nI | The context in which the system is operating likely has low levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have little to no, easily reversible, and brief impacts on some of: the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents low levels of risk. This may be because of: the sensitivity of the data (such as the use of non-personal or unclassified information) the use of structured data the data collection approach\n\nII | The context in which the system is operating likely has moderate levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have moderate, likely reversible and short-term impacts on some or all of : the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents moderate levels of risk. This may be because of: the sensitivity of the data (such as the use of personal, non-personal, unclassified or protected information) the use of structured or unstructured data the data collection approach\n\nIII | The context in which the system is operating likely has high levels of risk associated with it. This may be because of: the identity factors of the clients that may be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have high, difficult to reverse and potentially ongoing impacts on some or all of : the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents high levels of risk. This may be because of: the sensitivity of the data (such as the use of personal or protected information) the use of unstructured data the data collection approach\n\nIV | The context in which the system is operating likely has very high levels of risk associated with it. This may be because of: the identity factors of the clients that will be impacted the line of business and the decision that the system is supporting the type of technology being used The decision will likely have very high, irreversible and perpetual impacts on some or all of: the rights of individuals or communities the equality, dignity, privacy, and autonomy of individuals the health or well-being of individuals or communities the economic interests of individuals, entities, or communities the ongoing sustainability of an ecosystem The data used by the system likely presents very high levels of risk. This may be because of: the sensitivity of the data (such as the use of personal, protected, or classified information) the use of unstructured or incomplete data the data collection approach",
+    "contentSha256": "1b1b177f38d9677833f7e111517884b502c51f8d57cd721576c95231f37c7a61",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#appB",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Appendix B",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Niveaux de l’évaluation de l’incidence",
+        "paragraphs": [
+          "Niveau | Description",
+          "I | Le contexte dans lequel le système est exploité présente vraisemblablement un faible niveau de risque. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets négligeables, voire nuls, facilement réversibles et brefs sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un faible niveau de risque. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements non personnels ou non classifiés); l’utilisation de données structurées; la méthode de collecte des données.",
+          "II | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque modéré. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets modérés, réversibles et brefs sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque modéré. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels, non personnels, non classifiés ou protégés); l’utilisation de données structurées ou non structurées; la méthode de collecte des données.",
+          "III | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque élevé. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets importants, difficilement réversibles et possiblement permanents sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque élevé. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels ou protégés); l’utilisation de données non structurées; la méthode de collecte des données.",
+          "IV | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque très élevé. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets très importants, irréversibles et permanents sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque très élevé. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels, protégés ou classifiés); l’utilisation de données non structurées et incomplètes; la méthode de collecte des données."
+        ],
+        "fullText": "Niveau | Description\n\nI | Le contexte dans lequel le système est exploité présente vraisemblablement un faible niveau de risque. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets négligeables, voire nuls, facilement réversibles et brefs sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un faible niveau de risque. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements non personnels ou non classifiés); l’utilisation de données structurées; la méthode de collecte des données.\n\nII | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque modéré. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets modérés, réversibles et brefs sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque modéré. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels, non personnels, non classifiés ou protégés); l’utilisation de données structurées ou non structurées; la méthode de collecte des données.\n\nIII | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque élevé. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets importants, difficilement réversibles et possiblement permanents sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque élevé. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels ou protégés); l’utilisation de données non structurées; la méthode de collecte des données.\n\nIV | Le contexte dans lequel le système est exploité présente vraisemblablement un niveau de risque très élevé. Ce constat peut être attribuable : aux facteurs d’identité de la clientèle susceptibles d’être touchés; au secteur d’activité et au type de décision pris en charge par le système; au type de technologie utilisée. La décision aura probablement des effets très importants, irréversibles et permanents sur certains des éléments suivants : les droits des personnes ou des collectivités; l’égalité, la dignité, la vie privée et l’autonomie des personnes; la santé ou le bien-être des personnes ou des collectivités; les intérêts économiques des personnes, des entités ou des collectivités; la durabilité continue d’un écosystème. Les données traitées par le système présentent vraisemblablement un niveau de risque très élevé. Ce constat peut s’expliquer par : la sensibilité des données (comme l’utilisation de renseignements personnels, protégés ou classifiés); l’utilisation de données non structurées et incomplètes; la méthode de collecte des données.",
+        "contentSha256": "9019b33f9c1c09c91d7fcc676fdc8f015f0cf580128edd89e4b35eae689018ca",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Defines four impact levels by context, affected rights and interests, reversibility, duration, and data risk.",
+    "coreConceptIds": [
+      "impact-assessment",
+      "ai-risk-management",
+      "fairness-nondiscrimination"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  },
+  {
+    "id": "ca-adm-directive-appendix-c",
+    "instrumentId": "ca-directive-automated-decision-making",
+    "unitType": "directive-appendix",
+    "articleNumber": "C",
+    "label": "Appendix C",
+    "title": "Impact Level Requirements",
+    "originalTitle": "Exigences par niveau d’incidence",
+    "chapter": {
+      "id": "ca-adm-directive-appendices",
+      "label": "Appendices",
+      "title": "Appendices"
+    },
+    "section": null,
+    "paragraphs": [
+      "Requirement | Level I | Level II | Level III | Level IV",
+      "Notice (sections 6.2.1–6.2.2) | Plain language notice posted through all service delivery channels in use (Internet, in person, mail or telephone). | Same as level I | Plain language notice posted through all service delivery channels in use (Internet, in person, mail or telephone). In addition, the notice must direct clients to the published explanation required under Explanation level I. | Same as level III",
+      "Explanation (section 6.2.3) | In addition to any applicable legal requirement, ensure that a meaningful explanation is published on how the system works in general. The explanation must be in plain language and include information about: the role of the system in the decision-making process input data, its source and method of collection the criteria used to evaluate input data and the operations applied to process it results of any reviews or audits the output produced by the automated decision system and any relevant information needed to interpret it in the context of the administrative decision the principal factors behind a decision This explanation must be made on a discoverable departmental website and linked in the algorithmic impact assessment. Explanations must also inform clients of relevant recourse options, where appropriate. | The explanation from level I is published. In addition, a more detailed, meaningful, plain language, explanation is provided to the client with any decision that results in the denial of a benefit or service, or involves a regulatory action. This explanation must inform the client of the reason or justification of the administrative decision. This involves a clear and client-focused description of how the automated decision system came to the output it did, including: the principal factors that led to it, such as, where appropriate, a description of the decision tree, scoring or weights of certain factors, and how the automated decision system output was used by human officers The client must also be provided with the link to the published level I explanation. | Same as level II | Same as level II",
+      "Peer review (section 6.3.7) | None | Consult at least one of the following qualified experts and publish the complete review or a plain language summary on a Government of Canada website: Experts from a federal, provincial, territorial or municipal government institution Faculty members of a post-secondary institution Researchers from a relevant non-governmental organization Contracted third-party vendor with a relevant specialization A data and automation advisory board specified by Treasury Board of Canada Secretariat | Same as level II | Consult at least two of the following qualified experts and publish the complete review or a plain language summary on a Government of Canada website: Experts from the National Research Council of Canada, Statistics Canada, the Communications Security Establishment, or Shared Services Canada Faculty members of a post-secondary institution Researchers from a relevant non-governmental organization Contracted third-party vendor with a relevant specialization A data and automation advisory board specified by Treasury Board of Canada Secretariat",
+      "Gender-based Analysis Plus (section 6.3.8) | None | Ensure that the Gender-based Analysis Plus has been consulted with your department’s diversity and inclusion experts and includes: An assessment of how the automation project might impact different population groups. This includes consideration of the impacts of the automated decision system and data used in the project, as well as the likely impact of the final decision. Where possible, cite the data used to assess the impacts. It is recommended that the data be gender-disaggregated and include other intersecting identity factors such as age, disability and race. If the data is unavailable, identify where the data gaps exist Details of planned or existing measures to address risks identified through the Gender-based Analysis Plus or other assessments | Same as level II | Same as level II",
+      "Training (section 6.3.9) | Role-based training on how to appropriately use and explain the functionalities of the automated decision system, at a high level. | Same as level I | Role-based training on how to appropriately manage, secure, and use the functionalities and explain the capabilities of the automated decision system, including: the technical aspects of the automated decision system to ensure an up-to-date understanding of the how the system works potential impacts of the automated decision system on privacy, fairness, and human rights and how to detect them how to evaluate and, if necessary, override decisions Training must be recurring. | Same as level III",
+      "Ensuring human involvement (section 6.3.13) | The system may make decisions and assessments without direct human involvement. Humans are to be involved in system quality assurance and can intervene in the making of decisions by the system where appropriate. | Same as level I | The final decision must be made by a human. Decisions cannot be made without having clearly defined human involvement during the decision-making process. Humans review the decisions or recommendations made by the system for accuracy and appropriateness. Humans are to be involved in ongoing quality assurance and can intervene in the making of decisions and assessments made by the system. | Same as level III",
+      "Approval for the system to operate (section 6.3.14) | Assistant deputy minister responsible for the program. | Same as level I | Deputy head | Treasury Board"
+    ],
+    "fullText": "Requirement | Level I | Level II | Level III | Level IV\n\nNotice (sections 6.2.1–6.2.2) | Plain language notice posted through all service delivery channels in use (Internet, in person, mail or telephone). | Same as level I | Plain language notice posted through all service delivery channels in use (Internet, in person, mail or telephone). In addition, the notice must direct clients to the published explanation required under Explanation level I. | Same as level III\n\nExplanation (section 6.2.3) | In addition to any applicable legal requirement, ensure that a meaningful explanation is published on how the system works in general. The explanation must be in plain language and include information about: the role of the system in the decision-making process input data, its source and method of collection the criteria used to evaluate input data and the operations applied to process it results of any reviews or audits the output produced by the automated decision system and any relevant information needed to interpret it in the context of the administrative decision the principal factors behind a decision This explanation must be made on a discoverable departmental website and linked in the algorithmic impact assessment. Explanations must also inform clients of relevant recourse options, where appropriate. | The explanation from level I is published. In addition, a more detailed, meaningful, plain language, explanation is provided to the client with any decision that results in the denial of a benefit or service, or involves a regulatory action. This explanation must inform the client of the reason or justification of the administrative decision. This involves a clear and client-focused description of how the automated decision system came to the output it did, including: the principal factors that led to it, such as, where appropriate, a description of the decision tree, scoring or weights of certain factors, and how the automated decision system output was used by human officers The client must also be provided with the link to the published level I explanation. | Same as level II | Same as level II\n\nPeer review (section 6.3.7) | None | Consult at least one of the following qualified experts and publish the complete review or a plain language summary on a Government of Canada website: Experts from a federal, provincial, territorial or municipal government institution Faculty members of a post-secondary institution Researchers from a relevant non-governmental organization Contracted third-party vendor with a relevant specialization A data and automation advisory board specified by Treasury Board of Canada Secretariat | Same as level II | Consult at least two of the following qualified experts and publish the complete review or a plain language summary on a Government of Canada website: Experts from the National Research Council of Canada, Statistics Canada, the Communications Security Establishment, or Shared Services Canada Faculty members of a post-secondary institution Researchers from a relevant non-governmental organization Contracted third-party vendor with a relevant specialization A data and automation advisory board specified by Treasury Board of Canada Secretariat\n\nGender-based Analysis Plus (section 6.3.8) | None | Ensure that the Gender-based Analysis Plus has been consulted with your department’s diversity and inclusion experts and includes: An assessment of how the automation project might impact different population groups. This includes consideration of the impacts of the automated decision system and data used in the project, as well as the likely impact of the final decision. Where possible, cite the data used to assess the impacts. It is recommended that the data be gender-disaggregated and include other intersecting identity factors such as age, disability and race. If the data is unavailable, identify where the data gaps exist Details of planned or existing measures to address risks identified through the Gender-based Analysis Plus or other assessments | Same as level II | Same as level II\n\nTraining (section 6.3.9) | Role-based training on how to appropriately use and explain the functionalities of the automated decision system, at a high level. | Same as level I | Role-based training on how to appropriately manage, secure, and use the functionalities and explain the capabilities of the automated decision system, including: the technical aspects of the automated decision system to ensure an up-to-date understanding of the how the system works potential impacts of the automated decision system on privacy, fairness, and human rights and how to detect them how to evaluate and, if necessary, override decisions Training must be recurring. | Same as level III\n\nEnsuring human involvement (section 6.3.13) | The system may make decisions and assessments without direct human involvement. Humans are to be involved in system quality assurance and can intervene in the making of decisions by the system where appropriate. | Same as level I | The final decision must be made by a human. Decisions cannot be made without having clearly defined human involvement during the decision-making process. Humans review the decisions or recommendations made by the system for accuracy and appropriateness. Humans are to be involved in ongoing quality assurance and can intervene in the making of decisions and assessments made by the system. | Same as level III\n\nApproval for the system to operate (section 6.3.14) | Assistant deputy minister responsible for the program. | Same as level I | Deputy head | Treasury Board",
+    "contentSha256": "905ca52f54f7b1391bb40cb1c6d23c4f3dc2510afb6660f9b4d0b18a90ba0815",
+    "language": "en-CA",
+    "originalLanguages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "displayDefaultLanguage": "en-CA",
+    "textAvailability": "official-complete-co-published-current-text",
+    "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "sourceFragment": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592#appC",
+    "sourceLabel": "Treasury Board of Canada Secretariat — official English text",
+    "canonicalSource": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    "retrievedOn": "2026-07-21",
+    "versionAsOf": "2025-06-24",
+    "statusAsOf": "2026-07-21",
+    "sourceLocator": "Appendix C",
+    "sourceSnapshots": {
+      "en": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-en.html",
+        "sha256": "b9c330051884149e8eaf434ddada9644bb7b69f6e2a04a321552accdaf4101ff"
+      },
+      "fr": {
+        "path": "data/v2/source-snapshots/ca-adm-directive-2025-06-24-fr.html",
+        "sha256": "d2a330cfff8f9dac8fa18a26009af728d6b1e70f1e356b76ee69dfa4408507c0"
+      }
+    },
+    "translations": {
+      "fr": {
+        "title": "Exigences par niveau d’incidence",
+        "paragraphs": [
+          "Exigence | Niveau I | Niveau II | Niveau III | Niveau IV",
+          "Avis (sections 6.2.1-6.2.2) | Fournir un avis en langage clair de tous les modes de prestation de services utilisés (Internet, en personne, par courrier, par téléphone). | Identique au niveau I | Fournir un avis en langage clair de tous les modes de prestation de services utilisés (Internet, en personne, par courrier, par téléphone). L’avis doit contenir un lien permettant de rediriger la clientèle vers l’explication publiée, conformément au niveau d’explication 1. | Identique au niveau III",
+          "Explication (section 6.2.3) | Veiller à ce que toutes les exigences légales applicables soient respectées et à ce qu’une explication sur le fonctionnement général du système soit publiée. L’explication doit être rédigée dans un langage clair et comprendre des renseignements sur les points suivants : le rôle du système dans le processus de décision; les données d’entrée, leur source et leur méthode de collecte; les critères utilisés pour l’évaluation des données d’entrée et des opérations visant leur traitement; les résultats de tout examen ou audit; le résultat produit par le système décisionnel automatisé et toute information nécessaire pour l’interpréter dans le contexte de la décision administrative; les principaux facteurs à l’origine d’une décision. Cette explication doit être publiée sur un site Web du ministère qui est accessible au public et un lien y menant doit être inséré dans l’évaluation de l’incidence algorithmique. Les explications doivent également fournir à la clientèle des renseignements sur les possibilités de recours pertinentes, le cas échéant. | Veiller à ce que l’explication prévue au niveau I soit publiée. En plus, veiller à ce qu’une explication plus détaillée, utile et rédigée en langage clair soit fournie à la clientèle visée par une décision entraînant le refus d’une prestation ou d’un service, ou prévoyant la prise d’une mesure réglementaire. Cette explication doit renseigner la personne concernée sur les motifs ou les justifications qui sous-tendent la décision administrative. Elle doit comprendre une description claire et axée sur la clientèle du processus qui a conduit le système décisionnel automatisé à rendre la décision, y compris : les principaux facteurs pris en compte, par exemple la description de l’arbre de décision, la notation ou la pondération de certains facteurs; la manière dont les résultats du système décisionnel automatisé ont été utilisés par le personnel. Fournir à la clientèle le lien vers l’explication prévue au niveau I. | Identique au niveau II | Identique au niveau II",
+          "Examen par les pairs (section 6.3.7) | Aucune | Consulter au moins l’un ou l’une des spécialistes ci-après et publier l’examen complet, ou un résumé de ce dernier, en langage clair sur un site Web du gouvernement du Canada : spécialistes d’une institution gouvernementale fédérale, provinciale, territoriale ou municipale; membres d’une faculté d’un établissement postsecondaire; membres de l’équipe de recherche d’une organisation non gouvernementale pertinente; prestataire de services sous contrat ayant une spécialisation pertinente; comité consultatif des données et d’automatisation désigné par le Secrétariat du Conseil du Trésor du Canada. | Identique au niveau II | Consulter au moins deux des spécialistes ci-après et publier l’examen complet, ou un résumé de ce dernier, en langage clair sur un site Web du gouvernement du Canada : spécialistes du Conseil national de la recherche du Canada, de Statistique Canada, du Centre de la sécurité des télécommunications Canada ou de Services partagés Canada; membres d’une faculté d’un établissement postsecondaire; membres de l’équipe de recherche d’une organisation non gouvernementale pertinente; prestataire de services sous contrat ayant une spécialisation pertinente; comité consultatif des données et d’automatisation désigné par le Secrétariat du Conseil du Trésor du Canada.",
+          "Analyse comparative entre les sexes plus (section 6.3.8) | Aucune | Veiller à ce que les spécialistes de la diversité et de l'inclusion de votre ministère aient été consultés dans le cadre de l’analyse comparative entre les sexes plus et à ce que cette dernière comprenne ce qui suit : une évaluation de l’incidence possible du projet d’automatisation sur les différents groupes de population. L’évaluation doit notamment prendre en considération l’incidence du système décisionnel automatisé, des données utilisées dans le cadre du projet et des effets probables de la décision définitive. Les données utilisées aux fins de l’évaluation doivent être citées dans la mesure du possible. Il est recommandé de ventiler les données en fonction de genre et d’inclure d’autres facteurs identitaires tels que l’âge, le handicap et la race. Si ces données ne sont pas disponibles, précisez quelles sont les lacunes en la matière; des précisions sur les mesures prévues ou existantes visant à gérer les risques recensés dans le cadre de l’analyse comparative entre les sexes plus ou d’autres évaluations. | Identique au niveau II | Identique au niveau II",
+          "Formation (section 6.3.9) | Offrir une formation fondée sur les différents rôles visant à expliquer brièvement les fonctions du système décisionnel automatisé et leur utilisation appropriée. | Identique au niveau I | Offrir une formation fondée sur les différents rôles qui porte sur la gestion, la protection et l’utilisation appropriées des fonctions du système décisionnel automatisé et la présentation de ses capacités, notamment en ce qui concerne ce qui suit les aspects techniques du système décisionnel automatisé en vue de garantir une connaissance à jour du fonctionnement du système; les incidences potentielles du système décisionnel automatisé sur la vie privée, l'équité et les droits de la personne, et la manière de les détecter; la manière d'évaluer et, au besoin, d'annuler des décisions. La formation doit être récurrente. | Identique au niveau III",
+          "Participation humaine (section 6.3.13) | Le système peut rendre des décisions et procéder à des évaluations sans aucune participation directe du personnel. Le personnel doit contribuer à l’assurance de la qualité du système et peut déroger aux décisions prises par le système, au besoin. | Identique au niveau I | La décision définitive doit être prise par le personnel. Les décisions ne peuvent être prises sans une participation clairement définie du personnel au cours du processus décisionnel. Le personnel examine les décisions ou les recommandations générées par le système pour vérifier qu’elles sont exactes et appropriées. Il doit prendre part à l’assurance qualité et peut intervenir dans le processus de décision et d’évaluation du système. | Identique au niveau III",
+          "Approbation de l’exploitation du système (section 6.3.14) | Sous-ministre adjoint ou sous-ministre adjointe responsable du programme | Identique au niveau I | Administrateur général ou administratrice générale | Conseil du Trésor"
+        ],
+        "fullText": "Exigence | Niveau I | Niveau II | Niveau III | Niveau IV\n\nAvis (sections 6.2.1-6.2.2) | Fournir un avis en langage clair de tous les modes de prestation de services utilisés (Internet, en personne, par courrier, par téléphone). | Identique au niveau I | Fournir un avis en langage clair de tous les modes de prestation de services utilisés (Internet, en personne, par courrier, par téléphone). L’avis doit contenir un lien permettant de rediriger la clientèle vers l’explication publiée, conformément au niveau d’explication 1. | Identique au niveau III\n\nExplication (section 6.2.3) | Veiller à ce que toutes les exigences légales applicables soient respectées et à ce qu’une explication sur le fonctionnement général du système soit publiée. L’explication doit être rédigée dans un langage clair et comprendre des renseignements sur les points suivants : le rôle du système dans le processus de décision; les données d’entrée, leur source et leur méthode de collecte; les critères utilisés pour l’évaluation des données d’entrée et des opérations visant leur traitement; les résultats de tout examen ou audit; le résultat produit par le système décisionnel automatisé et toute information nécessaire pour l’interpréter dans le contexte de la décision administrative; les principaux facteurs à l’origine d’une décision. Cette explication doit être publiée sur un site Web du ministère qui est accessible au public et un lien y menant doit être inséré dans l’évaluation de l’incidence algorithmique. Les explications doivent également fournir à la clientèle des renseignements sur les possibilités de recours pertinentes, le cas échéant. | Veiller à ce que l’explication prévue au niveau I soit publiée. En plus, veiller à ce qu’une explication plus détaillée, utile et rédigée en langage clair soit fournie à la clientèle visée par une décision entraînant le refus d’une prestation ou d’un service, ou prévoyant la prise d’une mesure réglementaire. Cette explication doit renseigner la personne concernée sur les motifs ou les justifications qui sous-tendent la décision administrative. Elle doit comprendre une description claire et axée sur la clientèle du processus qui a conduit le système décisionnel automatisé à rendre la décision, y compris : les principaux facteurs pris en compte, par exemple la description de l’arbre de décision, la notation ou la pondération de certains facteurs; la manière dont les résultats du système décisionnel automatisé ont été utilisés par le personnel. Fournir à la clientèle le lien vers l’explication prévue au niveau I. | Identique au niveau II | Identique au niveau II\n\nExamen par les pairs (section 6.3.7) | Aucune | Consulter au moins l’un ou l’une des spécialistes ci-après et publier l’examen complet, ou un résumé de ce dernier, en langage clair sur un site Web du gouvernement du Canada : spécialistes d’une institution gouvernementale fédérale, provinciale, territoriale ou municipale; membres d’une faculté d’un établissement postsecondaire; membres de l’équipe de recherche d’une organisation non gouvernementale pertinente; prestataire de services sous contrat ayant une spécialisation pertinente; comité consultatif des données et d’automatisation désigné par le Secrétariat du Conseil du Trésor du Canada. | Identique au niveau II | Consulter au moins deux des spécialistes ci-après et publier l’examen complet, ou un résumé de ce dernier, en langage clair sur un site Web du gouvernement du Canada : spécialistes du Conseil national de la recherche du Canada, de Statistique Canada, du Centre de la sécurité des télécommunications Canada ou de Services partagés Canada; membres d’une faculté d’un établissement postsecondaire; membres de l’équipe de recherche d’une organisation non gouvernementale pertinente; prestataire de services sous contrat ayant une spécialisation pertinente; comité consultatif des données et d’automatisation désigné par le Secrétariat du Conseil du Trésor du Canada.\n\nAnalyse comparative entre les sexes plus (section 6.3.8) | Aucune | Veiller à ce que les spécialistes de la diversité et de l'inclusion de votre ministère aient été consultés dans le cadre de l’analyse comparative entre les sexes plus et à ce que cette dernière comprenne ce qui suit : une évaluation de l’incidence possible du projet d’automatisation sur les différents groupes de population. L’évaluation doit notamment prendre en considération l’incidence du système décisionnel automatisé, des données utilisées dans le cadre du projet et des effets probables de la décision définitive. Les données utilisées aux fins de l’évaluation doivent être citées dans la mesure du possible. Il est recommandé de ventiler les données en fonction de genre et d’inclure d’autres facteurs identitaires tels que l’âge, le handicap et la race. Si ces données ne sont pas disponibles, précisez quelles sont les lacunes en la matière; des précisions sur les mesures prévues ou existantes visant à gérer les risques recensés dans le cadre de l’analyse comparative entre les sexes plus ou d’autres évaluations. | Identique au niveau II | Identique au niveau II\n\nFormation (section 6.3.9) | Offrir une formation fondée sur les différents rôles visant à expliquer brièvement les fonctions du système décisionnel automatisé et leur utilisation appropriée. | Identique au niveau I | Offrir une formation fondée sur les différents rôles qui porte sur la gestion, la protection et l’utilisation appropriées des fonctions du système décisionnel automatisé et la présentation de ses capacités, notamment en ce qui concerne ce qui suit les aspects techniques du système décisionnel automatisé en vue de garantir une connaissance à jour du fonctionnement du système; les incidences potentielles du système décisionnel automatisé sur la vie privée, l'équité et les droits de la personne, et la manière de les détecter; la manière d'évaluer et, au besoin, d'annuler des décisions. La formation doit être récurrente. | Identique au niveau III\n\nParticipation humaine (section 6.3.13) | Le système peut rendre des décisions et procéder à des évaluations sans aucune participation directe du personnel. Le personnel doit contribuer à l’assurance de la qualité du système et peut déroger aux décisions prises par le système, au besoin. | Identique au niveau I | La décision définitive doit être prise par le personnel. Les décisions ne peuvent être prises sans une participation clairement définie du personnel au cours du processus décisionnel. Le personnel examine les décisions ou les recommandations générées par le système pour vérifier qu’elles sont exactes et appropriées. Il doit prendre part à l’assurance qualité et peut intervenir dans le processus de décision et d’évaluation du système. | Identique au niveau III\n\nApprobation de l’exploitation du système (section 6.3.14) | Sous-ministre adjoint ou sous-ministre adjointe responsable du programme | Identique au niveau I | Administrateur général ou administratrice générale | Conseil du Trésor",
+        "contentSha256": "eb46d8083487d7476a452e6747f0fa6bb275f45d17adea4e3bbc83fdbb059520",
+        "language": "fr-CA",
+        "status": "official-co-published",
+        "officialStatus": "official-co-published",
+        "coverageStatus": "complete-current-official-French-text",
+        "currentTextEquivalent": true,
+        "versionAsOf": "2025-06-24",
+        "source": "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
+        "sourceLabel": "Secrétariat du Conseil du Trésor du Canada — texte français officiel",
+        "note": "The English and French versions are co-published official policy texts. English remains the interface default."
+      }
+    },
+    "legalEffectStatus": "active-mandatory-federal-internal-policy",
+    "effectiveFrom": "2019-04-01",
+    "applicability": {
+      "generalComplianceRequiredBy": "2020-04-01",
+      "currentRevisionPublishedOn": "2025-06-24",
+      "existingSystemTransitionEndedOn": "2026-06-24",
+      "note": "The 2026-06-24 date is the transition deadline for pre-existing systems and Agents of Parliament, not a universal start date for every requirement."
+    },
+    "summary": "Specifies proportionate notice, explanation, peer review, gender analysis, training, human-involvement, and approval requirements for impact Levels I–IV.",
+    "coreConceptIds": [
+      "impact-assessment",
+      "transparency-explainability",
+      "fairness-nondiscrimination",
+      "human-oversight",
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "thematicRelevance": {
+      "isRelevant": true,
+      "highlightEntireUnit": true,
+      "themes": [
+        "AI governance",
+        "automated decision-making"
+      ]
+    },
+    "rights": {
+      "reuseStatus": "canada-crown-copyright-non-commercial-reproduction",
+      "license": "Canada.ca Terms and Conditions — non-commercial reproduction",
+      "licenseUrl": "https://www.canada.ca/en/transparency/terms.html?lang=en",
+      "attributionRequired": true,
+      "attribution": "Directive on Automated Decision-Making, Treasury Board of Canada Secretariat; reproduced from the version available at the cited official URL.",
+      "note": "Reproduced for this public non-commercial academic project with source title, author organization, URL, accuracy controls, and no claim of affiliation or endorsement. Government symbols are not reproduced."
+    }
+  }
+]

@@ -20,6 +20,7 @@ const [
   networkDataArticles,
   generativeAiArticles,
   pipedaProvisions,
+  canadaAdmDirectiveProvisions,
   lgpdArticles,
   taiwanAiActArticles,
   taiwanPdpaArticles,
@@ -63,6 +64,7 @@ const [
   readJson("cn-network-data-regulations-articles.json"),
   readJson("cn-generative-ai-measures-articles.json"),
   readJson("canada-pipeda-provisions.json"),
+  readJson("canada-adm-directive-provisions.json"),
   readJson("brazil-lgpd-articles.json"),
   readJson("tw-ai-basic-act-2026-articles.json"),
   readJson("tw-personal-data-protection-act-articles.json"),
@@ -108,6 +110,7 @@ const completeCorpora = [
   networkDataArticles,
   generativeAiArticles,
   pipedaProvisions,
+  canadaAdmDirectiveProvisions,
   lgpdArticles,
   taiwanAiActArticles,
   taiwanPdpaArticles,
@@ -152,8 +155,8 @@ test("expanded corpus exposes its audited release snapshot", () => {
   ]);
   assert.equal(jurisdictions.length, 30);
   assert.equal(instruments.length, 58);
-  assert.equal(provisions.length, 218);
-  assert.equal(mergedProvisionIds.size, 2873);
+  assert.equal(provisions.length, 255);
+  assert.equal(mergedProvisionIds.size, 2932);
   assert.equal(relations.length, 74);
   assert.equal(statusEvents.length, 116);
   assert.equal(sourceAudits.length, instruments.length);
@@ -219,10 +222,18 @@ test("overlapping grouped anchors are split into source-accurate nodes", () => {
     "tw-executive-yuan-generative-ai-guidelines-2023-points-7-8",
     "id-pdp-law-2022-arts-46-53",
     "ca-bill-c-27-aida-2022-lapsed-proposed-ss-5-12",
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-6-11",
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-13-37",
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-38-40",
     "ch-fadp-2020-arts-19-21",
   ]) {
     assert.equal(provisionById.has(staleId), false, `${staleId} must stay removed`);
   }
+  assert.equal(
+    provisionById.get("ca-bill-c-27-aida-2022-lapsed-proposed-s-12")
+      .provisionType,
+    "historical-proposed-section",
+  );
   assert.equal(
     provisionById.get("id-pdp-law-2022-art-53").supportingSources[0].url,
     "https://s.mkri.id/public/content/persidangan/putusan/putusan_mkri_12970_1753859809.pdf",
@@ -249,9 +260,9 @@ test("source audits state honest local coverage for every instrument", () => {
   const completeCount = [...counts]
     .filter(([mode]) => mode.startsWith("complete-"))
     .reduce((sum, [, count]) => sum + count, 0);
-  assert.equal(completeCount, 38);
+  assert.equal(completeCount, 39);
   assert.equal(counts.get("selected-source-text-and-index"), 1);
-  assert.equal(counts.get("selected-provision-index"), 19);
+  assert.equal(counts.get("selected-provision-index"), 18);
 
   for (const provision of provisions.filter(
     (item) =>

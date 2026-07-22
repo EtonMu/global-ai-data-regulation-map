@@ -141,7 +141,7 @@ test("official Brazilian status records show a pending bill with no final-law UR
   assert.match(record, /Aguardando Parecer do\(a\) Relator\(a\) na Comissão Especial/u);
 });
 
-test("AIDA remains metadata-only because republication permission is not established", () => {
+test("AIDA exposes 41 source-linked editorial anchors without republishing bill wording", () => {
   const aidaManifest = manifest.corpora.find(
     (corpus) => corpus.instrumentId === "ca-bill-c-27-aida-2022-lapsed",
   );
@@ -157,12 +157,60 @@ test("AIDA remains metadata-only because republication permission is not establi
     (item) => item.id === "ca-bill-c-27-aida-2022-lapsed",
   );
   assert.equal(instrument.textAvailability.stored, false);
+  assert.equal(instrument.lifecycleStatus, "lapsed");
+  assert.equal(instrument.legalForce, "not-enacted");
+  assert.equal(instrument.dates.introducedOn, "2022-06-16");
+  assert.equal(instrument.dates.effectiveFrom, null);
   const anchors = provisions.filter(
     (item) => item.instrumentId === "ca-bill-c-27-aida-2022-lapsed",
   );
-  assert.equal(anchors.length, 4);
-  assert.ok(anchors.every((item) => item.textAvailability.stored === false));
-  assert.ok(anchors.every((item) => item.fullText === undefined));
+  assert.equal(anchors.length, 41);
+  const anchorById = new Map(anchors.map((item) => [item.id, item]));
+  assert.equal(anchorById.size, 41);
+  for (let section = 1; section <= 41; section += 1) {
+    const id = `ca-bill-c-27-aida-2022-lapsed-proposed-s-${section}`;
+    const anchor = anchorById.get(id);
+    assert.ok(anchor, `missing ${id}`);
+    assert.equal(anchor.provisionType, "historical-proposed-section");
+    assert.equal(anchor.versionAsOf, "2022-06-16");
+    assert.equal(anchor.appliesFrom, null);
+    assert.equal(anchor.legalEffectStatus, "lapsed-never-law");
+    assert.equal(anchor.textAvailability.stored, false);
+    assert.equal(
+      anchor.textAvailability.mode,
+      "official-source-linked-project-authored-editorial-summary",
+    );
+    assert.match(
+      anchor.textAvailability.note,
+      /project-authored summary.*no bill wording or fullText/u,
+    );
+    assert.equal(
+      anchor.source.url,
+      "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+    );
+    assert.equal(Object.hasOwn(anchor, "fullText"), false);
+    assert.equal(Object.hasOwn(anchor, "paragraphs"), false);
+    assert.equal(Object.hasOwn(anchor, "translations"), false);
+  }
+  assert.equal(
+    anchorById.get("ca-bill-c-27-aida-2022-lapsed-proposed-s-1").title,
+    "Short title",
+  );
+  assert.equal(
+    anchorById.get("ca-bill-c-27-aida-2022-lapsed-proposed-s-5").title,
+    "Definitions",
+  );
+  assert.equal(
+    anchorById.get("ca-bill-c-27-aida-2022-lapsed-proposed-s-41").title,
+    "Order in council",
+  );
+  for (const staleId of [
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-6-11",
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-13-37",
+    "ca-bill-c-27-aida-2022-lapsed-proposed-ss-38-40",
+  ]) {
+    assert.equal(anchorById.has(staleId), false);
+  }
 });
 
 test("handoff pins the redistributable Brazilian corpus and source hashes", async () => {

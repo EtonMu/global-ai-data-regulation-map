@@ -14,12 +14,13 @@ const corpusBuildSource = await readFile(
 const load = async (filename) =>
   JSON.parse(await readFile(new URL(filename, dataRoot), "utf8"));
 
-const [instruments, audits, clientIndex, pipeda, lgpd, taiwanAiAct, taiwanPdpa] =
+const [instruments, audits, clientIndex, pipeda, canadaAdm, lgpd, taiwanAiAct, taiwanPdpa] =
   await Promise.all([
     load("instruments.json"),
     load("source-audit.json"),
     load("client-corpus-index.json"),
     load("canada-pipeda-provisions.json"),
+    load("canada-adm-directive-provisions.json"),
     load("brazil-lgpd-articles.json"),
     load("tw-ai-basic-act-2026-articles.json"),
     load("tw-personal-data-protection-act-articles.json"),
@@ -30,9 +31,10 @@ const auditByInstrumentId = new Map(
   audits.map((item) => [item.instrumentId, item]),
 );
 
-test("the four complete corpora are registered as on-demand production shards", () => {
+test("the five complete bilingual corpora are registered as on-demand production shards", () => {
   for (const filename of [
     "canada-pipeda-provisions.json",
+    "canada-adm-directive-provisions.json",
     "brazil-lgpd-articles.json",
     "tw-ai-basic-act-2026-articles.json",
     "tw-personal-data-protection-act-articles.json",
@@ -48,6 +50,7 @@ test("the four complete corpora are registered as on-demand production shards", 
   }
   for (const instrumentId of [
     "ca-pipeda",
+    "ca-directive-automated-decision-making",
     "br-lgpd-2018",
     "tw-ai-basic-act-2026",
     "tw-personal-data-protection-act",
@@ -69,15 +72,45 @@ test("the four complete corpora are registered as on-demand production shards", 
   assert.match(appSource, /provisionUnitLabel/);
 });
 
-test("PIPEDA exposes complete co-authentic English and French units", () => {
-  assert.equal(pipeda.length, 75);
+test("PIPEDA separates complete current and prospective co-authentic units", () => {
+  assert.equal(pipeda.length, 84);
   assert.ok(pipeda.every((item) => item.language === "fr"));
   assert.ok(pipeda.every((item) => item.translations.en.status === "official"));
   assert.equal(
-    instrumentById.get("ca-pipeda").coverage.completeness,
-    "complete-official-co-authentic-current-text",
+    pipeda.filter((item) => item.unitType === "amending-section-not-in-force").length,
+    9,
   );
-  assert.equal(auditByInstrumentId.get("ca-pipeda").localCoverage.localUnitCount, 75);
+  assert.equal(
+    instrumentById.get("ca-pipeda").coverage.completeness,
+    "complete-official-co-authentic-current-in-force-text-with-enacted-amendments-not-in-force",
+  );
+  assert.equal(auditByInstrumentId.get("ca-pipeda").localCoverage.localUnitCount, 84);
+  assert.equal(
+    auditByInstrumentId.get("ca-pipeda").englishAvailability.coverage
+      .temporallyMismatchedUnitCount,
+    0,
+  );
+});
+
+test("Canada ADM Directive stores every current English and French top-level unit", () => {
+  assert.equal(canadaAdm.length, 13);
+  assert.deepEqual(
+    canadaAdm.map((item) => item.articleNumber),
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "A", "B", "C"],
+  );
+  assert.ok(canadaAdm.every((item) => item.language === "en-CA"));
+  assert.ok(
+    canadaAdm.every(
+      (item) =>
+        item.translations.fr.status === "official-co-published" &&
+        item.translations.fr.fullText.length > 0,
+    ),
+  );
+  assert.equal(
+    auditByInstrumentId.get("ca-directive-automated-decision-making")
+      .localCoverage.localUnitCount,
+    13,
+  );
 });
 
 test("LGPD stores complete current Portuguese and explicitly sourced English references", () => {

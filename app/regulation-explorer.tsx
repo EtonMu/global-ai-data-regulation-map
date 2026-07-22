@@ -274,6 +274,12 @@ type ArticleRecord = {
   originalTitle?: string;
   title: string;
   summary?: string;
+  coreConceptIds?: string[];
+  thematicRelevance?: {
+    isRelevant: boolean;
+    highlightEntireUnit?: boolean;
+    themes?: string[];
+  };
   chapter: {
     id: string | null;
     label: string;
@@ -494,6 +500,12 @@ type SourceAudit = {
     localUnitCount: number;
     statement: string;
   };
+  rightsBoundary?: {
+    sourceTextStatus: string;
+    projectLicenseBoundary: string;
+    note: string;
+  };
+  caveats?: string[];
 };
 
 type View =
@@ -852,6 +864,7 @@ function normalizedAlternativeLanguageTexts(
         : undefined;
       const isCoAuthentic =
         translation.status === "official" ||
+        translation.status === "official-co-published" ||
         translation.status === "official-co-authentic-equal-status" ||
         translation.status === "official-authoritative-equal-status";
       return {
@@ -926,7 +939,7 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
       article.summary ??
       article.paragraphs[0] ??
       "Official Article text is available from the linked source.",
-    conceptIds: [],
+    conceptIds: article.coreConceptIds ?? [],
     actorTags: [],
     scopeTags: [],
     legalEffectStatus: importedLegalEffectStatus,
@@ -1051,6 +1064,28 @@ provisions.forEach((provision) => {
   provisionsByInstrument.set(provision.instrumentId, list);
 });
 
+const sourceTextIdsByInstrument = new Map<string, Set<string>>();
+normalizedArticleRecords.forEach((article) => {
+  const ids =
+    sourceTextIdsByInstrument.get(article.instrumentId) ?? new Set<string>();
+  ids.add(article.id);
+  sourceTextIdsByInstrument.set(article.instrumentId, ids);
+});
+
+const expectedArticleIdsByInstrument = new Map<string, string[]>();
+normalizedArticleRecords.forEach((article) => {
+  const ids = expectedArticleIdsByInstrument.get(article.instrumentId) ?? [];
+  ids.push(article.id);
+  expectedArticleIdsByInstrument.set(article.instrumentId, ids);
+});
+
+const expectedSeedIdsByInstrument = new Map<string, string[]>();
+seedProvisions.forEach((provision) => {
+  const ids = expectedSeedIdsByInstrument.get(provision.instrumentId) ?? [];
+  ids.push(provision.id);
+  expectedSeedIdsByInstrument.set(provision.instrumentId, ids);
+});
+
 for (const list of provisionsByInstrument.values()) {
   list.sort((left, right) => {
     if (left.sourceOrder !== undefined || right.sourceOrder !== undefined) {
@@ -1077,7 +1112,8 @@ async function hydrateInstrumentCorpus(
   instrumentId: string,
   options: { force?: boolean } = {},
 ) {
-  if (hydratedInstrumentIds.has(instrumentId)) return;
+  if (hydratedInstrumentIds.has(instrumentId) && !options.force) return;
+  if (options.force) hydratedInstrumentIds.delete(instrumentId);
   const activeRequest = instrumentHydrationPromises.get(instrumentId);
   if (activeRequest && !options.force) return activeRequest;
 
@@ -1086,7 +1122,14 @@ async function hydrateInstrumentCorpus(
     throw new Error(`No client corpus shard is registered for ${instrumentId}.`);
   }
 
-  const request = loadCorpusShard(instrumentId, shardUrl, options)
+  const request = loadCorpusShard(instrumentId, shardUrl, {
+    ...options,
+    expected: {
+      schemaVersion: clientCorpusIndex.schemaVersion,
+      articleIds: expectedArticleIdsByInstrument.get(instrumentId) ?? [],
+      seedIds: expectedSeedIdsByInstrument.get(instrumentId) ?? [],
+    },
+  })
     .then((payload: CorpusShardPayload) => {
       const hydratedSeeds = payload.seedProvisions as SeedProvision[];
       hydratedSeeds.forEach((seed) => {
@@ -3031,8 +3074,17 @@ function InstrumentGenome({
   onOpenInstrument: (instrumentId: string) => void;
 }) {
   const jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
+  const sourceAudit = sourceAuditByInstrument.get(instrument.id);
   const groups = groupInstrumentProvisions(instrument.id);
-  const total = provisionsByInstrument.get(instrument.id)?.length ?? 0;
+  const instrumentProvisions = provisionsByInstrument.get(instrument.id) ?? [];
+  const sourceTextIds = sourceTextIdsByInstrument.get(instrument.id) ?? new Set();
+  const sourceTextUnitCount = sourceTextIds.size;
+  const analyticalAnchorCount = instrumentProvisions.filter(
+    (provision) => !sourceTextIds.has(provision.id),
+  ).length;
+  const sourceUnitLabel = sourceAudit?.localCoverage.mode.includes("official")
+    ? "official source-text units"
+    : "locally stored source-text units";
   const instrumentLinks = (relationsByInstrument.get(instrument.id) ?? [])
     .map((relation) => {
       const endpoint = otherInstrumentEndpoint(relation, instrument.id);
@@ -3067,7 +3119,10 @@ function InstrumentGenome({
             {humanize(instrument.lifecycleStatus)}
           </span>
           <span>{humanize(instrument.legalForce)}</span>
-          <span>{total} indexed provisions</span>
+          <span>{sourceTextUnitCount} {sourceUnitLabel}</span>
+          {analyticalAnchorCount > 0 && (
+            <span>{analyticalAnchorCount} analytical anchors</span>
+          )}
           <span>Version {instrument.version}</span>
         </div>
       </div>
@@ -3104,8 +3159,50 @@ function InstrumentGenome({
             <dt>Text access</dt>
             <dd>{humanize(instrument.textAvailability.mode)}</dd>
           </div>
+          <div>
+            <dt>Indexed composition</dt>
+            <dd>
+              {sourceTextUnitCount} source-text units + {analyticalAnchorCount}{" "}
+              analytical anchors
+            </dd>
+          </div>
         </dl>
       </div>
+
+      {sourceAudit && (
+        <div
+          className="instrument-corpus-profile"
+          aria-label="Local corpus coverage and redistribution status"
+        >
+          <section className="instrument-corpus-disclosure">
+            <span className="terminal-label">LOCAL_CORPUS_COVERAGE</span>
+            <strong>{humanize(sourceAudit.localCoverage.mode)}</strong>
+            <div className="instrument-corpus-counts" aria-label="Indexed corpus composition">
+              <span>
+                <b>{sourceTextUnitCount}</b>
+                {sourceUnitLabel}
+              </span>
+              <span>
+                <b>{analyticalAnchorCount}</b>
+                analytical {analyticalAnchorCount === 1 ? "anchor" : "anchors"}
+              </span>
+            </div>
+            <p>{sourceAudit.localCoverage.statement}</p>
+            {instrument.textAvailability.note && (
+              <p>{instrument.textAvailability.note}</p>
+            )}
+          </section>
+          {sourceAudit.rightsBoundary && (
+            <section className="instrument-corpus-disclosure is-rights-boundary">
+              <span className="terminal-label">RIGHTS / REDISTRIBUTION</span>
+              <strong>
+                {humanize(sourceAudit.rightsBoundary.projectLicenseBoundary)}
+              </strong>
+              <p>{sourceAudit.rightsBoundary.note}</p>
+            </section>
+          )}
+        </div>
+      )}
 
       {instrumentLinks.length > 0 && (
         <div className="instrument-relations" aria-label="Instrument-level links">
@@ -4617,7 +4714,7 @@ function ProvisionReader({
                       ? "OFFICIAL ENGLISH TRANSLATION — NON-AUTHORITATIVE"
                     : !showingEnglish && selectedAlternativeLanguageText
                       ? selectedAlternativeLanguageText.status === "official"
-                        ? "OFFICIAL CO-AUTHENTIC TEXT"
+                        ? "OFFICIAL LANGUAGE TEXT"
                         : "REFERENCE-LANGUAGE TEXT"
                     : isStoredExcerpt
                   ? isOriginalLanguage
@@ -5066,7 +5163,7 @@ export default function RegulationExplorer() {
 
   const ensureInstrumentAvailable = useCallback(
     async (instrumentId: string, force = false) => {
-      if (hydratedInstrumentIds.has(instrumentId)) {
+      if (hydratedInstrumentIds.has(instrumentId) && !force) {
         setInstrumentLoadStates((current) => ({
           ...current,
           [instrumentId]: { phase: "ready" },
@@ -5099,6 +5196,7 @@ export default function RegulationExplorer() {
 
   const ensureCompleteCorpus = useCallback(async (force = false) => {
     if (
+      !force &&
       Object.keys(clientCorpusIndex.shards).every((instrumentId) =>
         hydratedInstrumentIds.has(instrumentId),
       )
@@ -5110,7 +5208,7 @@ export default function RegulationExplorer() {
 
     setFullCorpusLoadState({ phase: "loading" });
     const instrumentIds = Object.keys(clientCorpusIndex.shards).filter(
-      (instrumentId) => !hydratedInstrumentIds.has(instrumentId),
+      (instrumentId) => force || !hydratedInstrumentIds.has(instrumentId),
     );
     const request = (async () => {
       try {

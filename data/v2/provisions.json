@@ -9218,7 +9218,13 @@
     "locator": "Schedule 1, Clause 4.7",
     "title": "Safeguards",
     "provisionType": "schedule-clause",
-    "parentId": null,
+    "parentId": "ca-pipeda-sch-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "ca-pipeda-sch-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires personal information to be protected by safeguards appropriate to the sensitivity of the information.",
     "conceptIds": [
       "security-controls",
@@ -10463,6 +10469,12 @@
     "title": "Automated-decision privacy-policy transparency",
     "provisionType": "principle-or-part",
     "parentId": "au-privacy-act-1988-app-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "au-privacy-act-1988-app-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete APP 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires qualifying entities to describe specified substantially automated decisions and personal-information categories in privacy policies from its future commencement date.",
     "conceptIds": [
       "automated-decision-safeguards",
@@ -11154,7 +11166,13 @@
     "locator": "Schedule 1, DPP 1",
     "title": "Fair and necessary collection",
     "provisionType": "data-protection-principle",
-    "parentId": null,
+    "parentId": "hk-personal-data-privacy-ordinance-schedule-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "hk-personal-data-privacy-ordinance-schedule-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires lawful and fair collection limited to data necessary for a directly related purpose, together with prescribed notice to the individual.",
     "conceptIds": [
       "lawfulness-consent-choice",
@@ -11194,7 +11212,13 @@
     "locator": "Schedule 1, DPP 2",
     "title": "Accuracy and retention",
     "provisionType": "data-protection-principle",
-    "parentId": null,
+    "parentId": "hk-personal-data-privacy-ordinance-schedule-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "hk-personal-data-privacy-ordinance-schedule-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Addresses accuracy and prohibits retaining personal data longer than necessary for the fulfillment of the purpose for which it is used.",
     "conceptIds": [
       "retention-deletion-lifecycle",
@@ -11233,7 +11257,13 @@
     "locator": "Schedule 1, DPP 3",
     "title": "Use limited to the prescribed purpose",
     "provisionType": "data-protection-principle",
-    "parentId": null,
+    "parentId": "hk-personal-data-privacy-ordinance-schedule-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "hk-personal-data-privacy-ordinance-schedule-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Restricts new use outside the original or directly related purpose without prescribed consent, subject to the Ordinance's exceptions.",
     "conceptIds": [
       "purpose-limitation",
@@ -11272,7 +11302,13 @@
     "locator": "Schedule 1, DPP 4",
     "title": "Security and processor controls",
     "provisionType": "data-protection-principle",
-    "parentId": null,
+    "parentId": "hk-personal-data-privacy-ordinance-schedule-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "hk-personal-data-privacy-ordinance-schedule-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires data users to take practicable security steps and use contractual or other means to prevent unauthorized or accidental processing by their data processors; it does not impose every DPP directly on processors.",
     "conceptIds": [
       "security-controls",
@@ -11312,7 +11348,13 @@
     "locator": "Schedule 1, DPPs 5–6",
     "title": "Openness, access and correction",
     "provisionType": "data-protection-principle",
-    "parentId": null,
+    "parentId": "hk-personal-data-privacy-ordinance-schedule-1",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "hk-personal-data-privacy-ordinance-schedule-1",
+      "note": "This editorial child anchor supports navigation and concept drill-down into the complete Schedule 1 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Combines openness about data policies with individual access and correction rights, which should be represented as distinct but related controls.",
     "conceptIds": [
       "transparency-explainability",
@@ -12747,170 +12789,6 @@
     }
   },
   {
-    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-ss-6-11",
-    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
-    "locator": "Bill C-27, clause 39 — proposed AIDA sections 6–11",
-    "title": "Assessment, mitigation, monitoring, records and public descriptions",
-    "provisionType": "historical-proposed-section-group",
-    "parentId": null,
-    "summary": "Would have addressed anonymized data, high-impact-system assessment, risk mitigation and monitoring, records, and public descriptions before the bill lapsed without becoming law.",
-    "conceptIds": [
-      "ai-risk-management",
-      "impact-assessment",
-      "fairness-nondiscrimination",
-      "accountability-governance",
-      "transparency-explainability"
-    ],
-    "actorTags": [
-      "proposed-regulated-persons",
-      "minister"
-    ],
-    "scopeTags": [
-      "historical-proposal",
-      "ai-systems"
-    ],
-    "legalEffectStatus": "lapsed-never-law",
-    "versionAsOf": "2026-07-19",
-    "appliesFrom": null,
-    "textAvailability": {
-      "mode": "official-source-linked-editorial-summary",
-      "stored": false,
-      "language": "en",
-      "note": "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text."
-    },
-    "source": {
-      "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
-      "label": "Parliament of Canada — LEGISinfo",
-      "accessedOn": "2026-07-19"
-    },
-    "editorial": {
-      "reviewStatus": "primary-source-verified-editorial-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
-    }
-  },
-  {
-    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-12",
-    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
-    "locator": "Bill C-27, clause 39 — proposed AIDA section 12",
-    "title": "Notification of material harm",
-    "provisionType": "historical-proposed-section-group",
-    "parentId": null,
-    "summary": "Would have required ministerial notification where use of a high-impact system resulted or was likely to result in material harm; no such duty entered into force.",
-    "conceptIds": [
-      "incident-response",
-      "continuous-assurance"
-    ],
-    "actorTags": [
-      "proposed-regulated-persons",
-      "minister"
-    ],
-    "scopeTags": [
-      "historical-proposal",
-      "ai-systems"
-    ],
-    "legalEffectStatus": "lapsed-never-law",
-    "versionAsOf": "2026-07-19",
-    "appliesFrom": null,
-    "textAvailability": {
-      "mode": "official-source-linked-editorial-summary",
-      "stored": false,
-      "language": "en",
-      "note": "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text."
-    },
-    "source": {
-      "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
-      "label": "Parliament of Canada — LEGISinfo",
-      "accessedOn": "2026-07-19"
-    },
-    "editorial": {
-      "reviewStatus": "primary-source-verified-editorial-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
-    }
-  },
-  {
-    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-ss-13-37",
-    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
-    "locator": "Bill C-27, clause 39 — proposed AIDA sections 13–37",
-    "title": "Ministerial orders, information, penalties and administration",
-    "provisionType": "historical-proposed-section-group",
-    "parentId": null,
-    "summary": "Would have established ministerial information and audit powers, orders, an administrative monetary penalty framework, offences, administration and regulation-making authorities.",
-    "conceptIds": [
-      "accountability-governance",
-      "continuous-assurance"
-    ],
-    "actorTags": [
-      "proposed-regulated-persons",
-      "minister"
-    ],
-    "scopeTags": [
-      "historical-proposal",
-      "ai-systems"
-    ],
-    "legalEffectStatus": "lapsed-never-law",
-    "versionAsOf": "2026-07-19",
-    "appliesFrom": null,
-    "textAvailability": {
-      "mode": "official-source-linked-editorial-summary",
-      "stored": false,
-      "language": "en",
-      "note": "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text."
-    },
-    "source": {
-      "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
-      "label": "Parliament of Canada — LEGISinfo",
-      "accessedOn": "2026-07-19"
-    },
-    "editorial": {
-      "reviewStatus": "primary-source-verified-editorial-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
-    }
-  },
-  {
-    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-ss-38-40",
-    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
-    "locator": "Bill C-27, clause 39 — proposed AIDA sections 38–40",
-    "title": "Proposed criminal prohibitions and punishment",
-    "provisionType": "historical-proposed-section-group",
-    "parentId": null,
-    "summary": "Would have prohibited specified possession or use of unlawfully obtained personal information and making AI systems available with intent or recklessness concerning serious harm or fraud, with proposed punishment provisions.",
-    "conceptIds": [
-      "security-controls",
-      "incident-response",
-      "accountability-governance"
-    ],
-    "actorTags": [
-      "proposed-regulated-persons",
-      "minister"
-    ],
-    "scopeTags": [
-      "historical-proposal",
-      "ai-systems"
-    ],
-    "legalEffectStatus": "lapsed-never-law",
-    "versionAsOf": "2026-07-19",
-    "appliesFrom": null,
-    "textAvailability": {
-      "mode": "official-source-linked-editorial-summary",
-      "stored": false,
-      "language": "en",
-      "note": "The cited official source contains the controlling or reference text. This record stores a verified English editorial summary, not quoted full legal text."
-    },
-    "source": {
-      "url": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27",
-      "label": "Parliament of Canada — LEGISinfo",
-      "accessedOn": "2026-07-19"
-    },
-    "editorial": {
-      "reviewStatus": "primary-source-verified-editorial-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
-    }
-  },
-  {
     "id": "us-co-sb24-205-2024-risk-discrimination",
     "instrumentId": "us-co-sb24-205-2024",
     "locator": "High-risk AI and algorithmic discrimination",
@@ -13151,6 +13029,1697 @@
       "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
       "label": "Fedlex — official non-authoritative English translation",
       "accessedOn": "2026-07-19"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-1",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 1",
+    "title": "Short title",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Identified the proposed enactment's short citation for legislative reference; Bill C-27 lapsed before this provision or any other AIDA section could become law.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-2",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 2",
+    "title": "Definitions",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Set out cross-cutting terminology for the proposed Act, including its technology, actor and personal-information vocabulary, without itself creating an operative compliance duty.",
+    "conceptIds": [
+      "ai-risk-management",
+      "accountability-governance",
+      "sensitive-data-protection"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-3",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 3",
+    "title": "Non-application",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have excluded federal government institutions and specified defence, intelligence, security and prescribed public-sector activities from the proposed Act's application.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-4",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 4",
+    "title": "Purposes",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Described a proposed national framework for interprovincial and international commercial AI activity together with prohibitions aimed at serious individual harm.",
+    "conceptIds": [
+      "ai-risk-management",
+      "fairness-nondiscrimination",
+      "incident-response",
+      "global-coordination"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-5",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 5",
+    "title": "Definitions",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Defined the main Part 1 concepts and regulated roles, including biased output, harm, high-impact systems, regulated activities and responsibility for an AI system; important thresholds were left to regulations.",
+    "conceptIds": [
+      "ai-risk-management",
+      "fairness-nondiscrimination",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-6",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 6",
+    "title": "Anonymized data",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required persons conducting regulated activities to establish prescribed controls for anonymization and for the later use or management of anonymized data.",
+    "conceptIds": [
+      "privacy-enhancing-tech",
+      "training-data-governance",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-7",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 7",
+    "title": "Assessment — high-impact system",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required the person responsible for an AI system to assess its proposed high-impact classification using criteria to be supplied by regulation.",
+    "conceptIds": [
+      "impact-assessment",
+      "ai-risk-management"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-8",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 8",
+    "title": "Measures related to risks",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required governance measures to identify, evaluate and reduce risks of harm or unjustified differentiated outcomes from a proposed high-impact system.",
+    "conceptIds": [
+      "ai-risk-management",
+      "fairness-nondiscrimination",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-9",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 9",
+    "title": "Monitoring of mitigation measures",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required continuing checks on both adherence to the proposed risk controls and whether those controls remained effective.",
+    "conceptIds": [
+      "continuous-assurance",
+      "ai-risk-management"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-10",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 10",
+    "title": "Keeping general records",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have created regulation-dependent records for anonymization, system classification, risk controls and monitoring, including the reasoning behind a high-impact assessment.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-11",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 11",
+    "title": "Publication of description — making system available for use",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required public, plain-language system descriptions from covered providers and operators of proposed high-impact systems, with timing and content largely delegated to regulations.",
+    "conceptIds": [
+      "transparency-explainability",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-12",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 12",
+    "title": "Notification of material harm",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have required a responsible person to alert the Minister when use of a proposed high-impact system produced, or was likely to produce, material harm; the bill lapsed before any duty arose.",
+    "conceptIds": [
+      "incident-response",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-13",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 13",
+    "title": "Provision of subsection 10 (1) records",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed the Minister to order production of the general compliance records contemplated by proposed subsection 10(1).",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-14",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 14",
+    "title": "Provision of subsection 10 (2) records",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed a targeted order for additional records where the Minister had a prescribed evidentiary basis for concern about harm or biased output from a proposed high-impact system.",
+    "conceptIds": [
+      "ai-risk-management",
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-15",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 15",
+    "title": "Audit",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have empowered the Minister to require a qualified internal or independent audit of a suspected contravention, with assistance, reporting and cost obligations for the audited person.",
+    "conceptIds": [
+      "continuous-assurance",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-16",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 16",
+    "title": "Implementation of measures",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed the Minister to direct post-audit corrective action addressing matters identified in an audit report.",
+    "conceptIds": [
+      "continuous-assurance",
+      "ai-risk-management",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-17",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 17",
+    "title": "Cessation",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have authorized an order stopping use or distribution of a proposed high-impact system where the Minister identified a serious and imminent risk of harm.",
+    "conceptIds": [
+      "incident-response",
+      "ai-risk-management"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-18",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 18",
+    "title": "Publication",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed the Minister to order public disclosure of specified compliance information while protecting confidential business information.",
+    "conceptIds": [
+      "transparency-explainability",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-19",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 19",
+    "title": "Compliance",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have made compliance with ministerial orders under proposed Part 1 mandatory.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-20",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 20",
+    "title": "Filing — Federal Court",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have enabled certified ministerial orders to be filed and enforced through the Federal Court.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-21",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 21",
+    "title": "Statutory Instruments Act",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have excluded specified ministerial orders from treatment as statutory instruments under the referenced federal legislation.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-22",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 22",
+    "title": "Confidential nature maintained",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have preserved the confidential character of protected business information obtained or shared in administering proposed Part 1.",
+    "conceptIds": [
+      "accountability-governance",
+      "security-controls"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-23",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 23",
+    "title": "Obligation of Minister",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have placed a confidentiality-protection responsibility on the Minister, subject to the proposal's specified disclosure routes.",
+    "conceptIds": [
+      "accountability-governance",
+      "security-controls"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-24",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 24",
+    "title": "Disclosure of confidential business information — subpoena, warrant, etc.",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have permitted disclosure of confidential business information when required by valid legal compulsion or applicable court procedure.",
+    "conceptIds": [
+      "accountability-governance",
+      "security-controls"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-25",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 25",
+    "title": "Disclosure of information — analyst",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed information to be shared with a designated analyst under confidentiality conditions and purpose limits tied to administration or enforcement.",
+    "conceptIds": [
+      "accountability-governance",
+      "security-controls"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-26",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 26",
+    "title": "Disclosure of information — others",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have enabled limited information sharing with listed federal or provincial regulators where relevant to a suspected breach of another law, subject to necessity, use and confidentiality safeguards.",
+    "conceptIds": [
+      "accountability-governance",
+      "third-party-supply-chain",
+      "global-coordination"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-27",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 27",
+    "title": "Publication of information — contravention",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed public notice of a proposed Part 1 contravention to encourage compliance, while withholding confidential business information.",
+    "conceptIds": [
+      "transparency-explainability",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-28",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 28",
+    "title": "Publication of information — harm",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have supported an urgent public warning about an AI system when publication was considered essential to prevent serious imminent harm, while excluding personal and confidential business information.",
+    "conceptIds": [
+      "incident-response",
+      "transparency-explainability",
+      "security-controls"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-29",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 29",
+    "title": "Administrative monetary penalties",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have authorized a regulation-built administrative monetary penalty scheme focused on compliance, including classifications, procedures, amounts, review routes and compliance agreements.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-30",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 30",
+    "title": "Contravention — sections 6 to 12",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have created offences for breaches of the proposed core duties and for obstruction or misleading information, together with differentiated penalties and a due-diligence defence.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-31",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 31",
+    "title": "Designation",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have authorized the Governor in Council to designate the Minister responsible for administering proposed Part 1.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-32",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 32",
+    "title": "General powers of Minister",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have assigned public education, reporting, recommendation and compliance-guidance functions to the Minister.",
+    "conceptIds": [
+      "accountability-governance",
+      "transparency-explainability"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-33",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 33",
+    "title": "Artificial Intelligence and Data Commissioner",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have allowed designation of a departmental official to assist the Minister, plus delegation of administrative and enforcement powers subject to a regulation-making exception.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-34",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 34",
+    "title": "Analysts",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have authorized designation of analysts to support administration and enforcement of the proposed private-sector AI regime.",
+    "conceptIds": [
+      "accountability-governance",
+      "continuous-assurance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-35",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 35",
+    "title": "Advisory committee",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have permitted an expert advisory committee and discretionary publication of its advice to the Minister.",
+    "conceptIds": [
+      "accountability-governance",
+      "global-coordination",
+      "transparency-explainability"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-36",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 36",
+    "title": "Regulations — Governor in Council",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have delegated major design choices to Governor in Council regulations, including high-impact criteria, risk controls, assessments, material-harm parameters and auditor qualifications.",
+    "conceptIds": [
+      "ai-risk-management",
+      "impact-assessment",
+      "fairness-nondiscrimination",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-37",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 37",
+    "title": "Regulations — Minister",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have delegated detailed rules on records, system descriptions, harm notices and ordered publication to ministerial regulations.",
+    "conceptIds": [
+      "accountability-governance",
+      "transparency-explainability",
+      "incident-response"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-38",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 38",
+    "title": "Possession or use of personal information",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have criminalized specified knowing possession or use of unlawfully obtained personal information for activities involving an AI system.",
+    "conceptIds": [
+      "security-controls",
+      "sensitive-data-protection",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-39",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 39",
+    "title": "Making system available for use",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have created offences for making an AI system available under specified culpability and causation conditions involving serious personal or property harm, or intentional fraud causing substantial loss.",
+    "conceptIds": [
+      "incident-response",
+      "ai-risk-management",
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-40",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 40",
+    "title": "Punishment",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have established separate corporate and individual sentencing exposure for the proposed offences in sections 38 and 39.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
+    },
+    "editorial": {
+      "reviewStatus": "primary-source-verified-editorial-summary",
+      "reviewedOn": "2026-07-19",
+      "note": "The high-level title, scope and concept tags were checked against the cited official source. They support navigation and comparison, not a conclusion of legal equivalence."
+    }
+  },
+  {
+    "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-41",
+    "instrumentId": "ca-bill-c-27-aida-2022-lapsed",
+    "locator": "Bill C-27, clause 39 — proposed AIDA section 41",
+    "title": "Order in council",
+    "provisionType": "historical-proposed-section",
+    "parentId": null,
+    "summary": "Would have left commencement to one or more future orders in council; no commencement occurred because Bill C-27 lapsed without enactment.",
+    "conceptIds": [
+      "accountability-governance"
+    ],
+    "actorTags": [
+      "proposed-regulated-persons",
+      "minister"
+    ],
+    "scopeTags": [
+      "historical-proposal",
+      "ai-systems",
+      "bill-c-27-first-reading-2022-06-16"
+    ],
+    "legalEffectStatus": "lapsed-never-law",
+    "versionAsOf": "2022-06-16",
+    "appliesFrom": null,
+    "textAvailability": {
+      "mode": "official-source-linked-project-authored-editorial-summary",
+      "stored": false,
+      "language": "en",
+      "note": "This anchor identifies one proposed AIDA section in Bill C-27's 16 June 2022 first-reading text. It stores only a project-authored summary and no bill wording or fullText."
+    },
+    "source": {
+      "url": "https://www.parl.ca/DocumentViewer/en/44-1/bill/c-27/first-reading",
+      "label": "Parliament of Canada — Bill C-27 first-reading text",
+      "accessedOn": "2026-07-20"
     },
     "editorial": {
       "reviewStatus": "primary-source-verified-editorial-summary",

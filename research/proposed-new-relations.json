@@ -471,7 +471,7 @@
     },
     "target": {
       "type": "provision",
-      "id": "ca-bill-c-27-aida-2022-lapsed-proposed-ss-6-11"
+      "id": "ca-bill-c-27-aida-2022-lapsed-proposed-s-7"
     },
     "type": "historical-comparison",
     "directionality": "undirected",
@@ -481,8 +481,8 @@
     "status": "candidate",
     "confidence": "medium",
     "evidenceBasis": "version-specific-official-bill-text-comparison",
-    "rationale": "Brazil's pending proposal and Canada's lapsed AIDA proposal both used risk-based organizational duties to identify, assess, mitigate or monitor AI-related harm and biased outcomes.",
-    "limits": "Neither endpoint is operative law: Brazil PL 2338 remains pending and may change, while Bill C-27 lapsed on 6 January 2025; their covered systems, actors, assessment forms, remedies and legislative versions differ materially.",
+    "rationale": "Brazil's pending proposal would require a preliminary algorithmic impact assessment, while proposed AIDA section 7 would have required the person responsible for an AI system to assess whether it met the regulation-defined high-impact classification.",
+    "limits": "Neither endpoint is operative law: Brazil PL 2338 remains pending and may change, while Bill C-27 lapsed on 6 January 2025. The Brazilian proposal contemplated a preliminary algorithmic impact assessment, whereas proposed AIDA section 7 addressed threshold classification and left its method and high-impact criteria to regulations; the mechanisms are not equivalent.",
     "verifiedOn": "2026-07-19",
     "sourceSupport": [
       {

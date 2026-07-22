@@ -95,8 +95,15 @@ test("publication-language notes remain instrument-specific", () => {
 
   const pipeda = auditByInstrumentId.get("ca-pipeda");
   assert.deepEqual(pipeda.authoritativeLanguage.languages, ["en-CA", "fr-CA"]);
-  assert.equal(pipeda.localCoverage.localUnitCount, 75);
+  assert.equal(pipeda.localCoverage.localUnitCount, 84);
   assert.match(pipeda.localCoverage.mode, /co-authentic-bilingual/);
+
+  const canadaAdm = auditByInstrumentId.get(
+    "ca-directive-automated-decision-making",
+  );
+  assert.deepEqual(canadaAdm.authoritativeLanguage.languages, ["en-CA", "fr-CA"]);
+  assert.equal(canadaAdm.localCoverage.localUnitCount, 13);
+  assert.match(canadaAdm.localCoverage.mode, /co-published-bilingual-policy/);
 
   const taiwanPdpa = auditByInstrumentId.get("tw-personal-data-protection-act");
   assert.equal(taiwanPdpa.localCoverage.localUnitCount, 66);
@@ -205,7 +212,7 @@ test("new public corpora preserve completeness, lifecycle, language, and rights 
 
   const aida = auditByInstrumentId.get("ca-bill-c-27-aida-2022-lapsed");
   assert.equal(aida.localCoverage.mode, "selected-provision-index");
-  assert.equal(aida.localCoverage.localUnitCount, 4);
+  assert.equal(aida.localCoverage.localUnitCount, 41);
   assert.match(aida.rightsBoundary.projectLicenseBoundary, /source-linked-only/);
   assert.match(aida.caveats.join(" "), /not redistributed/);
 });
