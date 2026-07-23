@@ -1,5 +1,7 @@
 # Compliance Compass: Global AI Governance and Data Regulation Map & Visualization
 
+[**Explore the live Compliance Compass visualization →**](https://global-ai-data-regulation-map.enjolras1832.chatgpt.site/)
+
 An open-source, provision-level knowledge graph and comparative research lab for exploring how AI governance, privacy, data security, and cybersecurity rules connect across jurisdictions.
 
 The project combines a visual regulatory atlas, complete article navigation for selected instruments, qualified crosswalks, legal-status timelines, and side-by-side comparison. It is built for learning and research—not for reducing different legal systems to a single similarity score.
