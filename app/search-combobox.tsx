@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import {
+  Fragment,
   type KeyboardEvent,
   type RefObject,
   useEffect,
@@ -36,10 +37,25 @@ type SearchComboboxProps = {
 };
 
 const resultKindLabels = {
-  instrument: "LEGAL SOURCE",
-  provision: "ARTICLE",
-  concept: "CORE CONCEPT",
+  instrument: "Laws and frameworks",
+  provision: "Articles and provisions",
+  concept: "Core concepts",
 } as const;
+
+const starterSearches = [
+  {
+    query: "GDPR Article 22",
+    description: "Open a specific provision",
+  },
+  {
+    query: "China cross-border data",
+    description: "Search across jurisdictions and topics",
+  },
+  {
+    query: "data minimization",
+    description: "Start from a core concept",
+  },
+] as const;
 
 function ResultKindIcon({ kind }: { kind: SearchResult["document"]["type"] }) {
   if (kind === "instrument") return <BookOpenText aria-hidden="true" />;
@@ -64,10 +80,15 @@ export function SearchCombobox({
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const hasQuery = query.trim().length > 0;
-  const popupVisible = open && hasQuery;
+  const popupVisible = open;
+  const displayResults = hasQuery
+    ? (["instrument", "provision", "concept"] as const).flatMap((kind) =>
+        results.filter((result) => result.document.type === kind),
+      )
+    : [];
   const effectiveActiveIndex =
-    popupVisible && results.length
-      ? activeIndex >= 0 && activeIndex < results.length
+    popupVisible && displayResults.length
+      ? activeIndex >= 0 && activeIndex < displayResults.length
         ? activeIndex
         : 0
       : -1;
@@ -115,40 +136,45 @@ export function SearchCombobox({
       return;
     }
 
-    if (!results.length) return;
+    if (!displayResults.length) return;
     if (event.key === "ArrowDown") {
       event.preventDefault();
       setOpen(true);
-      setActiveIndex((effectiveActiveIndex + 1 + results.length) % results.length);
+      setActiveIndex(
+        (effectiveActiveIndex + 1 + displayResults.length) %
+          displayResults.length,
+      );
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
       setOpen(true);
       setActiveIndex(
-        effectiveActiveIndex <= 0 ? results.length - 1 : effectiveActiveIndex - 1,
+        effectiveActiveIndex <= 0
+          ? displayResults.length - 1
+          : effectiveActiveIndex - 1,
       );
     } else if (event.key === "Home" && popupVisible) {
       event.preventDefault();
       setActiveIndex(0);
     } else if (event.key === "End" && popupVisible) {
       event.preventDefault();
-      setActiveIndex(results.length - 1);
+      setActiveIndex(displayResults.length - 1);
     } else if (
       event.key === "Enter" &&
       popupVisible &&
       effectiveActiveIndex >= 0
     ) {
       event.preventDefault();
-      selectResult(results[effectiveActiveIndex]);
+      selectResult(displayResults[effectiveActiveIndex]);
     }
   }
 
   const statusMessage = isPending
     ? "Updating search suggestions."
-    : results.length
-      ? `${results.length} ranked suggestions. Use the up and down arrow keys to review them.`
+    : displayResults.length
+      ? `${displayResults.length} ranked suggestions. Use the up and down arrow keys to review them.`
       : hasQuery
         ? "No immediate title, concept, or loaded-text match."
-        : "Type to search the regulatory atlas.";
+        : "Choose an example or type to search the regulatory atlas.";
 
   return (
     <div
@@ -185,7 +211,7 @@ export function SearchCombobox({
           autoComplete="off"
           spellCheck={false}
           value={query}
-          onFocus={() => setOpen(hasQuery)}
+          onFocus={() => setOpen(true)}
           onChange={(event) => {
             onQueryChange(event.target.value);
             setOpen(Boolean(event.target.value.trim()));
@@ -219,53 +245,99 @@ export function SearchCombobox({
       {popupVisible && (
         <section className="search-suggestions" aria-label="Search suggestions">
           <header>
-            <span>HYBRID SEARCH</span>
+            <span>{hasQuery ? "SEARCH RESULTS" : "START HERE"}</span>
             <small>
-              {isPending ? "RANKING…" : `${results.length} SUGGESTIONS`}
+              {hasQuery
+                ? isPending
+                  ? "UPDATING…"
+                  : `${displayResults.length} SUGGESTIONS`
+                : "EXAMPLE SEARCHES"}
             </small>
           </header>
           <div id={listboxId} role="listbox" aria-label="Regulatory search results">
-            {results.map((result, index) => (
-              <button
-                type="button"
-                role="option"
-                tabIndex={-1}
-                id={`${listboxId}-option-${index}`}
-                key={`${result.document.type}-${result.document.id}`}
-                aria-selected={index === effectiveActiveIndex}
-                className="search-suggestion"
-                data-result-kind={result.document.type}
-                onMouseMove={() => setActiveIndex(index)}
-                onPointerDown={(event) => {
-                  event.preventDefault();
-                  selectResult(result);
-                }}
-              >
-                <span className="search-suggestion-icon">
-                  <ResultKindIcon kind={result.document.type} />
-                </span>
-                <span className="search-suggestion-copy">
-                  <span className="search-suggestion-heading">
-                    <strong>{result.document.label}</strong>
-                    <em>{resultKindLabels[result.document.type]}</em>
-                  </span>
-                  <small>
-                    {result.document.title ??
-                      result.document.description ??
-                      result.document.summary ??
-                      result.document.jurisdiction}
-                  </small>
-                  <span className="search-suggestion-reason">
-                    <Sparkles aria-hidden="true" />
-                    {result.reason}
-                  </span>
-                </span>
-                <span className="search-suggestion-enter" aria-hidden="true">
-                  ↵
-                </span>
-              </button>
-            ))}
-            {!results.length && (
+            {!hasQuery && (
+              <div className="search-starter-list" role="presentation">
+                {starterSearches.map((starter) => (
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    key={starter.query}
+                    onPointerDown={(event) => event.preventDefault()}
+                    onClick={() => {
+                      onQueryChange(starter.query);
+                      setOpen(true);
+                      setActiveIndex(-1);
+                      inputRef.current?.focus();
+                    }}
+                  >
+                    <Search aria-hidden="true" />
+                    <span>
+                      <strong>{starter.query}</strong>
+                      <small>{starter.description}</small>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+            {hasQuery &&
+              (["instrument", "provision", "concept"] as const).map((kind) => {
+                const groupedResults = displayResults.filter(
+                  (result) => result.document.type === kind,
+                );
+                if (!groupedResults.length) return null;
+                return (
+                  <div className="search-result-group" role="presentation" key={kind}>
+                    <span className="search-result-group-label">
+                      {resultKindLabels[kind]}
+                    </span>
+                    {groupedResults.map((result) => {
+                      const index = displayResults.indexOf(result);
+                      return (
+                        <Fragment key={`${result.document.type}-${result.document.id}`}>
+                          <button
+                            type="button"
+                            role="option"
+                            tabIndex={-1}
+                            id={`${listboxId}-option-${index}`}
+                            aria-selected={index === effectiveActiveIndex}
+                            className="search-suggestion"
+                            data-result-kind={result.document.type}
+                            onMouseMove={() => setActiveIndex(index)}
+                            onPointerDown={(event) => {
+                              event.preventDefault();
+                              selectResult(result);
+                            }}
+                          >
+                            <span className="search-suggestion-icon">
+                              <ResultKindIcon kind={result.document.type} />
+                            </span>
+                            <span className="search-suggestion-copy">
+                              <span className="search-suggestion-heading">
+                                <strong>{result.document.label}</strong>
+                              </span>
+                              <small>
+                                {result.document.title ??
+                                  result.document.description ??
+                                  result.document.summary ??
+                                  result.document.jurisdiction}
+                              </small>
+                              <span className="search-suggestion-reason">
+                                <Sparkles aria-hidden="true" />
+                                {result.reason}
+                              </span>
+                            </span>
+                            <span className="search-suggestion-enter" aria-hidden="true">
+                              ↵
+                            </span>
+                          </button>
+                        </Fragment>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            {hasQuery && !displayResults.length && (
               <p className="search-suggestion-empty">
                 {isPending
                   ? "Updating ranked suggestions…"
@@ -273,45 +345,47 @@ export function SearchCombobox({
               </p>
             )}
           </div>
-          <footer>
-            {fullTextState.phase === "idle" && (
-              <button
-                type="button"
-                className="search-full-text-action"
-                onPointerDown={(event) => event.preventDefault()}
-                onClick={onLoadFullText}
-              >
-                <Database aria-hidden="true" />
-                SEARCH COMPLETE LEGAL TEXT
-              </button>
-            )}
-            {fullTextState.phase === "loading" && (
-              <span className="search-layer-status" role="status">
-                <Database aria-hidden="true" />
-                LOADING FULL-TEXT LAYER…
+          {hasQuery && (
+            <footer>
+              {fullTextState.phase === "idle" && (
+                <button
+                  type="button"
+                  className="search-full-text-action"
+                  onPointerDown={(event) => event.preventDefault()}
+                  onClick={onLoadFullText}
+                >
+                  <Database aria-hidden="true" />
+                  INCLUDE FULL ARTICLE TEXT
+                </button>
+              )}
+              {fullTextState.phase === "loading" && (
+                <span className="search-layer-status" role="status">
+                  <Database aria-hidden="true" />
+                  LOADING FULL-TEXT LAYER…
+                </span>
+              )}
+              {fullTextState.phase === "ready" && (
+                <span className="search-layer-status">
+                  <Database aria-hidden="true" />
+                  COMPLETE TEXT INDEXED
+                </span>
+              )}
+              {fullTextState.phase === "error" && (
+                <button
+                  type="button"
+                  className="search-full-text-action"
+                  onPointerDown={(event) => event.preventDefault()}
+                  onClick={onLoadFullText}
+                >
+                  <Database aria-hidden="true" />
+                  RETRY FULL-TEXT LAYER
+                </button>
+              )}
+              <span className="search-privacy-note">
+                SEARCH RUNS ON THIS DEVICE
               </span>
-            )}
-            {fullTextState.phase === "ready" && (
-              <span className="search-layer-status">
-                <Database aria-hidden="true" />
-                COMPLETE TEXT INDEXED
-              </span>
-            )}
-            {fullTextState.phase === "error" && (
-              <button
-                type="button"
-                className="search-full-text-action"
-                onPointerDown={(event) => event.preventDefault()}
-                onClick={onLoadFullText}
-              >
-                <Database aria-hidden="true" />
-                RETRY FULL-TEXT LAYER
-              </button>
-            )}
-            <span className="search-privacy-note">
-              LOCAL RANKING · NO QUERY UPLOAD
-            </span>
-          </footer>
+            </footer>
+          )}
         </section>
       )}
     </div>

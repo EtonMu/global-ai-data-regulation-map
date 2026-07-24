@@ -339,7 +339,10 @@ test("server returns a neutral static atlas shell without loading the corpus", a
 });
 
 test("the browser atlas retains semantic controls and the relation globe contract", () => {
-  assert.match(explorerSource, /<main className="terminal-app">/);
+  assert.match(
+    explorerSource,
+    /<main className="terminal-app" data-workspace-density=\{workspaceDensity\}>/,
+  );
   assert.match(
     explorerSource,
     /className="corpus-navigator"[\s\S]*?aria-label="Global regulation corpus"/,
@@ -361,7 +364,11 @@ test("the browser atlas retains semantic controls and the relation globe contrac
   );
   assert.match(
     explorerSource,
-    /className="mode-switch"[\s\S]*?aria-label="Explorer mode"[\s\S]*?data-active-view=/,
+    /className="primary-navigation"[\s\S]*?aria-label="Primary navigation"[\s\S]*?primaryNavigation\.map/,
+  );
+  assert.match(
+    explorerSource,
+    /className="workspace-density-toggle"[\s\S]*?Full workspace[\s\S]*?Guided view/,
   );
   assert.match(
     explorerSource,
@@ -373,8 +380,8 @@ test("the browser atlas retains semantic controls and the relation globe contrac
   );
   assert.match(
     explorerSource,
-    /const atlasGlobePanel =[\s\S]*?<RegulationGlobe[\s\S]*?const rightVisualizationPanel =/,
-    "the initial Atlas must mount the relation globe in the right visualization column",
+    /const atlasGlobePanel =[\s\S]*?workspaceDensity === "research"[\s\S]*?<RegulationGlobe[\s\S]*?const rightVisualizationPanel =/,
+    "the full research workspace must mount the relation globe in the right visualization column",
   );
   assert.match(
     globeSource,

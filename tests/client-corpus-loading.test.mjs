@@ -90,8 +90,10 @@ test("complete corpora are fetched and hydrated by instrument instead of importe
   );
 });
 
-test("instrument overviews disclose corpus composition and redistribution boundaries", () => {
-  assert.match(explorerSource, /LOCAL_CORPUS_COVERAGE/);
+test("instrument overviews progressively disclose corpus composition and redistribution boundaries", () => {
+  assert.match(explorerSource, /<details className="instrument-research-details">/);
+  assert.match(explorerSource, /Source, version and corpus details/);
+  assert.match(explorerSource, /LOCAL CORPUS COVERAGE/);
   assert.match(explorerSource, /RIGHTS \/ REDISTRIBUTION/);
   assert.match(explorerSource, /sourceTextUnitCount/);
   assert.match(explorerSource, /analyticalAnchorCount/);

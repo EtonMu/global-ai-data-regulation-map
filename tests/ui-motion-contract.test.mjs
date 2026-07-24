@@ -237,7 +237,13 @@ test("core concepts render as an academic research index and evidence workspace"
   assert.match(explorerSource, /function CoreConceptExplorer\s*\(/);
   assert.match(
     explorerSource,
-    /CORE_CONCEPT_INDEX \/ EDITORIAL SYNTHESIS[\s\S]*?Core concepts for comparative analysis\./,
+    /CORE CONCEPTS[\s\S]*?Start with the fundamentals\./,
+    "the concept index must begin with a guided learning entry point",
+  );
+  assert.match(
+    explorerSource,
+    /fundamentalConceptIds[\s\S]*?className="concept-fundamentals"/,
+    "the concept index must surface a compact set of foundational concepts",
   );
   assert.match(
     explorerSource,

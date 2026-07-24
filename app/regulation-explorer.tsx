@@ -46,6 +46,7 @@ import {
   PanelRightClose,
   PanelRightOpen,
   Scale,
+  SlidersHorizontal,
   Sparkles,
   Sun,
   type LucideIcon,
@@ -525,6 +526,7 @@ type View =
 type ReaderTab = "text" | "analysis" | "sources";
 type Theme = "dark" | "bright";
 type NavigatorTab = "sources" | "concepts";
+type WorkspaceDensity = "guided" | "research";
 type TransitionKind = "theme" | "view";
 type ViewDirection = "forward" | "backward";
 
@@ -540,12 +542,13 @@ type TransitionDocument = Document & {
 };
 
 const themeChangeEvent = "gadrm-theme-change";
-const columnLayoutStorageKey = "gadrm-column-layout";
+const columnLayoutStorageKey = "gadrm-column-layout-v2";
+const workspaceDensityStorageKey = "gadrm-workspace-density";
 const mobileNavigatorMediaQuery = "(max-width: 760px)";
 const defaultColumnLayout = {
   leftWidth: 268,
   rightWidth: 390,
-  leftCollapsed: false,
+  leftCollapsed: true,
   rightCollapsed: false,
 };
 const columnBounds = {
@@ -1390,6 +1393,12 @@ const viewLabels: Array<{ id: View; label: string; icon: LucideIcon }> = [
   { id: "timeline", label: "Timeline", icon: Clock3 },
   { id: "compare", label: "Compare", icon: Columns2 },
 ];
+
+const primaryNavigation = [
+  { id: "explore", label: "Explore", icon: MapIcon },
+  { id: "concepts", label: "Core concepts", icon: BrainCircuit },
+  { id: "research", label: "Research Lab", icon: FlaskConical },
+] as const;
 
 const researchLabViewIds = [
   "observatory",
@@ -2431,7 +2440,7 @@ function CorpusNavigator({
       data-navigator-tab={navigatorTab}
     >
       <div className="navigator-header">
-        <span className="terminal-label">RESEARCH_NAV</span>
+        <span className="terminal-label">RESEARCH INDEX</span>
         <span>
           {activeCount} {navigatorTab === "sources" ? "sources" : "concepts"}
         </span>
@@ -2764,9 +2773,17 @@ function CorpusNavigator({
 
 function GlobalAtlas({
   onOpenInstrument,
+  onStartSearch,
+  onOpenConceptIndex,
+  onOpenResearch,
 }: {
   onOpenInstrument: (instrumentId: string) => void;
+  onStartSearch: (query?: string) => void;
+  onOpenConceptIndex: () => void;
+  onOpenResearch: () => void;
 }) {
+  const [browserOpen, setBrowserOpen] = useState(false);
+  const browserRef = useRef<HTMLDetailsElement>(null);
   const internationalFrameworkCount =
     atlasGroups.find((group) => group.id === "frameworks")?.instruments.length ?? 0;
   const softLawCount = instruments.filter(
@@ -2775,103 +2792,195 @@ function GlobalAtlas({
   const legalSystemCount = atlasGroups.filter(
     (group) => group.id !== "frameworks",
   ).length;
+
+  function revealJurisdictionBrowser() {
+    setBrowserOpen(true);
+    window.requestAnimationFrame(() => {
+      browserRef.current?.scrollIntoView({
+        block: "start",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    });
+  }
+
   return (
     <section className="atlas-view" aria-labelledby="atlas-title">
-      <div className="view-intro">
-        <div>
-          <p className="terminal-label">GLOBAL_REGULATORY_ATLAS / RESEARCH CORPUS</p>
-          <h1 id="atlas-title">Comparative AI and data regulation corpus.</h1>
+      <div className="guided-atlas-hero">
+        <div className="guided-atlas-copy">
+          <p className="terminal-label">GLOBAL AI + DATA REGULATION</p>
+          <h1 id="atlas-title">Start with a law, article or governance question.</h1>
           <p>
-            Browse primary legal sources, executive action, proposed legislation,
-            standards and soft law through a versioned comparative index.
+            Search across primary legal sources, regulations, standards and
+            soft law, then follow the evidence into related concepts and
+            provisions.
           </p>
+          <button
+            type="button"
+            className="guided-primary-action"
+            onClick={() => onStartSearch()}
+          >
+            <Sparkles aria-hidden="true" />
+            Search the regulatory corpus
+            <ChevronRight aria-hidden="true" />
+          </button>
+          <div className="guided-search-examples" aria-label="Example searches">
+            <span>Try:</span>
+            {[
+              "GDPR Article 22",
+              "China cross-border data",
+              "data minimization",
+            ].map((query) => (
+              <button
+                type="button"
+                key={query}
+                onClick={() => onStartSearch(query)}
+              >
+                {query}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="corpus-readout" aria-label="Corpus status">
-          <span><strong>{legalSystemCount}</strong> legal systems</span>
-          <span><strong>{internationalFrameworkCount}</strong> international frameworks</span>
-          <span><strong>{softLawCount}</strong> soft-law instruments</span>
-          <span><strong>{instruments.length}</strong> instruments</span>
-          <span><strong>{provisions.length}</strong> indexed provisions</span>
-          <span><strong>{relations.length}</strong> qualified links</span>
-          <span><strong>{concepts.length}</strong> core concepts</span>
+        <div className="guided-atlas-summary" aria-label="Corpus summary">
+          <span>
+            <strong>{instruments.length}</strong>
+            legal sources
+          </span>
+          <span>
+            <strong>{provisions.length}</strong>
+            indexed provisions
+          </span>
+          <span>
+            <strong>{concepts.length}</strong>
+            core concepts
+          </span>
         </div>
       </div>
-      <NodeLegend />
-      <div className="atlas-lanes">
-        <div className="force-axis" aria-hidden="true">
-          <span>JURISDICTION / AUTHORITY</span>
-          <span>INSTRUMENT NODES →</span>
-        </div>
-        {atlasGroups.map((group, groupIndex) => (
-          <section className="atlas-lane" key={group.id} data-atlas-group={group.id}>
-            <header>
-              <span className="lane-index">
-                {String(groupIndex + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h2>
-                  <JurisdictionMark jurisdictionId={group.markId} />
-                  {group.label}
-                </h2>
-                <p>{group.description}</p>
-              </div>
-            </header>
-            <div className="instrument-track">
-              {group.instruments.map((instrument) => {
-                const count =
-                  provisionsByInstrument.get(instrument.id)?.length ?? 0;
-                return (
-                  <button
-                    type="button"
-                    key={instrument.id}
-                    className={[
-                      "instrument-node",
-                      "force-" + forceClass(instrument),
-                      "status-" + statusClass(instrument),
-                    ].join(" ")}
-                    onClick={() => onOpenInstrument(instrument.id)}
-                    aria-label={
-                      instrument.shortTitle +
-                      ", " +
-                      (jurisdictionById.get(instrument.jurisdictionId)
-                        ?.shortName ?? instrument.jurisdictionId) +
-                      ", " +
-                      humanize(instrument.lifecycleStatus) +
-                      (forceClass(instrument) === "soft"
-                        ? ", soft law"
-                        : "") +
-                      ", " +
-                      count +
-                      " indexed provisions"
-                    }
-                  >
-                    <span className="instrument-node-signal" aria-hidden="true" />
-                    <span className="instrument-kind-icon" aria-hidden="true">
-                      <InstrumentKindIcon instrument={instrument} />
-                    </span>
-                    <span className="instrument-node-heading">
-                      <JurisdictionMark
-                        jurisdictionId={instrument.jurisdictionId}
-                        small
-                      />
-                      <strong>{instrument.shortTitle}</strong>
-                    </span>
-                    <span className="instrument-node-classification">
-                      {forceClass(instrument) === "soft" && (
-                        <strong>SOFT LAW</strong>
-                      )}
-                      {humanize(instrument.category)}
-                    </span>
-                    <small>
-                      {humanize(instrument.lifecycleStatus)} · {count}
-                    </small>
-                  </button>
-                );
-              })}
+
+      <div className="guided-pathways" aria-label="Choose a starting point">
+        <button type="button" onClick={revealJurisdictionBrowser}>
+          <MapIcon aria-hidden="true" />
+          <span>
+            <strong>Browse laws</strong>
+            <small>Explore by jurisdiction and legal source</small>
+          </span>
+          <ChevronRight aria-hidden="true" />
+        </button>
+        <button type="button" onClick={onOpenConceptIndex}>
+          <BrainCircuit aria-hidden="true" />
+          <span>
+            <strong>Explore core concepts</strong>
+            <small>Start with privacy, security or AI governance</small>
+          </span>
+          <ChevronRight aria-hidden="true" />
+        </button>
+        <button type="button" onClick={onOpenResearch}>
+          <Columns2 aria-hidden="true" />
+          <span>
+            <strong>Compare regulatory patterns</strong>
+            <small>Open the advanced comparative research tools</small>
+          </span>
+          <ChevronRight aria-hidden="true" />
+        </button>
+      </div>
+
+      <details
+        ref={browserRef}
+        className="atlas-browser"
+        open={browserOpen}
+        onToggle={(event) => setBrowserOpen(event.currentTarget.open)}
+      >
+        <summary>
+          <span>
+            <MapIcon aria-hidden="true" />
+            Browse all laws and frameworks
+          </span>
+          <small>
+            {legalSystemCount} legal systems · {internationalFrameworkCount}{" "}
+            international frameworks · {softLawCount} soft-law instruments
+          </small>
+          <ChevronRight aria-hidden="true" />
+        </summary>
+        <div className="atlas-browser-content">
+          <NodeLegend />
+          <div className="atlas-lanes">
+            <div className="force-axis" aria-hidden="true">
+              <span>JURISDICTION / AUTHORITY</span>
+              <span>INSTRUMENT NODES →</span>
             </div>
-          </section>
-        ))}
-      </div>
+            {atlasGroups.map((group, groupIndex) => (
+              <section className="atlas-lane" key={group.id} data-atlas-group={group.id}>
+                <header>
+                  <span className="lane-index">
+                    {String(groupIndex + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h2>
+                      <JurisdictionMark jurisdictionId={group.markId} />
+                      {group.label}
+                    </h2>
+                    <p>{group.description}</p>
+                  </div>
+                </header>
+                <div className="instrument-track">
+                  {group.instruments.map((instrument) => {
+                    const count =
+                      provisionsByInstrument.get(instrument.id)?.length ?? 0;
+                    return (
+                      <button
+                        type="button"
+                        key={instrument.id}
+                        className={[
+                          "instrument-node",
+                          "force-" + forceClass(instrument),
+                          "status-" + statusClass(instrument),
+                        ].join(" ")}
+                        onClick={() => onOpenInstrument(instrument.id)}
+                        aria-label={
+                          instrument.shortTitle +
+                          ", " +
+                          (jurisdictionById.get(instrument.jurisdictionId)
+                            ?.shortName ?? instrument.jurisdictionId) +
+                          ", " +
+                          humanize(instrument.lifecycleStatus) +
+                          (forceClass(instrument) === "soft"
+                            ? ", soft law"
+                            : "") +
+                          ", " +
+                          count +
+                          " indexed provisions"
+                        }
+                      >
+                        <span className="instrument-node-signal" aria-hidden="true" />
+                        <span className="instrument-kind-icon" aria-hidden="true">
+                          <InstrumentKindIcon instrument={instrument} />
+                        </span>
+                        <span className="instrument-node-heading">
+                          <JurisdictionMark
+                            jurisdictionId={instrument.jurisdictionId}
+                            small
+                          />
+                          <strong>{instrument.shortTitle}</strong>
+                        </span>
+                        <span className="instrument-node-classification">
+                          {forceClass(instrument) === "soft" && (
+                            <strong>SOFT LAW</strong>
+                          )}
+                          {humanize(instrument.category)}
+                        </span>
+                        <small>
+                          {humanize(instrument.lifecycleStatus)} · {count}
+                        </small>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </details>
     </section>
   );
 }
@@ -2892,23 +3001,53 @@ function CoreConceptExplorer({
       const evidence = conceptEvidenceById.get(concept.id);
       return Boolean(evidence && evidence.instrumentIds.size > 0);
     }).length;
+    const fundamentalConceptIds = [
+      "lawfulness-consent-choice",
+      "purpose-limitation",
+      "data-minimization",
+      "privacy-by-design-default",
+      "transparency-explainability",
+      "security-controls",
+    ];
+    const fundamentalConcepts = fundamentalConceptIds
+      .map((conceptId) => conceptById.get(conceptId))
+      .filter((concept): concept is Concept => Boolean(concept));
     return (
       <section className="concept-view" aria-labelledby="concept-index-title">
         <div className="concept-masthead">
           <div>
-            <p className="terminal-label">CORE_CONCEPT_INDEX / EDITORIAL SYNTHESIS</p>
-            <h1 id="concept-index-title">Core concepts for comparative analysis.</h1>
+            <p className="terminal-label">CORE CONCEPTS</p>
+            <h1 id="concept-index-title">Start with the fundamentals.</h1>
             <p>
-              A controlled vocabulary for studying recurring privacy, data-governance,
-              cybersecurity and AI-governance ideas across differently structured sources.
+              Learn the recurring privacy, data-governance, cybersecurity and
+              AI-governance ideas first, then trace where they appear across
+              different legal systems.
             </p>
           </div>
           <div className="concept-readout" aria-label="Concept index status">
             <span><strong>{conceptThemes.length}</strong> themes</span>
             <span><strong>{concepts.length}</strong> concepts</span>
             <span><strong>{mappedConceptCount}</strong> linked concepts</span>
-            <span><strong>4</strong> public IAPP frameworks reviewed</span>
           </div>
+        </div>
+        <div className="concept-fundamentals" aria-label="Fundamental core concepts">
+          {fundamentalConcepts.map((concept) => {
+            const evidence = conceptEvidenceById.get(concept.id);
+            return (
+              <button
+                type="button"
+                key={concept.id}
+                onClick={() => onOpenConcept(concept.id)}
+              >
+                <ConceptIcon conceptId={concept.id} />
+                <span>
+                  <strong>{concept.label}</strong>
+                  <small>{concept.description}</small>
+                </span>
+                <em>{evidence?.instrumentIds.size ?? 0} sources</em>
+              </button>
+            );
+          })}
         </div>
         <div className="academic-method-note">
           <Info aria-hidden="true" />
@@ -2917,47 +3056,57 @@ function CoreConceptExplorer({
             does not establish legal equivalence, identical scope, or compliance.
           </p>
         </div>
-        <div className="concept-theme-atlas">
-          {conceptThemes.map((theme, themeIndex) => (
-            <section className="concept-theme-lane" key={theme.id}>
-              <header>
-                <span className="lane-index">
-                  {String(themeIndex + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h2>
-                    <ConceptThemeIcon themeId={theme.id} />
-                    {theme.label}
-                  </h2>
-                  <p>{theme.summary}</p>
+        <details className="concept-complete-index">
+          <summary>
+            <span>
+              <BrainCircuit aria-hidden="true" />
+              Browse the complete concept taxonomy
+            </span>
+            <small>{concepts.length} concepts across {conceptThemes.length} themes</small>
+            <ChevronRight aria-hidden="true" />
+          </summary>
+          <div className="concept-theme-atlas">
+            {conceptThemes.map((theme, themeIndex) => (
+              <section className="concept-theme-lane" key={theme.id}>
+                <header>
+                  <span className="lane-index">
+                    {String(themeIndex + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h2>
+                      <ConceptThemeIcon themeId={theme.id} />
+                      {theme.label}
+                    </h2>
+                    <p>{theme.summary}</p>
+                  </div>
+                </header>
+                <div className="concept-node-track">
+                  {(conceptsByTheme.get(theme.id) ?? []).map((concept) => {
+                    const evidence = conceptEvidenceById.get(concept.id);
+                    return (
+                      <button
+                        type="button"
+                        className="concept-node"
+                        key={concept.id}
+                        onClick={() => onOpenConcept(concept.id)}
+                      >
+                        <span className="concept-node-heading">
+                          <ConceptIcon conceptId={concept.id} />
+                          <strong>{concept.label}</strong>
+                        </span>
+                        <span>{concept.description}</span>
+                        <small>
+                          {evidence?.instrumentIds.size ?? 0} sources ·{" "}
+                          {evidence?.provisionIds.size ?? 0} provisions
+                        </small>
+                      </button>
+                    );
+                  })}
                 </div>
-              </header>
-              <div className="concept-node-track">
-                {(conceptsByTheme.get(theme.id) ?? []).map((concept) => {
-                  const evidence = conceptEvidenceById.get(concept.id);
-                  return (
-                    <button
-                      type="button"
-                      className="concept-node"
-                      key={concept.id}
-                      onClick={() => onOpenConcept(concept.id)}
-                    >
-                      <span className="concept-node-heading">
-                        <ConceptIcon conceptId={concept.id} />
-                        <strong>{concept.label}</strong>
-                      </span>
-                      <span>{concept.description}</span>
-                      <small>
-                        {evidence?.instrumentIds.size ?? 0} sources ·{" "}
-                        {evidence?.provisionIds.size ?? 0} provisions
-                      </small>
-                    </button>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
-        </div>
+              </section>
+            ))}
+          </div>
+        </details>
         <p className="concept-corpus-attribution">
           Editorial synthesis informed by the public IAPP CIPP/E, CIPM, CIPT and AIGP
           Bodies of Knowledge; this project is not affiliated with or endorsed by IAPP.
@@ -3226,7 +3375,7 @@ function InstrumentGenome({
         <div>
           <p className="terminal-label">
             <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
-            INSTRUMENT_GENOME / {jurisdiction?.shortName ?? instrument.jurisdictionId}
+            LAW OVERVIEW · {jurisdiction?.shortName ?? instrument.jurisdictionId}
           </p>
           <h1 id="instrument-title">{instrument.shortTitle}</h1>
           <p className="bilingual-instrument-title">
@@ -3243,118 +3392,138 @@ function InstrumentGenome({
             {humanize(instrument.lifecycleStatus)}
           </span>
           <span>{humanize(instrument.legalForce)}</span>
-          <span>{sourceTextUnitCount} {sourceUnitLabel}</span>
-          {analyticalAnchorCount > 0 && (
-            <span>{analyticalAnchorCount} analytical anchors</span>
-          )}
           <span>Version {instrument.version}</span>
         </div>
       </div>
-      <div className="instrument-context">
-        <p>{instrument.summary}</p>
-        <dl>
-          <div>
-            <dt>Issued by</dt>
-            <dd>{instrument.issuingBodies.join(", ")}</dd>
-          </div>
-          <div>
-            <dt>Effective</dt>
-            <dd>{formatDate(instrument.dates.effectiveFrom)}</dd>
-          </div>
-          <div>
-            <dt>General application</dt>
-            <dd>{formatDate(instrument.dates.generalApplicationFrom)}</dd>
-          </div>
-          {instrument.dates.lastAmendedOn && (
-            <div>
-              <dt>Last amended</dt>
-              <dd>{formatDate(instrument.dates.lastAmendedOn)}</dd>
-            </div>
-          )}
-          {instrument.dates.latestAmendmentEffectiveFrom && (
-            <div>
-              <dt>Current text effective</dt>
-              <dd>
-                {formatDate(instrument.dates.latestAmendmentEffectiveFrom)}
-              </dd>
-            </div>
-          )}
-          <div>
-            <dt>Text access</dt>
-            <dd>{humanize(instrument.textAvailability.mode)}</dd>
-          </div>
-          <div>
-            <dt>Indexed composition</dt>
-            <dd>
-              {sourceTextUnitCount} source-text units + {analyticalAnchorCount}{" "}
-              analytical anchors
-            </dd>
-          </div>
-        </dl>
-      </div>
+      <p className="instrument-summary">{instrument.summary}</p>
 
-      {sourceAudit && (
-        <div
-          className="instrument-corpus-profile"
-          aria-label="Local corpus coverage and redistribution status"
-        >
-          <section className="instrument-corpus-disclosure">
-            <span className="terminal-label">LOCAL_CORPUS_COVERAGE</span>
-            <strong>{humanize(sourceAudit.localCoverage.mode)}</strong>
-            <div className="instrument-corpus-counts" aria-label="Indexed corpus composition">
-              <span>
-                <b>{sourceTextUnitCount}</b>
-                {sourceUnitLabel}
-              </span>
-              <span>
-                <b>{analyticalAnchorCount}</b>
-                analytical {analyticalAnchorCount === 1 ? "anchor" : "anchors"}
-              </span>
+      <details className="instrument-research-details">
+        <summary>
+          <span>
+            <Info aria-hidden="true" />
+            Source, version and corpus details
+          </span>
+          <small>
+            {sourceTextUnitCount} source-text units
+            {analyticalAnchorCount > 0
+              ? ` · ${analyticalAnchorCount} analytical anchors`
+              : ""}
+          </small>
+          <ChevronRight aria-hidden="true" />
+        </summary>
+        <div className="instrument-research-details-content">
+          <div className="instrument-context">
+            <dl>
+              <div>
+                <dt>Issued by</dt>
+                <dd>{instrument.issuingBodies.join(", ")}</dd>
+              </div>
+              <div>
+                <dt>Effective</dt>
+                <dd>{formatDate(instrument.dates.effectiveFrom)}</dd>
+              </div>
+              <div>
+                <dt>General application</dt>
+                <dd>{formatDate(instrument.dates.generalApplicationFrom)}</dd>
+              </div>
+              {instrument.dates.lastAmendedOn && (
+                <div>
+                  <dt>Last amended</dt>
+                  <dd>{formatDate(instrument.dates.lastAmendedOn)}</dd>
+                </div>
+              )}
+              {instrument.dates.latestAmendmentEffectiveFrom && (
+                <div>
+                  <dt>Current text effective</dt>
+                  <dd>
+                    {formatDate(instrument.dates.latestAmendmentEffectiveFrom)}
+                  </dd>
+                </div>
+              )}
+              <div>
+                <dt>Text access</dt>
+                <dd>{humanize(instrument.textAvailability.mode)}</dd>
+              </div>
+              <div>
+                <dt>Indexed composition</dt>
+                <dd>
+                  {sourceTextUnitCount} source-text units + {analyticalAnchorCount}{" "}
+                  analytical anchors
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          {sourceAudit && (
+            <div>
+              <div
+                className="instrument-corpus-profile"
+                aria-label="Local corpus coverage and redistribution status"
+              >
+                <section className="instrument-corpus-disclosure">
+                  <span className="terminal-label">LOCAL CORPUS COVERAGE</span>
+                  <strong>{humanize(sourceAudit.localCoverage.mode)}</strong>
+                  <div className="instrument-corpus-counts" aria-label="Indexed corpus composition">
+                    <span>
+                      <b>{sourceTextUnitCount}</b>
+                      {sourceUnitLabel}
+                    </span>
+                    <span>
+                      <b>{analyticalAnchorCount}</b>
+                      analytical {analyticalAnchorCount === 1 ? "anchor" : "anchors"}
+                    </span>
+                  </div>
+                  <p>{sourceAudit.localCoverage.statement}</p>
+                  {instrument.textAvailability.note && (
+                    <p>{instrument.textAvailability.note}</p>
+                  )}
+                </section>
+                {sourceAudit.rightsBoundary && (
+                  <section className="instrument-corpus-disclosure is-rights-boundary">
+                    <span className="terminal-label">RIGHTS / REDISTRIBUTION</span>
+                    <strong>
+                      {humanize(sourceAudit.rightsBoundary.projectLicenseBoundary)}
+                    </strong>
+                    <p>{sourceAudit.rightsBoundary.note}</p>
+                  </section>
+                )}
+              </div>
             </div>
-            <p>{sourceAudit.localCoverage.statement}</p>
-            {instrument.textAvailability.note && (
-              <p>{instrument.textAvailability.note}</p>
-            )}
-          </section>
-          {sourceAudit.rightsBoundary && (
-            <section className="instrument-corpus-disclosure is-rights-boundary">
-              <span className="terminal-label">RIGHTS / REDISTRIBUTION</span>
-              <strong>
-                {humanize(sourceAudit.rightsBoundary.projectLicenseBoundary)}
-              </strong>
-              <p>{sourceAudit.rightsBoundary.note}</p>
-            </section>
+          )}
+
+          {instrumentLinks.length > 0 && (
+            <div className="instrument-relations" aria-label="Instrument-level links">
+              <span>RELATED INSTRUMENTS</span>
+              {instrumentLinks.map(({ relation, related }) => (
+                <button
+                  type="button"
+                  key={relation.id}
+                  onClick={() => onOpenInstrument(related.id)}
+                >
+                  <small>
+                    {relationDirectionMarker(relation, instrument.id)}{" "}
+                    {relationLabels[relation.type] ?? humanize(relation.type)}
+                  </small>
+                  <strong>{related.shortTitle}</strong>
+                  <span>{humanize(relation.status)}</span>
+                </button>
+              ))}
+            </div>
           )}
         </div>
-      )}
-
-      {instrumentLinks.length > 0 && (
-        <div className="instrument-relations" aria-label="Instrument-level links">
-          <span>INSTRUMENT_LINKS</span>
-          {instrumentLinks.map(({ relation, related }) => (
-            <button
-              type="button"
-              key={relation.id}
-              onClick={() => onOpenInstrument(related.id)}
-            >
-              <small>
-                {relationDirectionMarker(relation, instrument.id)}{" "}
-                {relationLabels[relation.type] ?? humanize(relation.type)}
-              </small>
-              <strong>{related.shortTitle}</strong>
-              <span>{humanize(relation.status)}</span>
-            </button>
-          ))}
-        </div>
-      )}
+      </details>
 
       {groups.length ? (
         <div className="genome">
           {groups.map((group, groupIndex) => {
             const sections = groupProvisionSections(group.provisions);
             return (
-            <section className="genome-chapter" key={group.id}>
-              <header>
+            <details
+              className="genome-chapter"
+              key={group.id}
+              open={groupIndex === 0}
+            >
+              <summary>
                 <span>{String(groupIndex + 1).padStart(2, "0")}</span>
                 <div>
                   <p>{group.label}</p>
@@ -3364,7 +3533,8 @@ function InstrumentGenome({
                   {group.provisions.length}{" "}
                   {provisionUnitLabel(group.provisions).toLowerCase()}
                 </small>
-              </header>
+                <ChevronRight aria-hidden="true" />
+              </summary>
               <div className="genome-sections">
                 {sections.map((section) => {
                   const overview = sectionOverview(instrument.id, section);
@@ -3474,7 +3644,7 @@ function InstrumentGenome({
                   );
                 })}
               </div>
-            </section>
+            </details>
             );
           })}
         </div>
@@ -3535,11 +3705,11 @@ function InstrumentConnectionCanvas({
   const mappedProvisionCount = new Set(
     clusters.flatMap((cluster) => cluster.provisions.map((provision) => provision.id)),
   ).size;
-  const visibleClusters = clusters.slice(0, 8);
-  const overflowClusters = clusters.slice(8);
+  const visibleClusters = clusters.slice(0, 6);
+  const overflowClusters = clusters.slice(6);
 
   function renderCluster(cluster: InstrumentConceptCluster, compact = false) {
-    const visibleProvisions = cluster.provisions.slice(0, compact ? 5 : 8);
+    const visibleProvisions = cluster.provisions.slice(0, compact ? 3 : 4);
     const overflowProvisions = cluster.provisions.slice(visibleProvisions.length);
     return (
       <article
@@ -3624,14 +3794,17 @@ function InstrumentConnectionCanvas({
     >
       <div className="connections-header">
         <div>
-          <p className="terminal-label">INSTRUMENT_KNOWLEDGE_GRAPH</p>
+          <p className="terminal-label">RELATED CONCEPTS + PROVISIONS</p>
           <h1 id="instrument-connections-title">
             <span className="connection-title-instrument">
               {instrument.shortTitle}
             </span>
             <span className="connection-title-locator">Concept map</span>
           </h1>
-          <p>Law → core concept → indexed Article</p>
+          <p>
+            Start with the strongest concept clusters. Expand only when you
+            need the complete relationship set.
+          </p>
         </div>
         <div className="connection-readout">
           <span><BrainCircuit aria-hidden="true" />{clusters.length} concepts</span>
@@ -3661,7 +3834,7 @@ function InstrumentConnectionCanvas({
           {overflowClusters.length > 0 && (
             <details className="instrument-cluster-overflow">
               <summary>
-                +{overflowClusters.length} ADDITIONAL CONCEPT CLUSTERS
+                Show {overflowClusters.length} more concept clusters
               </summary>
               <div>
                 {overflowClusters.map((cluster) => renderCluster(cluster, true))}
@@ -3769,7 +3942,7 @@ function ConnectionCanvas({
     <section className="connections-view" aria-labelledby="connections-title">
       <div className="connections-header">
         <div>
-          <p className="terminal-label">ONE_HOP_PROVISION_NEIGHBORHOOD</p>
+          <p className="terminal-label">RELATED CONCEPTS + PROVISIONS</p>
           <h1 id="connections-title">
             <span className="connection-title-instrument">
               {anchorInstrument.shortTitle}
@@ -4031,7 +4204,7 @@ function ConnectionCanvas({
           {(overflowConnections.length > 0 || overflowConcepts.length > 0) && (
             <details className="graph-overflow-list">
               <summary>
-                OPEN ALL RELATION NODES · {overflowConnections.length} mappings ·{" "}
+                Show all relationships · {overflowConnections.length} mappings ·{" "}
                 {overflowConcepts.length} concepts
               </summary>
               <div>
@@ -4359,7 +4532,7 @@ function ProvisionReader({
           .join(" ")}
         aria-label="Provision reader"
       >
-        <span className="terminal-label">PROVISION_READER / STANDBY</span>
+        <span className="terminal-label">ARTICLE TEXT / STANDBY</span>
         <div className="idle-reticle" aria-hidden="true">
           <Database />
           <i />
@@ -4673,7 +4846,7 @@ function ProvisionReader({
       className={["provision-reader", className].filter(Boolean).join(" ")}
       aria-label="Provision reader"
     >
-      <span className="terminal-label">PROVISION_READER / {readerTab.toUpperCase()}</span>
+      <span className="terminal-label">ARTICLE READER · {readerTab.toUpperCase()}</span>
       <div className="reader-heading">
         <small>
           <JurisdictionMark
@@ -5187,7 +5360,7 @@ function CompareTray({
   if (!compareIds.length) return null;
   return (
     <div className="compare-tray" aria-label="Provision comparison tray">
-      <span className="terminal-label">COMPARE_BUFFER</span>
+      <span className="terminal-label">COMPARE</span>
       <div className="compare-slots">
         {[0, 1].map((index) => {
           const provision = provisionMap.get(compareIds[index]);
@@ -5225,7 +5398,7 @@ function CompareTray({
         onClick={onOpen}
         disabled={compareIds.length < 2}
       >
-        COMPARE {compareIds.length}/2 →
+        {compareIds.length < 2 ? "SELECT ONE MORE ARTICLE" : "OPEN COMPARISON →"}
       </button>
       <button type="button" className="compare-clear" onClick={onClear}>
         CLEAR
@@ -5262,6 +5435,8 @@ export default function RegulationExplorer() {
   >({});
   const [fullCorpusLoadState, setFullCorpusLoadState] =
     useState<CorpusLoadState>({ phase: "idle" });
+  const [workspaceDensity, setWorkspaceDensity] =
+    useState<WorkspaceDensity>("guided");
   const deferredSearchQuery = useDeferredValue(state.query);
   const hybridSearchIndex = useMemo(() => {
     // Corpus hydration mutates stable provision objects; the revision is the
@@ -5304,7 +5479,10 @@ export default function RegulationExplorer() {
   const navigationHistoryRef = useRef<ExplorerState[]>([]);
   const allCorpusRequestRef = useRef<Promise<void> | null>(null);
   const hasRightColumn =
-    state.view === "atlas" ||
+    (state.view === "atlas" &&
+      (workspaceDensity === "research" ||
+        (state.navigatorTab === "concepts" &&
+          Boolean(state.selectedConceptId)))) ||
     (state.navigatorTab === "sources" &&
       (state.view === "instrument" || state.view === "connections"));
 
@@ -5385,9 +5563,14 @@ export default function RegulationExplorer() {
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       try {
+        const storedDensity =
+          window.localStorage.getItem(workspaceDensityStorageKey) === "research"
+            ? "research"
+            : "guided";
         const stored = JSON.parse(
           window.localStorage.getItem(columnLayoutStorageKey) ?? "null",
         ) as Partial<ColumnLayout> | null;
+        setWorkspaceDensity(storedDensity);
         if (stored) {
           const restoredLayout: ColumnLayout = {
             leftWidth:
@@ -5398,7 +5581,8 @@ export default function RegulationExplorer() {
               typeof stored.rightWidth === "number"
                 ? clampColumnWidth("right", stored.rightWidth)
                 : defaultColumnLayout.rightWidth,
-            leftCollapsed: stored.leftCollapsed === true,
+            leftCollapsed:
+              storedDensity === "guided" || stored.leftCollapsed === true,
             rightCollapsed: stored.rightCollapsed === true,
           };
           setColumnLayout(
@@ -5441,10 +5625,14 @@ export default function RegulationExplorer() {
         columnLayoutStorageKey,
         JSON.stringify(columnLayout),
       );
+      window.localStorage.setItem(
+        workspaceDensityStorageKey,
+        workspaceDensity,
+      );
     } catch {
       // Local persistence is optional; resizing still works for this session.
     }
-  }, [columnLayout, columnLayoutReady]);
+  }, [columnLayout, columnLayoutReady, workspaceDensity]);
 
   function columnWidthBounds(side: ColumnSide, layout = columnLayout) {
     const shellWidth =
@@ -5546,6 +5734,20 @@ export default function RegulationExplorer() {
       const updated = side === "left"
         ? { ...current, leftCollapsed: !current.leftCollapsed }
         : { ...current, rightCollapsed: !current.rightCollapsed };
+      const shellWidth =
+        appShellRef.current?.getBoundingClientRect().width ?? window.innerWidth;
+      return normalizeColumnLayout(updated, shellWidth, hasRightColumn);
+    });
+  }
+
+  function setWorkspaceMode(nextDensity: WorkspaceDensity) {
+    if (workspaceDensity === nextDensity) return;
+    setWorkspaceDensity(nextDensity);
+    setColumnLayout((current) => {
+      const updated =
+        nextDensity === "research"
+          ? { ...current, leftCollapsed: false, rightCollapsed: false }
+          : { ...current, leftCollapsed: true };
       const shellWidth =
         appShellRef.current?.getBoundingClientRect().width ?? window.innerWidth;
       return normalizeColumnLayout(updated, shellWidth, hasRightColumn);
@@ -5753,6 +5955,19 @@ export default function RegulationExplorer() {
       () => dispatch({ type: "OPEN_ATLAS" }),
       { nextView: "atlas", direction: "backward" },
     );
+  }
+
+  function startGuidedSearch(query = "") {
+    dispatch({ type: "SET_QUERY", query });
+    window.requestAnimationFrame(() => {
+      searchRef.current?.focus();
+    });
+  }
+
+  function openComparativeResearch() {
+    setResearchView("genome");
+    setWorkspaceMode("research");
+    openView("research");
   }
 
   function openAtlasGroup(groupId: string) {
@@ -6210,13 +6425,12 @@ export default function RegulationExplorer() {
     }
   }
 
-  const canOpenInstrument = Boolean(selectedInstrument);
-  const canOpenConnections = Boolean(selectedProvision);
-  const canOpenCompare = state.compareIds.length === 2;
-  const activeViewIndex = viewLabels.findIndex((view) => view.id === state.view);
-  const modeSwitchStyle = {
-    "--active-view-index": activeViewIndex,
-  } as CSSProperties;
+  const activePrimaryNavigation =
+    state.navigatorTab === "concepts"
+      ? "concepts"
+      : state.view === "research"
+        ? "research"
+        : "explore";
   const appShellStyle = {
     "--left-column-width": `${columnLayout.leftWidth}px`,
     "--right-column-width": `${columnLayout.rightWidth}px`,
@@ -6278,7 +6492,9 @@ export default function RegulationExplorer() {
       )
     ) : null;
   const atlasGlobePanel =
-    state.navigatorTab === "sources" && state.view === "atlas" ? (
+    workspaceDensity === "research" &&
+    state.navigatorTab === "sources" &&
+    state.view === "atlas" ? (
       <RegulationGlobe
         id="right-column-panel"
         className="atlas-globe-panel right-column-panel"
@@ -6329,7 +6545,9 @@ export default function RegulationExplorer() {
       </aside>
     ) : null;
   const conceptVisualizationPanel =
-    state.navigatorTab === "concepts" && state.view === "atlas" ? (
+    state.navigatorTab === "concepts" &&
+    state.view === "atlas" &&
+    (workspaceDensity === "research" || Boolean(state.selectedConceptId)) ? (
       <ConceptConstellation
         id="right-column-panel"
         className="concept-constellation-panel right-column-panel"
@@ -6349,7 +6567,7 @@ export default function RegulationExplorer() {
     provisionVisualizationPanel;
 
   return (
-    <main className="terminal-app">
+    <main className="terminal-app" data-workspace-density={workspaceDensity}>
       <header className="top-bar">
         <button
           type="button"
@@ -6375,35 +6593,45 @@ export default function RegulationExplorer() {
             void ensureCompleteCorpus(fullCorpusLoadState.phase === "error")
           }
         />
-        <nav
-          className="mode-switch"
-          aria-label="Explorer mode"
-          data-active-view={state.view}
-          style={modeSwitchStyle}
-        >
-          <span className="mode-switch-indicator" aria-hidden="true" />
-          {viewLabels.map((view) => {
-            const ViewIcon = view.icon;
-            const disabled =
-              (view.id === "instrument" && !canOpenInstrument) ||
-              (view.id === "connections" && !canOpenConnections) ||
-              (view.id === "timeline" && !canOpenInstrument) ||
-              (view.id === "compare" && !canOpenCompare);
+        <nav className="primary-navigation" aria-label="Primary navigation">
+          {primaryNavigation.map((item) => {
+            const ItemIcon = item.icon;
             return (
               <button
                 type="button"
-                key={view.id}
-                disabled={disabled}
-                aria-pressed={state.view === view.id}
-                aria-label={view.label + " view"}
-                onClick={() => openView(view.id)}
+                key={item.id}
+                aria-pressed={activePrimaryNavigation === item.id}
+                onClick={() => {
+                  if (item.id === "explore") {
+                    openAtlas();
+                  } else if (item.id === "concepts") {
+                    openConceptIndex();
+                  } else {
+                    setResearchView("observatory");
+                    openView("research");
+                  }
+                }}
               >
-                <ViewIcon aria-hidden="true" />
-                <span>{view.label}</span>
+                <ItemIcon aria-hidden="true" />
+                <span>{item.label}</span>
+                {item.id === "research" && <small>Advanced</small>}
               </button>
             );
           })}
         </nav>
+        <button
+          type="button"
+          className="workspace-density-toggle"
+          aria-pressed={workspaceDensity === "research"}
+          onClick={() =>
+            setWorkspaceMode(
+              workspaceDensity === "guided" ? "research" : "guided",
+            )
+          }
+        >
+          <SlidersHorizontal aria-hidden="true" />
+          {workspaceDensity === "guided" ? "Full workspace" : "Guided view"}
+        </button>
         <div
           className="theme-switch"
           role="group"
@@ -6442,8 +6670,10 @@ export default function RegulationExplorer() {
       </header>
 
       <div className="system-strip">
-        <span><i className="system-dot" /> DATASET LOADED</span>
-        <span>SNAPSHOT 2026.07.20</span>
+        <span>
+          <i className="system-dot" /> {instruments.length} SOURCES ·{" "}
+          {provisions.length} PROVISIONS
+        </span>
         <span>ACADEMIC RESEARCH EDITION / NOT LEGAL ADVICE</span>
       </div>
 
@@ -6459,7 +6689,9 @@ export default function RegulationExplorer() {
             : "",
           activeColumnResize ? "is-column-resizing" : "",
           state.navigatorTab === "concepts" ? "navigator-concepts-mode" : "",
-          state.navigatorTab === "concepts" && state.view === "atlas"
+          state.navigatorTab === "concepts" &&
+          state.view === "atlas" &&
+          hasRightColumn
             ? "concept-visualization-active"
             : "",
           mobileNavigatorOpen ? "is-mobile-navigator-open" : "",
@@ -6617,20 +6849,60 @@ export default function RegulationExplorer() {
                 ))}
               </div>
             </div>
-            <span className="view-code">
-              VIEW::{
-                state.navigatorTab === "concepts"
-                  ? selectedConcept
-                    ? "CONCEPT"
-                    : "CONCEPT_INDEX"
-                  : state.view.toUpperCase()
-              }
-            </span>
+            {state.navigatorTab === "sources" &&
+              selectedInstrument &&
+              state.view !== "research" && (
+                <nav
+                  className="context-navigation"
+                  aria-label="Current source views"
+                >
+                  <button
+                    type="button"
+                    aria-pressed={state.view === "instrument"}
+                    onClick={() => openView("instrument")}
+                  >
+                    <BookOpenText aria-hidden="true" />
+                    Law overview
+                  </button>
+                  {selectedProvision && (
+                    <button
+                      type="button"
+                      aria-pressed={state.view === "connections"}
+                      onClick={() => openProvision(selectedProvision)}
+                    >
+                      <FileText aria-hidden="true" />
+                      Article text
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    aria-pressed={state.view === "timeline"}
+                    onClick={() => openView("timeline")}
+                  >
+                    <Clock3 aria-hidden="true" />
+                    Timeline
+                  </button>
+                  {state.compareIds.length > 0 && (
+                    <button
+                      type="button"
+                      aria-pressed={state.view === "compare"}
+                      disabled={state.compareIds.length < 2}
+                      onClick={() => openView("compare")}
+                    >
+                      <Columns2 aria-hidden="true" />
+                      Compare {state.compareIds.length}/2
+                    </button>
+                  )}
+                </nav>
+              )}
           </div>
 
           {state.navigatorTab === "sources" && state.view === "atlas" && (
             <GlobalAtlas
               onOpenInstrument={openInstrument}
+              onStartSearch={startGuidedSearch}
+              onOpenConceptIndex={openConceptIndex}
+              onOpenResearch={openComparativeResearch}
             />
           )}
           {state.navigatorTab === "sources" && state.view === "research" && (

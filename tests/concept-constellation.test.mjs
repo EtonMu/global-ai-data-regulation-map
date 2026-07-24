@@ -50,11 +50,11 @@ test("concept constellation reflows and honors reduced motion", () => {
   assert.doesNotMatch(styles, /position:\s*fixed/);
 });
 
-test("Core Concepts mounts the constellation as a dedicated right panel", () => {
+test("Core Concepts progressively mounts the constellation in the stable right panel", () => {
   assert.match(explorerSource, /import \{ ConceptConstellation \}/);
   assert.match(
     explorerSource,
-    /state\.navigatorTab === "concepts" && state\.view === "atlas"[\s\S]*?<ConceptConstellation/,
+    /state\.navigatorTab === "concepts"[\s\S]*?state\.view === "atlas"[\s\S]*?\(workspaceDensity === "research" \|\| Boolean\(state\.selectedConceptId\)\)[\s\S]*?<ConceptConstellation/,
   );
   assert.match(explorerSource, /selectedConceptId=\{state\.selectedConceptId\}/);
   assert.match(

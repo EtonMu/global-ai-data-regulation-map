@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-compliance-compass-v3.png",
-        width: 1734,
-        height: 907,
+        url: "/og-compliance-compass-v4.png",
+        width: 1731,
+        height: 909,
         alt: "Compliance Compass global AI governance and data regulation research visualization",
       },
     ],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Compliance Compass: Global AI Governance and Data Regulation Map & Visualization",
     description:
       "Explore full legal corpora, provision-level mappings and time-aware regulatory status across jurisdictions.",
-    images: ["/og-compliance-compass-v3.png"],
+    images: ["/og-compliance-compass-v4.png"],
   },
 };
 

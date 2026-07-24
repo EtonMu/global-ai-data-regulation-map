@@ -56,7 +56,7 @@ test("workspace breadcrumbs are a native-button navigation hierarchy", () => {
   );
   const breadcrumbMarkup = sourceBetween(
     '<div className="breadcrumbs" aria-label="Current location">',
-    '<span className="view-code">',
+    '{state.navigatorTab === "sources" &&',
   );
 
   assert.match(breadcrumbModel, /destination:/);
@@ -220,8 +220,8 @@ test("Global Atlas mounts the interactive globe as a legal-to-concept bridge", (
   );
   assert.match(
     explorerComponent,
-    /const atlasGlobePanel\s*=\s*state\.navigatorTab === "sources" && state\.view === "atlas"[\s\S]*?<RegulationGlobe(?=[^>]*className="atlas-globe-panel right-column-panel")(?=[^>]*jurisdictions=\{globeJurisdictions\})(?=[^>]*concepts=\{globeConcepts\})(?=[^>]*onOpenInstrument=\{openInstrument\})(?=[^>]*onOpenConcept=\{openConcept\})[^>]*\/>/,
-    "the Global Atlas state must show a right-panel globe wired to both legal sources and concepts",
+    /const atlasGlobePanel\s*=\s*workspaceDensity === "research" &&[\s\S]*?state\.navigatorTab === "sources" &&[\s\S]*?state\.view === "atlas"[\s\S]*?<RegulationGlobe(?=[^>]*className="atlas-globe-panel right-column-panel")(?=[^>]*jurisdictions=\{globeJurisdictions\})(?=[^>]*concepts=\{globeConcepts\})(?=[^>]*onOpenInstrument=\{openInstrument\})(?=[^>]*onOpenConcept=\{openConcept\})[^>]*\/>/,
+    "the full research workspace must show a right-panel globe wired to both legal sources and concepts",
   );
   assert.match(
     explorerComponent,
