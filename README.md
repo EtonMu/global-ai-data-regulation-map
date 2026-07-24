@@ -18,7 +18,7 @@ The project combines a visual regulatory atlas, complete article navigation for 
 - **Animated Connections** — use the graph at right to inspect a provision's immediate relationships, including rationale, limits, evidence basis, confidence, and review state.
 - **Timeline** — follow adoption, entry into force, phased application, amendment, revocation, veto, and scheduled commencement events.
 - **Compare** — pin two provisions and examine their scope, actors, concepts, legal effect, status, sources, and text availability side by side.
-- **Corpus search** — find instruments and provisions by title, locator, jurisdiction, regulatory concept, or—after the on-demand text corpus is loaded—complete stored text.
+- **Hybrid corpus search** — use Google-style mixed suggestions across instruments, provisions, and core concepts; tolerate misspellings and diacritics; follow explainable ontology-assisted semantic matches through curated concept mappings; and explicitly load complete stored legal text when a deeper full-text search is needed. Query ranking runs locally and semantic matches are labelled as concept associations, not legal equivalence.
 - **Workspace controls** — use clickable breadcrumbs to return to any point in the current research path; on desktop, collapse or resize the left and right columns by pointer or keyboard; on small screens, open the corpus navigator only when it is needed.
 - **Two visual modes** — switch between a near-black **Dark / Geek** workspace and a restrained, paper-like **Bright / Lawyer** workspace without changing the underlying data.
 

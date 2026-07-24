@@ -9,6 +9,7 @@ import {
   type ReactNode,
   type SetStateAction,
   useCallback,
+  useDeferredValue,
   useEffect,
   useMemo,
   useReducer,
@@ -45,7 +46,6 @@ import {
   PanelRightClose,
   PanelRightOpen,
   Scale,
-  Search,
   Sparkles,
   Sun,
   type LucideIcon,
@@ -65,6 +65,13 @@ import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import { ConceptConstellation } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
 import { RegulationGlobe } from "./regulation-globe";
+import { SearchCombobox } from "./search-combobox";
+import {
+  createSearchIndex,
+  searchIndex,
+  type SearchDocument,
+  type SearchResult,
+} from "./search-engine";
 import { loadCorpusShard } from "./corpus-loader";
 import type { CorpusShardPayload } from "./corpus-loader";
 import type { LazyResearchViewProps } from "./lazy-research-view";
@@ -1210,6 +1217,136 @@ const relationById = new Map(
   relations.map((relation) => [relation.id, relation]),
 );
 
+const relationConceptIdsByEntity = new Map<string, Set<string>>();
+relations.forEach((relation) => {
+  for (const endpoint of [relation.source, relation.target]) {
+    if (endpoint.type !== "instrument" && endpoint.type !== "provision") continue;
+    const existing = relationConceptIdsByEntity.get(endpoint.id) ?? new Set<string>();
+    relation.conceptIds.forEach((conceptId) => existing.add(conceptId));
+    relationConceptIdsByEntity.set(endpoint.id, existing);
+  }
+});
+
+function searchableConceptIds(
+  entityId: string,
+  directConceptIds: string[],
+) {
+  return Array.from(
+    new Set([
+      ...directConceptIds,
+      ...(relationConceptIdsByEntity.get(entityId) ?? []),
+    ]),
+  );
+}
+
+function searchableProvisionTranslations(provision: Provision) {
+  return [
+    ...(provision.translations?.en
+      ? [
+          provision.translations.en.title ?? "",
+          provision.translations.en.fullText ||
+            provision.translations.en.paragraphs.join("\n"),
+        ]
+      : []),
+    ...(provision.alternativeLanguageTexts ?? []).flatMap((text) => [
+      text.title ?? "",
+      text.fullText || text.paragraphs.join("\n"),
+    ]),
+  ].filter(Boolean);
+}
+
+function buildSearchDocuments(): SearchDocument[] {
+  const instrumentDocuments: SearchDocument[] = instruments.map((instrument) => {
+    const jurisdiction = jurisdictionById.get(instrument.jurisdictionId);
+    const conceptIds = searchableConceptIds(instrument.id, instrument.topicIds);
+    return {
+      id: instrument.id,
+      type: "instrument",
+      label: instrument.shortTitle,
+      title: instrument.title,
+      shortTitle: instrument.shortTitle,
+      originalTitle: instrument.originalTitle,
+      jurisdiction: jurisdiction?.name ?? instrument.jurisdictionId,
+      aliases: [
+        jurisdiction?.shortName ?? "",
+        jurisdiction?.isoCode ?? "",
+        ...instrument.issuingBodies,
+      ].filter(Boolean),
+      summary: instrument.summary,
+      keywords: [
+        instrument.category,
+        instrument.hierarchyLevel,
+        instrument.legalForce,
+        instrument.lifecycleStatus,
+        ...conceptIds.map(
+          (conceptId) => conceptById.get(conceptId)?.label ?? conceptId,
+        ),
+      ],
+      conceptIds,
+    };
+  });
+
+  const provisionDocuments: SearchDocument[] = provisions.map((provision) => {
+    const instrument = instrumentById.get(provision.instrumentId);
+    const jurisdiction = instrument
+      ? jurisdictionById.get(instrument.jurisdictionId)
+      : undefined;
+    const conceptIds = searchableConceptIds(
+      provision.id,
+      provision.conceptIds,
+    );
+    return {
+      id: provision.id,
+      type: "provision",
+      label: `${instrument?.shortTitle ?? provision.instrumentId} ${provision.locator}`,
+      title: provision.title,
+      originalTitle: provision.originalTitle,
+      locator: provision.locator,
+      instrumentId: provision.instrumentId,
+      instrumentShortTitle: instrument?.shortTitle,
+      jurisdiction: jurisdiction?.name ?? instrument?.jurisdictionId,
+      aliases: [
+        instrument?.title ?? "",
+        instrument?.originalTitle ?? "",
+        provision.articleNumber ?? "",
+        provision.chapter?.title ?? "",
+        provision.section?.title ?? "",
+      ].filter(Boolean),
+      summary: provision.summary,
+      keywords: [
+        ...provision.actorTags,
+        ...provision.scopeTags,
+        provision.provisionType,
+        ...conceptIds.map(
+          (conceptId) => conceptById.get(conceptId)?.label ?? conceptId,
+        ),
+      ],
+      conceptIds,
+      fullText:
+        provision.fullText ?? provision.paragraphs?.join("\n") ?? "",
+      translations: searchableProvisionTranslations(provision),
+    };
+  });
+
+  const conceptDocuments: SearchDocument[] = concepts.map((concept) => ({
+    id: concept.id,
+    type: "concept",
+    label: concept.label,
+    title: conceptThemeById.get(concept.theme)?.label,
+    aliases: concept.aliases,
+    summary: concept.summary,
+    description: concept.description,
+    keywords: [concept.family, concept.theme],
+    conceptIds: [concept.id],
+  }));
+
+  return [
+    ...instrumentDocuments,
+    ...conceptDocuments,
+    ...provisionDocuments,
+  ];
+}
+
 const relationLabels: Record<string, string> = {
   equivalent: "Functional equivalent",
   broader: "Broader duty",
@@ -2153,6 +2290,7 @@ function CorpusNavigator({
   selectedProvisionId,
   selectedConceptId,
   query,
+  searchResults,
   fullTextSearchState,
   onSetNavigatorTab,
   onOpenAtlas,
@@ -2166,6 +2304,7 @@ function CorpusNavigator({
   selectedProvisionId: string | null;
   selectedConceptId: string | null;
   query: string;
+  searchResults: SearchResult[];
   fullTextSearchState: CorpusLoadState;
   onSetNavigatorTab: (tab: NavigatorTab) => void;
   onOpenAtlas: () => void;
@@ -2174,7 +2313,7 @@ function CorpusNavigator({
   onOpenConcept: (conceptId: string) => void;
   onRetryFullTextSearch: () => void;
 }) {
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = query.trim();
   const selectedInstrument = selectedInstrumentId
     ? instrumentById.get(selectedInstrumentId)
     : undefined;
@@ -2243,54 +2382,18 @@ function CorpusNavigator({
   }
 
   const matchingInstruments = normalizedQuery
-    ? instruments
-        .filter((instrument) =>
-          [
-            instrument.shortTitle,
-            instrument.title,
-            instrument.originalTitle ?? "",
-            instrument.summary,
-            jurisdictionById.get(instrument.jurisdictionId)?.name ?? "",
-            ...instrument.topicIds.map(
-              (conceptId) => conceptById.get(conceptId)?.label ?? conceptId,
-            ),
-          ]
-            .join(" ")
-            .toLowerCase()
-            .includes(normalizedQuery),
-        )
+    ? searchResults
+        .filter((result) => result.document.type === "instrument")
         .slice(0, 12)
     : [];
   const matchingProvisions = normalizedQuery
-    ? provisions
-        .filter((provision) => {
-          const instrument = instrumentById.get(provision.instrumentId);
-          return [
-            instrument?.shortTitle ?? "",
-            provision.locator,
-            provision.title,
-            provision.originalTitle ?? "",
-            provision.summary,
-            provision.fullText ?? "",
-            ...(provision.translations?.en?.paragraphs ?? []),
-            ...provision.conceptIds.map(
-              (conceptId) => conceptById.get(conceptId)?.label ?? conceptId,
-            ),
-          ]
-            .join(" ")
-            .toLowerCase()
-            .includes(normalizedQuery);
-        })
+    ? searchResults
+        .filter((result) => result.document.type === "provision")
         .slice(0, 18)
     : [];
   const matchingConcepts = normalizedQuery
-    ? concepts
-        .filter((concept) =>
-          [concept.label, concept.description, concept.summary, ...concept.aliases]
-            .join(" ")
-            .toLowerCase()
-            .includes(normalizedQuery),
-        )
+    ? searchResults
+        .filter((result) => result.document.type === "concept")
         .slice(0, 18)
     : [];
 
@@ -2408,32 +2511,45 @@ function CorpusNavigator({
                       </button>
                     </div>
                   )}
-                  {matchingInstruments.map((instrument) => (
-                    <button
-                      type="button"
-                      key={instrument.id}
-                      onClick={() => onOpenInstrument(instrument.id)}
-                    >
-                      <span className="instrument-tree-title">
-                        <JurisdictionMark jurisdictionId={instrument.jurisdictionId} small />
-                        {instrument.shortTitle}
-                      </span>
-                      <small>{humanize(instrument.lifecycleStatus)}</small>
-                    </button>
-                  ))}
-                  {matchingProvisions.map((provision) => (
-                    <button
-                      type="button"
-                      key={provision.id}
-                      onClick={() => onOpenProvision(provision)}
-                    >
-                      <span>
-                        {instrumentById.get(provision.instrumentId)?.shortTitle}{" "}
-                        {provision.locator}
-                      </span>
-                      <small>{provision.title}</small>
-                    </button>
-                  ))}
+                  {matchingInstruments.map((result) => {
+                    const instrument = instrumentById.get(result.document.id);
+                    if (!instrument) return null;
+                    return (
+                      <button
+                        type="button"
+                        key={instrument.id}
+                        onClick={() => onOpenInstrument(instrument.id)}
+                      >
+                        <span className="instrument-tree-title">
+                          <JurisdictionMark
+                            jurisdictionId={instrument.jurisdictionId}
+                            small
+                          />
+                          {instrument.shortTitle}
+                        </span>
+                        <small>{result.reason}</small>
+                      </button>
+                    );
+                  })}
+                  {matchingProvisions.map((result) => {
+                    const provision = provisionMap.get(result.document.id);
+                    if (!provision) return null;
+                    return (
+                      <button
+                        type="button"
+                        key={provision.id}
+                        onClick={() => onOpenProvision(provision)}
+                      >
+                        <span>
+                          {instrumentById.get(provision.instrumentId)?.shortTitle}{" "}
+                          {provision.locator}
+                        </span>
+                        <small>
+                          {provision.title} · {result.reason}
+                        </small>
+                      </button>
+                    );
+                  })}
                   {!matchingInstruments.length &&
                     !matchingProvisions.length &&
                     fullTextSearchState.phase !== "loading" && (
@@ -2556,21 +2672,29 @@ function CorpusNavigator({
               <p className="navigator-section-label">
                 CONCEPT MATCHES / {matchingConcepts.length}
               </p>
-              {matchingConcepts.map((concept) => (
-                <button
-                  type="button"
-                  key={concept.id}
-                  className={concept.id === selectedConceptId ? "is-selected" : ""}
-                  aria-pressed={concept.id === selectedConceptId}
-                  onClick={() => onOpenConcept(concept.id)}
-                >
-                  <span className="concept-tree-title">
-                    <ConceptIcon conceptId={concept.id} />
-                    {concept.label}
-                  </span>
-                  <small>{concept.description}</small>
-                </button>
-              ))}
+              {matchingConcepts.map((result) => {
+                const concept = conceptById.get(result.document.id);
+                if (!concept) return null;
+                return (
+                  <button
+                    type="button"
+                    key={concept.id}
+                    className={
+                      concept.id === selectedConceptId ? "is-selected" : ""
+                    }
+                    aria-pressed={concept.id === selectedConceptId}
+                    onClick={() => onOpenConcept(concept.id)}
+                  >
+                    <span className="concept-tree-title">
+                      <ConceptIcon conceptId={concept.id} />
+                      {concept.label}
+                    </span>
+                    <small>
+                      {concept.description} · {result.reason}
+                    </small>
+                  </button>
+                );
+              })}
               {!matchingConcepts.length && (
                 <p className="navigator-empty">No core-concept match.</p>
               )}
@@ -5138,6 +5262,29 @@ export default function RegulationExplorer() {
   >({});
   const [fullCorpusLoadState, setFullCorpusLoadState] =
     useState<CorpusLoadState>({ phase: "idle" });
+  const deferredSearchQuery = useDeferredValue(state.query);
+  const hybridSearchIndex = useMemo(() => {
+    // Corpus hydration mutates stable provision objects; the revision is the
+    // signal to rebuild the local, presentation-neutral search index.
+    void corpusRevision;
+    return createSearchIndex(buildSearchDocuments(), concepts);
+  }, [corpusRevision]);
+  const navigatorSearchResults = useMemo(
+    () =>
+      searchIndex(hybridSearchIndex, deferredSearchQuery, {
+        limit: 42,
+        typeQuotas: { instrument: 12, provision: 20, concept: 10 },
+      }),
+    [deferredSearchQuery, hybridSearchIndex],
+  );
+  const searchSuggestions = useMemo(
+    () =>
+      searchIndex(hybridSearchIndex, deferredSearchQuery, {
+        limit: 10,
+        typeQuotas: { instrument: 3, provision: 5, concept: 3 },
+      }),
+    [deferredSearchQuery, hybridSearchIndex],
+  );
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
     defaultColumnLayout,
@@ -5805,25 +5952,6 @@ export default function RegulationExplorer() {
   }, [ensureInstrumentAvailable, state.compareIds, state.view]);
 
   useEffect(() => {
-    if (
-      state.navigatorTab !== "sources" ||
-      !state.query.trim() ||
-      fullCorpusLoadState.phase !== "idle"
-    ) {
-      return;
-    }
-    const timer = window.setTimeout(() => {
-      void ensureCompleteCorpus();
-    }, 180);
-    return () => window.clearTimeout(timer);
-  }, [
-    ensureCompleteCorpus,
-    fullCorpusLoadState.phase,
-    state.navigatorTab,
-    state.query,
-  ]);
-
-  useEffect(() => {
     if (state.navigatorTab === "sources" && state.view === "research") {
       void ensureCompleteCorpus();
     }
@@ -5835,11 +5963,10 @@ export default function RegulationExplorer() {
         event.preventDefault();
         searchRef.current?.focus();
       }
-      if (event.key === "Escape" && document.activeElement === searchRef.current) {
-        searchRef.current?.blur();
-        dispatch({ type: "SET_QUERY", query: "" });
-      } else if (event.key === "Escape" && mobileNavigatorOpen) {
-        closeMobileNavigatorAndRestoreFocus();
+      if (event.key === "Escape" && mobileNavigatorOpen) {
+        if (document.activeElement !== searchRef.current) {
+          closeMobileNavigatorAndRestoreFocus();
+        }
       }
     }
     window.addEventListener("keydown", handleKeyboard);
@@ -6066,6 +6193,23 @@ export default function RegulationExplorer() {
     );
   }
 
+  function openSearchResult(result: SearchResult) {
+    if (result.document.type === "instrument") {
+      openInstrument(result.document.id);
+      return;
+    }
+    if (result.document.type === "concept") {
+      openConcept(result.document.id);
+      return;
+    }
+    const provision = provisionMap.get(result.document.id);
+    if (provision) {
+      openProvision(provision);
+    } else {
+      dispatch({ type: "SET_QUERY", query: "" });
+    }
+  }
+
   const canOpenInstrument = Boolean(selectedInstrument);
   const canOpenConnections = Boolean(selectedProvision);
   const canOpenCompare = state.compareIds.length === 2;
@@ -6217,20 +6361,20 @@ export default function RegulationExplorer() {
           <strong>GLOBAL AI GOVERNANCE</strong>
           <small>DATA REGULATION MAP / VISUALIZATION</small>
         </button>
-        <label className="global-search">
-          <span className="sr-only">Search legal sources and core concepts</span>
-          <Search aria-hidden="true" />
-          <input
-            ref={searchRef}
-            type="search"
-            value={state.query}
-            onChange={(event) =>
-              dispatch({ type: "SET_QUERY", query: event.target.value })
-            }
-            placeholder="Search legal source or core concept…"
-          />
-          <kbd>⌘K</kbd>
-        </label>
+        <SearchCombobox
+          query={state.query}
+          results={
+            state.query === deferredSearchQuery ? searchSuggestions : []
+          }
+          inputRef={searchRef}
+          isPending={state.query !== deferredSearchQuery}
+          fullTextState={fullCorpusLoadState}
+          onQueryChange={(query) => dispatch({ type: "SET_QUERY", query })}
+          onSelect={openSearchResult}
+          onLoadFullText={() =>
+            void ensureCompleteCorpus(fullCorpusLoadState.phase === "error")
+          }
+        />
         <nav
           className="mode-switch"
           aria-label="Explorer mode"
@@ -6426,6 +6570,11 @@ export default function RegulationExplorer() {
           selectedProvisionId={state.selectedProvisionId}
           selectedConceptId={state.selectedConceptId}
           query={state.query}
+          searchResults={
+            state.query === deferredSearchQuery
+              ? navigatorSearchResults
+              : []
+          }
           fullTextSearchState={fullCorpusLoadState}
           onSetNavigatorTab={setNavigatorTab}
           onOpenAtlas={openAtlas}

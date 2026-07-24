@@ -5,8 +5,14 @@ import test from "node:test";
 const dataRoot = new URL("../data/v2/", import.meta.url);
 const appRoot = new URL("../app/", import.meta.url);
 
-const [explorerSource, globeSource, jurisdictionMarkSource] = await Promise.all([
+const [
+  explorerSource,
+  searchComboboxSource,
+  globeSource,
+  jurisdictionMarkSource,
+] = await Promise.all([
   readFile(new URL("regulation-explorer.tsx", appRoot), "utf8"),
+  readFile(new URL("search-combobox.tsx", appRoot), "utf8"),
   readFile(new URL("regulation-globe.tsx", appRoot), "utf8"),
   readFile(new URL("jurisdiction-mark.tsx", appRoot), "utf8"),
 ]);
@@ -338,8 +344,12 @@ test("the browser atlas retains semantic controls and the relation globe contrac
     explorerSource,
     /className="corpus-navigator"[\s\S]*?aria-label="Global regulation corpus"/,
   );
-  assert.match(explorerSource, /<input[\s\S]*?type="search"/);
-  assert.match(explorerSource, /Search legal source or core concept/);
+  assert.match(explorerSource, /<SearchCombobox/);
+  assert.match(searchComboboxSource, /<input[\s\S]*?type="search"/);
+  assert.match(
+    searchComboboxSource,
+    /Search legal sources, provisions, and core concepts/,
+  );
   assert.match(
     explorerSource,
     /className="navigator-tabs"[\s\S]*?role="tablist"[\s\S]*?aria-label="Research index"/,

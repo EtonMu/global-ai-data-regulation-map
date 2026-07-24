@@ -137,7 +137,7 @@ test("concept and theme icon treatments are integrated at their semantic levels"
 
   assert.match(
     navigatorSource,
-    /matchingConcepts\.map\(\(concept\) =>[\s\S]*?<ConceptIcon conceptId=\{concept\.id\}/,
+    /matchingConcepts\.map\(\(result\) => \{[\s\S]*?conceptById\.get\(result\.document\.id\)[\s\S]*?<ConceptIcon conceptId=\{concept\.id\}/,
     "concept search results must use each concept's own outline icon",
   );
   assert.match(

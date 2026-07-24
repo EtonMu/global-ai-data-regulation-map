@@ -139,10 +139,16 @@ test("instrument overviews disclose corpus composition and redistribution bounda
   );
 });
 
-test("full-text search and Research load the complete corpus only on demand", () => {
+test("full-text search is explicit while Research loads the complete corpus on demand", () => {
   assert.match(
     explorerSource,
-    /state\.query\.trim\(\)[\s\S]*?ensureCompleteCorpus\(\)/,
+    /<SearchCombobox[\s\S]*?onLoadFullText=\{\(\)\s*=>[\s\S]*?ensureCompleteCorpus\(/,
+    "typing must stay on the lightweight hybrid index until the user requests full text",
+  );
+  assert.doesNotMatch(
+    explorerSource,
+    /state\.query\.trim\(\)[\s\S]{0,600}?setTimeout\([\s\S]{0,300}?ensureCompleteCorpus\(/,
+    "a keystroke must not automatically download every corpus shard",
   );
   assert.match(
     explorerSource,
