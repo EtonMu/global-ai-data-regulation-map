@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
-
 :root {
   color-scheme: dark;
   --void: #05080d;
@@ -41,8 +39,8 @@
   --graph-grid: rgba(86, 225, 255, 0.024);
   --graph-glow: rgba(86, 225, 255, 0.08);
   --ambient-shadow: rgba(0, 0, 0, 0.34);
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas, monospace;
 }
 
 html[data-theme="bright"] {
@@ -6660,6 +6658,32 @@ html[data-theme="bright"] .connection-canvas::after {
     linear-gradient(90deg, var(--line) 1px, transparent 1px),
     var(--void);
   background-size: 44px 44px;
+}
+
+.visualization-module-loading {
+  min-height: 18rem;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.visualization-module-loading svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--cyan);
+  animation: visualization-loading-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes visualization-loading-pulse {
+  50% {
+    opacity: 0.42;
+    transform: scale(0.9);
+  }
 }
 
 .explorer-loading-shell h1,

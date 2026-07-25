@@ -359,8 +359,8 @@ function assertImportedEnglishTranslation(article, label) {
     throw new Error(`${label}.translations.en.source is not a valid URL`);
   }
   assert(
-    parsedSource.protocol === "https:" || parsedSource.protocol === "http:",
-    `${label}.translations.en.source must use HTTP or HTTPS`,
+    parsedSource.protocol === "https:",
+    `${label}.translations.en.source must use HTTPS`,
   );
   assert(parsedSource.hostname.length > 0, `${label}.translations.en.source must include a hostname`);
 

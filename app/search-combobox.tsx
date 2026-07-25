@@ -18,7 +18,10 @@ import {
   useRef,
   useState,
 } from "react";
-import type { SearchResult } from "./search-engine";
+import {
+  MAX_SEARCH_QUERY_LENGTH,
+  type SearchResult,
+} from "./search-engine";
 
 type SearchLayerState = {
   phase: "idle" | "loading" | "ready" | "error";
@@ -209,11 +212,12 @@ export function SearchCombobox({
           aria-describedby={statusId}
           aria-keyshortcuts="Meta+K Control+K"
           autoComplete="off"
+          maxLength={MAX_SEARCH_QUERY_LENGTH}
           spellCheck={false}
           value={query}
           onFocus={() => setOpen(true)}
           onChange={(event) => {
-            onQueryChange(event.target.value);
+            onQueryChange(event.target.value.slice(0, MAX_SEARCH_QUERY_LENGTH));
             setOpen(Boolean(event.target.value.trim()));
             setActiveIndex(-1);
           }}

@@ -207,7 +207,7 @@ test("sidebar tabs and expandable indexes expose semantic state with local motio
   );
 });
 
-test("the workspace Back control restores complete in-app navigation state", () => {
+test("the workspace Back control is synchronized with browser history", () => {
   assert.match(explorerSource, /\| \{ type: "RESTORE_STATE"; state: ExplorerState \}/);
   assert.match(
     explorerSource,
@@ -216,17 +216,20 @@ test("the workspace Back control restores complete in-app navigation state", () 
   );
   assert.match(
     explorerSource,
-    /const navigationHistoryRef = useRef<ExplorerState\[\]>\(\[\]\)/,
+    /const pendingHistoryPushRef = useRef\(false\)/,
   );
   assert.match(
     explorerSource,
-    /function rememberCurrentInterface\(\)\s*{[\s\S]*?navigationHistoryRef\.current\.push\([\s\S]*?compareIds:\s*\[\.\.\.state\.compareIds\][\s\S]*?setHistoryDepth\(navigationHistoryRef\.current\.length\)/,
+    /function rememberCurrentInterface\(\)\s*{[\s\S]*?pendingHistoryPushRef\.current = true/,
   );
   assert.match(
     explorerSource,
-    /function goBack\(\)\s*{[\s\S]*?navigationHistoryRef\.current\.pop\(\)[\s\S]*?dispatch\(\{ type: "RESTORE_STATE", state: previous \}\)[\s\S]*?direction:\s*"backward"/,
-    "Back must pop and restore history with backward motion when appropriate",
+    /function goBack\(\)\s*{[\s\S]*?window\.history\.back\(\)/,
+    "Back must use the same history stack as the browser",
   );
+  assert.match(explorerSource, /window\.history\.pushState\(/);
+  assert.match(explorerSource, /window\.addEventListener\("popstate"/);
+  assert.match(explorerSource, /explorerStateFromHash\(window\.location\.hash\)/);
   assert.match(
     explorerSource,
     /className="interface-back-button"[\s\S]*?onClick=\{goBack\}[\s\S]*?disabled=\{historyDepth === 0\}[\s\S]*?aria-label="Return to previous interface"/,

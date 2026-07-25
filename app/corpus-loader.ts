@@ -3,13 +3,17 @@ export type CorpusShardPayload = {
   instrumentId: string;
   articleRecords: unknown[];
   seedProvisions: unknown[];
+  provisionConceptReviews: unknown[];
 };
 
 export type CorpusShardExpectation = {
   schemaVersion: string;
   articleIds: readonly string[];
   seedIds: readonly string[];
+  reviewIds: readonly string[];
 };
+
+const MAX_CORPUS_SHARD_BYTES = 8 * 1024 * 1024;
 
 export class CorpusLoadError extends Error {
   instrumentId: string;
@@ -42,16 +46,75 @@ function shardRecordIds(
   instrumentId: string,
   url: string,
 ) {
-  const ids = records.map((record) =>
-    record && typeof record === "object" && typeof (record as { id?: unknown }).id === "string"
-      ? (record as { id: string }).id
-      : null,
-  );
+  const ids = records.map((record) => {
+    if (!record || typeof record !== "object") return null;
+    const candidate = record as {
+      id?: unknown;
+      instrumentId?: unknown;
+      paragraphs?: unknown;
+      fullText?: unknown;
+      conceptIds?: unknown;
+    };
+    if (
+      typeof candidate.id !== "string" ||
+      typeof candidate.instrumentId !== "string" ||
+      (candidate.paragraphs !== undefined &&
+        (!Array.isArray(candidate.paragraphs) ||
+          candidate.paragraphs.some((paragraph) => typeof paragraph !== "string"))) ||
+      (candidate.fullText !== undefined && typeof candidate.fullText !== "string") ||
+      (candidate.conceptIds !== undefined &&
+        (!Array.isArray(candidate.conceptIds) ||
+          candidate.conceptIds.some((conceptId) => typeof conceptId !== "string")))
+    ) {
+      return null;
+    }
+    return candidate.id;
+  });
   if (ids.some((id) => id === null)) {
     throw new CorpusLoadError(
       instrumentId,
       url,
       `The downloaded corpus shard contains a ${kind} without a stable ID.`,
+    );
+  }
+  return ids as string[];
+}
+
+function shardReviewIds(
+  records: unknown[],
+  instrumentId: string,
+  url: string,
+) {
+  const ids = records.map((record) => {
+    if (!record || typeof record !== "object") return null;
+    const candidate = record as {
+      provisionId?: unknown;
+      relevance?: unknown;
+      conceptIds?: unknown;
+      rationale?: unknown;
+      reviewStatus?: unknown;
+      reviewedOn?: unknown;
+    };
+    if (
+      typeof candidate.provisionId !== "string" ||
+      !["substantive-topic", "structural-context"].includes(
+        String(candidate.relevance),
+      ) ||
+      !Array.isArray(candidate.conceptIds) ||
+      candidate.conceptIds.some((conceptId) => typeof conceptId !== "string") ||
+      typeof candidate.rationale !== "string" ||
+      candidate.reviewStatus !== "editorial-reviewed" ||
+      typeof candidate.reviewedOn !== "string"
+    ) {
+      return null;
+    }
+    return candidate.provisionId;
+  });
+  if (ids.some((id) => id === null)) {
+    throw new CorpusLoadError(
+      instrumentId,
+      url,
+      "The downloaded corpus shard contains an invalid concept review.",
     );
   }
   return ids as string[];
@@ -106,7 +169,8 @@ function assertCorpusShard(
     (value as CorpusShardPayload).schemaVersion !== expectation.schemaVersion ||
     (value as CorpusShardPayload).instrumentId !== expectedInstrumentId ||
     !Array.isArray((value as CorpusShardPayload).articleRecords) ||
-    !Array.isArray((value as CorpusShardPayload).seedProvisions)
+    !Array.isArray((value as CorpusShardPayload).seedProvisions) ||
+    !Array.isArray((value as CorpusShardPayload).provisionConceptReviews)
   ) {
     throw new CorpusLoadError(
       expectedInstrumentId,
@@ -139,21 +203,32 @@ function assertCorpusShard(
     expectedInstrumentId,
     url,
   );
+  assertExactIds(
+    shardReviewIds(
+      (value as CorpusShardPayload).provisionConceptReviews,
+      expectedInstrumentId,
+      url,
+    ),
+    expectation.reviewIds,
+    "concept-review ID",
+    expectedInstrumentId,
+    url,
+  );
 }
 
-async function corpusRevision(value: string) {
+async function corpusRevision(value: Uint8Array) {
   if (!globalThis.crypto?.subtle) {
     throw new Error("SHA-256 verification is unavailable in this browser.");
   }
-  const digest = await globalThis.crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(value),
-  );
+  const digestInput = value.buffer.slice(
+    value.byteOffset,
+    value.byteOffset + value.byteLength,
+  ) as ArrayBuffer;
+  const digest = await globalThis.crypto.subtle.digest("SHA-256", digestInput);
   return Array.from(new Uint8Array(digest), (byte) =>
     byte.toString(16).padStart(2, "0"),
   )
-    .join("")
-    .slice(0, 16);
+    .join("");
 }
 
 export function clearCorpusShardCache(instrumentId?: string) {
@@ -188,17 +263,33 @@ export function loadCorpusShard(
           response.status,
         );
       }
-      if (!expectedRevision || !/^[a-f0-9]{16}$/u.test(expectedRevision)) {
+      if (!expectedRevision || !/^[a-f0-9]{64}$/u.test(expectedRevision)) {
         throw new CorpusLoadError(
           instrumentId,
           resolvedUrl,
           "The registered corpus shard has no valid revision hash.",
         );
       }
+      const contentLength = Number(response.headers.get("content-length"));
+      if (Number.isFinite(contentLength) && contentLength > MAX_CORPUS_SHARD_BYTES) {
+        throw new CorpusLoadError(
+          instrumentId,
+          resolvedUrl,
+          "The legal-text corpus shard exceeds the allowed download size.",
+        );
+      }
       const serializedPayload = await response.text();
+      const serializedBytes = new TextEncoder().encode(serializedPayload);
+      if (serializedBytes.byteLength > MAX_CORPUS_SHARD_BYTES) {
+        throw new CorpusLoadError(
+          instrumentId,
+          resolvedUrl,
+          "The legal-text corpus shard exceeds the allowed download size.",
+        );
+      }
       let receivedRevision: string;
       try {
-        receivedRevision = await corpusRevision(serializedPayload);
+        receivedRevision = await corpusRevision(serializedBytes);
       } catch (error) {
         throw new CorpusLoadError(
           instrumentId,
@@ -240,6 +331,11 @@ export function loadCorpusShard(
       );
     });
 
-  shardPromises.set(instrumentId, request);
-  return request;
+  const trackedRequest = request.finally(() => {
+    if (shardPromises.get(instrumentId) === trackedRequest) {
+      shardPromises.delete(instrumentId);
+    }
+  });
+  shardPromises.set(instrumentId, trackedRequest);
+  return trackedRequest;
 }

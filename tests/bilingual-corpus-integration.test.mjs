@@ -57,7 +57,7 @@ test("the five complete bilingual corpora are registered as on-demand production
   ]) {
     assert.match(
       clientIndex.shards[instrumentId],
-      new RegExp(`^data/corpus/${instrumentId}\\.json\\?v=[a-f0-9]{16}$`),
+      new RegExp(`^data/corpus/${instrumentId}\\.json\\?v=[a-f0-9]{64}$`),
     );
   }
   assert.match(appSource, /hydrateInstrumentCorpus/);

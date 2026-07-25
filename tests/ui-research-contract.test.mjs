@@ -205,8 +205,8 @@ test("Global Atlas mounts the interactive globe as a legal-to-concept bridge", (
 
   assert.match(
     explorerSource,
-    /import \{ RegulationGlobe \} from "\.\/regulation-globe";/,
-    "the atlas must use the dedicated interactive globe component",
+    /dynamic<RegulationGlobeProps>[\s\S]*?import\("\.\/regulation-globe"\)/,
+    "the atlas must load the dedicated interactive globe only when needed",
   );
   assert.match(
     explorerSource,

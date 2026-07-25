@@ -60,15 +60,16 @@ import relationsJson from "@/data/v2/relations.json";
 import statusEventsJson from "@/data/v2/status-events.json";
 import sourceAuditsJson from "@/data/v2/source-audit.json";
 import englishCorpusCoverageJson from "@/data/v2/english-corpus-coverage.json";
-import provisionConceptReviewsJson from "@/data/v2/provision-concepts.json";
+import provisionConceptReviewsJson from "@/data/v2/client-provision-concepts.json";
 import structureSummariesJson from "@/data/v2/structure-summaries.json";
 import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
-import { ConceptConstellation } from "./concept-constellation";
+import type { ConceptConstellationProps } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
-import { RegulationGlobe } from "./regulation-globe";
+import type { RegulationGlobeProps } from "./regulation-globe";
 import { SearchCombobox } from "./search-combobox";
 import {
   createSearchIndex,
+  MAX_SEARCH_QUERY_LENGTH,
   searchIndex,
   type SearchDocument,
   type SearchResult,
@@ -302,12 +303,12 @@ type ArticleRecord = {
   paragraphs: string[];
   fullText: string;
   language: string;
-  textAvailability: string;
-  source: string;
+  textAvailability?: string;
+  source?: string;
   sourceFragment?: string;
   sourceSubdivision?: string;
   canonicalSource?: string;
-  retrievedOn: string;
+  retrievedOn?: string;
   versionAsOf?: string | null;
   sourceLabel?: string;
   defaultLanguageStatus?: string;
@@ -415,7 +416,7 @@ type ProvisionConceptReview = {
   provisionId: string;
   relevance: "substantive-topic" | "structural-context";
   conceptIds: string[];
-  rationale: string;
+  rationale?: string;
   reviewStatus: "editorial-reviewed";
   reviewedOn: string;
 };
@@ -705,9 +706,10 @@ function normalizeImportedArticle(
     imported.sourceFragment ??
     imported.sourceSubdivision ??
     imported.canonicalSource ??
-    imported.source;
+    imported.source ??
+    "";
   const sourceFragment = sourceLocator.startsWith("#")
-    ? `${imported.source}${sourceLocator}`
+    ? `${imported.source ?? ""}${sourceLocator}`
     : sourceLocator;
   const fullText = imported.currentOperativeText ?? imported.fullText;
   const paragraphs = imported.currentOperativeText
@@ -914,6 +916,12 @@ function legalEffectStatusForRecord(article: ArticleRecord) {
 }
 
 function articleToProvision(article: ArticleRecord, sourceOrder: number): Provision {
+  const instrument = instrumentById.get(article.instrumentId);
+  const recordDate =
+    article.retrievedOn ??
+    article.versionAsOf ??
+    instrument?.statusAsOf ??
+    "2026-07-20";
   const seed = seedProvisionById.get(article.id);
   const isOfficialChineseImport = article.language === "zh-CN";
   const isOriginalLanguage = !/^en(?:-|$)/i.test(article.language);
@@ -935,7 +943,7 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
   const importedVersion =
     article.versionAsOf ??
     article.sourceVersion?.effectiveFrom ??
-    article.retrievedOn;
+    recordDate;
   const base: SeedProvision = {
     id: article.id,
     instrumentId: article.instrumentId,
@@ -988,13 +996,17 @@ function articleToProvision(article: ArticleRecord, sourceOrder: number): Provis
               : "Official provision text extracted from the cited public legal source; version metadata and reuse terms remain attached to the generated corpus.",
     },
     source: {
-      url: article.sourceFragment ?? article.source,
+      url:
+        article.sourceFragment ??
+        article.source ??
+        instrument?.source.url ??
+        repositoryUrl,
       label: article.sourceLabel ?? "Official legal text",
-      accessedOn: article.retrievedOn,
+      accessedOn: recordDate,
     },
     editorial: {
       reviewStatus: "source-verified",
-      reviewedOn: article.retrievedOn,
+      reviewedOn: recordDate,
       note: article.currentOperativeText
           ? "The source record preserves the promulgated wording; this reader renders the separately hashed current operative text required by the identified binding court decision."
         : article.hasEnactedFutureAmendment
@@ -1096,6 +1108,15 @@ seedProvisions.forEach((provision) => {
   expectedSeedIdsByInstrument.set(provision.instrumentId, ids);
 });
 
+const expectedReviewIdsByInstrument = new Map<string, string[]>();
+provisionConceptReviews.forEach((review) => {
+  const provision = provisionMap.get(review.provisionId);
+  if (!provision) return;
+  const ids = expectedReviewIdsByInstrument.get(provision.instrumentId) ?? [];
+  ids.push(review.provisionId);
+  expectedReviewIdsByInstrument.set(provision.instrumentId, ids);
+});
+
 for (const list of provisionsByInstrument.values()) {
   list.sort((left, right) => {
     if (left.sourceOrder !== undefined || right.sourceOrder !== undefined) {
@@ -1138,9 +1159,22 @@ async function hydrateInstrumentCorpus(
       schemaVersion: clientCorpusIndex.schemaVersion,
       articleIds: expectedArticleIdsByInstrument.get(instrumentId) ?? [],
       seedIds: expectedSeedIdsByInstrument.get(instrumentId) ?? [],
+      reviewIds: expectedReviewIdsByInstrument.get(instrumentId) ?? [],
     },
   })
     .then((payload: CorpusShardPayload) => {
+      (payload.provisionConceptReviews as ProvisionConceptReview[]).forEach(
+        (review) => {
+          const existing = conceptReviewByProvisionId.get(review.provisionId);
+          if (existing) {
+            Object.assign(existing, review);
+          } else {
+            conceptReviewByProvisionId.set(review.provisionId, review);
+          }
+          const provision = provisionMap.get(review.provisionId);
+          if (provision && !existing) provision.topicRelevance = review;
+        },
+      );
       const hydratedSeeds = payload.seedProvisions as SeedProvision[];
       hydratedSeeds.forEach((seed) => {
         const indexedSeed = seedProvisionById.get(seed.id);
@@ -1479,6 +1513,33 @@ const LazyResearchView = dynamic<LazyResearchViewProps>(
   },
 );
 
+function VisualizationModuleLoading() {
+  return (
+    <section
+      id="right-column-panel"
+      className="visualization-module-loading right-column-panel"
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <Globe2 aria-hidden="true" />
+      <span>PREPARING VISUALIZATION</span>
+    </section>
+  );
+}
+
+const RegulationGlobe = dynamic<RegulationGlobeProps>(
+  () => import("./regulation-globe").then((module) => module.RegulationGlobe),
+  { ssr: false, loading: VisualizationModuleLoading },
+);
+
+const ConceptConstellation = dynamic<ConceptConstellationProps>(
+  () =>
+    import("./concept-constellation").then(
+      (module) => module.ConceptConstellation,
+    ),
+  { ssr: false, loading: VisualizationModuleLoading },
+);
+
 function explorerReducer(
   state: ExplorerState,
   action: ExplorerAction,
@@ -1597,7 +1658,10 @@ function explorerReducer(
     case "SET_READER_TAB":
       return { ...state, readerTab: action.tab };
     case "SET_QUERY":
-      return { ...state, query: action.query };
+      return {
+        ...state,
+        query: action.query.slice(0, MAX_SEARCH_QUERY_LENGTH),
+      };
     case "ADD_COMPARE":
       if (state.compareIds.includes(action.provisionId)) return state;
       return {
@@ -1623,6 +1687,68 @@ function explorerReducer(
   }
 }
 
+function explorerStateFromHash(hash: string): ExplorerState {
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  const requestedView = params.get("view") as View | null;
+  const requestedNavigatorTab = params.get("nav");
+  const concept = conceptById.get(params.get("concept") ?? "");
+  const provision = provisionMap.get(params.get("provision") ?? "");
+  const instrument = provision
+    ? instrumentById.get(provision.instrumentId)
+    : instrumentById.get(params.get("instrument") ?? "");
+  const compareIds = (params.get("compare") ?? "")
+    .split(",")
+    .filter((id) => provisionMap.has(id))
+    .slice(0, 2);
+
+  const restored: ExplorerState = {
+    view: "atlas",
+    navigatorTab: "sources",
+    selectedInstrumentId: null,
+    selectedProvisionId: null,
+    selectedRelationId: null,
+    selectedConceptId: null,
+    readerTab: "text",
+    compareIds,
+    query: "",
+  };
+
+  if (concept) {
+    restored.navigatorTab = "concepts";
+    restored.selectedConceptId = concept.id;
+    return restored;
+  }
+  if (requestedNavigatorTab === "concepts") {
+    restored.navigatorTab = "concepts";
+    return restored;
+  }
+  if (provision) {
+    restored.view = "connections";
+    restored.selectedInstrumentId = provision.instrumentId;
+    restored.selectedProvisionId = provision.id;
+  } else if (instrument) {
+    restored.view = "instrument";
+    restored.selectedInstrumentId = instrument.id;
+  }
+
+  if (!requestedView || !viewLabels.some((view) => view.id === requestedView)) {
+    return restored;
+  }
+  const validRequestedView =
+    requestedView === "atlas" ||
+    requestedView === "research" ||
+    ((requestedView === "instrument" || requestedView === "timeline") &&
+      Boolean(instrument)) ||
+    (requestedView === "connections" && Boolean(provision)) ||
+    (requestedView === "compare" && compareIds.length === 2);
+  if (validRequestedView) restored.view = requestedView;
+  if (restored.view === "atlas" || restored.view === "research") {
+    restored.selectedInstrumentId = null;
+    restored.selectedProvisionId = null;
+  }
+  return restored;
+}
+
 function humanize(value: string) {
   return value.replaceAll("_", " ").replaceAll("-", " ");
 }
@@ -1640,6 +1766,10 @@ function nativeLanguageLabel(language: string) {
   if (/^id(?:-|$)/i.test(language)) return "Bahasa Indonesia";
   if (/^vi(?:-|$)/i.test(language)) return "Tiếng Việt";
   return language.toUpperCase();
+}
+
+function languageDirection(language: string) {
+  return /^(?:ar|fa|he|ur)(?:-|$)/iu.test(language) ? "rtl" : "ltr";
 }
 
 function formatDate(value?: string | null) {
@@ -2265,6 +2395,17 @@ function NavigatorAccordion({
   className?: string;
 }) {
   const panelId = "navigator-panel-" + safeDomId(id);
+  const [contentMounted, setContentMounted] = useState(expanded);
+
+  useEffect(() => {
+    if (expanded) {
+      const frame = window.requestAnimationFrame(() => setContentMounted(true));
+      return () => window.cancelAnimationFrame(frame);
+    }
+    const timer = window.setTimeout(() => setContentMounted(false), 320);
+    return () => window.clearTimeout(timer);
+  }, [expanded]);
+
   return (
     <section
       className={["navigator-accordion", className].filter(Boolean).join(" ")}
@@ -2287,7 +2428,9 @@ function NavigatorAccordion({
         data-expanded={expanded}
         aria-hidden={!expanded}
       >
-        <div className="navigator-collapse-inner">{children}</div>
+        <div className="navigator-collapse-inner">
+          {contentMounted ? children : null}
+        </div>
       </div>
     </section>
   );
@@ -3381,7 +3524,10 @@ function InstrumentGenome({
           <p className="bilingual-instrument-title">
             <span>{instrument.title}</span>
             {instrument.originalTitle && (
-              <span lang={instrument.textAvailability.language}>
+              <span
+                lang={instrument.textAvailability.language}
+                dir={languageDirection(instrument.textAvailability.language)}
+              >
                 {instrument.originalTitle}
               </span>
             )}
@@ -3612,7 +3758,12 @@ function InstrumentGenome({
                             <span className="provision-list-copy">
                               <strong>{provision.title}</strong>
                               {provision.originalTitle && (
-                                <span lang={provision.textAvailability.language}>
+                                <span
+                                  lang={provision.textAvailability.language}
+                                  dir={languageDirection(
+                                    provision.textAvailability.language,
+                                  )}
+                                >
                                   {provision.originalTitle}
                                 </span>
                               )}
@@ -4587,7 +4738,10 @@ function ProvisionReader({
           <p className="bilingual-instrument-title">
             <span>{instrument.title}</span>
             {instrument.originalTitle && (
-              <span lang={instrument.textAvailability.language}>
+              <span
+                lang={instrument.textAvailability.language}
+                dir={languageDirection(instrument.textAvailability.language)}
+              >
                 {instrument.originalTitle}
               </span>
             )}
@@ -4861,7 +5015,12 @@ function ProvisionReader({
         <p className="bilingual-provision-title">
           <span>{provision!.title}</span>
           {provision!.originalTitle && (
-            <span lang={originalLanguage}>{provision!.originalTitle}</span>
+            <span
+              lang={originalLanguage}
+              dir={languageDirection(originalLanguage)}
+            >
+              {provision!.originalTitle}
+            </span>
           )}
         </p>
       </div>
@@ -4953,6 +5112,7 @@ function ProvisionReader({
           role="tabpanel"
           aria-labelledby="reader-tab-text"
           lang={displayedLanguage}
+          dir={languageDirection(displayedLanguage)}
           data-text-language={displayedLanguage}
         >
           {activeStructureSummary && (
@@ -4981,7 +5141,10 @@ function ProvisionReader({
                     Current effective original-language text · effective{" "}
                     {formatDate(currentEffectiveVersion.appliesFrom)}
                   </summary>
-                  <div lang={currentEffectiveVersion.language}>
+                  <div
+                    lang={currentEffectiveVersion.language}
+                    dir={languageDirection(currentEffectiveVersion.language)}
+                  >
                     {currentEffectiveVersion.paragraphs.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
@@ -5131,7 +5294,10 @@ function ProvisionReader({
                 ? "TOPIC-RELEVANT PROVISION"
                 : "STRUCTURAL CONTEXT"}
             </span>
-            <p>{provision!.topicRelevance.rationale}</p>
+            <p>
+              {provision!.topicRelevance.rationale ??
+                "This provision is classified from its recorded concept assignments; open the verified instrument text to load the full editorial rationale."}
+            </p>
           </div>
           <div className="concept-list">
             {provision!.conceptIds.map((conceptId) => (
@@ -5407,6 +5573,20 @@ function CompareTray({
   );
 }
 
+function suggestionResults(results: readonly SearchResult[]) {
+  const quotas = { instrument: 3, provision: 5, concept: 3 } as const;
+  const counts = { instrument: 0, provision: 0, concept: 0 };
+  const selected: SearchResult[] = [];
+  for (const result of results) {
+    const type = result.document.type;
+    if (counts[type] >= quotas[type]) continue;
+    counts[type] += 1;
+    selected.push(result);
+    if (selected.length === 10) break;
+  }
+  return selected;
+}
+
 export default function RegulationExplorer() {
   const [state, dispatch] = useReducer(explorerReducer, {
     view: "atlas",
@@ -5453,12 +5633,8 @@ export default function RegulationExplorer() {
     [deferredSearchQuery, hybridSearchIndex],
   );
   const searchSuggestions = useMemo(
-    () =>
-      searchIndex(hybridSearchIndex, deferredSearchQuery, {
-        limit: 10,
-        typeQuotas: { instrument: 3, provision: 5, concept: 3 },
-      }),
-    [deferredSearchQuery, hybridSearchIndex],
+    () => suggestionResults(navigatorSearchResults),
+    [navigatorSearchResults],
   );
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
   const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
@@ -5473,10 +5649,16 @@ export default function RegulationExplorer() {
   const appShellRef = useRef<HTMLDivElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
   const columnResizeRef = useRef<ColumnResize>(null);
+  const columnResizeFrameRef = useRef<number | null>(null);
+  const pendingColumnResizeRef = useRef<{
+    side: ColumnSide;
+    width: number;
+  } | null>(null);
   const urlSyncReadyRef = useRef(false);
   const transitionRef = useRef<SameDocumentViewTransition | null>(null);
   const transitionTokenRef = useRef(0);
-  const navigationHistoryRef = useRef<ExplorerState[]>([]);
+  const pendingHistoryPushRef = useRef(false);
+  const historyEntryIndexRef = useRef(0);
   const allCorpusRequestRef = useRef<Promise<void> | null>(null);
   const hasRightColumn =
     (state.view === "atlas" &&
@@ -5620,18 +5802,21 @@ export default function RegulationExplorer() {
 
   useEffect(() => {
     if (!columnLayoutReady) return;
-    try {
-      window.localStorage.setItem(
-        columnLayoutStorageKey,
-        JSON.stringify(columnLayout),
-      );
-      window.localStorage.setItem(
-        workspaceDensityStorageKey,
-        workspaceDensity,
-      );
-    } catch {
-      // Local persistence is optional; resizing still works for this session.
-    }
+    const timer = window.setTimeout(() => {
+      try {
+        window.localStorage.setItem(
+          columnLayoutStorageKey,
+          JSON.stringify(columnLayout),
+        );
+        window.localStorage.setItem(
+          workspaceDensityStorageKey,
+          workspaceDensity,
+        );
+      } catch {
+        // Local persistence is optional; resizing still works for this session.
+      }
+    }, 220);
+    return () => window.clearTimeout(timer);
   }, [columnLayout, columnLayoutReady, workspaceDensity]);
 
   function columnWidthBounds(side: ColumnSide, layout = columnLayout) {
@@ -5690,10 +5875,19 @@ export default function RegulationExplorer() {
     const resize = columnResizeRef.current;
     if (!resize || resize.pointerId !== event.pointerId) return;
     const pointerDelta = event.clientX - resize.startX;
-    setColumnWidth(
-      resize.side,
-      resize.startWidth + (resize.side === "left" ? pointerDelta : -pointerDelta),
-    );
+    pendingColumnResizeRef.current = {
+      side: resize.side,
+      width:
+        resize.startWidth +
+        (resize.side === "left" ? pointerDelta : -pointerDelta),
+    };
+    if (columnResizeFrameRef.current !== null) return;
+    columnResizeFrameRef.current = window.requestAnimationFrame(() => {
+      columnResizeFrameRef.current = null;
+      const pending = pendingColumnResizeRef.current;
+      pendingColumnResizeRef.current = null;
+      if (pending) setColumnWidth(pending.side, pending.width);
+    });
   }
 
   function endColumnResize(event: ReactPointerEvent<HTMLElement>) {
@@ -5702,6 +5896,13 @@ export default function RegulationExplorer() {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
+    if (columnResizeFrameRef.current !== null) {
+      window.cancelAnimationFrame(columnResizeFrameRef.current);
+      columnResizeFrameRef.current = null;
+    }
+    const pending = pendingColumnResizeRef.current;
+    pendingColumnResizeRef.current = null;
+    if (pending) setColumnWidth(pending.side, pending.width);
     columnResizeRef.current = null;
     setActiveColumnResize(null);
   }
@@ -5858,14 +6059,7 @@ export default function RegulationExplorer() {
   }
 
   function rememberCurrentInterface() {
-    navigationHistoryRef.current.push({
-      ...state,
-      compareIds: [...state.compareIds],
-    });
-    if (navigationHistoryRef.current.length > 40) {
-      navigationHistoryRef.current.shift();
-    }
-    setHistoryDepth(navigationHistoryRef.current.length);
+    pendingHistoryPushRef.current = true;
   }
 
   const closeMobileNavigatorAndRestoreFocus = useCallback(() => {
@@ -5892,18 +6086,8 @@ export default function RegulationExplorer() {
 
   function goBack() {
     closeMobileNavigatorAndRestoreFocus();
-    const previous = navigationHistoryRef.current.pop();
-    if (!previous) return;
-    setHistoryDepth(navigationHistoryRef.current.length);
-    const restore = () => dispatch({ type: "RESTORE_STATE", state: previous });
-    if (previous.navigatorTab !== state.navigatorTab) {
-      restore();
-      return;
-    }
-    runVisualTransition("view", restore, {
-      nextView: previous.view,
-      direction: "backward",
-    });
+    if (historyEntryIndexRef.current <= 0) return;
+    window.history.back();
   }
 
   function setNavigatorTab(nextTab: NavigatorTab) {
@@ -6017,81 +6201,63 @@ export default function RegulationExplorer() {
   }
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.hash.replace(/^#/, ""));
-    const instrumentId = params.get("instrument");
-    const provisionId = params.get("provision");
-    const conceptId = params.get("concept");
-    const requestedNavigatorTab = params.get("nav");
-    const requestedView = params.get("view") as View | null;
-    const requestedResearchView = params.get("researchView");
-    const requestedResearchCoverage = params.get("researchCoverage");
-    const requestedResearchRelevance = params.get("researchRelevance");
-    const restoredConcept = conceptId ? conceptById.get(conceptId) : undefined;
-    const restoredProvision = provisionId
-      ? provisionMap.get(provisionId)
-      : undefined;
-    const restoredInstrument = restoredProvision
-      ? instrumentById.get(restoredProvision.instrumentId)
-      : instrumentId
-        ? instrumentById.get(instrumentId)
-        : undefined;
-
-    if (isResearchLabView(requestedResearchView)) {
-      setResearchView(requestedResearchView);
-    }
-    if (
-      requestedResearchCoverage === "complete" ||
-      requestedResearchCoverage === "all"
-    ) {
-      setResearchCoverage(requestedResearchCoverage);
-    }
-    if (
-      requestedResearchRelevance === "substantive" ||
-      requestedResearchRelevance === "all"
-    ) {
-      setResearchRelevance(requestedResearchRelevance);
-    }
-
-    if (restoredConcept) {
-      dispatch({ type: "OPEN_CONCEPT", conceptId: restoredConcept.id });
-    } else if (requestedNavigatorTab === "concepts") {
-      dispatch({ type: "SET_NAVIGATOR_TAB", tab: "concepts" });
-    } else if (restoredProvision) {
+    function restoreLocation() {
+      const params = new URLSearchParams(
+        window.location.hash.replace(/^#/, ""),
+      );
       dispatch({
-        type: "OPEN_PROVISION",
-        provisionId: restoredProvision.id,
-        instrumentId: restoredProvision.instrumentId,
+        type: "RESTORE_STATE",
+        state: explorerStateFromHash(window.location.hash),
       });
-    } else if (restoredInstrument) {
-      dispatch({ type: "OPEN_INSTRUMENT", instrumentId: restoredInstrument.id });
+      const requestedResearchView = params.get("researchView");
+      const requestedResearchCoverage = params.get("researchCoverage");
+      const requestedResearchRelevance = params.get("researchRelevance");
+      if (isResearchLabView(requestedResearchView)) {
+        setResearchView(requestedResearchView);
+      }
+      if (
+        requestedResearchCoverage === "complete" ||
+        requestedResearchCoverage === "all"
+      ) {
+        setResearchCoverage(requestedResearchCoverage);
+      }
+      if (
+        requestedResearchRelevance === "substantive" ||
+        requestedResearchRelevance === "all"
+      ) {
+        setResearchRelevance(requestedResearchRelevance);
+      }
     }
 
-    const restoredCompareIds = (params.get("compare") ?? "")
-      .split(",")
-      .filter((id) => provisionMap.has(id))
-      .slice(0, 2);
-    restoredCompareIds.forEach((id) =>
-      dispatch({ type: "ADD_COMPARE", provisionId: id }),
+    restoreLocation();
+    window.history.replaceState(
+      { complianceCompass: true, index: 0 },
+      "",
+      window.location.href,
     );
+    historyEntryIndexRef.current = 0;
+    setHistoryDepth(0);
 
-    if (
-      !restoredConcept &&
-      requestedNavigatorTab !== "concepts" &&
-      requestedView &&
-      viewLabels.some((view) => view.id === requestedView) &&
-      (requestedView === "atlas" ||
-        requestedView === "research" ||
-        (requestedView === "instrument" && restoredInstrument) ||
-        (requestedView === "timeline" && restoredInstrument) ||
-        (requestedView === "connections" && restoredProvision) ||
-        (requestedView === "compare" && restoredCompareIds.length === 2))
-    ) {
-      dispatch({ type: "OPEN_VIEW", view: requestedView });
-    }
+    const handlePopState = (event: PopStateEvent) => {
+      pendingHistoryPushRef.current = false;
+      const nextIndex =
+        event.state?.complianceCompass &&
+        Number.isInteger(event.state.index) &&
+        event.state.index >= 0
+          ? event.state.index
+          : 0;
+      historyEntryIndexRef.current = nextIndex;
+      setHistoryDepth(nextIndex);
+      restoreLocation();
+    };
+    window.addEventListener("popstate", handlePopState);
     const timer = window.setTimeout(() => {
       urlSyncReadyRef.current = true;
     }, 0);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, []);
 
   useEffect(() => {
@@ -6120,12 +6286,31 @@ export default function RegulationExplorer() {
     }
     const nextHash = "#" + params.toString();
     if (window.location.hash !== nextHash) {
-      window.history.replaceState(
-        null,
-        "",
-        window.location.pathname + window.location.search + nextHash,
-      );
+      const nextUrl =
+        window.location.pathname + window.location.search + nextHash;
+      if (pendingHistoryPushRef.current) {
+        historyEntryIndexRef.current += 1;
+        window.history.pushState(
+          {
+            complianceCompass: true,
+            index: historyEntryIndexRef.current,
+          },
+          "",
+          nextUrl,
+        );
+        setHistoryDepth(historyEntryIndexRef.current);
+      } else {
+        window.history.replaceState(
+          {
+            complianceCompass: true,
+            index: historyEntryIndexRef.current,
+          },
+          "",
+          nextUrl,
+        );
+      }
     }
+    pendingHistoryPushRef.current = false;
   }, [
     state.compareIds,
     state.navigatorTab,
@@ -6167,12 +6352,6 @@ export default function RegulationExplorer() {
   }, [ensureInstrumentAvailable, state.compareIds, state.view]);
 
   useEffect(() => {
-    if (state.navigatorTab === "sources" && state.view === "research") {
-      void ensureCompleteCorpus();
-    }
-  }, [ensureCompleteCorpus, state.navigatorTab, state.view]);
-
-  useEffect(() => {
     function handleKeyboard(event: KeyboardEvent) {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -6192,6 +6371,9 @@ export default function RegulationExplorer() {
     () => () => {
       if (mobileNavigatorFocusFrameRef.current !== null) {
         window.cancelAnimationFrame(mobileNavigatorFocusFrameRef.current);
+      }
+      if (columnResizeFrameRef.current !== null) {
+        window.cancelAnimationFrame(columnResizeFrameRef.current);
       }
     },
     [],
@@ -6908,8 +7090,8 @@ export default function RegulationExplorer() {
           {state.navigatorTab === "sources" && state.view === "research" && (
             <LazyResearchView
               input={researchCorpusInput}
-              ready={fullCorpusLoadState.phase === "ready"}
-              errorMessage={fullCorpusLoadState.error}
+              ready
+              errorMessage={null}
               initialView={researchView}
               initialCoverageScope={researchCoverage}
               initialRelevanceScope={researchRelevance}

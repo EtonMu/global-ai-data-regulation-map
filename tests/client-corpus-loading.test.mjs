@@ -34,7 +34,7 @@ test("the first explorer chunk contains a lightweight 58-instrument index", () =
   for (const instrument of instruments) {
     assert.match(
       index.shards[instrument.id],
-      new RegExp(`^data/corpus/${instrument.id}\\.json\\?v=[a-f0-9]{16}$`),
+      new RegExp(`^data/corpus/${instrument.id}\\.json\\?v=[a-f0-9]{64}$`),
     );
   }
 
@@ -76,10 +76,12 @@ test("complete corpora are fetched and hydrated by instrument instead of importe
   assert.match(loaderSource, /fetch\(resolvedUrl/);
   assert.match(loaderSource, /cache: options\.force \? "no-cache" : "force-cache"/);
   assert.match(loaderSource, /shardPromises\.delete\(instrumentId\)/);
-  assert.match(loaderSource, /corpusRevision\(serializedPayload\)/);
+  assert.match(loaderSource, /corpusRevision\(serializedBytes\)/);
   assert.match(loaderSource, /assertExactIds/);
   assert.match(loaderSource, /expectation\.articleIds/);
   assert.match(loaderSource, /expectation\.seedIds/);
+  assert.match(loaderSource, /expectation\.reviewIds/);
+  assert.match(loaderSource, /MAX_CORPUS_SHARD_BYTES/);
   assert.match(
     explorerSource,
     /hydratedInstrumentIds\.has\(instrumentId\) && !options\.force/,
@@ -141,7 +143,7 @@ test("instrument overviews progressively disclose corpus composition and redistr
   );
 });
 
-test("full-text search is explicit while Research loads the complete corpus on demand", () => {
+test("full-text search is explicit while Research starts from the lightweight annotation index", () => {
   assert.match(
     explorerSource,
     /<SearchCombobox[\s\S]*?onLoadFullText=\{\(\)\s*=>[\s\S]*?ensureCompleteCorpus\(/,
@@ -152,16 +154,18 @@ test("full-text search is explicit while Research loads the complete corpus on d
     /state\.query\.trim\(\)[\s\S]{0,600}?setTimeout\([\s\S]{0,300}?ensureCompleteCorpus\(/,
     "a keystroke must not automatically download every corpus shard",
   );
-  assert.match(
+  assert.doesNotMatch(
     explorerSource,
-    /state\.view === "research"[\s\S]*?ensureCompleteCorpus\(\)/,
+    /state\.view === "research"[\s\S]{0,300}?ensureCompleteCorpus\(\)/,
+    "opening Research must not download every legal-text shard",
   );
   assert.doesNotMatch(explorerSource, /from "\.\/research-lab-data";\s*\nimport \{ ResearchLab/);
   assert.match(
     explorerSource,
     /dynamic<LazyResearchViewProps>[\s\S]*?import\("\.\/lazy-research-view"\)/,
   );
-  assert.match(lazyResearchSource, /ready \? buildResearchLabData\(input\) : null/);
+  assert.match(lazyResearchSource, /window\.setTimeout\(\(\) => \{/);
+  assert.match(lazyResearchSource, /buildResearchLabData\(input\)/);
   assert.match(lazyResearchSource, /<ResearchLab/);
 });
 

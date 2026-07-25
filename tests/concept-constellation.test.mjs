@@ -51,7 +51,10 @@ test("concept constellation reflows and honors reduced motion", () => {
 });
 
 test("Core Concepts progressively mounts the constellation in the stable right panel", () => {
-  assert.match(explorerSource, /import \{ ConceptConstellation \}/);
+  assert.match(
+    explorerSource,
+    /dynamic<ConceptConstellationProps>[\s\S]*?import\("\.\/concept-constellation"\)/,
+  );
   assert.match(
     explorerSource,
     /state\.navigatorTab === "concepts"[\s\S]*?state\.view === "atlas"[\s\S]*?\(workspaceDensity === "research" \|\| Boolean\(state\.selectedConceptId\)\)[\s\S]*?<ConceptConstellation/,

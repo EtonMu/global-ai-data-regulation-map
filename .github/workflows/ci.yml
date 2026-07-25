@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -30,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Audit production dependencies
+        run: pnpm audit --prod --audit-level high
+
       - name: Validate regulation data
         run: pnpm validate:data
 
@@ -41,3 +46,6 @@ jobs:
 
       - name: Build and test rendered output
         run: pnpm test
+
+      - name: Verify generated research assets are committed
+        run: git diff --exit-code -- data/geo/natural-earth-land-points.json data/v2/client-corpus-index.json data/v2/client-provision-concepts.json

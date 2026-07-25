@@ -37,14 +37,14 @@
         "originalLanguageUnitCount": 74,
         "englishUnitCount": 74,
         "coverageStatus": "complete-current",
-        "fileSha256": "54f2eef0528f157776380700a0d5ed3d5b55e7bb53291bb634e9e059bac0fa65"
+        "fileSha256": "1381719e37ceb11d2b65a1f02f8b71874ea6f2ee04e26a62c805fa3f1c63b1be"
       },
       "translation": {
         "language": "en",
         "status": "government-published-reference",
         "authorityLevel": "NPC-published-reference-only",
         "coAuthentic": false,
-        "source": "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+        "source": "https://www.npc.gov.cn/npc/c2597/c5854/bfflywwb/202311/t20231117_433007.html",
         "sourceLabel": "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)",
         "publishedOn": "2021-12-29",
         "authorityNote": "The NPC publishes this complete English text in its 'Laws (Translation for Reference Only)' collection. It is not a co-authentic enactment; the Chinese text controls.",

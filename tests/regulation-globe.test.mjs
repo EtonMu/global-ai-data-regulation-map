@@ -16,6 +16,16 @@ const physicalLandGeoJson = JSON.parse(
     "utf8",
   ),
 );
+const landPoints = JSON.parse(
+  await readFile(
+    new URL("../data/geo/natural-earth-land-points.json", import.meta.url),
+    "utf8",
+  ),
+);
+const globeBuildSource = await readFile(
+  new URL("../scripts/build-globe-points.mjs", import.meta.url),
+  "utf8",
+);
 const geographicDataNotes = await readFile(
   new URL("../data/geo/README.md", import.meta.url),
   "utf8",
@@ -44,9 +54,19 @@ test("regulation globe forms continents from published physical-land geometry on
       (feature) => feature.properties.featurecla === "Land",
     ),
   );
-  assert.match(globeSource, /natural-earth-land-110m\.json/);
-  assert.match(globeSource, /geoContains\(landGeometry/);
-  assert.match(globeSource, /const LAND_POINTS = createLandPointCloud/);
+  assert.ok(landPoints.length > 4_000);
+  assert.ok(
+    landPoints.every(
+      (point) =>
+        Array.isArray(point) &&
+        point.length === 3 &&
+        point.every((coordinate) => Number.isFinite(coordinate)),
+    ),
+  );
+  assert.match(globeBuildSource, /natural-earth-land-110m\.json/);
+  assert.match(globeBuildSource, /geoContains\(collection/);
+  assert.match(globeSource, /natural-earth-land-points\.json/);
+  assert.match(globeSource, /const LAND_POINTS: Vector3\[\]/);
   assert.doesNotMatch(globeSource, /ringContainsPoint|isLandPoint/);
   assert.match(geographicDataNotes, /physical land/i);
   assert.match(geographicDataNotes, /does not load or draw national/i);
@@ -79,6 +99,11 @@ test("globe rotation is user-controlled and map tags open their matching jurisdi
   assert.doesNotMatch(globeSource, /ROTATION_SPEED/);
   assert.doesNotMatch(globeSource, /Automatic rotation/);
   assert.doesNotMatch(globeSource, /setMotionPaused/);
+  assert.doesNotMatch(
+    globeSource,
+    /requestAnimationFrame\(animate\)/,
+    "the globe must not redraw continuously while idle",
+  );
   assert.match(
     globeSource,
     /pitchRef\.current - deltaY \* 0\.006/,

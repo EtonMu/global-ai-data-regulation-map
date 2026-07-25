@@ -8,11 +8,10 @@ import {
   useRef,
   useState,
 } from "react";
-import { geoContains, type GeoPermissibleObjects } from "d3-geo";
 import { Move3d } from "lucide-react";
 import { ConceptIcon } from "./concept-icon";
 import { JurisdictionMark } from "./jurisdiction-mark";
-import naturalEarthLand from "../data/geo/natural-earth-land-110m.json";
+import landPointsJson from "../data/geo/natural-earth-land-points.json";
 import styles from "./regulation-globe.module.css";
 
 export type RegulationGlobeJurisdiction = {
@@ -47,17 +46,6 @@ type DragState = {
   y: number;
 } | null;
 
-type GeoPosition = readonly [number, number, ...number[]];
-type GeoRing = readonly GeoPosition[];
-type GeoPolygonCoordinates = readonly GeoRing[];
-type NaturalEarthLandCollection = {
-  features: readonly {
-    geometry:
-      | { type: "Polygon"; coordinates: GeoPolygonCoordinates }
-      | { type: "MultiPolygon"; coordinates: readonly GeoPolygonCoordinates[] };
-  }[];
-};
-
 type ResetAnimation = {
   frame: number;
   startTime: number;
@@ -80,7 +68,6 @@ const KEYBOARD_ROTATION_STEP = 0.09;
 const DEFAULT_YAW = 0;
 const DEFAULT_PITCH = 0;
 const RESET_DURATION = 620;
-const LAND_SAMPLE_STEP = 2.55;
 
 /**
  * Approximate issuer anchors label relevant places without drawing or implying
@@ -203,64 +190,10 @@ function anchorToVector(latitude: number, longitude: number): Vector3 {
   };
 }
 
-function extractLandPolygons(
-  collection: NaturalEarthLandCollection,
-): GeoPolygonCoordinates[] {
-  return collection.features.flatMap(({ geometry }) =>
-    geometry.type === "Polygon" ? [geometry.coordinates] : geometry.coordinates,
-  );
-}
-
-function createLandPointCloud(
-  collection: NaturalEarthLandCollection,
-  sampleStep: number,
-): Vector3[] {
-  const polygons = extractLandPolygons(collection);
-  const landGeometry = collection as unknown as GeoPermissibleObjects;
-  const points: Vector3[] = [];
-  let row = 0;
-
-  // Equal-area-ish rows keep the poles from overpowering the visible cloud.
-  for (
-    let latitude = -87;
-    latitude <= 85;
-    latitude += sampleStep, row += 1
-  ) {
-    const latitudeScale = Math.max(
-      0.34,
-      Math.cos((latitude * Math.PI) / 180),
-    );
-    const longitudeStep = sampleStep / latitudeScale;
-    const rowOffset = ((row * 0.61803398875) % 1) * longitudeStep;
-    for (
-      let longitude = -180 + rowOffset;
-      longitude < 180;
-      longitude += longitudeStep
-    ) {
-      if (geoContains(landGeometry, [longitude, latitude])) {
-        points.push(anchorToVector(latitude, longitude));
-      }
-    }
-  }
-
-  // Natural Earth coastline vertices add small islands and crisp physical
-  // silhouettes as dots only—no country or disputed-boundary paths are used.
-  polygons.forEach((rings) => {
-    const coastline = rings[0];
-    for (let index = 0; index < coastline.length; index += 2) {
-      const [longitude, latitude] = coastline[index];
-      points.push(anchorToVector(latitude, longitude));
-    }
-  });
-
-  return points;
-}
-
 const SPHERE_POINTS = createFibonacciSphere(POINT_COUNT);
-const LAND_POINTS = createLandPointCloud(
-  naturalEarthLand as unknown as NaturalEarthLandCollection,
-  LAND_SAMPLE_STEP,
-);
+const LAND_POINTS: Vector3[] = (
+  landPointsJson as Array<[number, number, number]>
+).map(([x, y, z]) => ({ x, y, z }));
 
 function rotateVector(point: Vector3, yaw: number, pitch: number): Vector3 {
   const yawCos = Math.cos(yaw);
@@ -497,11 +430,7 @@ export function RegulationGlobe({
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    let animationFrame = 0;
-    const initialFrameTime = performance.now();
-    const shouldAnimate = !reducedMotion;
-
-    const draw = (time: number) => {
+    const draw = () => {
       const { width, height, dpr } = sizeRef.current;
       if (width <= 1 || height <= 1) return;
       const palette = paletteRef.current ?? readPalette();
@@ -600,7 +529,7 @@ export function RegulationGlobe({
           : Math.max(0.12, 0.18 + start.z * 0.11);
         context.lineWidth = emphasized ? 1.7 : 0.8 + Math.min(connection.count, 3) * 0.12;
         context.setLineDash(emphasized ? [5, 4] : [2, 5]);
-        context.lineDashOffset = reducedMotion ? 0 : -time * 0.012;
+        context.lineDashOffset = 0;
         context.beginPath();
         context.moveTo(start.x, start.y);
         context.quadraticCurveTo(
@@ -702,19 +631,10 @@ export function RegulationGlobe({
       context.setLineDash([]);
     };
 
-    requestDrawRef.current = () => draw(performance.now());
-    draw(initialFrameTime);
-
-    if (shouldAnimate) {
-      const animate = (time: number) => {
-        draw(time);
-        animationFrame = requestAnimationFrame(animate);
-      };
-      animationFrame = requestAnimationFrame(animate);
-    }
+    requestDrawRef.current = draw;
+    draw();
 
     return () => {
-      cancelAnimationFrame(animationFrame);
       requestDrawRef.current = () => undefined;
     };
   }, [

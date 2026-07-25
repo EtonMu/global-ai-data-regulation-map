@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, Database } from "lucide-react";
 import { buildResearchLabData } from "./research-lab-data";
-import type { ResearchCorpusInput } from "./research-lab-data";
+import type { ResearchCorpusInput, ResearchLabData } from "./research-lab-data";
 import { ResearchLab } from "./research-lab";
 import type {
   ResearchCoverageScope,
@@ -44,10 +44,24 @@ export default function LazyResearchView({
   onOpenProvision,
   onOpenConcept,
 }: LazyResearchViewProps) {
-  const data = useMemo(
-    () => (ready ? buildResearchLabData(input) : null),
-    [input, ready],
-  );
+  const [result, setResult] = useState<{
+    input: ResearchCorpusInput;
+    data: ResearchLabData;
+  } | null>(null);
+  const data = ready && result?.input === input ? result.data : null;
+
+  useEffect(() => {
+    if (!ready) return;
+    let cancelled = false;
+    const timer = window.setTimeout(() => {
+      const nextData = buildResearchLabData(input);
+      if (!cancelled) setResult({ input, data: nextData });
+    }, 0);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [input, ready]);
 
   if (errorMessage) {
     return (
@@ -77,10 +91,11 @@ export default function LazyResearchView({
     return (
       <section className="empty-state" aria-busy="true" aria-live="polite">
         <span>RESEARCH_CORPUS_LOADING</span>
-        <h2>Loading the complete legal-text corpus.</h2>
+        <h2>Preparing the comparative research models.</h2>
         <p>
-          Research calculations begin only after every instrument shard has been
-          verified, so corpus-wide measurements remain comparable.
+          The lightweight annotation index opens first. Full legal text remains
+          available on demand when an article is opened or full-text search is
+          enabled.
         </p>
       </section>
     );

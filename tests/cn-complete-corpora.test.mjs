@@ -30,7 +30,7 @@ const corpusDefinitions = [
     englishStatus: "government-published-reference",
     englishCoverageStatus: "complete-current",
     englishVersionAsOf: "2021-11-01",
-    englishSourceHostname: "en.npc.gov.cn",
+    englishSourceHostname: "www.npc.gov.cn",
   },
   {
     instrumentId: "cn-network-data-regulations",

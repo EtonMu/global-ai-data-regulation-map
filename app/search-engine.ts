@@ -1,5 +1,8 @@
 export type SearchDocumentType = "instrument" | "provision" | "concept";
 
+/** Bounds local fuzzy-search work even when state is restored programmatically. */
+export const MAX_SEARCH_QUERY_LENGTH = 512;
+
 export type SearchTranslation =
   | string
   | {
@@ -890,7 +893,7 @@ export function searchIndex(
   rawQuery: string,
   options: SearchOptions = {},
 ): SearchResult[] {
-  const query = normalizeSearchText(rawQuery);
+  const query = normalizeSearchText(rawQuery.slice(0, MAX_SEARCH_QUERY_LENGTH));
   const limit = normalizedLimit(options.limit);
   if (!query || limit === 0) return [];
 

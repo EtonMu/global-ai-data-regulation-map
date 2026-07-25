@@ -174,36 +174,18 @@ function lightweightArticle(record) {
     title: record.title,
     ...(record.originalTitle ? { originalTitle: record.originalTitle } : {}),
     summary: editorialSummary(record),
-    chapter: slimStructure(record.chapter),
-    ...(record.chapterTitle ? { chapterTitle: record.chapterTitle } : {}),
-    section: slimStructure(record.section),
     ...(record.parentId !== undefined ? { parentId: record.parentId } : {}),
     ...(record.provisionType ? { provisionType: record.provisionType } : {}),
     paragraphs: [],
     fullText: "",
     language: record.language,
-    textAvailability: record.textAvailability,
-    source: record.source,
-    ...(record.sourceFragment ? { sourceFragment: record.sourceFragment } : {}),
-    ...(record.sourceSubdivision
-      ? { sourceSubdivision: record.sourceSubdivision }
-      : {}),
-    ...(record.canonicalSource ? { canonicalSource: record.canonicalSource } : {}),
-    ...(record.sourceLabel ? { sourceLabel: record.sourceLabel } : {}),
-    retrievedOn: record.retrievedOn,
     ...(record.appliesFrom !== undefined
       ? { appliesFrom: record.appliesFrom }
-      : {}),
-    ...(record.effectiveFrom !== undefined
-      ? { effectiveFrom: record.effectiveFrom }
       : {}),
     legalEffectStatus: inferredLegalEffectStatus(record),
     ...(record.versionAsOf ? { versionAsOf: record.versionAsOf } : {}),
     ...(record.defaultLanguageStatus
       ? { defaultLanguageStatus: record.defaultLanguageStatus }
-      : {}),
-    ...(record.sourceVersion?.effectiveFrom
-      ? { sourceVersion: { effectiveFrom: record.sourceVersion.effectiveFrom } }
       : {}),
   };
 }
@@ -249,12 +231,23 @@ function lightweightSeed(record) {
   };
 }
 
+function lightweightConceptReview(review) {
+  return {
+    provisionId: review.provisionId,
+    relevance: review.relevance,
+    conceptIds: review.conceptIds,
+    reviewStatus: review.reviewStatus,
+    reviewedOn: review.reviewedOn,
+  };
+}
+
 async function readJson(filename) {
   return JSON.parse(await readFile(path.join(dataDirectory, filename), "utf8"));
 }
 
 const instruments = await readJson("instruments.json");
 const seedProvisions = await readJson("provisions.json");
+const provisionConceptReviews = await readJson("provision-concepts.json");
 const sourceCorpora = await Promise.all(
   corpusFiles.map(async (filename) => ({ filename, records: await readJson(filename) })),
 );
@@ -272,6 +265,10 @@ const articlesByInstrument = new Map(
 const seedsByInstrument = new Map(
   instruments.map((instrument) => [instrument.id, []]),
 );
+const reviewsByInstrument = new Map(
+  instruments.map((instrument) => [instrument.id, []]),
+);
+const provisionInstrumentById = new Map();
 
 for (const article of articleRecords) {
   const instrumentId = normalizedInstrumentId(article.instrumentId);
@@ -279,6 +276,7 @@ for (const article of articleRecords) {
     throw new Error(`Corpus article ${article.id} references unknown ${instrumentId}.`);
   }
   articlesByInstrument.get(instrumentId).push(article);
+  provisionInstrumentById.set(article.id, instrumentId);
 }
 for (const provision of seedProvisions) {
   if (!instrumentIds.has(provision.instrumentId)) {
@@ -287,6 +285,16 @@ for (const provision of seedProvisions) {
     );
   }
   seedsByInstrument.get(provision.instrumentId).push(provision);
+  provisionInstrumentById.set(provision.id, provision.instrumentId);
+}
+for (const review of provisionConceptReviews) {
+  const instrumentId = provisionInstrumentById.get(review.provisionId);
+  if (!instrumentId) {
+    throw new Error(
+      `Concept review ${review.provisionId} does not match a corpus provision.`,
+    );
+  }
+  reviewsByInstrument.get(instrumentId).push(review);
 }
 
 await mkdir(publicCorpusDirectory, { recursive: true });
@@ -300,12 +308,12 @@ for (const instrument of instruments) {
     instrumentId,
     articleRecords: articlesByInstrument.get(instrumentId),
     seedProvisions: seedsByInstrument.get(instrumentId),
+    provisionConceptReviews: reviewsByInstrument.get(instrumentId),
   };
   const serializedPayload = JSON.stringify(payload);
   const revision = createHash("sha256")
     .update(serializedPayload)
-    .digest("hex")
-    .slice(0, 16);
+    .digest("hex");
   shards[instrumentId] = `data/corpus/${filename}?v=${revision}`;
   await writeFile(
     path.join(publicCorpusDirectory, filename),
@@ -333,6 +341,11 @@ const clientIndex = {
 await writeFile(
   path.join(dataDirectory, "client-corpus-index.json"),
   JSON.stringify(clientIndex),
+);
+
+await writeFile(
+  path.join(dataDirectory, "client-provision-concepts.json"),
+  JSON.stringify(provisionConceptReviews.map(lightweightConceptReview)),
 );
 
 process.stdout.write(
