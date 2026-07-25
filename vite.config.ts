@@ -14,6 +14,11 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const localBindingConfig = {
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  assets: {
+    // Static assets stay on the CDN fast path. Route documents and the image
+    // optimizer through the Worker so their security headers cannot be bypassed.
+    run_worker_first: ["/", "/_vinext/image*"],
+  },
   d1_databases: d1
     ? [
         {

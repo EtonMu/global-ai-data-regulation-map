@@ -14,6 +14,10 @@ const staticHeaders = await readFile(
   new URL("../public/_headers", import.meta.url),
   "utf8",
 );
+const viteConfig = await readFile(
+  new URL("../vite.config.ts", import.meta.url),
+  "utf8",
+);
 const piplCorpus = JSON.parse(
   await readFile(
     new URL("../data/v2/cn-pipl-articles.json", import.meta.url),
@@ -46,6 +50,7 @@ test("all application and image responses receive the baseline security headers"
   assert.match(staticHeaders, /^\/\*/m);
   assert.match(staticHeaders, /^\/assets\/\*/m);
   assert.match(staticHeaders, /max-age=31536000, immutable/);
+  assert.match(viteConfig, /run_worker_first:\s*\["\/", "\/_vinext\/image\*"\]/);
 });
 
 test("the interface has no third-party font request", () => {
