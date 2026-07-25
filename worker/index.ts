@@ -37,12 +37,14 @@ const SECURITY_HEADERS: Readonly<Record<string, string>> = {
     "worker-src 'self'",
   ].join("; "),
   "Cross-Origin-Opener-Policy": "same-origin",
+  "Cross-Origin-Resource-Policy": "same-origin",
   "Permissions-Policy":
     "camera=(), geolocation=(), microphone=(), payment=(), usb=(), browsing-topics=()",
   "Referrer-Policy": "no-referrer",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "DENY",
+  "X-Permitted-Cross-Domain-Policies": "none",
 };
 
 function withSecurityHeaders(response: Response) {
