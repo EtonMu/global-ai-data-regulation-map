@@ -121,10 +121,15 @@ test("the root layout uses static Metadata without reading request headers", () 
   );
 });
 
-test("the production route is exported as static HTML", () => {
+test("the document route stays behind the security-header Worker", () => {
   assert.match(
+    pageSource,
+    /\bdynamic\s*=\s*["']force-dynamic["']/,
+    "the document route must remain request-bound so the Worker can add response headers",
+  );
+  assert.doesNotMatch(
     nextConfigSource,
     /\boutput\s*:\s*["']export["']/,
-    "next.config.ts must keep the atlas shell on the static asset path",
+    "a full static export would bypass the document security middleware",
   );
 });
