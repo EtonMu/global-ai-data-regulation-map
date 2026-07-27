@@ -89,8 +89,56 @@ test("the landing page offers three clear routes around a prominent hero globe",
   assert.match(landingSource, /onMotionChange=\{handleGlobeMotion\}/);
   assert.match(
     landingSource,
-    /AI[\s\S]*?data[\s\S]*?(?:privacy|cybersecurity)[\s\S]*?(?:across|global|jurisdiction)/i,
-    "welcome copy must frame the corpus around cross-border AI and data governance",
+    /A global corpus for data regulation &amp; AI governance\.[\s\S]*?Mapping laws, provisions and shared concepts across jurisdictions[\s\S]*?interactive visualization and comparative research\./i,
+    "welcome copy must foreground the global corpus, mapping and visualization mission",
+  );
+
+  assert.match(
+    landingSource,
+    /window\.addEventListener\("scroll", queueScrollState, \{ passive: true \}\)/,
+    "scroll-linked landing motion must use a passive listener",
+  );
+  assert.match(
+    landingSource,
+    /const queueScrollState = \(\) => \{[\s\S]*?window\.requestAnimationFrame\([\s\S]*?renderScrollState/,
+    "scroll-linked landing motion must be frame-throttled",
+  );
+  for (const property of [
+    "--landing-stack-scale",
+    "--landing-stack-lift",
+    "--landing-copy-opacity",
+    "--landing-occlusion",
+  ]) {
+    assert.match(
+      landingSource,
+      new RegExp(`style\\.setProperty\\(\\s*"${property}"`),
+      `${property} must be driven by landing scroll progress`,
+    );
+  }
+  assert.match(
+    landingSource,
+    /motionQuery\.matches[\s\S]*?--landing-stack-scale", "1"[\s\S]*?--landing-stack-lift", "0px"[\s\S]*?--landing-copy-opacity", "1"[\s\S]*?--landing-occlusion", "0"/,
+    "reduced-motion users must receive a stable, unobscured landing layout",
+  );
+  assert.match(
+    styles,
+    /\.atlas-landing\s*{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overflow-y:\s*visible;/,
+    "the landing surface must clip horizontal scale without creating a sticky-breaking scroll container",
+  );
+  assert.match(
+    styles,
+    /\.landing-copy\s*{[\s\S]*?position:\s*sticky;[\s\S]*?opacity:\s*var\(--landing-copy-opacity\);/,
+    "the thematic copy must remain in place long enough for the interactive layer to pass over it",
+  );
+  assert.match(
+    styles,
+    /\.landing-interactive-stack\s*{[\s\S]*?z-index:\s*6;[\s\S]*?transform:\s*translate3d\(0, var\(--landing-stack-lift\), 0\)[\s\S]*?scale\(var\(--landing-stack-scale\)\);/,
+    "the globe and all three pathways must rise and scale as one foreground layer",
+  );
+  assert.match(
+    styles,
+    /\.landing-interactive-stack::before\s*{[\s\S]*?background:\s*radial-gradient\([\s\S]*?opacity:\s*var\(--landing-occlusion\);/,
+    "the foreground layer must provide a theme-aware mask that visually covers the copy beneath it",
   );
 
   const embeddedGlobeSource = sourceBetween(

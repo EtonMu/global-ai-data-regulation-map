@@ -2987,7 +2987,9 @@ function AtlasLanding({
   onOpenResearch: () => void;
   onOpenInstrument: (instrumentId: string) => void;
 }) {
+  const landingRootRef = useRef<HTMLElement>(null);
   const pathwaysRef = useRef<HTMLElement>(null);
+  const landingScrollFrameRef = useRef<number | null>(null);
   const globeDraggingRef = useRef(false);
   const legalSystemCount = atlasGroups.filter(
     (group) => group.id !== "frameworks",
@@ -3009,6 +3011,75 @@ function AtlasLanding({
         button.style.setProperty("--path-x", `${x.toFixed(2)}px`);
         button.style.setProperty("--path-y", `${y.toFixed(2)}px`);
       });
+  }, []);
+
+  useEffect(() => {
+    const root = landingRootRef.current;
+    if (!root) return;
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const renderScrollState = () => {
+      landingScrollFrameRef.current = null;
+      if (motionQuery.matches) {
+        root.style.setProperty("--landing-stack-scale", "1");
+        root.style.setProperty("--landing-stack-lift", "0px");
+        root.style.setProperty("--landing-copy-opacity", "1");
+        root.style.setProperty("--landing-occlusion", "0");
+        return;
+      }
+
+      const scrolled = Math.max(0, -root.getBoundingClientRect().top);
+      const viewportWidth = window.innerWidth;
+      const compact = viewportWidth <= 760;
+      const medium = viewportWidth <= 1100;
+      const range = Math.max(
+        280,
+        Math.min(compact ? 380 : 540, window.innerHeight * (compact ? 0.48 : 0.58)),
+      );
+      const progress = Math.min(1, scrolled / range);
+      const eased = progress * progress * (3 - 2 * progress);
+      const growth = compact ? 0.06 : medium ? 0.1 : 0.14;
+      const copyFade = compact ? 0.42 : 0.58;
+
+      root.style.setProperty(
+        "--landing-stack-scale",
+        (1 + eased * growth).toFixed(4),
+      );
+      root.style.setProperty(
+        "--landing-stack-lift",
+        `${(-eased * (compact ? 10 : 22)).toFixed(2)}px`,
+      );
+      root.style.setProperty(
+        "--landing-copy-opacity",
+        (1 - eased * copyFade).toFixed(4),
+      );
+      root.style.setProperty(
+        "--landing-occlusion",
+        Math.min(0.96, eased * 1.08).toFixed(4),
+      );
+    };
+
+    const queueScrollState = () => {
+      if (landingScrollFrameRef.current !== null) return;
+      landingScrollFrameRef.current = window.requestAnimationFrame(
+        renderScrollState,
+      );
+    };
+
+    renderScrollState();
+    window.addEventListener("scroll", queueScrollState, { passive: true });
+    window.addEventListener("resize", queueScrollState);
+    motionQuery.addEventListener("change", queueScrollState);
+
+    return () => {
+      window.removeEventListener("scroll", queueScrollState);
+      window.removeEventListener("resize", queueScrollState);
+      motionQuery.removeEventListener("change", queueScrollState);
+      if (landingScrollFrameRef.current !== null) {
+        window.cancelAnimationFrame(landingScrollFrameRef.current);
+        landingScrollFrameRef.current = null;
+      }
+    };
   }, []);
 
   const pathways = [
@@ -3039,7 +3110,7 @@ function AtlasLanding({
   ] as const;
 
   return (
-    <main className="atlas-landing">
+    <main ref={landingRootRef} className="atlas-landing">
       <header className="landing-header">
         <div className="landing-wordmark" aria-label="Compliance Compass">
           <span>COMPLIANCE COMPASS</span>
@@ -3090,12 +3161,11 @@ function AtlasLanding({
             GLOBAL REGULATORY KNOWLEDGE MAP
           </p>
           <h1 id="landing-title" className="landing-title">
-            Trace how AI governance, privacy and data-security rules connect
-            across borders.
+            A global corpus for data regulation &amp; AI governance.
           </h1>
           <p className="landing-description">
-            Read primary legal texts, move from provisions to shared governance
-            concepts, and compare regulatory approaches across jurisdictions.
+            Mapping laws, provisions and shared concepts across jurisdictions
+            through interactive visualization and comparative research.
           </p>
           <p className="landing-corpus-line" aria-label="Corpus coverage">
             <span><strong>{legalSystemCount}</strong> legal systems</span>
@@ -3105,48 +3175,50 @@ function AtlasLanding({
           </p>
         </div>
 
-        <div className="landing-globe-stage">
-          <LandingRegulationGlobe
-            presentation="hero"
-            autoRotate
-            jurisdictions={globeJurisdictions}
-            concepts={[]}
-            onOpenInstrument={onOpenInstrument}
-            onMotionChange={handleGlobeMotion}
-          />
-        </div>
+        <div className="landing-interactive-stack">
+          <div className="landing-globe-stage">
+            <LandingRegulationGlobe
+              presentation="hero"
+              autoRotate
+              jurisdictions={globeJurisdictions}
+              concepts={[]}
+              onOpenInstrument={onOpenInstrument}
+              onMotionChange={handleGlobeMotion}
+            />
+          </div>
 
-        <nav
-          ref={pathwaysRef}
-          className="landing-pathways"
-          aria-label="Choose an exploration path"
-          data-globe-dragging="false"
-        >
-          {pathways.map((pathway) => {
-            const PathwayIcon = pathway.icon;
-            return (
-              <button
-                type="button"
-                className="landing-pathway"
-                data-path={pathway.id}
-                key={pathway.id}
-                onClick={pathway.action}
-              >
-                <span className="landing-pathway-icon">
-                  <PathwayIcon aria-hidden="true" />
-                </span>
-                <span className="landing-pathway-copy">
-                  <strong>{pathway.label}</strong>
-                  <small>{pathway.description}</small>
-                </span>
-                <ChevronRight
-                  className="landing-pathway-arrow"
-                  aria-hidden="true"
-                />
-              </button>
-            );
-          })}
-        </nav>
+          <nav
+            ref={pathwaysRef}
+            className="landing-pathways"
+            aria-label="Choose an exploration path"
+            data-globe-dragging="false"
+          >
+            {pathways.map((pathway) => {
+              const PathwayIcon = pathway.icon;
+              return (
+                <button
+                  type="button"
+                  className="landing-pathway"
+                  data-path={pathway.id}
+                  key={pathway.id}
+                  onClick={pathway.action}
+                >
+                  <span className="landing-pathway-icon">
+                    <PathwayIcon aria-hidden="true" />
+                  </span>
+                  <span className="landing-pathway-copy">
+                    <strong>{pathway.label}</strong>
+                    <small>{pathway.description}</small>
+                  </span>
+                  <ChevronRight
+                    className="landing-pathway-arrow"
+                    aria-hidden="true"
+                  />
+                </button>
+              );
+            })}
+          </nav>
+        </div>
       </section>
 
       <footer className="landing-footer">
