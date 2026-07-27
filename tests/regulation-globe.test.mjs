@@ -95,15 +95,32 @@ test("jurisdiction labels and an orientation-reset compass overlay the globe", (
   assert.match(globeStyles, /\.mapLabel/);
 });
 
-test("globe rotation is user-controlled and map tags open their matching jurisdictions", () => {
-  assert.doesNotMatch(globeSource, /ROTATION_SPEED/);
-  assert.doesNotMatch(globeSource, /Automatic rotation/);
-  assert.doesNotMatch(globeSource, /setMotionPaused/);
-  assert.doesNotMatch(
+test("automatic rotation is opt-in, frame-capped, and interruption aware", () => {
+  assert.match(globeSource, /autoRotate\?: boolean/);
+  assert.match(
     globeSource,
-    /requestAnimationFrame\(animate\)/,
-    "the globe must not redraw continuously while idle",
+    /autoRotate = false/,
+    "embedded research globes must remain still unless a caller opts in",
   );
+  assert.match(globeSource, /AUTO_ROTATION_FRAME_INTERVAL\s*=\s*1000\s*\/\s*30/);
+  assert.match(globeSource, /if \(!autoRotate \|\| reducedMotion\) return/);
+  assert.match(globeSource, /new IntersectionObserver/);
+  assert.match(globeSource, /document\.hidden/);
+  assert.match(globeSource, /visibilitychange/);
+  assert.match(globeSource, /pointerInsideRef\.current/);
+  assert.match(globeSource, /focusInsideRef\.current/);
+  assert.match(globeSource, /Boolean\(dragRef\.current\)/);
+  assert.match(globeSource, /Boolean\(resetAnimationRef\.current\)/);
+  assert.match(globeSource, /window\.requestAnimationFrame\(animate\)/);
+});
+
+test("globe motion is exposed for landing parallax and map tags remain navigable", () => {
+  assert.match(globeSource, /export type RegulationGlobeMotion/);
+  assert.match(globeSource, /onMotionChange\?: \(motion: RegulationGlobeMotion\) => void/);
+  assert.match(globeSource, /onMotionChangeRef\.current\?\.\(/);
+  assert.match(globeSource, /horizontal:\s*Math\.sin\(yawRef\.current\)/);
+  assert.match(globeSource, /vertical:\s*Math\.sin\(pitchRef\.current\)/);
+  assert.match(globeSource, /isDragging:\s*dragging/);
   assert.match(
     globeSource,
     /pitchRef\.current - deltaY \* 0\.006/,
@@ -121,6 +138,27 @@ test("globe rotation is user-controlled and map tags open their matching jurisdi
   assert.match(globeSource, /aria-label=\{`Open \$\{jurisdiction\.label\} jurisdiction/);
   assert.match(globeStyles, /\.mapLabel:hover,[\s\S]*?\.isActiveMapLabel/);
   assert.match(globeStyles, /\.mapLabel\s*\{[\s\S]*?pointer-events:\s*auto/);
+});
+
+test("hero presentation keeps the landing globe visually dominant", () => {
+  assert.match(globeSource, /presentation\?: "atlas" \| "hero"/);
+  assert.match(globeSource, /presentation = "atlas"/);
+  assert.match(
+    globeSource,
+    /classNames\([\s\S]*?presentation === "hero" && styles\.heroPanel/,
+  );
+  assert.match(
+    globeSource,
+    /presentation === "atlas" \? \([\s\S]*?className=\{styles\.header\}/,
+    "hero presentation must omit the embedded research-panel header",
+  );
+  assert.match(
+    globeSource,
+    /presentation === "atlas" \? <div className=\{styles\.nodeDirectory\}>/,
+    "hero presentation must omit the research node directory",
+  );
+  assert.match(globeStyles, /\.heroPanel\s*\{/);
+  assert.match(globeStyles, /\.heroStage\s*\{/);
 });
 
 test("regulation globe reflows without a fixed panel width", () => {

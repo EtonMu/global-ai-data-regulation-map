@@ -297,11 +297,15 @@ test("corpus fixtures expose unique dynamically counted records", () => {
   );
 });
 
-test("server returns a neutral static atlas shell without loading the corpus", async () => {
+test("server returns a neutral atlas shell without loading the corpus", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  assert.equal(response.headers.get("x-vinext-cache"), "STATIC");
+  assert.notEqual(
+    response.headers.get("x-vinext-cache"),
+    "STATIC",
+    "the document must stay on the security-header Worker instead of the static-asset fast path",
+  );
 
   const html = await response.text();
   const text = normalizedText(html);
@@ -320,7 +324,7 @@ test("server returns a neutral static atlas shell without loading the corpus", a
   assert.match(
     html,
     /<link[^>]*rel="modulepreload"[^>]*regulation-explorer-client-[^"/]+\.js/i,
-    "the static shell must preload only the small client boundary",
+    "the shell must preload only the small client boundary",
   );
   assert.doesNotMatch(
     html,
@@ -385,7 +389,7 @@ test("the browser atlas retains semantic controls and the relation globe contrac
   );
   assert.match(
     globeSource,
-    /<canvas[\s\S]*?role="img"[\s\S]*?aria-label=\{`\$\{jurisdictions\.length\} jurisdiction nodes connected to \$\{displayedConceptCount\} core concept nodes/,
+    /<canvas[\s\S]*?role="img"[\s\S]*?aria-label=\{[\s\S]*?presentation === "hero"[\s\S]*?jurisdiction nodes on an interactive point-cloud globe[\s\S]*?jurisdiction nodes connected to \$\{displayedConceptCount\} core concept nodes/,
     "the point-cloud globe must expose an accessible canvas description",
   );
   assert.match(globeSource, /aria-label="Jurisdictions plotted on the regulation globe"/);

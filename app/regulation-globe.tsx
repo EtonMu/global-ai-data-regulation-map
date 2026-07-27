@@ -3,7 +3,9 @@
 import {
   type KeyboardEvent as ReactKeyboardEvent,
   type PointerEvent as ReactPointerEvent,
+  useCallback,
   useEffect,
+  useId,
   useMemo,
   useRef,
   useState,
@@ -27,15 +29,29 @@ export type RegulationGlobeConcept = {
   instrumentIds: readonly string[];
 };
 
+export type RegulationGlobeMotion = Readonly<{
+  yaw: number;
+  pitch: number;
+  horizontal: number;
+  vertical: number;
+  isDragging: boolean;
+}>;
+
 export type RegulationGlobeProps = {
   jurisdictions: readonly RegulationGlobeJurisdiction[];
   concepts: readonly RegulationGlobeConcept[];
   onOpenInstrument: (instrumentId: string) => void;
-  onOpenConcept: (conceptId: string) => void;
+  onOpenConcept?: (conceptId: string) => void;
   id?: string;
   className?: string;
   /** Keeps a large corpus legible while still plotting a representative constellation. */
   maxConceptNodes?: number;
+  /** Hero presentation keeps the landing page focused on the globe itself. */
+  presentation?: "atlas" | "hero";
+  /** Ambient rotation is opt-in so the research workspace remains user-controlled. */
+  autoRotate?: boolean;
+  /** Reports orientation without forcing the parent through a React render cycle. */
+  onMotionChange?: (motion: RegulationGlobeMotion) => void;
 };
 
 type Vector3 = { x: number; y: number; z: number };
@@ -68,6 +84,8 @@ const KEYBOARD_ROTATION_STEP = 0.09;
 const DEFAULT_YAW = 0;
 const DEFAULT_PITCH = 0;
 const RESET_DURATION = 620;
+const AUTO_ROTATION_RADIANS_PER_MS = 0.00008;
+const AUTO_ROTATION_FRAME_INTERVAL = 1000 / 30;
 
 /**
  * Approximate issuer anchors label relevant places without drawing or implying
@@ -250,7 +268,13 @@ export function RegulationGlobe({
   id,
   className,
   maxConceptNodes = 7,
+  presentation = "atlas",
+  autoRotate = false,
+  onMotionChange,
 }: RegulationGlobeProps) {
+  const instanceId = useId().replaceAll(":", "");
+  const headingId = `regulation-globe-heading-${instanceId}`;
+  const instructionsId = `regulation-globe-instructions-${instanceId}`;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const compassRef = useRef<HTMLButtonElement>(null);
@@ -265,9 +289,26 @@ export function RegulationGlobe({
   const resetAnimationRef = useRef<ResetAnimation | null>(null);
   const activeKeyRef = useRef<string | null>(null);
   const requestDrawRef = useRef<() => void>(() => undefined);
+  const onMotionChangeRef = useRef(onMotionChange);
+  const pointerInsideRef = useRef(false);
+  const focusInsideRef = useRef(false);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    onMotionChangeRef.current = onMotionChange;
+  }, [onMotionChange]);
+
+  const emitMotion = useCallback((dragging = Boolean(dragRef.current)) => {
+    onMotionChangeRef.current?.({
+      yaw: yawRef.current,
+      pitch: pitchRef.current,
+      horizontal: Math.sin(yawRef.current),
+      vertical: Math.sin(pitchRef.current),
+      isDragging: dragging,
+    });
+  }, []);
 
   const plottedConcepts = useMemo(
     () => concepts.slice(0, Math.max(1, maxConceptNodes)),
@@ -329,6 +370,7 @@ export function RegulationGlobe({
       yawRef.current = DEFAULT_YAW;
       pitchRef.current = DEFAULT_PITCH;
       requestDrawRef.current();
+      emitMotion(false);
       return;
     }
 
@@ -356,6 +398,7 @@ export function RegulationGlobe({
         animation.fromPitch +
         (DEFAULT_PITCH - animation.fromPitch) * eased;
       requestDrawRef.current();
+      emitMotion(false);
 
       if (progress < 1) {
         animation.frame = requestAnimationFrame(step);
@@ -364,6 +407,7 @@ export function RegulationGlobe({
         pitchRef.current = DEFAULT_PITCH;
         resetAnimationRef.current = null;
         requestDrawRef.current();
+        emitMotion(false);
       }
     };
 
@@ -378,6 +422,77 @@ export function RegulationGlobe({
     },
     [],
   );
+
+  useEffect(() => {
+    if (!autoRotate || reducedMotion) return;
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    let frame = 0;
+    let lastTime = performance.now();
+    let lastDrawTime = 0;
+    let inViewport = true;
+    let disposed = false;
+
+    const animate = (time: number) => {
+      if (disposed) return;
+      frame = window.requestAnimationFrame(animate);
+      const paused =
+        document.hidden ||
+        !inViewport ||
+        pointerInsideRef.current ||
+        focusInsideRef.current ||
+        Boolean(dragRef.current) ||
+        Boolean(resetAnimationRef.current);
+      if (paused) {
+        lastTime = time;
+        return;
+      }
+      if (time - lastDrawTime < AUTO_ROTATION_FRAME_INTERVAL) return;
+      const elapsed = Math.min(64, Math.max(0, time - lastTime));
+      lastTime = time;
+      lastDrawTime = time;
+      yawRef.current += elapsed * AUTO_ROTATION_RADIANS_PER_MS;
+      requestDrawRef.current();
+      emitMotion(false);
+    };
+
+    const start = () => {
+      if (!frame && !disposed) {
+        lastTime = performance.now();
+        frame = window.requestAnimationFrame(animate);
+      }
+    };
+    const stop = () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+    };
+    const handleVisibility = () => {
+      if (document.hidden || !inViewport) stop();
+      else start();
+    };
+    const observer =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(
+            ([entry]) => {
+              inViewport = entry?.isIntersecting ?? true;
+              if (inViewport && !document.hidden) start();
+              else stop();
+            },
+            { threshold: 0.04 },
+          );
+    observer?.observe(stage);
+    document.addEventListener("visibilitychange", handleVisibility);
+    start();
+
+    return () => {
+      disposed = true;
+      stop();
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+  }, [autoRotate, emitMotion, reducedMotion]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -552,7 +667,7 @@ export function RegulationGlobe({
 
       const rotatedPoints = SPHERE_POINTS.map((point) =>
         rotateVector(point, yaw, pitch),
-      ).sort((left, right) => left.z - right.z);
+      );
 
       for (const point of rotatedPoints) {
         const front = point.z >= 0;
@@ -571,7 +686,7 @@ export function RegulationGlobe({
 
       const rotatedLandPoints = LAND_POINTS.map((point) =>
         rotateVector(point, yaw, pitch),
-      ).sort((left, right) => left.z - right.z);
+      );
 
       context.fillStyle = palette.land;
       for (const point of rotatedLandPoints) {
@@ -654,6 +769,7 @@ export function RegulationGlobe({
     };
     event.currentTarget.setPointerCapture(event.pointerId);
     setIsDragging(true);
+    emitMotion(true);
   }
 
   function handlePointerMove(event: ReactPointerEvent<HTMLCanvasElement>) {
@@ -668,6 +784,7 @@ export function RegulationGlobe({
     );
     dragRef.current = { ...drag, x: event.clientX, y: event.clientY };
     requestDrawRef.current();
+    emitMotion(true);
   }
 
   function endPointerInteraction(event: ReactPointerEvent<HTMLCanvasElement>) {
@@ -677,6 +794,7 @@ export function RegulationGlobe({
     }
     dragRef.current = null;
     setIsDragging(false);
+    emitMotion(false);
   }
 
   function handleKeyboardRotation(event: ReactKeyboardEvent<HTMLElement>) {
@@ -697,6 +815,7 @@ export function RegulationGlobe({
       pitchRef.current = Math.max(-Math.PI * 0.42, pitchRef.current - step);
     }
     requestDrawRef.current();
+    emitMotion(false);
   }
 
   const displayedConceptCount = plottedConcepts.length;
@@ -705,28 +824,65 @@ export function RegulationGlobe({
   return (
     <section
       id={id}
-      className={classNames(styles.panel, className)}
-      aria-labelledby="regulation-globe-heading"
+      className={classNames(
+        styles.panel,
+        presentation === "hero" && styles.heroPanel,
+        className,
+      )}
+      aria-labelledby={presentation === "atlas" ? headingId : undefined}
+      aria-label={
+        presentation === "hero"
+          ? "Interactive global regulation point-cloud globe"
+          : undefined
+      }
       onKeyDownCapture={handleKeyboardRotation}
     >
-      <header className={styles.header}>
-        <div className={styles.headingGroup}>
-          <span className={styles.eyebrow}>GLOBAL ATLAS · RELATION GRAPH</span>
-          <h2 id="regulation-globe-heading">Regulation ↔ concept globe</h2>
-        </div>
-      </header>
+      {presentation === "atlas" ? (
+        <header className={styles.header}>
+          <div className={styles.headingGroup}>
+            <span className={styles.eyebrow}>GLOBAL ATLAS · RELATION GRAPH</span>
+            <h2 id={headingId}>Regulation ↔ concept globe</h2>
+          </div>
+        </header>
+      ) : null}
 
       <figure className={styles.figure}>
         <div
           ref={stageRef}
-          className={classNames(styles.stage, isDragging && styles.isDragging)}
+          className={classNames(
+            styles.stage,
+            presentation === "hero" && styles.heroStage,
+            isDragging && styles.isDragging,
+          )}
+          onPointerEnter={() => {
+            pointerInsideRef.current = true;
+          }}
+          onPointerLeave={() => {
+            pointerInsideRef.current = false;
+          }}
+          onFocusCapture={() => {
+            focusInsideRef.current = true;
+          }}
+          onBlurCapture={(event) => {
+            if (
+              !event.currentTarget.contains(
+                event.relatedTarget as Node | null,
+              )
+            ) {
+              focusInsideRef.current = false;
+            }
+          }}
         >
           <canvas
             ref={canvasRef}
             className={styles.canvas}
             role="img"
-            aria-label={`${jurisdictions.length} jurisdiction nodes connected to ${displayedConceptCount} core concept nodes by shared legal instruments on an interactive point-cloud globe.`}
-            aria-describedby="regulation-globe-instructions"
+            aria-label={
+              presentation === "hero"
+                ? `${jurisdictions.length} jurisdiction nodes on an interactive point-cloud globe.`
+                : `${jurisdictions.length} jurisdiction nodes connected to ${displayedConceptCount} core concept nodes by shared legal instruments on an interactive point-cloud globe.`
+            }
+            aria-describedby={instructionsId}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={endPointerInteraction}
@@ -794,21 +950,27 @@ export function RegulationGlobe({
             <span className={styles.compassTilt} aria-hidden="true"><i /></span>
             <span className={styles.compassLabel}>Reset</span>
           </button>
-          <div className={styles.visualKey} aria-hidden="true">
-            <span><i className={styles.jurisdictionDot} />Jurisdiction</span>
-            <span><i className={styles.conceptDiamond} />Core concept</span>
-          </div>
+          {presentation === "atlas" ? (
+            <div className={styles.visualKey} aria-hidden="true">
+              <span><i className={styles.jurisdictionDot} />Jurisdiction</span>
+              <span><i className={styles.conceptDiamond} />Core concept</span>
+            </div>
+          ) : null}
         </div>
-        <figcaption id="regulation-globe-instructions" className={styles.instructions}>
+        <figcaption id={instructionsId} className={styles.instructions}>
           <Move3d aria-hidden="true" />
-          <span>Drag to rotate. Focus a node and use arrow keys. Use the compass to reset.</span>
-          {hiddenConceptCount > 0 ? (
+          <span>
+            {presentation === "hero"
+              ? "Drag to explore jurisdictions. Use the compass to reset."
+              : "Drag to rotate. Focus a node and use arrow keys. Use the compass to reset."}
+          </span>
+          {presentation === "atlas" && hiddenConceptCount > 0 ? (
             <span>{displayedConceptCount} of {concepts.length} concepts plotted.</span>
           ) : null}
         </figcaption>
       </figure>
 
-      <div className={styles.nodeDirectory}>
+      {presentation === "atlas" ? <div className={styles.nodeDirectory}>
         <nav aria-label="Jurisdictions plotted on the regulation globe">
           <h3>Jurisdictions</h3>
           <div className={styles.jurisdictionGrid}>
@@ -859,7 +1021,7 @@ export function RegulationGlobe({
                     styles.conceptButton,
                     activeKey === key && styles.isActive,
                   )}
-                  onClick={() => onOpenConcept(concept.id)}
+                  onClick={() => onOpenConcept?.(concept.id)}
                   onFocus={() => setActiveNode(key)}
                   onBlur={() => setActiveNode(null)}
                   onPointerEnter={() => setActiveNode(key)}
@@ -874,7 +1036,7 @@ export function RegulationGlobe({
             })}
           </div>
         </nav>
-      </div>
+      </div> : null}
     </section>
   );
 }

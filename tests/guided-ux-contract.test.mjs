@@ -9,28 +9,136 @@ const [explorerSource, searchSource, styles] = await Promise.all([
   readFile(new URL("app/globals.css", projectRoot), "utf8"),
 ]);
 
-test("the first visit is a guided task-oriented entry rather than a full research dashboard", () => {
+function sourceBetween(start, end) {
+  const startIndex = explorerSource.indexOf(start);
+  const endIndex = explorerSource.indexOf(end, startIndex + start.length);
+
+  assert.notEqual(startIndex, -1, `missing source boundary: ${start}`);
+  assert.notEqual(endIndex, -1, `missing source boundary: ${end}`);
+  return explorerSource.slice(startIndex, endIndex);
+}
+
+test("a first visit opens an independent, low-complexity welcome surface", () => {
+  const reducerSource = sourceBetween(
+    "function explorerReducer(",
+    "function explorerStateFromHash(",
+  );
+  const hashRestoreSource = sourceBetween(
+    "function explorerStateFromHash(",
+    "function humanize(",
+  );
+  const explorerComponent = explorerSource.slice(
+    explorerSource.indexOf("export default function RegulationExplorer()"),
+  );
+
   assert.match(
     explorerSource,
-    /type WorkspaceDensity = "guided" \| "research"/,
+    /type View\s*=\s*[\s\S]*?\| "landing"/,
+    "landing must be a first-class explorer state",
+  );
+  assert.match(
+    reducerSource,
+    /case "OPEN_LANDING":[\s\S]*?view:\s*"landing"/,
+    "the reducer must provide one canonical route back to the welcome surface",
+  );
+  assert.match(
+    hashRestoreSource,
+    /view:\s*serializedHash \? "atlas" : "landing"[\s\S]*?if \(!serializedHash \|\| requestedView === "landing"\)[\s\S]*?restored\.view = "landing"/,
+    "an empty or explicit landing URL must restore the welcome surface",
+  );
+  assert.match(
+    explorerComponent,
+    /useReducer\(explorerReducer,\s*{[\s\S]*?view:\s*"landing"/,
+    "the client must initialize on the welcome surface",
+  );
+
+  const landingReturnIndex = explorerComponent.search(
+    /state\.view === "landing"[\s\S]*?return\s*\([\s\S]*?<AtlasLanding/,
+  );
+  const workspaceReturnIndex = explorerComponent.indexOf(
+    '<main className="terminal-app"',
+  );
+  assert.ok(landingReturnIndex >= 0, "landing must render through AtlasLanding");
+  assert.ok(
+    landingReturnIndex < workspaceReturnIndex,
+    "landing must return before the three-column research workspace mounts",
+  );
+});
+
+test("the landing page offers three clear routes around a prominent hero globe", () => {
+  const landingSource = sourceBetween(
+    "function AtlasLanding(",
+    "export default function RegulationExplorer()",
+  );
+
+  assert.match(
+    landingSource,
+    /<LandingRegulationGlobe(?=[^>]*presentation="hero")(?=[^>]*autoRotate)(?=[^>]*onMotionChange=)[^>]*\/>/,
+    "the welcome surface must opt its prominent globe into hero presentation and motion",
+  );
+  assert.match(
+    landingSource,
+    /Browse laws[\s\S]*?Explore Core Concepts[\s\S]*?Visualizer Research/,
+    "the three entry labels must remain explicit and consistently ordered",
+  );
+  assert.match(
+    landingSource,
+    /handleGlobeMotion[\s\S]*?style\.setProperty\("--path-x"[\s\S]*?style\.setProperty\("--path-y"/,
+    "globe motion must drive restrained entry-card parallax through CSS variables",
+  );
+  assert.match(landingSource, /onMotionChange=\{handleGlobeMotion\}/);
+  assert.match(
+    landingSource,
+    /AI[\s\S]*?data[\s\S]*?(?:privacy|cybersecurity)[\s\S]*?(?:across|global|jurisdiction)/i,
+    "welcome copy must frame the corpus around cross-border AI and data governance",
+  );
+
+  const embeddedGlobeSource = sourceBetween(
+    "const atlasGlobePanel =",
+    "const instrumentVisualizationPanel =",
+  );
+  assert.doesNotMatch(
+    embeddedGlobeSource,
+    /autoRotate/,
+    "the globe inside the full research workspace must remain user-controlled",
+  );
+
+  const entryNavigationSource = sourceBetween(
+    "function enterLawAtlas()",
+    "function openAtlasGroup(",
+  );
+  assert.match(
+    entryNavigationSource,
+    /function enterLawAtlas\(\)[\s\S]*?setWorkspaceMode\("research"\)[\s\S]*?openAtlas\(\)/,
+  );
+  assert.match(
+    entryNavigationSource,
+    /function enterConceptAtlas\(\)[\s\S]*?setWorkspaceMode\("research"\)[\s\S]*?openConceptIndex\(\)/,
+  );
+  assert.match(
+    entryNavigationSource,
+    /function enterVisualizerResearch\(\)[\s\S]*?setResearchView\("observatory"\)[\s\S]*?setWorkspaceMode\("research"\)[\s\S]*?openView\("research"\)/,
   );
   assert.match(
     explorerSource,
-    /const defaultColumnLayout = \{[\s\S]*?leftCollapsed: true/,
-    "the global index should not compete with the main task on first visit",
+    /<AtlasLanding(?=[^>]*onBrowseLaws=\{enterLawAtlas\})(?=[^>]*onExploreConcepts=\{enterConceptAtlas\})(?=[^>]*onOpenResearch=\{enterVisualizerResearch\})[^>]*\/>/,
+    "each welcome route must be wired to its corresponding full workspace",
   );
-  assert.match(
-    explorerSource,
-    /className="guided-atlas-hero"[\s\S]*?Start with a law, article or governance question\./,
+});
+
+test("the full Global Atlas opens directly as a browsable legal directory", () => {
+  const atlasSource = sourceBetween(
+    "function GlobalAtlas(",
+    "function CoreConceptExplorer(",
   );
-  assert.match(
-    explorerSource,
-    /className="guided-pathways"[\s\S]*?Browse laws[\s\S]*?Explore core concepts[\s\S]*?Compare regulatory patterns/,
-  );
-  assert.match(
-    explorerSource,
-    /className="atlas-browser"[\s\S]*?Browse all laws and frameworks/,
-    "the complete atlas must remain available through progressive disclosure",
+
+  assert.match(atlasSource, /atlasGroups\.map/);
+  assert.match(atlasSource, /onOpenInstrument/);
+  assert.doesNotMatch(atlasSource, /guided-atlas-hero|guided-pathways/);
+  assert.doesNotMatch(
+    atlasSource,
+    /<details|Browse all laws and frameworks|revealJurisdictionBrowser/,
+    "entering Browse laws should not require another disclosure step",
   );
 });
 
@@ -89,18 +197,21 @@ test("search opens with examples and groups ranked results by user-facing conten
   assert.match(searchSource, /INCLUDE FULL ARTICLE TEXT/);
 });
 
-test("guided entry and contextual navigation reflow without horizontal text collisions", () => {
-  const mobileStart = styles.indexOf("@media (max-width: 760px)");
-  const mobileEnd = styles.indexOf("@media (max-width: 520px)", mobileStart);
-  const mobileStyles = styles.slice(mobileStart, mobileEnd);
-
+test("landing routes and contextual navigation reflow without text collisions", () => {
   assert.match(
-    mobileStyles,
-    /\.guided-atlas-hero\s*\{[\s\S]*?grid-template-columns:\s*1fr/,
+    styles,
+    /\.landing-pathways\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/,
+    "wide screens must give each entry route an independent column",
   );
   assert.match(
-    mobileStyles,
-    /\.guided-pathways\s*\{[\s\S]*?grid-template-columns:\s*1fr/,
+    styles,
+    /@media \(max-width: 760px\)[\s\S]*?\.landing-pathways\s*\{[\s\S]*?grid-template-columns:\s*1fr/,
+    "entry routes must stack on narrow screens",
+  );
+  assert.match(
+    styles,
+    /\.landing-pathway[\s\S]*?overflow-wrap:\s*(?:anywhere|break-word)/,
+    "long route copy must be allowed to wrap inside its own surface",
   );
   assert.match(
     styles,

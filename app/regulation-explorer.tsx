@@ -65,7 +65,10 @@ import structureSummariesJson from "@/data/v2/structure-summaries.json";
 import { ConceptIcon, ConceptThemeIcon } from "./concept-icon";
 import type { ConceptConstellationProps } from "./concept-constellation";
 import { JurisdictionMark } from "./jurisdiction-mark";
-import type { RegulationGlobeProps } from "./regulation-globe";
+import type {
+  RegulationGlobeMotion,
+  RegulationGlobeProps,
+} from "./regulation-globe";
 import { SearchCombobox } from "./search-combobox";
 import {
   createSearchIndex,
@@ -518,6 +521,7 @@ type SourceAudit = {
 };
 
 type View =
+  | "landing"
   | "atlas"
   | "research"
   | "instrument"
@@ -641,6 +645,7 @@ type ExplorerState = {
 };
 
 type ExplorerAction =
+  | { type: "OPEN_LANDING" }
   | { type: "OPEN_ATLAS" }
   | { type: "OPEN_INSTRUMENT"; instrumentId: string }
   | {
@@ -1420,6 +1425,7 @@ const relationLabels: Record<string, string> = {
 };
 
 const viewLabels: Array<{ id: View; label: string; icon: LucideIcon }> = [
+  { id: "landing", label: "Welcome", icon: Globe2 },
   { id: "atlas", label: "Atlas", icon: MapIcon },
   { id: "research", label: "Research", icon: FlaskConical },
   { id: "instrument", label: "Instrument", icon: BookOpenText },
@@ -1527,9 +1533,27 @@ function VisualizationModuleLoading() {
   );
 }
 
+function LandingVisualizationLoading() {
+  return (
+    <div
+      className="landing-visualization-loading"
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <Globe2 aria-hidden="true" />
+      <span>Mapping the global regulatory landscape…</span>
+    </div>
+  );
+}
+
 const RegulationGlobe = dynamic<RegulationGlobeProps>(
   () => import("./regulation-globe").then((module) => module.RegulationGlobe),
   { ssr: false, loading: VisualizationModuleLoading },
+);
+
+const LandingRegulationGlobe = dynamic<RegulationGlobeProps>(
+  () => import("./regulation-globe").then((module) => module.RegulationGlobe),
+  { ssr: false, loading: LandingVisualizationLoading },
 );
 
 const ConceptConstellation = dynamic<ConceptConstellationProps>(
@@ -1545,6 +1569,18 @@ function explorerReducer(
   action: ExplorerAction,
 ): ExplorerState {
   switch (action.type) {
+    case "OPEN_LANDING":
+      return {
+        ...state,
+        view: "landing",
+        navigatorTab: "sources",
+        selectedInstrumentId: null,
+        selectedProvisionId: null,
+        selectedRelationId: null,
+        selectedConceptId: null,
+        readerTab: "text",
+        query: "",
+      };
     case "OPEN_ATLAS":
       return {
         ...state,
@@ -1581,6 +1617,19 @@ function explorerReducer(
         query: "",
       };
     case "OPEN_VIEW":
+      if (action.view === "landing") {
+        return {
+          ...state,
+          view: "landing",
+          navigatorTab: "sources",
+          selectedInstrumentId: null,
+          selectedProvisionId: null,
+          selectedRelationId: null,
+          selectedConceptId: null,
+          readerTab: "text",
+          query: "",
+        };
+      }
       if (action.view === "atlas") {
         return {
           ...state,
@@ -1688,7 +1737,8 @@ function explorerReducer(
 }
 
 function explorerStateFromHash(hash: string): ExplorerState {
-  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  const serializedHash = hash.replace(/^#/, "");
+  const params = new URLSearchParams(serializedHash);
   const requestedView = params.get("view") as View | null;
   const requestedNavigatorTab = params.get("nav");
   const concept = conceptById.get(params.get("concept") ?? "");
@@ -1702,7 +1752,7 @@ function explorerStateFromHash(hash: string): ExplorerState {
     .slice(0, 2);
 
   const restored: ExplorerState = {
-    view: "atlas",
+    view: serializedHash ? "atlas" : "landing",
     navigatorTab: "sources",
     selectedInstrumentId: null,
     selectedProvisionId: null,
@@ -1712,6 +1762,11 @@ function explorerStateFromHash(hash: string): ExplorerState {
     compareIds,
     query: "",
   };
+
+  if (!serializedHash || requestedView === "landing") {
+    restored.view = "landing";
+    return restored;
+  }
 
   if (concept) {
     restored.navigatorTab = "concepts";
@@ -2914,19 +2969,199 @@ function CorpusNavigator({
   );
 }
 
+function AtlasLanding({
+  theme,
+  onChooseTheme,
+  onBrowseLaws,
+  onExploreConcepts,
+  onOpenResearch,
+  onOpenInstrument,
+}: {
+  theme: Theme;
+  onChooseTheme: (
+    nextTheme: Theme,
+    event: ReactMouseEvent<HTMLButtonElement>,
+  ) => void;
+  onBrowseLaws: () => void;
+  onExploreConcepts: () => void;
+  onOpenResearch: () => void;
+  onOpenInstrument: (instrumentId: string) => void;
+}) {
+  const pathwaysRef = useRef<HTMLElement>(null);
+  const globeDraggingRef = useRef(false);
+  const legalSystemCount = atlasGroups.filter(
+    (group) => group.id !== "frameworks",
+  ).length;
+
+  const handleGlobeMotion = useCallback((motion: RegulationGlobeMotion) => {
+    if (!motion.isDragging && !globeDraggingRef.current) return;
+    globeDraggingRef.current = motion.isDragging;
+    const pathways = pathwaysRef.current;
+    if (!pathways) return;
+    pathways.dataset.globeDragging = motion.isDragging ? "true" : "false";
+    const depths = [-0.72, 0.38, 0.92];
+    pathways
+      .querySelectorAll<HTMLButtonElement>(".landing-pathway")
+      .forEach((button, index) => {
+        const depth = depths[index] ?? 0.5;
+        const x = motion.isDragging ? motion.horizontal * 12 * depth : 0;
+        const y = motion.isDragging ? motion.vertical * 7 * depth : 0;
+        button.style.setProperty("--path-x", `${x.toFixed(2)}px`);
+        button.style.setProperty("--path-y", `${y.toFixed(2)}px`);
+      });
+  }, []);
+
+  const pathways = [
+    {
+      id: "laws",
+      label: "Browse laws",
+      description:
+        "Read legislation, regulation and national guidance by jurisdiction.",
+      icon: BookOpenText,
+      action: onBrowseLaws,
+    },
+    {
+      id: "concepts",
+      label: "Explore Core Concepts",
+      description:
+        "Follow recurring duties from data minimization to model accountability.",
+      icon: BrainCircuit,
+      action: onExploreConcepts,
+    },
+    {
+      id: "research",
+      label: "Visualizer Research",
+      description:
+        "Compare regulatory structures, timelines and provision-to-concept networks.",
+      icon: FlaskConical,
+      action: onOpenResearch,
+    },
+  ] as const;
+
+  return (
+    <main className="atlas-landing">
+      <header className="landing-header">
+        <div className="landing-wordmark" aria-label="Compliance Compass">
+          <span>COMPLIANCE COMPASS</span>
+          <small>GLOBAL AI GOVERNANCE + DATA REGULATION</small>
+        </div>
+        <div className="landing-header-actions">
+          <div
+            className="theme-switch landing-theme-switch"
+            role="group"
+            aria-label="Color theme"
+            data-active-theme={theme}
+          >
+            <span className="theme-switch-indicator" aria-hidden="true" />
+            <button
+              type="button"
+              data-theme-option="dark"
+              aria-pressed={theme === "dark"}
+              onClick={(event) => onChooseTheme("dark", event)}
+            >
+              <Moon aria-hidden="true" />
+              Dark
+            </button>
+            <button
+              type="button"
+              data-theme-option="bright"
+              aria-pressed={theme === "bright"}
+              onClick={(event) => onChooseTheme("bright", event)}
+            >
+              <Sun aria-hidden="true" />
+              Bright
+            </button>
+          </div>
+          <a
+            className="github-link"
+            href={repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitFork aria-hidden="true" />
+            <span>GITHUB</span>
+          </a>
+        </div>
+      </header>
+
+      <section className="landing-hero" aria-labelledby="landing-title">
+        <div className="landing-copy">
+          <p className="landing-eyebrow">
+            GLOBAL REGULATORY KNOWLEDGE MAP
+          </p>
+          <h1 id="landing-title" className="landing-title">
+            Trace how AI governance, privacy and data-security rules connect
+            across borders.
+          </h1>
+          <p className="landing-description">
+            Read primary legal texts, move from provisions to shared governance
+            concepts, and compare regulatory approaches across jurisdictions.
+          </p>
+          <p className="landing-corpus-line" aria-label="Corpus coverage">
+            <span><strong>{legalSystemCount}</strong> legal systems</span>
+            <span><strong>{instruments.length}</strong> sources</span>
+            <span><strong>{provisions.length}</strong> provisions</span>
+            <span><strong>{concepts.length}</strong> concepts</span>
+          </p>
+        </div>
+
+        <div className="landing-globe-stage">
+          <LandingRegulationGlobe
+            presentation="hero"
+            autoRotate
+            jurisdictions={globeJurisdictions}
+            concepts={[]}
+            onOpenInstrument={onOpenInstrument}
+            onMotionChange={handleGlobeMotion}
+          />
+        </div>
+
+        <nav
+          ref={pathwaysRef}
+          className="landing-pathways"
+          aria-label="Choose an exploration path"
+          data-globe-dragging="false"
+        >
+          {pathways.map((pathway) => {
+            const PathwayIcon = pathway.icon;
+            return (
+              <button
+                type="button"
+                className="landing-pathway"
+                data-path={pathway.id}
+                key={pathway.id}
+                onClick={pathway.action}
+              >
+                <span className="landing-pathway-icon">
+                  <PathwayIcon aria-hidden="true" />
+                </span>
+                <span className="landing-pathway-copy">
+                  <strong>{pathway.label}</strong>
+                  <small>{pathway.description}</small>
+                </span>
+                <ChevronRight
+                  className="landing-pathway-arrow"
+                  aria-hidden="true"
+                />
+              </button>
+            );
+          })}
+        </nav>
+      </section>
+
+      <footer className="landing-footer">
+        <span>ACADEMIC RESEARCH EDITION</span>
+        <span>PRIMARY TEXT · CROSS-JURISDICTIONAL MAPPING · NOT LEGAL ADVICE</span>
+      </footer>
+    </main>
+  );
+}
+
 function GlobalAtlas({
   onOpenInstrument,
-  onStartSearch,
-  onOpenConceptIndex,
-  onOpenResearch,
 }: {
   onOpenInstrument: (instrumentId: string) => void;
-  onStartSearch: (query?: string) => void;
-  onOpenConceptIndex: () => void;
-  onOpenResearch: () => void;
 }) {
-  const [browserOpen, setBrowserOpen] = useState(false);
-  const browserRef = useRef<HTMLDetailsElement>(null);
   const internationalFrameworkCount =
     atlasGroups.find((group) => group.id === "frameworks")?.instruments.length ?? 0;
   const softLawCount = instruments.filter(
@@ -2936,115 +3171,20 @@ function GlobalAtlas({
     (group) => group.id !== "frameworks",
   ).length;
 
-  function revealJurisdictionBrowser() {
-    setBrowserOpen(true);
-    window.requestAnimationFrame(() => {
-      browserRef.current?.scrollIntoView({
-        block: "start",
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-      });
-    });
-  }
-
   return (
     <section className="atlas-view" aria-labelledby="atlas-title">
-      <div className="guided-atlas-hero">
-        <div className="guided-atlas-copy">
-          <p className="terminal-label">GLOBAL AI + DATA REGULATION</p>
-          <h1 id="atlas-title">Start with a law, article or governance question.</h1>
-          <p>
-            Search across primary legal sources, regulations, standards and
-            soft law, then follow the evidence into related concepts and
-            provisions.
-          </p>
-          <button
-            type="button"
-            className="guided-primary-action"
-            onClick={() => onStartSearch()}
-          >
-            <Sparkles aria-hidden="true" />
-            Search the regulatory corpus
-            <ChevronRight aria-hidden="true" />
-          </button>
-          <div className="guided-search-examples" aria-label="Example searches">
-            <span>Try:</span>
-            {[
-              "GDPR Article 22",
-              "China cross-border data",
-              "data minimization",
-            ].map((query) => (
-              <button
-                type="button"
-                key={query}
-                onClick={() => onStartSearch(query)}
-              >
-                {query}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="guided-atlas-summary" aria-label="Corpus summary">
-          <span>
-            <strong>{instruments.length}</strong>
-            legal sources
-          </span>
-          <span>
-            <strong>{provisions.length}</strong>
-            indexed provisions
-          </span>
-          <span>
-            <strong>{concepts.length}</strong>
-            core concepts
-          </span>
-        </div>
-      </div>
-
-      <div className="guided-pathways" aria-label="Choose a starting point">
-        <button type="button" onClick={revealJurisdictionBrowser}>
-          <MapIcon aria-hidden="true" />
-          <span>
-            <strong>Browse laws</strong>
-            <small>Explore by jurisdiction and legal source</small>
-          </span>
-          <ChevronRight aria-hidden="true" />
-        </button>
-        <button type="button" onClick={onOpenConceptIndex}>
-          <BrainCircuit aria-hidden="true" />
-          <span>
-            <strong>Explore core concepts</strong>
-            <small>Start with privacy, security or AI governance</small>
-          </span>
-          <ChevronRight aria-hidden="true" />
-        </button>
-        <button type="button" onClick={onOpenResearch}>
-          <Columns2 aria-hidden="true" />
-          <span>
-            <strong>Compare regulatory patterns</strong>
-            <small>Open the advanced comparative research tools</small>
-          </span>
-          <ChevronRight aria-hidden="true" />
-        </button>
-      </div>
-
-      <details
-        ref={browserRef}
-        className="atlas-browser"
-        open={browserOpen}
-        onToggle={(event) => setBrowserOpen(event.currentTarget.open)}
-      >
-        <summary>
-          <span>
-            <MapIcon aria-hidden="true" />
-            Browse all laws and frameworks
-          </span>
-          <small>
-            {legalSystemCount} legal systems · {internationalFrameworkCount}{" "}
-            international frameworks · {softLawCount} soft-law instruments
-          </small>
-          <ChevronRight aria-hidden="true" />
-        </summary>
+      <header className="atlas-directory-intro">
+        <p className="terminal-label">GLOBAL ATLAS · LEGAL SOURCES</p>
+        <h1 id="atlas-title">Browse laws and governance frameworks.</h1>
+        <p>
+          Open a jurisdiction or international framework, then move from its
+          complete provision list into article text and mapped concepts.
+        </p>
+        <small>
+          {legalSystemCount} legal systems · {internationalFrameworkCount}{" "}
+          international frameworks · {softLawCount} soft-law instruments
+        </small>
+      </header>
         <div className="atlas-browser-content">
           <NodeLegend />
           <div className="atlas-lanes">
@@ -3123,7 +3263,6 @@ function GlobalAtlas({
             ))}
           </div>
         </div>
-      </details>
     </section>
   );
 }
@@ -5589,7 +5728,7 @@ function suggestionResults(results: readonly SearchResult[]) {
 
 export default function RegulationExplorer() {
   const [state, dispatch] = useReducer(explorerReducer, {
-    view: "atlas",
+    view: "landing",
     navigatorTab: "sources",
     selectedInstrumentId: null,
     selectedProvisionId: null,
@@ -5636,7 +5775,11 @@ export default function RegulationExplorer() {
     () => suggestionResults(navigatorSearchResults),
     [navigatorSearchResults],
   );
-  const theme = useSyncExternalStore(subscribeTheme, themeSnapshot, () => "dark");
+  const theme: Theme = useSyncExternalStore(
+    subscribeTheme,
+    themeSnapshot,
+    () => "dark" as Theme,
+  );
   const [columnLayout, setColumnLayout] = useState<ColumnLayout>(
     defaultColumnLayout,
   );
@@ -6141,17 +6284,36 @@ export default function RegulationExplorer() {
     );
   }
 
-  function startGuidedSearch(query = "") {
-    dispatch({ type: "SET_QUERY", query });
-    window.requestAnimationFrame(() => {
-      searchRef.current?.focus();
-    });
+  function openLanding() {
+    closeMobileNavigatorAndRestoreFocus();
+    if (state.view === "landing") return;
+    rememberCurrentInterface();
+    runVisualTransition(
+      "view",
+      () => dispatch({ type: "OPEN_LANDING" }),
+      { nextView: "landing", direction: "backward" },
+    );
   }
 
-  function openComparativeResearch() {
-    setResearchView("genome");
+  function enterLawAtlas() {
+    setWorkspaceMode("research");
+    openAtlas();
+  }
+
+  function enterConceptAtlas() {
+    setWorkspaceMode("research");
+    openConceptIndex();
+  }
+
+  function enterVisualizerResearch() {
+    setResearchView("observatory");
     setWorkspaceMode("research");
     openView("research");
+  }
+
+  function enterInstrumentFromLanding(instrumentId: string) {
+    setWorkspaceMode("research");
+    openInstrument(instrumentId);
   }
 
   function openAtlasGroup(groupId: string) {
@@ -6546,6 +6708,19 @@ export default function RegulationExplorer() {
     state.view,
   ]);
 
+  if (state.view === "landing") {
+    return (
+      <AtlasLanding
+        theme={theme}
+        onChooseTheme={chooseTheme}
+        onBrowseLaws={enterLawAtlas}
+        onExploreConcepts={enterConceptAtlas}
+        onOpenResearch={enterVisualizerResearch}
+        onOpenInstrument={enterInstrumentFromLanding}
+      />
+    );
+  }
+
   function followBreadcrumb(
     destination: (typeof breadcrumb)[number]["destination"],
   ) {
@@ -6754,8 +6929,8 @@ export default function RegulationExplorer() {
         <button
           type="button"
           className="wordmark"
-          onClick={openAtlas}
-          aria-label="Open Compliance Compass global AI governance and data regulation atlas"
+          onClick={openLanding}
+          aria-label="Return to the Compliance Compass welcome page"
         >
           <span>COMPLIANCE COMPASS</span>
           <strong>GLOBAL AI GOVERNANCE</strong>
@@ -7082,9 +7257,6 @@ export default function RegulationExplorer() {
           {state.navigatorTab === "sources" && state.view === "atlas" && (
             <GlobalAtlas
               onOpenInstrument={openInstrument}
-              onStartSearch={startGuidedSearch}
-              onOpenConceptIndex={openConceptIndex}
-              onOpenResearch={openComparativeResearch}
             />
           )}
           {state.navigatorTab === "sources" && state.view === "research" && (

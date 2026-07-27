@@ -11,6 +11,12 @@
     var(--reader-surface);
 }
 
+.heroPanel {
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+}
+
 .header {
   min-inline-size: 0;
   display: flex;
@@ -65,6 +71,24 @@
   overflow: hidden;
   touch-action: none;
   user-select: none;
+}
+
+.heroStage {
+  inline-size: min(100%, 780px);
+  max-inline-size: 780px;
+  min-block-size: 420px;
+  aspect-ratio: 1 / 0.82;
+}
+
+.heroStage::before {
+  inset: 4%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--cyan-soft) 82%, transparent) 0,
+    var(--graph-glow) 38%,
+    transparent 72%
+  );
+  filter: blur(8px);
 }
 
 .stage::before {
@@ -448,6 +472,11 @@
     min-block-size: 270px;
   }
 
+  .heroStage {
+    min-block-size: 300px;
+    aspect-ratio: 1 / 0.92;
+  }
+
   .mapLabel {
     max-inline-size: 66px;
     padding: 2px 4px;
@@ -475,6 +504,27 @@
   .nodeButton:hover:not(:disabled),
   .nodeButton.isActive {
     transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroStage {
+    inline-size: 100%;
+    min-block-size: 340px;
+    aspect-ratio: 1 / 0.9;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroStage {
+    min-block-size: 300px;
+    aspect-ratio: 1;
+  }
+
+  .heroStage .mapLabel {
+    max-inline-size: 68px;
+    padding: 2px 4px;
+    font-size: 0.54rem;
   }
 }
 
