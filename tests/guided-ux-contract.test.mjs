@@ -87,10 +87,39 @@ test("the landing page offers three clear routes around a prominent hero globe",
     "globe motion must drive restrained entry-card parallax through CSS variables",
   );
   assert.match(landingSource, /onMotionChange=\{handleGlobeMotion\}/);
+  for (const theme of [
+    /global corpus/i,
+    /data regulation/i,
+    /AI governance/i,
+    /Mapping laws/i,
+    /interactive visualization/i,
+  ]) {
+    assert.match(
+      landingSource,
+      theme,
+      "welcome copy must foreground the corpus, mapping and visualization mission",
+    );
+  }
+
   assert.match(
     landingSource,
-    /A global corpus for data regulation &amp; AI governance\.[\s\S]*?Mapping laws, provisions and shared concepts across jurisdictions[\s\S]*?interactive visualization and comparative research\./i,
-    "welcome copy must foreground the global corpus, mapping and visualization mission",
+    /className="landing-scene landing-intro-scene"[\s\S]*?className="landing-globe-layer"[\s\S]*?className="landing-scene landing-explore-scene"[\s\S]*?className="landing-pathways"/,
+    "the landing story must progress from a text-led first scene into a globe-led action scene",
+  );
+  assert.match(
+    styles,
+    /\.landing-story\s*{[\s\S]*?min-height:\s*calc\(200svh\s*-\s*var\(--landing-header-height\)\s*-\s*var\(--landing-header-height\)\);/,
+    "the landing story must provide two full-height scenes below the persistent banner",
+  );
+  assert.match(
+    styles,
+    /\.landing-story-viewport\s*{[\s\S]*?position:\s*sticky;[\s\S]*?top:\s*var\(--landing-header-height\);[\s\S]*?height:\s*calc\(100svh\s*-\s*var\(--landing-header-height\)\);/,
+    "both scenes must share one pinned cinematic viewport",
+  );
+  assert.match(
+    styles,
+    /\.landing-header\s*{[\s\S]*?position:\s*sticky;[\s\S]*?z-index:\s*50;[\s\S]*?top:\s*0;/,
+    "the existing banner must remain above both landing scenes",
   );
 
   assert.match(
@@ -104,10 +133,13 @@ test("the landing page offers three clear routes around a prominent hero globe",
     "scroll-linked landing motion must be frame-throttled",
   );
   for (const property of [
-    "--landing-stack-scale",
-    "--landing-stack-lift",
+    "--landing-globe-scale",
+    "--landing-globe-y",
     "--landing-copy-opacity",
-    "--landing-occlusion",
+    "--landing-copy-y",
+    "--landing-veil-opacity",
+    "--landing-pathways-opacity",
+    "--landing-pathways-y",
   ]) {
     assert.match(
       landingSource,
@@ -117,8 +149,48 @@ test("the landing page offers three clear routes around a prominent hero globe",
   }
   assert.match(
     landingSource,
-    /motionQuery\.matches[\s\S]*?--landing-stack-scale", "1"[\s\S]*?--landing-stack-lift", "0px"[\s\S]*?--landing-copy-opacity", "1"[\s\S]*?--landing-occlusion", "0"/,
-    "reduced-motion users must receive a stable, unobscured landing layout",
+    /const storyRect = story\.getBoundingClientRect\(\)[\s\S]*?const travel = Math\.max\(1, storyRect\.height - availableHeight\)[\s\S]*?const progress = scrolled \/ travel/,
+    "motion progress must be measured across the dedicated two-scene story",
+  );
+  assert.match(
+    landingSource,
+    /const startScale = shortViewport[\s\S]*?compact[\s\S]*?0\.3[\s\S]*?0\.44[\s\S]*?0\.68[\s\S]*?0\.61[\s\S]*?0\.54[\s\S]*?const endScale = shortViewport[\s\S]*?: 1\.2;[\s\S]*?startY \+ eased \* \(endY - startY\)/,
+    "the globe must begin materially smaller and travel upward as it grows",
+  );
+  assert.match(
+    landingSource,
+    /--landing-copy-opacity",[\s\S]*?\(1 - eased \* 0\.66\)\.toFixed\(4\)[\s\S]*?--landing-veil-opacity",[\s\S]*?\(eased \* 0\.48\)\.toFixed\(4\)/,
+    "the second scene must leave the text partly visible behind a restrained veil",
+  );
+  assert.match(
+    landingSource,
+    /updateSceneState\(progress >= 0\.48 \? "explore" : "intro", progress >= 0\.76\)/,
+    "the actions must fade with scene two before becoming interactive at a readable opacity",
+  );
+  assert.match(
+    landingSource,
+    /aria-hidden=\{!landingActionsActive\}[\s\S]*?inert=\{!landingActionsActive\}/,
+    "hidden pathways must remain outside keyboard and assistive-technology navigation",
+  );
+  assert.match(
+    landingSource,
+    /!nextActionsActive[\s\S]*?pathways\.contains\(document\.activeElement\)[\s\S]*?globeLayer\.contains\(document\.activeElement\)[\s\S]*?document\.activeElement\.blur\(\)/,
+    "returning to scene one must not leave focus stranded inside hidden actions or globe controls",
+  );
+  assert.match(
+    landingSource,
+    /className="landing-globe-layer"[\s\S]*?aria-hidden=\{!landingActionsActive\}[\s\S]*?inert=\{!landingActionsActive\}/,
+    "the small first-scene globe must remain a visual preview until the exploration scene is ready",
+  );
+  assert.match(
+    landingSource,
+    /motionQuery\.matches[\s\S]*?updateSceneState\("static", true\)[\s\S]*?--landing-globe-scale", "1"[\s\S]*?--landing-copy-opacity", "1"[\s\S]*?--landing-pathways-opacity", "1"/,
+    "reduced-motion users must receive a stable layout with reachable pathways",
+  );
+  assert.match(
+    landingSource,
+    /new ResizeObserver\(queueScrollState\)[\s\S]*?resizeObserver\?\.observe\(header\)[\s\S]*?resizeObserver\?\.disconnect\(\)/,
+    "the sticky story must track a wrapping banner without leaking observers",
   );
   assert.match(
     styles,
@@ -127,18 +199,33 @@ test("the landing page offers three clear routes around a prominent hero globe",
   );
   assert.match(
     styles,
-    /\.landing-copy\s*{[\s\S]*?position:\s*sticky;[\s\S]*?opacity:\s*var\(--landing-copy-opacity\);/,
-    "the thematic copy must remain in place long enough for the interactive layer to pass over it",
+    /\.landing-copy\s*{[\s\S]*?position:\s*absolute;[\s\S]*?opacity:\s*var\(--landing-copy-opacity\);[\s\S]*?transform:\s*translate3d\(-50%, var\(--landing-copy-y\), 0\);/,
+    "the thematic copy must remain behind the moving globe without disappearing",
   );
   assert.match(
     styles,
-    /\.landing-interactive-stack\s*{[\s\S]*?z-index:\s*6;[\s\S]*?transform:\s*translate3d\(0, var\(--landing-stack-lift\), 0\)[\s\S]*?scale\(var\(--landing-stack-scale\)\);/,
-    "the globe and all three pathways must rise and scale as one foreground layer",
+    /\.landing-globe-layer\s*{[\s\S]*?z-index:\s*4;[\s\S]*?transform:\s*translate3d\(0, var\(--landing-globe-y\), 0\)[\s\S]*?scale\(var\(--landing-globe-scale\)\);/,
+    "only the globe layer must rise and scale over the copy",
   );
   assert.match(
     styles,
-    /\.landing-interactive-stack::before\s*{[\s\S]*?background:\s*radial-gradient\([\s\S]*?opacity:\s*var\(--landing-occlusion\);/,
-    "the foreground layer must provide a theme-aware mask that visually covers the copy beneath it",
+    /\.landing-globe-layer::before\s*{[\s\S]*?color-mix\(in srgb, var\(--void\) 68%, transparent\)[\s\S]*?opacity:\s*var\(--landing-veil-opacity\);/,
+    "the globe must use a translucent, theme-aware veil rather than erase the copy",
+  );
+  assert.match(
+    styles,
+    /\.landing-pathways\s*{[\s\S]*?opacity:\s*var\(--landing-pathways-opacity\);[\s\S]*?pointer-events:\s*none;[\s\S]*?visibility:\s*hidden;[\s\S]*?\.atlas-landing\[data-landing-scene="explore"\] \.landing-pathways,[\s\S]*?visibility:\s*visible;[\s\S]*?\.atlas-landing\[data-landing-actions="active"\] \.landing-pathways\s*{[\s\S]*?pointer-events:\s*auto;/,
+    "the actions must fade independently before their interaction gate opens",
+  );
+  assert.match(
+    styles,
+    /\.landing-globe-stage\s*{[\s\S]*?pointer-events:\s*none;[\s\S]*?\.atlas-landing\[data-landing-actions="active"\] \.landing-globe-stage\s*{[\s\S]*?pointer-events:\s*auto;/,
+    "the globe preview must become interactive with the second-scene controls",
+  );
+  assert.match(
+    styles,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.landing-story\s*{[\s\S]*?min-height:\s*auto;[\s\S]*?\.landing-story-viewport\s*{[\s\S]*?position:\s*relative;[\s\S]*?\.landing-pathways\s*{[\s\S]*?opacity:\s*1 !important;[\s\S]*?visibility:\s*visible;/,
+    "reduced motion must reflow the story and keep all three choices available",
   );
 
   const embeddedGlobeSource = sourceBetween(
