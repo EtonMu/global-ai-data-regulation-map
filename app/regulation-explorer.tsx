@@ -11,7 +11,6 @@ import {
   useCallback,
   useDeferredValue,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useReducer,
   useRef,
@@ -2988,20 +2987,8 @@ function AtlasLanding({
   onOpenResearch: () => void;
   onOpenInstrument: (instrumentId: string) => void;
 }) {
-  const landingRootRef = useRef<HTMLElement>(null);
-  const landingHeaderRef = useRef<HTMLElement>(null);
-  const landingStoryRef = useRef<HTMLElement>(null);
-  const landingViewportRef = useRef<HTMLDivElement>(null);
-  const landingGlobeLayerRef = useRef<HTMLDivElement>(null);
   const pathwaysRef = useRef<HTMLElement>(null);
-  const landingScrollFrameRef = useRef<number | null>(null);
-  const landingSceneRef = useRef<"intro" | "explore" | "static">("intro");
-  const landingActionsActiveRef = useRef(false);
   const globeDraggingRef = useRef(false);
-  const [landingScene, setLandingScene] = useState<
-    "intro" | "explore" | "static"
-  >("intro");
-  const [landingActionsActive, setLandingActionsActive] = useState(false);
   const legalSystemCount = atlasGroups.filter(
     (group) => group.id !== "frameworks",
   ).length;
@@ -3022,162 +3009,6 @@ function AtlasLanding({
         button.style.setProperty("--path-x", `${x.toFixed(2)}px`);
         button.style.setProperty("--path-y", `${y.toFixed(2)}px`);
       });
-  }, []);
-
-  useLayoutEffect(() => {
-    const root = landingRootRef.current;
-    const header = landingHeaderRef.current;
-    const story = landingStoryRef.current;
-    const viewport = landingViewportRef.current;
-    const globeLayer = landingGlobeLayerRef.current;
-    const pathways = pathwaysRef.current;
-    if (!root || !header || !story || !viewport || !globeLayer || !pathways) {
-      return;
-    }
-    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const updateSceneState = (
-      nextScene: "intro" | "explore" | "static",
-      nextActionsActive: boolean,
-    ) => {
-      if (landingSceneRef.current !== nextScene) {
-        landingSceneRef.current = nextScene;
-        setLandingScene(nextScene);
-      }
-      if (landingActionsActiveRef.current !== nextActionsActive) {
-        landingActionsActiveRef.current = nextActionsActive;
-        if (
-          !nextActionsActive &&
-          document.activeElement instanceof HTMLElement &&
-          (pathways.contains(document.activeElement) ||
-            globeLayer.contains(document.activeElement))
-        ) {
-          document.activeElement.blur();
-        }
-        setLandingActionsActive(nextActionsActive);
-      }
-    };
-
-    const renderScrollState = () => {
-      landingScrollFrameRef.current = null;
-      const headerHeight = header.getBoundingClientRect().height;
-      root.style.setProperty(
-        "--landing-header-height",
-        `${headerHeight.toFixed(2)}px`,
-      );
-
-      if (motionQuery.matches) {
-        updateSceneState("static", true);
-        root.style.setProperty("--landing-globe-scale", "1");
-        root.style.setProperty("--landing-globe-y", "0px");
-        root.style.setProperty("--landing-copy-opacity", "1");
-        root.style.setProperty("--landing-copy-y", "0px");
-        root.style.setProperty("--landing-veil-opacity", "0");
-        root.style.setProperty("--landing-pathways-opacity", "1");
-        root.style.setProperty("--landing-pathways-y", "0px");
-        return;
-      }
-
-      const availableHeight = Math.max(
-        1,
-        viewport.getBoundingClientRect().height,
-      );
-      const travel = Math.max(1, root.scrollHeight - root.clientHeight);
-      const scrolled = Math.min(travel, Math.max(0, root.scrollTop));
-      const progress = scrolled / travel;
-      const eased = progress * progress * (3 - 2 * progress);
-      const viewportWidth = window.innerWidth;
-      const compact = viewportWidth <= 760;
-      const medium = viewportWidth <= 1100;
-      const shortViewport = availableHeight <= 620;
-      const startScale = shortViewport
-        ? compact
-          ? 0.3
-          : 0.44
-        : compact
-          ? 0.68
-          : medium
-            ? 0.61
-            : 0.54;
-      const endScale = shortViewport
-        ? compact
-          ? 0.94
-          : 1
-        : compact
-          ? 1
-          : medium
-            ? 1.05
-            : 1.1;
-      const startY =
-        availableHeight *
-        (shortViewport ? (compact ? 0.44 : 0.36) : compact ? 0.24 : 0.31);
-      const endY = -availableHeight * (compact ? 0.035 : 0.055);
-      const pathwayLinear = Math.min(
-        1,
-        Math.max(0, (progress - 0.48) / 0.46),
-      );
-      const pathwayProgress =
-        pathwayLinear * pathwayLinear * (3 - 2 * pathwayLinear);
-
-      updateSceneState(progress >= 0.48 ? "explore" : "intro", progress >= 0.76);
-      root.style.setProperty(
-        "--landing-globe-scale",
-        (startScale + eased * (endScale - startScale)).toFixed(4),
-      );
-      root.style.setProperty(
-        "--landing-globe-y",
-        `${(startY + eased * (endY - startY)).toFixed(2)}px`,
-      );
-      root.style.setProperty(
-        "--landing-copy-opacity",
-        (1 - eased * 0.8).toFixed(4),
-      );
-      root.style.setProperty(
-        "--landing-copy-y",
-        `${(-eased * (compact ? 12 : 24)).toFixed(2)}px`,
-      );
-      root.style.setProperty(
-        "--landing-veil-opacity",
-        (eased * 0.48).toFixed(4),
-      );
-      root.style.setProperty(
-        "--landing-pathways-opacity",
-        pathwayProgress.toFixed(4),
-      );
-      root.style.setProperty(
-        "--landing-pathways-y",
-        `${((1 - pathwayProgress) * (compact ? 22 : 34)).toFixed(2)}px`,
-      );
-    };
-
-    const queueScrollState = () => {
-      if (landingScrollFrameRef.current !== null) return;
-      landingScrollFrameRef.current = window.requestAnimationFrame(
-        renderScrollState,
-      );
-    };
-
-    renderScrollState();
-    root.addEventListener("scroll", queueScrollState, { passive: true });
-    window.addEventListener("resize", queueScrollState);
-    motionQuery.addEventListener("change", queueScrollState);
-    const resizeObserver =
-      typeof ResizeObserver === "undefined"
-        ? null
-        : new ResizeObserver(queueScrollState);
-    resizeObserver?.observe(header);
-    resizeObserver?.observe(viewport);
-
-    return () => {
-      root.removeEventListener("scroll", queueScrollState);
-      window.removeEventListener("resize", queueScrollState);
-      motionQuery.removeEventListener("change", queueScrollState);
-      resizeObserver?.disconnect();
-      if (landingScrollFrameRef.current !== null) {
-        window.cancelAnimationFrame(landingScrollFrameRef.current);
-        landingScrollFrameRef.current = null;
-      }
-    };
   }, []);
 
   const pathways = [
@@ -3208,13 +3039,8 @@ function AtlasLanding({
   ] as const;
 
   return (
-    <main
-      ref={landingRootRef}
-      className="atlas-landing"
-      data-landing-scene={landingScene}
-      data-landing-actions={landingActionsActive ? "active" : "inactive"}
-    >
-      <header ref={landingHeaderRef} className="landing-header">
+    <main className="atlas-landing">
+      <header className="landing-header">
         <div className="landing-wordmark" aria-label="Compliance Compass">
           <span>COMPLIANCE COMPASS</span>
           <small>GLOBAL AI GOVERNANCE + DATA REGULATION</small>
@@ -3258,94 +3084,70 @@ function AtlasLanding({
         </div>
       </header>
 
-      <section
-        ref={landingStoryRef}
-        className="landing-story"
-        aria-labelledby="landing-title"
-      >
-        <div ref={landingViewportRef} className="landing-story-viewport">
-          <section className="landing-scene landing-intro-scene">
-            <div className="landing-copy">
-              <p className="landing-eyebrow">
-                GLOBAL REGULATORY KNOWLEDGE MAP
-              </p>
-              <h1 id="landing-title" className="landing-title">
-                A global corpus for data regulation &amp; AI governance.
-              </h1>
-              <p className="landing-description">
-                Mapping laws, provisions and shared concepts across jurisdictions
-                through interactive visualization and comparative research.
-              </p>
-              <p className="landing-corpus-line" aria-label="Corpus coverage">
-                <span><strong>{legalSystemCount}</strong> legal systems</span>
-                <span><strong>{instruments.length}</strong> sources</span>
-                <span><strong>{provisions.length}</strong> provisions</span>
-                <span><strong>{concepts.length}</strong> concepts</span>
-              </p>
-            </div>
-          </section>
+      <section className="landing-story" aria-labelledby="landing-title">
+        <div className="landing-copy">
+          <p className="landing-eyebrow">
+            GLOBAL REGULATORY KNOWLEDGE MAP
+          </p>
+          <h1 id="landing-title" className="landing-title">
+            A global corpus for data regulation &amp; AI governance.
+          </h1>
+          <p className="landing-description">
+            Mapping laws, provisions and shared concepts across jurisdictions
+            through interactive visualization and comparative research.
+          </p>
+          <p className="landing-corpus-line" aria-label="Corpus coverage">
+            <span><strong>{legalSystemCount}</strong> legal systems</span>
+            <span><strong>{instruments.length}</strong> sources</span>
+            <span><strong>{provisions.length}</strong> provisions</span>
+            <span><strong>{concepts.length}</strong> concepts</span>
+          </p>
+        </div>
 
-          <div
-            ref={landingGlobeLayerRef}
-            className="landing-globe-layer"
-            aria-hidden={!landingActionsActive}
-            inert={!landingActionsActive}
-          >
-            <div className="landing-globe-stage">
-              <LandingRegulationGlobe
-                presentation="hero"
-                autoRotate
-                jurisdictions={globeJurisdictions}
-                concepts={[]}
-                onOpenInstrument={onOpenInstrument}
-                onMotionChange={handleGlobeMotion}
-              />
-            </div>
+        <div className="landing-globe-layer">
+          <div className="landing-globe-stage">
+            <LandingRegulationGlobe
+              presentation="hero"
+              autoRotate
+              jurisdictions={globeJurisdictions}
+              concepts={[]}
+              onOpenInstrument={onOpenInstrument}
+              onMotionChange={handleGlobeMotion}
+            />
           </div>
+        </div>
 
-          <section
-            className="landing-scene landing-explore-scene"
-            aria-label="Choose a research pathway"
-          >
-            <nav
-              ref={pathwaysRef}
-              className="landing-pathways"
-              aria-label="Choose an exploration path"
-              aria-hidden={!landingActionsActive}
-              data-globe-dragging="false"
-              inert={!landingActionsActive}
-            >
-              {pathways.map((pathway) => {
-                const PathwayIcon = pathway.icon;
-                return (
-                  <button
-                    type="button"
-                    className="landing-pathway"
-                    data-path={pathway.id}
-                    key={pathway.id}
-                    onClick={pathway.action}
-                  >
-                    <span className="landing-pathway-icon">
-                      <PathwayIcon aria-hidden="true" />
-                    </span>
-                    <span className="landing-pathway-copy">
-                      <strong>{pathway.label}</strong>
-                      <small>{pathway.description}</small>
-                    </span>
-                    <ChevronRight
-                      className="landing-pathway-arrow"
-                      aria-hidden="true"
-                    />
-                  </button>
-                );
-              })}
-            </nav>
-          </section>
-        </div>
-        <div className="landing-snap-pages" aria-hidden="true">
-          <span className="landing-snap-page" />
-          <span className="landing-snap-page" />
-        </div>
+        <nav
+          ref={pathwaysRef}
+          className="landing-pathways"
+          aria-label="Choose an exploration path"
+          data-globe-dragging="false"
+        >
+          {pathways.map((pathway) => {
+            const PathwayIcon = pathway.icon;
+            return (
+              <button
+                type="button"
+                className="landing-pathway"
+                data-path={pathway.id}
+                key={pathway.id}
+                onClick={pathway.action}
+              >
+                <span className="landing-pathway-icon">
+                  <PathwayIcon aria-hidden="true" />
+                </span>
+                <span className="landing-pathway-copy">
+                  <strong>{pathway.label}</strong>
+                  <small>{pathway.description}</small>
+                </span>
+                <ChevronRight
+                  className="landing-pathway-arrow"
+                  aria-hidden="true"
+                />
+              </button>
+            );
+          })}
+        </nav>
       </section>
     </main>
   );

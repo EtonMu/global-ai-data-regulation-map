@@ -3,10 +3,11 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
-const [explorerSource, searchSource, styles] = await Promise.all([
+const [explorerSource, searchSource, styles, globeStyles] = await Promise.all([
   readFile(new URL("app/regulation-explorer.tsx", projectRoot), "utf8"),
   readFile(new URL("app/search-combobox.tsx", projectRoot), "utf8"),
   readFile(new URL("app/globals.css", projectRoot), "utf8"),
+  readFile(new URL("app/regulation-globe.module.css", projectRoot), "utf8"),
 ]);
 
 function sourceBetween(start, end) {
@@ -101,172 +102,76 @@ test("the landing page offers three clear routes around a prominent hero globe",
     );
   }
 
-  assert.match(
-    landingSource,
-    /className="landing-scene landing-intro-scene"[\s\S]*?className="landing-globe-layer"[\s\S]*?className="landing-scene landing-explore-scene"[\s\S]*?className="landing-pathways"/,
-    "the landing story must progress from a text-led first scene into a globe-led action scene",
-  );
-  assert.equal(
-    (landingSource.match(/className="landing-snap-page"/g) ?? []).length,
-    2,
-    "the welcome surface must expose exactly two snap pages",
-  );
-  assert.doesNotMatch(
-    landingSource,
-    /landing-scroll-cue|Scroll to explore/,
-    "the two-page welcome surface must not add a visible scroll-axis cue",
-  );
-  assert.doesNotMatch(
-    landingSource,
-    /<footer className="landing-footer"/,
-    "the welcome surface must not create a third footer-sized scroll region",
-  );
-  assert.match(
-    styles,
-    /\.landing-story\s*{[\s\S]*?display:\s*grid;[\s\S]*?min-height:\s*calc\(200dvh\s*-\s*var\(--landing-header-height\)\s*-\s*var\(--landing-header-height\)\);/,
-    "the landing story must provide two full-height scenes below the persistent banner",
-  );
-  assert.match(
-    styles,
-    /\.landing-story-viewport\s*{[\s\S]*?position:\s*sticky;[\s\S]*?top:\s*var\(--landing-header-height\);[\s\S]*?height:\s*var\(--landing-scene-height\);/,
-    "both scenes must share one pinned cinematic viewport",
-  );
-  assert.match(
-    styles,
-    /\.landing-header\s*{[\s\S]*?position:\s*sticky;[\s\S]*?z-index:\s*50;[\s\S]*?top:\s*0;/,
-    "the existing banner must remain above both landing scenes",
+  const landingStart = styles.indexOf(".atlas-landing {");
+  const landingEnd = styles.indexOf(".top-bar {", landingStart);
+  assert.ok(landingStart >= 0 && landingEnd > landingStart);
+  const landingStyles = styles.slice(landingStart, landingEnd);
+  const landingRootRule = landingStyles.slice(
+    0,
+    landingStyles.indexOf("}") + 1,
   );
 
   assert.match(
     landingSource,
-    /root\.addEventListener\("scroll", queueScrollState, \{ passive: true \}\)/,
-    "scroll-linked landing motion must use a passive listener",
+    /className="landing-copy"[\s\S]*?className="landing-globe-layer"[\s\S]*?className="landing-pathways"/,
+    "copy, globe and all three routes must share one landing page",
+  );
+  assert.match(
+    landingSource,
+    /legalSystemCount[\s\S]*?instruments\.length[\s\S]*?provisions\.length[\s\S]*?concepts\.length/,
+    "all corpus coverage readouts must remain visible",
   );
   assert.doesNotMatch(
     landingSource,
-    /window\.addEventListener\("scroll", queueScrollState/,
-    "the isolated welcome surface must not depend on document scrolling",
-  );
-  assert.match(
-    landingSource,
-    /const queueScrollState = \(\) => \{[\s\S]*?window\.requestAnimationFrame\([\s\S]*?renderScrollState/,
-    "scroll-linked landing motion must be frame-throttled",
-  );
-  for (const property of [
-    "--landing-globe-scale",
-    "--landing-globe-y",
-    "--landing-copy-opacity",
-    "--landing-copy-y",
-    "--landing-veil-opacity",
-    "--landing-pathways-opacity",
-    "--landing-pathways-y",
-  ]) {
-    assert.match(
-      landingSource,
-      new RegExp(`style\\.setProperty\\(\\s*"${property}"`),
-      `${property} must be driven by landing scroll progress`,
-    );
-  }
-  assert.match(
-    landingSource,
-    /const travel = Math\.max\(1, root\.scrollHeight - root\.clientHeight\)[\s\S]*?const scrolled = Math\.min\(travel, Math\.max\(0, root\.scrollTop\)\)[\s\S]*?const progress = scrolled \/ travel/,
-    "motion progress must be measured across the dedicated two-scene story",
-  );
-  assert.match(
-    landingSource,
-    /const startScale = shortViewport[\s\S]*?compact[\s\S]*?0\.3[\s\S]*?0\.44[\s\S]*?0\.68[\s\S]*?0\.61[\s\S]*?0\.54[\s\S]*?const endScale = shortViewport[\s\S]*?: 1\.1;[\s\S]*?startY \+ eased \* \(endY - startY\)/,
-    "the globe must begin materially smaller, then rise to a restrained second-page size",
-  );
-  assert.doesNotMatch(landingSource, /:\s*1\.2;/);
-  assert.match(
-    landingSource,
-    /--landing-copy-opacity",[\s\S]*?\(1 - eased \* 0\.8\)\.toFixed\(4\)[\s\S]*?--landing-veil-opacity",[\s\S]*?\(eased \* 0\.48\)\.toFixed\(4\)/,
-    "the second scene must preserve the background copy at exactly twenty percent opacity",
-  );
-  assert.match(
-    landingSource,
-    /updateSceneState\(progress >= 0\.48 \? "explore" : "intro", progress >= 0\.76\)/,
-    "the actions must fade with scene two before becoming interactive at a readable opacity",
-  );
-  assert.match(
-    landingSource,
-    /aria-hidden=\{!landingActionsActive\}[\s\S]*?inert=\{!landingActionsActive\}/,
-    "hidden pathways must remain outside keyboard and assistive-technology navigation",
-  );
-  assert.match(
-    landingSource,
-    /!nextActionsActive[\s\S]*?pathways\.contains\(document\.activeElement\)[\s\S]*?globeLayer\.contains\(document\.activeElement\)[\s\S]*?document\.activeElement\.blur\(\)/,
-    "returning to scene one must not leave focus stranded inside hidden actions or globe controls",
-  );
-  assert.match(
-    landingSource,
-    /className="landing-globe-layer"[\s\S]*?aria-hidden=\{!landingActionsActive\}[\s\S]*?inert=\{!landingActionsActive\}/,
-    "the small first-scene globe must remain a visual preview until the exploration scene is ready",
-  );
-  assert.match(
-    landingSource,
-    /motionQuery\.matches[\s\S]*?updateSceneState\("static", true\)[\s\S]*?--landing-globe-scale", "1"[\s\S]*?--landing-copy-opacity", "1"[\s\S]*?--landing-pathways-opacity", "1"/,
-    "reduced-motion users must receive a stable layout with reachable pathways",
-  );
-  assert.match(
-    landingSource,
-    /new ResizeObserver\(queueScrollState\)[\s\S]*?resizeObserver\?\.observe\(header\)[\s\S]*?resizeObserver\?\.disconnect\(\)/,
-    "the sticky story must track a wrapping banner without leaking observers",
-  );
-  assert.match(
-    styles,
-    /\.atlas-landing\s*{[\s\S]*?height:\s*100dvh;[\s\S]*?overflow-x:\s*clip;[\s\S]*?overflow-y:\s*auto;[\s\S]*?scrollbar-width:\s*none;[\s\S]*?scroll-snap-type:\s*y mandatory;/,
-    "the landing surface must be an exact, scrollbar-free two-page snap container",
-  );
-  assert.match(
-    styles,
-    /\.atlas-landing::\-webkit-scrollbar\s*{[\s\S]*?display:\s*none;/,
-    "WebKit must not expose a visual scrollbar on the two-page landing surface",
-  );
-  assert.match(
-    styles,
-    /\.landing-snap-pages\s*{[\s\S]*?grid-area:\s*1 \/ 1;[\s\S]*?grid-template-rows:\s*repeat\(2, var\(--landing-scene-height\)\);[\s\S]*?\.landing-snap-page\s*{[\s\S]*?height:\s*var\(--landing-scene-height\);[\s\S]*?scroll-snap-align:\s*start;[\s\S]*?scroll-snap-stop:\s*always;/,
-    "each landing page must occupy the viewport below the persistent banner",
+    /landing(?:Scene|ActionsActive|ScrollFrame)|landing-(?:intro|explore)-scene|landing-snap-page|data-landing-(?:scene|actions)/,
+    "the single-page landing must not retain scene or snap state",
   );
   assert.doesNotMatch(
-    styles,
-    /\.atlas-landing::before/,
-    "decorative landing geometry must not enlarge the two-page scroll range",
+    landingSource,
+    /useLayoutEffect|queueScrollState|renderScrollState|scrollTop|scrollHeight|addEventListener\("scroll"/,
+    "the single-page landing must not run scroll-linked animation code",
+  );
+  assert.doesNotMatch(
+    landingSource,
+    /className="landing-(?:globe-layer|pathways)"[^>]*(?:aria-hidden=|\binert=)/,
+    "the globe and routes must be interactive immediately",
+  );
+
+  assert.match(landingRootRule, /min-height:\s*100dvh;/);
+  assert.match(landingRootRule, /overflow-x:\s*clip;/);
+  assert.doesNotMatch(
+    landingRootRule,
+    /(?:^|[;{])\s*height:\s*100(?:d)?vh;/,
+    "the landing may grow on constrained screens instead of clipping content",
+  );
+  assert.doesNotMatch(
+    landingRootRule,
+    /overflow-y:\s*auto|scroll-snap|scroll-padding|scrollbar-width/,
+    "the landing must not create an internal scroll or snap surface",
+  );
+  assert.doesNotMatch(
+    landingStyles,
+    /landing-snap|calc\(200(?:d)?vh|data-landing-(?:scene|actions)/,
   );
   assert.match(
-    styles,
-    /\.landing-story-viewport::before\s*{[\s\S]*?position:\s*absolute;[\s\S]*?z-index:\s*0;[\s\S]*?width:\s*min\(76vw, 1060px\);/,
-    "the decorative orbit must be clipped inside the pinned cinematic viewport",
+    landingStyles,
+    /\.landing-story\s*{[^}]*grid-template-areas:\s*"copy globe"\s*"pathways pathways";[^}]*min-height:\s*calc\(100dvh - var\(--landing-header-height\)\);/,
+    "the desktop landing must fit all content into one coordinated grid",
   );
   assert.match(
-    styles,
-    /\.landing-copy\s*{[\s\S]*?position:\s*absolute;[\s\S]*?opacity:\s*var\(--landing-copy-opacity\);[\s\S]*?transform:\s*translate3d\(-50%, var\(--landing-copy-y\), 0\);/,
-    "the thematic copy must remain behind the moving globe without disappearing",
+    landingStyles,
+    /\.landing-header\s*{[^}]*position:\s*sticky;[^}]*z-index:\s*50;[^}]*top:\s*0;/,
+    "the banner must remain visible above the one-page composition",
   );
-  assert.match(
-    styles,
-    /\.landing-globe-layer\s*{[\s\S]*?z-index:\s*4;[\s\S]*?transform:\s*translate3d\(0, var\(--landing-globe-y\), 0\)[\s\S]*?scale\(var\(--landing-globe-scale\)\);/,
-    "only the globe layer must rise and scale over the copy",
+  assert.doesNotMatch(
+    landingStyles,
+    /\.landing-(?:copy|globe-layer|pathways)\s*{[^}]*position:\s*absolute/,
+    "primary landing content must stay in natural grid flow",
   );
-  assert.match(
-    styles,
-    /\.landing-globe-layer::before\s*{[\s\S]*?color-mix\(in srgb, var\(--void\) 68%, transparent\)[\s\S]*?opacity:\s*var\(--landing-veil-opacity\);/,
-    "the globe must use a translucent, theme-aware veil rather than erase the copy",
-  );
-  assert.match(
-    styles,
-    /\.landing-pathways\s*{[\s\S]*?opacity:\s*var\(--landing-pathways-opacity\);[\s\S]*?pointer-events:\s*none;[\s\S]*?visibility:\s*hidden;[\s\S]*?\.atlas-landing\[data-landing-scene="explore"\] \.landing-pathways,[\s\S]*?visibility:\s*visible;[\s\S]*?\.atlas-landing\[data-landing-actions="active"\] \.landing-pathways\s*{[\s\S]*?pointer-events:\s*auto;/,
-    "the actions must fade independently before their interaction gate opens",
-  );
-  assert.match(
-    styles,
-    /\.landing-globe-stage\s*{[\s\S]*?pointer-events:\s*none;[\s\S]*?\.atlas-landing\[data-landing-actions="active"\] \.landing-globe-stage\s*{[\s\S]*?pointer-events:\s*auto;/,
-    "the globe preview must become interactive with the second-scene controls",
-  );
-  assert.match(
-    styles,
-    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.atlas-landing\s*{[\s\S]*?scroll-snap-type:\s*none;[\s\S]*?\.landing-story\s*{[\s\S]*?height:\s*auto;[\s\S]*?min-height:\s*auto;[\s\S]*?\.landing-snap-pages\s*{[\s\S]*?display:\s*none;[\s\S]*?\.landing-story-viewport\s*{[\s\S]*?position:\s*relative;[\s\S]*?overflow:\s*visible;[\s\S]*?\.landing-story-viewport::before\s*{[\s\S]*?display:\s*none;[\s\S]*?\.landing-pathways\s*{[\s\S]*?opacity:\s*1 !important;[\s\S]*?visibility:\s*visible;/,
-    "reduced motion must reflow the story and keep all three choices available",
+  assert.doesNotMatch(
+    landingStyles,
+    /\.landing-(?:globe-stage|pathways)\s*{[^}]*pointer-events:\s*none|\.landing-pathways\s*{[^}]*visibility:\s*hidden/,
+    "the globe and entry routes must never be gated by CSS",
   );
 
   const embeddedGlobeSource = sourceBetween(
@@ -383,6 +288,37 @@ test("landing routes and contextual navigation reflow without text collisions", 
     styles,
     /@media \(max-width: 760px\)[\s\S]*?\.landing-pathways\s*\{[\s\S]*?grid-template-columns:\s*1fr/,
     "entry routes must stack on narrow screens",
+  );
+  assert.match(
+    styles,
+    /@media \(max-width: 900px\)[\s\S]*?\.landing-story\s*\{[\s\S]*?grid-template-areas:\s*"copy"\s*"globe"\s*"pathways";[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/,
+    "the one-page composition must become a natural single-column flow before its regions collide",
+  );
+  for (const selector of [
+    "landing-copy",
+    "landing-globe-layer",
+    "landing-pathways",
+  ]) {
+    assert.match(
+      styles,
+      new RegExp(`\\.${selector}\\s*\\{[^}]*min-width:\\s*0;`),
+      `${selector} must be allowed to shrink inside the landing grid`,
+    );
+  }
+  assert.match(
+    styles,
+    /\.landing-pathway-copy\s*\{[^}]*min-width:\s*0;[^}]*overflow-wrap:\s*anywhere;/,
+    "long route copy must shrink and wrap inside its own surface",
+  );
+  assert.doesNotMatch(
+    styles,
+    /\.landing-pathway-copy small,\s*\.landing-pathway-copy p\s*\{[^}]*display:\s*none/,
+    "short viewports must retain every pathway description",
+  );
+  assert.match(
+    globeStyles,
+    /@media \(max-width: 900px\)[\s\S]*?\.heroStage\s*\{[^}]*touch-action:\s*pan-y pinch-zoom;/,
+    "the draggable globe must leave vertical touch scrolling available on narrow screens",
   );
   assert.match(
     styles,

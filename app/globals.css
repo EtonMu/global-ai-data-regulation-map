@@ -207,27 +207,11 @@ button {
 /* A quiet, single-purpose threshold into the research workspace. */
 .atlas-landing {
   --landing-header-height: 72px;
-  --landing-globe-scale: 0.54;
-  --landing-globe-y: 160px;
-  --landing-copy-opacity: 1;
-  --landing-copy-y: 0px;
-  --landing-veil-opacity: 0;
-  --landing-pathways-opacity: 0;
-  --landing-pathways-y: 34px;
-  --landing-scene-height: calc(100vh - var(--landing-header-height));
-  --landing-scene-height: calc(100dvh - var(--landing-header-height));
   position: relative;
   isolation: isolate;
-  height: 100vh;
-  height: 100dvh;
-  min-height: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: clip;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-padding-top: var(--landing-header-height);
-  scroll-snap-type: y mandatory;
   background:
     radial-gradient(circle at 50% 41%, rgba(86, 225, 255, 0.095), transparent 31%),
     radial-gradient(circle at 22% 19%, rgba(154, 124, 255, 0.075), transparent 24%),
@@ -237,45 +221,21 @@ button {
   background-size: auto, auto, 48px 48px, 48px 48px, auto;
 }
 
-.atlas-landing::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-}
-
-.atlas-landing::after,
-.landing-story-viewport::before {
+.atlas-landing::after {
   content: "";
   position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.landing-story-viewport::before {
-  z-index: 0;
-  top: clamp(170px, 22vw, 300px);
-  left: 50%;
-  width: min(76vw, 1060px);
-  aspect-ratio: 1;
-  border: 1px solid color-mix(in srgb, var(--cyan) 10%, transparent);
-  box-shadow:
-    0 0 100px color-mix(in srgb, var(--cyan) 5%, transparent),
-    inset 0 0 100px color-mix(in srgb, var(--violet) 3%, transparent);
-  opacity: 0.7;
-  transform: translate(-50%, -18%);
-}
-
-.atlas-landing::after {
   z-index: -1;
   right: 0;
   bottom: 0;
   width: min(72vw, 980px);
   aspect-ratio: 1;
+  border-radius: 50%;
   background: radial-gradient(
     circle at 100% 100%,
     color-mix(in srgb, var(--violet) 8%, transparent),
     transparent 67%
   );
+  pointer-events: none;
 }
 
 html[data-theme="bright"] .atlas-landing {
@@ -283,12 +243,6 @@ html[data-theme="bright"] .atlas-landing {
     radial-gradient(circle at 50% 38%, rgba(31, 92, 122, 0.085), transparent 33%),
     radial-gradient(circle at 18% 14%, rgba(145, 100, 30, 0.065), transparent 23%),
     linear-gradient(180deg, #faf8f2 0%, var(--void) 72%, #eee7db 100%);
-}
-
-html[data-theme="bright"] .landing-story-viewport::before {
-  border-color: rgba(31, 92, 122, 0.08);
-  box-shadow: 0 28px 90px rgba(30, 38, 48, 0.07);
-  opacity: 0.58;
 }
 
 .landing-header {
@@ -366,63 +320,29 @@ html[data-theme="bright"] .landing-story-viewport::before {
   z-index: 1;
   width: min(100%, 1560px);
   display: grid;
-  height: calc(200vh - var(--landing-header-height) - var(--landing-header-height));
-  height: calc(200dvh - var(--landing-header-height) - var(--landing-header-height));
-  min-height: calc(200vh - var(--landing-header-height) - var(--landing-header-height));
-  min-height: calc(200dvh - var(--landing-header-height) - var(--landing-header-height));
+  grid-template-areas:
+    "copy globe"
+    "pathways pathways";
+  grid-template-columns: minmax(300px, 0.82fr) minmax(420px, 1.18fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 34px) clamp(24px, 3.4vw, 54px);
+  min-height: calc(100vh - var(--landing-header-height));
+  min-height: calc(100dvh - var(--landing-header-height));
   margin: 0 auto;
-}
-
-.landing-story-viewport {
-  grid-area: 1 / 1;
-  position: sticky;
-  top: var(--landing-header-height);
-  align-self: start;
-  isolation: isolate;
-  width: 100%;
-  height: var(--landing-scene-height);
-  overflow: clip;
-}
-
-.landing-snap-pages {
-  grid-area: 1 / 1;
-  height: calc(200vh - var(--landing-header-height) - var(--landing-header-height));
-  height: calc(200dvh - var(--landing-header-height) - var(--landing-header-height));
-  display: grid;
-  grid-template-rows: repeat(2, var(--landing-scene-height));
-  opacity: 0;
-  pointer-events: none;
-}
-
-.landing-snap-page {
-  height: var(--landing-scene-height);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.landing-scene {
-  position: absolute;
-  inset: 0;
-}
-
-.landing-intro-scene {
-  z-index: 2;
-  pointer-events: none;
+  padding: clamp(22px, 4.2dvh, 52px) clamp(20px, 4vw, 64px)
+    clamp(20px, 3.4dvh, 40px);
 }
 
 .landing-copy {
-  position: absolute;
+  grid-area: copy;
+  position: relative;
   z-index: 2;
-  top: clamp(24px, 5.2svh, 66px);
-  left: 50%;
-  width: min(1080px, calc(100% - clamp(40px, 10vw, 152px)));
+  min-width: 0;
+  width: 100%;
   display: grid;
-  justify-items: center;
-  opacity: var(--landing-copy-opacity);
-  text-align: center;
-  transform: translate3d(-50%, var(--landing-copy-y), 0);
-  transform-origin: 50% 0;
-  will-change: opacity, transform;
+  justify-items: start;
+  text-align: left;
 }
 
 .landing-eyebrow {
@@ -448,10 +368,10 @@ html[data-theme="bright"] .landing-story-viewport::before {
 }
 
 .landing-title {
-  max-width: 17ch;
+  max-width: 12ch;
   margin: 0;
   color: var(--ink-strong);
-  font-size: clamp(3rem, min(6.25vw, 11svh), 6.65rem);
+  font-size: clamp(2.8rem, min(4.8vw, 9.5dvh), 5.3rem);
   font-weight: 500;
   letter-spacing: -0.064em;
   line-height: 0.94;
@@ -466,8 +386,8 @@ html[data-theme="bright"] .landing-title {
 }
 
 .landing-description {
-  max-width: 720px;
-  margin: 22px 0 0;
+  max-width: 48ch;
+  margin: 20px 0 0;
   color: var(--muted);
   font-size: clamp(0.9rem, 1.05vw, 1.04rem);
   line-height: 1.7;
@@ -477,7 +397,7 @@ html[data-theme="bright"] .landing-title {
 .landing-corpus-line {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 7px 18px;
   margin: 17px 0 0;
   color: var(--muted-dark);
@@ -506,43 +426,49 @@ html[data-theme="bright"] .landing-title {
 }
 
 .landing-globe-layer {
-  position: absolute;
-  z-index: 4;
-  inset: 0;
+  grid-area: globe;
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+  min-width: 0;
+  width: 100%;
   display: grid;
   place-items: center;
-  pointer-events: none;
-  transform: translate3d(0, var(--landing-globe-y), 0)
-    scale(var(--landing-globe-scale));
-  transform-origin: 50% 50%;
-  will-change: transform;
 }
 
-.landing-globe-layer::before {
+.landing-globe-layer::after {
   position: absolute;
   z-index: 0;
-  width: min(980px, 92vw);
+  top: 50%;
+  left: 50%;
+  width: min(88%, 720px);
   aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--cyan) 12%, transparent);
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--void) 68%, transparent) 0 31%,
-    color-mix(in srgb, var(--void) 46%, transparent) 52%,
-    transparent 74%
-  );
+  box-shadow:
+    0 0 90px color-mix(in srgb, var(--cyan) 5%, transparent),
+    inset 0 0 90px color-mix(in srgb, var(--violet) 4%, transparent);
   content: "";
-  opacity: var(--landing-veil-opacity);
+  opacity: 0.72;
   pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+html[data-theme="bright"] .landing-globe-layer::after {
+  border-color: rgba(31, 92, 122, 0.09);
+  box-shadow: 0 24px 72px rgba(30, 38, 48, 0.07);
+  opacity: 0.62;
 }
 
 .landing-globe-stage {
   position: relative;
   z-index: 1;
-  width: min(820px, 92vw);
-  min-height: 430px;
+  width: min(720px, 100%);
+  width: min(720px, 100%, 68dvh);
+  min-height: clamp(340px, 48vh, 500px);
+  min-height: clamp(340px, 48dvh, 500px);
   display: grid;
   place-items: center;
-  pointer-events: none;
 }
 
 .landing-globe-stage > * {
@@ -550,7 +476,8 @@ html[data-theme="bright"] .landing-title {
 }
 
 .landing-visualization-loading {
-  min-height: 430px;
+  min-height: clamp(340px, 48vh, 500px);
+  min-height: clamp(340px, 48dvh, 500px);
   display: grid;
   place-content: center;
   justify-items: center;
@@ -570,38 +497,15 @@ html[data-theme="bright"] .landing-title {
 }
 
 .landing-pathways {
-  position: absolute;
-  z-index: 6;
-  bottom: clamp(20px, 3.5svh, 40px);
-  left: 50%;
-  width: min(1180px, calc(100% - clamp(40px, 10vw, 152px)));
+  grid-area: pathways;
+  position: relative;
+  z-index: 4;
+  min-width: 0;
+  width: min(1180px, 100%);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(14px, 2vw, 24px);
   margin: 0 auto;
-  opacity: var(--landing-pathways-opacity);
-  pointer-events: none;
-  transform: translate3d(-50%, var(--landing-pathways-y), 0);
-  visibility: hidden;
-  will-change: opacity, transform;
-}
-
-.landing-explore-scene {
-  z-index: 6;
-  pointer-events: none;
-}
-
-.atlas-landing[data-landing-scene="explore"] .landing-pathways,
-.atlas-landing[data-landing-scene="static"] .landing-pathways {
-  visibility: visible;
-}
-
-.atlas-landing[data-landing-actions="active"] .landing-pathways {
-  pointer-events: auto;
-}
-
-.atlas-landing[data-landing-actions="active"] .landing-globe-stage {
-  pointer-events: auto;
 }
 
 .landing-pathway {
@@ -609,7 +513,7 @@ html[data-theme="bright"] .landing-title {
   --path-soft: var(--cyan-soft);
   --path-lift: 0px;
   min-width: 0;
-  min-height: 124px;
+  min-height: 108px;
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr) 20px;
   align-items: center;
@@ -6433,6 +6337,46 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   }
 }
 
+@media (max-width: 900px) {
+  .landing-story {
+    grid-template-areas:
+      "copy"
+      "globe"
+      "pathways";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    min-height: 0;
+    padding: 32px clamp(20px, 5vw, 48px) 44px;
+  }
+
+  .landing-copy {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .landing-title {
+    max-width: 15ch;
+  }
+
+  .landing-description {
+    max-width: 60ch;
+  }
+
+  .landing-corpus-line {
+    justify-content: center;
+  }
+
+  .landing-globe-stage {
+    width: min(660px, 100%);
+    min-height: 380px;
+  }
+
+  .landing-visualization-loading {
+    min-height: 380px;
+  }
+}
+
 @media (max-width: 760px) {
   .landing-header {
     min-height: 64px;
@@ -6458,8 +6402,7 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   }
 
   .landing-copy {
-    top: clamp(18px, 3.8svh, 38px);
-    width: calc(100% - 32px);
+    width: 100%;
   }
 
   .landing-title {
@@ -6493,7 +6436,7 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   }
 
   .landing-pathways {
-    width: min(620px, calc(100% - 32px));
+    width: min(620px, 100%);
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -7065,7 +7008,7 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   }
 
   .landing-globe-stage {
-    width: calc(100vw - 18px);
+    width: 100%;
     min-height: 270px;
   }
 
@@ -7155,9 +7098,11 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   }
 }
 
-@media (max-height: 620px) and (prefers-reduced-motion: no-preference) {
-  .landing-copy {
-    top: 10px;
+@media (max-height: 620px) {
+  .landing-story {
+    gap: 8px 24px;
+    padding-top: 12px;
+    padding-bottom: 14px;
   }
 
   .landing-eyebrow {
@@ -7177,8 +7122,12 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
     margin-top: 8px;
   }
 
+  .landing-globe-stage,
+  .landing-visualization-loading {
+    min-height: 280px;
+  }
+
   .landing-pathways {
-    bottom: 10px;
     gap: 8px;
   }
 
@@ -7187,15 +7136,11 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
     padding: 10px 12px;
   }
 
-  .landing-pathway-copy small,
-  .landing-pathway-copy p {
-    display: none;
-  }
 }
 
-@media (max-width: 760px) and (max-height: 620px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 760px) and (max-height: 620px) {
   .landing-pathways {
-    width: calc(100% - 20px);
+    width: 100%;
   }
 
   .landing-pathway {
@@ -7260,10 +7205,6 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
     scroll-behavior: auto;
   }
 
-  .atlas-landing {
-    scroll-snap-type: none;
-  }
-
   *,
   *::before,
   *::after {
@@ -7292,71 +7233,6 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
     will-change: auto;
   }
 
-  .landing-story {
-    height: auto;
-    min-height: auto;
-    padding: clamp(28px, 5vw, 64px) clamp(16px, 5vw, 76px) 72px;
-  }
-
-  .landing-snap-pages {
-    display: none;
-  }
-
-  .landing-story-viewport {
-    position: relative;
-    top: auto;
-    height: auto;
-    display: grid;
-    justify-items: center;
-    gap: 20px;
-    overflow: visible;
-  }
-
-  .landing-story-viewport::before {
-    display: none;
-  }
-
-  .landing-scene,
-  .landing-copy,
-  .landing-globe-layer,
-  .landing-pathways {
-    position: relative;
-    inset: auto;
-  }
-
-  .landing-copy {
-    left: auto;
-    width: min(1080px, 100%);
-    opacity: 1 !important;
-    transition: none !important;
-    transform: none !important;
-    will-change: auto;
-  }
-
-  .landing-globe-layer {
-    width: 100%;
-    min-height: 430px;
-    transform: none !important;
-    will-change: auto;
-  }
-
-  .landing-globe-layer::before {
-    opacity: 0 !important;
-  }
-
-  .landing-explore-scene {
-    width: 100%;
-  }
-
-  .landing-pathways {
-    left: auto;
-    width: min(1180px, 100%);
-    opacity: 1 !important;
-    pointer-events: auto;
-    transform: none !important;
-    visibility: visible;
-    will-change: auto;
-  }
 
   .relation-flow {
     display: none;

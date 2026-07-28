@@ -507,6 +507,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .heroStage {
+    touch-action: pan-y pinch-zoom;
+  }
+}
+
 @media (max-width: 760px) {
   .heroStage {
     inline-size: 100%;
