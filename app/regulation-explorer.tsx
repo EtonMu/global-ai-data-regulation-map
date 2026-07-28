@@ -3078,16 +3078,12 @@ function AtlasLanding({
         return;
       }
 
-      const storyRect = story.getBoundingClientRect();
       const availableHeight = Math.max(
         1,
         viewport.getBoundingClientRect().height,
       );
-      const travel = Math.max(1, storyRect.height - availableHeight);
-      const scrolled = Math.min(
-        travel,
-        Math.max(0, headerHeight - storyRect.top),
-      );
+      const travel = Math.max(1, root.scrollHeight - root.clientHeight);
+      const scrolled = Math.min(travel, Math.max(0, root.scrollTop));
       const progress = scrolled / travel;
       const eased = progress * progress * (3 - 2 * progress);
       const viewportWidth = window.innerWidth;
@@ -3105,13 +3101,13 @@ function AtlasLanding({
             : 0.54;
       const endScale = shortViewport
         ? compact
-          ? 1.02
-          : 1.08
+          ? 0.94
+          : 1
         : compact
-          ? 1.07
+          ? 1
           : medium
-            ? 1.13
-            : 1.2;
+            ? 1.05
+            : 1.1;
       const startY =
         availableHeight *
         (shortViewport ? (compact ? 0.44 : 0.36) : compact ? 0.24 : 0.31);
@@ -3134,7 +3130,7 @@ function AtlasLanding({
       );
       root.style.setProperty(
         "--landing-copy-opacity",
-        (1 - eased * 0.66).toFixed(4),
+        (1 - eased * 0.8).toFixed(4),
       );
       root.style.setProperty(
         "--landing-copy-y",
@@ -3162,7 +3158,7 @@ function AtlasLanding({
     };
 
     renderScrollState();
-    window.addEventListener("scroll", queueScrollState, { passive: true });
+    root.addEventListener("scroll", queueScrollState, { passive: true });
     window.addEventListener("resize", queueScrollState);
     motionQuery.addEventListener("change", queueScrollState);
     const resizeObserver =
@@ -3173,7 +3169,7 @@ function AtlasLanding({
     resizeObserver?.observe(viewport);
 
     return () => {
-      window.removeEventListener("scroll", queueScrollState);
+      root.removeEventListener("scroll", queueScrollState);
       window.removeEventListener("resize", queueScrollState);
       motionQuery.removeEventListener("change", queueScrollState);
       resizeObserver?.disconnect();
@@ -3287,10 +3283,6 @@ function AtlasLanding({
                 <span><strong>{concepts.length}</strong> concepts</span>
               </p>
             </div>
-            <p className="landing-scroll-cue" aria-hidden="true">
-              <span />
-              Scroll to explore
-            </p>
           </section>
 
           <div
@@ -3350,12 +3342,11 @@ function AtlasLanding({
             </nav>
           </section>
         </div>
+        <div className="landing-snap-pages" aria-hidden="true">
+          <span className="landing-snap-page" />
+          <span className="landing-snap-page" />
+        </div>
       </section>
-
-      <footer className="landing-footer">
-        <span>ACADEMIC RESEARCH EDITION</span>
-        <span>PRIMARY TEXT · CROSS-JURISDICTIONAL MAPPING · NOT LEGAL ADVICE</span>
-      </footer>
     </main>
   );
 }

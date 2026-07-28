@@ -68,7 +68,7 @@ test("a first visit opens an independent, low-complexity welcome surface", () =>
 test("the landing page offers three clear routes around a prominent hero globe", () => {
   const landingSource = sourceBetween(
     "function AtlasLanding(",
-    "export default function RegulationExplorer()",
+    "function GlobalAtlas(",
   );
 
   assert.match(
@@ -106,14 +106,29 @@ test("the landing page offers three clear routes around a prominent hero globe",
     /className="landing-scene landing-intro-scene"[\s\S]*?className="landing-globe-layer"[\s\S]*?className="landing-scene landing-explore-scene"[\s\S]*?className="landing-pathways"/,
     "the landing story must progress from a text-led first scene into a globe-led action scene",
   );
+  assert.equal(
+    (landingSource.match(/className="landing-snap-page"/g) ?? []).length,
+    2,
+    "the welcome surface must expose exactly two snap pages",
+  );
+  assert.doesNotMatch(
+    landingSource,
+    /landing-scroll-cue|Scroll to explore/,
+    "the two-page welcome surface must not add a visible scroll-axis cue",
+  );
+  assert.doesNotMatch(
+    landingSource,
+    /<footer className="landing-footer"/,
+    "the welcome surface must not create a third footer-sized scroll region",
+  );
   assert.match(
     styles,
-    /\.landing-story\s*{[\s\S]*?min-height:\s*calc\(200svh\s*-\s*var\(--landing-header-height\)\s*-\s*var\(--landing-header-height\)\);/,
+    /\.landing-story\s*{[\s\S]*?display:\s*grid;[\s\S]*?min-height:\s*calc\(200dvh\s*-\s*var\(--landing-header-height\)\s*-\s*var\(--landing-header-height\)\);/,
     "the landing story must provide two full-height scenes below the persistent banner",
   );
   assert.match(
     styles,
-    /\.landing-story-viewport\s*{[\s\S]*?position:\s*sticky;[\s\S]*?top:\s*var\(--landing-header-height\);[\s\S]*?height:\s*calc\(100svh\s*-\s*var\(--landing-header-height\)\);/,
+    /\.landing-story-viewport\s*{[\s\S]*?position:\s*sticky;[\s\S]*?top:\s*var\(--landing-header-height\);[\s\S]*?height:\s*var\(--landing-scene-height\);/,
     "both scenes must share one pinned cinematic viewport",
   );
   assert.match(
@@ -124,8 +139,13 @@ test("the landing page offers three clear routes around a prominent hero globe",
 
   assert.match(
     landingSource,
-    /window\.addEventListener\("scroll", queueScrollState, \{ passive: true \}\)/,
+    /root\.addEventListener\("scroll", queueScrollState, \{ passive: true \}\)/,
     "scroll-linked landing motion must use a passive listener",
+  );
+  assert.doesNotMatch(
+    landingSource,
+    /window\.addEventListener\("scroll", queueScrollState/,
+    "the isolated welcome surface must not depend on document scrolling",
   );
   assert.match(
     landingSource,
@@ -149,18 +169,19 @@ test("the landing page offers three clear routes around a prominent hero globe",
   }
   assert.match(
     landingSource,
-    /const storyRect = story\.getBoundingClientRect\(\)[\s\S]*?const travel = Math\.max\(1, storyRect\.height - availableHeight\)[\s\S]*?const progress = scrolled \/ travel/,
+    /const travel = Math\.max\(1, root\.scrollHeight - root\.clientHeight\)[\s\S]*?const scrolled = Math\.min\(travel, Math\.max\(0, root\.scrollTop\)\)[\s\S]*?const progress = scrolled \/ travel/,
     "motion progress must be measured across the dedicated two-scene story",
   );
   assert.match(
     landingSource,
-    /const startScale = shortViewport[\s\S]*?compact[\s\S]*?0\.3[\s\S]*?0\.44[\s\S]*?0\.68[\s\S]*?0\.61[\s\S]*?0\.54[\s\S]*?const endScale = shortViewport[\s\S]*?: 1\.2;[\s\S]*?startY \+ eased \* \(endY - startY\)/,
-    "the globe must begin materially smaller and travel upward as it grows",
+    /const startScale = shortViewport[\s\S]*?compact[\s\S]*?0\.3[\s\S]*?0\.44[\s\S]*?0\.68[\s\S]*?0\.61[\s\S]*?0\.54[\s\S]*?const endScale = shortViewport[\s\S]*?: 1\.1;[\s\S]*?startY \+ eased \* \(endY - startY\)/,
+    "the globe must begin materially smaller, then rise to a restrained second-page size",
   );
+  assert.doesNotMatch(landingSource, /:\s*1\.2;/);
   assert.match(
     landingSource,
-    /--landing-copy-opacity",[\s\S]*?\(1 - eased \* 0\.66\)\.toFixed\(4\)[\s\S]*?--landing-veil-opacity",[\s\S]*?\(eased \* 0\.48\)\.toFixed\(4\)/,
-    "the second scene must leave the text partly visible behind a restrained veil",
+    /--landing-copy-opacity",[\s\S]*?\(1 - eased \* 0\.8\)\.toFixed\(4\)[\s\S]*?--landing-veil-opacity",[\s\S]*?\(eased \* 0\.48\)\.toFixed\(4\)/,
+    "the second scene must preserve the background copy at exactly twenty percent opacity",
   );
   assert.match(
     landingSource,
@@ -194,8 +215,28 @@ test("the landing page offers three clear routes around a prominent hero globe",
   );
   assert.match(
     styles,
-    /\.atlas-landing\s*{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overflow-y:\s*visible;/,
-    "the landing surface must clip horizontal scale without creating a sticky-breaking scroll container",
+    /\.atlas-landing\s*{[\s\S]*?height:\s*100dvh;[\s\S]*?overflow-x:\s*clip;[\s\S]*?overflow-y:\s*auto;[\s\S]*?scrollbar-width:\s*none;[\s\S]*?scroll-snap-type:\s*y mandatory;/,
+    "the landing surface must be an exact, scrollbar-free two-page snap container",
+  );
+  assert.match(
+    styles,
+    /\.atlas-landing::\-webkit-scrollbar\s*{[\s\S]*?display:\s*none;/,
+    "WebKit must not expose a visual scrollbar on the two-page landing surface",
+  );
+  assert.match(
+    styles,
+    /\.landing-snap-pages\s*{[\s\S]*?grid-area:\s*1 \/ 1;[\s\S]*?grid-template-rows:\s*repeat\(2, var\(--landing-scene-height\)\);[\s\S]*?\.landing-snap-page\s*{[\s\S]*?height:\s*var\(--landing-scene-height\);[\s\S]*?scroll-snap-align:\s*start;[\s\S]*?scroll-snap-stop:\s*always;/,
+    "each landing page must occupy the viewport below the persistent banner",
+  );
+  assert.doesNotMatch(
+    styles,
+    /\.atlas-landing::before/,
+    "decorative landing geometry must not enlarge the two-page scroll range",
+  );
+  assert.match(
+    styles,
+    /\.landing-story-viewport::before\s*{[\s\S]*?position:\s*absolute;[\s\S]*?z-index:\s*0;[\s\S]*?width:\s*min\(76vw, 1060px\);/,
+    "the decorative orbit must be clipped inside the pinned cinematic viewport",
   );
   assert.match(
     styles,
@@ -224,7 +265,7 @@ test("the landing page offers three clear routes around a prominent hero globe",
   );
   assert.match(
     styles,
-    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.landing-story\s*{[\s\S]*?min-height:\s*auto;[\s\S]*?\.landing-story-viewport\s*{[\s\S]*?position:\s*relative;[\s\S]*?\.landing-pathways\s*{[\s\S]*?opacity:\s*1 !important;[\s\S]*?visibility:\s*visible;/,
+    /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.atlas-landing\s*{[\s\S]*?scroll-snap-type:\s*none;[\s\S]*?\.landing-story\s*{[\s\S]*?height:\s*auto;[\s\S]*?min-height:\s*auto;[\s\S]*?\.landing-snap-pages\s*{[\s\S]*?display:\s*none;[\s\S]*?\.landing-story-viewport\s*{[\s\S]*?position:\s*relative;[\s\S]*?overflow:\s*visible;[\s\S]*?\.landing-story-viewport::before\s*{[\s\S]*?display:\s*none;[\s\S]*?\.landing-pathways\s*{[\s\S]*?opacity:\s*1 !important;[\s\S]*?visibility:\s*visible;/,
     "reduced motion must reflow the story and keep all three choices available",
   );
 
