@@ -278,7 +278,7 @@ test("instrument visualization links the law to concepts and every indexed Artic
   );
   assert.match(
     graphSource,
-    /className="instrument-article-node"[\s\S]*?onClick=\{\(\) => onOpenProvision\(provision\)\}/,
+    /"instrument-article-node"[\s\S]*?onClick=\{\(\) => onOpenProvision\(provision\)\}/,
     "Article nodes must open Article text in the center column",
   );
   assert.match(graphSource, /<details className="instrument-article-overflow">/);
@@ -382,7 +382,7 @@ test("topic-relevant provisions and core-concept graph links are visible and nav
   assert.match(globalStyles, /\.provision-list-item\.is-topic-relevant::before/);
   assert.match(
     connectionSource,
-    /const conceptConnections = anchor\.conceptIds[\s\S]*?<ConceptIcon conceptId=\{concept\.id\}/,
+    /const contextualConceptIds = new Set[\s\S]*?const conceptConnections = Array\.from[\s\S]*?<ConceptIcon conceptId=\{concept\.id\}/,
     "the same provision-to-concept classification must appear in the graph",
   );
   assert.match(

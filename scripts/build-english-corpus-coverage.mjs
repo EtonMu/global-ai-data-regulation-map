@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const dataRoot = resolve(projectRoot, "data/v2");
-const reviewedOn = "2026-07-20";
+const reviewedOn = "2026-07-28";
 
 // Complete, locally imported corpora whose controlling/default stored text is
 // not English. English-first and metadata-only instruments are audited in the

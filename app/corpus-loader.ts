@@ -91,8 +91,13 @@ function shardReviewIds(
       provisionId?: unknown;
       relevance?: unknown;
       conceptIds?: unknown;
+      candidateConceptIds?: unknown;
+      contextualConceptIds?: unknown;
+      candidateContextualConceptIds?: unknown;
       rationale?: unknown;
       reviewStatus?: unknown;
+      mappingBasis?: unknown;
+      confidence?: unknown;
       reviewedOn?: unknown;
     };
     if (
@@ -102,8 +107,29 @@ function shardReviewIds(
       ) ||
       !Array.isArray(candidate.conceptIds) ||
       candidate.conceptIds.some((conceptId) => typeof conceptId !== "string") ||
+      (candidate.candidateConceptIds !== undefined &&
+        (!Array.isArray(candidate.candidateConceptIds) ||
+          candidate.candidateConceptIds.some(
+            (conceptId) => typeof conceptId !== "string",
+          ))) ||
+      (candidate.contextualConceptIds !== undefined &&
+        (!Array.isArray(candidate.contextualConceptIds) ||
+          candidate.contextualConceptIds.some(
+            (conceptId) => typeof conceptId !== "string",
+          ))) ||
+      (candidate.candidateContextualConceptIds !== undefined &&
+        (!Array.isArray(candidate.candidateContextualConceptIds) ||
+          candidate.candidateContextualConceptIds.some(
+            (conceptId) => typeof conceptId !== "string",
+          ))) ||
       typeof candidate.rationale !== "string" ||
-      candidate.reviewStatus !== "editorial-reviewed" ||
+      !["editorial-reviewed", "machine-candidate"].includes(
+        String(candidate.reviewStatus),
+      ) ||
+      !["curated-anchor", "rule-generated"].includes(
+        String(candidate.mappingBasis),
+      ) ||
+      !["low", "medium", "high"].includes(String(candidate.confidence)) ||
       typeof candidate.reviewedOn !== "string"
     ) {
       return null;

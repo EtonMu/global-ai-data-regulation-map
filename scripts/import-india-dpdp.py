@@ -221,11 +221,21 @@ def normalize_act_text(text: str) -> str:
         "ImpactAssessment": "Impact Assessment",
         "IndiaAct": "India Act",
         "InformationAct": "Information Act",
+        # ``pdftotext -raw`` occasionally drops a word boundary where the
+        # Gazette uses tightly positioned illustration text.
+        "atY": "at Y",
+        "Yher": "Y her",
+        "Yfor": "Y for",
+        "section 14Aand": "section 14A and",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
     text = remove_gazette_debris(text)
     text = re.sub(r"\s+", " ", text).strip()
+    # Restore unambiguous boundaries lost at PDF text-object joins.  These
+    # rules do not alter words or punctuation; they only insert whitespace.
+    text = re.sub(r"(\(\d{1,2}\))(?=[A-Z])", r"\1 ", text)
+    text = re.sub(r"(?<=[a-z])\.(?=[A-Z])", ". ", text)
     for heading in CHAPTER_TEXT:
         number, title = heading.split(" ", 1)
         # ``pdftotext -raw`` sometimes joins the Roman numeral to CHAPTER.
@@ -425,7 +435,17 @@ Act, 2021 (14 of 2021); and
 def clean_rules_block(text: str) -> str:
     text = remove_gazette_debris(text)
     text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"^(\d{1,2})\.(?=[A-Z])", r"\1. ", text)
+    text = re.sub(r"(\(\d{1,2}\))(?=[A-Z])", r"\1 ", text)
     return text
+
+
+def clean_rules_schedule(text: str) -> str:
+    """Preserve Gazette line layout while restoring dropped word spaces."""
+
+    text = remove_gazette_debris(text)
+    text = re.sub(r"(\(\d{1,2}\))(?=[A-Z])", r"\1 ", text)
+    return re.sub(r"[ \t]+$", "", text, flags=re.MULTILINE).strip()
 
 
 def schedule_status(schedule_number: int) -> tuple[str, str]:
@@ -514,8 +534,7 @@ def build_rules(rules_path: Path, corrigendum_path: Path) -> list[dict]:
     for index, start in enumerate(schedule_positions):
         number = index + 1
         end = schedule_positions[index + 1] if index + 1 < len(schedule_positions) else source_end
-        full_text = remove_gazette_debris(text[start:end])
-        full_text = re.sub(r"[ \t]+$", "", full_text, flags=re.MULTILINE).strip()
+        full_text = clean_rules_schedule(text[start:end])
         status, applies_from = schedule_status(number)
         records.append({
             "id": f"in-dpdp-rules-2025-schedule-{number}",

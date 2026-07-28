@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Extract current Articles from an official legislation.gov.uk AKN document."""
+"""Extract current Articles from an official legislation.gov.uk AKN document.
+
+The AKN representation includes editorial commentary references and complete
+footnotes inline with the operative text.  Those nodes are useful when rendering
+the source website, but they are not part of the consolidated article wording.
+The extractor therefore walks the XML tree explicitly instead of using
+``Element.itertext()`` so that notes cannot leak into the corpus.
+"""
 
 from __future__ import annotations
 
@@ -12,20 +19,49 @@ from pathlib import Path
 AKN = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 NS = {"akn": AKN}
 
+# These AKN nodes are annotations, not consolidated legislative wording.
+# In particular, ``authorialNote`` contains the complete text of a footnote, so
+# blindly calling ``itertext()`` duplicates the citation in the article body.
+NON_BODY_TEXT_ELEMENTS = {"authorialNote", "noteRef"}
+
 
 def local_name(element: ET.Element) -> str:
     return element.tag.rsplit("}", 1)[-1]
 
 
+def visible_text_fragments(element: ET.Element) -> list[str]:
+    """Return visible text fragments, excluding editorial annotations."""
+
+    parts: list[str] = []
+    if element.text:
+        parts.append(element.text)
+    for child in element:
+        if local_name(child) not in NON_BODY_TEXT_ELEMENTS:
+            parts.extend(visible_text_fragments(child))
+        # A skipped note's tail is still operative text following the note marker.
+        if child.tail:
+            parts.append(child.tail)
+    return parts
+
+
 def normalized_text(element: ET.Element | None) -> str:
     if element is None:
         return ""
-    tokens = [value.replace("\u00a0", " ").strip() for value in element.itertext()]
+    tokens = [
+        fragment.replace("\u00a0", " ").strip()
+        for fragment in visible_text_fragments(element)
+    ]
     value = " ".join(token for token in tokens if token)
     value = re.sub(r"\s+", " ", value).strip()
     value = re.sub(r"\s+([,.;:!?])", r"\1", value)
     value = re.sub(r"([‘“(])\s+", r"\1", value)
     value = re.sub(r"\s+([’”)])", r"\1", value)
+
+    # The official current CLML/AKN and rendered page contain this isolated
+    # transcription artefact in Article 4(1)(2).  It is not an amendment mark:
+    # the enacted GDPR wording is "making available".  Keep this correction
+    # deliberately narrow so the importer never applies general legal-text edits.
+    value = re.sub(r"\bm\.aking\b", "making", value)
     return value
 
 
@@ -69,11 +105,17 @@ def extract_articles(
     id_prefix: str,
     source_url: str,
     retrieved_on: str,
+    expected_version_as_of: str | None = None,
 ) -> list[dict]:
     valid_from_node = root.find(
         ".//akn:FRBRExpression/akn:FRBRdate[@name='validFrom']", NS
     )
     valid_from = valid_from_node.get("date") if valid_from_node is not None else None
+    if expected_version_as_of and valid_from != expected_version_as_of:
+        raise ValueError(
+            "Official AKN version boundary mismatch: "
+            f"expected {expected_version_as_of}, found {valid_from or 'none'}"
+        )
     articles: list[dict] = []
 
     def visit(
@@ -147,6 +189,10 @@ def main() -> None:
     parser.add_argument("--id-prefix", required=True)
     parser.add_argument("--source-url", required=True)
     parser.add_argument("--retrieved-on", required=True)
+    parser.add_argument(
+        "--expected-version-as-of",
+        help="Fail if the AKN validFrom date does not match this YYYY-MM-DD value",
+    )
     args = parser.parse_args()
 
     root = ET.parse(args.input).getroot()
@@ -156,6 +202,7 @@ def main() -> None:
         id_prefix=args.id_prefix,
         source_url=args.source_url,
         retrieved_on=args.retrieved_on,
+        expected_version_as_of=args.expected_version_as_of,
     )
     args.output.write_text(
         json.dumps(articles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

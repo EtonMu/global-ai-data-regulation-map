@@ -241,8 +241,8 @@ const newInstruments = [
     category: "law",
     hierarchyLevel: "national-framework-statute",
     legalForce: "binding",
-    lifecycleStatus: "in-force-with-scheduled-amendment",
-    statusAsOf: snapshotDate,
+    lifecycleStatus: "in-force-amended",
+    statusAsOf: "2026-07-28",
     dates: dates({
       adoptedOn: "2025-01-21",
       publishedOn: "2025-01-21",
@@ -251,7 +251,7 @@ const newInstruments = [
       lastAmendedOn: "2026-01-20",
       latestAmendmentEffectiveFrom: "2026-07-21",
     }),
-    version: "Act No. 20676 as amended by Act No. 21311; final amendment phase effective 21 July 2026",
+    version: "Current 46-Article Act No. 21311 phase effective 21 July 2026, with three supplementary-provision blocks",
     parentInstrumentId: null,
     topicIds: [
       "ai-risk-management",
@@ -262,9 +262,9 @@ const newInstruments = [
       "incident-response",
     ],
     summary: "Korea's binding horizontal AI framework statute, combining industrial-policy institutions with trust and safety duties for specified high-impact and generative AI systems.",
-    statusNote: "This instrument is enacted and in force, not a draft. Its phased 2026 amendment dates are modeled separately and should not be conflated with the original enactment date.",
+    statusNote: "This instrument is enacted and in force, not a draft. The final Act No. 21311 phase effective 21 July 2026 is current; earlier 2026 phases remain source-version history.",
     source: source(
-      "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+      "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260721&lsiSeq=282791&urlMode=lsInfoP",
       "Korean Law Information Center — current Korean text",
     ),
     referenceTranslationSource: source(
@@ -274,7 +274,7 @@ const newInstruments = [
     textAvailability: linkedText(
       "complete-current-Korean-with-versioned-government-English-reference-corpus",
       "ko-KR",
-      "All 47 current Korean nodes have MOLEG English references. Forty-two are text-aligned; Articles 2, 3, 6, 18 and 35 are explicitly marked as differing next-phase English text effective 21 July 2026.",
+      "All 46 current Articles and three supplementary-provision blocks are stored in Korean with a complete government English reference aligned to the same phase effective 21 July 2026.",
     ),
   },
   {

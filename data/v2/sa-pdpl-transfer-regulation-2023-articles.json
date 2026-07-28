@@ -46,18 +46,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-1",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -116,18 +121,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-2",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -160,21 +170,40 @@
         "versionAsOf": "2024-08-01",
         "versionLabel": "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 (August 2024)",
         "status": "official-reference-translation",
-        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
+        "note": "Complete Article-level official English reference wording is stored under sourceFaithful. The displayed reading copy applies only the documented minimal normalization listed in displayNormalization; the controlling Arabic text remains unchanged.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
-          "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n２. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n３. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n４. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers."
+          "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n2. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n3. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n4. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers."
         ],
-        "fullText": "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n２. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n３. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n４. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers.",
+        "fullText": "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n2. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n3. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n4. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/e5bbede0-1119-4f70-b4ef-f043ce58d780/Regulation%2Bon%2BPersonal%2BData%2BTransfer%2BOutside%2Bthe%2BKingdom..pdf?CACHEID=ROOTWORKSPACE-e5bbede0-1119-4f70-b4ef-f043ce58d780-p6OMj1M&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "f0a41172caa4fb8667b6565b3ddc08aacee9be0487891032f46b47d1942569ce",
+        "contentSha256": "d63222dc03bfd1acd93e209393800b5dd5e3511a2c443fc5b0e62b52ff5d4d37",
         "rights": {
           "reuseStatus": "official-legal-text-statutory-exclusion",
           "basis": "Saudi Copyright Law, Article 4",
           "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
           "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
           "attributionRequired": true
+        },
+        "sourceFaithful": {
+          "status": "official-reference-translation-source-faithful",
+          "paragraphs": [
+            "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n２. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n３. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n４. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers."
+          ],
+          "fullText": "Article 3: Procedures and Standards for Evaluating the Level of Personal Data Protection Outside the Kingdom\n1.\nThe competent authority shall publish on its official website a list of\ncountries or international organizations that provide an appropriate level of\nprotection for personal data not less than that prescribed by the Law and\nRegulations. The competent authority shall review this list every four years, or\nas necessary, based on the following criteria:\nA. The existence of regulations that ensure the protection of personal data\nand the rights of data subjects, including the right to seek\ncompensation for damages caused by violations of these rights. These\nregulations must meet at least the level of protection prescribed by Law\nand Regulations.\nB. The existence of a supervisory body responsible for enforcing the\nprovisions related to the protection of personal data.\nC. The supervisory authority is prepared to cooperate with the competent\nauthority in the Kingdom on matters related to the protection of\npersonal data.\nD. The regulatory requirements related to the disclosure of personal data\nunder the relevant statutory provisions applicable in the State or\ninternational organization must not conflict with the provisions for the\ndisclosure of personal data set forth in the Law and Regulations, nor\nwith any other statutory provisions in force in the Kingdom.\nE. Obligations arising from international treaties or agreements binding on\na State or an international organization, as well as those related to its\nmembership in regional or multilateral organizations, which may require\nthe transfer of personal data.\nF. Provisions related to subsequent transfers of personal data, as\nstipulated in Article (5) of the Regulation.\n２. The competent authority may amend the list of countries or international\norganizations that ensure an appropriate level of protection for personal data\ntransferred outside the Kingdom not less than that prescribed by the Law and\nRegulations in accordance with the statutory procedures. If a review indicates\nthat any of these countries or organizations no longer guarantees an appropriate\nlevel of protection, the competent authority may work with the relevant\nauthorities in the State or the international organization to address the reasons\nfor its exclusion from the list.\n３. The competent authority may suspend the transfer or disclosure of personal\ndata to any of the countries or organizations listed in paragraph (1) of this Article,\nin accordance with the statutory procedures.\n４. The standards applied to countries and international organizations for\nevaluating the level of protection of personal data outside the Kingdom shall also\napply to cities, special economic zones, and global trade centers.",
+          "contentSha256": "f0a41172caa4fb8667b6565b3ddc08aacee9be0487891032f46b47d1942569ce",
+          "note": "Exact text extracted from the cited official English reference PDF; PDF line wrapping is retained."
+        },
+        "displayNormalization": {
+          "status": "minimal-editorial-normalization",
+          "controllingLanguage": "ar-SA",
+          "changes": [
+            {
+              "kind": "unicode-digit-width",
+              "note": "Converted fullwidth decimal digits to ASCII digits for consistent display and search; numeric values are unchanged."
+            }
+          ]
         }
       }
     },
@@ -186,18 +215,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-3",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -256,18 +290,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-4",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -326,18 +365,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-5",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -370,21 +414,40 @@
         "versionAsOf": "2024-08-01",
         "versionLabel": "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 (August 2024)",
         "status": "official-reference-translation",
-        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
+        "note": "Complete Article-level official English reference wording is stored under sourceFaithful. The displayed reading copy applies only the documented minimal normalization listed in displayNormalization; the controlling Arabic text remains unchanged.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
-          "Article 6: Revocation of Exemption\n１.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n２.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed."
+          "Article 6: Revocation of Exemption\n1.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n2.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed."
         ],
-        "fullText": "Article 6: Revocation of Exemption\n１.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n２.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed.",
+        "fullText": "Article 6: Revocation of Exemption\n1.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n2.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/e5bbede0-1119-4f70-b4ef-f043ce58d780/Regulation%2Bon%2BPersonal%2BData%2BTransfer%2BOutside%2Bthe%2BKingdom..pdf?CACHEID=ROOTWORKSPACE-e5bbede0-1119-4f70-b4ef-f043ce58d780-p6OMj1M&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "728b11695ea16f4baaefa1897fbdb6c80479ad6f89d9968a79261be1c7a82d67",
+        "contentSha256": "6a03e4947c0df86c051e3eb1365b18d0bc32693a9e7e62468ef9e5a6889c309d",
         "rights": {
           "reuseStatus": "official-legal-text-statutory-exclusion",
           "basis": "Saudi Copyright Law, Article 4",
           "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
           "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
           "attributionRequired": true
+        },
+        "sourceFaithful": {
+          "status": "official-reference-translation-source-faithful",
+          "paragraphs": [
+            "Article 6: Revocation of Exemption\n１.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n２.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed."
+          ],
+          "fullText": "Article 6: Revocation of Exemption\n１.\nNone of the exemptions granted in accordance with the cases stipulated in\nArticle (4) of the Regulation shall apply if any of the following situations arise:\nA. The controller has failed to implement the appropriate safeguards.\nB. If the competent authority determines that the appropriate safeguards are\ninadequate for any specific case.\n２.\nIf any of the conditions stipulated in subparagraphs (a) and (b) of paragraph\n(1) of this Article are met, the controller shall halt the transfer or disclosure and\nnotify the entities to whom the personal data was transferred or disclosed.",
+          "contentSha256": "728b11695ea16f4baaefa1897fbdb6c80479ad6f89d9968a79261be1c7a82d67",
+          "note": "Exact text extracted from the cited official English reference PDF; PDF line wrapping is retained."
+        },
+        "displayNormalization": {
+          "status": "minimal-editorial-normalization",
+          "controllingLanguage": "ar-SA",
+          "changes": [
+            {
+              "kind": "unicode-digit-width",
+              "note": "Converted fullwidth decimal digits to ASCII digits for consistent display and search; numeric values are unchanged."
+            }
+          ]
         }
       }
     },
@@ -396,18 +459,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-6",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -440,21 +508,40 @@
         "versionAsOf": "2024-08-01",
         "versionLabel": "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 (August 2024)",
         "status": "official-reference-translation",
-        "note": "Complete Article-level official English reference wording is stored without editorial supplementation.",
+        "note": "Complete Article-level official English reference wording is stored under sourceFaithful. The displayed reading copy applies only the documented minimal normalization listed in displayNormalization; the controlling Arabic text remains unchanged.",
         "authorityNote": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included.",
         "paragraphs": [
-          "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n１.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n２.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur."
+          "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n1.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n2.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur."
         ],
-        "fullText": "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n１.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n２.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur.",
+        "fullText": "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n1.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n2.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur.",
         "source": "https://dgp.sdaia.gov.sa/wps/wcm/connect/e5bbede0-1119-4f70-b4ef-f043ce58d780/Regulation%2Bon%2BPersonal%2BData%2BTransfer%2BOutside%2Bthe%2BKingdom..pdf?CACHEID=ROOTWORKSPACE-e5bbede0-1119-4f70-b4ef-f043ce58d780-p6OMj1M&CONVERT_TO=url&MOD=AJPERES",
         "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-        "contentSha256": "6119f4dd86dc4f54e73773384e4682fd778355c70c27d49f2e6fb7e6afccbd98",
+        "contentSha256": "011dd779b714ff9a2c2118e89774bfb24b166d5d1265518f3372a6679e4d0900",
         "rights": {
           "reuseStatus": "official-legal-text-statutory-exclusion",
           "basis": "Saudi Copyright Law, Article 4",
           "basisUrl": "https://www.uqn.gov.sa/details?p=28845",
           "note": "Laws, regulations, judicial and administrative decisions, international agreements, and official translations are excluded from copyright protection, subject to rules governing circulation; source attribution is retained.",
           "attributionRequired": true
+        },
+        "sourceFaithful": {
+          "status": "official-reference-translation-source-faithful",
+          "paragraphs": [
+            "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n１.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n２.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur."
+          ],
+          "fullText": "Article 7: Risk Assessment of Transferring or Disclosing Personal Data to a Party Outside the Kingdom\n１.\nThe controller shall conduct a risk assessment before transferring or\ndisclosing personal data to a party outside the Kingdom in the following cases:\nA. Transfer or disclosure of personal data to a party outside the Kingdom in\naccordance with Article (4) of the Regulation.\nB. Transferring or disclosing sensitive data to entities outside the Kingdom on\na continuous or widespread basis.\n２.\nRisk assessment of transferring or disclosing personal data to a party\noutside the Kingdom should include the following elements:\nA. The purpose and legal basis for transferring or disclosing personal data to\na party outside the Kingdom.\nB. A description of the nature of the transfer or disclosure of personal data to\na party outside the Kingdom, including the activities involved in processing\nthe data and their geographical scope.\nC. The appropriate safeguards and measures implemented for transferring or\ndisclosing personal data to a party outside the Kingdom, and their adequacy\nin ensuring an appropriate level of protection for personal data not less than\nthat prescribed by the Law and Regulations.\nD. The measures used to ensure that the transfer or disclosure of personal data\nto a party outside the Kingdom is limited to the minimum amount of data\nrequired to achieve the intended purposes, in cases not exempted by\nsubparagraph (c) of paragraph (2) of Article (29) of the Law.\nE. The potential material or moral effects of transferring or disclosing personal\ndata to a party outside the Kingdom and the likelihood of their occurrence.\nF. The measures or controls that will be applied to prevent potential risks to\npersonal data subjects or to mitigate their effects if they occur.",
+          "contentSha256": "6119f4dd86dc4f54e73773384e4682fd778355c70c27d49f2e6fb7e6afccbd98",
+          "note": "Exact text extracted from the cited official English reference PDF; PDF line wrapping is retained."
+        },
+        "displayNormalization": {
+          "status": "minimal-editorial-normalization",
+          "controllingLanguage": "ar-SA",
+          "changes": [
+            {
+              "kind": "unicode-digit-width",
+              "note": "Converted fullwidth decimal digits to ASCII digits for consistent display and search; numeric values are unchanged."
+            }
+          ]
         }
       }
     },
@@ -466,18 +553,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-7",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -536,18 +628,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-8",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {
@@ -606,18 +703,23 @@
       "note": "Arabic is the original legal text. English is the reference translation published by Saudi Arabia's official Data Governance Platform; no machine translation is included."
     },
     "legalEffectStatus": "in-force",
-    "appliesFrom": null,
+    "appliesFrom": "2024-09-01",
     "textAvailability": "complete-original-and-official-reference-translation",
     "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     "sourceFragment": "#article-9",
     "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-    "retrievedOn": "2026-07-20",
+    "retrievedOn": "2026-07-28",
     "sourceVersion": {
       "documentVersion": "2.0",
       "documentDate": "2024-08",
       "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
       "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
-      "arabicSourceSnapshotSha256": "b475e5cc9b59e4242f26d7ea0e853ba3bcad7641938bc366cb03a251277bada5",
+      "issuedBy": "Competent Authority Decision No. 1840",
+      "officialGazette": "Umm Al-Qura, Issue No. 5047",
+      "officialGazetteDate": "2024-09-01",
+      "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+      "effectiveFrom": "2024-09-01",
+      "arabicSourceSnapshotSha256": "17fca1ac7a4a4ac5de0ec8b997eee76fb91dc331eda714d34a4f7644f023349f",
       "englishSourceDocumentSha256": "f25901cb1bfc14529e7c6738a06ecdf3400b38de42b398317818efd828e8c7ce"
     },
     "rights": {

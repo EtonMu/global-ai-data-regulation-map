@@ -12,6 +12,9 @@ const appRoot = new URL("../app/", import.meta.url);
 
 const navigationExcerptParents = new Map([
   ["ca-pipeda-schedule1-4-7", "ca-pipeda-sch-1"],
+  ["ca-adm-directive-sec-6-1", "ca-adm-directive-sec-6"],
+  ["ca-adm-directive-sec-6-3-13", "ca-adm-directive-sec-6"],
+  ["ca-adm-directive-sec-6-4-1", "ca-adm-directive-sec-6"],
   ["au-privacy-act-1988-app-1-7-1-9", "au-privacy-act-1988-app-1"],
   [
     "hk-personal-data-privacy-ordinance-dpp-1",
@@ -38,6 +41,7 @@ const navigationExcerptParents = new Map([
 const [
   seedProvisions,
   pipedaCorpus,
+  admDirectiveCorpus,
   australiaCorpus,
   hongKongCorpus,
   buildClientSource,
@@ -47,6 +51,10 @@ const [
   readFile(new URL("canada-pipeda-provisions.json", dataRoot), "utf8").then(
     JSON.parse,
   ),
+  readFile(
+    new URL("canada-adm-directive-provisions.json", dataRoot),
+    "utf8",
+  ).then(JSON.parse),
   readFile(new URL("au-privacy-act-1988-provisions.json", dataRoot), "utf8").then(
     JSON.parse,
   ),
@@ -57,7 +65,7 @@ const [
   readFile(new URL("research-lab.tsx", appRoot), "utf8"),
 ]);
 
-test("the seven parent-overlapping seed anchors are explicit non-metric navigation excerpts", () => {
+test("parent-overlapping seed anchors are explicit non-metric navigation excerpts", () => {
   const byId = new Map(seedProvisions.map((provision) => [provision.id, provision]));
   const marked = seedProvisions.filter(
     (provision) =>
@@ -70,10 +78,12 @@ test("the seven parent-overlapping seed anchors are explicit non-metric navigati
   );
 
   const canonicalById = new Map(
-    [...pipedaCorpus, ...australiaCorpus, ...hongKongCorpus].map((provision) => [
-      provision.id,
-      provision,
-    ]),
+    [
+      ...pipedaCorpus,
+      ...admDirectiveCorpus,
+      ...australiaCorpus,
+      ...hongKongCorpus,
+    ].map((provision) => [provision.id, provision]),
   );
   for (const [excerptId, canonicalProvisionId] of navigationExcerptParents) {
     const excerpt = byId.get(excerptId);
@@ -150,6 +160,7 @@ const fixtureInput = {
       topicRelevance: {
         relevance: "substantive-topic",
         conceptIds: ["c1", "c2"],
+        reviewStatus: "editorial-reviewed",
       },
     },
     {
@@ -164,6 +175,7 @@ const fixtureInput = {
       topicRelevance: {
         relevance: "substantive-topic",
         conceptIds: ["c1"],
+        reviewStatus: "editorial-reviewed",
       },
     },
     {
@@ -178,6 +190,7 @@ const fixtureInput = {
       topicRelevance: {
         relevance: "substantive-topic",
         conceptIds: ["c2", "c3"],
+        reviewStatus: "editorial-reviewed",
       },
       researchTreatment: {
         role: "navigation-analytical-excerpt",

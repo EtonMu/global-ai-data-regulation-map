@@ -46,7 +46,10 @@ test("publication-language notes remain instrument-specific", () => {
   assert.doesNotMatch(gdpr.localCoverage.statement, /annex/i);
 
   const euAiAct = auditByInstrumentId.get("eu-ai-act");
-  assert.match(euAiAct.caveats.join(" "), /no replacement consolidated corpus/i);
+  assert.match(
+    euAiAct.caveats.join(" "),
+    /not represented as an independently published EUR-Lex consolidation/i,
+  );
 
   const ukGdpr = auditByInstrumentId.get("gb-uk-gdpr");
   assert.equal(ukGdpr.localCoverage.localUnitCount, 120);
@@ -78,7 +81,12 @@ test("publication-language notes remain instrument-specific", () => {
   ]) {
     assert.deepEqual(
       auditByInstrumentId.get(instrumentId).authoritativeLanguage.languages,
-      ["en"],
+      ["en-HK", "zh-Hant-HK"],
+    );
+    assert.ok(
+      auditByInstrumentId
+        .get(instrumentId)
+        .sources.some((source) => source.role === "official-original-language-record"),
     );
   }
 
@@ -97,6 +105,9 @@ test("publication-language notes remain instrument-specific", () => {
   assert.deepEqual(pipeda.authoritativeLanguage.languages, ["en-CA", "fr-CA"]);
   assert.equal(pipeda.localCoverage.localUnitCount, 84);
   assert.match(pipeda.localCoverage.mode, /co-authentic-bilingual/);
+  assert.match(pipeda.versionFinding, /current to 2026-05-26/);
+  assert.match(pipeda.localCoverage.statement, /31 March 2026/);
+  assert.match(pipeda.localCoverage.statement, /text-equivalent/);
 
   const canadaAdm = auditByInstrumentId.get(
     "ca-directive-automated-decision-making",
@@ -108,6 +119,15 @@ test("publication-language notes remain instrument-specific", () => {
   const taiwanPdpa = auditByInstrumentId.get("tw-personal-data-protection-act");
   assert.equal(taiwanPdpa.localCoverage.localUnitCount, 66);
   assert.match(taiwanPdpa.localCoverage.mode, /commencement-status/);
+  assert.equal(
+    taiwanPdpa.englishAvailability.coverage.currentAlignedUnitCount,
+    40,
+  );
+  assert.equal(
+    taiwanPdpa.englishAvailability.coverage.temporallyMismatchedUnitCount,
+    26,
+  );
+  assert.match(taiwanPdpa.englishAvailability.note, /latest-promulgated/i);
 
   const singaporePdpa = auditByInstrumentId.get("sg-pdpa-2012");
   assert.equal(singaporePdpa.localCoverage.localUnitCount, 106);
@@ -144,12 +164,15 @@ test("publication-language notes remain instrument-specific", () => {
   assert.match(japanAiAct.authoritativeLanguage.note, /no legal effect/i);
 
   const koreaAi = auditByInstrumentId.get("kr-ai-framework-act-2025");
-  assert.equal(koreaAi.englishAvailability.coverage.translatedUnitCount, 47);
-  assert.equal(koreaAi.englishAvailability.coverage.currentAlignedUnitCount, 42);
+  assert.equal(koreaAi.localCoverage.localUnitCount, 49);
+  assert.equal(koreaAi.englishAvailability.coverage.translatedUnitCount, 49);
+  assert.equal(koreaAi.englishAvailability.coverage.currentAlignedUnitCount, 49);
   assert.equal(
     koreaAi.englishAvailability.coverage.temporallyMismatchedUnitCount,
-    5,
+    0,
   );
+  assert.match(koreaAi.localCoverage.statement, /46 main Articles/);
+  assert.match(koreaAi.localCoverage.statement, /21 July 2026/);
 
   const hongKongPdpo = auditByInstrumentId.get(
     "hk-personal-data-privacy-ordinance",
@@ -160,6 +183,38 @@ test("publication-language notes remain instrument-specific", () => {
     "zh-Hant-HK",
   ]);
   assert.match(hongKongPdpo.localCoverage.statement, /not in operation/i);
+
+  const saudiTransfer = auditByInstrumentId.get(
+    "sa-pdpl-transfer-regulation-2023",
+  );
+  assert.match(saudiTransfer.lifecycleFinding, /1 September 2024/);
+  assert.ok(
+    saudiTransfer.sources.some(
+      (source) =>
+        source.role === "official-gazette-record" &&
+        source.url === "https://portal.uqn.gov.sa/details?p=25412",
+    ),
+  );
+
+  const popia = auditByInstrumentId.get("za-popia-4-2013");
+  assert.match(popia.lifecycleFinding, /section 58, commenced on 1 July 2020/i);
+  assert.match(popia.lifecycleFinding, /1 February 2022/);
+
+  const australiaGuardrails = auditByInstrumentId.get(
+    "au-mandatory-ai-guardrails-proposal-2024",
+  );
+  assert.match(australiaGuardrails.caveats.join(" "), /policy outcome/i);
+  assert.match(australiaGuardrails.caveats.join(" "), /not the repeal/i);
+
+  for (const instrumentId of [
+    "vn-personal-data-protection-law-2025",
+    "vn-pdpl-implementing-decree-356-2025",
+  ]) {
+    const vietnam = auditByInstrumentId.get(instrumentId);
+    assert.match(vietnam.englishAvailability.status, /project-English-reference/);
+    assert.match(vietnam.englishAvailability.note, /complete/);
+    assert.match(vietnam.caveats.join(" "), /No issuing-authority English/i);
+  }
 });
 
 test("future-effective amendments and implementation sources stay explicit", () => {

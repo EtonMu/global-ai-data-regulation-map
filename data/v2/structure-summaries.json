@@ -622,19 +622,24 @@
     "level": "section",
     "label": "SECTION 3",
     "title": "Enforcement",
-    "summary": "Sets the market-surveillance and enforcement framework for AI systems, including authority powers, mutual assistance, fundamental-rights oversight, risk procedures, safeguards, confidentiality, and Union support.",
+    "summary": "Sets the market-surveillance and enforcement framework for AI systems, including authority powers, mutual assistance, fundamental-rights oversight, risk procedures, safeguards, confidentiality, Union support, and the AI Office's 2026 supervisory, commitment, fine, and penalty-payment powers.",
     "conceptIds": ["accountability-governance", "global-coordination", "ai-risk-management"],
     "sourceBasis": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
         "label": "EUR-Lex — EU AI Act Articles 74–84",
         "provisionIds": ["eu-ai-act-art-74", "eu-ai-act-art-75", "eu-ai-act-art-76", "eu-ai-act-art-77", "eu-ai-act-art-78", "eu-ai-act-art-79", "eu-ai-act-art-80", "eu-ai-act-art-81", "eu-ai-act-art-82", "eu-ai-act-art-83", "eu-ai-act-art-84"]
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+        "label": "EUR-Lex — Regulation (EU) 2026/1744, inserted Articles 75a–75d",
+        "provisionIds": ["eu-ai-act-art-75a", "eu-ai-act-art-75b", "eu-ai-act-art-75c", "eu-ai-act-art-75d"]
       }
     ],
     "editorial": {
       "reviewStatus": "editorial-high-level-summary",
-      "reviewedOn": "2026-07-19",
-      "note": "Orientation only; consult the complete section text, annexes, exceptions, application dates, and current interpretation."
+      "reviewedOn": "2026-07-28",
+      "note": "Orientation only; updated for Regulation (EU) 2026/1744. Consult the complete section text, annexes, exceptions, application dates, and current interpretation."
     }
   },
   {

@@ -4229,6 +4229,20 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
     );
 }
 
+.provision-list-item.is-mapping-candidate::before {
+  background: var(--amber);
+  box-shadow: none;
+}
+
+.provision-list-item.is-topic-relevant.is-mapping-candidate {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--amber) 8%, transparent),
+      transparent 34%
+    );
+}
+
 .provision-list > li:first-child .provision-list-item {
   border-top: 1px solid var(--line);
 }
@@ -4289,7 +4303,8 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
 }
 
 .provision-list-mappings,
-.provision-list-concepts {
+.provision-list-concepts,
+.provision-list-temporal {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
@@ -4300,7 +4315,8 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
 }
 
 .provision-list-mappings svg,
-.provision-list-concepts svg {
+.provision-list-concepts svg,
+.provision-list-temporal svg {
   width: 13px;
   height: 13px;
 }
@@ -4311,6 +4327,13 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
 
 .provision-list-concepts {
   color: var(--cyan);
+}
+
+.provision-list-temporal {
+  max-width: 126px;
+  color: var(--amber);
+  text-align: right;
+  line-height: 1.25;
 }
 
 .connections-header {
@@ -4502,6 +4525,22 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   opacity: var(--line-opacity);
   vector-effect: non-scaling-stroke;
   animation: graph-line-enter 780ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.concept-relation-line.mapping-machine-candidate {
+  stroke: var(--amber);
+  stroke-dasharray: 2 7;
+  opacity: 0.72;
+}
+
+.concept-relation-line.mapping-editorial-reviewed {
+  stroke-dasharray: none;
+}
+
+.concept-relation-line.mapping-contextual {
+  stroke: var(--muted);
+  stroke-dasharray: 1 8;
+  opacity: 0.62;
 }
 
 .concept-relation-terminal {
@@ -4934,6 +4973,11 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   border-color: var(--cyan);
   background: var(--panel-hover);
   transform: translateX(2px);
+}
+
+.instrument-article-node.is-mapping-candidate {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--amber) 48%, var(--line));
 }
 
 .instrument-article-node > span {
@@ -5833,6 +5877,11 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
   background: var(--violet-soft);
 }
 
+.topic-relevance-note.is-candidate {
+  border-left-color: var(--amber);
+  background: var(--amber-soft);
+}
+
 .topic-relevance-note > span {
   display: flex;
   align-items: center;
@@ -5845,6 +5894,10 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
 
 .topic-relevance-note.is-substantive > span {
   color: var(--violet);
+}
+
+.topic-relevance-note.is-candidate > span {
+  color: var(--amber);
 }
 
 .topic-relevance-note svg {
@@ -5888,6 +5941,36 @@ html[data-theme="bright"] .atlas-directory-intro h1 {
 .concept-list button svg {
   width: 14px;
   height: 14px;
+}
+
+.concept-list button.is-mapping-candidate {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--amber) 50%, transparent);
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.contextual-concept-list {
+  margin: 0 0 14px;
+  padding: 9px 10px 1px;
+  border-left: 2px solid var(--muted-dark);
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+}
+
+.contextual-concept-list > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.035em;
+}
+
+.concept-list button.is-contextual-mapping {
+  border-style: dotted;
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--muted);
 }
 
 .reader-relation-list {

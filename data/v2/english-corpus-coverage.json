@@ -1,16 +1,16 @@
 {
   "schemaVersion": "2.0",
-  "reviewedOn": "2026-07-20",
+  "reviewedOn": "2026-07-28",
   "scope": "Complete locally imported corpora whose controlling/default stored text is not English. The audit distinguishes stored English legal text from explicit coverage gaps; it does not treat concept mappings or summaries as translations.",
   "totals": {
     "corpusCount": 22,
-    "totalUnitCount": 1346,
-    "storedEnglishUnitCount": 1346,
-    "currentAlignedEnglishUnitCount": 1341,
-    "temporallyMismatchedEnglishUnitCount": 5,
+    "totalUnitCount": 1348,
+    "storedEnglishUnitCount": 1348,
+    "currentAlignedEnglishUnitCount": 1322,
+    "temporallyMismatchedEnglishUnitCount": 26,
     "missingEnglishUnitCount": 0,
     "completionPercent": 100,
-    "currentAlignedPercent": 99.6
+    "currentAlignedPercent": 98.1
   },
   "corpora": [
     {
@@ -265,7 +265,7 @@
       ],
       "englishSourceRecords": [
         {
-          "url": "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+          "url": "https://www.npc.gov.cn/npc/c2597/c5854/bfflywwb/202311/t20231117_433007.html",
           "label": "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)"
         }
       ],
@@ -379,19 +379,18 @@
       "originalLanguages": [
         "ko-KR"
       ],
-      "totalUnitCount": 47,
-      "storedEnglishUnitCount": 47,
-      "currentAlignedEnglishUnitCount": 42,
-      "temporallyMismatchedEnglishUnitCount": 5,
+      "totalUnitCount": 49,
+      "storedEnglishUnitCount": 49,
+      "currentAlignedEnglishUnitCount": 49,
+      "temporallyMismatchedEnglishUnitCount": 0,
       "missingEnglishUnitCount": 0,
       "completionPercent": 100,
-      "coverageStatus": "complete-stored-english-with-version-boundaries",
+      "coverageStatus": "complete-stored-english",
       "translationStatuses": [
         "government-reference-translation-no-legal-effect"
       ],
       "unitCoverageStatuses": [
         "complete-current-aligned-reference",
-        "complete-next-phase-reference-not-current",
         "complete-promulgated-addenda-reference"
       ],
       "versionLabels": [
@@ -600,16 +599,17 @@
       ],
       "totalUnitCount": 66,
       "storedEnglishUnitCount": 66,
-      "currentAlignedEnglishUnitCount": 66,
-      "temporallyMismatchedEnglishUnitCount": 0,
+      "currentAlignedEnglishUnitCount": 40,
+      "temporallyMismatchedEnglishUnitCount": 26,
       "missingEnglishUnitCount": 0,
       "completionPercent": 100,
-      "coverageStatus": "complete-stored-english",
+      "coverageStatus": "complete-stored-english-with-version-boundaries",
       "translationStatuses": [
         "official-reference-translation"
       ],
       "unitCoverageStatuses": [
-        "complete-latest-consolidation-official-reference-translation"
+        "complete-current-effective-official-reference-translation",
+        "complete-latest-promulgated-not-current-effective-official-reference-translation"
       ],
       "versionLabels": [
         "Latest promulgated PDPA consolidation, including amendments awaiting Executive Yuan commencement"

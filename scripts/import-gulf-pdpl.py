@@ -23,6 +23,7 @@ from pathlib import Path
 
 
 RETRIEVED_ON = "2026-07-20"
+SAUDI_RETRIEVED_ON = "2026-07-28"
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"
 
@@ -321,6 +322,66 @@ def extract_sa_arabic(path: Path, count: int, titled: bool) -> list[dict]:
 IR_TITLE_CONTINUATIONS = {14: 1, 18: 1, 21: 1, 28: 1, 30: 1, 31: 1}
 TRANSFER_TITLE_CONTINUATIONS = {2: 1, 3: 1, 4: 2, 7: 1}
 
+FULLWIDTH_DIGIT_TRANSLATION = str.maketrans("０１２３４５６７８９", "0123456789")
+
+# The exact English extracted from each official reference PDF remains stored
+# under ``sourceFaithful``.  The main English reading layer applies only
+# narrowly evidenced repairs: Unicode digit-width normalization and two clear
+# transcription/grammar defects checked against the controlling Arabic text.
+SAUDI_ENGLISH_DISPLAY_REPAIRS = {
+    ("sa-pdpl-2021-amended-2023", 9): [
+        (
+            "according to the provisions set forth the Regulations.",
+            "according to the provisions set forth in the Regulations.",
+            "Inserted the omitted preposition; the controlling Arabic reads وفق الأحكام التي تحددها اللوائح.",
+        ),
+    ],
+    ("sa-pdpl-2021-amended-2023", 42): [
+        (
+            "provided that the president must coordinate before issuing the Law with:",
+            "provided that, before issuing the Regulations, the president must coordinate with:",
+            "Corrected the antecedent in the reference translation; the controlling Arabic says قبل إصدارها, referring to the Regulations issued by the president.",
+        ),
+    ],
+}
+
+
+def normalize_saudi_english_display(
+    instrument_id: str,
+    article_number: int,
+    source_faithful_text: str,
+) -> tuple[str, list[dict]]:
+    """Return a minimally normalized display copy plus an auditable change log."""
+
+    display_text = source_faithful_text.translate(FULLWIDTH_DIGIT_TRANSLATION)
+    changes: list[dict] = []
+    if display_text != source_faithful_text:
+        changes.append({
+            "kind": "unicode-digit-width",
+            "note": (
+                "Converted fullwidth decimal digits to ASCII digits for consistent "
+                "display and search; numeric values are unchanged."
+            ),
+        })
+
+    for source_text, replacement, note in SAUDI_ENGLISH_DISPLAY_REPAIRS.get(
+        (instrument_id, article_number),
+        [],
+    ):
+        if source_text not in display_text:
+            raise RuntimeError(
+                f"Saudi English repair source text missing for {instrument_id} Article {article_number}: {source_text}"
+            )
+        display_text = display_text.replace(source_text, replacement, 1)
+        changes.append({
+            "kind": "evidenced-reference-translation-repair",
+            "sourceText": source_text,
+            "displayText": replacement,
+            "note": note,
+        })
+
+    return display_text, changes
+
 
 def extract_sa_english(path: Path, count: int, titled: bool, continuations: dict[int, int] | None = None) -> list[dict]:
     text = normalize_lines(pdftotext(path))
@@ -387,6 +448,31 @@ def build_saudi_records(
         if ar["number"] != en["number"]:
             raise RuntimeError(f"Saudi article alignment mismatch for {instrument_id}")
         number = ar["number"]
+        source_faithful_english = en["fullText"]
+        display_english, display_changes = normalize_saudi_english_display(
+            instrument_id,
+            number,
+            source_faithful_english,
+        )
+        translation_note = (
+            "Complete Article-level official English reference wording is stored "
+            "under sourceFaithful. The displayed reading copy applies only the "
+            "documented minimal normalization listed in displayNormalization; "
+            "the controlling Arabic text remains unchanged."
+            if display_changes
+            else "Complete Article-level official English reference wording is stored without editorial supplementation."
+        )
+        source_faithful_layer = (
+            {
+                "status": "official-reference-translation-source-faithful",
+                "paragraphs": [source_faithful_english],
+                "fullText": source_faithful_english,
+                "contentSha256": sha256_text(source_faithful_english),
+                "note": "Exact text extracted from the cited official English reference PDF; PDF line wrapping is retained.",
+            }
+            if display_changes
+            else None
+        )
         records.append({
             "id": f"{record_prefix}-a{number}",
             "instrumentId": instrument_id,
@@ -406,17 +492,26 @@ def build_saudi_records(
                     "versionAsOf": translation_version_as_of,
                     "versionLabel": translation_version_label,
                     "status": "official-reference-translation",
-                    "note": (
-                        "Complete Article-level official English reference wording is "
-                        "stored without editorial supplementation."
-                    ),
+                    "note": translation_note,
                     "authorityNote": authority_note,
-                    "paragraphs": [en["fullText"]],
-                    "fullText": en["fullText"],
+                    "paragraphs": [display_english],
+                    "fullText": display_english,
                     "source": english_source,
                     "sourceLabel": "Saudi Data Governance Platform official English reference PDF",
-                    "contentSha256": sha256_text(en["fullText"]),
+                    "contentSha256": sha256_text(display_english),
                     "rights": SA_RIGHTS,
+                    **(
+                        {
+                            "sourceFaithful": source_faithful_layer,
+                            "displayNormalization": {
+                                "status": "minimal-editorial-normalization",
+                                "controllingLanguage": "ar-SA",
+                                "changes": display_changes,
+                            },
+                        }
+                        if display_changes
+                        else {}
+                    ),
                 }
             },
             "alignment": {
@@ -432,7 +527,7 @@ def build_saudi_records(
             "source": arabic_source,
             "sourceFragment": f"#article-{number}",
             "sourceLabel": "Saudi Data Governance Platform controlling Arabic text",
-            "retrievedOn": RETRIEVED_ON,
+            "retrievedOn": SAUDI_RETRIEVED_ON,
             "sourceVersion": merged_source_version,
             "rights": SA_RIGHTS,
             "contentSha256": sha256_text(ar["fullText"]),
@@ -449,10 +544,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-dir", type=Path, default=Path("/private/tmp"))
     parser.add_argument("--output-dir", type=Path, default=ROOT / "data" / "v2")
+    parser.add_argument(
+        "--only",
+        choices=("all", "saudi"),
+        default="all",
+        help="Rebuild all Gulf corpora or skip the UAE endpoint when only Saudi sources changed.",
+    )
     args = parser.parse_args()
 
-    uae_ar = fetch_uae_payload(UAE_PAGE_AR, UAE_API_AR, args.source_dir / "uae-materials-ar-1.json")
-    uae_en = fetch_uae_payload(UAE_PAGE_EN, UAE_API_EN, args.source_dir / "uae-materials-en-1.json")
+    uae_ar = None
+    uae_en = None
+    if args.only == "all":
+        uae_ar = fetch_uae_payload(UAE_PAGE_AR, UAE_API_AR, args.source_dir / "uae-materials-ar-1.json")
+        uae_en = fetch_uae_payload(UAE_PAGE_EN, UAE_API_EN, args.source_dir / "uae-materials-en-1.json")
 
     sa_ar = download(SA_PAGE_AR, args.source_dir / "sa-pdpl-ar.html")
     sa_ir_ar = download(SA_IR_PAGE_AR, args.source_dir / "sa-pdpl-reg-ar.html")
@@ -461,7 +565,7 @@ def main() -> None:
     sa_ir_en = download(SA_IR_PDF_EN, args.source_dir / "sa-pdpl-reg-en-2.pdf")
     sa_transfer_en = download(SA_TRANSFER_PDF_EN, args.source_dir / "sa-pdpl-transfer-en.pdf")
 
-    uae = build_uae(uae_ar, uae_en)
+    uae = build_uae(uae_ar, uae_en) if uae_ar and uae_en else None
     sa_law = build_saudi_records(
         instrument_id="sa-pdpl-2021-amended-2023",
         record_prefix="sa-pdpl-2021-amended-2023",
@@ -520,8 +624,13 @@ def main() -> None:
             "documentDate": "2024-08",
             "textState": "Version 2.0 of the Regulation on Personal Data Transfer Outside the Kingdom",
             "enforcementBasis": "Article 9: effective on publication in the Official Gazette",
+            "issuedBy": "Competent Authority Decision No. 1840",
+            "officialGazette": "Umm Al-Qura, Issue No. 5047",
+            "officialGazetteDate": "2024-09-01",
+            "gazetteSource": "https://portal.uqn.gov.sa/details?p=25412",
+            "effectiveFrom": "2024-09-01",
         },
-        applies_from=None,
+        applies_from="2024-09-01",
         translation_version_as_of="2024-08-01",
         translation_version_label=(
             "Regulation on Personal Data Transfer Outside the Kingdom, Version 2.0 "
@@ -529,11 +638,13 @@ def main() -> None:
         ),
     )
 
-    write_json(args.output_dir / "uae-federal-pdpl-45-2021-articles.json", uae)
+    if uae is not None:
+        write_json(args.output_dir / "uae-federal-pdpl-45-2021-articles.json", uae)
     write_json(args.output_dir / "sa-pdpl-2021-amended-2023-articles.json", sa_law)
     write_json(args.output_dir / "sa-pdpl-implementing-regulation-2023-articles.json", sa_ir)
     write_json(args.output_dir / "sa-pdpl-transfer-regulation-2023-articles.json", sa_transfer)
-    print(f"Wrote UAE {len(uae)}, Saudi Law {len(sa_law)}, IR {len(sa_ir)}, Transfer {len(sa_transfer)} articles")
+    uae_count = len(uae) if uae is not None else "skipped"
+    print(f"Wrote UAE {uae_count}, Saudi Law {len(sa_law)}, IR {len(sa_ir)}, Transfer {len(sa_transfer)} articles")
 
 
 if __name__ == "__main__":

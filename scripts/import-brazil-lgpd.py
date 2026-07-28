@@ -157,6 +157,11 @@ def main() -> None:
         if match:
             finish()
             number = article_number(match)
+            # Planalto's compiled HTML contains an isolated visual-spacing
+            # artifact in the vetoed Article 57 heading (``Art. 5 7.``).
+            # Canonicalize that heading without changing its legal wording.
+            if number == "57":
+                value = f"Art. 57.{value[match.end():]}"
             title = TITLES.get(number)
             if title is None:
                 raise ValueError(f"Missing editorial title for Article {number}")

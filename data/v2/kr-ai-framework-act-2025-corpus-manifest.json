@@ -18,58 +18,44 @@
     "effectiveWithThisActFrom": "2026-01-22"
   },
   "currentVersion": {
-    "asOf": "2026-07-20",
+    "asOf": "2026-07-28",
     "masterSequence": "282791",
     "promulgationNumber": "21311",
     "promulgatedOn": "2026-01-20",
-    "effectivePhaseDate": "2026-01-22",
-    "lifecycleStatus": "in-force-with-final-amendment-phase-scheduled-next-day",
-    "textStatus": "current-effective-Korean-only",
+    "effectivePhaseDate": "2026-07-21",
+    "lifecycleStatus": "in-force-final-Act-No-21311-phase",
+    "textStatus": "current-effective-Korean-consolidation",
     "futureEffectiveTextIncluded": false,
-    "verification": "The MOLEG effective-date index classifies MST 282791 / 2026-01-22 as 현행 and the 2026-07-21 phase as 시행예정 on 2026-07-20."
+    "verification": "The pinned MOLEG consolidated text identifies 2026-07-21 as its effective date. The official current law service now identifies Act No. 21311 as effective from 2026-07-21; this manifest treats that phase as current as of 2026-07-28."
   },
   "corpus": {
     "path": "data/v2/kr-ai-framework-act-2025-current-articles.json",
-    "nodeCount": 47,
-    "mainArticleCount": 44,
+    "nodeCount": 49,
+    "mainArticleCount": 46,
     "supplementaryProvisionBlockCount": 3,
     "structuralHeadingCount": 7,
-    "statutoryArticleTextFieldCount": 402,
-    "articleSourceNoteCount": 3,
-    "normalizedFullTextCharacterCount": 25282,
+    "statutoryArticleTextFieldCount": 414,
+    "articleSourceNoteCount": 6,
+    "normalizedFullTextCharacterCount": 26218,
     "completeSourceCoverageVerified": true,
-    "contentSha256": "db4d1a8533733a0defedeb6b2b5e31395799d08d6e4aa07021aa2af5e5807786",
-    "fileSha256": "e7de45b47d7b48a37f4725f9aeeeb09a834b1856ce47087721b9cc60455894e8"
+    "contentSha256": "0e773a64c5f18f54bb93d0ae8e4ad395f21766af2bb11b2ec094a0b5d4f41847",
+    "fileSha256": "24c752f3070187bf35f59d58d681f10880134922e68515a51e2b2eb9f3905f47"
   },
-  "promulgatedFuturePhases": [
-    {
-      "amendingActNumber": "21311",
-      "promulgatedOn": "2026-01-20",
-      "masterSequence": "282791",
-      "effectiveOn": "2026-07-21",
-      "mainArticleCount": 46,
-      "structuralHeadingCount": 7,
-      "supplementaryProvisionBlockCount": 3,
-      "articleNumberSequenceSha256": "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
-      "sourceDocumentSha256": "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
-      "includedInCurrentCorpus": false,
-      "phaseNote": "Final Act No. 21311 phase. It adds Articles 17-2 and 22-3 and commences text changes in Articles 2, 3, 6, 18, and 35."
-    }
-  ],
+  "promulgatedFuturePhases": [],
   "translation": {
     "language": "en",
-    "availability": "complete-promulgated-next-phase-reference-stored",
-    "coverageStatus": "complete-versioned-reference-with-phase-boundary",
+    "availability": "complete-current-phase-reference-stored",
+    "coverageStatus": "complete-current-aligned-reference",
     "title": "FRAMEWORK ACT ON THE DEVELOPMENT OF ARTIFICIAL INTELLIGENCE AND THE CREATION OF A FOUNDATION FOR TRUST",
     "source": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282791&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
     "sourceLabel": "Korean Law Information Center — government English reference",
     "sourceVersion": "Act No. 20676 as amended by Act No. 21311",
     "versionAsOf": "2026-07-21",
     "versionLabel": "Act No. 21311 full phase (effective 2026-07-21)",
-    "versionAlignment": "46-English-article-headings-align-with-the-2026-07-21-future-effective-Korean-phase-not-the-44-Article-current-phase",
+    "versionAlignment": "aligned-with-current-Korean-2026-07-21-effective-phase",
     "legalEffect": "reference-only-no-legal-or-official-authority",
     "currentLanguageToggleEligible": true,
-    "phaseWarning": "The stored English reference is the complete Act No. 21311 phase effective 2026-07-21. Provision-level metadata identifies the five Articles whose English wording is not aligned with the 2026-07-20 current Korean phase.",
+    "alignmentNote": "The stored English reference and current Korean corpus both describe the complete Act No. 21311 phase effective 2026-07-21.",
     "rightsPolicy": "https://www.law.go.kr/LSW/lawPetitionForm.do?menuId=13&query=&subMenuId=79",
     "MOLEGEnglishIndexBoundary": {
       "masterSequence": "268543",
@@ -81,26 +67,15 @@
       "latestAmendment": "Act No. 21311, Jan. 20, 2026",
       "referenceMainArticleCount": 46,
       "referenceArticleNumberSequenceSha256": "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
-      "alignment": "future-effective-2026-07-21-phase"
+      "alignment": "current-effective-2026-07-21-phase"
     },
     "referenceMainArticleCount": 46,
     "referenceSupplementaryProvisionBlockCount": 3,
-    "attachedToCurrentUnitCount": 47,
+    "attachedToCurrentUnitCount": 49,
     "currentArticleReferenceAlignment": {
-      "currentArticleCount": 44,
-      "unchangedThroughNextPhaseCount": 39,
-      "nextPhaseDifferentCount": 5,
-      "nextPhaseDifferentArticles": [
-        "2",
-        "3",
-        "6",
-        "18",
-        "35"
-      ],
-      "futureOnlyArticlesNotAttachedToCurrentCorpus": [
-        "17-2",
-        "22-3"
-      ]
+      "currentArticleCount": 46,
+      "currentEquivalentCount": 46,
+      "mismatchedArticles": []
     },
     "bodyStored": true,
     "sourceDocumentSha256": "afcf31a68862e17fc60673b6a3af2f138399159e4d85d46b6c630fae618d94e5",
@@ -129,11 +104,20 @@
   },
   "sourceSnapshots": [
     {
+      "path": "data/v2/source-snapshots/kr-ai-014820-future-2026-07-21.xml",
+      "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=282791&efYd=20260721&type=XML",
+      "retrievedOn": "2026-07-20",
+      "mediaType": "application/xml",
+      "role": "current-effective-text",
+      "sha256": "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
+      "rightsProfile": "moleg-open-data-statutory-text"
+    },
+    {
       "path": "data/v2/source-snapshots/kr-ai-014820-current-effective-2026-07-20.xml",
       "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=282791&efYd=20260122&type=XML",
       "retrievedOn": "2026-07-20",
       "mediaType": "application/xml",
-      "role": "current-effective-text",
+      "role": "superseded-effective-phase-through-2026-07-20",
       "sha256": "a05b63d5021be2ce30076f674213d3e9d04afbd5137966a5ac1e7db50992c27d",
       "rightsProfile": "moleg-open-data-statutory-text"
     },
@@ -145,15 +129,6 @@
       "role": "effective-date-version-index",
       "sha256": "acf472c8691c8aaedf78f92692744b2fefbd1e32f820ffd1a742ccb07e8863ca",
       "rightsProfile": "moleg-open-data"
-    },
-    {
-      "path": "data/v2/source-snapshots/kr-ai-014820-future-2026-07-21.xml",
-      "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=282791&efYd=20260721&type=XML",
-      "retrievedOn": "2026-07-20",
-      "mediaType": "application/xml",
-      "role": "promulgated-future-phase-2026-07-21",
-      "sha256": "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
-      "rightsProfile": "moleg-open-data-statutory-text"
     },
     {
       "path": "data/v2/source-snapshots/kr-ai-014820-english-reference-index-2026-07-20.xml",
@@ -187,7 +162,7 @@
       "sourceUrl": "https://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&MST=282791&type=XML",
       "retrievedOn": "2026-07-20",
       "mediaType": "application/xml",
-      "role": "government-English-full-2026-07-21-phase-reference",
+      "role": "government-English-current-2026-07-21-phase-reference",
       "sha256": "afcf31a68862e17fc60673b6a3af2f138399159e4d85d46b6c630fae618d94e5",
       "rightsProfile": "moleg-law-open-data-free-use"
     },
@@ -201,5 +176,5 @@
       "rightsProfile": "rights-audit"
     }
   ],
-  "manifestContentBasisSha256": "6597ae41a92a71353915b6e26bea5149f5140544f43f185b4e64fafef2008866"
+  "manifestContentBasisSha256": "12aa4fc8c1baac8c926311d42dfba8dc14b8835a6e9651f3a974957f3e6e3e8e"
 }

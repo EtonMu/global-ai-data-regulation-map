@@ -39,10 +39,10 @@ test("Phase 2 is a distinct, accessible research phase", () => {
 
 test("translation integrity keeps coverage, authority, and temporal alignment separate", () => {
   assert.equal(coverage.totals.corpusCount, 22);
-  assert.equal(coverage.totals.totalUnitCount, 1346);
-  assert.equal(coverage.totals.storedEnglishUnitCount, 1346);
-  assert.equal(coverage.totals.currentAlignedEnglishUnitCount, 1341);
-  assert.equal(coverage.totals.temporallyMismatchedEnglishUnitCount, 5);
+  assert.equal(coverage.totals.totalUnitCount, 1348);
+  assert.equal(coverage.totals.storedEnglishUnitCount, 1348);
+  assert.equal(coverage.totals.currentAlignedEnglishUnitCount, 1322);
+  assert.equal(coverage.totals.temporallyMismatchedEnglishUnitCount, 26);
   assert.equal(coverage.totals.missingEnglishUnitCount, 0);
 
   for (const authorityClass of [
@@ -129,15 +129,15 @@ test("bridge metrics separate reviewed evidence from candidate sensitivity", () 
   const analytical = relations.filter(
     (relation) => (relation.relationClass ?? "analytical") === "analytical",
   );
-  assert.equal(analytical.length, 71);
+  assert.equal(analytical.length, 73);
   assert.equal(
     analytical.filter((relation) => relation.status === "editorial-reviewed")
       .length,
-    25,
+    26,
   );
   assert.equal(
     analytical.filter((relation) => relation.status === "candidate").length,
-    46,
+    47,
   );
   assert.match(labDataSource, /export function deriveQualifiedBridgeAtlas\(/);
   assert.match(labDataSource, /function normalizedBetweenness\(/);
@@ -157,10 +157,10 @@ test("operational paths preserve only recorded directed relation semantics", () 
   const directed = relations.filter(
     (relation) => relation.directionality === "directed",
   );
-  assert.equal(directed.length, 16);
+  assert.equal(directed.length, 17);
   assert.equal(
     directed.filter((relation) => relation.status === "editorial-reviewed").length,
-    13,
+    14,
   );
   assert.equal(
     directed.filter((relation) => relation.status === "candidate").length,

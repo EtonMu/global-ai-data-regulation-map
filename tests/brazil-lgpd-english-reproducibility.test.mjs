@@ -73,6 +73,14 @@ test("all 80 LGPD English references resolve to the pinned source snapshot", () 
   }
 });
 
+test("LGPD Article 57 heading is normalized without changing its vetoed status", () => {
+  const article57 = corpus.find((unit) => unit.id === "br-lgpd-art-57");
+  assert.ok(article57);
+  assert.equal(article57.fullText, "Art. 57. (VETADO).");
+  assert.deepEqual(article57.paragraphs, [article57.fullText]);
+  assert.equal(article57.translations.en.fullText, "Article 57. (vetoed)");
+});
+
 test("offline importer rebuilds the committed LGPD corpus byte for byte", async () => {
   const temporaryDirectory = await mkdtemp(join(tmpdir(), "br-lgpd-english-"));
   const input = join(temporaryDirectory, "portuguese-base.json");

@@ -328,6 +328,13 @@ type ArticleRecord = {
     promulgatedOn?: string;
     commencementCondition?: string;
     currentLawStatus: string;
+    applicationStatusAsOf?: string;
+    applicationSchedule?: Array<{
+      appliesFrom: string;
+      scope: string;
+      source?: string;
+    }>;
+    basis?: string;
     historyNote?: string;
   };
   currentEffectiveVersion?: {
@@ -419,8 +426,13 @@ type ProvisionConceptReview = {
   provisionId: string;
   relevance: "substantive-topic" | "structural-context";
   conceptIds: string[];
+  candidateConceptIds?: string[];
+  contextualConceptIds?: string[];
+  candidateContextualConceptIds?: string[];
   rationale?: string;
-  reviewStatus: "editorial-reviewed";
+  reviewStatus: "editorial-reviewed" | "machine-candidate";
+  mappingBasis?: "curated-anchor" | "rule-generated";
+  confidence?: "low" | "medium" | "high";
   reviewedOn: string;
 };
 
@@ -769,22 +781,44 @@ function provisionWithConceptReview<T extends SeedProvision>(
   provision: T,
 ): T & { topicRelevance: ProvisionConceptReview } {
   const storedReview = conceptReviewByProvisionId.get(provision.id);
-  const topicRelevance: ProvisionConceptReview = storedReview ?? {
-    provisionId: provision.id,
-    relevance: "substantive-topic",
-    conceptIds: provision.conceptIds,
-    rationale:
-      "This provision is a curated topical anchor in the research corpus.",
-    reviewStatus: "editorial-reviewed",
-    reviewedOn: provision.editorial.reviewedOn,
-  };
+  if (!storedReview) {
+    throw new Error(
+      `Missing concept-review provenance for provision ${provision.id}.`,
+    );
+  }
+  const topicRelevance: ProvisionConceptReview = storedReview;
+  const substantiveConceptIds =
+    topicRelevance.relevance === "substantive-topic"
+      ? [
+          ...topicRelevance.conceptIds,
+          ...(topicRelevance.candidateConceptIds ?? []),
+        ]
+      : [];
   return {
     ...provision,
     conceptIds: Array.from(
-      new Set([...provision.conceptIds, ...topicRelevance.conceptIds]),
+      new Set([
+        ...(topicRelevance.relevance === "substantive-topic"
+          ? provision.conceptIds
+          : []),
+        ...substantiveConceptIds,
+      ]),
     ),
     topicRelevance,
   };
+}
+
+function isCandidateConceptMapping(
+  provision: Pick<Provision, "topicRelevance">,
+  conceptId: string,
+): boolean {
+  return (
+    provision.topicRelevance.reviewStatus === "machine-candidate" ||
+    (provision.topicRelevance.candidateConceptIds ?? []).includes(conceptId) ||
+    (provision.topicRelevance.candidateContextualConceptIds ?? []).includes(
+      conceptId,
+    )
+  );
 }
 
 function provisionTypeForRecord(article: ArticleRecord) {
@@ -920,13 +954,28 @@ function legalEffectStatusForRecord(article: ArticleRecord) {
     : "instrument-status-only";
 }
 
+function englishReferenceIsTemporallyMismatched(
+  translation: NonNullable<SeedProvision["translations"]>["en"] | undefined,
+): boolean {
+  return Boolean(
+    translation &&
+      (translation.currentTextEquivalent === false ||
+        (translation.currentTextEquivalent !== true &&
+          /historical|not-current|next-phase|differs-from-current/i.test(
+            `${translation.coverageStatus ?? ""} ${
+              translation.alignmentStatus ?? ""
+            }`,
+          ))),
+  );
+}
+
 function articleToProvision(article: ArticleRecord, sourceOrder: number): Provision {
   const instrument = instrumentById.get(article.instrumentId);
   const recordDate =
     article.retrievedOn ??
     article.versionAsOf ??
     instrument?.statusAsOf ??
-    "2026-07-20";
+    "2026-07-28";
   const seed = seedProvisionById.get(article.id);
   const isOfficialChineseImport = article.language === "zh-CN";
   const isOriginalLanguage = !/^en(?:-|$)/i.test(article.language);
@@ -2058,7 +2107,12 @@ instruments.forEach((instrument) => {
 });
 
 provisions.forEach((provision) => {
-  provision.conceptIds.forEach((conceptId) => {
+  const evidenceConceptIds = new Set([
+    ...provision.conceptIds,
+    ...(provision.topicRelevance.contextualConceptIds ?? []),
+    ...(provision.topicRelevance.candidateContextualConceptIds ?? []),
+  ]);
+  evidenceConceptIds.forEach((conceptId) => {
     const evidence = conceptEvidenceById.get(conceptId);
     evidence?.provisionIds.add(provision.id);
     evidence?.instrumentIds.add(provision.instrumentId);
@@ -2963,7 +3017,7 @@ function CorpusNavigator({
 
       <div className="navigator-foot">
         <span>SNAPSHOT</span>
-        <time dateTime="2026-07-20">2026.07.20</time>
+        <time dateTime="2026-07-28">2026.07.28</time>
       </div>
     </aside>
   );
@@ -3858,8 +3912,31 @@ function InstrumentGenome({
                         const isTopicRelevant =
                           provision.topicRelevance.relevance ===
                           "substantive-topic";
+                        const isCandidateClassification =
+                          provision.topicRelevance.reviewStatus ===
+                            "machine-candidate" ||
+                          (provision.topicRelevance.candidateConceptIds?.length ??
+                            0) > 0;
+                        const isMixedClassification =
+                          provision.topicRelevance.reviewStatus ===
+                            "editorial-reviewed" &&
+                          (provision.topicRelevance.candidateConceptIds?.length ??
+                            0) > 0;
                         const editorialPreview =
                           provisionEditorialPreview(provision);
+                        const temporalBadge = [
+                          "in-force-not-yet-applicable",
+                          "partially-applicable",
+                          "promulgated-amended-provision-not-in-force",
+                          "promulgated-new-provision-not-in-force",
+                          "promulgated-deletion-not-in-force",
+                          "enacted-not-yet-in-operation",
+                          "repealed-placeholder",
+                          "omitted-as-spent-placeholder",
+                          "not-enacted-vetoed-historical-bill",
+                        ].includes(provision.legalEffectStatus)
+                          ? humanize(provision.legalEffectStatus)
+                          : null;
                         return (
                           <li key={provision.id}>
                           <button
@@ -3868,6 +3945,13 @@ function InstrumentGenome({
                               "provision-list-item",
                               mappingCount ? "has-mappings" : "",
                               isTopicRelevant ? "is-topic-relevant" : "",
+                              provision.topicRelevance.reviewStatus ===
+                              "editorial-reviewed"
+                                ? "is-mapping-reviewed"
+                                : "",
+                              isCandidateClassification
+                                ? "is-mapping-candidate"
+                                : "",
                             ].filter(Boolean).join(" ")}
                             data-topic-relevance={
                               provision.topicRelevance.relevance
@@ -3879,12 +3963,17 @@ function InstrumentGenome({
                               provision.title +
                               ", " +
                               (isTopicRelevant
-                                ? "topic relevant, " +
+                                ? (isMixedClassification
+                                    ? "editorially reviewed classification with separately labelled candidate additions, "
+                                    : isCandidateClassification
+                                    ? "candidate topic classification, "
+                                    : "editorially reviewed topic classification, ") +
                                   conceptCount +
                                   " core concepts, "
                                 : "structural context, ") +
                               mappingCount +
-                              " mapped provisions"
+                              " mapped provisions" +
+                              (temporalBadge ? `, ${temporalBadge}` : "")
                             }
                           >
                             <span className="provision-list-locator">
@@ -3910,6 +3999,12 @@ function InstrumentGenome({
                               </small>
                             </span>
                             <span className="provision-list-signals" aria-hidden="true">
+                              {temporalBadge && (
+                                <span className="provision-list-temporal">
+                                  <Clock3 aria-hidden="true" />
+                                  {temporalBadge}
+                                </span>
+                              )}
                               {conceptCount > 0 && (
                                 <span className="provision-list-concepts">
                                   <BrainCircuit aria-hidden="true" />
@@ -3997,6 +4092,12 @@ function InstrumentConnectionCanvas({
   function renderCluster(cluster: InstrumentConceptCluster, compact = false) {
     const visibleProvisions = cluster.provisions.slice(0, compact ? 3 : 4);
     const overflowProvisions = cluster.provisions.slice(visibleProvisions.length);
+    const reviewedProvisionCount = cluster.provisions.filter(
+      (provision) =>
+        !isCandidateConceptMapping(provision, cluster.concept.id),
+    ).length;
+    const candidateProvisionCount =
+      cluster.provisions.length - reviewedProvisionCount;
     return (
       <article
         className={[
@@ -4021,7 +4122,10 @@ function InstrumentConnectionCanvas({
             CORE CONCEPT
           </span>
           <strong>{cluster.concept.label}</strong>
-          <small>{cluster.provisions.length} linked articles</small>
+          <small>
+            {cluster.provisions.length} linked articles · {reviewedProvisionCount}{" "}
+            reviewed · {candidateProvisionCount} candidate
+          </small>
         </button>
         <div
           className="instrument-article-branch"
@@ -4030,7 +4134,12 @@ function InstrumentConnectionCanvas({
           {visibleProvisions.map((provision) => (
             <button
               type="button"
-              className="instrument-article-node"
+              className={[
+                "instrument-article-node",
+                isCandidateConceptMapping(provision, cluster.concept.id)
+                  ? "is-mapping-candidate"
+                  : "is-mapping-reviewed",
+              ].join(" ")}
               onClick={() => onOpenProvision(provision)}
               key={provision.id}
               aria-label={
@@ -4052,7 +4161,12 @@ function InstrumentConnectionCanvas({
                 {overflowProvisions.map((provision) => (
                   <button
                     type="button"
-                    className="instrument-article-node"
+                    className={[
+                      "instrument-article-node",
+                      isCandidateConceptMapping(provision, cluster.concept.id)
+                        ? "is-mapping-candidate"
+                        : "is-mapping-reviewed",
+                    ].join(" ")}
                     onClick={() => onOpenProvision(provision)}
                     key={provision.id}
                   >
@@ -4200,7 +4314,13 @@ function ConnectionCanvas({
   });
   const visible = connections.slice(0, 6);
   const overflowConnections = connections.slice(visible.length);
-  const conceptConnections = anchor.conceptIds
+  const contextualConceptIds = new Set([
+    ...(anchor.topicRelevance.contextualConceptIds ?? []),
+    ...(anchor.topicRelevance.candidateContextualConceptIds ?? []),
+  ]);
+  const conceptConnections = Array.from(
+    new Set([...anchor.conceptIds, ...contextualConceptIds]),
+  )
     .map((conceptId) => conceptById.get(conceptId))
     .filter((concept): concept is Concept => Boolean(concept));
   const visibleConcepts = conceptConnections.slice(0, 4);
@@ -4246,7 +4366,13 @@ function ConnectionCanvas({
             {connections.filter(({ relation }) => relation.status === "candidate").length}{" "}
             candidate
           </span>
-          <span><Database aria-hidden="true" />{anchor.conceptIds.length} concepts</span>
+          <span>
+            <Database aria-hidden="true" />
+            {conceptConnections.length} concept links
+            {contextualConceptIds.size > 0
+              ? ` · ${contextualConceptIds.size} context-only`
+              : ""}
+          </span>
           <span><Scale aria-hidden="true" />{humanize(anchor.legalEffectStatus)}</span>
         </div>
       </div>
@@ -4350,7 +4476,14 @@ function ConnectionCanvas({
                     <path
                       d={path}
                       pathLength={100}
-                      className="concept-relation-line"
+                      className={[
+                        "concept-relation-line",
+                        contextualConceptIds.has(concept.id)
+                          ? "mapping-contextual"
+                          : isCandidateConceptMapping(anchor, concept.id)
+                            ? "mapping-machine-candidate"
+                            : "mapping-editorial-reviewed",
+                      ].join(" ")}
                       style={{ animationDelay: String(120 + index * 70) + "ms" }}
                     />
                     <circle
@@ -4409,7 +4542,9 @@ function ConnectionCanvas({
                   }}
                   onClick={() => onOpenConcept(concept.id)}
                   aria-label={
-                    "Core concept linked by topical classification: " +
+                    (contextualConceptIds.has(concept.id)
+                      ? "Context-only concept link excluded from substantive metrics: "
+                      : "Core concept linked by topical classification: ") +
                     concept.label
                   }
                 >
@@ -4418,7 +4553,13 @@ function ConnectionCanvas({
                     <span>CORE CONCEPT</span>
                   </span>
                   <strong>{concept.label}</strong>
-                  <small>TOPIC_RELATION</small>
+                  <small>
+                    {contextualConceptIds.has(concept.id)
+                      ? "CONTEXT_ONLY / NON_METRIC"
+                      : isCandidateConceptMapping(anchor, concept.id)
+                        ? "CANDIDATE_TOPIC_RELATION"
+                        : "REVIEWED_TOPIC_RELATION"}
+                  </small>
                 </button>
               );
             })}
@@ -4680,10 +4821,23 @@ function CompareView({
               const jurisdiction = jurisdictionById.get(
                 instrument.jurisdictionId,
               );
-              const comparisonParagraphs = provision.translations?.en?.paragraphs ??
-                (!/^en(?:-|$)/i.test(provision.textAvailability.language)
-                  ? [provision.summary]
-                  : provision.paragraphs);
+              const englishReference = provision.translations?.en;
+              const englishHasTemporalMismatch =
+                englishReferenceIsTemporallyMismatched(englishReference);
+              const compareUsesCurrentOriginal = Boolean(
+                englishHasTemporalMismatch && provision.currentEffectiveVersion,
+              );
+              const comparisonParagraphs = compareUsesCurrentOriginal
+                ? provision.currentEffectiveVersion!.paragraphs
+                : englishReference?.paragraphs ??
+                  (!/^en(?:-|$)/i.test(provision.textAvailability.language)
+                    ? [provision.summary]
+                    : provision.paragraphs);
+              const comparisonLanguage = compareUsesCurrentOriginal
+                ? provision.currentEffectiveVersion!.language
+                : englishReference
+                  ? "en"
+                  : provision.textAvailability.language;
               return (
                 <article key={provision.id} className="compare-column">
                   <header>
@@ -4726,6 +4880,15 @@ function CompareView({
                       <dd>{formatDate(provision.appliesFrom)}</dd>
                     </div>
                     <div>
+                      <dt>Current-law layer</dt>
+                      <dd>
+                        {humanize(
+                          provision.applicability?.currentLawStatus ??
+                            provision.legalEffectStatus,
+                        )}
+                      </dd>
+                    </div>
+                    <div>
                       <dt>Actors</dt>
                       <dd>{provision.actorTags.join(", ") || "Not tagged"}</dd>
                     </div>
@@ -4742,7 +4905,25 @@ function CompareView({
                       </dd>
                     </div>
                   </dl>
-                  <div className="compare-text">
+                  {englishHasTemporalMismatch && (
+                    <div className="restricted-text-note">
+                      <strong>
+                        {compareUsesCurrentOriginal
+                          ? "CURRENT-EFFECTIVE ORIGINAL-LANGUAGE TEXT"
+                          : "FUTURE OR HISTORICAL ENGLISH REFERENCE"}
+                      </strong>
+                      <p>
+                        {compareUsesCurrentOriginal
+                          ? "The stored English reference belongs to a different temporal layer, so this comparison uses the separately stored current-effective original text. No current-effective English wording is substituted."
+                          : "The English reference does not match a current-effective source layer. It is shown only with this temporal warning."}
+                      </p>
+                    </div>
+                  )}
+                  <div
+                    className="compare-text"
+                    lang={comparisonLanguage}
+                    dir={languageDirection(comparisonLanguage)}
+                  >
                     {comparisonParagraphs?.length ? (
                       comparisonParagraphs.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
@@ -4983,19 +5164,11 @@ function ProvisionReader({
     !isOriginalLanguage || Boolean(englishTranslation?.paragraphs.length);
   const englishTranslationVersion =
     englishTranslation?.versionLabel ?? englishTranslation?.versionAsOf;
-  const englishTranslationHasTemporalMismatch = Boolean(
+  const englishTranslationHasTemporalMismatch =
+    englishReferenceIsTemporallyMismatched(englishTranslation);
+  const englishTranslationIsProspective = Boolean(
     englishTranslation &&
-      (englishTranslation.currentTextEquivalent === false ||
-        (englishTranslation.currentTextEquivalent !== true &&
-          /historical|not-current|next-phase|differs-from-current/i.test(
-            `${englishTranslation.coverageStatus ?? ""} ${
-              englishTranslation.alignmentStatus ?? ""
-            }`,
-          ))),
-  );
-  const englishTranslationIsFuturePhase = Boolean(
-    englishTranslation &&
-      /next-phase|future/i.test(
+      /next-phase|future|latest-promulgated|uncommenced|not-current-effective/i.test(
         `${englishTranslation.coverageStatus ?? ""} ${
           englishTranslation.alignmentStatus ?? ""
         }`,
@@ -5011,7 +5184,7 @@ function ProvisionReader({
           label: !hasEnglishTranslation
             ? "ENGLISH COVERAGE"
             : englishTranslationHasTemporalMismatch
-              ? englishTranslationIsFuturePhase
+              ? englishTranslationIsProspective
                 ? "ENGLISH · FUTURE REF"
                 : "ENGLISH · HISTORICAL REF"
               : "ENGLISH",
@@ -5096,9 +5269,27 @@ function ProvisionReader({
   const isStoredExcerpt = provision!.textAvailability.mode.includes("excerpt");
   const applicability = provision!.applicability;
   const currentEffectiveVersion = provision!.currentEffectiveVersion;
+  const displayedApplicabilityStatus = applicability?.currentLawStatus;
   const isDisplayedTextUncommenced = Boolean(
-    applicability && applicability.currentLawStatus !== "in-force",
+    displayedApplicabilityStatus &&
+      [
+        "existing-provision-remains-in-force-until-commencement",
+        "prior-version-remains-in-force-until-commencement",
+        "no-current-effective-counterpart",
+      ].includes(displayedApplicabilityStatus),
   );
+  const isDisplayedTextNonOperative = Boolean(
+    displayedApplicabilityStatus &&
+      [
+        "not-currently-operative",
+        "repealed-placeholder-retained",
+        "omitted-as-spent-placeholder-retained",
+      ].includes(displayedApplicabilityStatus),
+  );
+  const isProvisionNotYetApplicable =
+    displayedApplicabilityStatus === "in-force-not-yet-applicable";
+  const isProvisionPartiallyApplicable =
+    displayedApplicabilityStatus === "partially-applicable";
   const readerTabs: ReaderTab[] = ["text", "analysis", "sources"];
   const readerTabIcons: Record<ReaderTab, LucideIcon> = {
     text: BookOpenText,
@@ -5168,6 +5359,13 @@ function ProvisionReader({
           <span>APPLIES::{formatDate(provision!.appliesFrom)}</span>
         )}
         {isDisplayedTextUncommenced && <span>TEXT::NOT YET IN FORCE</span>}
+        {isDisplayedTextNonOperative && <span>TEXT::NON-OPERATIVE</span>}
+        {isProvisionNotYetApplicable && (
+          <span>IN FORCE::NOT YET APPLICABLE</span>
+        )}
+        {isProvisionPartiallyApplicable && (
+          <span>APPLICATION::PHASE-SPLIT</span>
+        )}
         <span>{displayedLanguage.toUpperCase()}</span>
         <span>
           {provision!.textAvailability.stored ? "TEXT STORED" : "LINK ONLY"}
@@ -5295,6 +5493,44 @@ function ProvisionReader({
               )}
             </div>
           )}
+          {isDisplayedTextNonOperative && applicability && (
+            <div className="restricted-text-note">
+              <strong>
+                LEGAL EFFECT STATUS / {humanize(applicability.currentLawStatus)}
+              </strong>
+              <p>
+                This source position is retained for document structure and
+                legal-history context. The displayed wording is not an
+                operative current duty.
+              </p>
+            </div>
+          )}
+          {(isProvisionNotYetApplicable || isProvisionPartiallyApplicable) &&
+            applicability && (
+              <div className="restricted-text-note">
+                <strong>
+                  APPLICATION STATUS / {humanize(applicability.currentLawStatus)}
+                </strong>
+                <p>
+                  The displayed consolidated wording is in force, but its
+                  duties apply according to the recorded provision- and
+                  system-category schedule. Do not treat the earliest date as
+                  a universal application date for every paragraph or use case.
+                </p>
+                {applicability.applicationSchedule && (
+                  <ul>
+                    {applicability.applicationSchedule.map((stage) => (
+                      <li key={`${stage.appliesFrom}-${stage.scope}`}>
+                        <strong>{formatDate(stage.appliesFrom)}</strong>
+                        {" — "}
+                        {stage.scope}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {applicability.basis && <p>{applicability.basis}</p>}
+              </div>
+            )}
           <div className="document-provenance">
             <span>
               <FileText aria-hidden="true" />
@@ -5327,7 +5563,7 @@ function ProvisionReader({
             englishTranslationHasTemporalMismatch && (
               <div className="translation-status-note is-version-warning">
                 <strong>
-                  {englishTranslationIsFuturePhase
+                  {englishTranslationIsProspective
                     ? "Future-phase English reference — not current"
                     : "Historical English reference — not current"}
                   {englishTranslationVersion
@@ -5421,13 +5657,25 @@ function ProvisionReader({
               provision!.topicRelevance.relevance === "substantive-topic"
                 ? "is-substantive"
                 : "is-structural",
+              provision!.topicRelevance.reviewStatus === "machine-candidate"
+                ? "is-candidate"
+                : "is-reviewed",
             ].join(" ")}
+            data-mapping-review={provision!.topicRelevance.reviewStatus}
           >
             <span>
               <BrainCircuit aria-hidden="true" />
-              {provision!.topicRelevance.relevance === "substantive-topic"
-                ? "TOPIC-RELEVANT PROVISION"
-                : "STRUCTURAL CONTEXT"}
+              {provision!.topicRelevance.relevance === "structural-context"
+                ? provision!.provisionType === "annex"
+                  ? "OPERATIVE ANNEX CONTEXT · EXCLUDED FROM ARTICLE-DUTY METRICS"
+                  : provision!.provisionType === "recital"
+                    ? "NON-OPERATIVE RECITAL CONTEXT · EXCLUDED FROM SUBSTANTIVE METRICS"
+                    : "STRUCTURAL CONTEXT · EXCLUDED FROM SUBSTANTIVE METRICS"
+                : provision!.topicRelevance.reviewStatus === "machine-candidate"
+                  ? "MACHINE-SUGGESTED CONCEPT LINKS"
+                  : (provision!.topicRelevance.candidateConceptIds?.length ?? 0) > 0
+                    ? "REVIEWED + SEPARATELY LABELLED CANDIDATE LINKS"
+                  : "EDITORIALLY REVIEWED CONCEPT LINKS"}
             </span>
             <p>
               {provision!.topicRelevance.rationale ??
@@ -5439,13 +5687,60 @@ function ProvisionReader({
               <button
                 type="button"
                 key={conceptId}
+                className={
+                  isCandidateConceptMapping(provision!, conceptId)
+                    ? "is-mapping-candidate"
+                    : "is-mapping-reviewed"
+                }
                 onClick={() => onOpenConcept(conceptId)}
+                title={
+                  isCandidateConceptMapping(provision!, conceptId)
+                    ? "Candidate taxonomy link generated from a rule or curated anchor; verify against the provision text."
+                    : "Article-level editorial taxonomy link"
+                }
               >
                 <ConceptIcon conceptId={conceptId} />
                 {conceptById.get(conceptId)?.label ?? conceptId}
               </button>
             ))}
           </div>
+          {provision!.topicRelevance.relevance === "structural-context" &&
+            ((provision!.topicRelevance.contextualConceptIds?.length ?? 0) +
+              (provision!.topicRelevance.candidateContextualConceptIds?.length ??
+                0) >
+              0) && (
+              <div
+                className="contextual-concept-list"
+                aria-label="Context-only concepts"
+              >
+                <span>
+                  {provision!.provisionType === "annex"
+                    ? "OPERATIVE ANNEX CONTEXT · NON-METRIC AT THIS GRANULARITY"
+                    : "CONTEXT ONLY · NOT A SUBSTANTIVE DUTY"}
+                </span>
+                <div className="concept-list">
+                  {Array.from(
+                    new Set([
+                      ...(provision!.topicRelevance.contextualConceptIds ?? []),
+                      ...(provision!.topicRelevance
+                        .candidateContextualConceptIds ?? []),
+                    ]),
+                  ).map(
+                    (conceptId) => (
+                      <button
+                        type="button"
+                        key={conceptId}
+                        className="is-contextual-mapping"
+                        onClick={() => onOpenConcept(conceptId)}
+                      >
+                        <ConceptIcon conceptId={conceptId} />
+                        {conceptById.get(conceptId)?.label ?? conceptId}
+                      </button>
+                    ),
+                  )}
+                </div>
+              </div>
+            )}
           {relationsForProvision.length ? (
             <div className="reader-relation-list">
               {relationsForProvision.map((relation) => {
@@ -6566,7 +6861,7 @@ export default function RegulationExplorer() {
       // Hydration mutates stable provision objects; the revision is the cache key.
       void corpusRevision;
       return ({
-        snapshotDate: "2026-07-20",
+        snapshotDate: "2026-07-28",
         jurisdictions,
         instruments,
         provisions,

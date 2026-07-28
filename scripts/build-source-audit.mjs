@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const dataRoot = resolve(root, "data/v2");
-const reviewedOn = "2026-07-20";
+const reviewedOn = "2026-07-28";
 
 const instruments = JSON.parse(
   await readFile(resolve(dataRoot, "instruments.json"), "utf8"),
@@ -25,6 +25,9 @@ for (const [corpusInstrumentId, registryInstrumentId] of [
   if (coverage) englishCoverageByInstrument.set(registryInstrumentId, coverage);
 }
 const [
+  euAiActArticles,
+  euAiActAnnexes,
+  euAiActRecitals,
   piplArticles,
   networkDataArticles,
   generativeAiArticles,
@@ -62,6 +65,9 @@ const [
   nistAiRmfCorpus,
 ] =
   await Promise.all([
+    "eu-ai-act-articles.json",
+    "eu-ai-act-annexes.json",
+    "eu-ai-act-recitals.json",
     "cn-pipl-articles.json",
     "cn-network-data-regulations-articles.json",
     "cn-generative-ai-measures-articles.json",
@@ -199,7 +205,7 @@ const authoritativeLanguageOverrides = {
   },
   "kr-ai-framework-act-2025": {
     languages: ["ko-KR"],
-    note: "The Korean promulgated text effective on 20 July 2026 controls. The MOLEG English reference is stored for all 47 current nodes: 42 are text-aligned, while Articles 2, 3, 6, 18 and 35 are explicitly marked as differing next-phase references effective 21 July 2026.",
+    note: "The Korean promulgated text effective on 21 July 2026 controls. All 46 current Articles and three supplementary-provision blocks have a government English reference aligned to that same phase; the English publication has no official effect.",
   },
   "us-eo-14110": {
     languages: ["en-US"],
@@ -231,7 +237,7 @@ const authoritativeLanguageOverrides = {
   },
   "sa-pdpl-transfer-regulation-2023": {
     languages: ["ar-SA"],
-    note: "The Arabic Version 2.0 transfer regulation controls. The aligned English PDF is stored as a government reference translation; neither language record is used to invent a missing Gazette date.",
+    note: "The Arabic Version 2.0 transfer regulation controls. The aligned English PDF is stored as a government reference translation. Umm Al-Qura issue 5047 supplies the independently verified publication and effective date of 1 September 2024.",
   },
   "id-pdp-law-2022": {
     languages: ["id-ID"],
@@ -247,7 +253,7 @@ const authoritativeLanguageOverrides = {
   },
   "ca-pipeda": {
     languages: ["en-CA", "fr-CA"],
-    note: "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English while preserving both the complete current in-force corpus and the separately labelled enacted amendments that still await an order bringing them into force.",
+    note: "The official English and French enactments published by the Justice Laws Website are co-authentic. The interface defaults to English. The official consolidation is current to 26 May 2026; the stored 31 March 2026 bilingual XML snapshot remains text-equivalent, and enacted amendments awaiting an order are kept in a separate operative-state layer.",
   },
   "ca-directive-automated-decision-making": {
     languages: ["en-CA", "fr-CA"],
@@ -259,7 +265,7 @@ const authoritativeLanguageOverrides = {
   },
   "tw-personal-data-protection-act": {
     languages: ["zh-Hant-TW"],
-    note: "The official Traditional-Chinese text and node-level commencement record control. The Ministry of Justice's complete English publication is stored as a government reference translation.",
+    note: "The official Traditional-Chinese text and node-level commencement record control. The Ministry of Justice English publication follows the latest-promulgated consolidation: it is aligned to the 40 in-force nodes, but for 26 uncommenced nodes it describes promulgated wording rather than current-effective law.",
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
     languages: ["zh-Hant-TW"],
@@ -290,16 +296,16 @@ const authoritativeLanguageOverrides = {
     note: "The verified Version 1.0 framework publication is in English. The retained Arabic title is metadata and is not evidence of a matching complete Arabic edition, which is not claimed without document verification.",
   },
   "hk-ai-model-pd-protection-framework-2024": {
-    languages: ["en"],
-    note: "Only the official English framework publication and release have been verified for this record. The Ordinance's bilingual status is not generalized to this guidance document.",
+    languages: ["en-HK", "zh-Hant-HK"],
+    note: "The privacy regulator publishes official English and Traditional-Chinese editions of this guidance framework. This records publication-language availability, not a statutory controlling-language hierarchy.",
   },
   "hk-ethical-ai-guidance-2021": {
-    languages: ["en"],
-    note: "Only the official English guidance PDF has been verified for this record. A Chinese edition is not claimed without a separately evidenced official publication.",
+    languages: ["en-HK", "zh-Hant-HK"],
+    note: "The privacy regulator publishes official English and Traditional-Chinese editions of this guidance. This records publication-language availability, not a statutory controlling-language hierarchy.",
   },
   "hk-genai-employee-guidelines-checklist-2025": {
-    languages: ["en"],
-    note: "Only the official English release and checklist have been verified for this record. A Chinese edition is not claimed without a separately evidenced official publication.",
+    languages: ["en-HK", "zh-Hant-HK"],
+    note: "The privacy regulator publishes official English and Traditional-Chinese editions of this checklist. This records publication-language availability, not a statutory controlling-language hierarchy.",
   },
   "un-ai-advisory-final-report-2024": {
     languages: ["ar", "zh", "en", "fr", "ru", "es"],
@@ -347,8 +353,15 @@ const englishOverrides = {
     note: "All 126 main Articles and 12 addenda have an Act No. 20897-aligned MOLEG government English reference. The Korean text controls and the English publication has no official effect; KLRI remains external.",
   },
   "kr-ai-framework-act-2025": {
-    status: "complete-versioned-government-English-reference-stored",
-    note: "All 47 current Korean nodes have a MOLEG English reference. Thirty-nine main Articles and three addenda are text-aligned across the 20/21 July boundary; Articles 2, 3, 6, 18 and 35 carry an upfront warning that the English text is the differing 21 July 2026 phase.",
+    status: "complete-current-government-English-reference-stored",
+    note: "All 46 current Articles and three supplementary-provision blocks have a government English reference aligned to the 21 July 2026 phase. Korean controls and the English publication has no official effect.",
+    coverage: {
+      translatedUnitCount: 49,
+      currentAlignedUnitCount: 49,
+      temporallyMismatchedUnitCount: 0,
+      totalUnitCount: 49,
+      completeness: "complete-current-government-reference-translation",
+    },
   },
   "au-privacy-act-1988": {
     status: "complete-authorised-current-original-English-text-stored",
@@ -382,7 +395,7 @@ const englishOverrides = {
   },
   "sa-pdpl-transfer-regulation-2023": {
     status: "complete-government-English-reference-translation-stored",
-    note: "All nine Version 2.0 Arabic Articles retain the Saudi Data Governance Platform's aligned English reference publication; Arabic controls.",
+    note: "All nine Version 2.0 Arabic Articles retain the Saudi Data Governance Platform's aligned English reference publication; Arabic controls. Gazette publication and legal effect are independently pinned to 1 September 2024.",
     coverage: { translatedUnitCount: 9, totalUnitCount: 9, completeness: "complete-government-reference-translation" },
   },
   "id-pdp-law-2022": {
@@ -401,7 +414,7 @@ const englishOverrides = {
   },
   "ca-pipeda": {
     status: "complete-official-co-authentic-English-text-stored-with-operative-state-boundary",
-    note: "All 75 current in-force top-level Section/range and Schedule units, plus nine enacted amending sections not yet in force, are stored in official co-authentic English and French. The prospective units are isolated and never presented as operative duties.",
+    note: "All 75 current in-force top-level Section/range and Schedule units, plus nine enacted amending sections not yet in force, are stored in official co-authentic English and French. The stored 31 March 2026 XML remains text-equivalent to the official consolidation current to 26 May 2026; prospective units are isolated and never presented as operative duties.",
     coverage: {
       translatedUnitCount: 84,
       currentAlignedUnitCount: 84,
@@ -435,12 +448,14 @@ const englishOverrides = {
     },
   },
   "tw-personal-data-protection-act": {
-    status: "complete-government-English-reference-translation-stored",
-    note: "All 66 Article nodes retain the Ministry of Justice's English publication as a government reference translation, with commencement-sensitive status preserved separately; the official Traditional-Chinese text controls.",
+    status: "complete-latest-promulgated-government-English-reference-with-current-effective-boundary",
+    note: "All 66 Article nodes retain the Ministry of Justice's latest-promulgated English reference. Forty nodes are current-effective and English-aligned. The other 26 nodes are uncommenced: their English follows promulgated future wording rather than current-effective law, so the node-level Chinese prior-version or non-operation record controls present duties.",
     coverage: {
       translatedUnitCount: 66,
+      currentAlignedUnitCount: 40,
+      temporallyMismatchedUnitCount: 26,
       totalUnitCount: 66,
-      completeness: "complete-government-reference-translation-with-commencement-layer",
+      completeness: "complete-latest-promulgated-government-reference-with-26-node-current-effective-mismatch",
     },
   },
   "sg-pdpa-2012": {
@@ -560,9 +575,10 @@ const coverageOverrides = {
     statement: "All 99 operative Articles are stored from the official English EUR-Lex publication. The 173 Recitals remain available at the linked official source and are not copied into the local Article corpus.",
   },
   "eu-ai-act": {
-    mode: "complete-enacted-operative-article-corpus",
-    localUnitCount: 113,
-    statement: "All 113 operative Articles of Regulation (EU) 2024/1689 are stored from the enacted official English publication. The 180 Recitals and Annexes I–XIII remain at EUR-Lex and are outside the present local corpus; the site therefore does not claim a complete document-level reproduction.",
+    mode: "complete-current-operative-articles-and-annexes-with-enactment-recitals",
+    localUnitCount:
+      euAiActArticles.length + euAiActAnnexes.length + euAiActRecitals.length,
+    statement: "A source-derived English project consolidation stores all 119 current operative Articles and all 14 current Annexes by applying Regulation (EU) 2026/1744 to authentic Official Journal texts from 27 July 2026. The 180 Recitals of the 2024 enactment are also stored as non-operative explanatory context. Recitals of the 2026 amending act remain part of that amending instrument and are not merged into the base Regulation's recital sequence.",
   },
   "cn-cybersecurity-law": {
     mode: "complete-current-article-corpus",
@@ -592,7 +608,7 @@ const coverageOverrides = {
   "ca-pipeda": {
     mode: "complete-official-co-authentic-bilingual-in-force-and-prospective-corpus",
     localUnitCount: pipedaProvisions.length,
-    statement: "All 75 current in-force top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications, together with nine enacted amending sections from S.C. 2026, c. 3 that still require an order under section 398 to come into force. The two language texts are co-authentic and the two operative states remain visibly separated.",
+    statement: "All 75 current in-force top-level Section/range and Schedule units are stored from the official Justice Laws English and French XML publications, together with nine enacted amending sections from S.C. 2026, c. 3 that still require an order under section 398 to come into force. The stored XML snapshot is dated 31 March 2026 and was verified text-equivalent to the official consolidation current to 26 May 2026. The co-authentic language texts and two operative states remain visibly separated.",
   },
   "ca-directive-automated-decision-making": {
     mode: "complete-current-official-co-published-bilingual-policy-corpus",
@@ -612,7 +628,7 @@ const coverageOverrides = {
   "tw-personal-data-protection-act": {
     mode: "complete-official-bilingual-latest-consolidation-with-node-level-commencement-status",
     localUnitCount: taiwanPdpaArticles.length,
-    statement: "All 66 Article nodes are stored from the official latest Traditional-Chinese consolidation with the Ministry of Justice English reference publication. Each node identifies whether its latest wording is in force, uncommenced, or accompanied by a still-operative prior version.",
+    statement: "All 66 Article nodes are stored from the official latest Traditional-Chinese consolidation with the Ministry of Justice English reference publication. Forty nodes are current-effective. Twenty-six nodes contain uncommenced promulgated wording, including 16 with a separately stored prior Chinese version that remains in force; the government English for those 26 nodes is not represented as current-effective law.",
   },
   "tw-executive-yuan-generative-ai-guidelines-2023": {
     mode: "complete-current-official-traditional-chinese-and-project-English-guidance-corpus",
@@ -667,7 +683,7 @@ const coverageOverrides = {
   "sa-pdpl-transfer-regulation-2023": {
     mode: "complete-version-2-controlling-arabic-and-official-english-reference-article-corpus",
     localUnitCount: saudiPdplTransferArticles.length,
-    statement: "All nine Articles of Version 2.0 are stored in controlling Arabic with aligned government English reference text. The missing verified Gazette publication date is not guessed.",
+    statement: "All nine Articles of Version 2.0 are stored in controlling Arabic with aligned government English reference text. Umm Al-Qura issue 5047 records publication on 1 September 2024, and Article 9 makes the Regulation effective on that publication date.",
   },
   "au-privacy-act-1988": {
     mode: "complete-authorised-current-sections-apps-and-schedule-2-clauses",
@@ -715,9 +731,9 @@ const coverageOverrides = {
     statement: "All 126 main Articles and 12 addenda are stored from the Korean consolidation effective 2 October 2025 with a complete, current-aligned MOLEG government English reference. Later promulgated phases remain isolated in the manifest.",
   },
   "kr-ai-framework-act-2025": {
-    mode: "complete-current-Korean-with-versioned-government-English-reference-corpus",
+    mode: "complete-current-Korean-and-current-aligned-government-English-reference-corpus",
     localUnitCount: koreaAiFrameworkArticles.length,
-    statement: "All 44 main Articles and three addenda effective on 20 July 2026 are stored in Korean with MOLEG English references. Forty-two nodes are text-aligned; Articles 2, 3, 6, 18 and 35 display the differing 21 July 2026 English phase with an upfront not-current warning.",
+    statement: "All 46 main Articles and three supplementary-provision blocks effective on 21 July 2026 are stored in Korean with a complete government English reference aligned to the same current phase.",
   },
   "us-eo-14110": {
     mode: "complete-revoked-historical-official-executive-order-corpus",
@@ -760,7 +776,7 @@ const reviewLevelOverrides = {
   "ca-directive-automated-decision-making": "complete-current-official-co-published-bilingual-policy-corpus-review",
   "br-lgpd-2018": "complete-official-current-original-language-article-corpus-and-anchor-review",
   "tw-ai-basic-act-2026": "complete-official-bilingual-article-corpus-and-anchor-review",
-  "tw-personal-data-protection-act": "complete-official-bilingual-article-corpus-with-commencement-review",
+  "tw-personal-data-protection-act": "complete-official-latest-promulgated-bilingual-corpus-with-current-effective-version-review",
   "tw-executive-yuan-generative-ai-guidelines-2023": "complete-official-guidance-corpus-version-and-language-boundary-review",
   "sg-pdpa-2012": "complete-government-current-consolidation-and-anchor-review",
   "za-popia-4-2013": "complete-official-current-section-and-schedule-corpus-and-anchor-review",
@@ -781,7 +797,7 @@ const reviewLevelOverrides = {
   "vn-pdpl-implementing-decree-356-2025": "complete-official-vietnamese-corpus-and-implementation-review",
   "vn-personal-data-protection-decree-13-2023": "complete-historical-vietnamese-corpus-and-repeal-review",
   "kr-pipa-2011": "complete-current-korean-corpus-and-future-phase-boundary-review",
-  "kr-ai-framework-act-2025": "complete-current-korean-corpus-and-next-day-phase-boundary-review",
+  "kr-ai-framework-act-2025": "complete-current-korean-and-government-English-21-July-phase-review",
   "us-eo-14110": "complete-official-historical-corpus-and-revocation-review",
   "us-eo-14179": "complete-official-current-executive-order-corpus-review",
   "br-pl-2338-2023-ai-bill": "complete-official-pending-bill-corpus-lifecycle-and-rights-review",
@@ -791,14 +807,14 @@ const reviewLevelOverrides = {
 };
 
 const reviewedOnOverrides = {
-  "ca-pipeda": "2026-07-21",
+  "ca-pipeda": "2026-07-28",
   "ca-directive-automated-decision-making": "2026-07-21",
   "br-lgpd-2018": "2026-07-20",
   "tw-ai-basic-act-2026": "2026-07-20",
-  "tw-personal-data-protection-act": "2026-07-20",
+  "tw-personal-data-protection-act": "2026-07-28",
   "tw-executive-yuan-generative-ai-guidelines-2023": "2026-07-20",
   "sg-pdpa-2012": "2026-07-20",
-  "za-popia-4-2013": "2026-07-20",
+  "za-popia-4-2013": "2026-07-28",
   "ng-data-protection-act-2023": "2026-07-20",
   "id-pdp-law-2022": "2026-07-20",
   "in-dpdp-act-2023": "2026-07-20",
@@ -806,17 +822,21 @@ const reviewedOnOverrides = {
   "ae-federal-pdpl-45-2021": "2026-07-20",
   "sa-pdpl-2021-amended-2023": "2026-07-20",
   "sa-pdpl-implementing-regulation-2023": "2026-07-20",
-  "sa-pdpl-transfer-regulation-2023": "2026-07-20",
+  "sa-pdpl-transfer-regulation-2023": "2026-07-28",
+  "au-mandatory-ai-guardrails-proposal-2024": "2026-07-28",
   "au-privacy-act-1988": "2026-07-20",
   "jp-appi": "2026-07-20",
   "jp-ai-promotion-act-2025": "2026-07-20",
   "hk-personal-data-privacy-ordinance": "2026-07-20",
+  "hk-ai-model-pd-protection-framework-2024": "2026-07-28",
+  "hk-ethical-ai-guidance-2021": "2026-07-28",
+  "hk-genai-employee-guidelines-checklist-2025": "2026-07-28",
   "ch-fadp-2020": "2026-07-20",
-  "vn-personal-data-protection-law-2025": "2026-07-20",
-  "vn-pdpl-implementing-decree-356-2025": "2026-07-20",
+  "vn-personal-data-protection-law-2025": "2026-07-28",
+  "vn-pdpl-implementing-decree-356-2025": "2026-07-28",
   "vn-personal-data-protection-decree-13-2023": "2026-07-20",
   "kr-pipa-2011": "2026-07-20",
-  "kr-ai-framework-act-2025": "2026-07-20",
+  "kr-ai-framework-act-2025": "2026-07-28",
   "us-eo-14110": "2026-07-20",
   "us-eo-14179": "2026-07-20",
   "br-pl-2338-2023-ai-bill": "2026-07-20",
@@ -827,11 +847,12 @@ const reviewedOnOverrides = {
 
 const instrumentCaveats = {
   "eu-ai-act": [
-    "The complete local Article file is the 2024 enacted text. The Digital Omnibus on AI received final Council approval on 29 June 2026 and had a final legislative text dated 8 July 2026, but no replacement consolidated corpus is claimed without an Official Journal legal-act record.",
-    "The present local corpus contains all 113 operative Articles but not the 180 Recitals or Annexes I–XIII. Annex-dependent classifications and documentation duties must be checked at the linked EUR-Lex publication.",
+    "Regulation (EU) 2026/1744 entered into force on 27 July 2026. The local Article and Annex layers apply that Official Journal amendment operation-by-operation; they are not represented as an independently published EUR-Lex consolidation.",
+    "The 180 locally stored Recitals are the explanatory Recitals of Regulation (EU) 2024/1689 and are excluded from substantive-obligation metrics. Recitals of Regulation (EU) 2026/1744 remain available with the linked amending act and are not inserted into the base Regulation's recital sequence.",
   ],
   "ca-pipeda": [
     "The 75-unit current consolidation and the nine enacted amending sections not yet in force are stored as separate operative-state groups. Sections 389–397 of S.C. 2026, c. 3 do not become operative unless and until an order is made under section 398.",
+    "The official Justice Laws consolidation is current to 26 May 2026. The pinned bilingual XML snapshot is dated 31 March 2026 and was verified text-equivalent; the date difference is retained as a source-version boundary rather than hidden.",
   ],
   "ca-directive-automated-decision-making": [
     "The Directive is a mandatory federal internal-policy instrument, not a generally applicable Canadian private-sector AI statute.",
@@ -843,6 +864,7 @@ const instrumentCaveats = {
   ],
   "au-mandatory-ai-guardrails-proposal-2024": [
     "The proposal is a closed consultation record, not an enacted mandatory-guardrails regime. Current federal guidance is indexed separately.",
+    "The 21 October 2025 record is a policy outcome and transition to voluntary guidance, not the repeal, expiry, or cessation of a legal instrument.",
   ],
   "vn-personal-data-protection-decree-13-2023": [
     "Decree 13/2023 ceased to be the current principal instrument on 1 January 2026 and is retained as a historical predecessor to Law 91/2025 and Decree 356/2025.",
@@ -871,7 +893,7 @@ const instrumentCaveats = {
     "The Rules are phase-split and include an official corrigendum. The local text applies that corrigendum, but most substantive duties are not yet operative on the review date.",
   ],
   "sa-pdpl-transfer-regulation-2023": [
-    "Article 9 ties effect to Official Gazette publication, but the verified Version 2.0 publication does not print that date. No exact applies-from date is claimed without a primary source.",
+    "Article 9 ties effect to Official Gazette publication. Umm Al-Qura issue 5047 records Decision No. 1840 and publication on 1 September 2024, so that primary-source date is used for commencement.",
   ],
   "ch-fadp-2020": [
     "The English Fedlex expression is complete and official but has no legal force; German, French and Italian remain equally authoritative.",
@@ -879,14 +901,23 @@ const instrumentCaveats = {
     "The two local Annex nodes preserve Fedlex reference content, but Annex 1 externalizes consequential amendments and Annex 2 is a coordination reference. The project does not claim that those records reproduce every amendment text cross-referenced by the Annexes.",
   ],
   "vn-pdpl-implementing-decree-356-2025": [
-    "The 13 Appendix forms are part of the complete stored corpus. No complete official English text was verified.",
+    "The 13 Appendix forms are part of the complete stored corpus. No issuing-authority English text was verified, but every Article and form has a separately labelled complete, nonofficial project English reference.",
+  ],
+  "vn-personal-data-protection-law-2025": [
+    "No issuing-authority English text was verified, but every Article has a separately labelled complete, current-aligned, nonofficial project English reference.",
   ],
   "kr-pipa-2011": [
     "Promulgated phases effective 11 September 2026 and 1 July 2027 are isolated in the manifest and not inserted into the current text.",
     "The complete MOLEG English reference is stored under the government's open-data terms and has no official effect; KLRI text is still not reproduced without permission.",
   ],
   "kr-ai-framework-act-2025": [
-    "The 46-Article Korean phase takes effect on 21 July 2026, one day after the review date, and is not inserted into the current Korean corpus. Five differing English reference Articles are retained only with explicit future-phase warnings.",
+    "The final Act No. 21311 phase took effect on 21 July 2026 and is the current corpus: 46 main Articles, including Articles 17-2 and 22-3, plus three supplementary-provision blocks. All 49 nodes have an English government reference aligned to this phase.",
+  ],
+  "tw-personal-data-protection-act": [
+    "The government English publication follows latest-promulgated wording. It is current-effective for 40 nodes; 26 nodes remain uncommenced, including 16 for which a prior Chinese version remains operative and no official old-version English text was verified.",
+  ],
+  "za-popia-4-2013": [
+    "Sections 55–109, including section 58, commenced on 1 July 2020. The general compliance grace period ended on 30 June 2021; section 114(3) and Notice 560 delayed the application of section 58(2) to section 57 processing until 1 February 2022, not section 58's commencement itself.",
   ],
   "us-eo-14110": [
     "Every node is historical: Executive Order 14148 revoked EO 14110 in full on 20 January 2025.",
@@ -1021,6 +1052,7 @@ function englishProfile(instrument) {
 function sourceRecords(instrument) {
   const candidates = [
     ["primary-current-record", instrument.source],
+    ["official-gazette-record", instrument.gazetteSource],
     ["companion-or-implementation-record", instrument.supportingSource],
     ["amendment-or-lifecycle-record", instrument.amendmentSource],
     ["official-original-language-record", instrument.originalLanguageSource],

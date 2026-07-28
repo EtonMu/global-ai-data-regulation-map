@@ -76,6 +76,28 @@ test("DUAA 2025 insertions remain present in the current UK GDPR snapshot", () =
   assert.match(byNumber.get("91A").fullText, /UK GDPR regulations/);
 });
 
+test("official annotations and footnotes do not leak into Article wording", () => {
+  const byNumber = new Map(
+    articles.map((article) => [article.articleNumber, article]),
+  );
+  const article4 = byNumber.get("4").fullText;
+  const article43 = byNumber.get("43").fullText;
+
+  assert.match(article4, /dissemination or otherwise making available/);
+  assert.equal(article4.match(/Directive \(EU\) 2015\/1535/g)?.length, 1);
+  assert.doesNotMatch(article4, /9 September 2015|OJ L 241/);
+
+  // Article 43 genuinely cites Regulation 765/2008 in paragraphs 1 and 3.
+  // Its complete footnote must not appear as a third, duplicate citation.
+  assert.equal(article43.match(/Regulation \(EC\) No 765\/2008/g)?.length, 2);
+  assert.doesNotMatch(article43, /9 July 2008|OJ L 218|repealing Regulation/);
+
+  for (const article of articles) {
+    assert.doesNotMatch(article.fullText, /\bOJ\s+[LC]\s+\d+/);
+    assert.doesNotMatch(article.fullText, /\b[A-Za-z]\.\s?[a-z]{3,}\b/);
+  }
+});
+
 test("UK GDPR source audit and concept review cover the complete import", () => {
   const audit = sourceAudits.find(
     (item) => item.instrumentId === "gb-uk-gdpr",

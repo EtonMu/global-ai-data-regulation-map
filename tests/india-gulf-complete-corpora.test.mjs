@@ -19,11 +19,11 @@ const [indiaAct, indiaRules, uae, saLaw, saIr, saTransfer] =
     loadJson("sa-pdpl-transfer-regulation-2023-articles.json"),
   ]);
 
-function assertIntegrity(unit) {
+function assertIntegrity(unit, { retrievedOn = "2026-07-20" } = {}) {
   assert.ok(unit.fullText.length > 0);
   assert.deepEqual(unit.paragraphs, [unit.fullText]);
   assert.equal(unit.contentSha256, digest(unit.fullText));
-  assert.equal(unit.retrievedOn, "2026-07-20");
+  assert.equal(unit.retrievedOn, retrievedOn);
   assert.match(unit.source, /^https:\/\//);
   assert.ok(unit.sourceVersion.sourceDocumentSha256 || unit.sourceVersion.arabicSourceSnapshotSha256 || unit.sourceVersion.arabicPayloadSha256);
   assert.match(unit.rights.reuseStatus, /permitted|statutory-exclusion/);
@@ -35,7 +35,14 @@ function assertIntegrity(unit) {
 
 function assertOfficialArabicEnglishCorpus(
   units,
-  { count, instrumentId, idPrefix, source, englishSource },
+  {
+    count,
+    instrumentId,
+    idPrefix,
+    source,
+    englishSource,
+    retrievedOn = "2026-07-20",
+  },
 ) {
   assert.equal(units.length, count);
   assert.deepEqual(
@@ -44,7 +51,7 @@ function assertOfficialArabicEnglishCorpus(
   );
   for (const [index, unit] of units.entries()) {
     const number = index + 1;
-    assertIntegrity(unit);
+    assertIntegrity(unit, { retrievedOn });
     assert.equal(unit.id, `${idPrefix}${number}`);
     assert.equal(unit.instrumentId, instrumentId);
     assert.equal(unit.label, `Article ${number}`);
@@ -63,6 +70,7 @@ function assertOfficialArabicEnglishCorpus(
     assert.match(english.fullText, /[A-Za-z]/);
     assert.equal(english.contentSha256, digest(english.fullText));
     assert.match(english.authorityNote, /Arabic is the original/i);
+    assert.doesNotMatch(english.fullText, /[ \t]{2,}|[A-Za-z]-\n[A-Za-z]/);
   }
 }
 
@@ -110,6 +118,29 @@ test("India DPDP Act corpus contains all 44 sections and the complete Schedule",
     sections[43].applicability.provisionParts.map((part) => part.appliesFrom),
     ["2025-11-14", "2027-05-14"],
   );
+
+  const normalizedText = sections.map((section) => section.fullText).join("\n");
+  for (const artifact of [
+    "app.Y",
+    "(2)Any",
+    "Yfor",
+    "atY",
+    "Yher",
+    "(1)AData",
+    "(2)AData",
+    "(3)AData",
+    "(4)AData",
+    "(5)The",
+    "(7)AData",
+    "(9)AData",
+    "(10)AData",
+    "section 14Aand",
+  ]) {
+    assert.ok(!normalizedText.includes(artifact), `OCR spacing artifact remains: ${artifact}`);
+  }
+  assert.match(sections[5].fullText, /telemedicine app\. Y requests/);
+  assert.match(sections[6].fullText, /purchase at Y, a pharmacy/);
+  assert.match(sections[28].fullText, /section 14A and section 16/);
 });
 
 test("India DPDP commencement metadata preserves all three phases", () => {
@@ -165,6 +196,9 @@ test("India DPDP Rules corpus contains 23 rules and seven Schedules with the off
   assert.match(rules[12].fullText, /algorithmic software/i);
   assert.match(rules[5].fullText, /encryption, obfuscation, masking or the use of virtual tokens/i);
   assert.match(rules[6].fullText, /within seventy-two hours/i);
+  assert.match(rules[16].fullText, /^17\. Appointment/);
+  assert.doesNotMatch(schedules[4].fullText, /\(5\)Any/);
+  assert.doesNotMatch(schedules[5].fullText, /\(3\)Any/);
 });
 
 test("India DPDP Rules status metadata distinguishes current, one-year, and eighteen-month phases", () => {
@@ -196,6 +230,7 @@ test("Saudi PDPL has all 43 consolidated Arabic Articles and official English re
     idPrefix: "sa-pdpl-2021-amended-2023-a",
     source: "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
     englishSource: saLaw[0].translations.en.source,
+    retrievedOn: "2026-07-28",
   });
   assert.equal(saLaw[0].sourceVersion.amendedBy, "Royal Decree No. M/148 dated 5/9/1444 AH");
   assert.equal(saLaw[0].appliesFrom, "2023-09-14");
@@ -203,6 +238,26 @@ test("Saudi PDPL has all 43 consolidated Arabic Articles and official English re
   assert.match(saLaw[28].translations.en.fullText, /Transfer\s+Personal Data outside the Kingdom/i);
   assert.match(saLaw[30].fullText, /سجلات/u);
   assert.match(saLaw[42].fullText, /سبعمائة وعشرين/u);
+
+  const article9 = saLaw[8].translations.en;
+  assert.match(article9.fullText, /set forth in the Regulations/);
+  assert.match(article9.sourceFaithful.fullText, /set forth the Regulations/);
+  assert.equal(
+    article9.sourceFaithful.contentSha256,
+    digest(article9.sourceFaithful.fullText),
+  );
+  assert.equal(
+    article9.displayNormalization.changes[0].kind,
+    "evidenced-reference-translation-repair",
+  );
+
+  const article42 = saLaw[41].translations.en;
+  assert.match(article42.fullText, /before issuing the Regulations/);
+  assert.match(article42.sourceFaithful.fullText, /before issuing the Law/);
+  assert.match(
+    article42.displayNormalization.changes[0].note,
+    /controlling Arabic/i,
+  );
 });
 
 test("Saudi Implementing Regulation has all 38 bilingual Article nodes", () => {
@@ -212,6 +267,7 @@ test("Saudi Implementing Regulation has all 38 bilingual Article nodes", () => {
     idPrefix: "sa-pdpl-implementing-regulation-2023-a",
     source: "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
     englishSource: saIr[0].translations.en.source,
+    retrievedOn: "2026-07-28",
   });
   assert.equal(saIr[0].appliesFrom, "2023-09-14");
   assert.equal(saIr[17].title, "Processing data for a purpose other than the one for which it was collected");
@@ -228,11 +284,31 @@ test("Saudi Transfer Regulation Version 2.0 has all nine bilingual Article nodes
     idPrefix: "sa-pdpl-transfer-regulation-2023-a",
     source: "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
     englishSource: saTransfer[0].translations.en.source,
+    retrievedOn: "2026-07-28",
   });
   assert.equal(saTransfer[0].sourceVersion.documentVersion, "2.0");
   assert.equal(saTransfer[0].sourceVersion.documentDate, "2024-08");
-  assert.equal(saTransfer[0].appliesFrom, null);
+  assert.ok(saTransfer.every((article) => article.appliesFrom === "2024-09-01"));
+  assert.equal(saTransfer[0].sourceVersion.effectiveFrom, "2024-09-01");
+  assert.equal(saTransfer[0].sourceVersion.officialGazette, "Umm Al-Qura, Issue No. 5047");
+  assert.equal(saTransfer[0].sourceVersion.issuedBy, "Competent Authority Decision No. 1840");
+  assert.equal(
+    saTransfer[0].sourceVersion.gazetteSource,
+    "https://portal.uqn.gov.sa/details?p=25412",
+  );
   assert.match(saTransfer[3].fullText, /الضمانات المناسبة/u);
   assert.match(saTransfer[6].translations.en.fullText, /risk assessment/i);
   assert.match(saTransfer[8].fullText, /تاريخ نشرها في الجريدة الرسمية/u);
+
+  for (const article of saTransfer) {
+    assert.doesNotMatch(article.translations.en.fullText, /[０-９]/u);
+  }
+  for (const articleNumber of [3, 6, 7]) {
+    const english = saTransfer[articleNumber - 1].translations.en;
+    assert.match(english.sourceFaithful.fullText, /[２-４]/u);
+    assert.equal(
+      english.displayNormalization.changes[0].kind,
+      "unicode-digit-width",
+    );
+  }
 });

@@ -43,7 +43,8 @@ const configs = {
         "source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-2.html",
         "source-snapshots/cn-pipl-npc-en-reference-2021-12-29-page-3.html",
       ],
-      source: "http://en.npc.gov.cn/2021-12/29/c_694559.htm",
+      source:
+        "https://www.npc.gov.cn/npc/c2597/c5854/bfflywwb/202311/t20231117_433007.html",
       sourceLabel:
         "National People's Congress of the People's Republic of China — Laws (Translation for Reference Only)",
       publishedOn: "2021-12-29",

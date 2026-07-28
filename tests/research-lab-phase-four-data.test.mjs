@@ -69,7 +69,7 @@ const sourceAudits = [
 ];
 const provisions = [
   provision("a-1", "a", 0, "substantive-topic", ["c1", "c2"], {
-    appliesFrom: "2026-07-20",
+    appliesFrom: "2026-07-28",
     actorTags: ["controller"],
     fullText: "  A   B😀  ",
     chapter: { id: "ch-1", label: "I", title: "One" },
@@ -89,7 +89,7 @@ const provisions = [
     chapter: { id: "ch-2", label: "II", title: "Two" },
   }),
   provision("a-5", "a", 4, "substantive-topic", ["c1"], {
-    appliesFrom: "2026-07-20",
+    appliesFrom: "2026-07-28",
     chapter: { id: "ch-2", label: "II", title: "Two" },
   }),
   provision("b-1", "b", 0, "substantive-topic", ["c1"], {
@@ -110,7 +110,7 @@ const statusEvents = [
   {
     id: "e-snapshot",
     instrumentId: "a",
-    date: "2026-07-20",
+    date: "2026-07-28",
     type: "snapshot",
     label: "Snapshot",
     effect: "Recorded on snapshot",
@@ -144,7 +144,7 @@ test("applicability horizon groups explicit provision dates and preserves uncert
     sourceAudits,
     statusEvents,
   });
-  assert.equal(horizon.snapshotDate, "2026-07-20");
+  assert.equal(horizon.snapshotDate, "2026-07-28");
   assert.equal(horizon.resolvedProvisionDateCount, 4);
   assert.equal(horizon.missingProvisionDateCount, 1);
   assert.equal(horizon.unresolvedProvisionDateCount, 1);
@@ -168,7 +168,7 @@ test("applicability horizon groups explicit provision dates and preserves uncert
   assert.equal("date" in horizon.unresolvedStatusEvents[0], false);
 
   const snapshotGroup = horizon.provisionDateGroups.find(
-    (group) => group.id === "a::2026-07-20",
+    (group) => group.id === "a::2026-07-28",
   );
   assert.ok(snapshotGroup);
   assert.equal(snapshotGroup.provisionCount, 2);
@@ -295,10 +295,10 @@ test("granularity audit separates corpus coverage and never turns missing text i
   assert.equal(complete.substantiveProvisionCount, 3);
   assert.equal(complete.structuralContextCount, 1);
   assert.equal(complete.unreviewedProvisionCount, 1);
-  assert.equal(complete.conceptAssignmentCount, 5);
-  assert.equal(complete.conceptAssignmentsPerProvision, 1);
-  assert.equal(complete.mappedProvisionCount, 4);
-  assert.equal(complete.unmappedProvisionCount, 1);
+  assert.equal(complete.conceptAssignmentCount, 4);
+  assert.equal(complete.conceptAssignmentsPerProvision, 0.8);
+  assert.equal(complete.mappedProvisionCount, 3);
+  assert.equal(complete.unmappedProvisionCount, 2);
   assert.equal(complete.multiConceptProvisionCount, 1);
   assert.equal(
     complete.annotationCoverage.actorTags.recordedProvisionCount,

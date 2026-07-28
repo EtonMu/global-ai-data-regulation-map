@@ -574,6 +574,7 @@ function buildPdpa(originalHtml, translationHtml, currentHtml, retrievedOn) {
       throw new Error(`Taiwan PDPA Article ${article.articleNumber} is empty`);
     }
     const effect = pdpaApplicability(article.articleNumber, currentByNumber);
+    const englishIsCurrentEffective = effect.legalEffectStatus === "in-force";
     const chineseChapter = article.chapterTitle;
     const englishChapter = translation.chapterTitle;
     const chineseSection = article.sectionTitle;
@@ -612,13 +613,20 @@ function buildPdpa(originalHtml, translationHtml, currentHtml, retrievedOn) {
           paragraphs: translation.paragraphs,
           fullText: englishFullText,
           language: "en",
-          coverageStatus: "complete-latest-consolidation-official-reference-translation",
+          coverageStatus: englishIsCurrentEffective
+            ? "complete-current-effective-official-reference-translation"
+            : "complete-latest-promulgated-not-current-effective-official-reference-translation",
           versionAsOf: "2025-11-11",
           versionLabel:
             "Latest promulgated PDPA consolidation, including amendments awaiting Executive Yuan commencement",
           status: "official-reference-translation",
-          note:
-            "Complete Article-level official English wording from the latest promulgated consolidation is stored; applicability metadata marks amendments whose commencement remains pending.",
+          currentTextEquivalent: englishIsCurrentEffective,
+          alignmentStatus: englishIsCurrentEffective
+            ? "aligned-with-current-effective-text"
+            : "latest-promulgated-reference-not-current-effective",
+          note: englishIsCurrentEffective
+            ? "The complete official English reference follows wording that is currently in force for this Article. The official Traditional Chinese text controls."
+            : "The official English reference follows the latest-promulgated wording, but that wording has not commenced. The node-level current-effective Chinese text or non-operation record controls present duties; no official old-version English text is substituted.",
           authorityNote:
             "Published by the Ministry of Justice Laws and Regulations Database as an English translation. The official Traditional Chinese text controls.",
           source: PDPA.translationSource,

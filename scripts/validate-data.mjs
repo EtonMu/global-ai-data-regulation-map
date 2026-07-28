@@ -21,6 +21,8 @@ const [
   sourceAudits,
   gdprArticles,
   euAiActArticles,
+  euAiActAnnexes,
+  euAiActRecitals,
   ukGdprArticles,
   piplArticles,
   networkDataArticles,
@@ -69,6 +71,8 @@ const [
   loadJson("source-audit.json"),
   loadJson("gdpr-articles.json"),
   loadJson("eu-ai-act-articles.json"),
+  loadJson("eu-ai-act-annexes.json"),
+  loadJson("eu-ai-act-recitals.json"),
   loadJson("uk-gdpr-articles.json"),
   loadJson("cn-pipl-articles.json"),
   loadJson("cn-network-data-regulations-articles.json"),
@@ -158,6 +162,14 @@ const structureSummaryLevels = new Set(["section", "hierarchy-root"]);
 const provisionRelevanceValues = new Set([
   "substantive-topic",
   "structural-context",
+]);
+const provisionConceptReviewStatuses = new Set([
+  "editorial-reviewed",
+  "machine-candidate",
+]);
+const provisionConceptMappingBases = new Set([
+  "curated-anchor",
+  "rule-generated",
 ]);
 const instrumentDateFields = [
   "adoptedOn",
@@ -419,6 +431,8 @@ assertUnique(statusEvents, "status event");
 assertUnique(sourceAudits, "source audit");
 const gdprArticleIds = assertUnique(gdprArticles, "GDPR article");
 const euAiActArticleIds = assertUnique(euAiActArticles, "EU AI Act article");
+const euAiActAnnexIds = assertUnique(euAiActAnnexes, "EU AI Act Annex");
+const euAiActRecitalIds = assertUnique(euAiActRecitals, "EU AI Act Recital");
 const ukGdprArticleIds = assertUnique(ukGdprArticles, "UK GDPR article");
 const piplArticleIds = assertUnique(piplArticles, "PIPL article");
 const networkDataArticleIds = assertUnique(
@@ -1076,20 +1090,31 @@ function validateOfficialArticles({
   articles,
   articleIds,
   expectedCount,
+  expectedNumbers,
   instrumentId,
   idPrefix,
   source,
+  sourceForArticle,
+  sourceFragmentForArticle,
+  validateArticle,
+  textAvailabilityMode = "separate-complete-official-article-import",
   label,
 }) {
   assert(
     articles.length === expectedCount,
     `${label} corpus must contain exactly ${expectedCount} Articles; found ${articles.length}`,
   );
+  if (expectedNumbers !== undefined) {
+    assert(
+      expectedNumbers.length === expectedCount,
+      `${label} expected Article-number sequence has the wrong length`,
+    );
+  }
   const chapterDefinitions = new Map();
   const sectionDefinitions = new Map();
 
   articles.forEach((article, index) => {
-    const expectedNumber = String(index + 1);
+    const expectedNumber = expectedNumbers?.[index] ?? String(index + 1);
     const expectedId = `${idPrefix}${expectedNumber}`;
     assert(
       article.articleNumber === expectedNumber,
@@ -1150,19 +1175,32 @@ function validateOfficialArticles({
       article.textAvailability === "full",
       `${article.id}.textAvailability must be full`,
     );
-    assert(article.source === source, `${article.id}.source is not the canonical ELI source`);
+    const expectedSource =
+      sourceForArticle?.(article, expectedNumber) ?? source;
+    const expectedSourceFragment =
+      sourceFragmentForArticle?.(article, expectedNumber, expectedSource) ??
+      `${expectedSource}#art_${expectedNumber}`;
     assert(
-      article.sourceFragment === `${source}#art_${expectedNumber}`,
+      article.source === expectedSource,
+      `${article.id}.source is not the canonical ELI source`,
+    );
+    assert(
+      article.sourceFragment === expectedSourceFragment,
       `${article.id}.sourceFragment does not target its Article anchor`,
     );
     assertIsoDate(article.retrievedOn, `${article.id}.retrievedOn`);
+    validateArticle?.(article, expectedNumber);
   });
 
   const instrument = instruments.find((item) => item.id === instrumentId);
   assert(instrument, `${label} instrument metadata is missing`);
   assert(
-    instrument.textAvailability.mode === "separate-official-import",
-    `${instrumentId} must declare its separate official import`,
+    instrument.textAvailability.mode === textAvailabilityMode,
+    `${instrumentId} must declare text availability mode ${textAvailabilityMode}`,
+  );
+  assert(
+    instrument.textAvailability.stored === true,
+    `${instrumentId} must declare its complete local Article import as stored`,
   );
   assert(
     articles.every((article) => article.retrievedOn === instrument.statusAsOf),
@@ -1180,15 +1218,335 @@ validateOfficialArticles({
   label: "GDPR",
 });
 
+const euAiActBaseSource =
+  "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng";
+const euAiActAmendingSource =
+  "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng";
+const euAiActAmendmentFragment = `${euAiActAmendingSource}#art_1`;
+const expectedEuAiActArticleNumbers = [
+  ...Array.from({ length: 4 }, (_, index) => String(index + 1)),
+  "4a",
+  ...Array.from({ length: 56 }, (_, index) => String(index + 5)),
+  "60a",
+  ...Array.from({ length: 15 }, (_, index) => String(index + 61)),
+  "75a",
+  "75b",
+  "75c",
+  "75d",
+  ...Array.from({ length: 38 }, (_, index) => String(index + 76)),
+];
+const euAiActInsertedArticleNumbers = new Set([
+  "4a",
+  "60a",
+  "75a",
+  "75b",
+  "75c",
+  "75d",
+]);
+const euAiActAmendedArticleNumbers = new Set([
+  "1",
+  "2",
+  "3",
+  "4",
+  "4a",
+  "5",
+  "6",
+  "10",
+  "11",
+  "17",
+  "25",
+  "27",
+  "28",
+  "29",
+  "30",
+  "40",
+  "42",
+  "43",
+  "50",
+  "56",
+  "57",
+  "58",
+  "60",
+  "60a",
+  "63",
+  "64",
+  "69",
+  "70",
+  "72",
+  "75",
+  "75a",
+  "75b",
+  "75c",
+  "75d",
+  "76",
+  "77",
+  "95",
+  "96",
+  "97",
+  "99",
+  "111",
+  "113",
+]);
+
 validateOfficialArticles({
   articles: euAiActArticles,
   articleIds: euAiActArticleIds,
-  expectedCount: 113,
+  expectedCount: expectedEuAiActArticleNumbers.length,
+  expectedNumbers: expectedEuAiActArticleNumbers,
   instrumentId: "eu-ai-act",
   idPrefix: "eu-ai-act-art-",
-  source: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+  source: euAiActBaseSource,
+  sourceForArticle: (_article, number) =>
+    euAiActInsertedArticleNumbers.has(number)
+      ? euAiActAmendingSource
+      : euAiActBaseSource,
+  sourceFragmentForArticle: (_article, number) =>
+    euAiActInsertedArticleNumbers.has(number)
+      ? euAiActAmendmentFragment
+      : `${euAiActBaseSource}#art_${number}`,
+  validateArticle: (article, number) => {
+    if (euAiActAmendedArticleNumbers.has(number)) {
+      assert(
+        article.consolidatedAsOf === "2026-07-27",
+        `${article.id}.consolidatedAsOf must identify the operative amendment date`,
+      );
+      assert(
+        article.amendmentEffectiveFrom === "2026-07-27",
+        `${article.id}.amendmentEffectiveFrom is incorrect`,
+      );
+      assert(
+        article.amendingSource === euAiActAmendmentFragment,
+        `${article.id}.amendingSource does not identify Regulation (EU) 2026/1744`,
+      );
+    } else {
+      assert(
+        article.amendingSource === undefined,
+        `${article.id} must not claim a 2026 textual amendment`,
+      );
+    }
+    if (euAiActInsertedArticleNumbers.has(number)) {
+      assert(
+        article.introducedBy === "Regulation (EU) 2026/1744, Article 1",
+        `${article.id}.introducedBy is incorrect`,
+      );
+    }
+  },
+  textAvailabilityMode: "complete-current-operative-articles-and-annexes-with-enactment-recitals",
   label: "EU AI Act",
 });
+
+const euAiActArticleByNumber = new Map(
+  euAiActArticles.map((article) => [article.articleNumber, article]),
+);
+assert(
+  !/^5\./m.test(euAiActArticleByNumber.get("10").fullText),
+  "EU AI Act Article 10 must reflect deletion of paragraph 5",
+);
+assert(
+  /2 December 2027/.test(euAiActArticleByNumber.get("113").fullText) &&
+    /2 August 2028/.test(euAiActArticleByNumber.get("113").fullText) &&
+    /Articles 102 to 110 shall apply from 27 July 2026\.$/.test(
+      euAiActArticleByNumber.get("113").fullText,
+    ),
+  "EU AI Act Article 113 does not contain the operative 2026 application dates",
+);
+const euAiActApplicationStatusCounts = euAiActArticles.reduce(
+  (counts, article) => {
+    counts.set(
+      article.legalEffectStatus,
+      (counts.get(article.legalEffectStatus) ?? 0) + 1,
+    );
+    assertObject(article.applicability, `${article.id}.applicability`);
+    assert(
+      article.applicability.applicationStatusAsOf === "2026-07-28" &&
+        Array.isArray(article.applicability.applicationSchedule) &&
+        article.applicability.applicationSchedule.length > 0 &&
+        article.appliesFrom ===
+          article.applicability.applicationSchedule[0].appliesFrom,
+      `${article.id} is missing its amended Article 113 application layer`,
+    );
+    return counts;
+  },
+  new Map(),
+);
+assert(
+  euAiActApplicationStatusCounts.get("current-applicable") === 43 &&
+    euAiActApplicationStatusCounts.get("partially-applicable") === 2 &&
+    euAiActApplicationStatusCounts.get("in-force-not-yet-applicable") === 74,
+  "EU AI Act current/future application-layer counts are incorrect",
+);
+assert(
+  euAiActArticleByNumber.get("5").applicability.applicationSchedule.some(
+    (stage) => stage.appliesFrom === "2026-12-02",
+  ) &&
+    euAiActArticleByNumber.get("6").applicability.applicationSchedule.some(
+      (stage) => stage.appliesFrom === "2027-12-02",
+    ) &&
+    euAiActArticleByNumber.get("6").applicability.applicationSchedule.some(
+      (stage) => stage.appliesFrom === "2028-08-02",
+    ) &&
+    euAiActArticleByNumber.get("102").appliesFrom === "2026-07-27",
+  "EU AI Act amended phased-application anchors are incomplete",
+);
+
+function validateEuAiActDocumentContext() {
+  const expectedAnnexNumbers = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+    "XII",
+    "XIII",
+    "XIV",
+  ];
+  const amendedAnnexes = new Set(["I", "VIII", "XIV"]);
+  const snapshotHashes = {
+    baseOfficialXhtmlSha256:
+      "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+    amendingOfficialXhtmlSha256:
+      "9d754652b867722807e4219c85912ce354233e58a1b4eb8c7752b4d1922993db",
+  };
+
+  assert(
+    euAiActAnnexes.length === expectedAnnexNumbers.length,
+    "EU AI Act corpus must contain all 14 current Annexes",
+  );
+  euAiActAnnexes.forEach((annex, index) => {
+    const number = expectedAnnexNumbers[index];
+    const expectedId = `eu-ai-act-annex-${number.toLowerCase()}`;
+    assert(annex.annexNumber === number, `${expectedId} is missing or misordered`);
+    assert(annex.id === expectedId, `EU AI Act Annex ${number} has an invalid id`);
+    assert(annex.instrumentId === "eu-ai-act", `${expectedId} references the wrong instrument`);
+    assert(annex.provisionType === "annex", `${expectedId}.provisionType must be annex`);
+    assert(annex.label === `Annex ${number}`, `${expectedId}.label is invalid`);
+    assertString(annex.title, `${expectedId}.title`);
+    assertStringArray(annex.paragraphs, `${expectedId}.paragraphs`, {
+      allowDuplicates: true,
+    });
+    assert(
+      annex.fullText === annex.paragraphs.join("\n\n"),
+      `${expectedId}.fullText does not match its paragraph sequence`,
+    );
+    assert(annex.language === "en", `${expectedId}.language must be en`);
+    assert(annex.textAvailability === "full", `${expectedId} must contain full text`);
+    assert(annex.retrievedOn === "2026-07-28", `${expectedId}.retrievedOn is stale`);
+    assert(
+      annex.consolidatedAsOf === "2026-07-27",
+      `${expectedId}.consolidatedAsOf is incorrect`,
+    );
+    assertObject(annex.sourceSnapshotHashes, `${expectedId}.sourceSnapshotHashes`);
+    assert(
+      annex.sourceSnapshotHashes.baseOfficialXhtmlSha256 ===
+        snapshotHashes.baseOfficialXhtmlSha256 &&
+        annex.sourceSnapshotHashes.amendingOfficialXhtmlSha256 ===
+          snapshotHashes.amendingOfficialXhtmlSha256,
+      `${expectedId} does not identify the audited official XHTML snapshots`,
+    );
+
+    if (number === "XIV") {
+      assert(annex.source === euAiActAmendingSource, `${expectedId}.source is incorrect`);
+      assert(
+        annex.sourceFragment === euAiActAmendmentFragment,
+        `${expectedId}.sourceFragment is incorrect`,
+      );
+    } else {
+      assert(annex.source === euAiActBaseSource, `${expectedId}.source is incorrect`);
+      assert(
+        annex.sourceFragment === `${euAiActBaseSource}#anx_${number}`,
+        `${expectedId}.sourceFragment is incorrect`,
+      );
+    }
+    if (amendedAnnexes.has(number)) {
+      assert(
+        annex.amendingSource === euAiActAmendmentFragment &&
+          annex.amendmentEffectiveFrom === "2026-07-27",
+        `${expectedId} lacks the operative 2026 amendment boundary`,
+      );
+    } else {
+      assert(
+        annex.amendingSource === undefined,
+        `${expectedId} must not claim a 2026 textual amendment`,
+      );
+    }
+  });
+
+  const annexByNumber = new Map(
+    euAiActAnnexes.map((annex) => [annex.annexNumber, annex]),
+  );
+  const annexI = annexByNumber.get("I");
+  const sectionAEnd = annexI.paragraphs.findIndex((block) =>
+    block.startsWith("Section B."),
+  );
+  assert(
+    !annexI.paragraphs.slice(0, sectionAEnd).some((block) => /^1\.\s/.test(block)) &&
+      /^21\. Regulation \(EU\) 2023\/1230/m.test(annexI.fullText),
+    "EU AI Act Annex I does not apply the 2026 Section A deletion and Section B addition",
+  );
+  const annexVIII = annexByNumber.get("VIII");
+  const sectionBStart = annexVIII.paragraphs.findIndex((block) =>
+    block.startsWith("Section B"),
+  );
+  const sectionCStart = annexVIII.paragraphs.findIndex((block) =>
+    block.startsWith("Section C"),
+  );
+  const sectionB = annexVIII.paragraphs.slice(sectionBStart, sectionCStart);
+  assert(
+    !sectionB.some((block) => /^(?:7|9)\.\s/.test(block)) &&
+      sectionB.some((block) => /^8\.\s/.test(block)),
+    "EU AI Act Annex VIII Section B does not apply the enacted point deletions",
+  );
+  assert(
+    /AIH 0401 .*Agentic AI/m.test(annexByNumber.get("XIV").fullText),
+    "EU AI Act Annex XIV technology-code table is incomplete",
+  );
+
+  assert(
+    euAiActRecitals.length === 180,
+    `EU AI Act corpus must contain 180 enactment Recitals; found ${euAiActRecitals.length}`,
+  );
+  euAiActRecitals.forEach((recital, index) => {
+    const number = String(index + 1);
+    const expectedId = `eu-ai-act-recital-${number}`;
+    assert(recital.recitalNumber === number, `${expectedId} is missing or misordered`);
+    assert(recital.id === expectedId, `EU AI Act Recital ${number} has an invalid id`);
+    assert(recital.instrumentId === "eu-ai-act", `${expectedId} references the wrong instrument`);
+    assert(recital.provisionType === "recital", `${expectedId}.provisionType must be recital`);
+    assert(recital.label === `Recital ${number}`, `${expectedId}.label is invalid`);
+    assert(
+      recital.fullText === recital.paragraphs.join("\n\n") &&
+        new RegExp(`^\\(${number}\\)\\s`).test(recital.fullText),
+      `${expectedId} does not contain the complete numbered source text`,
+    );
+    assert(
+      recital.legalEffectStatus === "non-operative-context-only" &&
+        recital.researchTreatment === "explanatory-context-only" &&
+        recital.substantiveConceptMetricEligible === false,
+      `${expectedId} must remain outside operative and substantive metrics`,
+    );
+    assert(
+      recital.source === euAiActBaseSource &&
+        recital.sourceFragment === `${euAiActBaseSource}#rct_${number}`,
+      `${expectedId} does not identify the enactment Recital source`,
+    );
+    assert(
+      recital.sourceSnapshotSha256 === snapshotHashes.baseOfficialXhtmlSha256,
+      `${expectedId} has an incorrect official source hash`,
+    );
+    assert(
+      /are not merged into the 180 Recitals/.test(recital.documentVersionBoundary),
+      `${expectedId} does not separate the amending act's Recitals`,
+    );
+  });
+}
+
+validateEuAiActDocumentContext();
 
 const expectedUkGdprArticleNumbers =
   "1,2,3,4,4A,5,6,7,8,8ZA,8A,9,10,11,11A,12,12A.,13,14,15,16,17,18,19,20,21,22,22A,22B,22C,22D,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,44A,45,45A,45B,45C,46,47,47A,48,49,49A,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,84A,84B,84C,84D,85,86,86A,87,88,89,90,91,91A,92,93,94,95,96,97,98,99".split(
@@ -1265,6 +1623,13 @@ function validateUkGdprArticles() {
   assert(
     instrument.source.url === `${source}/contents`,
     "UK GDPR instrument must cite the official revised-text contents page",
+  );
+  assert(
+    instrument.textAvailability.stored === true &&
+      instrument.textAvailability.mode ===
+        "separate-complete-official-revised-article-import" &&
+      instrument.coverage?.count === 120,
+    "UK GDPR instrument must declare its complete local revised-text corpus",
   );
 }
 
@@ -1373,6 +1738,7 @@ function validateOfficialChineseArticles({
     `${instrumentId} must declare its complete original and English reference imports`,
   );
   assert(instrument.textAvailability.language === "zh-CN", `${instrumentId} source language must be zh-CN`);
+  assert(instrument.textAvailability.stored === true, `${instrumentId} must declare its complete local corpus as stored`);
   assertObject(instrument.coverage, `${instrumentId}.coverage`);
   assert(
     instrument.coverage.unit === "article" &&
@@ -1604,7 +1970,7 @@ function validatePipedaCorpus() {
   );
   assertCompleteCoverageMetadata("ca-pipeda", {
     count: 75,
-    language: "fr",
+    language: "en-CA",
     completeness:
       "complete-official-co-authentic-current-in-force-text-with-enacted-amendments-not-in-force",
   });
@@ -1802,6 +2168,7 @@ function validateTaiwanPdpaCorpus() {
     assert(article.language === "zh-Hant-TW", `${article.id}.language must be zh-Hant-TW`);
     assert(allowedStatuses.has(article.legalEffectStatus), `${article.id}.legalEffectStatus is unsupported`);
     assertGovernmentEnglishReference(article, article.id);
+    const english = article.translations.en;
     assertObject(article.applicability, `${article.id}.applicability`);
     assertString(article.applicability.currentLawStatus, `${article.id}.applicability.currentLawStatus`);
     assert(
@@ -1809,10 +2176,25 @@ function validateTaiwanPdpaCorpus() {
       `${article.id}.contentSha256 is incorrect`,
     );
     if (article.legalEffectStatus === "in-force") {
+      assert(
+        english.currentTextEquivalent === true &&
+          english.alignmentStatus === "aligned-with-current-effective-text" &&
+          english.coverageStatus ===
+            "complete-current-effective-official-reference-translation",
+        `${article.id} must identify its English reference as current-effective`,
+      );
       assertIsoDate(article.appliesFrom, `${article.id}.appliesFrom`);
       assert(article.applicability.currentLawStatus === "in-force", `${article.id} has inconsistent current status`);
       assert(article.currentEffectiveVersion === null, `${article.id} must not duplicate a prior current version`);
     } else {
+      assert(
+        english.currentTextEquivalent === false &&
+          english.alignmentStatus ===
+            "latest-promulgated-reference-not-current-effective" &&
+          english.coverageStatus ===
+            "complete-latest-promulgated-not-current-effective-official-reference-translation",
+        `${article.id} must warn that its English reference is latest-promulgated rather than current-effective`,
+      );
       assert(article.appliesFrom === null, `${article.id}.appliesFrom must remain null before commencement`);
       assertString(article.applicability.commencementCondition, `${article.id}.applicability.commencementCondition`, 30);
       const priorVersionRemains = /remains-in-force-until-commencement/.test(
@@ -2232,8 +2614,26 @@ function validateIndiaGulfCorpora() {
     });
   }
   assert(
-    saudiPdplTransferArticles.every((article) => article.appliesFrom === null),
-    "Saudi Transfer Regulation must not invent an unverified Gazette publication date",
+    saudiPdplTransferArticles.every(
+      (article) =>
+        article.appliesFrom === "2024-09-01" &&
+        article.sourceVersion?.officialGazette ===
+          "Umm Al-Qura, Issue No. 5047" &&
+        article.sourceVersion?.officialGazetteDate === "2024-09-01" &&
+        article.sourceVersion?.effectiveFrom === "2024-09-01" &&
+        article.sourceVersion?.gazetteSource ===
+          "https://portal.uqn.gov.sa/details?p=25412",
+    ),
+    "Saudi Transfer Regulation must preserve the verified Gazette publication and Article 9 effective date",
+  );
+  const saudiTransferInstrument = instruments.find(
+    (instrument) => instrument.id === "sa-pdpl-transfer-regulation-2023",
+  );
+  assert(
+    saudiTransferInstrument?.dates?.publishedOn === "2024-09-01" &&
+      saudiTransferInstrument?.dates?.effectiveFrom === "2024-09-01" &&
+      /Umm Al-Qura issue 5047/.test(saudiTransferInstrument.statusNote),
+    "Saudi Transfer Regulation instrument metadata must match the verified Gazette record",
   );
 }
 
@@ -2667,7 +3067,7 @@ function validateSwissVietnamKoreaAndUsCorpora() {
   }
 
   assert(koreaPipaArticles.length === 138, "Korea PIPA must contain 126 Articles and 12 supplements");
-  assert(koreaAiFrameworkArticles.length === 47, "Korea AI Framework Act must contain 44 Articles and three supplements on 20 July 2026");
+  assert(koreaAiFrameworkArticles.length === 49, "Korea AI Framework Act must contain 46 Articles and three supplements in the phase effective 21 July 2026");
   validateExactTextNodes(koreaPipaArticles, {
     instrumentId: "kr-pipa-2011",
     language: "ko-KR",
@@ -2686,34 +3086,30 @@ function validateSwissVietnamKoreaAndUsCorpora() {
       `${provision.id} must identify the current MOLEG English reference`,
     );
   }
-  const nextPhaseAiArticleNumbers = new Set(["2", "3", "6", "18", "35"]);
   for (const provision of koreaAiFrameworkArticles) {
     assertImportedEnglishTranslation(provision, provision.id);
-    const differsFromCurrent = nextPhaseAiArticleNumbers.has(provision.articleNumber);
     assert(
-      provision.translations.en.currentTextEquivalent === !differsFromCurrent,
-      `${provision.id}.translations.en.currentTextEquivalent is incorrect`,
+      provision.translations.en.currentTextEquivalent === true,
+      `${provision.id}.translations.en must align with the current 21 July 2026 Korean phase`,
     );
     assert(
       provision.translations.en.coverageStatus ===
-        (differsFromCurrent
-          ? "complete-next-phase-reference-not-current"
-          : provision.unitType === "supplementary-provision-block"
-            ? "complete-promulgated-addenda-reference"
-            : "complete-current-aligned-reference"),
+        (provision.unitType === "supplementary-provision-block"
+          ? "complete-promulgated-addenda-reference"
+          : "complete-current-aligned-reference"),
       `${provision.id}.translations.en.coverageStatus is incorrect`,
     );
     assert(
       provision.translationStatus ===
-        "government-next-phase-reference-stored-provision-warning",
+        "government-current-phase-reference-stored",
       `${provision.id}.translationStatus is incorrect`,
     );
   }
   assert(
     koreaAiFrameworkArticles.filter(
       (item) => item.translations.en.currentTextEquivalent === false,
-    ).length === 5,
-    "Korea AI Act must flag exactly five Articles whose available English wording belongs to the 21 July 2026 phase",
+    ).length === 0,
+    "Korea AI Act must not retain superseded English phase warnings after 21 July 2026",
   );
   assertCompleteCoverageMetadata("kr-pipa-2011", {
     count: 138,
@@ -2721,7 +3117,7 @@ function validateSwissVietnamKoreaAndUsCorpora() {
     completeness: "complete-current-authoritative-korean-article-and-supplement-corpus",
   });
   assertCompleteCoverageMetadata("kr-ai-framework-act-2025", {
-    count: 47,
+    count: 49,
     language: "ko-KR",
     completeness: "complete-current-authoritative-korean-article-and-supplement-corpus",
   });
@@ -3125,6 +3521,8 @@ for (const articleId of gdprArticleIds) {
 const officialArticleIdSets = [
   gdprArticleIds,
   euAiActArticleIds,
+  euAiActAnnexIds,
+  euAiActRecitalIds,
   ukGdprArticleIds,
   piplArticleIds,
   networkDataArticleIds,
@@ -3176,6 +3574,8 @@ const combinedProvisionIds = new Set([
   ...provisionIds,
   ...gdprArticleIds,
   ...euAiActArticleIds,
+  ...euAiActAnnexIds,
+  ...euAiActRecitalIds,
   ...ukGdprArticleIds,
   ...piplArticleIds,
   ...networkDataArticleIds,
@@ -3215,6 +3615,8 @@ const combinedProvisionIds = new Set([
 const allOfficialArticles = [
   ...gdprArticles,
   ...euAiActArticles,
+  ...euAiActAnnexes,
+  ...euAiActRecitals,
   ...ukGdprArticles,
   ...piplArticles,
   ...networkDataArticles,
@@ -3280,16 +3682,72 @@ for (const review of provisionConceptReviews) {
     `${review.provisionId}.conceptIds`,
     { allowEmpty: review.relevance === "structural-context" },
   );
+  assertReferenceArray(
+    review.candidateConceptIds ?? [],
+    conceptIds,
+    `${review.provisionId}.candidateConceptIds`,
+    { allowEmpty: true },
+  );
+  assertReferenceArray(
+    review.contextualConceptIds ?? [],
+    conceptIds,
+    `${review.provisionId}.contextualConceptIds`,
+    { allowEmpty: true },
+  );
+  assertReferenceArray(
+    review.candidateContextualConceptIds ?? [],
+    conceptIds,
+    `${review.provisionId}.candidateContextualConceptIds`,
+    { allowEmpty: true },
+  );
+  const primaryConceptSet = new Set([
+    ...review.conceptIds,
+    ...(review.contextualConceptIds ?? []),
+  ]);
+  for (const candidateConceptId of [
+    ...(review.candidateConceptIds ?? []),
+    ...(review.candidateContextualConceptIds ?? []),
+  ]) {
+    assert(
+      !primaryConceptSet.has(candidateConceptId),
+      `${review.provisionId} duplicates ${candidateConceptId} across reviewed and candidate mappings`,
+    );
+  }
   if (review.relevance === "substantive-topic") {
     assert(
       review.conceptIds.length > 0,
       `${review.provisionId} is topic-relevant but has no core-concept link`,
     );
+    assert(
+      (review.contextualConceptIds ?? []).length === 0,
+      `${review.provisionId} is substantive and must not duplicate contextual concept links`,
+    );
+    assert(
+      (review.candidateContextualConceptIds ?? []).length === 0,
+      `${review.provisionId} is substantive and must not contain candidate contextual links`,
+    );
+  } else {
+    assert(
+      review.conceptIds.length === 0,
+      `${review.provisionId} is structural context and must not enter the substantive concept graph`,
+    );
+    assert(
+      (review.candidateConceptIds ?? []).length === 0,
+      `${review.provisionId} is structural context and must not contain candidate substantive links`,
+    );
   }
   assertString(review.rationale, `${review.provisionId}.rationale`, 80);
   assert(
-    review.reviewStatus === "editorial-reviewed",
-    `${review.provisionId}.reviewStatus must be editorial-reviewed`,
+    provisionConceptReviewStatuses.has(review.reviewStatus),
+    `${review.provisionId}.reviewStatus is not supported`,
+  );
+  assert(
+    provisionConceptMappingBases.has(review.mappingBasis),
+    `${review.provisionId}.mappingBasis is not supported`,
+  );
+  assert(
+    confidenceValues.has(review.confidence),
+    `${review.provisionId}.confidence is not supported`,
   );
   assertIsoDate(review.reviewedOn, `${review.provisionId}.reviewedOn`);
 }
@@ -3306,7 +3764,10 @@ for (const provisionId of combinedProvisionIds) {
 const indexedProvisionConceptIds = new Map(
   provisionConceptReviews.map((review) => [
     review.provisionId,
-    new Set(review.conceptIds),
+    new Set([
+      ...review.conceptIds,
+      ...(review.candidateConceptIds ?? []),
+    ]),
   ]),
 );
 const provisionInstrumentById = new Map();
@@ -3910,7 +4371,7 @@ const statusAnchors = new Map([
   ["au-privacy-act-1988", ["in-force-with-scheduled-amendment", null]],
   ["us-eo-14110", ["revoked", "2025-01-20"]],
   ["us-ca-sb-1047-2024", ["vetoed", "2024-09-29"]],
-  ["kr-ai-framework-act-2025", ["in-force-with-scheduled-amendment", null]],
+  ["kr-ai-framework-act-2025", ["in-force-amended", null]],
   ["tw-ai-basic-act-2026", ["in-force", null]],
   ["vn-personal-data-protection-decree-13-2023", ["repealed", "2026-01-01"]],
   ["ca-bill-c-27-aida-2022-lapsed", ["lapsed", "2025-01-06"]],

@@ -12,30 +12,30 @@ const digest = (value) =>
 const corpus = await loadJson("kr-ai-framework-act-2025-current-articles.json");
 const manifest = await loadJson("kr-ai-framework-act-2025-corpus-manifest.json");
 
-test("Korea AI Framework Act current corpus has 44 main Articles and three complete addenda blocks", () => {
+test("Korea AI Framework Act current corpus has 46 main Articles and three complete addenda blocks", () => {
   const articles = corpus.filter((unit) => unit.unitType === "article");
   const addenda = corpus.filter(
     (unit) => unit.unitType === "supplementary-provision-block",
   );
-  assert.equal(corpus.length, 47);
-  assert.equal(articles.length, 44);
+  assert.equal(corpus.length, 49);
+  assert.equal(articles.length, 46);
   assert.equal(addenda.length, 3);
   assert.equal(
     digest(articles.map((unit) => unit.articleNumber).join("\n")),
-    "f1767c6fbc093e0e21c585471961c5ae70ecdd3c10fa523cd0797c5a900b91e0",
+    "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
   );
   assert.ok(articles.some((unit) => unit.id === "kr-ai-framework-act-2025-art-22-2"));
-  assert.ok(!articles.some((unit) => unit.id === "kr-ai-framework-act-2025-art-17-2"));
-  assert.ok(!articles.some((unit) => unit.id === "kr-ai-framework-act-2025-art-22-3"));
+  assert.ok(articles.some((unit) => unit.id === "kr-ai-framework-act-2025-art-17-2"));
+  assert.ok(articles.some((unit) => unit.id === "kr-ai-framework-act-2025-art-22-3"));
   assert.equal(articles.at(-1).id, "kr-ai-framework-act-2025-art-43");
 
   for (const unit of corpus) {
     assert.equal(unit.instrumentId, "kr-ai-framework-act-2025");
     assert.equal(unit.language, "ko-KR");
-    assert.equal(unit.versionAsOf, "2026-07-20");
+    assert.equal(unit.versionAsOf, "2026-07-28");
     assert.equal(unit.sourceVersion.masterSequence, "282791");
     assert.equal(unit.sourceVersion.promulgationNumber, "21311");
-    assert.equal(unit.sourceVersion.effectivePhaseDate, "2026-01-22");
+    assert.equal(unit.sourceVersion.effectivePhaseDate, "2026-07-21");
     assert.equal(unit.sourceVersion.futureEffectiveTextIncluded, false);
     assert.equal(
       unit.textAvailability,
@@ -48,7 +48,7 @@ test("Korea AI Framework Act current corpus has 44 main Articles and three compl
     assert.match(unit.sourceNodeSha256, /^[a-f0-9]{64}$/);
     assert.equal(
       unit.translationStatus,
-      "government-next-phase-reference-stored-provision-warning",
+      "government-current-phase-reference-stored",
     );
     assert.equal(unit.translationReference.currentLanguageToggleEligible, true);
     const english = unit.translations.en;
@@ -97,14 +97,14 @@ test("AI Act lifecycle records the formal enactment, intervening amendment, and 
   assert.equal(manifest.interveningAmendment.actNumber, "21065");
   assert.equal(manifest.currentVersion.promulgationNumber, "21311");
   assert.equal(manifest.currentVersion.promulgatedOn, "2026-01-20");
-  assert.equal(manifest.currentVersion.effectivePhaseDate, "2026-01-22");
+  assert.equal(manifest.currentVersion.effectivePhaseDate, "2026-07-21");
   assert.equal(manifest.currentVersion.futureEffectiveTextIncluded, false);
-  assert.equal(manifest.corpus.nodeCount, 47);
-  assert.equal(manifest.corpus.mainArticleCount, 44);
+  assert.equal(manifest.corpus.nodeCount, 49);
+  assert.equal(manifest.corpus.mainArticleCount, 46);
   assert.equal(manifest.corpus.structuralHeadingCount, 7);
-  assert.equal(manifest.corpus.statutoryArticleTextFieldCount, 402);
-  assert.equal(manifest.corpus.articleSourceNoteCount, 3);
-  assert.equal(manifest.corpus.normalizedFullTextCharacterCount, 25282);
+  assert.equal(manifest.corpus.statutoryArticleTextFieldCount, 414);
+  assert.equal(manifest.corpus.articleSourceNoteCount, 6);
+  assert.equal(manifest.corpus.normalizedFullTextCharacterCount, 26218);
   assert.equal(manifest.corpus.completeSourceCoverageVerified, true);
   assert.equal(
     manifest.corpus.contentSha256,
@@ -112,49 +112,35 @@ test("AI Act lifecycle records the formal enactment, intervening amendment, and 
   );
 });
 
-test("The final Act No. 21311 phase remains isolated until 21 July 2026", async () => {
-  assert.equal(manifest.promulgatedFuturePhases.length, 1);
-  const future = manifest.promulgatedFuturePhases[0];
-  assert.equal(future.amendingActNumber, "21311");
-  assert.equal(future.effectiveOn, "2026-07-21");
-  assert.equal(future.mainArticleCount, 46);
-  assert.equal(future.includedInCurrentCorpus, false);
-  assert.equal(
-    future.articleNumberSequenceSha256,
-    "a029a23aa0ccaecc602ed0d77a2e403231bab60695b6db4b765852a500e6eb6b",
-  );
+test("The 21 July 2026 phase is current and the prior phase remains an auditable snapshot", async () => {
+  assert.deepEqual(manifest.promulgatedFuturePhases, []);
 
-  const current = await readFile(
+  const priorPhase = await readFile(
     new URL("source-snapshots/kr-ai-014820-current-effective-2026-07-20.xml", dataRoot),
     "utf8",
   );
-  const futureText = await readFile(
+  const current = await readFile(
     new URL("source-snapshots/kr-ai-014820-future-2026-07-21.xml", dataRoot),
     "utf8",
   );
+  const priorMain = priorPhase.match(/<조문>[\s\S]*?<\/조문>/u)?.[0];
   const currentMain = current.match(/<조문>[\s\S]*?<\/조문>/u)?.[0];
-  const futureMain = futureText.match(/<조문>[\s\S]*?<\/조문>/u)?.[0];
-  assert.ok(currentMain && futureMain);
-  assert.match(current, /<시행일자>20260122<\/시행일자>/);
-  assert.doesNotMatch(currentMain, /제17조의2\(인공지능제품/);
-  assert.doesNotMatch(currentMain, /제22조의3\(인공지능기술 확보/);
-  assert.match(futureText, /<시행일자>20260721<\/시행일자>/);
-  assert.match(futureMain, /제17조의2\(인공지능제품/);
-  assert.match(futureMain, /제22조의3\(인공지능기술 확보/);
-  assert.doesNotMatch(
-    corpus.find((unit) => unit.articleNumber === "3").fullText,
-    /인공지능취약계층/,
-  );
-  assert.match(futureMain, /인공지능취약계층/);
-  assert.match(future.phaseNote, /Articles 2, 3, 6, 18, and 35/);
+  assert.ok(priorMain && currentMain);
+  assert.match(priorPhase, /<시행일자>20260122<\/시행일자>/);
+  assert.doesNotMatch(priorMain, /제17조의2\(인공지능제품/);
+  assert.doesNotMatch(priorMain, /제22조의3\(인공지능기술 확보/);
+  assert.match(current, /<시행일자>20260721<\/시행일자>/);
+  assert.match(currentMain, /제17조의2\(인공지능제품/);
+  assert.match(currentMain, /제22조의3\(인공지능기술 확보/);
+  assert.match(corpus.find((unit) => unit.articleNumber === "3").fullText, /인공지능취약계층/);
 });
 
-test("AI Act stores the complete government English next-phase reference with provision-level warnings", () => {
+test("AI Act stores a complete government English reference aligned to the current phase", () => {
   assert.equal(manifest.translation.currentLanguageToggleEligible, true);
   assert.equal(manifest.translation.bodyStored, true);
   assert.equal(
     manifest.translation.coverageStatus,
-    "complete-versioned-reference-with-phase-boundary",
+    "complete-current-aligned-reference",
   );
   assert.equal(manifest.translation.versionAsOf, "2026-07-21");
   assert.equal(
@@ -171,47 +157,34 @@ test("AI Act stores the complete government English next-phase reference with pr
   );
   assert.equal(
     manifest.translation.KLRIReferenceBoundary.alignment,
-    "future-effective-2026-07-21-phase",
+    "current-effective-2026-07-21-phase",
   );
   assert.equal(manifest.translation.referenceMainArticleCount, 46);
   assert.equal(manifest.translation.referenceSupplementaryProvisionBlockCount, 3);
-  assert.equal(manifest.translation.attachedToCurrentUnitCount, 47);
-  assert.deepEqual(
-    manifest.translation.currentArticleReferenceAlignment.nextPhaseDifferentArticles,
-    ["2", "3", "6", "18", "35"],
-  );
-  assert.deepEqual(
-    manifest.translation.currentArticleReferenceAlignment.futureOnlyArticlesNotAttachedToCurrentCorpus,
-    ["17-2", "22-3"],
-  );
+  assert.equal(manifest.translation.attachedToCurrentUnitCount, 49);
+  assert.equal(manifest.translation.currentArticleReferenceAlignment.currentArticleCount, 46);
+  assert.equal(manifest.translation.currentArticleReferenceAlignment.currentEquivalentCount, 46);
+  assert.deepEqual(manifest.translation.currentArticleReferenceAlignment.mismatchedArticles, []);
   const articles = corpus.filter((unit) => unit.unitType === "article");
   assert.equal(
     articles.filter(
       (unit) =>
         unit.translations.en.alignmentStatus ===
-        "text-unchanged-between-current-and-2026-07-21-phase",
+        "aligned-with-current-2026-07-21-phase",
     ).length,
-    39,
+    46,
   );
   assert.equal(
     articles.filter((unit) => unit.translations.en.currentTextEquivalent).length,
-    39,
-  );
-  assert.equal(
-    articles.filter(
-      (unit) =>
-        unit.translations.en.alignmentStatus ===
-        "next-phase-reference-differs-from-current-2026-07-20",
-    ).length,
-    5,
+    46,
   );
   assert.match(
     corpus.find((unit) => unit.articleNumber === "3").translations.en.note,
-    /not the wording effective on 20 July 2026/i,
+    /aligned with the current Act No\. 21311 phase/i,
   );
   assert.match(
     corpus.find((unit) => unit.articleNumber === "31").translations.en.note,
-    /unchanged between 20 and 21 July 2026/i,
+    /aligned with the current Act No\. 21311 phase/i,
   );
   assert.match(manifest.translation.authorityNote, /Korean prevails/i);
   assert.equal(
@@ -236,6 +209,6 @@ test("Every AI Act frozen source snapshot matches its manifest SHA-256", async (
   );
   assert.equal(
     current.sha256,
-    "a05b63d5021be2ce30076f674213d3e9d04afbd5137966a5ac1e7db50992c27d",
+    "1212c9922d92e5c2313a773ee8b4db1931666d0f879cf7b50ee2d60750f98177",
   );
 });

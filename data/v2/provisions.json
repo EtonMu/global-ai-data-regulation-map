@@ -9303,7 +9303,13 @@
     "locator": "Section 6.1",
     "title": "Algorithmic impact assessment",
     "provisionType": "directive-section",
-    "parentId": null,
+    "parentId": "ca-adm-directive-sec-6",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "ca-adm-directive-sec-6",
+      "note": "This editorial subsection anchor supports precise navigation within the complete Section 6 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires completion, approval, publication, and scheduled updating of an Algorithmic Impact Assessment before a covered automated decision system enters production.",
     "conceptIds": [
       "impact-assessment",
@@ -9344,7 +9350,13 @@
     "locator": "Section 6.3.13",
     "title": "Human involvement",
     "provisionType": "directive-subsection",
-    "parentId": null,
+    "parentId": "ca-adm-directive-sec-6",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "ca-adm-directive-sec-6",
+      "note": "This editorial subsection anchor supports precise navigation within the complete Section 6 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires covered automated decision systems to allow human involvement at the level prescribed by the directive's impact-based requirements.",
     "conceptIds": [
       "human-oversight",
@@ -9384,7 +9396,13 @@
     "locator": "Section 6.4.1",
     "title": "Recourse",
     "provisionType": "directive-subsection",
-    "parentId": null,
+    "parentId": "ca-adm-directive-sec-6",
+    "researchTreatment": {
+      "role": "navigation-analytical-excerpt",
+      "metricEligible": false,
+      "canonicalProvisionId": "ca-adm-directive-sec-6",
+      "note": "This editorial subsection anchor supports precise navigation within the complete Section 6 corpus node. It is excluded from provision-level metrics to prevent double counting."
+    },
     "summary": "Requires clients to be informed of timely, effective, and accessible options to challenge an administrative decision.",
     "conceptIds": [
       "automated-decision-safeguards",

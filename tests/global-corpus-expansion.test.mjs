@@ -15,6 +15,8 @@ const [
   sourceAudits,
   gdprArticles,
   euAiActArticles,
+  euAiActAnnexes,
+  euAiActRecitals,
   ukGdprArticles,
   piplArticles,
   networkDataArticles,
@@ -59,6 +61,8 @@ const [
   readJson("source-audit.json"),
   readJson("gdpr-articles.json"),
   readJson("eu-ai-act-articles.json"),
+  readJson("eu-ai-act-annexes.json"),
+  readJson("eu-ai-act-recitals.json"),
   readJson("uk-gdpr-articles.json"),
   readJson("cn-pipl-articles.json"),
   readJson("cn-network-data-regulations-articles.json"),
@@ -105,6 +109,8 @@ const provisionById = new Map(
 const completeCorpora = [
   gdprArticles,
   euAiActArticles,
+  euAiActAnnexes,
+  euAiActRecitals,
   ukGdprArticles,
   piplArticles,
   networkDataArticles,
@@ -156,9 +162,9 @@ test("expanded corpus exposes its audited release snapshot", () => {
   assert.equal(jurisdictions.length, 30);
   assert.equal(instruments.length, 58);
   assert.equal(provisions.length, 255);
-  assert.equal(mergedProvisionIds.size, 2932);
-  assert.equal(relations.length, 74);
-  assert.equal(statusEvents.length, 116);
+  assert.equal(mergedProvisionIds.size, 3134);
+  assert.equal(relations.length, 76);
+  assert.equal(statusEvents.length, 120);
   assert.equal(sourceAudits.length, instruments.length);
 });
 
@@ -170,7 +176,7 @@ test("high-risk lifecycle corrections remain explicit", () => {
   assert.equal(instrumentById.get("tw-ai-basic-act-2026").lifecycleStatus, "in-force");
   assert.equal(
     instrumentById.get("kr-ai-framework-act-2025").lifecycleStatus,
-    "in-force-with-scheduled-amendment",
+    "in-force-amended",
   );
   assert.equal(
     instrumentById.get("vn-personal-data-protection-decree-13-2023")
@@ -279,7 +285,7 @@ test("reviewed expansion relations use precise endpoints and qualified types", (
     const number = Number(relation.id.replace("v2-rel-", ""));
     return number >= 43;
   });
-  assert.equal(expandedRelations.length, 32);
+  assert.equal(expandedRelations.length, 34);
   assert.equal(
     expandedRelations.some(
       (relation) => relation.type === "superseded-for-current-guidance-by",
@@ -315,7 +321,7 @@ test("reviewed expansion relations use precise endpoints and qualified types", (
   }
   assert.deepEqual(
     expandedRelations.slice(-2).map((relation) => [relation.id, relation.verifiedOn]),
-    [["v2-rel-068", "2026-07-20"], ["v2-rel-069", "2026-07-20"]],
+    [["v2-rel-077", "2026-07-28"], ["v2-rel-078", "2026-07-28"]],
   );
 });
 

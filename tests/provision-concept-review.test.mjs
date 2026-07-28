@@ -10,6 +10,8 @@ const [
   seed,
   gdpr,
   aiAct,
+  aiActAnnexes,
+  aiActRecitals,
   ukGdpr,
   pipl,
   networkData,
@@ -51,6 +53,8 @@ const [
   load("provisions.json"),
   load("gdpr-articles.json"),
   load("eu-ai-act-articles.json"),
+  load("eu-ai-act-annexes.json"),
+  load("eu-ai-act-recitals.json"),
   load("uk-gdpr-articles.json"),
   load("cn-pipl-articles.json"),
   load("cn-network-data-regulations-articles.json"),
@@ -94,6 +98,8 @@ const mergedIds = new Set([
   ...seed.map((item) => item.id),
   ...gdpr.map((item) => item.id),
   ...aiAct.map((item) => item.id),
+  ...aiActAnnexes.map((item) => item.id),
+  ...aiActRecitals.map((item) => item.id),
   ...ukGdpr.map((item) => item.id),
   ...pipl.map((item) => item.id),
   ...networkData.map((item) => item.id),
@@ -132,13 +138,23 @@ const mergedIds = new Set([
 ]);
 const conceptIds = new Set(concepts.map((item) => item.id));
 
-test("every merged provision has one audited topic-relevance record", () => {
+test("every merged provision has one provenance-labelled topic-relevance record", () => {
   assert.equal(reviews.length, mergedIds.size);
   assert.equal(new Set(reviews.map((review) => review.provisionId)).size, reviews.length);
   for (const review of reviews) {
     assert.ok(mergedIds.has(review.provisionId), review.provisionId);
     assert.match(review.reviewedOn, /^\d{4}-\d{2}-\d{2}$/);
-    assert.equal(review.reviewStatus, "editorial-reviewed");
+    assert.ok(
+      ["editorial-reviewed", "machine-candidate"].includes(
+        review.reviewStatus,
+      ),
+      review.provisionId,
+    );
+    assert.ok(
+      ["curated-anchor", "rule-generated"].includes(review.mappingBasis),
+      review.provisionId,
+    );
+    assert.ok(["low", "medium", "high"].includes(review.confidence));
   }
 });
 
@@ -152,6 +168,39 @@ test("every substantive provision resolves to at least one core concept", () => 
     for (const conceptId of review.conceptIds) {
       assert.ok(conceptIds.has(conceptId), `${review.provisionId}: ${conceptId}`);
     }
+  }
+});
+
+test("structural context is separated from substantive concept metrics", () => {
+  const structural = reviews.filter(
+    (review) => review.relevance === "structural-context",
+  );
+  assert.ok(structural.length > 0);
+  for (const review of structural) {
+    assert.deepEqual(review.conceptIds, [], review.provisionId);
+    assert.ok(Array.isArray(review.contextualConceptIds), review.provisionId);
+  }
+});
+
+test("EU AI Act Annexes and Recitals preserve their document-level metric boundary", () => {
+  const byId = new Map(reviews.map((review) => [review.provisionId, review]));
+  assert.equal(aiActAnnexes.length, 14);
+  assert.equal(aiActRecitals.length, 180);
+
+  for (const annex of aiActAnnexes) {
+    const review = byId.get(annex.id);
+    assert.equal(review.relevance, "structural-context", annex.id);
+    assert.deepEqual(review.conceptIds, [], annex.id);
+    assert.ok(review.contextualConceptIds.length > 0, annex.id);
+  }
+
+  for (const recital of aiActRecitals) {
+    const review = byId.get(recital.id);
+    assert.equal(review.relevance, "structural-context", recital.id);
+    assert.deepEqual(review.conceptIds, [], recital.id);
+    assert.deepEqual(review.contextualConceptIds, [], recital.id);
+    assert.equal(review.reviewStatus, "machine-candidate", recital.id);
+    assert.equal(review.mappingBasis, "rule-generated", recital.id);
   }
 });
 

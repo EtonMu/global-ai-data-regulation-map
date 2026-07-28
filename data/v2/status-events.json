@@ -106,14 +106,14 @@
   {
     "id": "evt-ai-act-art6-1-later",
     "instrumentId": "eu-ai-act",
-    "date": "2027-08-02",
+    "date": "2028-08-02",
     "type": "scheduled-partial-application",
-    "label": "Article 6(1) and corresponding obligations scheduled",
-    "effect": "Article 6(1) and the corresponding obligations are scheduled to apply under Article 113(c).",
+    "label": "Annex I high-risk-system provisions scheduled to apply",
+    "effect": "Chapter III Sections 1–3, other than Article 6(5), are scheduled to apply to AI systems classified as high-risk under Article 6(1) and Annex I under amended Article 113(c)(ii).",
     "resultingStatus": "scheduled",
     "source": {
-      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj",
-      "label": "EUR-Lex"
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "label": "EUR-Lex — Regulation (EU) 2026/1744"
     }
   },
   {
@@ -817,14 +817,14 @@
     "id": "evt-kr-ai-framework-act-final-amendment-phase",
     "instrumentId": "kr-ai-framework-act-2025",
     "date": "2026-07-21",
-    "type": "scheduled-amendment-effective",
-    "label": "Final Act No. 21311 phase scheduled",
-    "effect": "The remaining specified changes in Act No. 21311 are scheduled to take effect two days after the dataset snapshot.",
-    "resultingStatus": "scheduled",
+    "type": "amendment-effective",
+    "label": "Final Act No. 21311 phase took effect",
+    "effect": "The final 46-Article phase of Act No. 21311 became operative, including Articles 17-2 and 22-3 and the amended wording of Articles 2, 3, 6, 18 and 35.",
+    "resultingStatus": "in-force-amended",
     "source": {
-      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260721&lsiSeq=282791&urlMode=lsInfoP",
       "label": "Korean Law Information Center",
-      "accessedOn": "2026-07-19"
+      "accessedOn": "2026-07-28"
     }
   },
   {
@@ -859,9 +859,9 @@
     "id": "evt-au-mandatory-ai-guardrails-not-proceeding",
     "instrumentId": "au-mandatory-ai-guardrails-proposal-2024",
     "date": "2025-10-21",
-    "type": "proposal-closed",
-    "label": "Mandatory proposal not taken forward",
-    "effect": "The government moved to voluntary Guidance for AI Adoption and stated that it would not proceed with mandatory guardrails at that time.",
+    "type": "consultation-outcome-announced",
+    "label": "Government announced consultation outcome and voluntary-guidance approach",
+    "effect": "The government moved to voluntary Guidance for AI Adoption and stated that it would not proceed with mandatory guardrails at that time. This was a policy outcome for a consultation proposal, not the legal cessation or repeal of an operative instrument.",
     "resultingStatus": "closed-not-proceeding",
     "source": {
       "url": "https://consult.industry.gov.au/ai-mandatory-guardrails",
@@ -1029,7 +1029,7 @@
     "date": "2025-11-11",
     "type": "amendment-promulgated-not-commenced",
     "label": "Further Taiwan PDPA amendments promulgated without a commencement date",
-    "effect": "Specified amendments were promulgated but remain outside the effective current text until dates are set by the Executive Yuan.",
+    "effect": "Specified amendments were promulgated but remain outside the effective current text until dates are set by the Executive Yuan. The corpus therefore treats the Ministry of Justice English wording for 26 affected nodes as latest-promulgated rather than current-effective text.",
     "resultingStatus": "in-force-with-uncommenced-amendments",
     "source": {
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
@@ -1220,12 +1220,26 @@
     }
   },
   {
+    "id": "evt-za-popia-principal-provisions-commenced",
+    "instrumentId": "za-popia-4-2013",
+    "date": "2020-07-01",
+    "type": "principal-provisions-commenced",
+    "label": "POPIA principal provisions, including section 58, commenced",
+    "effect": "Sections 2–38, 55–109, 111 and 114(1), (2) and (3) commenced. Section 114(3) temporarily suspended the application of section 58(2) to processing referred to in section 57.",
+    "resultingStatus": "in-force-with-compliance-grace-period",
+    "source": {
+      "url": "https://www.gov.za/sites/default/files/gcis_document/202006/43461gon1114.pdf",
+      "label": "Government Gazette No. 43461, Proclamation No. R.21 of 2020",
+      "accessedOn": "2026-07-28"
+    }
+  },
+  {
     "id": "evt-za-popia-general-compliance",
     "instrumentId": "za-popia-4-2013",
     "date": "2021-07-01",
     "type": "general-application",
     "label": "POPIA general compliance phase completed",
-    "effect": "The one-year grace period following principal commencement ended and section 58(2) commenced.",
+    "effect": "The one-year general compliance grace period following principal commencement ended on 30 June 2021. Section 58 had already commenced on 1 July 2020; the separate section 58(2) application boundary remained subject to section 114(3) and the regulator's notice.",
     "resultingStatus": "in-force",
     "source": {
       "url": "https://www.gov.za/documents/protection-personal-information-act",
@@ -1351,7 +1365,7 @@
     "date": "2022-02-01",
     "type": "provision-application",
     "label": "Section 58(2) prior-authorization applicability date",
-    "effect": "Although section 58(2) commenced on 1 July 2021, the regulator postponed its application to section 57 processing until 1 February 2022.",
+    "effect": "Section 58 commenced on 1 July 2020, but section 114(3) suspended the application of section 58(2) to section 57 processing. Notice 560 set 1 February 2022 as the date from which that prior-authorization requirement applied.",
     "resultingStatus": "in-force",
     "source": {
       "url": "https://www.justice.gov.za/legislation/notices/notice2021.html",
@@ -1365,12 +1379,54 @@
     "date": "2026-06-29",
     "type": "amending-regulation-final-adoption-pending-publication",
     "label": "Digital Omnibus on AI received final Council approval",
-    "effect": "The amending regulation was finally approved, with revised high-risk and transparency application dates; this snapshot waits for an Official Journal legal-act record before treating those amendments as operative law.",
+    "effect": "The amending regulation was finally approved with revised high-risk and transparency application dates. At this event date, Official Journal publication and entry into force were still pending.",
     "resultingStatus": "partially-applicable-pending-amending-act-publication",
     "source": {
       "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/",
       "label": "Council of the European Union",
       "accessedOn": "2026-07-19"
+    }
+  },
+  {
+    "id": "evt-eu-ai-act-reg-2026-1744-effective",
+    "instrumentId": "eu-ai-act",
+    "date": "2026-07-27",
+    "type": "amending-regulation-entered-into-force",
+    "label": "Regulation (EU) 2026/1744 entered into force",
+    "effect": "The Official Journal amending regulation entered into force. Its textual operations are incorporated in the local source-derived Article and Annex layers; amended Article 113 also makes Articles 102–110 applicable from this date.",
+    "resultingStatus": "partially-applicable-amended",
+    "source": {
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "label": "EUR-Lex — Regulation (EU) 2026/1744",
+      "accessedOn": "2026-07-28"
+    }
+  },
+  {
+    "id": "evt-eu-ai-act-art5-new-prohibitions-apply",
+    "instrumentId": "eu-ai-act",
+    "date": "2026-12-02",
+    "type": "scheduled-partial-application",
+    "label": "Additional Article 5 prohibitions scheduled to apply",
+    "effect": "Article 5(1), first subparagraph, points (ba) and (bb), and Article 5(1a) and (1b) are scheduled to apply under amended Article 113(a).",
+    "resultingStatus": "scheduled",
+    "source": {
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "label": "EUR-Lex — Regulation (EU) 2026/1744",
+      "accessedOn": "2026-07-28"
+    }
+  },
+  {
+    "id": "evt-eu-ai-act-annex-iii-high-risk-apply",
+    "instrumentId": "eu-ai-act",
+    "date": "2027-12-02",
+    "type": "scheduled-partial-application",
+    "label": "Annex III high-risk-system provisions scheduled to apply",
+    "effect": "Chapter III Sections 1–3, other than Article 6(5), are scheduled to apply to AI systems classified as high-risk under Article 6(2) and Annex III under amended Article 113(c)(i).",
+    "resultingStatus": "scheduled",
+    "source": {
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "label": "EUR-Lex — Regulation (EU) 2026/1744",
+      "accessedOn": "2026-07-28"
     }
   },
   {
@@ -1556,17 +1612,17 @@
     }
   },
   {
-    "id": "evt-sa-pdpl-transfer-regulation-v2-verified",
+    "id": "evt-sa-pdpl-transfer-regulation-v2-effective",
     "instrumentId": "sa-pdpl-transfer-regulation-2023",
-    "date": "2026-07-20",
-    "type": "current-version-verified",
-    "label": "Transfer Regulation Version 2.0 verified as the current official publication",
-    "effect": "The official Version 2.0 publication dated August 2024 was verified on this research date. Article 9 ties legal effect to Official Gazette publication, but the verified source does not state that Gazette date, so this event is not treated as the commencement date.",
-    "resultingStatus": "in-force-gazette-date-unverified",
+    "date": "2024-09-01",
+    "type": "regulation-published-and-effective",
+    "label": "Transfer Regulation Version 2.0 published and took effect",
+    "effect": "Umm Al-Qura issue 5047 published Decision No. 1840 on 28/02/1446H (1 September 2024). Under Article 9, Version 2.0 took effect on publication.",
+    "resultingStatus": "in-force",
     "source": {
-      "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
-      "label": "Saudi Data Governance Platform — Transfer Regulation Version 2.0",
-      "accessedOn": "2026-07-20"
+      "url": "https://portal.uqn.gov.sa/details?p=25412",
+      "label": "Umm Al-Qura Official Gazette — issue 5047, Decision No. 1840",
+      "accessedOn": "2026-07-28"
     }
   }
 ]

@@ -160,6 +160,20 @@ test("PDPA applicability metadata separates current law from uncommenced text", 
       article.applicability.commencementCondition,
       /determined by the Executive Yuan/i,
     );
+    assert.equal(article.translations.en.currentTextEquivalent, false);
+    assert.equal(
+      article.translations.en.alignmentStatus,
+      "latest-promulgated-reference-not-current-effective",
+    );
+    assert.match(article.translations.en.note, /has not commenced/i);
+  }
+
+  for (const article of byStatus.get("in-force")) {
+    assert.equal(article.translations.en.currentTextEquivalent, true);
+    assert.equal(
+      article.translations.en.alignmentStatus,
+      "aligned-with-current-effective-text",
+    );
   }
 
   const priorVersionStillEffective = future.filter(

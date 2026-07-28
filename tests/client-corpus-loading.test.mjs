@@ -29,7 +29,7 @@ const sourceAudits = await readFile(
 
 test("the first explorer chunk contains a lightweight 58-instrument index", () => {
   assert.equal(index.totals.instrumentCount, 58);
-  assert.equal(index.totals.mergedProvisionCount, 2932);
+  assert.equal(index.totals.mergedProvisionCount, 3134);
   assert.equal(Object.keys(index.shards).length, instruments.length);
   for (const instrument of instruments) {
     assert.match(
@@ -54,12 +54,32 @@ test("the first explorer chunk contains a lightweight 58-instrument index", () =
     assert.equal(provision.translations, undefined);
     assert.equal(provision.alternativeLanguageTexts, undefined);
   }
+
+  const euAiActRecords = index.articleRecords.filter(
+    (record) => record.instrumentId === "eu-ai-act",
+  );
+  assert.equal(euAiActRecords.length, 313);
+  assert.equal(
+    euAiActRecords.filter((record) => record.provisionType === "annex").length,
+    14,
+  );
+  assert.equal(
+    euAiActRecords.filter((record) => record.provisionType === "recital").length,
+    180,
+  );
+  assert.ok(
+    euAiActRecords
+      .filter((record) => record.provisionType === "recital")
+      .every((record) => record.substantiveConceptMetricEligible === false),
+  );
 });
 
 test("complete corpora are fetched and hydrated by instrument instead of imported", () => {
   for (const filename of [
     "gdpr-articles.json",
     "eu-ai-act-articles.json",
+    "eu-ai-act-annexes.json",
+    "eu-ai-act-recitals.json",
     "cn-pipl-articles.json",
     "jp-appi-current-articles.json",
     "au-privacy-act-1988-provisions.json",

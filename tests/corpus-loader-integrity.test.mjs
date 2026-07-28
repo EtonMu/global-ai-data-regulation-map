@@ -20,8 +20,11 @@ function review(provisionId) {
     provisionId,
     relevance: "substantive-topic",
     conceptIds: ["test-concept"],
+    contextualConceptIds: [],
     rationale: "A complete editorial rationale for the test provision.",
     reviewStatus: "editorial-reviewed",
+    mappingBasis: "curated-anchor",
+    confidence: "medium",
     reviewedOn: "2026-07-25",
   };
 }

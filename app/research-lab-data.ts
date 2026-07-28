@@ -6,7 +6,7 @@
  * runtime data here and avoid shipping a second copy of every legal text.
  */
 
-export const RESEARCH_SNAPSHOT_DATE = "2026-07-20";
+export const RESEARCH_SNAPSHOT_DATE = "2026-07-28";
 
 export type ResearchCoverageClass = "complete" | "selected" | "unclassified";
 export type ResearchConceptMeasurementState =
@@ -20,6 +20,17 @@ export type ResearchAnalysisRole =
   | "metric-unit"
   | "navigation-analytical-excerpt";
 export type ResearchTemporalStatus = "past" | "on-snapshot" | "future";
+export type ResearchProvisionTemporalLayer =
+  | "current-effective"
+  | "enacted-future"
+  | "mixed-overlay"
+  | "historical"
+  | "proposal";
+export type ResearchMappingReviewLayer =
+  | "editorial-reviewed"
+  | "machine-candidate"
+  | "mixed-reviewed-and-candidate"
+  | "unreviewed";
 
 export type ResearchTreatment = {
   role: ResearchAnalysisRole;
@@ -65,6 +76,9 @@ export type ResearchProvisionInput = {
   legalEffectStatus?: string;
   appliesFrom?: string | null;
   versionAsOf?: string | null;
+  applicability?: {
+    currentLawStatus: string;
+  } | null;
   summary?: string;
   /** Stored source-language text, when the merged runtime corpus supplies it. */
   fullText?: string;
@@ -95,6 +109,12 @@ export type ResearchProvisionInput = {
   topicRelevance?: {
     relevance: ResearchRelevance;
     conceptIds: string[];
+    candidateConceptIds?: string[];
+    contextualConceptIds?: string[];
+    candidateContextualConceptIds?: string[];
+    reviewStatus?: "editorial-reviewed" | "machine-candidate";
+    mappingBasis?: "curated-anchor" | "rule-generated";
+    confidence?: "low" | "medium" | "high";
   };
 };
 
@@ -224,6 +244,8 @@ export type ResearchCorpusInput = {
 export type ResearchAnalysisOptions = {
   coverageClasses?: readonly ResearchCoverageClass[];
   relevance?: readonly ResearchRelevance[];
+  temporalLayers?: readonly ResearchProvisionTemporalLayer[];
+  mappingReviewLayers?: readonly ResearchMappingReviewLayer[];
 };
 
 export type ResearchCoverageCaveat = {
@@ -299,6 +321,8 @@ export type ResearchProvisionDatum = {
   metricEligible: boolean;
   canonicalProvisionId: string | null;
   relevance: ResearchRelevance;
+  temporalLayer: ResearchProvisionTemporalLayer;
+  mappingReviewLayer: ResearchMappingReviewLayer;
   conceptIds: string[];
   chapterId: string | null;
   chapterLabel: string | null;
@@ -942,6 +966,8 @@ export type ResearchLabData = {
   methodology: {
     defaultCoverageClasses: ResearchCoverageClass[];
     defaultRelevance: ResearchRelevance[];
+    defaultTemporalLayers: ResearchProvisionTemporalLayer[];
+    defaultMappingReviewLayers: ResearchMappingReviewLayer[];
     analysisUnit: "provision";
     fingerprintDefinition: string;
     idfDefinition: string;
@@ -1084,6 +1110,14 @@ export function buildResearchLabShareHash(
 
 const DEFAULT_COVERAGE_CLASSES: ResearchCoverageClass[] = ["complete"];
 const DEFAULT_RELEVANCE: ResearchRelevance[] = ["substantive-topic"];
+const DEFAULT_TEMPORAL_LAYERS: ResearchProvisionTemporalLayer[] = [
+  "current-effective",
+];
+const DEFAULT_MAPPING_REVIEW_LAYERS: ResearchMappingReviewLayer[] = [
+  "editorial-reviewed",
+  "machine-candidate",
+  "mixed-reviewed-and-candidate",
+];
 
 const atlasRootOrder = [
   "eu",
@@ -1130,12 +1164,60 @@ function relevanceForProvision(
 }
 
 function conceptsForProvision(provision: ResearchProvisionInput): string[] {
+  if (provision.topicRelevance?.relevance === "structural-context") return [];
   return Array.from(
     new Set([
       ...provision.conceptIds,
       ...(provision.topicRelevance?.conceptIds ?? []),
+      ...(provision.topicRelevance?.candidateConceptIds ?? []),
     ]),
   );
+}
+
+function temporalLayerForProvision(
+  provision: ResearchProvisionInput,
+): ResearchProvisionTemporalLayer {
+  const status = `${provision.legalEffectStatus ?? ""} ${
+    provision.applicability?.currentLawStatus ?? ""
+  }`.toLowerCase();
+  if (/pending-bill|proposal|vetoed|not-enacted|lapsed/.test(status)) {
+    return "proposal";
+  }
+  if (/historical|revoked|repealed|superseded|omitted-as-spent/.test(status)) {
+    return "historical";
+  }
+  if (
+    provision.applicability?.currentLawStatus === "partially-applicable" ||
+    (provision.applicability &&
+      /remains-in-force-until-commencement/.test(
+        provision.applicability.currentLawStatus,
+      ))
+  ) {
+    return "mixed-overlay";
+  }
+  if (
+    /not-yet-applicable|not-yet-in-operation|not-in-force|no-current-effective-counterpart|scheduled|promulgated-new|promulgated-amended|promulgated-deletion/.test(
+      status,
+    )
+  ) {
+    return "enacted-future";
+  }
+  return "current-effective";
+}
+
+function mappingReviewLayerForProvision(
+  provision: ResearchProvisionInput,
+): ResearchMappingReviewLayer {
+  const review = provision.topicRelevance;
+  if (!review?.reviewStatus) return "unreviewed";
+  if (
+    review.reviewStatus === "editorial-reviewed" &&
+    ((review.candidateConceptIds?.length ?? 0) > 0 ||
+      (review.candidateContextualConceptIds?.length ?? 0) > 0)
+  ) {
+    return "mixed-reviewed-and-candidate";
+  }
+  return review.reviewStatus;
 }
 
 function researchTreatmentForProvision(
@@ -1226,12 +1308,20 @@ function coverageMaps(
 function normalizedOptions(options?: ResearchAnalysisOptions): {
   coverageClasses: Set<ResearchCoverageClass>;
   relevance: Set<ResearchRelevance>;
+  temporalLayers: Set<ResearchProvisionTemporalLayer>;
+  mappingReviewLayers: Set<ResearchMappingReviewLayer>;
 } {
   return {
     coverageClasses: new Set(
       options?.coverageClasses ?? DEFAULT_COVERAGE_CLASSES,
     ),
     relevance: new Set(options?.relevance ?? DEFAULT_RELEVANCE),
+    temporalLayers: new Set(
+      options?.temporalLayers ?? DEFAULT_TEMPORAL_LAYERS,
+    ),
+    mappingReviewLayers: new Set(
+      options?.mappingReviewLayers ?? DEFAULT_MAPPING_REVIEW_LAYERS,
+    ),
   };
 }
 
@@ -1245,7 +1335,10 @@ function provisionIsInSample(
     provisionIsMetricEligible(provision) &&
     normalized.coverageClasses.has(
       classByInstrument.get(provision.instrumentId) ?? "unclassified",
-    ) && normalized.relevance.has(relevanceForProvision(provision))
+    ) &&
+    normalized.relevance.has(relevanceForProvision(provision)) &&
+    normalized.temporalLayers.has(temporalLayerForProvision(provision)) &&
+    normalized.mappingReviewLayers.has(mappingReviewLayerForProvision(provision))
   );
 }
 
@@ -1280,6 +1373,8 @@ export function deriveResearchProvisions(
       canonicalProvisionId:
         researchTreatment.canonicalProvisionId ?? null,
       relevance: relevanceForProvision(provision),
+      temporalLayer: temporalLayerForProvision(provision),
+      mappingReviewLayer: mappingReviewLayerForProvision(provision),
       conceptIds: conceptsForProvision(provision),
       chapterId: provision.chapter?.id ?? null,
       chapterLabel: provision.chapter?.label ?? null,
@@ -1387,7 +1482,7 @@ export function deriveCoverageObservatory(
         id: "absence-is-unknown",
         title: "No local match is not legal absence",
         detail:
-          "A missing concept assignment can reflect corpus scope, versioning, translation, or editorial coverage. It does not establish that a jurisdiction lacks the rule.",
+        "A missing concept assignment can reflect corpus scope, versioning, translation, or editorial coverage. Rule-generated and keyword-derived assignments are research candidates, not verified legal-equivalence findings; absence does not establish that a jurisdiction lacks the rule.",
       },
       {
         id: "concept-not-equivalence",
@@ -1412,6 +1507,18 @@ export function deriveCoverageObservatory(
         title: "Unreviewed records are not inferred as substantive",
         detail:
           "A provision without a topic-review record is classified as unreviewed and excluded from the default substantive sample rather than silently counted as relevant.",
+      },
+      {
+        id: "temporal-layer-default",
+        title: "Current-effective law is the default metric layer",
+        detail:
+          "Future, mixed-overlay, historical, revoked, repealed, vetoed and proposal provisions remain discoverable but are excluded from default fingerprints and co-occurrence statistics. Their text is not silently pooled with currently applicable duties.",
+      },
+      {
+        id: "mapping-review-layer",
+        title: "Reviewed and candidate concept links retain separate provenance",
+        detail:
+          "The exploratory current-law sample can contain both reviewed and machine-candidate concept links, but each provision records its mappingReviewLayer and mixed reviewed-plus-candidate nodes preserve candidateConceptIds separately. Candidate links are not upgraded by proximity to a reviewed seed.",
       },
       {
         id: "relation-review",
@@ -4216,13 +4323,19 @@ export function buildResearchLabData(
         ...(options?.coverageClasses ?? DEFAULT_COVERAGE_CLASSES),
       ],
       defaultRelevance: [...(options?.relevance ?? DEFAULT_RELEVANCE)],
+      defaultTemporalLayers: [
+        ...(options?.temporalLayers ?? DEFAULT_TEMPORAL_LAYERS),
+      ],
+      defaultMappingReviewLayers: [
+        ...(options?.mappingReviewLayers ?? DEFAULT_MAPPING_REVIEW_LAYERS),
+      ],
       analysisUnit: "provision",
       fingerprintDefinition:
-        "Per-instrument TF is a concept's provision assignments divided by all concept assignments in the included relevance class; prevalence separately divides by included metric-eligible provisions. Navigation and analytical excerpts whose complete parent unit is already stored remain linked but are excluded. TF-IDF vectors are L2-normalized.",
+        "Per-instrument TF is a concept's recorded candidate-or-reviewed provision assignments divided by all assignments in the included relevance class; prevalence separately divides by included metric-eligible provisions. The default analytical sample is limited to the current-effective temporal layer. Structural context, future, mixed-overlay, historical and proposal layers are excluded unless explicitly requested; rule-generated assignments remain candidates and must not be read as verified legal equivalence. Navigation and analytical excerpts whose complete parent unit is already stored remain linked but are excluded. TF-IDF vectors are L2-normalized.",
       idfDefinition:
         "IDF = ln((1 + N) / (1 + document frequency)) + 1, where N is the number of instruments in the selected coverage sample.",
       cooccurrenceDefinition:
-        "Concept pairs are counted once per included metric-eligible provision. Lift, base-2 PMI, normalized PMI, and Jaccard use complete-corpus substantive provisions by default; provision, distinct-instrument, and distinct-jurisdiction support are retained separately. Navigation excerpts are excluded to avoid counting both a complete parent and its editorial child anchor.",
+        "Concept pairs are counted once per included metric-eligible provision. Lift, base-2 PMI, normalized PMI, and Jaccard use current-effective, complete-corpus substantive provisions by default; provision, distinct-instrument, distinct-jurisdiction and mapping-review provenance remain separate. Navigation excerpts are excluded to avoid counting both a complete parent and its editorial child anchor.",
       translationIntegrityDefinition:
         "English storage, authority class, and temporal alignment are reported as separate dimensions. Coverage is not a translation-accuracy or semantic-drift score.",
       bridgeDefinition:
@@ -4300,6 +4413,7 @@ export function buildResearchLabExportPayload(
   const visibleProvisions = data.provisions.filter(
     (provision) =>
       provision.metricEligible !== false &&
+      provision.temporalLayer === "current-effective" &&
       displayedInstrumentIdSet.has(provision.instrumentId) &&
       (options.relevanceScope === "all" ||
         provision.relevance === "substantive-topic"),

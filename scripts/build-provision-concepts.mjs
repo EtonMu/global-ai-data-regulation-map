@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const dataRoot = resolve(root, "data/v2");
-const reviewedOn = "2026-07-20";
+const reviewedOn = "2026-07-28";
 
 async function load(filename) {
   return JSON.parse(await readFile(resolve(dataRoot, filename), "utf8"));
@@ -13,6 +13,8 @@ const [
   seedProvisions,
   gdprArticles,
   euAiActArticles,
+  euAiActAnnexes,
+  euAiActRecitals,
   ukGdprArticles,
   piplArticles,
   networkDataArticles,
@@ -52,6 +54,8 @@ const [
   load("provisions.json"),
   load("gdpr-articles.json"),
   load("eu-ai-act-articles.json"),
+  load("eu-ai-act-annexes.json"),
+  load("eu-ai-act-recitals.json"),
   load("uk-gdpr-articles.json"),
   load("cn-pipl-articles.json"),
   load("cn-network-data-regulations-articles.json"),
@@ -476,6 +480,21 @@ function taiwanAiActConcepts(article) {
 
 function taiwanPdpaConcepts(article) {
   const locator = article.articleNumber;
+  const insertedArticleConcepts = {
+    "1-1": ["accountability-governance"],
+    "1-2": ["accountability-governance", "security-controls"],
+    "20-1": ["security-controls", "retention-deletion-lifecycle", "accountability-governance"],
+    "21-1": ["continuous-assurance", "accountability-governance"],
+    "21-2": ["continuous-assurance", "accountability-governance", "security-controls"],
+    "21-3": ["continuous-assurance", "accountability-governance", "security-controls"],
+    "21-4": ["continuous-assurance", "accountability-governance"],
+    "21-5": ["accountability-governance"],
+    "51-1": ["continuous-assurance", "accountability-governance"],
+    "53-1": ["data-subject-rights", "accountability-governance"],
+  };
+  if (locator.includes("-")) {
+    return insertedArticleConcepts[locator] ?? ["accountability-governance"];
+  }
   const number = Number.parseInt(locator, 10);
   const concepts = [];
   if (number === 1) concepts.push("purpose-limitation", "data-subject-rights", "accountability-governance");
@@ -494,9 +513,7 @@ function taiwanPdpaConcepts(article) {
   if (number === 17) concepts.push("transparency-explainability", "accountability-governance");
   if (number === 18) concepts.push("security-controls", "accountability-governance");
   if (number === 19 || locator === "20") concepts.push("lawfulness-consent-choice", "purpose-limitation", "data-subject-rights");
-  if (locator === "20-1") concepts.push("security-controls", "retention-deletion-lifecycle", "accountability-governance");
   if (locator === "21") concepts.push("cross-border-transfer", "accountability-governance");
-  if (/^21-[1-5]$/.test(locator)) concepts.push("continuous-assurance", "accountability-governance");
   if (number === 22) concepts.push("continuous-assurance", "security-controls", "accountability-governance");
   if (number === 23 || number === 24) concepts.push("continuous-assurance", "accountability-governance");
   if (number === 25) concepts.push("retention-deletion-lifecycle", "continuous-assurance", "accountability-governance");
@@ -507,7 +524,6 @@ function taiwanPdpaConcepts(article) {
   if (inRange(number, 41, 50)) concepts.push("continuous-assurance", "accountability-governance");
   if (number === 41 || number === 47) concepts.push("cross-border-transfer");
   if (number === 51) concepts.push("accountability-governance", "purpose-limitation");
-  if (locator === "51-1") concepts.push("continuous-assurance", "accountability-governance");
   if (number === 52) concepts.push("third-party-supply-chain", "accountability-governance");
   if (number === 53) concepts.push("purpose-limitation", "accountability-governance");
   if (number === 54) concepts.push("transparency-explainability", "data-subject-rights");
@@ -517,8 +533,8 @@ function taiwanPdpaConcepts(article) {
 
 function taiwanPdpaRelevance(article) {
   const structural = new Set([
-    "23", "24", "32", "33", "34", "35", "36", "37", "38", "39", "40",
-    "43", "44", "45", "46", "53-1", "55", "56",
+    "1-1", "21-5", "23", "24", "32", "33", "34", "35", "36", "37", "38", "39", "40",
+    "43", "44", "45", "46", "51-1", "53-1", "55", "56",
   ]);
   return structural.has(article.articleNumber)
     ? "structural-context"
@@ -1409,7 +1425,50 @@ function nistAiRmfRelevance(provision) {
     : "structural-context";
 }
 
-function aiActConcepts(number) {
+function aiActConcepts(articleNumber) {
+  const articleKey = String(articleNumber);
+  if (articleKey === "4a") {
+    return [
+      "sensitive-data-protection",
+      "fairness-nondiscrimination",
+      "training-data-governance",
+      "security-controls",
+    ];
+  }
+  if (articleKey === "60a") {
+    return [
+      "ai-risk-management",
+      "continuous-assurance",
+      "human-oversight",
+      "accountability-governance",
+    ];
+  }
+  if (articleKey === "75a") {
+    return [
+      "accountability-governance",
+      "continuous-assurance",
+      "incident-response",
+    ];
+  }
+  if (articleKey === "75b") {
+    return ["accountability-governance", "continuous-assurance"];
+  }
+  if (articleKey === "75c") {
+    return [
+      "accountability-governance",
+      "continuous-assurance",
+      "incident-response",
+    ];
+  }
+  if (articleKey === "75d") {
+    return [
+      "accountability-governance",
+      "transparency-explainability",
+      "data-subject-rights",
+    ];
+  }
+
+  const number = Number(articleKey);
   if (number === 4) return ["transparency-explainability", "human-oversight", "accountability-governance"];
   if (number === 5) return ["fairness-nondiscrimination", "human-oversight", "sensitive-data-protection"];
   if (inRange(number, 6, 9)) return ["ai-risk-management", "impact-assessment", "accountability-governance"];
@@ -1450,27 +1509,100 @@ function aiActConcepts(number) {
   return ["ai-risk-management", "accountability-governance"];
 }
 
-function aiActRelevance(number) {
+function aiActRelevance(articleNumber) {
+  const number = Number(articleNumber);
+  if (!Number.isFinite(number)) return "substantive-topic";
   return number === 97 || number === 98 || inRange(number, 102, 110) || number === 113
     ? "structural-context"
     : "substantive-topic";
 }
 
+const aiActAnnexContextualConcepts = new Map([
+  ["I", ["third-party-supply-chain", "continuous-assurance"]],
+  ["II", ["sensitive-data-protection", "human-oversight"]],
+  ["III", ["ai-risk-management", "impact-assessment", "fairness-nondiscrimination"]],
+  ["IV", ["accountability-governance", "transparency-explainability", "continuous-assurance"]],
+  ["V", ["accountability-governance", "continuous-assurance"]],
+  ["VI", ["continuous-assurance", "accountability-governance"]],
+  ["VII", ["continuous-assurance", "accountability-governance", "third-party-supply-chain"]],
+  ["VIII", ["transparency-explainability", "accountability-governance"]],
+  ["IX", ["continuous-assurance", "incident-response"]],
+  ["X", ["ai-risk-management", "security-controls"]],
+  ["XI", ["frontier-model-safety", "transparency-explainability", "training-data-governance"]],
+  ["XII", ["frontier-model-safety", "transparency-explainability", "accountability-governance"]],
+  ["XIII", ["frontier-model-safety", "ai-risk-management"]],
+  ["XIV", ["ai-risk-management"]],
+]);
+
+function reviewAiActAnnex(annex) {
+  const contextualConceptIds = unique(
+    aiActAnnexContextualConcepts.get(annex.annexNumber) ?? [],
+  );
+  return {
+    provisionId: annex.id,
+    relevance: "structural-context",
+    conceptIds: [],
+    contextualConceptIds,
+    rationale: `${annex.label} (${annex.title}) is an operative document component that supplies classifications, documentation fields, conformity procedures, or technical reference material for the Articles. Its links are retained as contextual navigation and excluded from Article-level substantive-obligation metrics pending annex-item evidence review.`,
+    reviewStatus: "machine-candidate",
+    mappingBasis: "rule-generated",
+    confidence: "low",
+    reviewedOn,
+  };
+}
+
+function reviewAiActRecital(recital) {
+  return {
+    provisionId: recital.id,
+    relevance: "structural-context",
+    conceptIds: [],
+    contextualConceptIds: [],
+    rationale: `${recital.label} is an enactment recital providing explanatory context. It is non-operative, is not a legal-equivalence mapping, and is intentionally excluded from substantive concept highlighting and metrics.`,
+    reviewStatus: "machine-candidate",
+    mappingBasis: "rule-generated",
+    confidence: "low",
+    reviewedOn,
+  };
+}
+
 function reviewForArticle(article, concepts, relevance) {
   const conceptIds = unique(concepts);
+  const normalizedTitle = String(article.title ?? "").trim().toLowerCase();
+  const normalizedStatus = String(article.legalEffectStatus ?? "").toLowerCase();
+  const hasCurrentEffectiveOverlay = Boolean(
+    article.currentEffectiveVersion?.fullText?.trim() ||
+      article.currentEffectiveVersion?.paragraphs?.length,
+  );
+  const isStructuralByText =
+    /^(?:definitions?|interpretation|short title|commencement|entry into force|repeal(?:ed)?|deleted|vetoed|transitional provisions?|consequential amendments?|regulation-making power|power to make regulations)$/u.test(
+      normalizedTitle,
+    ) ||
+    (!hasCurrentEffectiveOverlay &&
+      /(?:repealed-placeholder|vetoed-placeholder|promulgated-deletion)/u.test(
+        normalizedStatus,
+      ));
+  const effectiveRelevance = isStructuralByText
+    ? "structural-context"
+    : relevance;
   const commencementNote = article.legalEffectStatus &&
     article.legalEffectStatus !== "in-force"
-    ? ` The stored node is labelled ${article.legalEffectStatus}; its node-level commencement metadata must be checked before treating the displayed wording as an operative duty.`
+    ? hasCurrentEffectiveOverlay
+      ? ` The displayed promulgated wording is labelled ${article.legalEffectStatus}; the separately stored currentEffectiveVersion remains the operative layer used for this topical classification until the future text commences.`
+      : ` The stored node is labelled ${article.legalEffectStatus}; its node-level commencement metadata must be checked before treating the displayed wording as an operative duty.`
     : "";
-  const rationale = relevance === "substantive-topic"
-    ? `${article.label} (${article.title}) directly regulates or operationalizes a subject within this project's AI-governance, privacy, data-security, or assurance taxonomy. Concept links are functional classifications, not claims of legal equivalence.${commencementNote}`
-    : `${article.label} (${article.title}) supplies legislative procedure, amendment, repeal, or application context. It remains searchable but is not highlighted as a direct substantive compliance duty.${commencementNote}`;
+  const rationale = effectiveRelevance === "substantive-topic"
+    ? `${article.label} (${article.title}) was classified by an article-range or multilingual keyword rule as potentially relevant to this project's AI-governance, privacy, data-security, or assurance taxonomy. These links are machine-assisted research candidates, not reviewed legal equivalence or obligation findings.${commencementNote}`
+    : `${article.label} (${article.title}) supplies legislative procedure, amendment, repeal, definitions, commencement, or application context. Candidate concepts are retained separately as contextualConceptIds and are excluded from substantive highlighting and metrics.${commencementNote}`;
   return {
     provisionId: article.id,
-    relevance,
-    conceptIds,
+    relevance: effectiveRelevance,
+    conceptIds: effectiveRelevance === "substantive-topic" ? conceptIds : [],
+    contextualConceptIds:
+      effectiveRelevance === "structural-context" ? conceptIds : [],
     rationale,
-    reviewStatus: "editorial-reviewed",
+    reviewStatus: "machine-candidate",
+    mappingBasis: "rule-generated",
+    confidence: "low",
     reviewedOn,
   };
 }
@@ -1486,11 +1618,22 @@ for (const article of gdprArticles) {
 }
 
 for (const article of euAiActArticles) {
-  const number = Number(article.articleNumber);
   reviewById.set(
     article.id,
-    reviewForArticle(article, aiActConcepts(number), aiActRelevance(number)),
+    reviewForArticle(
+      article,
+      aiActConcepts(article.articleNumber),
+      aiActRelevance(article.articleNumber),
+    ),
   );
+}
+
+for (const annex of euAiActAnnexes) {
+  reviewById.set(annex.id, reviewAiActAnnex(annex));
+}
+
+for (const recital of euAiActRecitals) {
+  reviewById.set(recital.id, reviewAiActRecital(recital));
 }
 
 for (const article of ukGdprArticles) {
@@ -1861,15 +2004,67 @@ for (const provision of nistAiRmfCorpus) {
   );
 }
 
+const explicitlyStructuralSeedIds = new Set([
+  "ca-bill-c-27-aida-2022-lapsed-proposed-s-1",
+  "ca-bill-c-27-aida-2022-lapsed-proposed-s-21",
+  "ca-bill-c-27-aida-2022-lapsed-proposed-s-40",
+  "ca-bill-c-27-aida-2022-lapsed-proposed-s-41",
+  "cn-csl-art-81",
+]);
+
+function seedRelevance(provision) {
+  const status = String(provision.legalEffectStatus ?? "").toLowerCase();
+  const title = String(provision.title ?? "").toLowerCase();
+  if (
+    explicitlyStructuralSeedIds.has(provision.id) ||
+    /(?:repealed|vetoed|omitted|deleted)/u.test(status) ||
+    /^(?:commencement|entry into force|short title|repealed|vetoed|deleted)$/u.test(title)
+  ) {
+    return "structural-context";
+  }
+  return "substantive-topic";
+}
+
 for (const provision of seedProvisions) {
   const existing = reviewById.get(provision.id);
+  const relevance = existing?.relevance ?? seedRelevance(provision);
+  const ruleConceptIds = unique([
+    ...(existing?.conceptIds ?? []),
+    ...(existing?.contextualConceptIds ?? []),
+  ]);
+  const seedConceptIds = unique(provision.conceptIds);
+  const isExplicitlyReviewed = [
+    "reviewed-summary",
+    "reviewed-historical-summary",
+  ].includes(provision.editorial?.reviewStatus);
+  const ruleOnlyConceptIds = ruleConceptIds.filter(
+    (conceptId) => !seedConceptIds.includes(conceptId),
+  );
+  const primaryConceptIds = isExplicitlyReviewed
+    ? seedConceptIds
+    : unique([...ruleConceptIds, ...seedConceptIds]);
   reviewById.set(provision.id, {
     provisionId: provision.id,
-    relevance: existing?.relevance ?? "substantive-topic",
-    conceptIds: unique([...(existing?.conceptIds ?? []), ...provision.conceptIds]),
-    rationale: existing?.rationale ??
-      `${provision.locator} (${provision.title}) is a source-linked, curated provision anchor selected for direct relevance to this project's AI-governance, privacy, data-security, or cybersecurity scope.`,
-    reviewStatus: "editorial-reviewed",
+    relevance,
+    conceptIds: relevance === "substantive-topic" ? primaryConceptIds : [],
+    candidateConceptIds:
+      relevance === "substantive-topic" && isExplicitlyReviewed
+        ? ruleOnlyConceptIds
+        : [],
+    contextualConceptIds:
+      relevance === "structural-context" ? primaryConceptIds : [],
+    candidateContextualConceptIds:
+      relevance === "structural-context" && isExplicitlyReviewed
+        ? ruleOnlyConceptIds
+        : [],
+    rationale: isExplicitlyReviewed
+      ? `${provision.locator} (${provision.title}) is a source-linked editorial anchor. Its seed conceptIds were reviewed at Article level; any separately stored candidateConceptIds or candidateContextualConceptIds are rule-generated additions and are not upgraded by that review. These remain topical links, not claims of legal equivalence.`
+      : `${provision.locator} (${provision.title}) is a source-linked research anchor. Its concept classification remains a candidate until an Article-level evidence span and reviewer record are attached.`,
+    reviewStatus: isExplicitlyReviewed
+      ? "editorial-reviewed"
+      : "machine-candidate",
+    mappingBasis: "curated-anchor",
+    confidence: isExplicitlyReviewed ? "medium" : "low",
     reviewedOn,
   });
 }
@@ -1886,6 +2081,9 @@ await writeFile(
 const substantive = reviews.filter(
   (review) => review.relevance === "substantive-topic",
 ).length;
+const editorialReviewed = reviews.filter(
+  (review) => review.reviewStatus === "editorial-reviewed",
+).length;
 console.log(
-  `provision-concepts.json: ${reviews.length} reviewed nodes (${substantive} substantive, ${reviews.length - substantive} structural)`,
+  `provision-concepts.json: ${reviews.length} topic classifications (${substantive} substantive, ${reviews.length - substantive} structural; ${editorialReviewed} editorial-reviewed, ${reviews.length - editorialReviewed} machine-candidate)`,
 );

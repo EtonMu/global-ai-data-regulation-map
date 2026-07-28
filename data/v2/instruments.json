@@ -37,10 +37,17 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "separate-official-import",
-      "stored": false,
+      "mode": "separate-complete-official-article-import",
+      "stored": true,
       "language": "en",
       "note": "Complete Article records are generated separately from EUR-Lex in gdpr-articles.json."
+    },
+    "coverage": {
+      "unit": "article",
+      "first": 1,
+      "last": 99,
+      "count": 99,
+      "completeness": "complete-official-article-corpus"
     }
   },
   {
@@ -56,15 +63,16 @@
     "hierarchyLevel": "supranational-regulation",
     "legalForce": "binding-phased",
     "lifecycleStatus": "partially-applicable",
-    "statusAsOf": "2026-07-19",
+    "statusAsOf": "2026-07-28",
     "dates": {
       "adoptedOn": "2024-06-13",
       "publishedOn": "2024-07-12",
       "effectiveFrom": "2024-08-01",
       "generalApplicationFrom": "2026-08-02",
+      "lastAmendedOn": "2026-07-27",
       "ceasedOn": null
     },
-    "version": "Regulation (EU) 2024/1689 Official Journal text; Digital Omnibus on AI finally adopted in June 2026 with final text PE 30 2026 REV 1, pending an Official Journal legal-act record in this snapshot",
+    "version": "Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744, effective 27 July 2026",
     "parentInstrumentId": null,
     "topicIds": [
       "ai-risk-management",
@@ -76,23 +84,28 @@
       "frontier-model-safety"
     ],
     "summary": "Risk-tiered EU rules for placing AI systems on the market, putting them into service, deploying them, and governing general-purpose AI models.",
-    "statusNote": "In force with phased application under the 2024 text. Chapters I and II applied from 2 February 2025 and further listed provisions from 2 August 2025. The Digital Omnibus on AI received final Council approval on 29 June 2026 and its final legislative text is dated 8 July 2026; this snapshot does not apply its revised dates until publication and entry into force are confirmed in the Official Journal.",
+    "statusNote": "In force and partially applicable. Regulation (EU) 2026/1744 entered into force on 27 July 2026 and is incorporated in the Article corpus. Article 113 retains 2 August 2026 as the general application date while setting later dates for specified high-risk-system duties and earlier or separate dates for listed provisions.",
     "source": {
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
       "label": "EUR-Lex",
-      "accessedOn": "2026-07-19"
+      "accessedOn": "2026-07-28"
     },
-    "textAvailability": {
-      "mode": "separate-official-import",
-      "stored": false,
-      "language": "en",
-      "note": "All 113 operative Article records are generated separately from EUR-Lex in eu-ai-act-articles.json. The 180 Recitals and Annexes I–XIII are not yet reproduced locally and remain available at the linked official source."
+  "textAvailability": {
+      "mode": "complete-current-operative-articles-and-annexes-with-enactment-recitals",
+    "stored": true,
+    "language": "en",
+    "note": "The local corpus stores all 119 current operative Articles and all 14 current Annexes, incorporating Regulation (EU) 2026/1744 effective 27 July 2026, plus the 180 explanatory Recitals of the 2024 enactment. Recitals of the 2026 amending act remain attached to that amending instrument and are not merged into the base Regulation's Recitals."
     },
     "amendmentSource": {
-      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=consil%3APE_30_2026_REV_1",
-      "label": "EUR-Lex — Digital Omnibus on AI final legislative text, PE 30 2026 REV 1",
-      "accessedOn": "2026-07-19"
-    }
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "label": "EUR-Lex — Regulation (EU) 2026/1744, Official Journal text",
+      "accessedOn": "2026-07-28"
+    },
+  "coverage": {
+    "unit": "article-annex-or-enactment-recital-node",
+    "count": 313,
+    "completeness": "complete-current-operative-article-and-annex-corpus-with-complete-2024-enactment-recitals"
+  }
   },
   {
     "id": "us-eo-14110",
@@ -358,7 +371,7 @@
   },
   "textAvailability": {
     "mode": "separate-complete-official-original-and-government-English-reference-import",
-    "stored": false,
+    "stored": true,
     "language": "zh-CN",
     "note": "All 74 Articles are generated in Chinese with the complete NPC English reference attached in cn-pipl-articles.json."
   },
@@ -470,7 +483,7 @@
   },
   "textAvailability": {
     "mode": "separate-complete-official-original-and-government-English-reference-import",
-    "stored": false,
+    "stored": true,
     "language": "zh-CN",
     "note": "All 64 Articles of State Council Order No. 790 are generated in Chinese with the complete Ministry of Justice English reference attached in cn-network-data-regulations-articles.json."
   },
@@ -532,7 +545,7 @@
   },
   "textAvailability": {
     "mode": "separate-complete-official-original-and-public-domain-English-reference-import",
-    "stored": false,
+    "stored": true,
     "language": "zh-CN",
     "note": "All 24 Articles of Order No. 15 are generated in Chinese with the complete CASI/Air University English reference attached in cn-generative-ai-measures-articles.json. It is not an official Chinese translation."
   },
@@ -583,15 +596,20 @@
       "accessedOn": "2026-07-19"
     },
     "textAvailability": {
-      "mode": "official-revised-text-linked",
-      "stored": false,
+      "mode": "separate-complete-official-revised-article-import",
+      "stored": true,
       "language": "en",
-      "note": "Use the revised-text and timeline controls on legislation.gov.uk for version-sensitive research."
+      "note": "All 120 current Article nodes are stored from legislation.gov.uk. Use the official revised-text and timeline controls for version-sensitive verification."
     },
     "amendmentSource": {
       "url": "https://www.legislation.gov.uk/uksi/2026/82/contents/made",
       "label": "Data (Use and Access) Act 2025 (Commencement No. 6) Regulations 2026",
       "accessedOn": "2026-07-19"
+    },
+    "coverage": {
+      "unit": "current-article-node",
+      "count": 120,
+      "completeness": "complete-current-consolidated-article-corpus"
     }
   },
   {
@@ -625,7 +643,7 @@
       "accountability-governance"
     ],
     "summary": "Japan's national personal-information law governing private and public-sector handling through an amended statutory framework.",
-    "statusNote": "The Japanese text is authoritative and the corpus displays the consolidation effective on 20 July 2026. The Act No. 37 of 2021 government English reference is attached to 185 main Articles and two tables only as a historical, non-current layer; 21 supplementary blocks remain Japanese-only.",
+    "statusNote": "The Japanese text is authoritative and the corpus displays the consolidation effective on 20 July 2026. The current-aligned English layer is mixed: 172 unchanged units use the government reference translation, while 13 changed main Articles, two tables and all 21 supplementary blocks use separately labelled project English references. No complete current government English translation is claimed.",
     "source": {
       "url": "https://laws.e-gov.go.jp/law/415AC0000000057",
       "label": "e-Gov Law Search, Government of Japan",
@@ -768,7 +786,7 @@
     "hierarchyLevel": "federal-statute",
     "legalForce": "binding",
     "lifecycleStatus": "in-force-amended",
-    "statusAsOf": "2026-07-21",
+    "statusAsOf": "2026-07-28",
     "dates": {
       "adoptedOn": "2000-04-13",
       "publishedOn": "2000-04-13",
@@ -776,7 +794,7 @@
       "generalApplicationFrom": null,
       "ceasedOn": null
     },
-    "version": "Complete bilingual in-force consolidation current to 2026-03-31, plus S.C. 2026, c. 3, ss. 389–397 enacted on 2026-03-26 but not yet in force",
+    "version": "Official consolidation current to 2026-05-26; stored bilingual XML snapshot current to 2026-03-31 remains text-equivalent, plus S.C. 2026, c. 3, ss. 389–397 enacted on 2026-03-26 but not yet in force",
     "parentInstrumentId": null,
     "topicIds": [
       "security-controls",
@@ -788,7 +806,7 @@
     "source": {
       "url": "https://laws-lois.justice.gc.ca/eng/acts/P-8.6/",
       "label": "Justice Laws Website, Government of Canada",
-      "accessedOn": "2026-07-21"
+      "accessedOn": "2026-07-28"
     },
     "originalLanguageSource": {
       "url": "https://laws-lois.justice.gc.ca/fra/lois/P-8.6/",
@@ -825,8 +843,8 @@
     "textAvailability": {
       "mode": "separate-official-co-authentic-bilingual-in-force-and-prospective-import",
       "stored": true,
-      "language": "fr",
-      "note": "All 75 current top-level Section/range and Schedule units and all nine enacted amendments not in force from S.C. 2026, c. 3, ss. 389–397 are stored from the official Justice Laws English and French XML publication. Current and prospective text are kept in separate legal-effect states."
+      "language": "en-CA",
+      "note": "English is the default display language, but the complete English and French texts are co-authentic. All 75 current top-level Section/range and Schedule units and all nine enacted amendments not in force from S.C. 2026, c. 3, ss. 389–397 are stored from the official Justice Laws bilingual XML publication. Current and prospective text are kept in separate legal-effect states."
     }
   },
   {
@@ -1470,8 +1488,8 @@
     "category": "law",
     "hierarchyLevel": "national-framework-statute",
     "legalForce": "binding",
-    "lifecycleStatus": "in-force-with-scheduled-amendment",
-    "statusAsOf": "2026-07-20",
+    "lifecycleStatus": "in-force-amended",
+    "statusAsOf": "2026-07-28",
     "dates": {
       "adoptedOn": "2025-01-21",
       "publishedOn": "2025-01-21",
@@ -1481,7 +1499,7 @@
       "latestAmendmentEffectiveFrom": "2026-07-21",
       "ceasedOn": null
     },
-    "version": "Current 44-Article phase at 20 July 2026 (MST 282791); the 46-Article Act No. 21311 phase begins 21 July 2026 and is excluded from current text",
+    "version": "Current 46-Article Act No. 21311 phase effective 21 July 2026 (MST 282791), with three supplementary-provision blocks",
     "parentInstrumentId": null,
     "topicIds": [
       "ai-risk-management",
@@ -1492,28 +1510,28 @@
       "incident-response"
     ],
     "summary": "Korea's binding horizontal AI framework statute, combining industrial-policy institutions with trust and safety duties for specified high-impact and generative AI systems.",
-    "statusNote": "This instrument is enacted and in force, not a draft. Its phased 2026 amendment dates are modeled separately and should not be conflated with the original enactment date.",
+    "statusNote": "This instrument is enacted and in force, not a draft. The corpus now displays the final Act No. 21311 phase effective 21 July 2026; earlier 2026 phases remain source-version history rather than current law.",
     "source": {
-      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260721&lsiSeq=282791&urlMode=lsInfoP",
       "label": "Korean Law Information Center — current Korean text",
-      "accessedOn": "2026-07-20"
+      "accessedOn": "2026-07-28"
     },
     "referenceTranslationSource": {
       "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282791&chrClsCd=010203&urlMode=engLsInfoR&viewCls=engLsInfoR",
       "label": "Korean Law Information Center — government English reference",
-      "accessedOn": "2026-07-20"
+      "accessedOn": "2026-07-28"
     },
     "textAvailability": {
       "mode": "complete-current-Korean-with-versioned-government-English-reference-corpus",
       "stored": true,
       "language": "ko-KR",
-      "note": "All 47 current Korean nodes have MOLEG English references. Forty-two are text-aligned; Articles 2, 3, 6, 18 and 35 are displayed only with an upfront warning that the English wording is the differing phase effective 21 July 2026."
+      "note": "All 46 current Articles and three supplementary-provision blocks are stored in Korean with a complete government English reference aligned to the same phase effective 21 July 2026. Korean controls and the English publication has no official effect."
     },
     "coverage": {
       "unit": "current-article-and-supplement-node",
       "first": 1,
-      "last": 47,
-      "count": 47,
+      "last": 49,
+      "count": 49,
       "completeness": "complete-current-authoritative-korean-article-and-supplement-corpus"
     }
   },
@@ -1592,7 +1610,7 @@
       "publishedOn": "2024-09-05",
       "effectiveFrom": null,
       "generalApplicationFrom": null,
-      "ceasedOn": "2025-10-21"
+      "ceasedOn": null
     },
     "version": "Consultation proposal closed 4 October 2024; government stated in 2025 that it would not proceed at that time",
     "parentInstrumentId": null,
@@ -2084,13 +2102,13 @@
     "category": "implementing-regulation",
     "hierarchyLevel": "national-regulation",
     "legalForce": "binding",
-    "lifecycleStatus": "in-force-gazette-date-unverified",
-    "statusAsOf": "2026-07-20",
+    "lifecycleStatus": "in-force",
+    "statusAsOf": "2026-07-28",
     "dates": {
-      "adoptedOn": null,
-      "publishedOn": null,
-      "effectiveFrom": null,
-      "generalApplicationFrom": null,
+      "adoptedOn": "2024-08-31",
+      "publishedOn": "2024-09-01",
+      "effectiveFrom": "2024-09-01",
+      "generalApplicationFrom": "2024-09-01",
       "ceasedOn": null
     },
     "version": "Version 2.0, August 2024",
@@ -2103,11 +2121,16 @@
       "accountability-governance"
     ],
     "summary": "Binding transfer rules addressing purposes, adequacy evaluation, exemptions, onward transfers, revocation, and transfer risk assessment under the Saudi PDPL.",
-    "statusNote": "Version 2.0 is the current official publication. Article 9 makes it effective on Official Gazette publication, but the verified official source does not print that Gazette date; the corpus therefore does not invent an applies-from date.",
+    "statusNote": "Version 2.0 is the current official publication. Umm Al-Qura issue 5047 records Decision No. 1840 dated 27/02/1446H and publication on 28/02/1446H (1 September 2024); Article 9 makes the Regulation effective on publication.",
     "source": {
       "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
       "label": "Saudi Data Governance Platform — controlling Arabic Version 2.0",
       "accessedOn": "2026-07-20"
+    },
+    "gazetteSource": {
+      "url": "https://portal.uqn.gov.sa/details?p=25412",
+      "label": "Umm Al-Qura Official Gazette — issue 5047, Decision No. 1840",
+      "accessedOn": "2026-07-28"
     },
     "referenceTranslationSource": {
       "url": "https://dgp.sdaia.gov.sa/wps/wcm/connect/e5bbede0-1119-4f70-b4ef-f043ce58d780/Regulation%2Bon%2BPersonal%2BData%2BTransfer%2BOutside%2Bthe%2BKingdom..pdf?CACHEID=ROOTWORKSPACE-e5bbede0-1119-4f70-b4ef-f043ce58d780-p6OMj1M&CONVERT_TO=url&MOD=AJPERES",
@@ -2187,7 +2210,7 @@
     "hierarchyLevel": "statute",
     "legalForce": "binding",
     "lifecycleStatus": "in-force-with-uncommenced-amendments",
-    "statusAsOf": "2026-07-20",
+    "statusAsOf": "2026-07-28",
     "dates": {
       "adoptedOn": "2010-05-26",
       "publishedOn": "2010-05-26",
@@ -2229,7 +2252,7 @@
       "mode": "separate-official-bilingual-import-with-commencement-layer",
       "stored": true,
       "language": "zh-Hant-TW",
-      "note": "All 66 Article nodes from the official latest Traditional-Chinese consolidation and government English reference translation are stored. Each node distinguishes in-force text from the uncommenced 2025 package; affected Articles retain the current-effective prior Chinese text."
+      "note": "All 66 Article nodes from the latest official Traditional-Chinese consolidation and Ministry of Justice English reference are stored. Forty English nodes align with current-effective wording; 26 follow latest-promulgated wording that has not commenced. Those 26 carry an explicit version warning, and affected Articles retain the current-effective prior Chinese text where available."
     }
   },
   {
@@ -2440,11 +2463,16 @@
       "label": "Privacy Commissioner for Personal Data, Hong Kong",
       "accessedOn": "2026-07-19"
     },
+    "originalLanguageSource": {
+      "url": "https://www.pcpd.org.hk/tc_chi/resources_centre/publications/files/ai_protection_framework.pdf",
+      "label": "香港個人資料私隱專員公署 — 官方繁體中文版",
+      "accessedOn": "2026-07-28"
+    },
     "textAvailability": {
-      "mode": "official-english-framework-linked",
+      "mode": "official-bilingual-framework-linked",
       "stored": false,
       "language": "en",
-      "note": "The verified official English framework PDF and release are linked. A Chinese edition is not claimed without a separately evidenced official publication; the graph stores editorial navigation nodes rather than reproducing the document."
+      "note": "Official English and Traditional-Chinese framework editions and release pages are linked. The graph stores editorial navigation nodes rather than reproducing the complete document."
     }
   },
   {
@@ -2462,8 +2490,8 @@
     "lifecycleStatus": "active-voluntary",
     "statusAsOf": "2026-07-19",
     "dates": {
-      "adoptedOn": null,
-      "publishedOn": null,
+      "adoptedOn": "2021-08-18",
+      "publishedOn": "2021-08-18",
       "effectiveFrom": null,
       "generalApplicationFrom": null,
       "ceasedOn": null
@@ -2484,11 +2512,16 @@
       "label": "Privacy Commissioner for Personal Data, Hong Kong",
       "accessedOn": "2026-07-19"
     },
+    "originalLanguageSource": {
+      "url": "https://www.pcpd.org.hk/tc_chi/resources_centre/publications/files/guidance_ethical_c.pdf",
+      "label": "香港個人資料私隱專員公署 — 官方繁體中文版",
+      "accessedOn": "2026-07-28"
+    },
     "textAvailability": {
       "mode": "official-guidance-pdf-linked",
       "stored": false,
       "language": "en",
-      "note": "The official English guidance PDF is linked; the local record contains original summaries rather than copied full publication text."
+      "note": "Official English and Traditional-Chinese guidance PDFs are linked; the local record contains original summaries rather than copied full publication text."
     }
   },
   {
@@ -2528,11 +2561,16 @@
       "label": "Privacy Commissioner for Personal Data, Hong Kong",
       "accessedOn": "2026-07-19"
     },
+    "originalLanguageSource": {
+      "url": "https://www.pcpd.org.hk/tc_chi/resources_centre/publications/files/guidelines_ai_employees.pdf",
+      "label": "香港個人資料私隱專員公署 — 官方繁體中文版",
+      "accessedOn": "2026-07-28"
+    },
     "textAvailability": {
       "mode": "official-checklist-linked",
       "stored": false,
       "language": "en",
-      "note": "The official release and checklist are linked; the repository stores a structured summary of policy elements rather than the full checklist."
+      "note": "Official English and Traditional-Chinese releases and checklist PDFs are linked; the repository stores a structured summary of policy elements rather than the full checklist."
     }
   },
   {
@@ -2647,7 +2685,7 @@
       "mode": "complete-current-official-vietnamese-corpus",
       "stored": true,
       "language": "vi-VN",
-      "note": "All 39 Articles are stored in official Vietnamese verified against the signed National Assembly text and searchable Official Gazette. No complete official English version was verified or generated."
+      "note": "All 39 Articles are stored in official Vietnamese verified against the signed National Assembly text and searchable Official Gazette. No issuing-authority English version was verified; a complete current-aligned, nonofficial project English reference is stored for every Article."
     },
     "coverage": {
       "unit": "article",
@@ -2699,7 +2737,7 @@
       "mode": "complete-current-official-vietnamese-corpus",
       "stored": true,
       "language": "vi-VN",
-      "note": "All 42 Articles and 13 Appendix forms are stored in official Vietnamese verified against the signed Government text and searchable Official Gazette. No complete official English version was verified or generated."
+      "note": "All 42 Articles and 13 Appendix forms are stored in official Vietnamese verified against the signed Government text and searchable Official Gazette. No issuing-authority English version was verified; a complete current-aligned, nonofficial project English reference is stored for every node."
     },
     "coverage": {
       "unit": "article-and-appendix-form-node",
@@ -2793,7 +2831,7 @@
       "data-subject-rights"
     ],
     "summary": "South Africa's comprehensive personal-information statute, establishing eight processing conditions, data-subject rights, regulator powers, security and breach duties, prior authorization, and transfer rules.",
-    "statusNote": "POPIA commenced in tranches; the general compliance grace period ended on 30 June 2021. Section 58(2) commenced on 1 July 2021, but its application to processing under section 57 was postponed until 1 February 2022.",
+    "statusNote": "POPIA commenced in tranches; sections 55–109, including section 58, commenced on 1 July 2020. Section 114(3) temporarily suspended the application of section 58(2) to section 57 processing, and Notice 560 moved the operative application date to 1 February 2022. The general compliance grace period ended on 30 June 2021.",
     "source": {
       "url": "https://www.justice.gov.za/legislation/acts/2013-004.pdf",
       "label": "South African Department of Justice — current consolidation",

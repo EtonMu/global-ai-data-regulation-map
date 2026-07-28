@@ -282,8 +282,8 @@
     "confidence": "medium",
     "evidenceBasis": "structural-comparison",
     "rationale": "Both treat AI risk management as a lifecycle process involving identification, prioritization, treatment, and monitoring.",
-    "limits": "At the 19 July 2026 snapshot, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories; NIST MANAGE is voluntary, broader, and cannot establish AI Act conformity.",
-    "verifiedOn": "2026-07-19",
+    "limits": "At the 28 July 2026 reference date, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories; NIST MANAGE is voluntary, broader, and cannot establish AI Act conformity.",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
@@ -315,8 +315,8 @@
     "confidence": "medium",
     "evidenceBasis": "editorial-text-comparison",
     "rationale": "Both emphasize usable information about system capabilities or limits for people who operate or oversee an AI system.",
-    "limits": "At the 19 July 2026 snapshot, Article 13 had not yet reached its applicable date for the relevant high-risk-system categories; MAP 2.2 is a voluntary outcome with different wording and audience.",
-    "verifiedOn": "2026-07-19",
+    "limits": "At the 28 July 2026 reference date, Article 13 had not yet reached its applicable date for the relevant high-risk-system categories; MAP 2.2 is a voluntary outcome with different wording and audience.",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_13/oj",
@@ -348,11 +348,15 @@
     "evidenceBasis": "editorial-text-comparison",
     "rationale": "Both address data provenance or legality and data-quality practices in AI development.",
     "limits": "Article 10 targets high-risk AI-system data sets under EU definitions; the China measure applies to training-data processing by providers within its public generative-AI service scope and includes different content and rights requirements.",
-    "verifiedOn": "2026-07-19",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_10/oj",
         "label": "EU AI Act Article 10 — EUR-Lex"
+      },
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+        "label": "Regulation (EU) 2026/1744 — Article 10 amendment"
       },
       {
         "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
@@ -380,8 +384,8 @@
     "confidence": "low",
     "evidenceBasis": "structural-comparison",
     "rationale": "Both create ex ante risk-governance activity for some AI services or systems.",
-    "limits": "At the 19 July 2026 snapshot, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories. Article 17 is already binding but triggers regulatory security assessment and filing for services with specified public-opinion or social-mobilization characteristics.",
-    "verifiedOn": "2026-07-19",
+    "limits": "At the 28 July 2026 reference date, Article 9 had not yet reached its applicable date for the relevant high-risk-system categories. Article 17 is already binding but triggers regulatory security assessment and filing for services with specified public-opinion or social-mobilization characteristics.",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
@@ -414,7 +418,7 @@
     "evidenceBasis": "structural-comparison",
     "rationale": "Both promote lifecycle identification, evaluation, and mitigation of AI risks.",
     "limits": "They apply to different system categories and actors; Hiroshima Action 1 is non-binding international guidance, while Article 9 is a scoped EU legal duty.",
-    "verifiedOn": "2026-07-19",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_9/oj",
@@ -1583,10 +1587,10 @@
     "evidenceBasis": "current-korean-text-and-eu-regulation-comparison",
     "rationale": "Both provisions establish scenario-dependent transparency duties concerning interaction with AI or AI-generated and synthetic content, including forms of notice or output marking.",
     "limits": "The actors, system categories, synthetic-content definitions, disclosure modalities, exceptions, application dates and enforcement systems differ materially; shared transparency themes do not make the Korean and EU duties interchangeable.",
-    "verifiedOn": "2026-07-19",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
-        "url": "https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=&chrClsCd=010202&efYd=20260122&lsiSeq=282791&urlMode=lsInfoP",
+        "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282791&efYd=20260721&urlMode=lsInfoP",
         "label": "Korea AI Framework Act — current Korean text"
       },
       {
@@ -1594,8 +1598,8 @@
         "label": "EU AI Act Article 50 — EUR-Lex"
       },
       {
-        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj",
-        "label": "EU AI Act Article 113 — application timetable"
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+        "label": "Regulation (EU) 2026/1744 — Article 50 and application amendments"
       }
     ]
   },
@@ -2329,7 +2333,7 @@
     "evidenceBasis": "enacted-developer-to-deployer-information-comparison",
     "rationale": "Both sources require upstream actors to provide downstream users or deployers with information about intended use, system characteristics, limitations and human-oversight considerations.",
     "limits": "Colorado's regime concerns covered automated decision-making technology and principal duties beginning 1 January 2027, while EU Article 13 applies to high-risk AI systems under a different provider-deployer framework, content standard and enforcement system.",
-    "verifiedOn": "2026-07-19",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://leg.colorado.gov/bills/sb26-189",
@@ -2340,8 +2344,8 @@
         "label": "EU AI Act Article 13 — EUR-Lex"
       },
       {
-        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/art_113/oj",
-        "label": "EU AI Act Article 113 — application timetable"
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+        "label": "Regulation (EU) 2026/1744 — amended application timetable"
       }
     ]
   },
@@ -2480,8 +2484,8 @@
     "confidence": "high",
     "evidenceBasis": "official-versioned-transfer-regulation-and-parent-law",
     "rationale": "Version 2.0 operationalizes Saudi PDPL transfer requirements through purpose, adequacy, exemption, onward-transfer, revocation and transfer-risk-assessment rules.",
-    "limits": "This relationship does not supply an unverified Gazette publication date. The corpus leaves the regulation's applies-from date null where the verified official publication does not state it.",
-    "verifiedOn": "2026-07-20",
+    "limits": "The regulation supplements rather than replaces the Law, and its transfer-risk assessment and adequacy mechanisms do not map one-to-one to every statutory transfer condition.",
+    "verifiedOn": "2026-07-28",
     "sourceSupport": [
       {
         "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/RegulationonPersonalDataTransferOutsidetheKingdom",
@@ -2490,6 +2494,79 @@
       {
         "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
         "label": "Saudi Data Governance Platform — Personal Data Protection Law"
+      },
+      {
+        "url": "https://portal.uqn.gov.sa/details?p=25412",
+        "label": "Umm Al-Qura Official Gazette — issue 5047, Decision No. 1840"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-077",
+    "source": {
+      "type": "provision",
+      "id": "jp-ai-promotion-act-2025-art-3"
+    },
+    "target": {
+      "type": "provision",
+      "id": "oecd-ai-principles-values"
+    },
+    "type": "partial-overlap",
+    "directionality": "undirected",
+      "conceptIds": [
+        "transparency-explainability",
+        "ai-risk-management"
+      ],
+    "status": "candidate",
+    "confidence": "medium",
+    "evidenceBasis": "official-text-and-soft-law-principle-comparison",
+      "rationale": "Japan's statutory basic principles and the OECD values-based principles both connect trustworthy AI development and use with transparency and measures addressing risks to rights, safety, or public welfare.",
+    "limits": "Article 3 is a binding national framework provision with industrial-policy and national-security objectives; the OECD principles are non-binding and differently structured. This is a thematic comparison, not adoption, equivalence, or a compliance safe harbour.",
+    "verifiedOn": "2026-07-28",
+    "sourceSupport": [
+      {
+        "url": "https://laws.e-gov.go.jp/law/507AC0000000053",
+        "label": "e-Gov Law Search — AI Promotion Act"
+      },
+      {
+        "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449",
+        "label": "OECD Legal Instruments — Recommendation on Artificial Intelligence"
+      }
+    ]
+  },
+  {
+    "id": "v2-rel-078",
+    "source": {
+      "type": "instrument",
+      "id": "vn-pdpl-implementing-decree-356-2025"
+    },
+    "target": {
+      "type": "instrument",
+      "id": "vn-personal-data-protection-law-2025"
+    },
+    "type": "implements",
+    "directionality": "directed",
+    "conceptIds": [
+      "lawfulness-consent-choice",
+      "data-subject-rights",
+      "cross-border-transfer",
+      "impact-assessment",
+      "accountability-governance"
+    ],
+    "status": "editorial-reviewed",
+    "confidence": "high",
+    "evidenceBasis": "official-implementing-decree-and-parent-law",
+    "rationale": "Decree 356/2025 supplies procedures, documentation and forms for implementing the Personal Data Protection Law, including rights handling, processing-impact files, cross-border-transfer files and regulatory administration.",
+    "limits": "The Decree must be read with Law No. 91/2025/QH15 and does not replace the Law. This instrument-level edge does not assert a one-to-one correspondence between every Article or form and a single statutory provision.",
+    "verifiedOn": "2026-07-28",
+    "sourceSupport": [
+      {
+        "url": "https://vanban.chinhphu.vn/?classid=1&docid=216387&pageid=27160&typegroupid=4",
+        "label": "Government of Viet Nam — Decree 356/2025 official text"
+      },
+      {
+        "url": "https://vanban.chinhphu.vn/?docid=214590&pageid=27160",
+        "label": "Government of Viet Nam — Law No. 91/2025/QH15 official text"
       }
     ]
   }

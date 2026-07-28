@@ -150,17 +150,17 @@ test("the named China and Japan examples expose real English legal text", () => 
   assert.equal(byInstrument.get("kr-pipa-2011")?.storedEnglishUnitCount, 138);
   assert.equal(
     byInstrument.get("kr-ai-framework-act-2025")?.storedEnglishUnitCount,
-    47,
+    49,
   );
   assert.equal(
     byInstrument.get("kr-ai-framework-act-2025")
       ?.currentAlignedEnglishUnitCount,
-    42,
+    49,
   );
   assert.equal(
     byInstrument.get("kr-ai-framework-act-2025")
       ?.temporallyMismatchedEnglishUnitCount,
-    5,
+    0,
   );
   assert.equal(
     byInstrument.get("cn-generative-ai-measures")?.coverageStatus,

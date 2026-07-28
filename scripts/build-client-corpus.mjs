@@ -20,6 +20,8 @@ const publicCorpusDirectory = path.join(
 const corpusFiles = [
   "gdpr-articles.json",
   "eu-ai-act-articles.json",
+  "eu-ai-act-annexes.json",
+  "eu-ai-act-recitals.json",
   "uk-gdpr-articles.json",
   "cn-pipl-articles.json",
   "cn-network-data-regulations-articles.json",
@@ -164,6 +166,12 @@ function lightweightArticle(record) {
     ...(record.articleNumber !== undefined
       ? { articleNumber: record.articleNumber }
       : {}),
+    ...(record.annexNumber !== undefined
+      ? { annexNumber: record.annexNumber }
+      : {}),
+    ...(record.recitalNumber !== undefined
+      ? { recitalNumber: record.recitalNumber }
+      : {}),
     ...(record.sectionNumber !== undefined
       ? { sectionNumber: record.sectionNumber }
       : {}),
@@ -183,6 +191,15 @@ function lightweightArticle(record) {
       ? { appliesFrom: record.appliesFrom }
       : {}),
     legalEffectStatus: inferredLegalEffectStatus(record),
+    ...(record.researchTreatment
+      ? { researchTreatment: record.researchTreatment }
+      : {}),
+    ...(record.substantiveConceptMetricEligible !== undefined
+      ? {
+          substantiveConceptMetricEligible:
+            record.substantiveConceptMetricEligible,
+        }
+      : {}),
     ...(record.versionAsOf ? { versionAsOf: record.versionAsOf } : {}),
     ...(record.defaultLanguageStatus
       ? { defaultLanguageStatus: record.defaultLanguageStatus }
@@ -236,7 +253,13 @@ function lightweightConceptReview(review) {
     provisionId: review.provisionId,
     relevance: review.relevance,
     conceptIds: review.conceptIds,
+    candidateConceptIds: review.candidateConceptIds ?? [],
+    contextualConceptIds: review.contextualConceptIds ?? [],
+    candidateContextualConceptIds:
+      review.candidateContextualConceptIds ?? [],
     reviewStatus: review.reviewStatus,
+    mappingBasis: review.mappingBasis,
+    confidence: review.confidence,
     reviewedOn: review.reviewedOn,
   };
 }

@@ -277,10 +277,10 @@ test("production mapping audit resolves its corpus and preserves separate eviden
     sourceAudits,
     concepts,
   });
-  assert.equal(audit.relationCount, 74);
-  assert.equal(audit.reviewedRelationCount, 28);
-  assert.equal(audit.candidateRelationCount, 46);
-  assert.equal(audit.analyticalRelationCount, 71);
+  assert.equal(audit.relationCount, 76);
+  assert.equal(audit.reviewedRelationCount, 29);
+  assert.equal(audit.candidateRelationCount, 47);
+  assert.equal(audit.analyticalRelationCount, 73);
   assert.equal(audit.lifecycleRelationCount, 3);
   assert.equal(audit.unresolvedEndpointCount, 0);
   assert.ok(audit.records.every((record) => record.sourceSupportCount >= 2));
